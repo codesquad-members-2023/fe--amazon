@@ -19,3 +19,13 @@
 - [ ] 수 : `Create pull request(midpoint)`
 - [ ] 목 : side, search `Create draft pull request`
 - [ ] 금 : `Create pull request`
+
+### 주요 개발 feature
+- [ ] 화면 레이아웃
+  - [ ] header
+  - [ ] left side menu
+- [ ] 모달기능
+  - [ ] 우측 상단 : 국가, 계정 및 목록
+  - [ ] hover 효과 or click 효과 구현
+  - [ ] 모달 영역 alert / confirm 함수 사용X
+  - [ ] 모달 위치 디자인 가이드라인 따르기
