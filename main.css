@@ -1,0 +1,15 @@
+/* COMMON */
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* HEADER */
+header {
+  background-color: #10141A;
+  height: 40px;
+}
+
+.inner {
+
+}

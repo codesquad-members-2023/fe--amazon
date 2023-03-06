@@ -78,7 +78,8 @@
   - [github] pull request : 내가 작업한 branch를 master 입장에서 pull 하는 것
   - [gitlab] merge request :내가 작업한 branch 입장에서 master에 merge 하는 것
 - draft  
-  [full request] - [Reviewers] - [Convert to draft]
+  [full request] - [Reviewers] - [still in progress?] - [Convert to draft] click  
+  <img width="320" alt="image" src="https://user-images.githubusercontent.com/88878874/223031668-051e4067-d4b9-4aae-82e0-567ccef22166.png">
   - 아직 작업 중인 것을 알릴 수 있으며 코드 리뷰는 받을 수 없다.
   - merge도 불가능하다.
   - [Ready for review] : 보통의 pull request 상태로 변경된다.
