@@ -1,1 +1,34 @@
+# 학습 계획
 
+- [ ] PR 보내는 방법 익히기
+- [ ] HTML에 대한 학습
+  - [ ] HTML 구조에 대한 학습
+    - [ ] `header`, `section`, `nav`, `footer`, `aside` 태그
+  - [ ] HTML `tag` 의 attribute 학습
+    - [ ] `class`, `id`, `data`, `style`
+  - [ ] HTML에서의 주석처리
+  - [ ] `block` VS `inline`
+- [ ] CSS에 대한 학습
+  - [ ] CSS Style을 html 페이지에 적용하는 세가지 방법에 대해 알아보고 어떤 방법이 좋은지 고민해보기.
+    - [ ] `inline`
+    - [ ] `internal`
+    - [ ] `external`
+  - [ ] CSS 특징
+    - [ ] Cascading
+    - [ ] 상속
+  - [ ] CSS Selector 문법 공부
+  - [ ] CSS 레이아웃
+- [ ] DOM
+  - [ ] DOM이란?
+  - [ ] DOM APIs
+    - 탐색
+      - `querySelector()`
+    - 노드이동
+      - children, childNodes, parentElement...
+    - 노드 생성
+      - createElement..
+    - 노드 추가
+      - innerHTML (함수방식으로 동작하지 않는다)
+      - insertBefore
+- [ ] Event
+  - [ ] `addEventListener`
