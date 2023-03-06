@@ -8,6 +8,8 @@
     - [ ] `class`, `id`, `data`, `style`
   - [ ] HTML에서의 주석처리
   - [ ] `block` VS `inline`
+  - [ ] HTML 시멘틱 태그란?
+  - [ ] 웹접근성이란?
 - [ ] CSS에 대한 학습
   - [ ] CSS Style을 html 페이지에 적용하는 세가지 방법에 대해 알아보고 어떤 방법이 좋은지 고민해보기.
     - [ ] `inline`
@@ -18,6 +20,7 @@
     - [ ] 상속
   - [ ] CSS Selector 문법 공부
   - [ ] CSS 레이아웃
+  - [ ] CSS Flexbox 사용법 익히기
 - [ ] DOM
   - [ ] DOM이란?
   - [ ] DOM APIs
