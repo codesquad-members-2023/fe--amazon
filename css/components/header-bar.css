@@ -1,0 +1,41 @@
+.home__header {
+  background-color: #131921;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  position: static;
+  height: 60px;
+}
+
+.home__header__logo img {
+  width: 120px;
+  height: 50px;
+  margin: 5px 10px 5px 10px;
+}
+
+.home__header__search input {
+  width: 300px;
+  height: 30px;
+}
+
+.home__header__location {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px 5px 10px;
+}
+
+.home__header__login {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px 5px 10px;
+}
+
+.home__header__checkOrder {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px 5px 10px;
+}
+
+.home__header__basket {
+  margin: 5px 10px 5px 10px;
+}

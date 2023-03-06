@@ -1,0 +1,16 @@
+@import "reset.css";
+
+/* COMPONENTS */
+@import "components/header-bar.css";
+
+/* SCREENS */
+
+body {
+  font-family: "Kanit", sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
