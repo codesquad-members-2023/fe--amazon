@@ -1,2 +1,11 @@
 @import 'reset.css';
 @import 'navbar.css';
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url(/fonts/Pretendard-Black.ttf);
+}
+
+body {
+  font-family: 'Pretendard';
+}
