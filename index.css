@@ -1,3 +1,5 @@
+@import url("./fonts.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,9 @@
 
 body {
   color: #fff;
+  font-size: 13px;
+  font-family: "Pretendard";
+  letter-spacing: -0.06em;
 }
 
 .header {
@@ -19,20 +24,16 @@ body {
   gap: 24px;
 }
 
-.header__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
 .header__link {
   list-style: none;
+  display: flex;
+  align-items: center;
 }
 
-.header__anchor,
-.header__shipping-address {
+.header__anchor {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .header__anchor,
@@ -40,6 +41,11 @@ body {
 .nav__special-offer {
   text-decoration: none;
   color: #fff;
+}
+
+.header__text--upper {
+  color: #d5d5d5;
+  font-size: 11px;
 }
 
 .search-form {
@@ -50,6 +56,21 @@ body {
 
 .search-form__input {
   flex-grow: 1;
+  border: none;
+  border-radius: 4px 0px 0px 4px;
+  padding: 12px 9.5px;
+}
+
+.search-form__button {
+  width: 40px;
+  height: 40px;
+  background-color: #fcb057;
+  border: none;
+  border-radius: 0px 4px 4px 0px;
+}
+
+.search-form__button:hover {
+  cursor: pointer;
 }
 
 .nav {

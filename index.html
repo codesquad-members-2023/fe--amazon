@@ -11,9 +11,11 @@
     <header class="header">
       <div class="header__info">
         <img class="header__logo" src="./assets/amazon-logo.png" />
-        <div class="header__shipping-address">
-          <span class="header__label">배송지</span>
-          <span class="header__country">대한민국</span>
+        <div class="header__link">
+          <a class="header__anchor">
+            <span class="header__text--upper">배송지</span>
+            <span class="header__text">한국</span>
+          </a>
         </div>
         <form class="search-form">
           <input
@@ -22,37 +24,33 @@
             placeholder="검색 Amazon"
           />
           <button class="search-form__button" type="submit">
-            <img src="./assets/search.png" />
+            <img class="search-form__glass-img" src="./assets/search.png" />
           </button>
         </form>
-        <ul class="header__links">
-          <li class="header__link">
-            <a class="header__anchor" href="">ko</a>
-          </li>
-          <li class="header__link">
-            <a class="header__anchor" href=""
-              ><span class="header__text--upper">안녕하세요.로그인</span>
-              <span class="header__text">계정 및 목록</span></a
-            >
-          </li>
-          <li class="header__link">
-            <a class="header__anchor" href=""
-              ><span>반품</span> <sapn>& 주문</sapn></a
-            >
-          </li>
-          <li class="header__link">
-            <a class="header__anchor" href=""
-              ><img src="./assets/cart.png" />장바구니</a
-            >
-          </li>
-        </ul>
+
+        <div class="header__link">
+          <a class="header__anchor" href="">ko</a>
+        </div>
+        <div class="header__link">
+          <a class="header__anchor" href=""
+            ><span class="header__text--upper">안녕하세요,로그인</span>
+            <span class="header__text">계정 및 목록</span></a
+          >
+        </div>
+        <div class="header__link">
+          <a class="header__anchor" href=""
+            ><span class="header__text--upper">반품</span>
+            <span class="header__text">& 주문</span></a
+          >
+        </div>
+        <div class="header__link">
+          <a class="header__anchor" href="">장바구니</a>
+        </div>
       </div>
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__anchor" href=""
-              ><img src="./assets/list.png" />모두</a
-            >
+            <a class="nav__anchor" href="">모두</a>
           </li>
           <li class="nav__item">
             <a class="nav__anchor" href="">오늘의 딜</a>
