@@ -8,33 +8,69 @@
     <title>amazon</title>
   </head>
   <body>
-    <header>
-      <div>
-        <img src="./assets/amazon-logo.png" />
-        <div>배송지 대한민국</div>
-        <form>
-          <input type="text" placeholder="검색 Amazon" />
-          <button type="submit">
+    <header class="header">
+      <div class="header__info">
+        <img class="header__logo" src="./assets/amazon-logo.png" />
+        <div class="header__shipping-address">
+          <span class="header__label">배송지</span>
+          <span class="header__country">대한민국</span>
+        </div>
+        <form class="search-form">
+          <input
+            class="search-form__input"
+            type="text"
+            placeholder="검색 Amazon"
+          />
+          <button class="search-form__button" type="submit">
             <img src="./assets/search.png" />
           </button>
         </form>
-        <div>ko</div>
-        <div>안녕하세요.로그인 계정 및 목록</div>
-        <div>반품 & 주문</div>
-        <div>장바구니</div>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <a href=""><img src="./assets/list.png" />모두</a>
+        <ul class="header__links">
+          <li class="header__link">
+            <a class="header__anchor" href="">ko</a>
           </li>
-          <li><a href="">오늘의 딜</a></li>
-          <li><a href="">고객 서비스</a></li>
-          <li><a href="">레지스트리</a></li>
-          <li><a href="">기프트 카드</a></li>
-          <li><a href="">판매</a></li>
+          <li class="header__link">
+            <a class="header__anchor" href=""
+              ><span class="header__text--upper">안녕하세요.로그인</span>
+              <span class="header__text">계정 및 목록</span></a
+            >
+          </li>
+          <li class="header__link">
+            <a class="header__anchor" href=""
+              ><span>반품</span> <sapn>& 주문</sapn></a
+            >
+          </li>
+          <li class="header__link">
+            <a class="header__anchor" href=""
+              ><img src="./assets/cart.png" />장바구니</a
+            >
+          </li>
         </ul>
-        <a href="">지금 특가 상품 쇼핑하기</a>
+      </div>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__anchor" href=""
+              ><img src="./assets/list.png" />모두</a
+            >
+          </li>
+          <li class="nav__item">
+            <a class="nav__anchor" href="">오늘의 딜</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__anchor" href="">고객 서비스</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__anchor" href="">레지스트리</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__anchor" href="">기프트 카드</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__anchor" href="">판매</a>
+          </li>
+        </ul>
+        <a class="nav__special-offer" href="">지금 특가 상품 쇼핑하기</a>
       </nav>
     </header>
   </body>
