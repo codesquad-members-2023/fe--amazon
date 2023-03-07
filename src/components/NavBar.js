@@ -4,7 +4,7 @@ class Navbar extends HTMLElement {
 
     const shadow = this.attachShadow({ mode: 'open' });
     shadow.innerHTML = `
-      <button>test</button>
+      <nav>test</nav>
     `;
   }
 }

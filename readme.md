@@ -5,11 +5,11 @@
 
 # 1주차
 
-- [ ] 컴포넌트 만들기
-  - [ ] typography
-  - [ ] color
-  - [ ] symbols
-  - [ ] button
+- [x] 컴포넌트 만들기
+  - [x] typography
+  - [x] color
+  - [x] symbols
+  - [x] button
   - [ ] navigation bar
   - [ ] footer
   - [ ] sidebar
