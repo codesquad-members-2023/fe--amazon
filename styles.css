@@ -9,7 +9,7 @@
 body {
   color: #fff;
   font-size: 13px;
-  font-family: "Pretendard";
+  font-family: "Pretendard", sans-serif;
   letter-spacing: -0.06em;
 }
 
@@ -41,11 +41,22 @@ body {
 .nav__special-offer {
   text-decoration: none;
   color: #fff;
+  font-weight: 800;
+}
+
+.header__location-img {
+  width: 8px;
+  height: 10px;
 }
 
 .header__text--upper {
   color: #d5d5d5;
   font-size: 11px;
+  font-weight: 600;
+}
+
+.header__text {
+  font-weight: 800;
 }
 
 .search-form {

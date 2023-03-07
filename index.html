@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>amazon</title>
   </head>
   <body>
@@ -12,8 +12,11 @@
       <div class="header__info">
         <img class="header__logo" src="./assets/amazon-logo.png" />
         <div class="header__link">
-          <a class="header__anchor">
-            <span class="header__text--upper">배송지</span>
+          <a class="header__anchor" href="">
+            <div class="header__shipping-address">
+              <img class="header__location-img" src="./assets/location.png" />
+              <span class="header__text--upper">배송지</span>
+            </div>
             <span class="header__text">한국</span>
           </a>
         </div>
@@ -44,13 +47,21 @@
           >
         </div>
         <div class="header__link">
-          <a class="header__anchor" href="">장바구니</a>
+          <a class="header__anchor" href="">
+            <div class="header__cart">
+              <img class="header__cart-img" src="./assets/cart.png" />
+              <span class="header__cart__text">장바구니</span>
+            </div>
+          </a>
         </div>
       </div>
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__anchor" href="">모두</a>
+            <a class="nav__anchor" href="">
+              <img class="nav__all-img" src="./assets/list.png" />
+              <span class="nav__all">모두</span>
+            </a>
           </li>
           <li class="nav__item">
             <a class="nav__anchor" href="">오늘의 딜</a>
