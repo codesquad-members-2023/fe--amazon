@@ -1,0 +1,53 @@
+.section__login__active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px;
+}
+
+.section__login__button {
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+
+  width: 160px;
+  height: 32px;
+
+  background: linear-gradient(
+    174.6deg,
+    #ffffff 4.31%,
+    #fed15f 50.01%,
+    #febe30 95.71%
+  );
+
+  border: 1px solid #de9408;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.section__login__active {
+  position: absolute;
+  top: 70px;
+  right: 120px;
+  padding: 16px;
+  gap: 8px;
+  background-color: wheat;
+  color: black;
+  z-index: 3;
+}
+
+.section__arrow {
+  position: absolute;
+  width: 18.93px;
+  height: 18.93px;
+  top: -10px;
+  right: 85px;
+  background-color: wheat;
+  z-index: 2;
+  /* White */
+  transform: rotate(45deg);
+}

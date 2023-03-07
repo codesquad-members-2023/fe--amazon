@@ -2,12 +2,15 @@
 
 /* COMPONENTS */
 @import "components/header-bar.css";
+@import "components/section-login.css";
 
 /* SCREENS */
 
 body {
   font-family: "Kanit", sans-serif;
   font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {

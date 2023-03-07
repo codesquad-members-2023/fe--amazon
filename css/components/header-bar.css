@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1120;
   min-width: 800px;
   margin: 0 auto;
   height: 60px;
@@ -36,11 +35,11 @@
 .home__header__center {
   flex: 1;
 }
+
 .home__header__right {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 373px;
   margin-right: 20px;
 }
 
@@ -76,4 +75,8 @@
 .home__header__checkOrder {
   display: flex;
   flex-direction: column;
+}
+
+.home__header__login {
+  position: relative;
 }
