@@ -60,3 +60,7 @@
   /* White */
   transform: rotate(45deg);
 }
+
+.home__header__login:hover + .section__login {
+  display: none;
+}
