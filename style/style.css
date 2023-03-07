@@ -131,12 +131,16 @@ body {
   color: var(--color-gray-400);
 }
 
+.country > span > img {
+  width: 10px;
+  height: 10px;
+}
+
 .search-form__content {
-  flex-grow: 5;
+  flex-grow: 12;
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 50%;
 
 }
 
@@ -189,6 +193,11 @@ body {
 
 .basket {
   flex-grow: 1;
+}
+
+.basket > img {
+  width: 10px;
+  height: 10px;
 }
 
 .nav-bar__sub {

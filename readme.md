@@ -23,7 +23,7 @@
 
 - [x] readme 작성하기
 - html 레이아웃 만들기
-  - [ ] 상단 header 영역
+  - [x] 상단 header 영역
   - [ ] 좌측 사이드 메뉴
 - 모달
   - [ ] 우측 상단: 국가, 계정 및 목록
@@ -48,6 +48,73 @@
 - feature1 브랜치에서 작업 후, pr을 날린 상태에서 feature1을 기반으로 feature2를 작업해야한다. 이 때, 아직 feature1이 머지가 안되었다면 어떻게 할까?
   - feature1에서 feature2 브랜치를 따서 작업한다. 이후 feature1이 main에 머지되면 자연스럽게 feature2도 main에서 따온 것처럼 된다.
 
+- css에서 변수를 만들어서 사용하기
+  - 아래와 같이 `:root` 에 변수를 설정해준다.
+  - 설정한 변수를 `var(변수명)`형태로 사용한다.
+
+```css
+/* Global */
+
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-gray-100: #eff2f2;
+  --color-gray-200: #e5e9e9;
+  --color-gray-300: #dce0e0;
+  --color-gray-400: #d5d5d5;
+  --color-gray-500: #c1c1c1;
+  --color-gray-600: #878787;
+  --color-gray-700: #535353;
+  --color-gray-800: #2a3648;
+  --color-gray-900: #1b232f;
+  --color-black: #10141a;
+  --color-black-tr40: rgba(16, 20, 26, 0.4);
+
+  --color-yellow-100: #fed15f;
+  --color-yellow-200: #febe30;
+  --color-yellow-300: #de9408;
+  --color-orange-100: #fcb057;
+  --color-orange-200: #ff9900;
+
+  --color-purple: #941387;
+  --color-navy: #074099;
+  --color-green: #0c5e72;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+}
+
+div {
+  color: var(--color-orange-100);
+}
+```
+
+- box-sizing 설정
+  - 기본적으로 `content-box`로 설정되어있다.
+    - content-box: width, height가 padding 내부의 content를 기준으로 한다.
+    - border-box: width, height가 content, padding, border를 포함한 것을 기준으로 한다.
+
+- `reset css` vs `normalize css`
+  - reset css: 브라우저가 기본적으로 제공하는 내장 스타일을 모두 초기화
+    - 최근에는 [new css reset](https://elad2412.github.io/the-new-css-reset/)이 자주 사용된다.
+  - normalize css: 가능한 브라우저들의 내장 스타일을 건드리지 않는 선에서 브라우저들 간의 차이점을 통일
+    - 같은 `h1` 태그라도 브라우저마다 여백의 크기가 조금씩 다를 수 있다. 이런 부분을 동일하게 통일해준다.
+
+- css 상속(inheritance)과 적용 우선 순위(cascading)
+  - 상속: 상위(부모) 태그에 적용된 스타일이 하위(자식) 태그에도 상속되어 적용되는 것
+    - 몇몇 상속이 안되는 스타일이 있는데, 주로 box-model과 관련된 스타일이다. ex) padding
+  - 적용 우선 순위: css는 어떻게 스타일을 적용하느냐에 따라 그 우선순위가 다르다.
+    - 우선순위로는 `사용자 설정` - `inline style` - `internal stylesheet` - `external stylesheet` - `browser default`로 점점 낮아진다.
+  - 주의) css의 상속과 캐스케이딩은 엄밀히 다른 개념!!!
+
+- `display: flex`에서 `flex-grow` 속성이란?
+  - display가 flex로 설정된 태그의 자식 태그들에 사용하며, 각 자식 태그들은 기본적으로 `flex-grow: 0;`이다.
+  - 더 높은 숫자를 설정하게 되 다른 태그들과의 사이에서 해당 숫자의 크기 비율을 갖는다.
+
 - 웹 접근성(예정)
 - 웹 사이트 접속 시 브라우저의 렌더링 과정(예정)
 
@@ -56,3 +123,6 @@
 - [Naver Coding Convention](https://github.com/naver/eslint-config-naver/blob/master/STYLE_GUIDE.md)
 - [CSS BEM](https://nykim.work/15)
 - [HTML elements & attributes](https://heropy.blog/2019/05/26/html-elements/)
+- [Box-model: content-box vs border-box](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
+- [reset css과 normalize css](https://www.daleseo.com/css-normalize-reset/)
+- [css 상속(inheritance)과 적용 우선 순위(cascading)](https://poiemaweb.com/css3-inheritance-cascading)
