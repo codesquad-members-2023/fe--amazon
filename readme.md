@@ -8,7 +8,6 @@
   - [ ] HTML 5 Layout tag
   - [ ] HTML 웹접근성
 - [ ] CSS
-  - [ ] CSS BEM
   - [ ] CSS Flexbox 사용법 정리
 - [ ] 브라우저의 렌더링과정
 - [ ] 코딩컨벤션
