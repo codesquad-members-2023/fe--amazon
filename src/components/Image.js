@@ -9,7 +9,7 @@ class Image extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
 
     if (extension === 'svg') {
-      return fetch(`public/assets/images/${name}.${extension}`)
+      fetch(`public/assets/images/${name}.${extension}`)
         .then((response) => response.text())
         .then((svgContent) => {
           shadow.innerHTML = this.hasAttribute('fill')
@@ -20,11 +20,11 @@ class Image extends HTMLElement {
             : svgContent;
         })
         .catch((error) => console.error(error));
+    } else {
+      const img = document.createElement('img');
+      img.src = `public/assets/images/${name}.${extension}`;
+      shadow.appendChild(img);
     }
-
-    const img = document.createElement('img');
-    img.src = `public/assets/images/${name}.${extension}`;
-    shadow.appendChild(img);
   }
 }
 
