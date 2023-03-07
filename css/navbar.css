@@ -63,8 +63,22 @@ nav {
   border-radius: 0px 4px 4px 0px;
   padding: 0px 0px 0px 0px;
   border: 0px;
+  margin-right: 24px;
 }
 
+.country_info {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -0.06em;
+  margin-right: 24px;
+}
+#country {
+  margin-right: 4px;
+}
 .up_nav {
   display: flex;
   align-items: center;
