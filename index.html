@@ -11,12 +11,20 @@
     <header class="header">
       <div class="header__info">
         <a class="header__logo" href="">
-          <img class="header__logo-img" src="./assets/amazon-logo.svg" />
+          <img
+            class="header__logo-img"
+            src="./assets/amazon-logo.svg"
+            alt="amazon logo image"
+          />
         </a>
         <div class="header__link">
           <a class="header__anchor" href="">
             <div class="header__shipping-address">
-              <img class="header__location-img" src="./assets/location.svg" />
+              <img
+                class="header__location-img"
+                src="./assets/location.svg"
+                alt="shipping image"
+              />
               <span class="header__text--upper">배송지</span>
             </div>
             <span class="header__text">한국</span>
@@ -29,39 +37,69 @@
             placeholder="검색 Amazon"
           />
           <button class="search-form__button" type="submit">
-            <img class="search-form__glass-img" src="./assets/search.svg" />
+            <img
+              class="search-form__glass-img"
+              src="./assets/search.svg"
+              alt="glass image"
+            />
           </button>
         </form>
 
         <div class="header__link">
-          <a class="header__anchor" href="">ko</a>
+          <a class="header__anchor" href="">
+            <div class="header__translate">
+              <img
+                class="header__flag-img"
+                src="./assets/flag.svg"
+                alt="flag image"
+              />
+              <span class="header__translate-lang">ko</span>
+            </div>
+          </a>
         </div>
-        <div class="header__link">
-          <a class="header__anchor" href=""
-            ><span class="header__text--upper">안녕하세요,로그인</span>
-            <span class="header__text">계정 및 목록</span></a
-          >
+        <div class="header__link header__link--login">
+          <a class="header__anchor header__anchor--login" href="">
+            <span class="header__text--upper">안녕하세요,로그인</span>
+            <span class="header__text">계정 및 목록</span>
+          </a>
+
+          <div class="pop-up pop-up--login hidden">
+            <button class="button button--large">로그인</button>
+            <span class="pop-up__text pop-up__text--login">
+              기존 사용자가 아니십니까?
+              <a class="pop-up__link" href=""> 여기에서 시작합니다.</a>
+            </span>
+          </div>
         </div>
         <div class="header__link">
           <a class="header__anchor" href=""
             ><span class="header__text--upper">반품</span>
-            <span class="header__text">& 주문</span></a
-          >
+            <span class="header__text">& 주문</span>
+          </a>
         </div>
         <div class="header__link">
           <a class="header__anchor" href="">
             <div class="header__cart">
-              <img class="header__cart-img" src="./assets/cart.svg" />
+              <img
+                class="header__cart-img"
+                src="./assets/cart.svg"
+                alt="cart image"
+              />
               <span class="header__cart__text">장바구니</span>
             </div>
           </a>
         </div>
       </div>
+
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item">
             <a class="nav__anchor" href="">
-              <img class="nav__all-img" src="./assets/list.svg" />
+              <img
+                class="nav__all-img"
+                src="./assets/list.svg"
+                alt="list image"
+              />
               <span class="nav__all">모두</span>
             </a>
           </li>
@@ -84,5 +122,7 @@
         <a class="nav__special-offer" href="">지금 특가 상품 쇼핑하기</a>
       </nav>
     </header>
+
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>

@@ -20,7 +20,7 @@ body {
 
 .header__info {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 24px;
 }
 
@@ -33,6 +33,10 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
+}
+
+.header__link--login {
+  position: relative;
 }
 
 .header__anchor {
@@ -49,13 +53,6 @@ body {
   font-weight: 800;
 }
 
-.header__location-img {
-  width: 8px;
-  height: 10px;
-  filter: invert(0%) sepia(8%) saturate(7500%) hue-rotate(355deg)
-    brightness(90%) contrast(110%);
-}
-
 .header__text--upper {
   color: #d5d5d5;
   font-size: 11px;
@@ -66,9 +63,11 @@ body {
   font-weight: 800;
 }
 
+.header__translate,
 .header__cart {
   display: flex;
   align-items: center;
+  gap: 4px;
 }
 
 .search-form {
@@ -110,4 +109,60 @@ body {
 .nav__item {
   list-style: none;
   padding: 8px;
+}
+
+/* 글로벌하게 사용 */
+
+/* 명시도 높이기 */
+.pop-up.hidden,
+.hidden {
+  display: none;
+}
+
+.pop-up {
+  position: absolute;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pop-up--login {
+  right: 10px;
+  /* top 값 바꾸기 */
+  top: 48px;
+  gap: 8px;
+}
+
+.pop-up__text {
+  color: #10141a;
+}
+
+.pop-up__text--login {
+  white-space: nowrap;
+}
+
+.pop-up__link {
+  color: #074099;
+  text-decoration: none;
+}
+
+.button {
+  background: linear-gradient(
+    174.6deg,
+    #ffffff 4.31%,
+    #fed15f 50.01%,
+    #febe30 95.71%
+  );
+  border: 1px solid #de9408;
+  border-radius: 4px;
+}
+
+.button--large {
+  width: 160px;
+  height: 32px;
 }
