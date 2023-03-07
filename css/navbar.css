@@ -207,6 +207,21 @@ nav {
   color: #074099;
 }
 
+@keyframes appearAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.login {
+  opacity: 0;
+  animation: appearAnimation 1s forwards;
+  animation-delay: 1s;
+}
+
 .down_nav {
   height: 32px;
   padding: 0px 16px 0px 16px;
