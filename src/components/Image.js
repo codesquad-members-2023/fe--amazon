@@ -8,17 +8,23 @@ class Image extends HTMLElement {
       : 'svg';
     const shadow = this.attachShadow({ mode: 'open' });
 
-    fetch(`public/assets/images/${name}.${extension}`)
-      .then((response) => response.text())
-      .then((svgContent) => {
-        shadow.innerHTML = this.hasAttribute('fill')
-          ? svgContent.replace(
-              /fill=\".+\"/g,
-              `fill="${this.getAttribute('fill')}"`
-            )
-          : svgContent;
-      })
-      .catch((error) => console.error(error));
+    if (extension === 'svg') {
+      return fetch(`public/assets/images/${name}.${extension}`)
+        .then((response) => response.text())
+        .then((svgContent) => {
+          shadow.innerHTML = this.hasAttribute('fill')
+            ? svgContent.replace(
+                /fill=\".+\"/g,
+                `fill="${this.getAttribute('fill')}"`
+              )
+            : svgContent;
+        })
+        .catch((error) => console.error(error));
+    }
+
+    const img = document.createElement('img');
+    img.src = `public/assets/images/${name}.${extension}`;
+    shadow.appendChild(img);
   }
 }
 
