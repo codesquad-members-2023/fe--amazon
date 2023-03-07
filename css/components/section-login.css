@@ -1,19 +1,17 @@
-.section__login__active {
+.section__login {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   padding: 20px;
+  box-shadow: 0px 3px 6px rgba(0 0 0 / 50%);
 }
 
 .section__login__button {
   box-sizing: border-box;
-
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px 10px;
-
   width: 160px;
   height: 32px;
 
@@ -29,15 +27,26 @@
   margin-bottom: 15px;
 }
 
-.section__login__active {
+.section__login {
   position: absolute;
-  top: 70px;
+  top: 65px;
   right: 120px;
   padding: 16px;
   gap: 8px;
-  background-color: wheat;
+  background-color: white;
   color: black;
   z-index: 3;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.section__login.hidden {
+  visibility: hidden;
+}
+
+.section__login.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .section__arrow {
@@ -46,7 +55,7 @@
   height: 18.93px;
   top: -10px;
   right: 85px;
-  background-color: wheat;
+  background-color: white;
   z-index: 2;
   /* White */
   transform: rotate(45deg);
