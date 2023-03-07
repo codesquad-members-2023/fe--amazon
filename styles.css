@@ -24,6 +24,11 @@ body {
   gap: 24px;
 }
 
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
 .header__link {
   list-style: none;
   display: flex;
