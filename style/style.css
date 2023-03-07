@@ -99,7 +99,6 @@ body {
 
 .nav-bar__main {
   display: flex;
-  flex-grow: 0;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -114,7 +113,13 @@ body {
 
 }
 
+.logo {
+  flex-grow: 1;
+  text-align: center;
+}
+
 .country {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -127,10 +132,12 @@ body {
 }
 
 .search-form__content {
+  flex-grow: 5;
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 50%;
+
 }
 
 .search-form__input {
@@ -155,10 +162,15 @@ body {
 }
 
 .language {
+  flex-grow: 1;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+}
+
+.login-account {
+  flex-grow: 1;
 }
 
 .login-account > span {
@@ -166,14 +178,21 @@ body {
   color: var(--color-gray-400);
 }
 
+.return-order {
+  flex-grow: 1;
+}
+
 .return-part {
   font: var(--bold-sm);
   color: var(--color-gray-400);
 }
 
+.basket {
+  flex-grow: 1;
+}
+
 .nav-bar__sub {
   display: flex;
-  flex-grow: 0;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
