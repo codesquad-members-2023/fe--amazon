@@ -79,6 +79,35 @@ nav {
 #country {
   margin-right: 4px;
 }
+
+.menu {
+  margin-right: 24px;
+}
+.menus_upside {
+  font-size: 11px;
+  color: #d5d5d5;
+  font-weight: 600;
+  line-height: 13px;
+  letter-spacing: -0.06em;
+  margin-bottom: 0.5px;
+}
+
+.menus_downside {
+  font-size: 13px;
+  color: #ffffff;
+  line-height: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  letter-spacing: -0.06em;
+}
+
+.cart {
+  display: flex;
+  flex-direction: row;
+}
+.cart img {
+  margin-right: 6.33px;
+}
 .up_nav {
   display: flex;
   align-items: center;
