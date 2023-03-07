@@ -47,6 +47,8 @@ body {
 .header__location-img {
   width: 8px;
   height: 10px;
+  filter: invert(0%) sepia(8%) saturate(7500%) hue-rotate(355deg)
+    brightness(90%) contrast(110%);
 }
 
 .header__text--upper {
@@ -57,6 +59,11 @@ body {
 
 .header__text {
   font-weight: 800;
+}
+
+.header__cart {
+  display: flex;
+  align-items: center;
 }
 
 .search-form {
