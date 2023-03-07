@@ -78,6 +78,7 @@
   width: 747px;
   height: 40px;
   border-radius: 4px;
+
   flex: none;
   order: 2;
   flex-grow: 0;
@@ -107,6 +108,7 @@
 .nation {
   width: 35px;
   height: 16px;
+
   flex: none;
   order: 3;
   flex-grow: 0;
@@ -119,6 +121,7 @@
   padding: 0px;
   width: 76px;
   height: 29px;
+
   flex: none;
   order: 4;
   flex-grow: 0;
@@ -131,6 +134,7 @@
   padding: 0px;
   width: 32px;
   height: 29px;
+
   flex: none;
   order: 5;
   flex-grow: 0;
@@ -139,45 +143,55 @@
 .cart {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: flex-end;
+  align-items : center;
   padding: 0px;
   gap: 4px;
   width: 71px;
   height: 24px;
+
   flex: none;
   order: 6;
   flex-grow: 0;
 }
 
 .nav_bar_sub {
-  width: 1280px;
-  height: 32px;
-  background-color: #1B232F;
-  line-height: 15.51px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0px 16px;
-  gap: 759px;
+  width: 1280px;
+  height: 32px;
+  background: #1B232F;
 }
 
 .left_btn {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: space-between;
   width: 387px;
   height: 32px;
 }
 
-.right_btn {
+.side_bar {
+  width: 58px;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.left_btn div {
+  padding: 8px;
+}
+
+.right_btn {
   padding: 8px 0px;
-  gap: 4px;
-  width: 112px;
+  margin: 0;
+  width: 113px;
   height: 32px;
+  text-align: right;
 }
 
 .main {
