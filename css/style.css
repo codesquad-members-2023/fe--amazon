@@ -1,0 +1,14 @@
+.nav {
+  width: 1280px;
+}
+.up_nav {
+  height: 56px;
+  padding: 8px, 16px, 8px, 16px;
+  background-color: black;
+}
+.down_nav {
+  height: 32px;
+  padding: 0px, 16px, 0px, 16px;
+  justify-content: space-between;
+  background-color: #1b232f;
+}
