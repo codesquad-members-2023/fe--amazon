@@ -12,12 +12,22 @@ class Image extends HTMLElement {
       fetch(`public/assets/images/${name}.${extension}`)
         .then((response) => response.text())
         .then((svgContent) => {
+          this.width = this.getAttribute('width');
+          this.height = this.getAttribute('height');
+          const width = this.width;
+          const height = this.height;
+
+          let svg = svgContent;
+          if (width && height) {
+            svg = svg.replace(
+              /<svg/g,
+              `<svg height="${height}px" width="${width}"`
+            );
+          }
+
           shadow.innerHTML = this.hasAttribute('fill')
-            ? svgContent.replace(
-                /fill=\".+\"/g,
-                `fill="${this.getAttribute('fill')}"`
-              )
-            : svgContent;
+            ? svg.replace(/fill=\".+\"/g, `fill="${this.getAttribute('fill')}"`)
+            : svg;
 
           this.shadowRoot.append(this.getStyle());
         })
@@ -31,13 +41,13 @@ class Image extends HTMLElement {
 
   getStyle() {
     const style = document.createElement('style');
-    const size = this.size;
+    const width = this.width;
+    const height = this.height;
 
     style.textContent = `
       :host {
         display: inline-block;
-        width: fit-content;
-        height: fit-content;
+        ${width && height ? `width: ${width}px; height: ${height}px` : ''};
       }
     `;
     return style;

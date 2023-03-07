@@ -21,7 +21,10 @@ class MainMenu extends HTMLElement {
       a {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
         color: var(--gray-400);
+        padding: 8px;
 
         text-decoration: none;
         
@@ -30,6 +33,12 @@ class MainMenu extends HTMLElement {
         line-height: var(--bold-md-height);
         letter-spacing: var(--bold-md-spacing);
         width: max-content;
+        height: 100%;
+        border-radius: 1px;
+      }
+
+      a:hover {
+        outline: 1px solid var(--white);
       }
 
       span {

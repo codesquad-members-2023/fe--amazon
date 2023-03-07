@@ -43,6 +43,12 @@ class SubMenu extends HTMLElement {
         font-size: var(--bold-md-size);
         line-height: 16px;
         letter-spacing: var(--bold-md-spacing);
+
+        border-radius: 1px;
+      }
+
+      a:hover {
+        outline: 1px solid var(--white);
       }
 
       span {

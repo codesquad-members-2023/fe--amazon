@@ -8,7 +8,7 @@ class Icon extends HTMLElement {
     fetch(`public/assets/symbols/${name}.svg`)
       .then((response) => response.text())
       .then((svgContent) => {
-        this.size = this.getAttribute('size');
+        this.size = this.hasAttribute('size') ? this.getAttribute('size') : 24;
         const size = this.size;
 
         let svg = svgContent;
