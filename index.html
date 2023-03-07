@@ -9,29 +9,41 @@
   </head>
   <body>
     <header class="home__header">
-      <div class="home__header__logo"><img src="photo/amazonlogo.png" /></div>
-      <div class="home__header__location">
-        <div class="location__info">
-          <i class="fa-solid fa-location-dot"></i>
-          <span class="location__info__name">배송지</span>
+      <div class="home__header__left">
+        <div class="home__header__logo"><img src="photo/amazonlogo.png" /></div>
+        <div class="home__header__location">
+          <div class="location__info">
+            <i class="fa-solid fa-location-dot" style="font-size: 11px"></i>
+            <span class="location__info__name, small__font">배송지</span>
+          </div>
+          <span class="location__info__country">대한민국</span>
         </div>
-        <span class="location__info__country">대한민국</span>
       </div>
-      <div class="home__header__search">
-        <input type="text" placeholder="Amazon 검색" />
-        <i class="fa-solid fa-magnifying-glass"></i>
+      <div class="home__header__center">
+        <form class="home__header__search">
+          <input type="text" placeholder="Amazon 검색" />
+          <button class="home__header__search__button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
       </div>
-      <div class="home__header__login">
-        <span class="login__hello">안녕하세요. 로그인</span>
-        <span class="login__list">계정 및 목록</span>
-      </div>
-      <div class="home__header__checkOrder">
-        <span class="checkOrder__cancel">반품</span>
-        <span class="checkOrder__order">&주문</span>
-      </div>
-      <div class="home__header__basket">
-        <i class="fa-solid fa-basket-shopping"></i>
-        <span class="basket__name">장바구니</span>
+      <div class="home__header__right">
+        <div class="home__header__country">
+          <span>🇰🇷</span>
+          <span>KR</span>
+        </div>
+        <div class="home__header__login">
+          <span class="login__hello, small__font">안녕하세요. 로그인</span>
+          <span class="login__list">계정 및 목록</span>
+        </div>
+        <div class="home__header__checkOrder">
+          <span class="checkOrder__cancel, small__font">반품</span>
+          <span class="checkOrder__order">&주문</span>
+        </div>
+        <div class="home__header__basket">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="basket__name">장바구니</span>
+        </div>
       </div>
     </header>
   </body>
