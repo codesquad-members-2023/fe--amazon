@@ -1,5 +1,5 @@
 const loginMenu = document.querySelector('#loginMenu');
-const loginModal = document.querySelector('.nav_login');
+const loginModal = document.querySelector('.login_modal');
 
 const hoverLoginModal = document.querySelector('.hover_login_modal');
 const loginSection = document.querySelector('.login_section');
@@ -15,6 +15,6 @@ loginMenu.addEventListener('mouseover', () => {
 // 마우스가 로그인 영역, 모달영역을 벗어날 경우 로그인 모달을 지운다.
 loginSection.addEventListener('mouseout', () => {
   hoverLoginModal.style.display = 'none';
-  loginModal.style.display = 'flex';
+  loginModal.style.display = 'none';
   body.style.background = '';
 });
