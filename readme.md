@@ -109,11 +109,17 @@ div {
     - 몇몇 상속이 안되는 스타일이 있는데, 주로 box-model과 관련된 스타일이다. ex) padding
   - 적용 우선 순위: css는 어떻게 스타일을 적용하느냐에 따라 그 우선순위가 다르다.
     - 우선순위로는 `사용자 설정` - `inline style` - `internal stylesheet` - `external stylesheet` - `browser default`로 점점 낮아진다.
-  - 주의) css의 상속과 캐스케이딩은 엄밀히 다른 개념!!!
+    - 또한, css의 `specificity`에 따라 `class`보다 `id`가 스타일에 대한 우선순위를 갖는다.(더욱 자세한 선택자일수록 우선순위를 갖는다.)
+  - (주의) css의 상속과 캐스케이딩은 엄밀히 다른 개념!!!
 
 - `display: flex`에서 `flex-grow` 속성이란?
   - display가 flex로 설정된 태그의 자식 태그들에 사용하며, 각 자식 태그들은 기본적으로 `flex-grow: 0;`이다.
   - 더 높은 숫자를 설정하게 되 다른 태그들과의 사이에서 해당 숫자의 크기 비율을 갖는다.
+
+- css 상대 단위 2대장: `em` vs `rem`
+  - em: 위치한 곳을 기준으로 font-size에 대한 배율(해당 요소에 font-size 없으면 부모 요소, 없으면 또 부모 요소)
+  - rem: 위치한 곳과 상관없이 가장 최상위 요소(root; html 태그)의 font-size에 대한 배율
+  - (주의) em은 너무 상대적인 느낌이고 rem은 그나마 절대적인 root를 기준으로 하기에, rem 사용을 좀더 추천한다.
 
 - 웹 접근성(예정)
 - 웹 사이트 접속 시 브라우저의 렌더링 과정(예정)
