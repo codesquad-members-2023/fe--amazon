@@ -26,3 +26,18 @@
     - [x] : html 구현
       - [x] : header-top 구역
 
+## :three: 수요일 학습계획
+
+- [ ] : 개념 공부
+  - [ ] : eslint, prettier 학습 & 설치
+  - [ ] : css root 변수 사용법 학습
+- [ ] : 프로젝트 수행 
+  - [x] : main 화면 상단 header 영역 구현
+    - [x] : html 구현
+      - [x] : header-bottom 구역
+    - [x] : css 구현
+      - [x] : header 영역 스타일 구현
+        - [x] : 레이아웃
+        - [ ] : 폰트, 폰트 사이즈
+        - [x] : 아이콘 색상 변경 
+    - [ ] : 현재까지 구현 한 html,css 리팩
