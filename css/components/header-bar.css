@@ -33,7 +33,7 @@
 }
 
 .home__header__center {
-  flex: 1;
+  flex-grow: 1;
 }
 
 .home__header__right {
