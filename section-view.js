@@ -1,6 +1,11 @@
 const headerLogin = document.querySelector(".home__header__login");
+const headerLocation = document.querySelector(".home__header__location");
+
 const loginSection = document.querySelector(".section__login");
 const loginSectionDetail = document.querySelector(".section__login2");
+
+const locationSection = document.querySelector(".section__location");
+
 const dimmDiv = document.querySelector(".dimmed");
 
 setTimeout(function () {
@@ -23,9 +28,23 @@ const hiddenLoginSectionDetail = () => {
   dimmDiv.classList.add("hidden");
 };
 
+// 최초 1회 보이는 로그인 센션 제거
 headerLogin.addEventListener("mouseout", removeLoginSection);
 
+// 로그인 호버 이벤트 리스트
 headerLogin.addEventListener("mouseover", showLoginSectionDetail);
 headerLogin.addEventListener("mouseout", hiddenLoginSectionDetail);
 loginSectionDetail.addEventListener("mouseover", showLoginSectionDetail);
 loginSectionDetail.addEventListener("mouseout", hiddenLoginSectionDetail);
+
+const showLocationSectionDetail = () => {
+  dimmDiv.classList.remove("hidden");
+};
+
+const hiddenLocationSectionDetail = () => {
+  dimmDiv.classList.add("hidden");
+};
+
+// 로케이선 호버 이벤트 리스트
+headerLocation.addEventListener("mouseover", showLocationSectionDetail);
+headerLocation.addEventListener("mouseout", hiddenLocationSectionDetail);
