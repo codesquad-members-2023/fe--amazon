@@ -9,13 +9,25 @@
   - [ ] 모달영역 구현시 alert이나 confirm 함수를 사용하는 것이 아니다.
   - [ ] 모달의 위치는 디자인 가이드라인에서 지정된 위치에 노출되도록 한다.
 
-#### 3/6
+<details>
+<summary>1주차 계획</summary>
+<div markdown="1">
+
+### 3/6
 
 github
 
-- [ ] draft pull request 정리
-- [ ] label
+- [x] draft pull request 정리
+- [x] label
 
 html
 
-- [ ] html 구조 정리
+- [x] html 구조 정리
+
+### 3/7 ~ 3/8
+
+- [ ] html header 구조 짜기
+- [ ] header css 적용해보기
+
+</div>
+</details>
