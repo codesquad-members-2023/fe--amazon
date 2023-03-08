@@ -7,6 +7,7 @@
 
 a {
   text-decoration: none;
+  color: #074099;
 }
 
 img {
@@ -18,7 +19,20 @@ img {
   background-color: #FFFFFF;
   position: absolute;
   top: 56px;
+  padding: 16px;
+  border-radius: 4px;
   z-index: 9;
+}
+
+.modal button {
+  background: linear-gradient(174.6deg, #FFFFFF 4.31%, #FED15F 50.01%, #FEBE30 95.71%);
+  border: 1px solid #DE9408;
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 10px;
+  margin-top: 26px;
+  color: #10141A;
+  justify-items: right;
 }
 
 /* HEADER */
@@ -42,6 +56,7 @@ header {
 .main-menu p {
   font-size: 13px;
   font-weight: 800;
+  cursor: pointer;
 }
 
 .main-menu .label {
@@ -51,7 +66,7 @@ header {
 }
 
 .main-menu .text-box {
-  margin: 13.5px 0 13.5px 29px;
+  padding: 13.5px 0 13.5px 29px;
 }
 
 .main-menu .logo {
@@ -76,8 +91,6 @@ header {
 
 .main-menu .shipping-address .modal {
   width: 320px;
-  padding: 16px;
-  border-radius: 4px;
 }
 
 .modal .modal__text {
@@ -90,10 +103,6 @@ header {
 .main-menu .shipping-address:hover .modal,
 .main-menu .shipping-address:hover .pointer {
   display: block;
-}
-
-.main-menu .shipping-address:hover header {
-  background-color: rebeccapurple;
 }
 
 .main-menu .search-bar {
@@ -135,6 +144,41 @@ header {
   margin-right: 3px;
 }
 
+.main-menu .log-in {
+  position: relative;
+}
+
+.main-menu .log-in .pointer {
+  display: none;
+  position: absolute;
+  width: 18.93px;
+  height: 18.93px;
+  left: 67px;
+  top: 48px;
+  background: #FFFFFF;
+  transform: matrix(0.75, 0.66, -0.75, 0.66, 0, 0);
+}
+
+.main-menu .log-in .modal {
+  width: 235px;
+  right: 0;
+}
+
+.main-menu .log-in .modal button {
+  width: 160px;
+  margin-bottom: 6px;
+}
+
+.main-menu .log-in .modal p {
+  text-align: center;
+}
+
+.main-menu .log-in:hover .modal,
+.main-menu .log-in:hover .pointer,
+.main-menu .log-in:hover .modal__content {
+  display: block;
+}
+
 .main-menu .shopping-basket {
   margin: 0 8px 0 52px;
 }
@@ -166,18 +210,6 @@ header {
 .sub-menu li:last-child {
   flex: 1;
   text-align: right;
-}
-
-.modal button {
-  background: linear-gradient(174.6deg, #FFFFFF 4.31%, #FED15F 50.01%, #FEBE30 95.71%);
-  /* PrimaryYellow300 */
-  border: 1px solid #DE9408;
-  border-radius: 4px;
-  font-size: 11px;
-  padding: 10px;
-  margin-top: 26px;
-  color: #10141A;
-  justify-items: right;
 }
 
 /* SECTION */
