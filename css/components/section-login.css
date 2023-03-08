@@ -102,7 +102,3 @@
   font-size: 13px;
   font-weight: 800;
 }
-
-.home__header__login:hover ~ .section__login2 {
-  display: flex;
-}
