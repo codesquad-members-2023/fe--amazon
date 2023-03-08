@@ -6,11 +6,10 @@ class Navbar extends HTMLElement {
     shadow.innerHTML = `
       <div class="main">
         <a href="/"><image-element name="BI"></image-element></a>
-        <navbar-mainmenu-element><span class="label"><icon-element size="12" name="location" fill="var(--gray-400)"></icon-element>배송처</span><span class="text">대한민국</span></navbar-mainmenu-element>
-
+        <navbar-mainmenu-element id="selectCountryBtn"><span class="label"><icon-element size="12" name="location" fill="var(--gray-400)"></icon-element>배송처</span><span class="text">대한민국</span></navbar-mainmenu-element>
         <text-input-element placeholder="검색 Amazon"></text-input-element> 
         <navbar-mainmenu-element><span class="text"><image-element name="flag" height="14" width="14"></image-element>KO</span></navbar-mainmenu-element>
-        <navbar-mainmenu-element><span class="label">안녕하세요,</span><span class="text">로그인 계정 및 목록</span></navbar-mainmenu-element>
+        <navbar-mainmenu-element id="loginBtn"><span class="label">안녕하세요,</span><span class="text">로그인 계정 및 목록</span></navbar-mainmenu-element>
         <navbar-mainmenu-element><span class="label">반품 &</span><span class="text">주문</span></navbar-mainmenu-element>
         <navbar-mainmenu-element><span  class="text"><icon-element size="24" name="cart" fill="var(--primary-orange-200)"></icon-element>장바구니</span></navbar-mainmenu-element>
       </div>
@@ -39,13 +38,17 @@ class Navbar extends HTMLElement {
     style.textContent = `
       :host {
         display: block;
-        color: var(--white)
+        color: var(--white);
+        position: fixed;
+        z-index: 1;
+        width: 100%;
       }
 
       .main, .sub {
         display: flex;
         gap: 8px;
         align-items: center;
+        box-sizing: border-box;
       }
 
       .main {

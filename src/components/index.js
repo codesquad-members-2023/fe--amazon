@@ -9,6 +9,9 @@ import Icon from './Icon.js';
 import Image from './Image.js';
 import TextInput from './TextInput.js';
 import Action from './Action.js';
+import LoginAction from './Action/LoginAction.js';
+import LoginActionWithFooter from './Action/LoginActionWithFooter.js';
+import ChangeAdressAction from './Action/ChangeAddressAction.js';
 
 customElements.define('btn-element', Button);
 customElements.define('footer-element', Footer);
@@ -21,3 +24,9 @@ customElements.define('icon-element', Icon);
 customElements.define('image-element', Image);
 customElements.define('text-input-element', TextInput);
 customElements.define('action-element', Action);
+customElements.define('login-action-element', LoginAction);
+customElements.define(
+  'login-action-with-footer-element',
+  LoginActionWithFooter
+);
+customElements.define('change-address-action-element', ChangeAdressAction);

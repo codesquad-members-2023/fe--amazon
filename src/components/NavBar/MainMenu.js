@@ -6,9 +6,9 @@ class MainMenu extends HTMLElement {
     const inner = this.innerHTML;
 
     shadow.innerHTML = `
-      <a href="/">
+      <button>
         ${inner}
-      </a>
+      </button>
     `;
 
     this.shadowRoot.append(this.getStyle());
@@ -18,13 +18,15 @@ class MainMenu extends HTMLElement {
     const style = document.createElement('style');
 
     style.textContent = `
-      a {
+      button {
         display: flex;
         flex-direction: column;
         justify-content: center;
         box-sizing: border-box;
         color: var(--gray-400);
         padding: 8px;
+        background-color: transparent;
+        border: none;
 
         text-decoration: none;
         
@@ -37,8 +39,9 @@ class MainMenu extends HTMLElement {
         border-radius: 1px;
       }
 
-      a:hover {
+      button:hover {
         outline: 1px solid var(--white);
+        cursor: pointer;
       }
 
       span {

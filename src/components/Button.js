@@ -6,8 +6,6 @@ class Button extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
 
     shadow.innerHTML = `<button>${text}</button>`;
-    this.shadowRoot.querySelector('button').classList.add('bold-sm');
-
     this.shadowRoot.append(this.getStyle());
   }
 
