@@ -64,6 +64,7 @@ class TextInput extends HTMLElement {
 
       button:hover {
         background-color: var(--primary-orange-200);
+        cursor: pointer;
       }
 
       button:focus {

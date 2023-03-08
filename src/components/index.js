@@ -8,6 +8,7 @@ import Sidebar from './Sidebar.js';
 import Icon from './Icon.js';
 import Image from './Image.js';
 import TextInput from './TextInput.js';
+import Action from './Action.js';
 
 customElements.define('btn-element', Button);
 customElements.define('footer-element', Footer);
@@ -19,3 +20,4 @@ customElements.define('sidebar-element', Sidebar);
 customElements.define('icon-element', Icon);
 customElements.define('image-element', Image);
 customElements.define('text-input-element', TextInput);
+customElements.define('action-element', Action);

@@ -13,7 +13,7 @@ class Button extends HTMLElement {
 
   getStyle() {
     const style = document.createElement('style');
-    const width = this.getAttribute('width');
+    const type = this.getAttribute('type');
 
     style.textContent = `
       button {
@@ -23,7 +23,7 @@ class Button extends HTMLElement {
         align-items: center;
         padding: 0px 10px;
         height: 32px;
-        width: ${width ? width + 'px' : 'auto'};
+        width: ${type === 'flexible' ? '160px' : 'auto'};
         
         background: linear-gradient(174.6deg, var(--white) 4.31%, var(--primary-yellow-100) 50.01%, var(--primary-yellow-200) 95.71%);
 
@@ -34,6 +34,10 @@ class Button extends HTMLElement {
         font-size: var(--bold-sm-size);
         line-height: var(--bold-sm-height);
         letter-spacing: var(--bold-sm-spacing);
+      }
+
+      button:hover {
+        cursor: pointer;
       }
     `;
     return style;
