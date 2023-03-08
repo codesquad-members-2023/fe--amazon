@@ -114,17 +114,17 @@ console.log(calculateArea(5));
 # 1주차 학습계획
 
 - [x] : 사전 학습 키워드 정리
-- [ ] : 상단 네비게이션 바
-  - [ ] : 로그인 영역
+- [x] : 상단 네비게이션 바
+  - [x] : 로그인 영역
     - [x] : 레이아웃 구성
     - [x] : 메인 페이지 진입 1초 뒤 [로그인] 레이어 버튼 출력
     - [x] : 로그인 영역 호버 전까지 유지
     - [x] : 로그인 영역 호버 후 레이어 제거
     - [x] : 로그인 영역 호버하면 [확장된 버전의 로그인] 레어어 출력
-    - [ ] : 배경 딤처리
-  - [ ] : 배송처 영역
-    - [ ] : 배송처 영역 호버하면 [주소 변경 레이어 출력
-    - [ ] : 호버된 레이어 출력시 배경 딤처리
+    - [x] : 배경 딤처리
+  - [x] : 배송처 영역
+    - [x] : 배송처 영역 호버하면 [주소 변경 레이어] 출력
+    - [x] : 호버된 레이어 출력시 배경 딤처리
 - [ ] : 사이드 바
   - [ ] : 레이아웃 구성
   - [ ] : [모두] 클릭시 사이드바 호출
@@ -252,3 +252,90 @@ headerLogin.addEventListener("mouseout", removeLoginSection);
 - section_login 레이아웃은 최초 opcity 0으로 화면에 보이지 않는다.
 - setTimeout 1초 후 visible 클래스를 추가하여 화면에 나온다.
 - 다른 header 항목을 호버하면 최초 section_login 레이아웃은 hidden된다.
+
+## 딤처리
+
+```html
+<div class="dimmed hidden"></div>
+```
+
+```css
+.dimmed {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.5;
+  background-color: rgb(0, 0, 0);
+}
+
+.dimmed.hidden {
+  display: none;
+}
+```
+
+```js
+const showLoginSectionDetail = () => {
+  loginSectionDetail.style.display = "flex";
+  dimmDiv.classList.remove("hidden");
+};
+
+const hiddenLoginSectionDetail = () => {
+  loginSectionDetail.style.display = "none";
+  dimmDiv.classList.add("hidden");
+};
+```
+
+- 딤처리용 div를 생성하여 스타일을 부여한다.
+- z-index에 주의한다. (딤처리 되는 레이어는 낮게, 딤처리 안되는 레이어는 높게)
+- position 적용이 없으면 z-index가 디폴트(static)되어 index효과가 안된다. (추가 공부 필요)
+- 호버영역(딤처리 제외)에 이벤트가 발생하면 "hidden" 클래스 제거하여 딤div를 가져온다.
+
+[dimmed 처리 방법 두가지](https://sub0709.tistory.com/35)
+
+## 호버처리
+
+### 1. JS를 이용한 호버처리
+
+- 헤더 로그인 영역에 mouseover하면 로그인 확장 레이아웃이 출력됨
+- 헤더 로그인 영역에서 mouseout하면 로그인 확장 레이아웃이 사라짐
+- 헤더 영역을 벗어나면 없어지는 문제가 있기에 로그인 확장 레이아웃 영역에도 동일 이벤트 적용
+
+- 동일 이벤트가 중복되는게 맞나....? 마우스 이벤트의 영역을 확장? 하는 방법이 있는지? 애초에 코드에 문제가 있는지...?
+
+```js
+const showLoginSectionDetail = () => {
+  loginSectionDetail.style.display = "flex";
+};
+
+const hiddenLoginSectionDetail = () => {
+  loginSectionDetail.style.display = "none";
+};
+
+// 로그인 호버 이벤트 리스트
+headerLogin.addEventListener("mouseover", showLoginSectionDetail);
+headerLogin.addEventListener("mouseout", hiddenLoginSectionDetail);
+loginSectionDetail.addEventListener("mouseover", showLoginSectionDetail);
+loginSectionDetail.addEventListener("mouseout", hiddenLoginSectionDetail);
+```
+
+### 2. CSS를 이용한 호버처리
+
+- CSS로 호버 처리했을때와 JS로 이벤트 처리했을떄의 차이점을 알고 싶어서 location영역은 CSS로 처리
+
+```css
+.home__header__location {
+  position: relative;
+}
+
+.section__location {
+  display: none;
+  position: absolute;
+}
+
+.home__header__location:hover > .section__location {
+  display: flex;
+}
+```
