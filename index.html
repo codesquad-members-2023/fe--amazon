@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>amazon</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="header__logo" href="">
+        <img
+          class="header__logo-img"
+          src="./assets/amazon-logo.svg"
+          alt="amazon logo image"
+        />
+      </a>
+
+      <div class="container container--shipping-address">
+        <a class="header__anchor header__anchor--shipping-address" href="">
+          <div class="header__link">
+            <div class="header__shipping-address">
+              <img
+                class="header__location-img"
+                src="./assets/location.svg"
+                alt="shipping image"
+              />
+              <span class="header__text--upper">배송지</span>
+            </div>
+            <span class="header__text">한국</span>
+          </div>
+        </a>
+
+        <div class="pop-up pop-up--shipping-address hidden">
+          <div
+            class="pop-up__triangle pop-up__triangle--shipping-address"
+          ></div>
+          <span class="pop-up__text pop-up__text--shipping-address">
+            kr으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을
+            보려면 배송 주소를 변경하십시오.
+          </span>
+          <div class="pop-up__button-container">
+            <button class="button">계속</button>
+            <button class="button">주소 변경</button>
+          </div>
+        </div>
+      </div>
+
+      <form class="search-form">
+        <input
+          class="search-form__input"
+          type="text"
+          placeholder="검색 Amazon"
+        />
+        <button class="search-form__button" type="submit">
+          <img
+            class="search-form__glass-img"
+            src="./assets/search.svg"
+            alt="glass image"
+          />
+        </button>
+      </form>
+
+      <a class="header__anchor" href="">
+        <div class="header__link">
+          <div class="header__translate">
+            <img
+              class="header__flag-img"
+              src="./assets/flag.svg"
+              alt="flag image"
+            />
+            <span class="header__translate-lang">ko</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="container container--login">
+        <a class="header__anchor header__anchor--login" href="">
+          <div href="" class="header__link header__link--login">
+            <span class="header__text--upper">안녕하세요,로그인</span>
+            <span class="header__text">계정 및 목록</span>
+          </div>
+        </a>
+
+        <div class="pop-up pop-up--login hidden">
+          <div class="pop-up__triangle pop-up__triangle--login"></div>
+          <button class="button button--large">로그인</button>
+          <span class="pop-up__text pop-up__text--login">
+            기존 사용자가 아니십니까?
+            <a class="pop-up__link" href=""> 여기에서 시작합니다.</a>
+          </span>
+
+          <div class="seperator-line hidden"></div>
+
+          <div class="list hidden">
+            <div class="list__container">
+              <span class="list__label"> 귀하의 목록 </span>
+              <ul class="list__items">
+                <li class="list__item">목록 생성</li>
+                <li class="list__item">목록 또는 레지스트리 찾기</li>
+                <li class="list__item">AmazonSmile 자선 품목 목록</li>
+              </ul>
+            </div>
+            <div class="list__container">
+              <span class="list__label">계정</span>
+              <ul class="list__items">
+                <li class="list__item">계정</li>
+                <li class="list__item">주문</li>
+                <li class="list__item">권장 사항</li>
+                <li class="list__item">검색 기록</li>
+                <li class="list__item">워치리스트</li>
+                <li class="list__item">비디오 구매 및 대여</li>
+                <li class="list__item">Kindle 언리미티드</li>
+                <li class="list__item">콘텐츠 및 기기</li>
+                <li class="list__item">항목 구독 및 저장</li>
+                <li class="list__item">멤버십 및 구독</li>
+                <li class="list__item">음악 라이브러리</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="header__anchor" href="">
+        <div class="header__link">
+          <span class="header__text--upper">반품</span>
+          <span class="header__text">& 주문</span>
+        </div>
+      </a>
+      <a class="header__anchor" href="">
+        <div class="header__link">
+          <div class="header__cart">
+            <img
+              class="header__cart-img"
+              src="./assets/cart.svg"
+              alt="cart image"
+            />
+            <span class="header__cart__text">장바구니</span>
+          </div>
+        </div>
+      </a>
+    </header>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__anchor" href="">
+            <img
+              class="nav__all-img"
+              src="./assets/list.svg"
+              alt="list image"
+            />
+            <span class="nav__all">모두</span>
+          </a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__anchor" href="">오늘의 딜</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__anchor" href="">고객 서비스</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__anchor" href="">레지스트리</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__anchor" href="">기프트 카드</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__anchor" href="">판매</a>
+        </li>
+      </ul>
+      <a class="nav__special-offer" href="">지금 특가 상품 쇼핑하기</a>
+    </nav>
+
+    <main class="main">
+      <div class="dimmed hidden"></div>
+    </main>
+
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>

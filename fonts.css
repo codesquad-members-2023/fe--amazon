@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Pretendard"; /*보통 다운 받은 파일 이름 그대로*/
+  font-style: normal; /*이탈릭 체는 italic*/
+  font-weight: 500;
+  src: url("./assets/fonts/web/static/woff2/Pretendard-Medium.woff2")
+      format("woff2"),
+    url("./assets/fonts/web/static/woff/Pretendard-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard"; /*보통 다운 받은 파일 이름 그대로*/
+  font-style: normal; /*이탈릭 체는 italic*/
+  font-weight: 600;
+  src: url("./assets/fonts/web/static/woff2/Pretendard-SemiBold.woff2")
+      format("woff2"),
+    url("./assets/fonts/web/static/woff/Pretendard-SemiBold.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./assets/fonts/web/static/woff2/Pretendard-ExtraBold.woff2")
+      format("woff2"),
+    url("./assets/fonts/web/static/woff/Pretendard-ExtraBold.woff")
+      format("woff");
+}
