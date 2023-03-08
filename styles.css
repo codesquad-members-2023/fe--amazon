@@ -95,7 +95,7 @@ body {
   cursor: pointer;
 }
 
-.header__container {
+.container {
   position: relative;
   display: flex;
   align-items: center;
@@ -103,6 +103,7 @@ body {
 
 .nav {
   background-color: #1b232f;
+  padding: 0px 16px;
 
   display: flex;
   justify-content: space-between;
@@ -122,7 +123,6 @@ body {
 /* 글로벌로 뺀다? */
 
 /* 명시도 높이기 */
-
 .hidden.hidden {
   display: none;
 }
@@ -139,6 +139,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  z-index: 100;
 }
 
 .pop-up--login {
@@ -211,4 +212,14 @@ body {
 
 .list__item {
   width: 150px;
+}
+
+.dimmed {
+  background-color: rgba(16, 20, 26, 0.4);
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
