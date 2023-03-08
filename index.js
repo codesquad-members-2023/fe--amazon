@@ -16,6 +16,7 @@ const shippingAddressContainer = document.querySelector(
   ".container--shipping-address"
 );
 
+// layer 추가
 const dimmed = document.querySelector(".dimmed");
 
 function showPopUpWithDelay(delay) {
@@ -41,11 +42,13 @@ function main() {
     dimmed.classList.add("hidden");
   });
 
+  // shipping address 레이어 팝업 mouseenter
   shippingAddressAnchor.addEventListener("mouseenter", () => {
     shippingAddressPopUp.classList.remove("hidden");
     dimmed.classList.remove("hidden");
   });
 
+  // shipping address 레이어 팝업 mouseleave
   shippingAddressContainer.addEventListener("mouseleave", () => {
     shippingAddressPopUp.classList.add("hidden");
     dimmed.classList.add("hidden");
