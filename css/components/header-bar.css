@@ -79,6 +79,7 @@
   flex-direction: column;
 }
 
-.home__header__login {
+.home__header__login,
+.home__header__location {
   position: relative;
 }

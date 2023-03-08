@@ -3,6 +3,7 @@
 /* COMPONENTS */
 @import "components/header-bar.css";
 @import "components/section-login.css";
+@import "components/section-location.css";
 
 /* SCREENS */
 @import "screens/dimmed.css";
