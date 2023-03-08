@@ -2,92 +2,106 @@
 <html lang='en'>
 <head>
 	<meta charset='UTF-8'>
-	<meta name='viewport'
-	      content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
-	<meta http-equiv='X-UA-Compatible' content='ie=edge'>
+	<meta content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'
+	      name='viewport'>
+	<meta content='ie=edge' http-equiv='X-UA-Compatible'>
 	<title>Amazon</title>
-	<link rel='stylesheet' href='./style/style.css'>
-	<script src='./dist/app.js' defer></script>
+	<link href='./style/style.css' rel='stylesheet'>
+	<script defer src='./dist/app.js'></script>
 </head>
 <body>
 <div class='wrapper__main'>
 	<header>
 		<div class='nav-bar'>
 			<div class='nav-bar__main'>
-				<div class='logo'>
-					<img src='assets/nav-bar/logo.svg' alt='' srcset=''/>
+				<div class='nav-bar__logo'>
+					<img class='logo' src='assets/nav-bar/logo.svg' />
 				</div>
-				<div class='country'>
-					<span><img src='assets/nav-bar/position.svg' alt=''>배송처</span>
-					<div class='country__name'>대한민국</div>
-				</div>
-				<div class='search-form__content'>
-					<input class='search-form__input' type='search' placeholder='검색 Amazon'/>
-					<button class='search-form__button'>
-						<img src='assets/nav-bar/reading-glasses.svg' alt=''>
-					</button>
-				</div>
-				<div class='language'>
-					<img src='assets/nav-bar/flag-un.svg' alt='' srcset=''>
-					<span>UN</span>
-				</div>
-				<div class='login-account'>
-					<span>안녕하세요, 로그인</span>
-					<div class='account-list'>계정 및 목록</div>
-
-					<div class='login__content'>
-						<img class='login__triangle' src='./assets/nav-bar/triangle.svg'/>
-						<div class='login__main'>
-							<button class='login__button'>로그인</button>
-							<div class='login__help'>
-								<span>기존 사용자가 아니십니까?</span>
-								<a href=''>여기에서 시작합니다.</a>
-							</div>
+				<div class='nav-bar__shipping-country'>
+					<div class='shipping-country'>
+						<div class='shipping-country__header'>
+							<img class='shipping-country__icon' src='assets/nav-bar/position.svg'>
+							<span class='shipping-country__text'>배송처</span>
 						</div>
-						<div class='login__additional--hover'>
-							<hr class='gray-line'>
-							<div class='additional-list'>
-								<div class='user-list'>
-									<ul>
-										<li>귀하의 목록</li>
-										<li>목록 생성</li>
-										<li>목록 또는 레지스트리 찾기</li>
-										<li>AmazonSmile 자선 품목 폭록</li>
-									</ul>
-								</div>
-								<div class='account-list'>
-									<ul>
-										<li>계정</li>
-										<li>계정</li>
-										<li>주문</li>
-										<li>권장 사항</li>
-										<li>검색 기록</li>
-										<li>위치리스트</li>
-										<li>비디오 구매 및 대여</li>
-										<li>Kindle 언리미티드</li>
-										<li>콘텐츠 및 기기</li>
-										<li>항목 구독 및 저장</li>
-										<li>멤버십 및 구독</li>
-										<li>음악 라이브러리</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+						<div class='shipping-country__main'>대한민국</div>
 					</div>
 				</div>
-				<div class='return-order'>
-					<div class='return-part'>반품</div>
-					<div class='order-part'>& 주문</div>
+				<div class='nav-bar__search-form'>
+					<div class='search-form'>
+						<input class='search-form__input' placeholder='검색 Amazon' type='search' />
+						<button class='search-form__button'>
+							<img class='search-icon' src='assets/nav-bar/reading-glasses.svg'>
+						</button>
+					</div>
 				</div>
-				<div class='basket'>
-					<img src='assets/nav-bar/basket.svg' alt=''>
-					장바구니
+				<div class='nav-bar__language'>
+					<div class='language'>
+						<img class='flag-icon' src='assets/nav-bar/flag-un.svg'>
+						<span class='language__text'>UN</span>
+					</div>
+				</div>
+				<div class='nav-bar__user-account'>
+					<div class='user-account'>
+						<div class='user-account__header'>안녕하세요, 로그인</div>
+						<div class='user-account__main'>계정 및 목록</div>
+						<!--					<div class='login__content'>-->
+						<!--						<img class='login__triangle' src='./assets/nav-bar/triangle.svg' />-->
+						<!--						<div class='login__main'>-->
+						<!--							<button class='login__button'>로그인</button>-->
+						<!--							<div class='login__help'>-->
+						<!--								<span>기존 사용자가 아니십니까?</span>-->
+						<!--								<a href=''>여기에서 시작합니다.</a>-->
+						<!--							</div>-->
+						<!--						</div>-->
+						<!--						<div class='login__additional&#45;&#45;hover'>-->
+						<!--							<hr class='gray-line'>-->
+						<!--							<div class='additional-list'>-->
+						<!--								<div class='user-list'>-->
+						<!--									<ul>-->
+						<!--										<li>귀하의 목록</li>-->
+						<!--										<li>목록 생성</li>-->
+						<!--										<li>목록 또는 레지스트리 찾기</li>-->
+						<!--										<li>AmazonSmile 자선 품목 폭록</li>-->
+						<!--									</ul>-->
+						<!--								</div>-->
+						<!--								<div class='account-list'>-->
+						<!--									<ul>-->
+						<!--										<li>계정</li>-->
+						<!--										<li>계정</li>-->
+						<!--										<li>주문</li>-->
+						<!--										<li>권장 사항</li>-->
+						<!--										<li>검색 기록</li>-->
+						<!--										<li>위치리스트</li>-->
+						<!--										<li>비디오 구매 및 대여</li>-->
+						<!--										<li>Kindle 언리미티드</li>-->
+						<!--										<li>콘텐츠 및 기기</li>-->
+						<!--										<li>항목 구독 및 저장</li>-->
+						<!--										<li>멤버십 및 구독</li>-->
+						<!--										<li>음악 라이브러리</li>-->
+						<!--									</ul>-->
+						<!--								</div>-->
+						<!--							</div>-->
+						<!--						</div>-->
+						<!--					</div>-->
+					</div>
+				</div>
+				<div class='nav-bar__user-order'>
+					<div class='user-order'>
+						<div class='user-order__return-text'>반품</div>
+						<div class='user-order__order-text'>& 주문</div>
+					</div>
+				</div>
+				<div class='nav-bar__user-basket'>
+					<div class='basket'>
+						<img class='basket-icon' src='assets/nav-bar/basket.svg'>
+						<span class='basket__text'>장바구니</span>
+					</div>
 				</div>
 			</div>
 			<div class='nav-bar__sub'>
 				<div class='nav-bar__sub-left'>
 					<a href=''>
-						<img src='assets/nav-bar/nav-hamburger.svg' alt=''/>
+						<img alt='' src='assets/nav-bar/nav-hamburger.svg' />
 						<span>모두</span>
 					</a>
 					<a href=''>오늘의 딜</a>

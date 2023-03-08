@@ -116,12 +116,12 @@ button {
 
 }
 
-.logo {
+.nav-bar__logo {
   flex-grow: 1;
   text-align: center;
 }
 
-.country {
+.nav-bar__shipping-country {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -129,17 +129,17 @@ button {
   padding: 0px;
 }
 
-.country > span {
+.nav-bar__shipping-country > span {
   font: var(--bold-sm);
   color: var(--color-gray-400);
 }
 
-.country > span > img {
+.nav-bar__shipping-country > span > img {
   width: 10px;
   height: 10px;
 }
 
-.search-form__content {
+.search-form {
   flex-grow: 12;
   display: flex;
   flex-direction: row;
@@ -175,7 +175,7 @@ button {
   align-items: center;
 }
 
-.login-account {
+.user-account {
   flex-grow: 1;
   position: relative;
   display: flex;
@@ -183,7 +183,7 @@ button {
   justify-content: flex-start;
 }
 
-.login-account > span {
+.user-account > span {
   font: var(--bold-sm);
   color: var(--color-gray-400);
 }
