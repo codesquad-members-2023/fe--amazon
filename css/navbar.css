@@ -222,7 +222,7 @@ nav {
 .login {
   opacity: 0;
   animation: appearAnimation 1s forwards;
-  animation-delay: 0.6s;
+  animation-delay: 1s;
 }
 
 .hover_login_modal {
@@ -265,13 +265,6 @@ nav {
 
 .hover_login_list {
   color: black;
-}
-
-.down_nav {
-  height: 32px;
-  padding: 0px 16px 0px 16px;
-  justify-content: space-between;
-  background-color: #1b232f;
 }
 
 .region_modal {
@@ -360,4 +353,34 @@ nav {
 
   background: #ffffff;
   transform: rotate(45deg);
+}
+
+.down_nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 32px;
+  padding: 0px 16px 0px 16px;
+  justify-content: space-between;
+  background-color: #1b232f;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.down_nav_left_list ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.down_nav_left_list ul li {
+  margin-right: 16px;
+}
+
+.down_nav_left_list ul div {
+  display: flex;
+  align-items: center;
+}
+.down_nav_left_list ul div img {
+  height: 16px;
 }
