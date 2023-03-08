@@ -5,6 +5,7 @@
 @import "components/section-login.css";
 
 /* SCREENS */
+@import "screens/dimmed.css";
 
 body {
   font-family: "Kanit", sans-serif;
