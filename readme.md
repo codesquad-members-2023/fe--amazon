@@ -26,7 +26,7 @@ html
 
 ### 3/7 ~ 3/8
 
-- [ ] html header 구조 짜기
+- [x] html header 구조 짜기
 - [ ] header css 적용해보기
 
 </div>

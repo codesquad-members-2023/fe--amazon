@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon</title>
+  <link rel="stylesheet" href="./src/css/index.css">
+</head>
+
+<body>
+  <div class="container">
+    <header id="header">
+      <section class="header_top">
+        <div class="amazon_icon"><img src="./src/image/logo.svg" alt="amazon logo"></img></div>
+        <div class="shipping_address">
+          <div class="shipping_address_top">
+            <img src="./src/image/location.svg" alt="location icon">
+            <span class="shipping_address_title">배송처</span>
+          </div>
+          <span class="shipping_address_nation_title">대한민국</span>
+        </div>
+        <form class="header_search_form">
+          <input type="text" id="searchFormInput" placeholder="검색 Amazon">
+          <button type="submit" id="searchFormBtn"><img src="./src/image/search.svg"
+              alt="submit search form button icon"></button>
+        </form>
+        <a class="flag" href="">
+          <img src="./src/image/flag.svg" alt="flag">
+          <span class="flag_title">KO</span>
+        </a>
+        <a class="login" href="">
+          <span>안녕하세요, 로그인</span>
+          <span>계정 및 목록</span>
+        </a>
+        <a class="my_page" href="">
+          <span>반품</span>
+          <span>&주문</span>
+        </a>
+        <a class="cart" href=""><img src="./src/image/cart.svg" alt="cart icon"><span class="cart_title">장바구니</span></a>
+      </section>
+      <section class="header_bottom">
+        <div class="left_buttons">
+          <div class="category"><img src="./src/image/menu.svg" alt="menu icon"><span class="menu_title">모두</span></div>
+          <ul class="gnb_menu">
+            <li><a href="">오늘의 딜</a></li>
+            <li><a href="">고객 서비스</a></li>
+            <li><a href="">레지스토리</a></li>
+            <li><a href="">기프트 카드</a></li>
+            <li><a href="">판매</a></li>
+          </ul>
+        </div>
+        <div class="right_button">
+          <a href="">지금 특가 상품 쇼핑하기</a>
+        </div>
+      </section>
+    </header>
+    <section id="main_content"></section>
+    <footer id="footer"></footer>
+  </div>
+</body>
+
+</html>
