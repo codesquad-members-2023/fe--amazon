@@ -81,7 +81,9 @@ nav {
 }
 
 .menu {
-  margin-right: 24px;
+  padding-top: 5px;
+
+  padding-right: 24px;
 }
 .menus_upside {
   font-size: 11px;
@@ -226,6 +228,7 @@ nav {
 .hover_login_modal {
   display: none;
 }
+
 .hover_login_modal .nav_login {
   width: 335px;
   height: 365px;
