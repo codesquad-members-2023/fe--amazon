@@ -118,6 +118,10 @@ body {
 
 .nav__item {
   list-style: none;
+}
+
+.nav__anchor {
+  display: inline-block;
   padding: 8px;
 }
 
