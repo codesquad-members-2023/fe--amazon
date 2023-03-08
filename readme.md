@@ -86,6 +86,8 @@
 
 ## html
 
+### sementic tag
+
 - div
 - header
 - section
@@ -99,7 +101,7 @@
 
 - 상단 네비게이션 바
   - 공통
-    - [ ] 각 호버 영역 혹은레이어 영역은 마우스가 벗어나면 레이어와 효과가 사라지게 한다.
+    - [ ] 각 호버 영역 혹은 레이어 영역은 마우스가 벗어나면 레이어와 효과가 사라지게 한다.
     - [ ] 상단바는 화면의 가로 사이즈가 1120px 이상으로 늘어나는 경우, 검색바가 길어지고 화면의 가로사이즈에 맞춰 늘어나도록 한다.
     - [ ] 이 때 본문 영역은 1120px로 고정비를 유지하도록 한다.
   - 로그인
@@ -125,3 +127,6 @@
 ## 📒 reference
 
 [pull request](https://velog.io/@zansol/Pull-Request-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0)
+
+[eslint & prettier](https://wooogy-egg.tistory.com/82)
+[sementic tag](https://stonefree.tistory.com/59)

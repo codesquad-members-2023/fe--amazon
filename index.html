@@ -1,20 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./main.css"/>
+  <link rel="stylesheet" href="./css/main.css"/>
+  <link rel="stylesheet" href="./css/reset.css">
   <title>Amazon</title>
 </head>
 <body>
   <header>
     <div class="inner">
-      <a href="/" class="logo">
-        <img src="./logo.png" alt="AMAZON" />
-      </a>
-      <h1>hello world</h1>
+      <div class="main-menu">
+        <div class="logo">
+          <a href="/">
+            <img src="./asset/logo.png" alt="AMAZON" />
+          </a>
+        </div>
+        <div class="shipping-address text-box">
+          <!-- TODO: add click event to modal -->
+          <p class="label">배송처</p>
+          <p>대한민국</p>
+          <div class="modal">
+            <p class="modal__text">KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</p>
+            <button>계속</button>
+            <button>주소 변경</button>
+          </div>
+        </div>
+        <form class="search-bar">
+          <input type="text" placeholder="검색 Amazon"/>
+          <button class="btn-search" type="submit">
+            <img src="./asset/search.svg" alt="search" />
+          </button>
+        </form>
+        <div class="language-country text-box">
+          <img src="./asset/flag.svg" alt="flag" />
+          <p>KO</p>
+        </div>
+        <div class="log-in text-box">
+          <!-- TODO: add click event to modal -->
+          <p class="label">안녕하세요, 로그인</p>
+          <p>계정 및 목록</p>
+        </div>
+        <div class="order-return text-box">
+          <p class="label">반품</p>
+          <p>& 주문</p>
+        </div>
+        <div class="shopping-basket">
+          <p>장바구니</p>
+        </div>
+      </div>
+      <ul class="sub-menu">
+        <li>
+          <a href="/">
+            <img src="./asset/menu.svg" alt="MENU" />
+          </a>
+          모두
+        </li>
+        <li>오늘의 딜</li>
+        <li>고객 서비스</li>
+        <li>레지스트리</li>
+        <li>키프트 카드</li>
+        <li>판매</li>
+        <li>지금 특가상품 쇼핑하기</li>
+      </ul>
     </div>
   </header>
+
 </body>
 </html>
