@@ -1,0 +1,52 @@
+/* Global */
+
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-gray-100: #eff2f2;
+  --color-gray-200: #e5e9e9;
+  --color-gray-300: #dce0e0;
+  --color-gray-400: #d5d5d5;
+  --color-gray-500: #c1c1c1;
+  --color-gray-600: #878787;
+  --color-gray-700: #535353;
+  --color-gray-800: #2a3648;
+  --color-gray-900: #1b232f;
+  --color-black: #10141a;
+  --color-black-tr40: rgba(16, 20, 26, 0.4);
+
+  --color-yellow-100: #fed15f;
+  --color-yellow-200: #febe30;
+  --color-yellow-300: #de9408;
+  --color-orange-100: #fcb057;
+  --color-orange-200: #ff9900;
+
+  --color-purple: #941387;
+  --color-navy: #074099;
+  --color-green: #0c5e72;
+
+  /* Font size */
+  --font-xl: 28px;
+  --font-lg: 18px;
+  --font-md: 13px;
+  --font-sm: 11px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 550;
+  --weight-regular: 400;
+
+  /* Size */
+  --size-border-radius: 4px;
+
+  /* Animation */
+  --animation-duration: 1000ms;
+
+  /* Font-type */
+  --bold-xl: var(--weight-bold) var(--font-xl);
+  --bold-lg: var(--weight-bold) var(--font-lg);
+  --bold-md: var(--weight-bold) var(--font-md);
+  --bold-sm: var(--weight-semi-bold) var(--font-sm);
+  --body-md: var(--weight-regular) var(--font-md);
+  --body-sm: var(--weight-regular) var(--font-sm);
+}
