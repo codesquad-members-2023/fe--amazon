@@ -34,3 +34,12 @@
   /* identical to box height, or 21px */
   letter-spacing: -0.03em;
 }
+
+.BodySM {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 160%;
+  letter-spacing: -0.03em;
+}
