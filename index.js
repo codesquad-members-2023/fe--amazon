@@ -1,8 +1,21 @@
+// login 팝업 element
 const logInAnchor = document.querySelector(".header__anchor--login");
-const logInPopUp = document.querySelector(".pop-up--login");
 const seperatorLine = document.querySelector(".seperator-line");
 const list = document.querySelector(".list");
-const container = document.querySelector(".container");
+const logInPopUp = document.querySelector(".pop-up--login");
+const loginContainer = document.querySelector(".container--login");
+
+// 배송지 팝업 element
+const shippingAddressAnchor = document.querySelector(
+  ".header__anchor--shipping-address"
+);
+const shippingAddressPopUp = document.querySelector(
+  ".pop-up--shipping-address"
+);
+const shippingAddressContainer = document.querySelector(
+  ".container--shipping-address"
+);
+
 const dimmed = document.querySelector(".dimmed");
 
 function showPopUpWithDelay(delay) {
@@ -10,7 +23,11 @@ function showPopUpWithDelay(delay) {
     logInPopUp.classList.remove("hidden");
   }, delay);
 }
+
 function main() {
+  showPopUpWithDelay(1000);
+
+  // login 레이어 팝업 mouseenter
   logInAnchor.addEventListener("mouseenter", () => {
     seperatorLine.classList.remove("hidden");
     list.classList.remove("hidden");
@@ -18,12 +35,21 @@ function main() {
     dimmed.classList.remove("hidden");
   });
 
-  container.addEventListener("mouseleave", () => {
+  // login 레이어 팝업 mouseleave
+  loginContainer.addEventListener("mouseleave", () => {
     logInPopUp.classList.add("hidden");
     dimmed.classList.add("hidden");
   });
 
-  showPopUpWithDelay(1000);
+  shippingAddressAnchor.addEventListener("mouseenter", () => {
+    shippingAddressPopUp.classList.remove("hidden");
+    dimmed.classList.remove("hidden");
+  });
+
+  shippingAddressContainer.addEventListener("mouseleave", () => {
+    shippingAddressPopUp.classList.add("hidden");
+    dimmed.classList.add("hidden");
+  });
 }
 
 main();

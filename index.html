@@ -16,19 +16,37 @@
           alt="amazon logo image"
         />
       </a>
-      <a class="header__anchor" href="">
-        <div class="header__link">
-          <div class="header__shipping-address">
-            <img
-              class="header__location-img"
-              src="./assets/location.svg"
-              alt="shipping image"
-            />
-            <span class="header__text--upper">배송지</span>
+
+      <div class="container container--shipping-address">
+        <a class="header__anchor header__anchor--shipping-address" href="">
+          <div class="header__link">
+            <div class="header__shipping-address">
+              <img
+                class="header__location-img"
+                src="./assets/location.svg"
+                alt="shipping image"
+              />
+              <span class="header__text--upper">배송지</span>
+            </div>
+            <span class="header__text">한국</span>
           </div>
-          <span class="header__text">한국</span>
+        </a>
+
+        <div class="pop-up pop-up--shipping-address hidden">
+          <div
+            class="pop-up__triangle pop-up__triangle--shipping-address"
+          ></div>
+          <span class="pop-up__text pop-up__text--shipping-address">
+            kr으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을
+            보려면 배송 주소를 변경하십시오.
+          </span>
+          <div class="pop-up__button-container">
+            <button class="button">계속</button>
+            <button class="button">주소 변경</button>
+          </div>
         </div>
-      </a>
+      </div>
+
       <form class="search-form">
         <input
           class="search-form__input"
@@ -57,7 +75,7 @@
         </div>
       </a>
 
-      <div class="container">
+      <div class="container container--login">
         <a class="header__anchor header__anchor--login" href="">
           <div href="" class="header__link header__link--login">
             <span class="header__text--upper">안녕하세요,로그인</span>
@@ -66,6 +84,7 @@
         </a>
 
         <div class="pop-up pop-up--login hidden">
+          <div class="pop-up__triangle pop-up__triangle--login"></div>
           <button class="button button--large">로그인</button>
           <span class="pop-up__text pop-up__text--login">
             기존 사용자가 아니십니까?
@@ -122,6 +141,7 @@
         </div>
       </a>
     </header>
+
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__item">

@@ -146,8 +146,34 @@ body {
 .pop-up--login {
   right: 10px;
   /* top 값 바꾸기 */
-  top: 48px;
+  top: 54px;
   gap: 8px;
+}
+
+.pop-up--shipping-address {
+  top: 54px;
+  left: 0px;
+  gap: 26px;
+
+  width: 320px;
+}
+
+.pop-up__triangle {
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  transform: translateY(-30%);
+  background-color: inherit;
+  top: 0;
+}
+
+.pop-up__triangle--login {
+  right: 10px;
+}
+
+.pop-up__triangle--shipping-address {
+  left: 10px;
 }
 
 .pop-up__text {
@@ -172,6 +198,8 @@ body {
   );
   border: 1px solid #de9408;
   border-radius: 4px;
+
+  padding: 9.5px 10px;
 }
 
 .button--large {
