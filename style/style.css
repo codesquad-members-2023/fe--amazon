@@ -1,0 +1,342 @@
+/* Global */
+
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-gray-100: #eff2f2;
+  --color-gray-200: #e5e9e9;
+  --color-gray-300: #dce0e0;
+  --color-gray-400: #d5d5d5;
+  --color-gray-500: #c1c1c1;
+  --color-gray-600: #878787;
+  --color-gray-700: #535353;
+  --color-gray-800: #2a3648;
+  --color-gray-900: #1b232f;
+  --color-black: #10141a;
+  --color-black-tr40: rgba(16, 20, 26, 0.4);
+
+  --color-yellow-100: #fed15f;
+  --color-yellow-200: #febe30;
+  --color-yellow-300: #de9408;
+  --color-orange-100: #fcb057;
+  --color-orange-200: #ff9900;
+
+  --color-purple: #941387;
+  --color-navy: #074099;
+  --color-green: #0c5e72;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 500;
+
+  /* Size */
+  --size-border-radius: 4px;
+
+  /* Animation */
+  --animation-duration: 300ms;
+
+  /* Font-type */
+  --bold-xl: var(--weight-bold) 28px  none;
+  --bold-lg: var(--weight-bold) 18px none;
+  --bold-md: var(--weight-bold) 13px none;
+  --bold-sm: var(--weight-semi-bold) 11px none;
+  --body-md: var(--weight-regular) 13px 160%;
+  --body-sm: var(--weight-regular) 11px 160%;
+}
+
+/* Universal tags */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Local */
+
+.wrapper__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 0;
+}
+
+/* nav-bar */
+
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--color-white);
+  width: 100%;
+}
+
+.nav-bar__main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 24px;
+  /* width 다시 한 번 체크 */
+  width: 100%;
+  height: 56px;
+  background-color: var(--color-black);
+
+  font: var(--bold-md);
+
+}
+
+.logo {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.country {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0px;
+}
+
+.country > span {
+  font: var(--bold-sm);
+  color: var(--color-gray-400);
+}
+
+.country > span > img {
+  width: 10px;
+  height: 10px;
+}
+
+.search-form__content {
+  flex-grow: 12;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.search-form__input {
+  width: 100%;
+  height: 40px;
+  padding: 0 0 0 12px;
+  border: 0;
+  border-radius: 8px 0 0 8px;
+}
+
+.search-form__input:focus {
+  outline: none;
+}
+
+.search-form__button {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 0 8px 8px 0;
+
+  background-color: var(--color-orange-100);
+}
+
+.language {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-account {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.login-account > span {
+  font: var(--bold-sm);
+  color: var(--color-gray-400);
+}
+
+@keyframes slow-load {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  20% {
+    opacity: 0.2;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.login__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 150%;
+  left: -150%;
+  width: 250%;
+  height: 300%;
+  background-color: var(--color-white);
+  padding: 16px;
+  border: 1px var(--color-black) solid;
+  border-radius: 4px;
+  animation: slow-load 1s ease-in;
+}
+
+.login__triangle {
+  position: absolute;
+  top: -15%;
+  right: 20%;
+}
+
+.login__button {
+  background: linear-gradient(174.6deg, var(--color-white) 4.31%, #FED15F 50.01%, #FEBE30 95.71%);
+  border: 1px var(--color-yellow-300) solid;
+  width: 60%;
+  height: 60%;
+  font: var(--bold-sm);
+  border-radius: 4px;
+}
+
+.login__help {
+  font: var(--bold-sm);
+  color: var(--color-black);
+}
+
+.login__help > a {
+  color: var(--color-navy);
+}
+
+.gray-line {
+  width: 100%;
+  background-color: var(--color-gray-900);
+}
+
+.login__additional--hover {
+  display: none;
+  color: var(--color-black);
+}
+
+
+.return-order {
+  flex-grow: 1;
+}
+
+.return-part {
+  font: var(--bold-sm);
+  color: var(--color-gray-400);
+}
+
+.basket {
+  flex-grow: 1;
+}
+
+.basket > img {
+  width: 10px;
+  height: 10px;
+}
+
+.nav-bar__sub {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  width: 100%;
+  height: 32px;
+
+  background-color: var(--color-gray-900);
+}
+
+.nav-bar__sub-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-bar__sub-left a {
+  font: var(--bold-sm);
+  padding: 8px;
+}
+
+.nav-bar__sub-left > a > span {
+  font: var(--bold-md);
+}
+
+.nav-bar__sub-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font: var(--bold-md);
+  width: 100%;
+  padding: 8px;
+}
+
+.wrapper__empty-gray {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-black-tr40);
+  z-index: 1;
+  /* 이벤트에 따라 display 변경 */
+  display: none;
+}
+
+/* side bar */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* 추후에 사이드바 작업하기 */
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 20%;
+  height: 100%;
+  background-color: red;
+  z-index: 10;
+  transition: all 0.3s;
+}
