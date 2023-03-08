@@ -224,7 +224,7 @@ nav {
 }
 
 .hover_login_modal {
-  opacity: 0;
+  display: none;
 }
 .hover_login_modal .nav_login {
   width: 335px;
@@ -256,9 +256,21 @@ nav {
   font-weight: 800;
 }
 
+#nav_login_text span {
+  color: black;
+}
+
+.hover_login_list {
+  color: black;
+}
+
 .down_nav {
   height: 32px;
   padding: 0px 16px 0px 16px;
   justify-content: space-between;
   background-color: #1b232f;
+}
+
+.hidden {
+  display: none;
 }
