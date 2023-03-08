@@ -8,6 +8,8 @@
   margin: 0 auto;
   height: 60px;
   font-size: 13px;
+  z-index: 3;
+  position: fixed;
 }
 
 .small__font {
@@ -19,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 5px;
 }
 
 .home__header__logo,
@@ -29,7 +31,7 @@
 .home__header__login,
 .home__header__checkOrder,
 .home__header__basket {
-  padding: 10px;
+  padding: 15px;
 }
 
 .home__header__center {
@@ -40,7 +42,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .home__header__search {
