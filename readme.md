@@ -4,22 +4,8 @@ HTML, CSS, JavaScript를 사용하여 아마존 웹페이지를 만들어본다.
 
 </br>
 
-# 1주차 학습계획
-
-- [x] : 사전 학습 키워드 정리
-- [x] : HTML 레이아웃 구성
-  - [x] : 상단 네비게이션 바
-    - [x] : CSS
-  - [ ] : 메인 페이지
-    - [ ] : CSS
-  - [ ] : 검색바
-    - [ ] : CSS
-  - [ ] : 사이드바
-    - [ ] : CSS
-
-</br>
-
-# 학습 키워드
+<details>
+<summary> 학습 키워드 </summary>
 
 ## 모달(Modal)
 
@@ -120,3 +106,149 @@ function calculateArea(radius) {
 
 console.log(calculateArea(5));
 ```
+
+</details>
+
+</br>
+
+# 1주차 학습계획
+
+- [x] : 사전 학습 키워드 정리
+- [ ] : 상단 네비게이션 바
+  - [ ] : 로그인 영역
+    - [x] : 레이아웃 구성
+    - [x] : 메인 페이지 진입 1초 뒤 [로그인] 레이어 버튼 출력
+    - [x] : 로그인 영역 호버 전까지 유지
+    - [x] : 로그인 영역 호버 후 레이어 제거
+    - [x] : 로그인 영역 호버하면 [확장된 버전의 로그인] 레어어 출력
+    - [ ] : 배경 딤처리
+  - [ ] : 배송처 영역
+    - [ ] : 배송처 영역 호버하면 [주소 변경 레이어 출력
+    - [ ] : 호버된 레이어 출력시 배경 딤처리
+- [ ] : 사이드 바
+  - [ ] : 레이아웃 구성
+  - [ ] : [모두] 클릭시 사이드바 호출
+  - [ ] : [X버튼] 클릭시 사이드바 닫기
+  - [ ] : 사이드바 목록 호버시 배경색과 아이콘색 변경 효과
+  - [ ] : [모두보기] 클릭시 목록 확장
+  - [ ] : [간단히 보기] 클릭시 목록 축소
+  - [ ] : 목록 클릭시 우측으로 하위 카테고리 출력
+
+</br>
+
+# 추가 학습 필요 키워드
+
+## CSS 배치
+
+- display(block, inline, inline-block)
+- position(static, absolute, relative, fixed)
+- float(left, right)
+
+</br>
+
+# 구현 내용
+
+## flex-grow를 이용하여 레이아웃 여백 채우기
+
+flex-grow & flex-shrink란 플렉스박스의 유연한 레이아웃을 가능하게 하는 속성이다.  
+정해진 플렉스박스의 여백을 늘리거나 오바한 부분을 줄어들도록 하여 정해진 너비를 꽉채우게 해준다.
+
+```CSS
+.home__header__center {
+  flex-grow: 1;
+}
+```
+
+위처럼 header_center에 flex-grow: 1을 주어주면 header_left, header_right의 너비는 고정되고  
+전체 레이아웃의 남는 공간을 header_center가 채워주게 된다.
+
+[flex-grow & flex-shrink](https://blogpack.tistory.com/863)
+
+## inline-block를 이용하여 input과 button 붙이기
+
+inline-block으로 지정된 엘리먼트는 하이브리드 모드처럼 동작하는데,  
+inline 엘리먼트처럼 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치되지만,  
+block 엘리먼트처럼 width와 height속성 및 margin,padding을 지정 할 수 있다.
+
+[CSS의 display 속성](https://www.daleseo.com/css-display-inline-block/)
+
+```css
+.home__header__search input {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.home__header__search button {
+  display: inline-block;
+  width: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: orange;
+}
+```
+
+![](https://velog.velcdn.com/images/sarang_daddy/post/a2e650f4-d682-469e-859e-7f7543c4bc82/image.png)
+
+## position을 이용한 배치
+
+position : absolute는 가장 가까운 relative를 가진 부모를 기준으로 움직인다.  
+따라서 연관되게 움직이도가 하는 부모에 position:relative를 주어야 한다.
+
+```CSS
+.home__header__login {
+  position: relative;
+}
+
+.section__login {
+  position: absolute;
+  top: 65px;
+  right: 120px;
+}
+```
+
+section_login 레이아웃은 header_login을 기준으로 위치를 조정 할 수 있다.
+
+![](https://velog.velcdn.com/images/sarang_daddy/post/6e16be82-f8b9-4e29-85e7-a921788a1e66/image.png)
+
+## class와 opacity를 이용하여 레이아웃 불러오기
+
+```css
+.section__login {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.section__login.hidden {
+  display: none;
+}
+
+.section__login.visible {
+  opacity: 1;
+  visibility: visible;
+}
+```
+
+```js
+const headerLogin = document.querySelector(".home__header__login");
+const loginSection = document.querySelector(".section__login");
+
+setTimeout(function () {
+  loginSection.classList.add("visible");
+  loginSection.classList.remove("hidden");
+}, 1000);
+
+const removeLoginSection = () => {
+  loginSection.classList.remove("visible");
+  loginSection.classList.add("hidden");
+};
+
+headerLogin.addEventListener("mouseout", removeLoginSection);
+```
+
+- section_login 레이아웃은 최초 opcity 0으로 화면에 보이지 않는다.
+- setTimeout 1초 후 visible 클래스를 추가하여 화면에 나온다.
+- 다른 header 항목을 호버하면 최초 section_login 레이아웃은 hidden된다.
