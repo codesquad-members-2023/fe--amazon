@@ -27,7 +27,9 @@ html
 ### 3/7 ~ 3/8
 
 - [x] html header 구조 짜기
+  - [ ] class, id 네이밍 다시 생각해보기
 - [ ] header css 적용해보기
+  - [ ] 중복되는 부분 리팩토링
 
 </div>
 </details>
