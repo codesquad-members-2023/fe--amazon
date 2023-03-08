@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+a:-webkit-any-link {
+  color: white;
+  text-decoration-line: none;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  height: 88px;
+}
+
+.nav-top,
+.nav-top__inner-wrap,
+.nav-top__left {
+  height: 56px;
+}
+
+.nav-top {
+  display: flex;
+}
+
+.nav-top__inner-wrap {
+  display: flex;
+  flex: 1 1;
+  padding: 8px 0 8px 0;
+  align-items: center;
+}
+
+.nav-top__left {
+  display: flex;
+  height: auto;
+  gap: 29px;
+  padding: 21px
+}
+
+.nav-top__container {
+  width: 90px;
+  height: 27.22px;
+  overflow: hidden;
+  position: relative;
+}
+
+.nav-top__container > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-top__link {
+  display: flex;
+  flex-flow: column;
+}
+
+/* .nav-top__link:hover {
+  border: 3px solid red
+} */
+
+.nav-top__line1 {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-top__pointer {
+  width: 8px;
+  height: 10px;
+}
+
+.nav-top__pointer > img {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-top__locate {
+  font-size: 11px;
+}
+
+.nav-top__line2 {
+  font-size: 13px;
+}
+
+.nav-top__search {
+  flex: 1;
+}
+
+.nav-top__search-bar {
+  margin: 0;
+}
+
+.nav-top__search-field {
+  display: flex;
+  height: 100%;
+}
+
+.nav-top__input {
+  flex: 1;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 160%;
+  padding: 9.5px 9.5px 12px 12px;
+  letter-spacing: -0.03em;
+  color: #878787;
+}
+
+.nav-top__search-right {
+  width: 40px;
+  height: 40px;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  background: #FCB057;
+}
+
+.nav-top__search-icon{
+  flex: 1;
+  text-align-last: center;
+  align-self: center;
+}
+
+.nav-top__right {
+  display: flex;
+  padding: 16px;
+  gap: 24px;
+}
+
+.nav-top__language {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-top__text {
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.nav-top__account-list {
+  display: flex;
+  position: relative;
+  flex-flow: column;
+}
+
+.nav-top__line1 {
+  align-items: center;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.nav-top_line2 {
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.nav-top__refund-order {
+  display: flex;
+  flex-flow: column;
+}
+
+.nav-top__refund-text {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.nav-top__order-text {
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.nav-top__basket {
+  display: flex;
+  align-items: center;
+  gap: 6.33px;
+}
+
+.nav-top__text{
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.nav-bottom {
+  display: flex;
+  height: 32px;
+  background-color: #1B232F;
+  align-items: center;
+  padding: 16px;
+}
+
+.nav-bottom__left {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-bottom__start {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-bottom__right {
+  display: flex;
+  flex: 1;
+  flex-direction:row-reverse;
+}
+
+.nav-bottom__text {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
