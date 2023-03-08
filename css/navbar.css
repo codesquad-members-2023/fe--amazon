@@ -1,0 +1,386 @@
+nav {
+  width: 1280px;
+}
+
+#logo {
+  margin-right: 24px;
+  width: 90px;
+  height: 27.22;
+}
+.menu1 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 24px;
+}
+
+#menu1_upside {
+  color: #d5d5d5;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#menu1_upside img {
+  height: 11px;
+  margin-right: 2px;
+}
+
+#menu1_downside {
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 16px;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search_bar {
+  width: 707px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 4px 0px 0px 4px;
+  padding-left: 9px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 13px;
+  line-height: 160%;
+  font-weight: 13px;
+  border-width: 0px;
+  border: 0px;
+  font-family: 'Pretendard';
+}
+.search_button {
+  background-color: #fcb057;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 4px 4px 0px;
+  padding: 0px 0px 0px 0px;
+  border: 0px;
+  margin-right: 24px;
+}
+
+.country_info {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -0.06em;
+  margin-right: 24px;
+}
+#country {
+  margin-right: 4px;
+}
+
+.menu {
+  padding-top: 5px;
+
+  padding-right: 24px;
+}
+.menus_upside {
+  font-size: 11px;
+  color: #d5d5d5;
+  font-weight: 600;
+  line-height: 13px;
+  letter-spacing: -0.06em;
+  margin-bottom: 0.5px;
+}
+
+.menus_downside {
+  font-size: 13px;
+  color: #ffffff;
+  line-height: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  letter-spacing: -0.06em;
+}
+
+.cart {
+  display: flex;
+  flex-direction: row;
+}
+.cart img {
+  margin-right: 6.33px;
+}
+
+.nav_login {
+  /* Box */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+
+  position: absolute;
+  width: 235px;
+  height: 65px;
+  left: 873px;
+  top: 69px;
+
+  /* White */
+
+  border: solid 1px #fcb057;
+  background: white;
+  border-radius: 4px;
+}
+
+.nav_login_shape {
+  /* Rectangle */
+
+  position: absolute;
+  width: 18.93px;
+  height: 18.93px;
+  left: 1075px;
+  top: 59px;
+
+  /* White */
+  border-top: solid 1px #fcb057;
+  border-left: solid 1px #fcb057;
+  background: white;
+  transform: rotate(45deg);
+}
+.up_nav {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 8px 16px 8px 16px;
+  background-color: black;
+  color: #ffffff;
+}
+
+.nav_login {
+  display: flex;
+  justify-content: space-between;
+}
+.nav_login button {
+  /* button */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+
+  width: 160px;
+  height: 32px;
+
+  background: linear-gradient(
+    174.6deg,
+    #ffffff 4.31%,
+    #fed15f 50.01%,
+    #febe30 95.71%
+  );
+  /* PrimaryYellow300 */
+
+  border: 1px solid #de9408;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.nav_login button div {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#nav_login_text {
+  font-size: 11px;
+}
+
+#nav_login_text a {
+  color: #074099;
+}
+
+@keyframes appearAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.login {
+  opacity: 0;
+  animation: appearAnimation 1s forwards;
+  animation-delay: 1s;
+}
+
+.hover_login_modal {
+  display: none;
+}
+
+.hover_login_modal .nav_login {
+  width: 335px;
+  height: 365px;
+}
+
+.hover_login_list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 12px;
+  line-height: 180%;
+  letter-spacing: -0.03em;
+  margin-top: 15px;
+  border-top: solid 1px #eff2f2;
+  padding-top: 15px;
+  padding-bottom: 50px;
+}
+
+.hover_login_list1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 162.5px;
+}
+
+.hover_login_list1 ul :first-child {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+#nav_login_text span {
+  color: black;
+}
+
+.hover_login_list {
+  color: black;
+}
+
+.region_modal {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 16px;
+  gap: 26px;
+
+  position: absolute;
+  width: 320px;
+  height: 126px;
+  left: 131px;
+  top: 69px;
+  border: solid 1px #fcb057;
+  /* White */
+
+  color: black;
+  background: #ffffff;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 12.5px;
+  line-height: 160%;
+  /* or 18px */
+
+  letter-spacing: -0.03em;
+}
+
+.region_modal_downside {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin-top: 26px;
+}
+
+.region_modal_downside button {
+  /* Button */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+
+  width: 45px;
+  height: 32px;
+
+  background: linear-gradient(
+    174.6deg,
+    #ffffff 4.31%,
+    #fed15f 50.01%,
+    #febe30 95.71%
+  );
+  /* PrimaryYellow300 */
+
+  border: 1px solid #de9408;
+  border-radius: 4px;
+
+  margin-right: 7px;
+  font-size: 12.5px;
+}
+
+.region_modal_downside :nth-child(2) {
+  width: 70px;
+}
+
+.login_section {
+  z-index: 9;
+}
+
+.region_modal_triangle {
+  position: absolute;
+  width: 18.93px;
+  height: 18.93px;
+  left: 15px;
+  top: -10px;
+
+  /* White */
+  border-top: solid 1px #fcb057;
+  border-left: solid 1px #fcb057;
+
+  background: #ffffff;
+  transform: rotate(45deg);
+}
+
+.down_nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 32px;
+  padding: 0px 16px 0px 16px;
+  justify-content: space-between;
+  background-color: #1b232f;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.down_nav_left_list ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.down_nav_left_list ul li {
+  margin-right: 16px;
+}
+
+.down_nav_left_list ul div {
+  display: flex;
+  align-items: center;
+}
+.down_nav_left_list ul div img {
+  height: 16px;
+}

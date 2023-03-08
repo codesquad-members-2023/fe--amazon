@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Clone</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- 상단 네비게이션 바 -->
+      <nav>
+        <div class="up_nav">
+          <a href="#">
+            <img id="logo" src="asset/amazon_logo.svg" alt="Amazon Logo" />
+          </a>
+
+          <a href="#">
+            <div class="menu1">
+              <div id="menu1_upside">
+                <img src="asset/location.svg" />
+                <div>배송처</div>
+              </div>
+              <div id="menu1_downside">대한민국</div>
+            </div>
+            <div class="region_modal">
+              <div>
+                <div class="region_modal_upside">
+                  KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는
+                  품목을 보려면 배송 주소를 변경하십시오.
+                </div>
+                <div class="region_modal_downside">
+                  <button>계속</button>
+                  <button>주소 변경</button>
+                </div>
+                <div class="region_modal_triangle"></div>
+              </div>
+            </div>
+          </a>
+
+          <div class="search">
+            <input class="search_bar" type="text" placeholder="검색 Amazon" />
+            <button class="search_button">
+              <img src="asset/search.svg" />
+            </button>
+          </div>
+
+          <div class="country_info">
+            <div id="country">🇰🇷</div>
+            <div>KO</div>
+          </div>
+
+          <section class="login_section">
+            <a href="#">
+              <div class="menu" id="loginMenu">
+                <div class="menus_upside">안녕하세요, 로그인</div>
+                <div class="menus_downside">계정 및 목록</div>
+              </div>
+            </a>
+
+            <div class="login">
+              <div class="login_modal">
+                <div class="nav_login">
+                  <button>
+                    <div>로그인</div>
+                  </button>
+                  <div id="nav_login_text">
+                    <span>기존 사용자가 아니십니까?</span>
+                    <a href="#"> 여기에서 시작합니다.</a>
+                  </div>
+                </div>
+                <div class="nav_login_shape"></div>
+              </div>
+
+              <div class="hover_login_modal">
+                <div class="nav_login">
+                  <button>
+                    <div>로그인</div>
+                  </button>
+                  <div id="nav_login_text">
+                    <span>기존 사용자가 아니십니까?</span>
+                    <a href="#"> 여기에서 시작합니다.</a>
+                  </div>
+
+                  <div class="hover_login_list">
+                    <div class="hover_login_list1 hover_login_left">
+                      <ul>
+                        <li>귀하의 목록</li>
+                        <li>목록 생성</li>
+                        <li>목록 또는 레지스트리 찾기</li>
+                        <li>AmazonSmile 자선 품목 목록</li>
+                      </ul>
+                    </div>
+                    <div class="hover_login_list1">
+                      <ul>
+                        <li>계정</li>
+                        <li>계정</li>
+                        <li>주문</li>
+                        <li>권장 사항</li>
+                        <li>검색 기록</li>
+                        <li>워치리스트</li>
+                        <li>비디오 구매 및 대여</li>
+                        <li>Kindle 언리미티드</li>
+                        <li>콘텐츠 및 기기</li>
+                        <li>항목 구독 및 저장</li>
+                        <li>멤버십 및 구독</li>
+                        <li>음악 라이브러리</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="nav_login_shape"></div>
+              </div>
+            </div>
+          </section>
+
+          <a href="#">
+            <div class="menu">
+              <div class="menus_upside">반품</div>
+              <div class="menus_downside">& 주문</div>
+            </div>
+          </a>
+
+          <a href="#">
+            <div class="cart">
+              <img src="asset/cart.svg" />
+              <div class="menus_downside">장바구니</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="down_nav">
+          <div class="down_nav_left_list">
+            <ul>
+              <a href="#">
+                <div>
+                  <img src="asset/more.svg" />
+                  <li>모두</li>
+                </div>
+              </a>
+
+              <li><a href="#">오늘의 딜</a></li>
+              <li><a href="#">고객 서비스</a></li>
+              <li><a href="#">레지스트리</a></li>
+              <li><a href="#">기프트 카드</a></li>
+              <li><a href="#">판매</a></li>
+            </ul>
+          </div>
+          <a href="#">
+            <div class="down_nav_right_list">지금 특가 상품 쇼핑하기</div>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <aside>
+      <!-- 좌측 사이드 메뉴 -->
+    </aside>
+
+    <main>
+      <!-- 메인 뷰 -->
+    </main>
+
+    <footer>
+      <!-- 하단 바 -->
+    </footer>
+  </body>
+  <script src="js/loginEvent.js"></script>
+  <script src="js/shippingRegionEvent.js"></script>
+</html>
