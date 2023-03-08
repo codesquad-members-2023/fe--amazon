@@ -44,11 +44,11 @@
   visibility: visible;
 }
 
-.section__arrow {
+.section__arrow__login {
   position: absolute;
   width: 18.93px;
   height: 18.93px;
-  top: -10px;
+  top: -8px;
   right: 85px;
   background-color: white;
   z-index: 2;
