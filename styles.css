@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+/* font color랑 font-size 메인 만들면서 비교해보고 header로 빼기 */
 body {
   color: #fff;
   font-size: 13px;
@@ -214,10 +215,15 @@ body {
   width: 150px;
 }
 
+.main {
+  position: relative;
+  height: 1300px;
+}
+
 .dimmed {
   background-color: rgba(16, 20, 26, 0.4);
   z-index: 10;
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
