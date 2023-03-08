@@ -1,4 +1,4 @@
-const loginMenu = document.querySelector('#loginMenu');
+const loginMenu = document.querySelector('.login_section');
 const loginModal = document.querySelector('.login_modal');
 
 const hoverLoginModal = document.querySelector('.hover_login_modal');
