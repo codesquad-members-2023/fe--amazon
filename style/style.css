@@ -245,8 +245,14 @@ button {
   color: var(--color-navy);
 }
 
+.gray-line {
+  width: 100%;
+  background-color: var(--color-gray-900);
+}
+
 .login__additional--hover {
   display: none;
+  color: var(--color-black);
 }
 
 
