@@ -4,6 +4,7 @@
 @import "components/header-bar.css";
 @import "components/section-login.css";
 @import "components/section-location.css";
+@import "components/menu-bar.css";
 
 /* SCREENS */
 @import "screens/dimmed.css";
