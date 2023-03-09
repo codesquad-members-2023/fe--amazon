@@ -51,7 +51,6 @@
   top: -8px;
   right: 85px;
   background-color: white;
-  z-index: 2;
   /* White */
   transform: rotate(45deg);
 }
@@ -76,7 +75,7 @@
   gap: 8px;
   background-color: white;
   color: black;
-  z-index: 4;
+  z-index: 5;
 }
 
 .section__login__detail {
