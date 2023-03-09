@@ -31,13 +31,14 @@ a:-webkit-any-link {
   flex: 1 1;
   padding: 8px 0;
   align-items: center;
+  gap: 2%;
 }
 
 .nav-top__left {
   display: flex;
   height: auto;
   gap: 29px;
-  padding: 21px
+  padding: 1%;
 }
 
 .nav-top__container {
@@ -144,20 +145,25 @@ a:-webkit-any-link {
   line-height: 16px;
 }
 
-.nav-top__account-list {
-  display: flex;
+/* .na-top__account-container {
   position: relative;
+
+} */
+
+.nav-top__account-link {
+  position: relative;
+  display: flex;
   flex-flow: column;
+  z-index: 2;
 }
 
-.nav-top__line1 {
-  align-items: center;
+.nav-top__account-line1 {
   font-weight: 600;
   font-size: 11px;
   line-height: 13px;
 }
 
-.nav-top_line2 {
+.nav-top__account-line2 {
   font-weight: 800;
   font-size: 13px;
   line-height: 16px;
@@ -184,6 +190,7 @@ a:-webkit-any-link {
   display: flex;
   align-items: center;
   gap: 6.33px;
+  margin: 1%;
 }
 
 .nav-top__text{
@@ -197,7 +204,7 @@ a:-webkit-any-link {
   height: 32px;
   background-color: #1B232F;
   align-items: center;
-  padding: 16px;
+  padding: 1%;
 }
 
 .nav-bottom__left {
