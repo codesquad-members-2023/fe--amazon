@@ -126,9 +126,9 @@ console.log(calculateArea(5));
     - [x] : 배송처 영역 호버하면 [주소 변경 레이어] 출력
     - [x] : 호버된 레이어 출력시 배경 딤처리
 - [ ] : 사이드 바
-  - [ ] : 레이아웃 구성
-  - [ ] : [모두] 클릭시 사이드바 호출
-  - [ ] : [X버튼] 클릭시 사이드바 닫기
+  - [x] : 레이아웃 구성
+  - [x] : [모두] 클릭시 사이드바 호출
+  - [x] : [X버튼] 클릭시 사이드바 닫기
   - [ ] : 사이드바 목록 호버시 배경색과 아이콘색 변경 효과
   - [ ] : [모두보기] 클릭시 목록 확장
   - [ ] : [간단히 보기] 클릭시 목록 축소
@@ -164,6 +164,8 @@ flex-grow & flex-shrink란 플렉스박스의 유연한 레이아웃을 가능�
 
 [flex-grow & flex-shrink](https://blogpack.tistory.com/863)
 
+</br>
+
 ## inline-block를 이용하여 input과 button 붙이기
 
 inline-block으로 지정된 엘리먼트는 하이브리드 모드처럼 동작하는데,  
@@ -193,6 +195,8 @@ block 엘리먼트처럼 width와 height속성 및 margin,padding을 지정 할 
 
 ![](https://velog.velcdn.com/images/sarang_daddy/post/a2e650f4-d682-469e-859e-7f7543c4bc82/image.png)
 
+</br>
+
 ## position을 이용한 배치
 
 position : absolute는 가장 가까운 relative를 가진 부모를 기준으로 움직인다.  
@@ -213,6 +217,8 @@ position : absolute는 가장 가까운 relative를 가진 부모를 기준으�
 section_login 레이아웃은 header_login을 기준으로 위치를 조정 할 수 있다.
 
 ![](https://velog.velcdn.com/images/sarang_daddy/post/6e16be82-f8b9-4e29-85e7-a921788a1e66/image.png)
+
+</br>
 
 ## class와 opacity를 이용하여 레이아웃 불러오기
 
@@ -252,6 +258,8 @@ headerLogin.addEventListener("mouseout", removeLoginSection);
 - section_login 레이아웃은 최초 opcity 0으로 화면에 보이지 않는다.
 - setTimeout 1초 후 visible 클래스를 추가하여 화면에 나온다.
 - 다른 header 항목을 호버하면 최초 section_login 레이아웃은 hidden된다.
+
+</br>
 
 ## 딤처리
 
@@ -294,6 +302,8 @@ const hiddenLoginSectionDetail = () => {
 - 호버영역(딤처리 제외)에 이벤트가 발생하면 "hidden" 클래스 제거하여 딤div를 가져온다.
 
 [dimmed 처리 방법 두가지](https://sub0709.tistory.com/35)
+
+</br>
 
 ## 호버처리
 
@@ -339,3 +349,64 @@ loginSectionDetail.addEventListener("mouseout", hiddenLoginSectionDetail);
   display: flex;
 }
 ```
+
+</br>
+
+## 쌓임 맥락(stacking context)
+
+스태킹 컨텍스트(Stacking Context)는 HTML과 CSS에서 렌더링 동작에 영향을 미치는 개념이다.
+
+스태킹 컨텍스트는 뷰포트와 관련된 HTML 요소들을 쌓이는 순서를 결정하는데 사용된다.  
+이 순서는 z-index 프로퍼티 값에 따라 결정된다.
+
+일반적으로 다음과 같은 HTML 요소들이 스태킹 컨텍스트를 생성한다.
+
+- HTML root 요소 (html)
+- position 속성 값이 relative, absolute, fixed, sticky인 요소들
+- z-index 속성 값이 있는 요소들
+- opacity 속성 값이 1보다 작은 요소들
+- transform, filter, perspective 속성 값이 있는 요소들
+
+> 자식의 z-index 값은 부모에게만 의미가 있다.  
+> 하나의 쌓임 맥락은 부모 쌓임 맥락 안에서 통째로 하나의 단위로 간주 된다.
+
+[stacking context - MDN](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)  
+[z-index와 쌓임맥락](https://www.youtube.com/watch?v=dXEWt69GYjE)
+
+```css
+.homeHeader {
+  z-index: 3;
+}
+
+.homeMenu {
+  z-index: 3;
+}
+
+.section__location {
+  z-index: 4;
+}
+
+.section__login2 {
+  z-index: 4;
+}
+```
+
+section_location과 section_login2는 homeHeader,homeMenu 보다 상위에 보여야 한다.  
+하지만 위와 같이 z-index를 설정하면 아래와 같이 homeMenu바의 상위로 나오지 않는다.
+
+![](https://velog.velcdn.com/images/sarang_daddy/post/02f8ecf1-84db-40df-b851-c2b02d2e1aae/image.png)
+
+z-index만 본다면 상위 index에 존재하지만,  
+section_location과 section_login2는 homeHeader의 자손 영역으로  
+homeHeader의 형제인 homeMenu과는 비교대상에서 제외된다.
+
+```css
+.homeHeader {
+  z-index: 4;
+}
+```
+
+homeHeader를 형제인 homeMenu보다 높은 z-index를 부여하면,  
+homeHeader의 자식인 section_location과 section_login2도 homeMenu보다 상위에 배치될 수 있다.
+
+![](https://velog.velcdn.com/images/sarang_daddy/post/c6a8a5ba-ebc6-4268-a19a-d926a69687fa/image.png)
