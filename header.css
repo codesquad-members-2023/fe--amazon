@@ -26,14 +26,10 @@ a:-webkit-any-link {
   height: 56px;
 }
 
-.nav-top {
-  display: flex;
-}
-
 .nav-top__inner-wrap {
   display: flex;
   flex: 1 1;
-  padding: 8px 0 8px 0;
+  padding: 8px 0;
   align-items: center;
 }
 
@@ -46,28 +42,24 @@ a:-webkit-any-link {
 
 .nav-top__container {
   width: 90px;
-  height: 27.22px;
   overflow: hidden;
   position: relative;
 }
 
 .nav-top__container > img {
-  position: absolute;
   width: 100%;
   height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+}
+
+.na-top__location {
+  display: flex;
+  align-items: center;
 }
 
 .nav-top__link {
   display: flex;
   flex-flow: column;
 }
-
-/* .nav-top__link:hover {
-  border: 3px solid red
-} */
 
 .nav-top__line1 {
   display: flex;
