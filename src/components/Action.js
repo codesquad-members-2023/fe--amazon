@@ -31,7 +31,6 @@ class Action extends HTMLElement {
           <p class="caption"><slot name="caption"></slot><p>
           <slot name="bottom"></slot>
         </section>
-        
       </div>
     `;
 

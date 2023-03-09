@@ -1,7 +1,9 @@
-import ChangeAdressAction from './components/Action/ChangeAddressAction.js';
-import LoginAction from './components/Action/LoginAction.js';
-import Sidebar from './components/Sidebar.js';
-import { ID } from './constant.js';
+import ChangeAdressAction from '../components/Action/ChangeAddressAction.js';
+import LoginAction from '../components/Action/LoginAction.js';
+import Sidebar from '../components/Sidebar.js';
+import { ID } from '../constant.js';
+
+export let loginActionElement = null;
 
 const selectAddressBtn = document
   .querySelector('navbar-element')
@@ -14,8 +16,6 @@ const loginBtn = document
 const showAllBtn = document
   .querySelector('navbar-element')
   .shadowRoot.querySelector('#showAllBtn');
-
-let loginActionElement = null;
 
 function runLoginAction() {
   const loginAction = new LoginAction('login-action', false);
@@ -68,7 +68,7 @@ showAllBtn.addEventListener('click', (e) => {
   const sidebar = new Sidebar();
   sidebar.showAction(e);
 
-  // showAllBtn.addEventListener('mouseout', () => {
-  //   sidebar.closeAction();
-  // });
+  showAllBtn.addEventListener('mouseout', () => {
+    sidebar.closeAction();
+  });
 });

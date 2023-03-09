@@ -42,7 +42,7 @@ class LoginActionWithFooter extends Action {
       }
       
     </action-element>
-    <div class="backdrop"></div>
+    <backdrop-element></backdrop-element>
     `;
 
     this.shadowRoot.append(this.getStyle());
@@ -55,16 +55,6 @@ class LoginActionWithFooter extends Action {
     style.textContent = `
       action-element {
         z-index: 1;
-      }
-
-      .backdrop {
-        width: 100%;
-        height: 100%;
-        display: block;
-        background-color: var(--black-40);
-        position: fixed;
-        top: 0;
-        left: 0;
       }
 
       div[slot="bottom"] {

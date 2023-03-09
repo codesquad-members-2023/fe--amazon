@@ -9,3 +9,5 @@ export const ACTION_SIZE = {
   LOGIN_ACTION_WITH_FOOTER: 450,
   CHANGE_ADDRESS_ACTION: 320,
 };
+
+export const SIDEBAR_SIZE = 320;
