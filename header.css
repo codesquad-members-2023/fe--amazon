@@ -51,7 +51,7 @@ a:-webkit-any-link {
   height: 100%;
 }
 
-.na-top__location {
+.nav-top__location {
   display: flex;
   align-items: center;
 }
@@ -110,12 +110,14 @@ a:-webkit-any-link {
   color: #878787;
 }
 
-.nav-top__search-right {
+.nav-top__search-btn {
   width: 40px;
   height: 40px;
   border-radius: 0 4px 4px 0;
   display: flex;
   background: #FCB057;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-top__search-icon{
