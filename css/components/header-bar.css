@@ -1,0 +1,85 @@
+.home__header {
+  background-color: #131921;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 800px;
+  margin: 0 auto;
+  height: 60px;
+  font-size: 13px;
+  z-index: 3;
+  position: fixed;
+}
+
+.small__font {
+  font-size: 11px;
+  color: #d5d5d5;
+}
+
+.home__header__left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.home__header__logo,
+.home__header__location,
+.home__header__search,
+.home__header__country,
+.home__header__login,
+.home__header__checkOrder,
+.home__header__basket {
+  padding: 15px;
+}
+
+.home__header__center {
+  flex-grow: 1;
+}
+
+.home__header__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.home__header__search {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.home__header__search input {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.home__header__search button {
+  display: inline-block;
+  width: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: orange;
+}
+
+.home__header__search button i {
+  color: white;
+}
+
+.home__header__location,
+.home__header__login,
+.home__header__checkOrder {
+  display: flex;
+  flex-direction: column;
+}
+
+.home__header__login,
+.home__header__location {
+  position: relative;
+}

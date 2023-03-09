@@ -1,0 +1,21 @@
+@import "reset.css";
+
+/* COMPONENTS */
+@import "components/header-bar.css";
+@import "components/section-login.css";
+@import "components/section-location.css";
+
+/* SCREENS */
+@import "screens/dimmed.css";
+
+body {
+  font-family: "Kanit", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
