@@ -39,10 +39,6 @@
 }
 
 .shipping_address {
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -107,9 +103,9 @@
   gap: 8px;
 }
 
-.shipping_address_popup + .triangle {
-  left: 156.89px;
-  top: 48px;
+.shipping_address_popup > .triangle {
+  left: 10px;
+  top: -15px;
 }
 
 #continue_btn {
@@ -123,10 +119,6 @@
 }
 
 .search_bar__form {
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -162,19 +154,12 @@
 }
 
 .nation {
-  flex: none;
-  order: 3;
-  flex-grow: 0;
-
   width: 35px;
   height: 16px;
 }
 
 .login_bar {
   z-index: 1;
-  flex: none;
-  order: 4;
-  flex-grow: 0;
 
   display: flex;
   flex-direction: column;
@@ -194,9 +179,6 @@
 
 .login_popup {
   z-index: 2;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 
   position: absolute;
   left: 873px;
@@ -234,8 +216,6 @@
 
 .login_popup_detail {
   z-index: 2;
-  order: 0;
-  flex-grow: 0;
 
   position: absolute;
   left: 819px;
@@ -300,14 +280,14 @@
   border-left: 1px solid #EFF2F2;
 }
 
-.login_popup + .triangle {
-  left: 1075px;
-  top: 47px;
+.login_popup > .triangle {
+  right: 20px;
+  top: -10px;
 }
 
-.login_popup_detail + .triangle {
-  left: 1075px;
-  top: 47px;
+.login_popup_detail > .triangle {
+  right: 65px;
+  top: -10px;
 }
 
 .triangle {
@@ -322,10 +302,6 @@
 }
 
 .mypage {
-  flex: none;
-  order: 5;
-  flex-grow: 0;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -336,10 +312,6 @@
 }
 
 .cart {
-  flex: none;
-  order: 6;
-  flex-grow: 0;
-
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
