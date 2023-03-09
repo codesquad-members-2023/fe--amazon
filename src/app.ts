@@ -4,7 +4,7 @@ class App {
   $userExpansion: HTMLElement;
   $wrapperDim: HTMLElement;
   constructor() {
-    // expandLogin 관련
+    // toggleExpandLogin 관련
     this.$userAccount = this.$('.user-account')!;
     this.$login = this.$('.login')!;
     this.$userExpansion = this.$('.user-expansion')!;
