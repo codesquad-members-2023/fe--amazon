@@ -15,8 +15,19 @@ html, body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   height: 100%;
+}
+
+@media (max-width: 70rem) {
+  .wrapper__main {
+    width: 70rem;
+  }
+}
+
+@media (min-width: 70rem) {
+  .wrapper__main {
+    width: 100%;
+  }
 }
 
 .header {
