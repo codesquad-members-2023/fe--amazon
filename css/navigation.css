@@ -1,49 +1,37 @@
-@import "./reset.css";
-.nav-top {
+.nav-belt {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  padding: 8px 16px;
-  gap: 24px;
-  width: 1280px;
   height: 56px;
-  background: #10141a;
-  color: #ffffff;
+  padding: 0px 16px;
+  gap: 24px;
+  background: var(--color-black);
+  color: var(--color-white);
 }
 
-.delivery {
+.shipping-container {
   font-size: 11px;
-  line-height: 13px;
-  letter-spacing: -0.06em;
-  color: #d5d5d5;
+  color: var(--color-gray400);
 }
 
 .country {
   width: 43px;
-  height: 16px;
-  font-family: "Pretendard";
-  font-style: normal;
   font-weight: 800;
   font-size: 13px;
-  color: #ffffff;
-}
-
-a {
-  color: #ffffff;
-  text-decoration: none;
+  color: var(--color-white);
+  letter-spacing: -0.06em;
 }
 
 .search {
   display: flex;
-  flex-direction: row;
+  flex-grow: 1;
 }
+
 .search-input {
-  padding: 5px;
-  width: 700px;
-  height: 40px;
-  border: 0;
-  background: #ffffff;
+  flex-grow: 1;
+  padding: 12px;
+  border: none;
   border-radius: 4px 0px 0px 4px;
+  background: var(--color-white);
 }
 
 .search-button {
@@ -51,8 +39,13 @@ a {
   height: 40px;
   border: 0;
   border-radius: 0px 4px 4px 0px;
-  background: #fcb057;
+  background: var(--color-PrimaryOrange100);
   align-items: center;
+}
+
+a {
+  color: var(--color-white);
+  text-decoration: none;
 }
 
 .language {
@@ -68,37 +61,36 @@ a {
 .login span.login-prompt {
   font-size: 11px;
   letter-spacing: -0.06em;
-  color: #d5d5d5;
+  color: var(--color-gray400);
 }
 
 .login span.Accounts and lists {
   font-size: 13px;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .return-order span.return {
   font-size: 11px;
   letter-spacing: -0.06em;
-  color: #d5d5d5;
+  color: var(--color-gray400);
 }
 
 .return-order span.order {
   font-size: 13px;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
-.nav-bottom {
-  display: flex;
-  flex-direction: row;
+.nav-main {
   justify-content: space-between;
   padding: 0px 16px;
   width: 1280px;
   height: 32px;
-  background: #1b232f;
+  background: var(--color-gray900);
   align-items: center;
 }
 
 .nav-shop {
+  display: flex;
   justify-content: flex-start;
 }
 
