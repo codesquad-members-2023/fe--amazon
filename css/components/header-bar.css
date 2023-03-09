@@ -9,7 +9,7 @@
   height: 60px;
   font-size: 13px;
   z-index: 3;
-  position: fixed;
+  position: sticky;
 }
 
 .small__font {
