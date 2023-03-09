@@ -6,12 +6,20 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* font color랑 font-size 메인 만들면서 비교해보고 header로 빼기 */
+
 body {
   color: #fff;
   font-size: 13px;
   font-family: "Pretendard", sans-serif;
   letter-spacing: -0.06em;
+  height: 100%;
+  position: relative;
 }
 
 .header {
@@ -49,8 +57,6 @@ body {
 .header__anchor,
 .nav__anchor,
 .nav__special-offer {
-  text-decoration: none;
-  color: #fff;
   font-weight: 800;
 }
 
@@ -124,8 +130,6 @@ body {
   display: inline-block;
   padding: 8px;
 }
-
-/* 글로벌로 뺀다? */
 
 /* 명시도 높이기 */
 .hidden.hidden {
@@ -206,6 +210,10 @@ body {
   padding: 9.5px 10px;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .button--large {
   width: 160px;
   height: 32px;
@@ -217,34 +225,94 @@ body {
   background-color: #eff2f2;
 }
 
-.list {
+.pop-up__list {
   color: #10141a;
   display: flex;
   justify-content: space-between;
 }
 
-.list__container {
+.list {
   display: flex;
   flex-direction: column;
+}
+
+.list--login-pop-up {
   gap: 4px;
 }
 
 .list__label {
-  font-size: 13px;
   font-weight: 800;
+}
+
+.list__label--login-pop-up {
   letter-spacing: -0.06em;
+  font-size: 13px;
+}
+
+.list__label--side-bar {
+  display: block;
+  font-size: 18px;
+  padding: 16px 16px 16px 32px;
 }
 
 .list__items {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-
   list-style: none;
 }
 
-.list__item {
+.list__items--login-pop-up {
+  gap: 4px;
+}
+
+.list__item--login-pop-up {
   width: 150px;
+}
+
+.list__anchor {
+  width: 320px;
+  display: flex;
+  gap: 8px;
+  overflow-x: hidden;
+
+  font-size: 13px;
+  padding: 8px 16px 8px 32px;
+  color: #10141a;
+}
+
+.list__anchor:hover {
+  /* 색 수정 */
+  background-color: yellow;
+}
+
+.list__anchor:hover .list__icon {
+  /* 색 수정 */
+  color: white;
+}
+
+.list__text {
+  flex-grow: 1;
+}
+
+@keyframes slide--right-to-left {
+  from {
+    transform: translateX(200%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.list__sub {
+  position: absolute;
+  width: 320px;
+  height: 100%;
+  top: 0px;
+  left: -320px;
+  background-color: white;
+
+  animation: slide--right-to-left 2500ms ease-in-out;
 }
 
 .main {
@@ -255,9 +323,131 @@ body {
 .dimmed {
   background-color: rgba(16, 20, 26, 0.4);
   z-index: 10;
-  position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+}
+
+.dimmed--main {
+  position: absolute;
+}
+
+.dimmed--body {
+  position: fixed;
+}
+
+/* .aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 100;
+  background-color: red;
+
+  animation: slide--left-to-right 250ms ease-in-out;
+}
+
+.aside__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+} */
+
+/* aside */
+@keyframes side-bar__slide--left-to-right {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.side-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 100;
+  background-color: red;
+
+  /* animation: slide-bar__slide--left-to-right 250ms ease-in-out; */
+}
+
+.side-bar__close {
+  position: absolute;
+  left: 320px;
+}
+
+.side-bar__log-in {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 320px;
+  padding: 16px 16px 16px 32px;
+  background-color: #10141a;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.side-bar__contents {
+  height: 100%;
+  position: relative;
+  width: 320px;
+  /* overflow-x: hidden; */
+
+  display: flex;
+  flex-direction: column;
+
+  color: #10141a;
+  background-color: #ffffff;
+}
+
+.side-bar__label {
+  padding: 16px 16px 16px 32px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.side-bar__anchor {
+  padding: 8px 16px 8px 32px;
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 500;
+  font-size: 13px;
+}
+
+@keyframes sub-menu__slide--right-to-left {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes sub-menu__slide--left-to-right {
+  form {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.submenu {
+  width: 320px;
+  position: absolute;
+  left: 320px;
+  top: 0;
+  height: 100%;
+
+  background-color: yellow;
+  /* animation: sub-menu__slide--right-to-left 250ms ease-in-out forwards; */
+  z-index: 1000;
 }
