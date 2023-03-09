@@ -81,19 +81,20 @@ a {
 }
 
 .nav-main {
-  justify-content: space-between;
-  padding: 0px 16px;
-  width: 1280px;
+  display: flex;
   height: 32px;
   background: var(--color-gray900);
   align-items: center;
+  padding: 0px 16px;
 }
 
 .nav-shop {
   display: flex;
-  justify-content: flex-start;
+  gap: 16px;
 }
 
-.nav-shop li {
-  float: left;
+.shop-deals {
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse;
 }
