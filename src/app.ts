@@ -3,12 +3,19 @@ class App {
   $login: HTMLElement;
   $userExpansion: HTMLElement;
   $wrapperDim: HTMLElement;
+
+  $shippingCountry: HTMLElement;
+  $addressChanging: HTMLElement;
   constructor() {
     // toggleExpandLogin 관련
     this.$userAccount = this.$('.user-account')!;
     this.$login = this.$('.login')!;
     this.$userExpansion = this.$('.user-expansion')!;
     this.$wrapperDim = this.$('.wrapper__dim')!;
+
+    // toggleAddressChanging 관련
+    this.$shippingCountry = this.$('.shipping-country')!;
+    this.$addressChanging = this.$('.address-changing')!;
   }
 
   private $(selector: string): HTMLElement | null {
@@ -31,7 +38,19 @@ class App {
       this.$login.style.display = 'flex';
     });
   }
+
+  toggleAddressChanging() {
+    this.$shippingCountry.addEventListener('mouseenter', () => {
+      this.$addressChanging.style.display = 'flex';
+      this.$wrapperDim.style.display = 'block';
+    });
+    this.$addressChanging.addEventListener('mouseleave', () => {
+      this.$addressChanging.style.display = 'none';
+      this.$wrapperDim.style.display = 'none';
+    });
+  }
 }
 
 const app = new App();
 app.toggleExpandLogin();
+app.toggleAddressChanging();

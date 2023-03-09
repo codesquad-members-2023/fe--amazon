@@ -346,7 +346,7 @@ html, body {
 
 .address-changing {
   position: absolute;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
