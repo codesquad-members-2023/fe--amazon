@@ -5,3 +5,28 @@
 body {
   background-color: #fff;
 }
+
+.yellow_button {
+  background: linear-gradient(174.6deg, #ffffff 4.31%, #fed15f 50.01%, #febe30 95.71%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #de9408;
+  border-radius: 4px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: -0.06em;
+
+  color: #10141a;
+
+  width: 60%;
+  height: 30%;
+
+  cursor: pointer;
+}
