@@ -4,6 +4,7 @@ const dimLayer = document.querySelector('.dim_layer');
 const header = document.querySelector('#head_navigation_bar');
 const closeButton = document.querySelector('#closeButton');
 const allButton = document.querySelector('.sidebar_all_button');
+const hiddenMenus = document.querySelector('.sidebar_hidden_menus');
 
 allLink.addEventListener('click', () => {
   sideBar.style.display = 'flex';
@@ -28,4 +29,6 @@ sideBar.addEventListener('animationend', (e) => {
   if (e.animationName === 'fadeInRight') sideBar.style.display = 'none';
 });
 
-allButton.addEventListener('click', () => {});
+allButton.addEventListener('click', () => {
+  hiddenMenus.style.display = 'block';
+});

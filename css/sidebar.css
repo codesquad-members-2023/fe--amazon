@@ -115,3 +115,7 @@
 .sidebar_section_list li:hover {
   background: #eff2f2;
 }
+
+.sidebar_hidden_menus {
+  display: none;
+}
