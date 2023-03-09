@@ -11,13 +11,13 @@
     <header class="header">
       <!-- header 내부 header_main -->
       <div class="header_main">
-        <a href="#">
+        <a href="#" class="header_href">
           <div class="logo">
             <img src="assets/images/BI.svg" id="logo_image" />
           </div>
         </a>
 
-        <a href="#" class="shipping">
+        <a href="#" class="shipping header_href">
           <div class="shipping">
             <img src="assets/images/name=location.svg" id="shipping_image" />
             <span class="top_text">배송처</span>
@@ -27,22 +27,61 @@
 
         <div class="search_bar">
           <input class="search_input" type="search" placeholder="검색 Amazon" />
-          <button class="search_button" type="button">
+          <button class="search_button">
             <img src="assets/images/name=search.svg" />
           </button>
         </div>
 
         <div class="nation_contianer">
           <img src="assets/images/flag.svg" />
-          <span>KO</span>
+          <span>US</span>
         </div>
 
-        <a href="#" class="login_container">
-          <div class="login_container">
+        <div class="login_section">
+          <a href="#" class="login_container header_href">
             <span class="top_text">안녕하세요, 로그인</span>
             <span class="bottom_text">계정 및 목록</span>
+          </a>
+          <div class="login_pop-up hidden">
+            <!-- <div class="pop-up_triangle"></div> -->
+            <div class="pop-up_contents">
+              <button class="login_pop-up_button" type="button">로그인</button>
+              <div class="login_pop-up_description">
+                <span>기존 사용자가 아니십니까?</span>
+                <a href="">여기에서 시작합니다.</a>
+              </div>
+
+              <div class="dividing_line hidden"></div>
+
+              <div class="list_container hidden">
+                <div class="list_left">
+                  <ul class="list_items">
+                    <li class="list_label">귀하의 목록</li>
+                    <li class="list_item">목록생성</li>
+                    <li class="list_item">목록 또는 레지스트리 찾기</li>
+                    <li class="list_item">AmazonSmile 자선 품목 목록</li>
+                  </ul>
+                </div>
+                <div class="list_right">
+                  <ul class="list_items">
+                    <li class="list_label">계정</li>
+                    <li class="list_item">계정</li>
+                    <li class="list_item">주문</li>
+                    <li class="list_item">권장 사항</li>
+                    <li class="list_item">검색 기록</li>
+                    <li class="list_item">위치리스트</li>
+                    <li class="list_item">비디오 구매 및 대여</li>
+                    <li class="list_item">Kindle 언리미티드</li>
+                    <li class="list_item">콘텐츠 및 기기</li>
+                    <li class="list_item">항목 구독 및 저장</li>
+                    <li class="list_item">멤버십 및 구독</li>
+                    <li class="list_item">음악 라이브러리</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-        </a>
+        </div>
 
         <div class="mypage_container">
           <span class="top_text">반품</span>
@@ -50,12 +89,13 @@
         </div>
 
         <div class="cart_container">
-          <img />
+          <img src="assets/images/name=cart.svg" />
           <span>장바구니</span>
         </div>
       </div>
 
       <!-- header 내부 navbar-->
+      <!-- 메뉴 항목에 li 태그를 적용하는 부분 고민 필요 -->
       <div class="navbar">
         <ul class="navbar_left">
           <li>
@@ -75,5 +115,6 @@
         </ul>
       </div>
     </header>
+    <!-- <script src="./js/index.js"></script> -->
   </body>
 </html>
