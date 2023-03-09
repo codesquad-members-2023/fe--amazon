@@ -1,0 +1,40 @@
+.nav__login_popup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 4px;
+    width: 235px;
+    height: 90px;
+    position: absolute;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+.login_popup_text{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 13px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    width: 100%;
+    line-height: 160%;
+    letter-spacing: -0.03em;
+}
+.nav__login_popup_button{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 32px;
+    background: linear-gradient(174.6deg, #FFFFFF 4.31%, #FED15F 50.01%, #FEBE30 95.71%);
+    border: 1px solid #DE9408;
+    border-radius: 4px;
+
+}
+
+.login_popup_text_click{
+    color: #074099;
+}

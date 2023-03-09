@@ -82,9 +82,10 @@ a{
     font-size: 13px;
     color: white;
 }
-.nav__login{
+.nav__login_text{
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .login_text{
