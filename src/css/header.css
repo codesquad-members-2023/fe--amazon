@@ -140,7 +140,7 @@
   top: -18px;
   left: 30px;
 }
-.login_button {
+.login_btn {
   cursor: pointer;
 }
 .login_dim_bottom {
@@ -194,7 +194,7 @@
   color: #ffffff;
 }
 .side_bar,
-.nav_sub_right_button > a {
+.nav_sub_right_btn > a {
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 800;
@@ -206,20 +206,20 @@
   color: #ffffff;
 }
 
-.nav_sub_left_buttons,
-.nav_sub_left_buttons > li,
+.nav_sub_left_btns,
+.nav_sub_left_btns > li,
 .side_bar,
-.nav_sub_right_button {
+.nav_sub_right_btn {
   display: flex;
   align-items: flex-start;
 }
 
-.nav_sub_left_buttons > li {
+.nav_sub_left_btns > li {
   padding: 8px;
   gap: 4px;
 }
-.nav_sub_left_buttons > li > a,
-.nav_sub_right_button > a {
+.nav_sub_left_btns > li > a,
+.nav_sub_right_btn > a {
   display: flex;
 }
 .side_bar img {
