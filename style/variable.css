@@ -48,10 +48,10 @@ html {
   --animation-duration: 1000ms;
 
   /* Font-type */
-  --bold-xl: var(--weight-bold) var(--font-xl);
-  --bold-lg: var(--weight-bold) var(--font-lg);
-  --bold-md: var(--weight-bold) var(--font-md);
-  --bold-sm: var(--weight-semi-bold) var(--font-sm);
-  --body-md: var(--weight-regular) var(--font-md);
-  --body-sm: var(--weight-regular) var(--font-sm);
+  /*--bold-xl: var(--weight-bold) var(--font-xl);*/
+  /*--bold-lg: var(--weight-bold) var(--font-lg);*/
+  /*--bold-md: var(--weight-bold) var(--font-md);*/
+  /*--bold-sm: var(--weight-semi-bold) var(--font-sm);*/
+  /*--body-md: var(--weight-regular) var(--font-md);*/
+  /*--body-sm: var(--weight-regular) var(--font-sm);*/
 }

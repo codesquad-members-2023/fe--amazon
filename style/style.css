@@ -7,7 +7,14 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: 100%;
   z-index: 0;
+}
+
+.header {
+  width: 100%;
+  height: 100%;
 }
 
 /* nav-bar */
@@ -16,51 +23,57 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  color: var(--color-white);
   width: 100%;
+  height: 15%;
 }
 
+/* nav-bar__main */
 .nav-bar__main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 16px;
-  gap: 24px;
-  /* width 다시 한 번 체크 */
+  padding: 0.5rem 1rem;
   width: 100%;
-  height: 56px;
+  height: 60%;
   background-color: var(--color-black);
-
-  font: var(--bold-md);
-
 }
 
 .nav-bar__logo {
   flex-grow: 1;
-  text-align: center;
 }
 
 .nav-bar__shipping-country {
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding: 0px;
 }
 
-.nav-bar__shipping-country > span {
-  font: var(--bold-sm);
+.shipping-country {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shipping-country__icon {
   color: var(--color-gray-400);
 }
 
-.nav-bar__shipping-country > span > img {
-  width: 10px;
-  height: 10px;
+.shipping-country__text {
+  font-weight: var(--weight-bold);
+  font-size: var(--font-sm);
+  color: var(--color-gray-400);
+}
+
+.shipping-country__main {
+  font-weight: var(--weight-bold);
+  font-size: var(--font-md);
+  color: var(--color-white);
+}
+
+.nav-bar__search-form {
+  flex-grow: 6;
 }
 
 .search-form {
-  flex-grow: 12;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -68,10 +81,14 @@
 
 .search-form__input {
   width: 100%;
-  height: 40px;
-  padding: 0 0 0 12px;
+  height: 2rem;
+  padding: 0 0 0 0.75rem;
   border: 0;
-  border-radius: 8px 0 0 8px;
+  border-radius: 0.5rem 0 0 0.5rem;
+  background-color: var(--color-white);
+  font-weight: var(--weight-regular);
+  font-size: var(--font-md);
+  color: var(--color-gray-600);
 }
 
 .search-form__input:focus {
@@ -79,23 +96,29 @@
 }
 
 .search-form__button {
-  width: 40px;
-  height: 40px;
-  border: 0;
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
   border-radius: 0 8px 8px 0;
-
   background-color: var(--color-orange-100);
 }
 
-.language {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.search-icon {
+  color: var(--color-black);
 }
 
-.user-account {
+.nav-bar__language {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.language__text {
+  color: var(--color-white);
+  font-weight: var(--weight-bold);
+  font-size: var(--font-md);
+}
+
+.nav-bar__user-order {
   flex-grow: 1;
   position: relative;
   display: flex;
