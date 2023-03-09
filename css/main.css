@@ -301,13 +301,22 @@ header {
   box-sizing: border-box;
 }
 
+.sub-menu .all-menu {
+  display: flex;
+}
+
 .sub-menu li {
   font-size: 13px;
   font-weight: 600;
   margin: 0 8px;
 }
 
-.sub-menu li a {
+.sub-menu li span,
+.sub-menu li div {
+  cursor: pointer;
+}
+
+.sub-menu li img {
  margin: 0 6px 0 12px;
 }
 

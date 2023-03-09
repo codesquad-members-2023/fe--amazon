@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="./css/reset.css">
   <title>Amazon</title>
 
-  <script defer src="./navBar.js"></script>
-  <!-- <script defer src="./sideBar.js"></script> -->
+  <script defer src="./js/navBar.js"></script>
+  <script defer src="./js/sideBar.js"></script>
 </head>
 <body>
   <!-- SIDEBAR -->
-  <aside class="side-menu">
+  <aside class="side-menu" style="display: none;">
     <div class="side-menu__inner">
       <div class="side-menu__log-in">
         <span>안녕하세요, 로그인</span>
@@ -139,18 +139,18 @@
         </div>
       </div>
       <ul class="sub-menu">
-        <li class="all-menu">
-          <a href="/">
+        <li>
+          <div class="all-menu">
             <img src="./asset/menu.svg" alt="MENU" />
-          </a>
-          모두
+            모두
+          </div>
         </li>
-        <li>오늘의 딜</li>
-        <li>고객 서비스</li>
-        <li>레지스트리</li>
-        <li>키프트 카드</li>
-        <li>판매</li>
-        <li>지금 특가상품 쇼핑하기</li>
+        <li><span>오늘의 딜</span></li>
+        <li><span>고객 서비스</span></li>
+        <li><span>레지스트리</span></li>
+        <li><span>키프트 카드</span></li>
+        <li><span>판매</span></li>
+        <li><span>지금 특가상품 쇼핑하기</span></li>
       </ul>
     </div>
   </header>
