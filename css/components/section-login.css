@@ -34,8 +34,7 @@
   border-radius: 4px;
   margin-bottom: 15px;
 }
-
-.section__login.hidden {
+.hidden {
   display: none;
 }
 

@@ -18,6 +18,7 @@
   align-items: center;
   font-size: 13px;
   padding: 0px 16px;
+  cursor: pointer;
 }
 
 .homeMenu__todaySale {
