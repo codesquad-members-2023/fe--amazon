@@ -11,7 +11,7 @@
 
 <body>
   <header class="nav">
-    <div class="nav_main">
+    <div id="nav_main">
       <div class="amazon_icon"><img src="./src/image/logo.svg" alt="amazon logo"></img></div>
       <div class="shipping_address">
         <div class="shipping_address_icon_text">
@@ -20,9 +20,9 @@
         </div>
         <span class="nav_main_bottom_text">대한민국</span>
       </div>
-      <form class="header_search_form">
-        <input type="text" id="searchFormInput" placeholder="검색 Amazon">
-        <button type="submit" id="searchFormBtn">
+      <form class="nav_main_search_form">
+        <input type="text" class="searchFormInput" placeholder="검색 Amazon">
+        <button type="submit" class="searchFormBtn">
           <img src="./src/image/search.svg" alt="search form submit button icon">
         </button>
       </form>
@@ -43,10 +43,10 @@
         <span class="nav_main_bottom_text">장바구니</span>
       </div>
     </div>
-    <div class="nav_sub">
+    <div id="nav_sub">
       <ul class="nav_sub_left_buttons nav_sub_left_text">
-        <li class="side_bar"><a href="">
-            <img src="./src/image/menu.svg" alt="menu icon">모두</a>
+        <li class="side_bar">
+          <a href=""><img src="./src/image/menu.svg" alt="menu icon">모두</a>
         </li>
         <li><a href="">오늘의 딜</a></li>
         <li><a href="">고객 서비스</a></li>

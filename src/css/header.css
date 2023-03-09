@@ -1,27 +1,20 @@
-/* ! 중복되는 부분 정리하기 */
-.nav {
+/* nav 상단 */
+#nav_main {
   display: flex;
-  flex-direction: column;
-
-  width: 100%;
-  height: 88px;
-}
-
-/* header main */
-.nav_main {
-  display: flex;
-  flex-direction: row;
+  color: white;
   align-items: center;
   padding: 8px 16px;
-  gap: 24px;
 
   width: 100%;
   height: 56px;
 
-  background: #10141a;
-
-  align-self: stretch;
+  background-color: #10141a;
 }
+#nav_main > div,
+#nav_main > form {
+  margin: 10px;
+}
+/* nav 상단 글씨체 */
 .nav_main_top_text {
   font-family: 'Pretendard';
   font-style: normal;
@@ -44,31 +37,10 @@
   color: #ffffff;
 }
 
-.nav_main > div {
-  flex: none;
-}
-
-.amazon_icon {
-  position: relative;
-
-  width: 100px;
-  height: 40px;
-
-  border-radius: 4px;
-}
-.amazon_icon > img {
-  position: absolute;
-  left: 5%;
-  right: 5%;
-  top: 20%;
-  bottom: 11.94%;
-}
-
 .shipping_address {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
 }
 .shipping_address_icon_text {
   display: flex;
@@ -79,25 +51,22 @@
   width: 12px;
   height: 12px;
 }
-.header_search_form {
+
+.nav_main_search_form {
   display: flex;
-  flex-direction: row;
   align-items: center;
   padding-left: 12px;
-  gap: 12px;
-
   background: #ffffff;
   border-radius: 4px;
 
   flex-grow: 1;
 }
-#searchFormInput,
-#searchFormBtn {
+.searchFormInput,
+.searchFormBtn {
   border: none;
   outline: none;
 }
-#searchFormInput {
-  width: 683px;
+.searchFormInput {
   height: 21px;
 
   font-family: 'Pretendard';
@@ -112,9 +81,8 @@
 
   flex-grow: 1;
 }
-#searchFormBtn {
+.searchFormBtn {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 
@@ -124,11 +92,10 @@
   background: #fcb057;
   border-radius: 0px 4px 4px 0px;
 }
-#searchFormBtn > img {
+.searchFormBtn > img {
   width: 24px;
   height: 24px;
 }
-
 .flag,
 .cart {
   display: flex;
@@ -148,23 +115,23 @@
   height: 24px;
 }
 
-/* header sub */
-.nav_sub {
+/* nav 하단 */
+#nav_sub {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0px 16px;
-  gap: 759px;
 
   width: 100%;
   height: 32px;
 
   background: #1b232f;
-
-  align-self: stretch;
+}
+#nav_sub a {
+  color: #ffffff;
 }
 
+/* nav 하단 글씨체 */
 .nav_sub_left_text {
   font-family: 'Pretendard';
   font-style: normal;
@@ -192,13 +159,9 @@
 .side_bar,
 .nav_sub_right_button {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
 }
 
-.nav_sub_left_buttons {
-  padding: 0px;
-}
 .nav_sub_left_buttons > li {
   padding: 8px;
   gap: 4px;
@@ -206,24 +169,10 @@
 .nav_sub_left_buttons > li > a,
 .nav_sub_right_button > a {
   display: flex;
-  width: max-content;
-}
-.side_bar {
-  padding: 8px;
-  gap: 4px;
 }
 .side_bar img {
   width: 16px;
   height: 16px;
 
   margin-right: 5px;
-}
-
-.nav_sub_right_button {
-  padding: 8px 0px;
-  gap: 4px;
-}
-.nav_sub_right_button > a {
-  display: flex;
-  width: max-content;
 }
