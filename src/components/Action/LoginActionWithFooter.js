@@ -1,14 +1,14 @@
 import Action from '../Action.js';
 
 class LoginActionWithFooter extends Action {
-  constructor(width) {
+  constructor(width, id) {
     super(width);
 
     const text = this.innerText;
     const shadow = this.shadowRoot;
 
     shadow.innerHTML = `
-    <action-element flexibleBtn="flexible" mainBtn="main" subBtn="sub" pointerPosition="right">
+    <action-element id="${id}" flexibleBtn="flexible" mainBtn="main" subBtn="sub" pointerPosition="right">
       <div slot="text">LoginActionWithFooter</div>
       <div slot="caption">캡션</div>
       <div slot="bottom">푸터</div>

@@ -3,7 +3,6 @@ class Action extends HTMLElement {
     super();
 
     this.width = width;
-
     const flexibleBtn = this.getAttribute('flexibleBtn');
     const mainBtn = this.getAttribute('mainBtn');
     const subBtn = this.getAttribute('subBtn');
@@ -29,36 +28,62 @@ class Action extends HTMLElement {
     this.shadowRoot.append(this.getStyle());
   }
 
-  showAction() {
-    setTimeout(() => {
-      document.body.append(this);
-      this.isOpen = true;
-    }, 100);
+  setActionPosition(e) {
+    const docWidth = window.innerWidth;
+    const action = this.shadowRoot.querySelector('action-element');
+    const actionWidth = action.getBoundingClientRect().width;
+    const targetX = e.target.getBoundingClientRect().x;
+    const targetY = e.target.getBoundingClientRect().y;
+    const targetHeight = e.target.getBoundingClientRect().height;
+    action.style.position = 'absolute';
+    const isWidthOverflow = targetX + actionWidth > docWidth;
+    if (!isWidthOverflow) {
+      action.style.left = `${targetX}px`;
+    } else {
+      action.style.right = `16px`;
+    }
+    action.style.top = `${targetY + targetHeight + 16}px`;
+    action.translateX = '-50%';
+  }
+
+  setPointerPosition(e, id) {
+    const action = this.shadowRoot.querySelector('action-element');
+    const actionX = action.getBoundingClientRect().x;
+    const targetX = e.target.getBoundingClientRect().x;
+    const targetWidth = e.target.getBoundingClientRect().width;
+    const pointerPosition = targetX - actionX + targetWidth / 2;
+    const container = this.shadowRoot
+      .querySelector('action-element')
+      .shadowRoot.querySelector('.container');
+    container.style.setProperty(`--${id}-pointer-left`, `${pointerPosition}px`);
+  }
+
+  showAction(e, id) {
+    document.body.append(this);
+    this.isOpen = true;
+    this.target = e.target;
+    this.setActionPosition(e);
+    this.setPointerPosition(e, id);
   }
 
   closeAction() {
-    setTimeout(() => {
-      this.remove();
-      this.isOpen = false;
-    }, 100);
+    this.remove();
+    this.isOpen = false;
   }
 
   getStyle() {
     const style = document.createElement('style');
 
-    const pointerPosition = this.getAttribute('pointerPosition');
-    const pointerLeft =
-      pointerPosition === 'left'
-        ? '16px'
-        : pointerPosition === 'right'
-        ? 'calc(100% - 16px)'
-        : '50%';
-
     style.textContent = `
+      :host {
+        position: absolute;
+      }
+
       .container {
         display: block;
+
         width: ${this.width ? this.width : '365px'};
-        position: relative;
+
         padding: 16px;
         background-color: var(--white);
         border-radius: 4px;
@@ -69,7 +94,7 @@ class Action extends HTMLElement {
         content: "";
         position: absolute;
         top: -28px;
-        left: ${pointerLeft};
+        left: var(--${this.id}-pointer-left);
         margin-left: -10px;
         border-width: 10px;
         border-style: solid;
