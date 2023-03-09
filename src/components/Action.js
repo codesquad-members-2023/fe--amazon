@@ -28,7 +28,9 @@ class Action extends HTMLElement {
     this.shadowRoot.append(this.getStyle());
   }
 
-  setActionPosition(e) {
+  setActionPosition(event) {
+    const e = !!event.detail ? event.detail : event;
+
     const docWidth = window.innerWidth;
     const action = this.shadowRoot.querySelector('action-element');
     const actionWidth = action.getBoundingClientRect().width;
@@ -46,7 +48,9 @@ class Action extends HTMLElement {
     action.translateX = '-50%';
   }
 
-  setPointerPosition(e, id) {
+  setPointerPosition(event, id) {
+    const e = !!event.detail ? event.detail : event;
+
     const action = this.shadowRoot.querySelector('action-element');
     const actionX = action.getBoundingClientRect().x;
     const targetX = e.target.getBoundingClientRect().x;
@@ -59,9 +63,9 @@ class Action extends HTMLElement {
   }
 
   showAction(e, id) {
+    console.log(e);
     document.body.append(this);
     this.isOpen = true;
-    this.target = e.target;
     this.setActionPosition(e);
     this.setPointerPosition(e, id);
   }
