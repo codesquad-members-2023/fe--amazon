@@ -1,24 +1,8 @@
 /* ? *로 하기엔 위험하지 않을까? */
 * {
-  box-sizing: border-box;
-}
-
-body,
-button,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-input,
-li,
-ol,
-p,
-ul {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
