@@ -1,6 +1,14 @@
 /* ! 중복되는 부분 정리하기 */
-/* header top */
-.header_top {
+#nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  height: 88px;
+}
+
+/* header main */
+.nav_main {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -14,19 +22,40 @@
 
   align-self: stretch;
 }
+.nav_main_top_text {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: -0.06em;
+
+  color: #d5d5d5;
+}
+.nav_main_bottom_text {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+
+  letter-spacing: -0.06em;
+
+  color: #ffffff;
+}
+
+.nav_main > div,
+.nav_main > a {
+  flex: none;
+}
+
 .amazon_icon {
   position: relative;
-
-  box-sizing: border-box;
 
   width: 100px;
   height: 40px;
 
   border-radius: 4px;
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 }
 .amazon_icon > img {
   position: absolute;
@@ -40,15 +69,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 0px;
 
   width: 43px;
   height: 29px;
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
-.shipping_address_top {
+.shipping_address_icon_text {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -56,33 +82,9 @@
   width: 40px;
   height: 13px;
 }
-.shipping_address_top > img {
+.shipping_address_icon_text > img {
   width: 12px;
   height: 12px;
-}
-.shipping_address_title {
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 13px;
-  letter-spacing: -0.06em;
-
-  color: #d5d5d5;
-}
-.shipping_address_nation_title {
-  width: 43px;
-  height: 16px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
-
-  letter-spacing: -0.06em;
-
-  color: #ffffff;
 }
 .header_search_form {
   display: flex;
@@ -97,8 +99,6 @@
   background: #ffffff;
   border-radius: 4px;
 
-  flex: none;
-  order: 2;
   flex-grow: 1;
 }
 #searchFormInput,
@@ -120,8 +120,6 @@
 
   color: #878787;
 
-  flex: none;
-  order: 0;
   flex-grow: 1;
 }
 #searchFormBtn {
@@ -129,17 +127,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
 
   width: 40px;
   height: 40px;
 
   background: #fcb057;
   border-radius: 0px 4px 4px 0px;
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
 #searchFormBtn > img {
   width: 24px;
@@ -155,64 +148,14 @@
 
   width: 35px;
   height: 16px;
-
-  flex: none;
-  order: 3;
-  flex-grow: 0;
-}
-.flag_title {
-  width: 18px;
-  height: 16px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
-
-  letter-spacing: -0.06em;
-
-  color: #ffffff;
 }
 .login {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
 
   width: 76px;
   height: 29px;
-
-  flex: none;
-  order: 4;
-  flex-grow: 0;
-}
-.login > span:first-child {
-  width: 76px;
-  height: 13px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 13px;
-  letter-spacing: -0.06em;
-
-  color: #d5d5d5;
-}
-.login > span:last-child {
-  width: 58px;
-  height: 16px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
-
-  letter-spacing: -0.06em;
-
-  color: #ffffff;
 }
 .my_page {
   display: flex;
@@ -222,39 +165,6 @@
 
   width: 32px;
   height: 29px;
-
-  flex: none;
-  order: 5;
-  flex-grow: 0;
-}
-.my_page > span:first-child {
-  width: 19px;
-  height: 13px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 13px;
-  letter-spacing: -0.06em;
-
-  /* Gray400 */
-
-  color: #d5d5d5;
-}
-.my_page > span:last-child {
-  width: 32px;
-  height: 16px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
-
-  letter-spacing: -0.06em;
-
-  color: #ffffff;
 }
 .cart {
   display: flex;
@@ -265,28 +175,8 @@
 
   width: 71px;
   height: 24px;
-
-  flex: none;
-  order: 6;
-  flex-grow: 0;
 }
 .cart > img {
   width: 24px;
   height: 24px;
 }
-.cart > span {
-  width: 43px;
-  height: 16px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
-
-  letter-spacing: -0.06em;
-
-  color: #ffffff;
-}
-
-/* header bottom */
