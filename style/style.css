@@ -332,10 +332,12 @@ html, body {
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
-  width: 15rem;
-  height: 5rem;
+  width: 16rem;
+  height: 6rem;
+  padding: 1rem;
+  gap: 0.5rem;
   top: 150%;
   right: 0;
   border: 1px var(--color-black) dashed;
@@ -346,26 +348,22 @@ html, body {
   animation-delay: 1s;
 }
 
-
-
 .login__button {
   background: linear-gradient(174.6deg, var(--color-white) 4.31%, #FED15F 50.01%, #FEBE30 95.71%);
   border: 1px var(--color-yellow-300) solid;
   width: 75%;
-  height: 40%;
+  height: 3rem;
   border-radius: 0.25rem;
   text-align: center;
   font-weight: var(--weight-bold);
   font-size: var(--font-sm);
   color: var(--color-black);
-
 }
 
 .login__question {
   font-weight: var(--weight-regular);
   font-size: var(--font-sm);
   color: var(--color-black);
-
 }
 
 .login__start-page {
@@ -374,6 +372,41 @@ html, body {
   color: var(--color-navy);
 }
 
+.user-expansion {
+  flex-grow: 1;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.5rem;
+  gap: 1rem;
+  top: 100%;
+}
+
+.gray-line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gray-500);
+}
+
+.user-expansion__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-weight: var(--weight-regular);
+  font-size: var(--font-sm);
+  color: var(--color-black);
+}
+
+.user-expansion__user-list, .user-expansion__account-list {
+  line-height: 1.5;
+}
+
+.user-list__title, .account-list__title {
+  font-weight: var(--weight-bold);
+}
 
 /* side bar */
 .sidebar {

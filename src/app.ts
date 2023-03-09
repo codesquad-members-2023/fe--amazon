@@ -1,24 +1,37 @@
 class App {
-  private $navbarUserAccount: HTMLElement;
-  private readonly $wrapperDim: HTMLElement;
+  $userAccount: HTMLElement;
+  $login: HTMLElement;
+  $userExpansion: HTMLElement;
+  $wrapperDim: HTMLElement;
   constructor() {
-    this.$navbarUserAccount = this.$('.nav-bar__user-account')!;
+    // expandLogin 관련
+    this.$userAccount = this.$('.user-account')!;
+    this.$login = this.$('.login')!;
+    this.$userExpansion = this.$('.user-expansion')!;
     this.$wrapperDim = this.$('.wrapper__dim')!;
-
-    this.showLoginModalDetail();
   }
 
   private $(selector: string): HTMLElement | null {
     return document.querySelector(selector);
   }
 
-  private showLoginSlowly() {}
-
-  private showLoginModalDetail() {
-    this.$navbarUserAccount.addEventListener('mouseenter', () => {
+  toggleExpandLogin() {
+    this.$login.addEventListener('mouseenter', () => {
+      this.$login.style.height = '20rem';
+      this.$userExpansion.style.display = 'flex';
       this.$wrapperDim.style.display = 'block';
+    });
+    this.$login.addEventListener('mouseleave', () => {
+      this.$login.style.display = 'none';
+      this.$wrapperDim.style.display = 'none';
+      this.$userExpansion.style.display = 'none';
+      this.$login.style.height = '6rem';
+    });
+    this.$userAccount.addEventListener('mouseenter', () => {
+      this.$login.style.display = 'flex';
     });
   }
 }
 
-new App();
+const app = new App();
+app.toggleExpandLogin();
