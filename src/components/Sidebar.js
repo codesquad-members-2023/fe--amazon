@@ -7,20 +7,21 @@ class Sidebar extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
     this.isOpen = false;
     shadow.innerHTML = `
-      <icon-element name="close" size="24" fill="var(--black-60)"></icon-element>
-      <section class="main">
-        <sidebar-back-element> </sidebar-back-element>
-        <sidebar-category-element> </sidebar-category-element>
-        <sidebar-fold-element> </sidebar-fold-element>
-        <sidebar-header-element> </sidebar-header-element>
-        <sidebar-list-element> </sidebar-list-element>
-        <sidebar-title-element> </sidebar-title-element>
-      </section>
+      <icon-element name="close" size="24" fill="var(--black-60)" id="sidebar-close-btn"></icon-element>
+      <div class="container">
+        <section class="main">
+          <sidebar-back-element> </sidebar-back-element>
+          <sidebar-category-element> </sidebar-category-element>
+          <sidebar-fold-element> </sidebar-fold-element>
+          <sidebar-header-element> </sidebar-header-element>
+          <sidebar-list-element> </sidebar-list-element>
+          <sidebar-title-element> </sidebar-title-element>
+        </section>
+        <section class="sub hide">
+          Sub
+        </section>
       </div>
-      <section class="sub hide">
-        Sub
-      </section>
-      </div>
+
       <backdrop-element></backdrop-element>
     `;
 
@@ -56,26 +57,51 @@ class Sidebar extends HTMLElement {
         left: ${SIDEBAR_SIZE + 8}px;
       }
 
+      icon-element[name="close"]:hover {
+        cursor: pointer;
+      }
+
+      .container {
+        width: ${SIDEBAR_SIZE}px;
+        height: 100%;
+        z-index: 1;
+        position: relative;
+        background-color: var(--white);
+        overflow-x: hidden;
+      }
+
+      .main, .sub {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+
       .main {
         background-color: red;
+        animation: slide 1s forwards;
       }
 
       .sub {
         background-color: yellow;
+        animation: slide 1s forwards;
       }
 
-      section {
-        background-color: var(--white);
-        width: ${SIDEBAR_SIZE}px;
-        height: 100%;
-        z-index: 1;
-        position: fixed;
-      }
 
       .hide {
         display: none;
         opactiy: 0;
       }
+
+      @keyframes slide {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+
     `;
     return style;
   }
