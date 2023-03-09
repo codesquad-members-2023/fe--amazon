@@ -1,0 +1,182 @@
+/* ! 중복되는 부분 정리하기 */
+#nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  height: 88px;
+}
+
+/* header main */
+.nav_main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 24px;
+
+  width: 100%;
+  height: 56px;
+
+  background: #10141a;
+
+  align-self: stretch;
+}
+.nav_main_top_text {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: -0.06em;
+
+  color: #d5d5d5;
+}
+.nav_main_bottom_text {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+
+  letter-spacing: -0.06em;
+
+  color: #ffffff;
+}
+
+.nav_main > div,
+.nav_main > a {
+  flex: none;
+}
+
+.amazon_icon {
+  position: relative;
+
+  width: 100px;
+  height: 40px;
+
+  border-radius: 4px;
+}
+.amazon_icon > img {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 20%;
+  bottom: 11.94%;
+}
+
+.shipping_address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 43px;
+  height: 29px;
+}
+.shipping_address_icon_text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 40px;
+  height: 13px;
+}
+.shipping_address_icon_text > img {
+  width: 12px;
+  height: 12px;
+}
+.header_search_form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 12px;
+  gap: 12px;
+
+  width: 747px;
+  height: 40px;
+
+  background: #ffffff;
+  border-radius: 4px;
+
+  flex-grow: 1;
+}
+#searchFormInput,
+#searchFormBtn {
+  border: none;
+  outline: none;
+}
+#searchFormInput {
+  width: 683px;
+  height: 21px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 160%;
+
+  letter-spacing: -0.03em;
+
+  color: #878787;
+
+  flex-grow: 1;
+}
+#searchFormBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  background: #fcb057;
+  border-radius: 0px 4px 4px 0px;
+}
+#searchFormBtn > img {
+  width: 24px;
+  height: 24px;
+}
+
+.flag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+
+  width: 35px;
+  height: 16px;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 76px;
+  height: 29px;
+}
+.my_page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 32px;
+  height: 29px;
+}
+.cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+
+  width: 71px;
+  height: 24px;
+}
+.cart > img {
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,7 @@
+@import './reset.css';
+@import './font.css';
+@import './header.css';
+
+body {
+  background-color: gray;
+}
