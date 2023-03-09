@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/font.css">
+  <link rel="stylesheet" href="/css/nav.css">
   <link rel="icon" href="./asset/images/Amazon_icon.svg">
   <title>Amazon</title>
 </head>
@@ -20,6 +20,14 @@
         <div class="BoldSM"><img src="/asset/images/vectors/ShippingAddress.svg">배송처</div>
         <div class="BoldMD">대한민국</div>
       </div>
+      <div class="shipping_address_popup BodySM hidden">
+        <div>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</div>
+        <div>
+          <button id="continue_btn" class="BodySM">계속</button>
+          <button id="change_address_btn" class="BodySM">주소변경</button>
+        </div>
+      </div>
+      <div class="triangle hidden"></div>
       <form class="search_bar__form">
         <input class="BodyMD" type="text" placeholder="검색 Amazon">
         <button id="search_bar__btn"><img src="/asset/images/vectors/SearchBar.svg"></button>
@@ -29,22 +37,22 @@
         <p class="BoldSM">안녕하세요, 로그인</p>
         <p class="BoldMD">계정 및 목록</p>
       </div>
-      <div class="login_box fade_in">
-        <button class="login__btn">로그인</button>
+      <div class="login_popup fade_in">
+        <button class="login__btn BodySM">로그인</button>
         <div>
           <span class="BodySM">기존 사용자가 아니십니까?</span> <a class="BodySM">여기에서 시작합니다.</a>
         </div>
       </div>
-      <div class="triangle_up fade_in"></div>
-      <div class="login_box_detail disapear">
-        <div class="login_box_detail_up">
-          <button class="login__btn">로그인</button>
+      <div class="triangle fade_in"></div>
+      <div class="login_popup_detail hidden">
+        <div class="login_popup_detail_up">
+          <button class="login__btn BodySM">로그인</button>
           <div>
             <span class="BodySM">기존 사용자가 아니십니까?</span> <a class="BodySM">여기에서 시작합니다.</a>
           </div>
         </div>
-        <div class="login_box_detail_bottom">
-          <div class="login_box_detail_left">
+        <div class="login_popup_detail_bottom">
+          <div class="login_popup_detail_left">
             <h3 class="BoldMD">귀하의 목록</h3>
             <ul class="BodySM">
               <li>목록 생성</li>
@@ -52,7 +60,7 @@
               <li>AmazonSmile 자선 품목 목록</li>
             </ul>
           </div>
-          <div class="login_box_detail_right">
+          <div class="login_popup_detail_right">
             <h3 class="BoldMD">계정</h3>
             <ul class="BodySM">
               <li>계정</li>
@@ -70,7 +78,7 @@
           </div>
         </div>
       </div>
-      <div class="triangle_up disapear"></div>
+      <div class="triangle hidden"></div>
       <div class="mypage">
         <p class="BoldSM">반품</p>
         <p class="BoldMD">&주문</p>
@@ -90,7 +98,8 @@
     </div>
   </header>
   <div class="main">
-    <div>*히어로영역</div>
+    <!-- 히어로영역 -->
+    <div></div>
     <div class="card_container">
       <div class="card_column">
         <div>
@@ -228,7 +237,7 @@
       </div>
     </div>
   </footer>
-  <script src="/app.js"></script>
+  <script src="/javascript/nav.js"></script>
 </body>
 
 </html>
