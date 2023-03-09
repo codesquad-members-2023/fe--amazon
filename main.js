@@ -7,12 +7,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
 const dim = document.querySelector('.dim')
 const shippingAddress = document.querySelector('.shipping-address')
+const logInSection = document.querySelector('.log-in')
 
-// 하나로 합칠 수 있을까?
-shippingAddress.addEventListener("mouseover", () => {
+logInSection.addEventListener('mouseover', () => {
+  logInModal.style.display = 'none'
   dim.style.display = 'block'
 })
 
-shippingAddress.addEventListener("mouseout", () => {
-  dim.style.display = 'none'
-})
+const showDim = (element) => {
+  element.addEventListener("mouseover", () => {
+    dim.style.display = 'block'
+  })
+}
+const hideDim = (element) => {
+  element.addEventListener("mouseout", () => {
+    dim.style.display = 'none'
+  })
+}
+
+showDim(shippingAddress)
+showDim(logInSection)
+hideDim(shippingAddress)
+hideDim(logInSection)

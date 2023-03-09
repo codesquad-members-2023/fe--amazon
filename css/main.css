@@ -14,6 +14,18 @@ img {
   display: block;
 }
 
+button {
+  padding: 10px;
+  justify-items: right;
+  color: #10141A;
+  font-size: 11px;
+  font-weight: 600;
+  background: linear-gradient(174.6deg, #FFFFFF 4.31%, #FED15F 50.01%, #FEBE30 95.71%);
+  border: 1px solid #DE9408;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .modal {
   display: none;
   background-color: #FFFFFF;
@@ -22,17 +34,6 @@ img {
   padding: 16px;
   border-radius: 4px;
   z-index: 9;
-}
-
-.modal button {
-  background: linear-gradient(174.6deg, #FFFFFF 4.31%, #FED15F 50.01%, #FEBE30 95.71%);
-  border: 1px solid #DE9408;
-  border-radius: 4px;
-  font-size: 11px;
-  padding: 10px;
-  margin-top: 26px;
-  color: #10141A;
-  justify-items: right;
 }
 
 /* HEADER */
@@ -91,6 +92,10 @@ header {
 
 .main-menu .shipping-address .modal {
   width: 320px;
+}
+
+.main-menu .shipping-address .modal button {
+  margin-top: 26px;
 }
 
 .modal .modal__text {
@@ -185,11 +190,56 @@ header {
   text-align: center;
 }
 
-/* .main-menu .log-in:hover .modal,
-.main-menu .log-in:hover .pointer,
-.main-menu .log-in:hover .modal__content {
+.main-menu .log-in:hover .modal__extension,
+.main-menu .log-in:hover .pointer {
+  display: block;
+  z-index: 9;
+}
+
+.main-menu .log-in .modal__extension {
+  display: none;
+  position: absolute;
+  width: 335px;
+  top: 55px;
+  right: 0;
+  padding: 16px;
+  background-color: #FFF;
+}
+
+.main-menu .log-in .modal__extension__top {
   display: flex;
-} */
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  color: #10141A;
+  margin-bottom: 8px;
+}
+
+.main-menu .log-in .modal__extension__top button {
+  width: 160px;
+  margin-bottom: 8px;
+}
+
+
+.main-menu .log-in .modal__extension__bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 303px;
+  padding-top: 8px;
+  border-top: 1px solid #EFF2F2;
+  color: #10141A;
+  
+}
+
+.main-menu .log-in .modal__extension__bottom ul {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.main-menu .log-in .modal__extension__bottom li {
+  font-size: 11px;
+  margin-top: 4px;
+}
 
 .main-menu .shopping-basket {
   margin: 0 8px 0 52px;
