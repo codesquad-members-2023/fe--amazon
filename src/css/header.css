@@ -1,7 +1,6 @@
 /* nav 상단 */
 #nav_main {
   display: flex;
-  color: white;
   align-items: center;
   padding: 8px 16px;
 
@@ -96,6 +95,7 @@
   width: 24px;
   height: 24px;
 }
+
 .flag,
 .cart {
   display: flex;
@@ -110,6 +110,58 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+.login {
+  position: relative;
+}
+.login_dim {
+  position: absolute;
+  top: 50px;
+  left: -30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #fff;
+  width: 235px;
+  height: 90px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+.login_dim:after {
+  content: '';
+
+  border: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+
+  position: absolute;
+  top: -18px;
+  left: 30px;
+}
+.login_button {
+  cursor: pointer;
+}
+.login_dim_bottom {
+  margin-top: 3px;
+}
+.login_dim_bottom > span {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 160%;
+
+  letter-spacing: -0.03em;
+}
+.login_dim_bottom > span:first-child {
+  color: #10141a;
+}
+.login_dim_bottom > span:last-child {
+  color: #074099;
+}
+
 .cart > img {
   width: 24px;
   height: 24px;
