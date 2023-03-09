@@ -45,6 +45,15 @@ button {
   }
 }
 
+@keyframes slow-hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @keyframes slide-appear {
   from {
     left: -320px;
@@ -64,6 +73,13 @@ button {
   to {
     left: -320px;
     opacity: 0;
+  }
+}
+
+@keyframes slid-down {
+  to {
+    height: 100%;
+    opacity: 1;
   }
 }
 
@@ -321,8 +337,10 @@ header {
 /* SIDE BAR */
 .side-menu {
   display: none;
+  flex-direction: column;
   position: absolute;
   top: 0;
+  height: 200vh;
   animation: slide-appear .5s;
   z-index: 1;
 }
@@ -356,8 +374,6 @@ header {
 
 .side-menu__item {
   display: flex;
-  line-height: 2.3;
-
 }
 
 .side-menu__item:hover {
@@ -365,9 +381,21 @@ header {
 }
 
 .side-menu__item span {
-  height: 30px;
+  height: 40px;
   font-size: 13px;
+  line-height: 3.2;
   flex-grow: 1;
+}
+
+.side-menu__hide-button span,
+.side-menu__show-button span {
+  flex-grow: 0;
+  margin-right: 14px;
+}
+
+.side-menu__all-items {
+  display: none;
+  height: 0;
 }
 
 .side-menu__close {

@@ -3,7 +3,8 @@ const sideMenu = document.querySelector('.side-menu')
 
 
 openButton.addEventListener('click', () => {
-  sideMenu.style.display = 'block'
+  sideMenu.style.display = 'flex'
+  sideMenu.style.animation = 'slide-appear .5s'
   dim.style.display = 'block'
   dim.style.top = '-85px'
 })
@@ -23,3 +24,16 @@ body.addEventListener('click', (e) => {
   }
 })
 
+const allItems = document.querySelector('.side-menu__all-items')
+const allItemsButton = document.querySelector('.side-menu__show-button')
+
+allItemsButton.addEventListener('click', () => {
+  allItems.style.display = 'block'
+  allItems.style.animation = 'slow-appear 1s forwards'
+})
+
+const simpleItemsButton = document.querySelector('.side-menu__hide-button')
+simpleItemsButton.addEventListener('click', () => {
+  allItems.style.display = 'none'
+  allItems.style.animation = 'slow-hide 1s'
+})
