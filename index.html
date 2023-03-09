@@ -179,27 +179,31 @@
     <aside class="side-bar">
       <button class="side-bar__close">X</button>
 
-      <div class="side-bar__log-in">
-        <img src="./assets/person.svg" />
-        <span>안녕하세요, 로그인</span>
-      </div>
-      <div class="side-bar__contents">
+      <a class="side-bar__log-in" href="">
+        <img class="side-bar__log-in-image" src="./assets/person.svg" />
+        <span class="side-bar__log-in-text" href="">안녕하세요, 로그인</span>
+      </a>
+      <div class="side-bar__content">
         <span class="side-bar__label">디지털 컨텐츠 및 기기</span>
         <ul class="side-bar__items">
           <li class="side-bar__item">
-            <a class="side-bar__anchor" href="">
+            <a
+              class="side-bar__anchor side-bar__anchor--parent"
+              href=""
+              data-id="1"
+            >
               <span class="side-bar__text">Amazon Music</span>
               <img src="./assets/right-angle-bracket.svg" />
             </a>
           </li>
           <li class="side-bar__item">
-            <a class="side-bar__anchor" href="">
+            <a class="side-bar__anchor side-bar__anchor--parent" href="">
               <span class="side-bar__text">Kindle E-Reader 및 도서</span>
               <img src="./assets/right-angle-bracket.svg" />
             </a>
           </li>
           <li class="side-bar__item">
-            <a class="side-bar__anchor" href="">
+            <a class="side-bar__anchor side-bar__anchor--parent" href="">
               <span class="side-bar__text">안드로이드 앱 스토어</span>
               <img src="./assets/right-angle-bracket.svg" />
             </a>
@@ -209,32 +213,116 @@
         <span class="side-bar__label">부서별 쇼핑</span>
         <ul class="side-bar__items">
           <li class="side-bar__item">
-            <a class="side-bar__anchor" href="">
+            <a
+              class="side-bar__anchor side-bar__anchor--parent"
+              href=""
+              data-id="4"
+            >
               <span class="side-bar__text">전자</span>
               <img src="./assets/right-angle-bracket.svg" />
             </a>
           </li>
           <li class="side-bar__item">
-            <a class="side-bar__anchor" href="">
+            <a class="side-bar__anchor side-bar__anchor--parent" href="">
               <span class="side-bar__text">컴퓨터</span>
               <img src="./assets/right-angle-bracket.svg" />
             </a>
           </li>
           <li class="side-bar__item">
-            <a class="side-bar__anchor" href="">
+            <a class="side-bar__anchor side-bar__anchor--parent" href="">
               <span class="side-bar__text">Alexa 스마트 홈</span>
               <img src="./assets/right-angle-bracket.svg" />
             </a>
           </li>
           <li class="side-bar__item">
-            <a class="side-bar__anchor" href="">
+            <a class="side-bar__anchor side-bar__anchor--parent" href="">
               <span class="side-bar__text">예술 및 공예</span>
               <img src="./assets/right-angle-bracket.svg" />
             </a>
           </li>
         </ul>
-        <div class="submenu">
-          <img src="./assets/left-arrow.svg" />
+        <div class="submenus">
+          <div class="submenu" data-parent-id="1">
+            <a class="submenu__back" href="">
+              <img class="submenu__back-image" src="./assets/left-arrow.svg" />
+              <span class="submenu__back-text">주 메뉴</span>
+            </a>
+            <div class="seperator-line"></div>
+            <span class="side-bar__label">음악 스트리밍</span>
+            <ul class="side-bar__items">
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">Amazon Music Unlimited</span>
+                </a>
+              </li>
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">Amazon Music HD</span>
+                </a>
+              </li>
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">Podcast</span>
+                </a>
+              </li>
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">웹 플레이어 열기</span>
+                </a>
+              </li>
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">웹 플레이어 열기</span>
+                </a>
+              </li>
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">Downolad the app</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="submenu" data-parent-id="4">
+            <a class="submenu__back" href="">
+              <img class="submenu__back-image" src="./assets/left-arrow.svg" />
+              <span class="submenu__back-text">주 메뉴</span>
+            </a>
+            <div class="seperator-line"></div>
+            <span class="side-bar__label">전자</span>
+            <ul class="side-bar__items">
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">액세서리 및 용품</span>
+                </a>
+              </li>
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">카메라 및 사진</span>
+                </a>
+              </li>
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">자동차 및 전자기기</span>
+                </a>
+              </li>
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">웹 플레이어 열기</span>
+                </a>
+              </li>
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">웹 플레이어 열기</span>
+                </a>
+              </li>
+              <li class="side-bar__item">
+                <a class="side-bar__anchor" href="">
+                  <span class="side-bar__text">Downolad the app</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </aside>

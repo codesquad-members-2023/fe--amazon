@@ -11,6 +11,10 @@ a {
   color: inherit;
 }
 
+li {
+  list-style: none;
+}
+
 /* font color랑 font-size 메인 만들면서 비교해보고 header로 빼기 */
 
 body {
@@ -49,7 +53,6 @@ body {
 }
 
 .header__anchor {
-  list-style: none;
   display: flex;
   align-items: center;
 }
@@ -120,10 +123,6 @@ body {
 .nav__list {
   display: flex;
   justify-content: flex-start;
-}
-
-.nav__item {
-  list-style: none;
 }
 
 .nav__anchor {
@@ -238,6 +237,8 @@ body {
 
 .list--login-pop-up {
   gap: 4px;
+  white-space: nowrap;
+  width: 150px;
 }
 
 .list__label {
@@ -258,7 +259,6 @@ body {
 .list__items {
   display: flex;
   flex-direction: column;
-  list-style: none;
 }
 
 .list__items--login-pop-up {
@@ -273,7 +273,7 @@ body {
   width: 320px;
   display: flex;
   gap: 8px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 
   font-size: 13px;
   padding: 8px 16px 8px 32px;
@@ -337,24 +337,6 @@ body {
   position: fixed;
 }
 
-/* .aside {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  z-index: 100;
-  background-color: red;
-
-  animation: slide--left-to-right 250ms ease-in-out;
-}
-
-.aside__close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translateX(100%);
-} */
-
 /* aside */
 @keyframes side-bar__slide--left-to-right {
   from {
@@ -372,7 +354,6 @@ body {
   left: 0;
   height: 100%;
   z-index: 100;
-  background-color: red;
 
   /* animation: slide-bar__slide--left-to-right 250ms ease-in-out; */
 }
@@ -393,11 +374,11 @@ body {
   font-weight: 800;
 }
 
-.side-bar__contents {
+.side-bar__content {
   height: 100%;
   position: relative;
   width: 320px;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 
   display: flex;
   flex-direction: column;
@@ -410,6 +391,7 @@ body {
   padding: 16px 16px 16px 32px;
   font-weight: 800;
   font-size: 18px;
+  display: block;
 }
 
 .side-bar__anchor {
@@ -419,6 +401,11 @@ body {
 
   font-weight: 500;
   font-size: 13px;
+}
+
+.submenu__back:hover,
+.side-bar__anchor:hover {
+  background-color: #eff2f2;
 }
 
 @keyframes sub-menu__slide--right-to-left {
@@ -432,12 +419,20 @@ body {
 }
 
 @keyframes sub-menu__slide--left-to-right {
-  form {
+  from {
     transform: translateX(-100%);
   }
   to {
     transform: translateX(0%);
   }
+}
+
+.sub-menu__slide--right-to-left {
+  animation: sub-menu__slide--right-to-left 250ms ease-in-out forwards;
+}
+
+.sub-menu__slide--left-to-right {
+  animation: sub-menu__slide--left-to-right 250ms ease-in-out;
 }
 
 .submenu {
@@ -446,8 +441,24 @@ body {
   left: 320px;
   top: 0;
   height: 100%;
+  background-color: #fff;
 
-  background-color: yellow;
-  /* animation: sub-menu__slide--right-to-left 250ms ease-in-out forwards; */
   z-index: 1000;
+}
+
+.submenu__back {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 16px 8px 32px;
+}
+
+/* 작동안함 일단 보류 */
+/* .submenu__back-image {
+  fill: red;
+} */
+
+.submenu__back-text {
+  font-weight: 500;
+  font-size: 13px;
 }

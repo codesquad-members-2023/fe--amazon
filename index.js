@@ -25,6 +25,15 @@ const allAnchor = document.querySelector(".nav__anchor--all");
 const sideBar = document.querySelector(".side-bar");
 const sideBarCloseButton = document.querySelector(".side-bar__close");
 
+// sidebar
+const sideBarContent = document.querySelector(".side-bar__content");
+const sideBarParentAnchors = document.querySelectorAll(
+  ".side-bar__anchor--parent"
+);
+const subMenus = document.querySelector(".submenus");
+const allSubMenus = document.querySelectorAll(".submenu");
+const allSubMenuBacks = document.querySelectorAll(".submenu__back");
+
 function showPopUpWithDelay(delay) {
   setTimeout(() => {
     logInPopUp.classList.remove("hidden");
@@ -74,6 +83,35 @@ function main() {
 
     dimmedBody.classList.add("hidden");
     sideBar.classList.add("hidden");
+  });
+
+  // submenu 열기
+  sideBarContent.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (subMenus.contains(e.target)) return;
+    const parentAnchor = [...sideBarParentAnchors].find((el) =>
+      el.contains(e.target)
+    );
+
+    console.log(parentAnchor);
+
+    const id = parentAnchor.dataset.id;
+    const subMenu = [...allSubMenus].find((el) => el.dataset.parentId === id);
+    subMenu.classList.remove("sub-menu__slide--left-to-right");
+    subMenu.classList.add("sub-menu__slide--right-to-left");
+  });
+
+  // submenu 닫기
+  [...allSubMenuBacks].forEach((subMenuBack) => {
+    subMenuBack.addEventListener("click", (e) => {
+      if (!subMenuBack.contains(e.target)) return;
+
+      subMenuBack.parentElement.classList.remove(
+        "sub-menu__slide--right-to-left"
+      );
+
+      subMenuBack.parentElement.classList.add("sub-menu__slide--left-to-right");
+    });
   });
 }
 
