@@ -36,6 +36,52 @@ button {
   z-index: 9;
 }
 
+/* SIDE BAR */
+aside {
+
+}
+
+.side-menu__inner {
+  position: absolute;
+  width: 320px;
+  height: 100%;
+  background-color: #FFF;
+  z-index: 11;
+
+}
+
+.side-menu__log-in {
+  height: 53px;
+  background-color: #10141A;
+  padding: 16px 16px 16px 32px;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 800;
+  box-sizing: border-box;
+}
+
+.side-menu__contents {
+  padding: 0 16px 16px 32px;
+}
+
+.side-menu__title {
+  height: 53px;
+  line-height: 3.5;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.side-menu__item {
+  display: flex;
+  line-height: 2.3;
+}
+
+.side-menu__item span {
+  height: 30px;
+  font-size: 13px;
+  flex-grow: 1;
+}
+
 /* HEADER */
 header {
   position: relative;
