@@ -5,7 +5,7 @@ const logInModal = document.querySelector('.log-in .modal')
 
 const showLogInModal = () => {
   window.addEventListener('DOMContentLoaded', () => {
-    logInModal.style.animation = 'show-modal 1s forwards'
+    logInModal.style.animation = 'slow-appear 1s forwards'
     logInModal.style.animationDelay = '1s'
   })
 }
