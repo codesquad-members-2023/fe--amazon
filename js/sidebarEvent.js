@@ -3,6 +3,7 @@ const sideBar = document.querySelector('.sidebar');
 const dimLayer = document.querySelector('.dim_layer');
 const header = document.querySelector('#head_navigation_bar');
 const closeButton = document.querySelector('#closeButton');
+const allButton = document.querySelector('.sidebar_all_button');
 
 allLink.addEventListener('click', () => {
   sideBar.style.display = 'flex';
@@ -26,3 +27,5 @@ sideBar.addEventListener('animationend', (e) => {
   // 만약 그냥 해버리면 사이드바가 등장하는 animation에서도 display를 none으로 설정하게 되어 오류가 생긴다.
   if (e.animationName === 'fadeInRight') sideBar.style.display = 'none';
 });
+
+allButton.addEventListener('click', () => {});
