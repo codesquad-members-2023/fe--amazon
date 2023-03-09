@@ -1,16 +1,24 @@
-const $: (selector: string) => HTMLElement | null =
-  document.querySelector.bind(document);
+class App {
+  private $navbarUserAccount: HTMLElement;
+  private readonly $wrapperDim: HTMLElement;
+  constructor() {
+    this.$navbarUserAccount = this.$('.nav-bar__user-account')!;
+    this.$wrapperDim = this.$('.wrapper__dim')!;
 
-const showLoginAdditional = () => {
-  $('.account-list')!.addEventListener('mouseover', (e) => {
-    $('.login__additional--hover')!.style.display = 'block';
-    $('.login__content')!.style.height = '1000%';
-    $('.wrapper__empty-gray')!.style.display = 'block';
-  });
-  $('.account-list')!.addEventListener('mouseout', (e) => {
-    $('.login__additional--hover')!.style.display = 'none';
-    $('.login__content')!.style.height = '300%';
-  });
-};
+    this.showLoginModalDetail();
+  }
 
-showLoginAdditional();
+  private $(selector: string): HTMLElement | null {
+    return document.querySelector(selector);
+  }
+
+  private showLoginSlowly() {}
+
+  private showLoginModalDetail() {
+    this.$navbarUserAccount.addEventListener('mouseenter', () => {
+      this.$wrapperDim.style.display = 'block';
+    });
+  }
+}
+
+new App();
