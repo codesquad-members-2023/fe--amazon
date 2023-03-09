@@ -159,7 +159,19 @@ header {
   transform: matrix(0.75, 0.66, -0.75, 0.66, 0, 0);
 }
 
+@keyframes show-modal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .main-menu .log-in .modal {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
   width: 235px;
   right: 0;
 }
@@ -173,11 +185,11 @@ header {
   text-align: center;
 }
 
-.main-menu .log-in:hover .modal,
+/* .main-menu .log-in:hover .modal,
 .main-menu .log-in:hover .pointer,
 .main-menu .log-in:hover .modal__content {
-  display: block;
-}
+  display: flex;
+} */
 
 .main-menu .shopping-basket {
   margin: 0 8px 0 52px;

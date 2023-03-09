@@ -1,8 +1,8 @@
 const logInModal = document.querySelector('.log-in .modal')
 
 window.addEventListener('DOMContentLoaded', () => {
-  // TODO: 1초 뒤에 애니메이션 효과와 함께 block 되게
-  logInModal.style.display = 'block'
+  logInModal.style.animation = 'show-modal 1s forwards'
+  logInModal.style.animationDelay = '1s'
 })
 
 const dim = document.querySelector('.dim')
