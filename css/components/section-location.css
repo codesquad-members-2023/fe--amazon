@@ -46,7 +46,7 @@
   margin-right: 15px;
 }
 
-.section__arrow__location {
+.section__location--arrow {
   position: absolute;
   width: 18.93px;
   height: 18.93px;
@@ -58,10 +58,10 @@
   transform: rotate(45deg);
 }
 
-.home__header__location:hover {
+.homeHeader__location:hover {
   cursor: pointer;
 }
 
-.home__header__location:hover > .section__location {
+.homeHeader__location:hover > .section__location {
   display: flex;
 }

@@ -1,5 +1,5 @@
-const headerLogin = document.querySelector(".home__header__login");
-const headerLocation = document.querySelector(".home__header__location");
+const headerLogin = document.querySelector(".homeHeader__login");
+const headerLocation = document.querySelector(".homeHeader__location");
 
 const loginSection = document.querySelector(".section__login");
 const loginSectionDetail = document.querySelector(".section__login2");

@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="home__header">
-      <div class="home__header__left">
-        <div class="home__header__logo"><img src="photo/amazonlogo.png" /></div>
-        <div class="home__header__location">
-          <div class="location__info">
+    <header class="homeHeader">
+      <div class="homeHeader-left">
+        <div class="homeHeader__logo"><img src="photo/amazonlogo.png" /></div>
+        <div class="homeHeader__location">
+          <div class="homeHeader__location--info">
             <i class="fa-solid fa-location-dot" style="font-size: 11px"></i>
-            <span class="location__info__name, small__font">배송지</span>
+            <span class="homeHeader__location--infoName, small__font"
+              >배송지</span
+            >
           </div>
-          <span class="location__info__country">대한민국</span>
+          <span class="homeHeader__location--infoCountry">대한민국</span>
           <section class="section__location">
-            <span class="section__location__span">
+            <span class="section__location--content">
               KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을
               보려면 배송 주소를 변경하십시오.
             </span>
@@ -26,56 +28,56 @@
               <button class="section__location__button">계속</button>
               <button class="section__location__button">주소변경</button>
             </form>
-            <div class="section__arrow__location"></div>
+            <div class="section__location--arrow"></div>
           </section>
         </div>
       </div>
-      <div class="home__header__center">
-        <form class="home__header__search">
+      <div class="homeHeader-center">
+        <form class="homeHeader__search">
           <input type="text" placeholder="Amazon 검색" />
-          <button class="home__header__search__button">
+          <button class="homeHeader__search__button">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
       </div>
-      <div class="home__header__right">
-        <div class="home__header__country">
+      <div class="homeHeader-right">
+        <div class="homeHeader__country">
           <span>🇰🇷</span>
           <span>KR</span>
         </div>
-        <div class="home__header__login">
-          <span class="login__hello, small__font">안녕하세요. 로그인</span>
-          <span class="login__list">계정 및 목록</span>
+        <div class="homeHeader__login">
+          <span class="login--hello, small__font">안녕하세요. 로그인</span>
+          <span class="login--list">계정 및 목록</span>
         </div>
         <section class="section__login">
           <form>
             <button class="section__login__button">로그인</button>
           </form>
-          <span class="section__login__span"
+          <span class="section__login--content"
             >기존 사용자가 아니십니까? 여기에서 시작합니다.</span
           >
-          <div class="section__arrow__login"></div>
+          <div class="section__login--arrow"></div>
         </section>
         <section class="section__login2">
           <form>
             <button class="section__login__button">로그인</button>
           </form>
-          <span class="section__login__span"
+          <span class="section__login--content"
             >기존 사용자가 아니십니까? 여기에서 시작합니다.</span
           >
-          <div class="section__arrow__login"></div>
+          <div class="section__login--arrow"></div>
           <div class="section__login__detail">
-            <div class="section__login__screen">
+            <div class="section__login--screen">
               <ul>
-                <li class="section__loing__liTitle">귀하의 목록</li>
+                <li class="section__login--liTitle">귀하의 목록</li>
                 <li>목록 생성</li>
                 <li>목록 또는 레지스트리 찾기</li>
                 <li>AmazonSmile 자선 품목 목록</li>
               </ul>
             </div>
-            <div class="section__login__screen">
+            <div class="section__login--screen">
               <ul>
-                <li class="section__loing__liTitle">계정</li>
+                <li class="section__loing--liTitle">계정</li>
                 <li>계정</li>
                 <li>주문</li>
                 <li>권장 사항</li>
@@ -91,13 +93,13 @@
             </div>
           </div>
         </section>
-        <div class="home__header__checkOrder">
-          <span class="checkOrder__cancel, small__font">반품</span>
-          <span class="checkOrder__order">&주문</span>
+        <div class="homeHeader__checkOrder">
+          <span class="homeHeader__checkOrder--cancel, small__font">반품</span>
+          <span class="homeHeader__checkOrder--order">&주문</span>
         </div>
-        <div class="home__header__basket">
+        <div class="homeHeader__basket">
           <i class="fa-solid fa-basket-shopping"></i>
-          <span class="basket__name">장바구니</span>
+          <span class="homeHeader__basket--name">장바구니</span>
         </div>
       </div>
     </header>
