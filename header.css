@@ -205,7 +205,7 @@ a:-webkit-any-link {
   gap: 16px;
 }
 
-.nav-bottom__start {
+.nav-bottom__container {
   display: flex;
   gap: 12px;
 }
@@ -217,6 +217,8 @@ a:-webkit-any-link {
 }
 
 .nav-bottom__text {
+  display: flex;
+  gap: 16px;
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
