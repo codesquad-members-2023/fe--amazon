@@ -1,5 +1,10 @@
 /* Global */
 
+/* 1rem = 16px */
+html {
+  font-size: 16px;
+}
+
 :root {
   /* Color */
   --color-white: #ffffff;

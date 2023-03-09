@@ -1,18 +1,16 @@
-/* Reset */
-@import url(reset.css);
 /* Variable */
 @import url(variable.css);
 
-/* Local */
+/* Wrapper */
 .wrapper__main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   z-index: 0;
 }
 
 /* nav-bar */
-
 .nav-bar {
   display: flex;
   flex-direction: column;
@@ -270,7 +268,6 @@
 }
 
 /* side bar */
-
 .sidebar {
   position: fixed;
   top: 0;
