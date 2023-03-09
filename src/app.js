@@ -1,10 +1,6 @@
 import ChangeAdressAction from './components/Action/ChangeAddressAction.js';
 import LoginAction from './components/Action/LoginAction.js';
-import LoginActionWithFooter from './components/Action/LoginActionWithFooter.js';
-import {
-  LOGIN_ACTION_WITH_FOOTER_WIDTH,
-  CHANGE_ADDRESS_ACTION_WIDTH,
-} from './constant.js';
+import { ID } from './constant.js';
 
 const selectAddressBtn = document
   .querySelector('navbar-element')
@@ -17,9 +13,9 @@ const loginBtn = document
 let loginActionElement = null;
 
 function runLoginAction() {
-  const loginAction = new LoginAction(450, 'login-action');
+  const loginAction = new LoginAction('login-action', false);
   loginActionElement = loginAction;
-  const id = 'login-action';
+  const id = ID.LOGIN_ACTION;
 
   const e = new CustomEvent('open-login-action', {
     bubbles: true,
@@ -38,11 +34,8 @@ selectAddressBtn.addEventListener('mouseover', (e) => {
   if (loginActionElement) {
     loginActionElement.closeAction();
   }
-  const id = 'change-address-action';
-  const changeAddressAction = new ChangeAdressAction(
-    CHANGE_ADDRESS_ACTION_WIDTH,
-    id
-  );
+  const id = ID.CHANGE_ADDRESS_ACTION;
+  const changeAddressAction = new ChangeAdressAction(id);
   changeAddressAction.showAction(e, id);
   selectAddressBtn.addEventListener('mouseout', () => {
     changeAddressAction.closeAction();
@@ -53,12 +46,8 @@ loginBtn.addEventListener('mouseover', (e) => {
   if (loginActionElement) {
     loginActionElement.closeAction();
   }
-  const id = 'login-action-with-footer';
-  const loginActionWithFooter = new LoginActionWithFooter(
-    LOGIN_ACTION_WITH_FOOTER_WIDTH,
-    id
-  );
-
+  const id = ID.LOGIN_ACTION_WITH_FOOTER;
+  const loginActionWithFooter = new LoginAction(id, true);
   loginActionWithFooter.showAction(e, id);
 
   loginBtn.addEventListener('mouseout', () => {

@@ -1,17 +1,15 @@
 import Action from '../Action.js';
 
 class ChangeAdressAction extends Action {
-  constructor(width, id) {
-    super(width);
+  constructor(id) {
+    super();
 
     const text = this.innerText;
     const shadow = this.shadowRoot;
 
     shadow.innerHTML = `
-    <action-element id="${id}" flexibleBtn="flexible" mainBtn="main" subBtn="sub" pointerPosition="left">
-      <div slot="text">ChangeAdressAction</div>
-      <div slot="caption">캡션</div>
-      <div slot="bottom">푸터</div>
+    <action-element id="${id}" mainBtn="주소 변경" subBtn="계속" pointerPosition="left">
+      <span slot="text">KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</span>
     </action-element>
     <div class="backdrop"></div>
     `;
