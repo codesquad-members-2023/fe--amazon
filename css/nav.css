@@ -1,0 +1,157 @@
+@import "reset.css";
+@import "font.css";
+* {
+    box-sizing: border-box;
+}
+body{
+    font-family: ‘Pretendard’;
+}
+
+a{
+    text-decoration-line: none;
+    color: inherit;
+}
+.nav{
+    background: #10141A;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    height: 56px;
+}
+
+.nav__shipping{
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: -0.06em;
+    color: #D5D5D5;
+    width: 50px;
+
+}
+
+.shipping_text{
+    width: 50px;
+    height: 16px;
+    font-weight: 800;
+    font-size: 13px;
+    color: white;
+}
+
+.nav__search{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav__search_text{
+    width: 700px;
+    height: 40px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 160%;
+    letter-spacing: -0.03em;
+    border-radius: 4px 0px 0px 4px;
+    color: #878787;
+    flex: none;
+    flex-grow: 1;
+}
+
+.nav__search_img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+    background: #FCB057;
+    border-radius: 0px 4px 4px 0px;
+    flex: none;
+    flex-grow: 0;
+}
+
+.nav__language >a{
+    display: flex;
+    align-items: center;
+}
+.language_txt{
+    width: 20px;
+    height: 16px;
+    font-weight: 800;
+    font-size: 13px;
+    color: white;
+}
+.nav__login{
+    display: flex;
+    align-items: center;
+}
+
+.login_text{
+    width: 80px;
+    height: 16px;
+    font-weight: 800;
+    font-size: 13px;
+    color: white;
+}
+
+.nav__order{
+    display: flex;
+    flex-direction: row;
+}
+
+.order_text{
+    width: 40px;
+    height: 16px;
+    font-weight: 800;
+    font-size: 13px;
+    color: white;
+}
+
+.nav__shopping > a {
+    display: flex;
+    align-items: center;
+}
+
+.shopping_text{
+    width: 80px;
+    height: 16px;
+    font-weight: 800;
+    font-size: 13px;
+    color: white;
+}
+
+span{
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: -0.06em;
+    color: #D5D5D5;
+    width: 50px;
+}
+
+.sub{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 32px;
+    background: #1B232F;
+}
+
+.sub__shopping {
+    flex-grow: 1;
+    text-align: right;
+}
+
+li a {
+
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.sub__all > a{
+    display: flex;
+    align-items: center;
+}
+
