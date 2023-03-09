@@ -114,6 +114,10 @@
 .login {
   position: relative;
 }
+.login >div:first-child {
+  display: flex;
+  flex-direction: column;
+}
 .login_dim {
   position: absolute;
   top: 50px;
