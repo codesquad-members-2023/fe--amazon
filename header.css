@@ -26,48 +26,41 @@ a:-webkit-any-link {
   height: 56px;
 }
 
-.nav-top {
-  display: flex;
-}
-
 .nav-top__inner-wrap {
   display: flex;
   flex: 1 1;
-  padding: 8px 0 8px 0;
+  padding: 8px 0;
   align-items: center;
+  gap: 2%;
 }
 
 .nav-top__left {
   display: flex;
   height: auto;
   gap: 29px;
-  padding: 21px
+  padding: 1%;
 }
 
 .nav-top__container {
   width: 90px;
-  height: 27.22px;
   overflow: hidden;
   position: relative;
 }
 
 .nav-top__container > img {
-  position: absolute;
   width: 100%;
   height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+}
+
+.nav-top__location {
+  display: flex;
+  align-items: center;
 }
 
 .nav-top__link {
   display: flex;
   flex-flow: column;
 }
-
-/* .nav-top__link:hover {
-  border: 3px solid red
-} */
 
 .nav-top__line1 {
   display: flex;
@@ -118,12 +111,14 @@ a:-webkit-any-link {
   color: #878787;
 }
 
-.nav-top__search-right {
+.nav-top__search-btn {
   width: 40px;
   height: 40px;
   border-radius: 0 4px 4px 0;
   display: flex;
   background: #FCB057;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-top__search-icon{
@@ -150,20 +145,25 @@ a:-webkit-any-link {
   line-height: 16px;
 }
 
-.nav-top__account-list {
-  display: flex;
+/* .na-top__account-container {
   position: relative;
+
+} */
+
+.nav-top__account-link {
+  position: relative;
+  display: flex;
   flex-flow: column;
+  z-index: 2;
 }
 
-.nav-top__line1 {
-  align-items: center;
+.nav-top__account-line1 {
   font-weight: 600;
   font-size: 11px;
   line-height: 13px;
 }
 
-.nav-top_line2 {
+.nav-top__account-line2 {
   font-weight: 800;
   font-size: 13px;
   line-height: 16px;
@@ -190,6 +190,7 @@ a:-webkit-any-link {
   display: flex;
   align-items: center;
   gap: 6.33px;
+  margin: 1%;
 }
 
 .nav-top__text{
@@ -203,7 +204,7 @@ a:-webkit-any-link {
   height: 32px;
   background-color: #1B232F;
   align-items: center;
-  padding: 16px;
+  padding: 1%;
 }
 
 .nav-bottom__left {
@@ -211,7 +212,7 @@ a:-webkit-any-link {
   gap: 16px;
 }
 
-.nav-bottom__start {
+.nav-bottom__container {
   display: flex;
   gap: 12px;
 }
@@ -223,6 +224,8 @@ a:-webkit-any-link {
 }
 
 .nav-bottom__text {
+  display: flex;
+  gap: 16px;
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;

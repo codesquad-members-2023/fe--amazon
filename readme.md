@@ -42,7 +42,7 @@
         - [x] : 아이콘 색상 변경 
     - [ ] : 현재까지 구현 한 html,css 리팩
 
-## Week1 day3 까지 학습 아쉬운 점
+### Week1 day3 까지 학습 아쉬운 점
 
 - html,css를 거의 접해보지 못해서, 미션과 관련된 개념 공부와 미션 구현에 너무 급급했다.
   - 그로 인해 기능별 커밋을 하지 못 했다.  
@@ -53,9 +53,24 @@
 - 마스터 강의에서 몰랐던 개념들과 중요 point를 아직 학습하지 못 했다.  
   -> **틈틈히 하기!**
 
-## Week1 day3 까지 구현 아쉬운 점
+### Week1 day3 까지 구현 아쉬운 점
 
 - html 각각의 tag의 class 명이 일관된 룰 안에서 작성되지 못 했다.
 - css 리팩을 여러 방식으로 할 수 있지 않을까?
   - css font 스타일 변수화 해보기.
   - 또 있을까?
+
+## :four: Week1 day4 학습계획
+
+- [ ] : crong 리뷰 고려 코드 리팩 시도 해보기
+  - [ ] : html 리팩
+    - [ ] : class명 점검하기
+    - [ ] : header-bottom left 레이아웃 변경 
+  - [ ] : css 리팩
+    - [ ] : font 변수화 시도해보기
+    - [ ] : font-size 점검
+    - [ ] : display:flex 속성 점검
+    - [ ] : position:absolute 점검
+- [ ] : 로그인 모달창 호버 속성 점검
+- [ ] : 모달창 팝업시 딤 처리 기능 구현
+- [ ] : header-top shipping-address 모달창 구현
