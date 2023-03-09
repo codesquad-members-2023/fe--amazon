@@ -24,9 +24,10 @@
 - [x] readme 작성하기
 - html 레이아웃 만들기
   - [x] 상단 header 영역
+  - [x] 70rem(1120px) 기준 width 반응형
   - [ ] 좌측 사이드 메뉴
 - 모달
-  - [ ] 우측 상단: 국가, 계정 및 목록
+  - [x] 우측 상단: 국가, 계정 및 목록
 
 ## 🌳 Jayden's Organization
 
@@ -120,7 +121,7 @@ div {
   - em: 위치한 곳을 기준으로 font-size에 대한 배율(해당 요소에 font-size 없으면 부모 요소, 없으면 또 부모 요소)
   - rem: 위치한 곳과 상관없이 가장 최상위 요소(root; html 태그)의 font-size에 대한 배율
   - (주의) em은 너무 상대적인 느낌이고 rem은 그나마 절대적인 root를 기준으로 하기에, rem 사용을 좀더 추천한다.
-
+  - (나만의 팁) 전체적인 레이아웃은 %로 맞추되, 그 안에 디테일한 박스 크기는 rem으로 해주면 편한 것 같다!
 - 웹 접근성(예정)
 - 웹 사이트 접속 시 브라우저의 렌더링 과정(예정)
 
@@ -132,3 +133,4 @@ div {
 - [Box-model: content-box vs border-box](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
 - [reset css과 normalize css](https://www.daleseo.com/css-normalize-reset/)
 - [css 상속(inheritance)과 적용 우선 순위(cascading)](https://poiemaweb.com/css3-inheritance-cascading)
+- [css media query](https://www.daleseo.com/css-media-queries/)
