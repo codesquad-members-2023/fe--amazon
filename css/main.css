@@ -47,7 +47,6 @@ aside {
   height: 100%;
   background-color: #FFF;
   z-index: 11;
-
 }
 
 .side-menu__log-in {
@@ -80,6 +79,13 @@ aside {
   height: 30px;
   font-size: 13px;
   flex-grow: 1;
+}
+
+.side-menu__close {
+  position: absolute;
+  top: 17px;
+  left: 330px;
+  cursor: pointer;
 }
 
 /* HEADER */
