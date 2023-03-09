@@ -7,14 +7,14 @@ class SubMenu extends HTMLElement {
     const text = this.innerHTML;
 
     shadow.innerHTML = `
-      <a href="/">
+      <button href="/">
         ${
           icon
             ? `<icon-element size="16" name="${icon}" fill="var(--white)"></icon-element>`
             : ''
         }
         ${text}
-      </a>
+      </button>
     `;
 
     this.shadowRoot.append(this.getStyle());
@@ -30,7 +30,10 @@ class SubMenu extends HTMLElement {
         color: var(--white);
       }
 
-      a {
+      button {
+        background-color: transparent;
+        border: none;
+
         display: flex;
         padding: 8px;
         gap: 4px;
@@ -47,7 +50,8 @@ class SubMenu extends HTMLElement {
         border-radius: 1px;
       }
 
-      a:hover {
+      button:hover {
+        cursor: pointer;
         outline: 1px solid var(--white);
       }
 

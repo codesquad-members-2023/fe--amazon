@@ -1,5 +1,6 @@
 import ChangeAdressAction from './components/Action/ChangeAddressAction.js';
 import LoginAction from './components/Action/LoginAction.js';
+import Sidebar from './components/Sidebar.js';
 import { ID } from './constant.js';
 
 const selectAddressBtn = document
@@ -9,6 +10,10 @@ const selectAddressBtn = document
 const loginBtn = document
   .querySelector('navbar-element')
   .shadowRoot.querySelector('#loginBtn');
+
+const showAllBtn = document
+  .querySelector('navbar-element')
+  .shadowRoot.querySelector('#showAllBtn');
 
 let loginActionElement = null;
 
@@ -53,4 +58,17 @@ loginBtn.addEventListener('mouseover', (e) => {
   loginBtn.addEventListener('mouseout', () => {
     loginActionWithFooter.closeAction();
   });
+});
+
+showAllBtn.addEventListener('click', (e) => {
+  if (loginActionElement) {
+    loginActionElement.closeAction();
+  }
+
+  const sidebar = new Sidebar();
+  sidebar.showAction(e);
+
+  // showAllBtn.addEventListener('mouseout', () => {
+  //   sidebar.closeAction();
+  // });
 });
