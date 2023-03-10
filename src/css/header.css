@@ -1,3 +1,14 @@
+@media (max-width: 70rem) {
+  .nav {
+    width: 70rem;
+  }
+}
+@media (min-width: 70rem) {
+  .nav {
+    width: 100%;
+  }
+}
+
 /* nav 상단 */
 #nav_main {
   display: flex;
