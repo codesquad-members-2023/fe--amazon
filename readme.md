@@ -129,6 +129,7 @@ console.log(calculateArea(5));
   - [x] : 레이아웃 구성
   - [x] : [모두] 클릭시 사이드바 호출
   - [x] : [X버튼] 클릭시 사이드바 닫기
+  - [x] : 사이드바 호출, 닫기시 에니메이션 효과 주기
   - [ ] : 사이드바 목록 호버시 배경색과 아이콘색 변경 효과
   - [ ] : [모두보기] 클릭시 목록 확장
   - [ ] : [간단히 보기] 클릭시 목록 축소
@@ -410,3 +411,60 @@ homeHeader를 형제인 homeMenu보다 높은 z-index를 부여하면,
 homeHeader의 자식인 section_location과 section_login2도 homeMenu보다 상위에 배치될 수 있다.
 
 ![](https://velog.velcdn.com/images/sarang_daddy/post/c6a8a5ba-ebc6-4268-a19a-d926a69687fa/image.png)
+
+</br>
+
+## 애니메이션 효과
+
+- @keyframes로 애니메이션 기능 생성
+- 생성한 애니메이션을 실행한 클래스 생성
+- 이벤트 발생시 해당 클레스를 추가, 삭제하여 조작한다.
+
+```css
+/*
+animation의 마지막 값을 기억하고 싶다면 forwards 를 입력한다. 
+-> 마지막 keyframes를 기억한다.
+
+will-change는 애니메이션이 좀 더 부드럽게 동작할 수 있게 한다. 
+-> 브라우저에게 어떤 것이 변할 것인지 예고해주는 것
+*/
+
+.showAnimation {
+  will-change: transform;
+  animation: showSidebarSoft 1s ease-in-out forwards;
+}
+
+.hideAnimation {
+  will-change: transform;
+  animation: hideSidebarSoft 1s ease-in-out forwards;
+}
+
+@keyframes showSidebarSoft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hideSidebarSoft {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    /* visibility : hidden 으로  HTML을 숨실 수 있다.*/
+  }
+}
+```
+
+```js
+// 숨겨진 HTML을 완전히 사라지게 하기위해
+// 특정 애니메이션이 종료되면 display : none 설정
+const toDisplayNone = (e) => {
+  if (e.animationName === "hideSidebarSoft") {
+    homeSide.style.display = "none";
+  }
+};
+```

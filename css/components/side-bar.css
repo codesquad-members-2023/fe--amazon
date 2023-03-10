@@ -83,3 +83,31 @@
   top: 14px;
   cursor: pointer;
 }
+
+.showAnimation {
+  will-change: transform;
+  animation: showSidebarSoft 1s ease-in-out forwards;
+}
+
+.hideAnimation {
+  will-change: transform;
+  animation: hideSidebarSoft 1s ease-in-out forwards;
+}
+
+@keyframes showSidebarSoft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hideSidebarSoft {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
