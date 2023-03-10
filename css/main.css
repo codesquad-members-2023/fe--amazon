@@ -65,6 +65,17 @@ button {
   }
 }
 
+@keyframes slide-appear-menu {
+  from {
+    left: 330px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
 @keyframes slide-hide {
   from {
     left: 0;
@@ -99,13 +110,14 @@ section {
 /* HEADER */
 header {
   position: relative;
-  width: auto;
+  min-width: 1120px;
   color: white;
   font-size: 13px;
 }
 
 .main-menu {
   display: flex;
+  overflow: hidden;
   align-items: center;
   background-color: #10141A;
   height: 56px;
@@ -339,16 +351,17 @@ header {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 0;
+  width: 320px;
   height: 200vh;
+  top: 0;
+  background-color: #FFF;
   animation: slide-appear .5s;
   z-index: 1;
 }
 
-.side-menu__inner {
-  width: 320px;
-  height: 100%;
-  background-color: #FFF;
+.side-menu__main {
+  display: block;
+  
 }
 
 .side-menu__log-in {
@@ -396,6 +409,13 @@ header {
 .side-menu__all-items {
   display: none;
   height: 0;
+}
+
+.side-menu__car-goods {
+  display: none;
+  position: absolute;
+  top: 53px;
+  left: 330px;
 }
 
 .side-menu__close {

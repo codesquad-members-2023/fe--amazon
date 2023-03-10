@@ -37,3 +37,14 @@ simpleItemsButton.addEventListener('click', () => {
   allItems.style.display = 'none'
   allItems.style.animation = 'slow-hide 1s'
 })
+
+const carGoodsButton = allItems.querySelector('.item__car-goods')
+const carGoodsPage = document.querySelector('.side-menu__car-goods')
+const sideMain = document.querySelector('.side-menu__main')
+
+carGoodsButton.addEventListener('click', () => {
+  sideMain.style.display = 'none'
+  sideMain.style.display = 'slide-hide .5s'
+  carGoodsPage.style.display = 'block'
+  carGoodsPage.style.animation = 'slide-appear-menu .5s forwards'
+})
