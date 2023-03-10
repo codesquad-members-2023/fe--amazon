@@ -36,7 +36,10 @@
   color: #ffffff;
 }
 
-.shipping_address {
+.shipping_address,
+.shipping_address_section {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -49,6 +52,63 @@
 .shipping_address_icon_text > img {
   width: 12px;
   height: 12px;
+}
+.shipping_address_dim {
+  position: absolute;
+  top: 50px;
+  left: -30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #fff;
+  width: 320px;
+  height: 126px;
+  border: 1px solid #000;
+  border-radius: 5px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 160%;
+
+  letter-spacing: -0.03em;
+
+  color: #10141a;
+}
+.shipping_address_dim:after {
+  content: '';
+
+  border: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+
+  position: absolute;
+  top: -18px;
+  left: 30px;
+}
+.shipping_address_dim > span {
+  padding: 10px;
+}
+.shipping_address_dim_bottom {
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+.shipping_address_dim_bottom > div {
+  height: 32px;
+}
+.shipping_address_dim_bottom > div:first-child {
+  width: 40px;
+}
+.shipping_address_dim_bottom > div:last-child {
+  width: 60px;
+  margin-left: 10px;
 }
 
 .nav_main_search_form {

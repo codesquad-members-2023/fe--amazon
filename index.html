@@ -14,11 +14,20 @@
     <div id="nav_main">
       <div class="amazon_icon"><img src="./src/image/logo.svg" alt="amazon logo"></img></div>
       <div class="shipping_address">
-        <div class="shipping_address_icon_text">
-          <img src="./src/image/location.svg" alt="location icon">
-          <span class="nav_main_top_text">배송처</span>
+        <div class="shipping_address_section cursor">
+          <div class="shipping_address_icon_text">
+            <img src="./src/image/location.svg" alt="location icon">
+            <span class="nav_main_top_text">배송처</span>
+          </div>
+          <span class="nav_main_bottom_text">대한민국</span>
         </div>
-        <span class="nav_main_bottom_text">대한민국</span>
+        <div class="shipping_address_dim">
+          <span>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</span>
+          <div class="shipping_address_dim_bottom">
+            <div class="shipping_address_dim_btn yellow_btn">계속</div>
+            <div class="shipping_address_dim_btn yellow_btn">주소 변경</div>
+          </div>
+        </div>
       </div>
       <form class="nav_main_search_form">
         <input type="text" class="searchFormInput" placeholder="검색 Amazon">
