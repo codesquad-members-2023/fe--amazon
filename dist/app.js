@@ -7,6 +7,8 @@ class App {
         this.$wrapperDim = this.$('.wrapper__dim');
         this.$shippingCountry = this.$('.shipping-country');
         this.$addressChanging = this.$('.address-changing');
+        this.$sidebar = this.$('.sidebar');
+        this.$navbarAllList = this.$('.nav-bar__all-list');
     }
     $(selector) {
         return document.querySelector(selector);
@@ -37,7 +39,19 @@ class App {
             this.$wrapperDim.style.display = 'none';
         });
     }
+    toggleSidebar() {
+        this.$navbarAllList.addEventListener('mouseenter', () => {
+            this.$sidebar.style.display = 'flex';
+            this.$wrapperDim.style.display = 'block';
+            this.$wrapperDim.style.zIndex = '3';
+            this.$wrapperDim.addEventListener('click', () => {
+                this.$wrapperDim.style.display = 'none';
+                this.$sidebar.style.display = 'none';
+            });
+        });
+    }
 }
 const app = new App();
 app.toggleExpandLogin();
 app.toggleAddressChanging();
+app.toggleSidebar();
