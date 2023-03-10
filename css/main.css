@@ -54,7 +54,7 @@ button {
   }
 }
 
-@keyframes slide-appear {
+@keyframes slide-appear-menu {
   from {
     left: -320px;
     opacity: 0;
@@ -110,14 +110,12 @@ section {
 /* HEADER */
 header {
   position: relative;
-  min-width: 1120px;
   color: white;
   font-size: 13px;
 }
 
 .main-menu {
   display: flex;
-  overflow: hidden;
   align-items: center;
   background-color: #10141A;
   height: 56px;
@@ -350,9 +348,10 @@ header {
 .side-menu {
   display: none;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
+  overflow-y: scroll;
   width: 320px;
-  height: 200vh;
+  height: 100%;
   top: 0;
   background-color: #FFF;
   animation: slide-appear .5s;
@@ -361,7 +360,6 @@ header {
 
 .side-menu__main {
   display: block;
-  
 }
 
 .side-menu__log-in {
@@ -409,6 +407,14 @@ header {
 .side-menu__all-items {
   display: none;
   height: 0;
+}
+
+.back__main {
+  margin-left: 30px;
+}
+
+.back__main span {
+  margin-left: 15px;
 }
 
 .side-menu__car-goods {
