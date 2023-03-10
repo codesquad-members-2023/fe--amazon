@@ -62,10 +62,11 @@ class App {
       this.$sidebar.style.display = 'flex';
       this.$wrapperDim.style.display = 'block';
       this.$wrapperDim.style.zIndex = '3';
-      this.$wrapperDim.addEventListener('click', () => {
-        this.$wrapperDim.style.display = 'none';
-        this.$sidebar.style.display = 'none';
-      });
+    });
+    this.$wrapperDim.addEventListener('click', (e) => {
+      this.$wrapperDim.style.zIndex = '1';
+      this.$wrapperDim.style.display = 'none';
+      this.$sidebar.style.display = 'none';
     });
   }
 }
