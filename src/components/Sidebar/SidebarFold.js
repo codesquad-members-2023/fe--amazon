@@ -21,7 +21,7 @@ class SidebarFold extends HTMLElement {
         align-items: center;
         padding: 0px 10px;
         height: 32px;
-        width: ${type === 'flexible' ? '160px' : 'auto'};
+        width: 100%;
         
         background: linear-gradient(174.6deg, var(--white) 4.31%, var(--primary-yellow-100) 50.01%, var(--primary-yellow-200) 95.71%);
 

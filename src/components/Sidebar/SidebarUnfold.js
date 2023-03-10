@@ -1,11 +1,11 @@
-class SidebarList extends HTMLElement {
+class SidebarUnfold extends HTMLElement {
   constructor() {
     super();
 
     const text = this.innerText;
     const shadow = this.attachShadow({ mode: 'open' });
 
-    shadow.innerHTML = `<button>list</button>`;
+    shadow.innerHTML = `<button>unfold</button>`;
     this.shadowRoot.append(this.getStyle());
   }
 
@@ -42,4 +42,4 @@ class SidebarList extends HTMLElement {
   }
 }
 
-export default SidebarList;
+export default SidebarUnfold;
