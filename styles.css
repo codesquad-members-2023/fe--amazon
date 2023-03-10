@@ -313,7 +313,7 @@ body {
   height: 100%;
   z-index: 100;
 
-  /* animation: side-bar__slide--left-to-right 250ms ease-in-out; */
+  animation: side-bar__slide--left-to-right 250ms ease-in-out;
 }
 
 .side-bar__close {
