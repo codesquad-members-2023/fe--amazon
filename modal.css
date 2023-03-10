@@ -227,6 +227,9 @@
   line-height: 160%;
 
   letter-spacing: -0.03em;
+
+  display: flex;
+  flex-flow: column;
 }
 
 .modal__location {

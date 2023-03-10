@@ -1,10 +1,15 @@
-.sidebar {
-  display: block;
+.sidebar-elements {
+  display: none;
+  width: 35%;
+  height: 100vh;
+}
+
+.sidebar__layer {
+  display: flex;
   position: absolute;
 
   height: 100vh;
-  width: 50%;
-  background-color: aquamarine;
+  width: 45%;
 
   z-index: 2;
 }
@@ -12,15 +17,81 @@
 .sidebar__container {
   display: flex;
   flex-flow: column;
+  background-color: #FFFFFF;
+  width: 100%;
 }
 
-.sidebar__login {
+.sidebar__closeBtn--container {
+  padding: 5% 5% 5% 1%;
+  height: 7%;
+}
 
+.sidebar__closeBtn {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.sidebar__login--link {
   width: 100%;
   height: 53px;
   background-color: black;
 }
 
-/* .sidebar__digital-content {
+.sidebar__login--txt__container {
+  position: relative;
+  height: 100%;
+  padding: 6% 6% 6% 10%;
+  display: flex;
+  gap: 3%;
 
-} */
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.sidebar__login__link {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.sidebar__digital-content,
+.sidebar__shopping {
+  display: flex;
+  flex-flow: column;
+
+  border-bottom: 1px solid #EFF2F2;
+}
+
+.sidebar__digital-content__title,
+.sidebar__shopping__title {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 6% 6% 6% 10%;
+}
+
+.sidebar__digital-content__title-link,
+.sidebar__shopping__title-link {
+  font-weight: bold;
+  color: black
+}
+
+.sidebar__digital-content__menu,
+.sidebar__shopping__menu {
+  display: flex;
+  flex-flow: column;
+
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 160%;
+}
+
+.sidebar__contents {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 6% 6% 10%;
+  font-weight: 500;
+  color: black
+}

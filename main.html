@@ -5,19 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>amazon</title>
   <link rel="stylesheet" href="main.css">
-  <script src="index.js"></script>
 </head>
 <body class ="main">
   <header class="nav">
-    <div class="sidebar">
-      <div class="sidebar__container">
-        <div class="sidebar__login">
-          <a href="" class="sidebar__login__link">
-            <span class="sidebar__login__txt">안녕하세요, 로그인</span>
+    <div class="sidebar-elements">
+      <div class="sidebar__layer">
+        <div class="sidebar__container">
+          <a href="" class="sidebar__login--link">
+            <div class="sidebar__login--txt__container">
+              <div class="side__login--txt__icon">
+                <img src="asset/loginicon.svg" alt="" class="sidebar__login__icon">
+              </div>
+              <div class="sidebar__login__txt">안녕하세요, 로그인</div>
+            </div>
           </a>
+          <div class="sidebar__digital-content">
+            <div class="sidebar__digital-content__title">
+              <a href="" class="sidebar__digital-content__title-link">디지털 콘텐츠 및 기기</a>
+            </div>
+            <div class="sidebar__digital-content__menu">
+              <a href="" class="sidebar__contents digital__menu-music">
+                Amazon Music
+                <img src="asset/rightdir.svg" alt="" class="">
+              </a>
+              <a href="" class="sidebar__contents digital__menu-book">
+                Kindle E-reader 및 도서
+                <img src="asset/rightdir.svg" alt="" class="">
+              </a>
+              <a href="" class="sidebar__contents digital__menu-android">
+                안드로이드 앱스토어
+                <img src="asset/rightdir.svg" alt="" class="">
+              </a>
+            </div>
+          </div>
+          <div class="sidebar__shopping">
+            <div class="sidebar__shopping__title">
+              <a href="" class="sidebar__shopping__title-link">부서별 쇼핑</a>
+            </div>
+            <div class="sidebar__shopping__menu">
+              <a href="" class="sidebar__contents shopping__electron">
+                전자
+                <img src="asset/rightdir.svg" alt="" class="">
+              </a>
+              <a href="" class="sidebar__contents shopping__computer">
+                컴퓨터
+                <img src="asset/rightdir.svg" alt="" class="">
+              </a>
+              <a href="" class="sidebar__contents shopping__smartHome">
+                Alexa 스마트 홈
+                <img src="asset/rightdir.svg" alt="" class="">
+              </a>
+              <a href="" class="sidebar__contents shopping__art">
+                예술 및 공예
+                <img src="asset/rightdir.svg" alt="" class="">
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="sidebar__digital-content"></div>
-        <div class="sidebar__sidebar__shopping"></div>
+        <div class="sidebar__closeBtn--container">
+          <button class="sidebar__closeBtn">
+            <img src="asset/sidebarBtn.svg" alt="">
+          </button>
+        </div>
       </div>
     </div>
     <div class="nav-top">
@@ -115,9 +164,9 @@
                       <span class="modal__login__left-title-txt">귀하의 목록</span>
                     </div>
                     <div class="modal__login__bottom-left__list">
-                      <div>목록 생성</div>
-                      <div>목록 또는 레지스터 찾기</div>
-                      <div>AmazonSmile 자선 품목 목록</div>
+                      <li>목록 생성</li>
+                      <li>목록 또는 레지스터 찾기</li>
+                      <li>AmazonSmile 자선 품목 목록</li>
                       <!-- <a href="" class="modal__login__list-content-create">목록 생성</a>
                       <a href="" class="modal__login__list-find-content">목록 또는 레지스터 찾기</a>
                       <a href="" class="modal__login__list-product-list">AmazonSmile 자선 품목 목록</a> -->
@@ -128,17 +177,17 @@
                       <span class="modal__login__right-title-txt">계정</span>
                     </div>
                     <div class="modal__login__bottom-right__list">
-                      <div>계정</div>
-                      <div>주문</div>
-                      <div>권장 사항</div>
-                      <div>검색 기록</div>
-                      <div>위치 리스트</div>
-                      <div>비디오 구매 및 대여</div>
-                      <div>Kindle 언리미티드</div>
-                      <div>콘텐츠 및 기기</div>
-                      <div>항목 구독 및 저장</div>
-                      <div>멤버쉽 및 구독</div>
-                      <div>음악 라이브러리</div>
+                      <li>계정</li>
+                      <li>주문</li>
+                      <li>권장 사항</li>
+                      <li>검색 기록</li>
+                      <li>위치 리스트</li>
+                      <li>비디오 구매 및 대여</li>
+                      <li>Kindle 언리미티드</li>
+                      <li>콘텐츠 및 기기</li>
+                      <li>항목 구독 및 저장</li>
+                      <li>멤버쉽 및 구독</li>
+                      <li>음악 라이브러리</li>
                     </div>
                   </div>
                   </div>
@@ -161,14 +210,14 @@
     </div>
     <div class="nav-bottom">
       <div class="nav-bottom__left">
-        <a href="" class="nav-bottom__selectAll">
+        <button class="nav-bottom__selectAll">
           <div class="nav-bottom__container">
             <div class="nav-bottom__icon">
               <img src="asset/content.svg" alt="">
             </div>
             <span class="nav-bottom__text">모두</span>
           </div>
-        </a>
+        </button>
         <div class="nav-bottom__text">
           <a href="">오늘의 딜</a>
           <a href="">고객 서비스</a>
@@ -184,5 +233,6 @@
   </header>
   <div class="dim__layer">
   </div>
+  <script src="index.js"></script>
 </body>
 </html>
