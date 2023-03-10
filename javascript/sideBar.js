@@ -20,17 +20,7 @@ $side_bar.addEventListener('animationend', e => {
   if(e.animationName === 'contract') {
     $side_bar.style.display = 'none';
     $side_bar.classList.remove('expand');
-  } //닫힌다음 사라지게하기
-});
-
-$side_bar_menu.forEach(element => {
-  element.addEventListener('mouseenter', e => {
-    e.target.style.backgroundColor = 'rgba(179, 179, 179, 0.58)';
-  });
-
-  element.addEventListener('mouseleave', e => {
-    e.target.style.backgroundColor = 'inherit';
-  });
+  }
 });
 
 $view_all.addEventListener('click',e => {
@@ -45,4 +35,5 @@ $view_all.addEventListener('click',e => {
 
 $view_close.addEventListener('click', e => {
   $unfold_content.style.maxHeight = null;
+  $view_all.lastElementChild.outerHTML = "<img src=\"/asset/images/vectors/Bottom.svg\">"
 })

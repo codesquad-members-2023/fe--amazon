@@ -11,11 +11,6 @@ aside {
   background-color: #FFFFFF;
 }
 
-.side_bar_login {
-  color: white;
-  background-color: black;
-}
-
 aside span, aside img, #view_all {
   cursor: pointer;
 }
@@ -25,26 +20,28 @@ aside h3 {
   padding: 16px 16px 16px 32px;
 }
 
+aside li {
+  height: 40px;
+  padding: 8px 16px 8px 32px;
+}
+
 aside li:not(#view_all, #view_close) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
 
-  height: 40px;
-  padding: 8px 16px 8px 32px;
+.side_bar_login {
+  color: white;
+  background-color: black;
 }
 
 .side_bar_digital li:last-child, #view_all {
   border-bottom: 1px solid #EFF2F2;
 }
 
-#view_all, #view_close {
-  height: 40px;
-  padding: 8px 16px 8px 32px;
-}
-
-.side_bar_login img {
+.side_bar_login img, #side_bar_close img {
   width: 15px;
   height: 15px;
 }
@@ -54,19 +51,9 @@ aside li:not(#view_all, #view_close) {
   Height : 12px;
 }
 
-#view_all img, #view_close img {
+#view_all img, #view_close img, #every img {
   width: 12px;
   Height: 7px;
-}
-
-#every img {
-  Width: 12px;
-  Height: 8px;
-}
-
-#side_bar_close img {
-  Width: 16px;
-  Height: 16px;
 }
 
 #side_bar_close {
@@ -75,6 +62,11 @@ aside li:not(#view_all, #view_close) {
   left: 325px;
 
   cursor: pointer;
+}
+
+.side_bar_container li:hover {
+  background-color: rgba(179, 179, 179, 0.58);
+  font-weight: 700;
 }
 
 @keyframes expand {
@@ -108,9 +100,9 @@ aside li:not(#view_all, #view_close) {
 }
 
 .unfold_content {
-  background-color: #FFFFFF;
-  color: black;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
+/* 애니메이션 : will-change */
