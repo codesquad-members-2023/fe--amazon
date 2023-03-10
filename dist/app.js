@@ -11,6 +11,7 @@ class App {
         this.$navbarAllList = this.$('.nav-bar__all-list');
         this.$departmentListAllTag = this.$('.department-list__show-all');
         this.$sidebarOthersContent = this.$('.sidebar__others-content');
+        this.$showOthersListSimple = this.$('.others-list__show-simple');
     }
     $(selector) {
         return document.querySelector(selector);
@@ -53,9 +54,14 @@ class App {
             this.$sidebar.style.display = 'none';
         });
     }
-    showSidebarOthers() {
+    showSidebarAll() {
         this.$departmentListAllTag.addEventListener('click', () => {
             this.$sidebarOthersContent.style.display = 'block';
+        });
+    }
+    showSidebarSimple() {
+        this.$showOthersListSimple.addEventListener('click', () => {
+            this.$sidebarOthersContent.style.display = 'none';
         });
     }
 }
@@ -63,4 +69,5 @@ const app = new App();
 app.toggleExpandLogin();
 app.toggleAddressChanging();
 app.toggleSidebar();
-app.showSidebarOthers();
+app.showSidebarAll();
+app.showSidebarSimple();

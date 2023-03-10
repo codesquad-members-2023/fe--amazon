@@ -12,6 +12,7 @@ class App {
 
   $departmentListAllTag: HTMLElement;
   $sidebarOthersContent: HTMLElement;
+  $showOthersListSimple: HTMLElement;
   constructor() {
     // toggleExpandLogin 관련
     this.$userAccount = this.$('.user-account')!;
@@ -30,6 +31,9 @@ class App {
     // showSidebarOthers 관련
     this.$departmentListAllTag = this.$('.department-list__show-all')!;
     this.$sidebarOthersContent = this.$('.sidebar__others-content')!;
+
+    // showSidebarSimple 관련
+    this.$showOthersListSimple = this.$('.others-list__show-simple')!;
   }
 
   private $(selector: string): HTMLElement | null {
@@ -77,9 +81,15 @@ class App {
     });
   }
 
-  showSidebarOthers() {
+  showSidebarAll() {
     this.$departmentListAllTag.addEventListener('click', () => {
       this.$sidebarOthersContent.style.display = 'block';
+    });
+  }
+
+  showSidebarSimple() {
+    this.$showOthersListSimple.addEventListener('click', () => {
+      this.$sidebarOthersContent.style.display = 'none';
     });
   }
 }
@@ -89,4 +99,5 @@ const app = new App();
 app.toggleExpandLogin();
 app.toggleAddressChanging();
 app.toggleSidebar();
-app.showSidebarOthers();
+app.showSidebarAll();
+app.showSidebarSimple();
