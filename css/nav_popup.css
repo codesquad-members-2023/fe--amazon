@@ -1,9 +1,26 @@
+@keyframes slowshow {
+    0%{
+        opacity: 0;
+        visibility: hidden;
+    }
+    50%{
+        opacity: 0.5;
+        visibility: hidden;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+    }
+}
 .nav__login_popup{
+    visibility: hidden;
     position: absolute;
     width: 235px;
     height: 100px;
     left: 873px;
     top: 48px;
+    animation: slowshow 1s forwards;
+    animation-delay: 1s;
 }
 .nav__login_popup-shape{
     width: 18.93px;
