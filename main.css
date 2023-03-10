@@ -1,2 +1,10 @@
 @import 'header.css';
 @import 'modal.css';
+
+.dim__layer {
+  display: none;
+  height: calc(100vh - 88px);
+  width: 100%;
+
+  background: rgba(16, 20, 26, 0.4);
+}
