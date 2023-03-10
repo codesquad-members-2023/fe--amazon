@@ -33,11 +33,9 @@ sideBar.addEventListener('animationend', (e) => {
 allButton.addEventListener('click', () => {
   hiddenMenus.style.display = 'block';
   hiddenMenus.style.animation = 'fadeInUp 0.5s forwards';
-  // sideBar.style.animation = 'fadeInRight 0.5s forwards';
 });
 
 hiddenButton.addEventListener('click', () => {
-  // hiddenMenus.style.display = 'hidden';
   hiddenMenus.style.animation = 'fadeInDown 0.5s forwards';
 });
 
