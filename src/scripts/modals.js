@@ -59,16 +59,3 @@ loginBtn.addEventListener('mouseover', (e) => {
     loginActionWithFooter.closeAction();
   });
 });
-
-showAllBtn.addEventListener('click', (e) => {
-  if (loginActionElement) {
-    loginActionElement.closeAction();
-  }
-
-  const sidebar = new Sidebar();
-  sidebar.showAction(e);
-
-  showAllBtn.addEventListener('mouseout', () => {
-    sidebar.closeAction();
-  });
-});

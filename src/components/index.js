@@ -18,6 +18,8 @@ import SidebarFold from './Sidebar/SidebarFold.js';
 import SidebarHeader from './Sidebar/SidebarHeader.js';
 import SideBarList from './Sidebar/SidebarList.js';
 import SideBarTitle from './Sidebar/SidebarTitle.js';
+import SidebarMain from './Sidebar/SidebarMain.js';
+import SidebarSub from './Sidebar/SidebarSub.js';
 
 customElements.define('btn-element', Button);
 customElements.define('footer-element', Footer);
@@ -39,3 +41,5 @@ customElements.define('sidebar-fold-element', SidebarFold);
 customElements.define('sidebar-header-element', SidebarHeader);
 customElements.define('sidebar-list-element', SideBarList);
 customElements.define('sidebar-title-element', SideBarTitle);
+customElements.define('sidebar-main-element', SidebarMain);
+customElements.define('sidebar-sub-element', SidebarSub);

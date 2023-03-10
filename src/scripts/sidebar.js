@@ -1,5 +1,6 @@
 import Sidebar from '../components/Sidebar.js';
 import { loginActionElement } from './modals.js';
+import SidebarSub from '../components/Sidebar/SidebarSub.js';
 
 const showAllBtn = document
   .querySelector('navbar-element')
@@ -11,21 +12,19 @@ showAllBtn.addEventListener('click', (e) => {
   }
 
   const sidebar = new Sidebar();
-  sidebar.showAction(e);
+  sidebar.showSidebar(e);
 
   sidebar.shadowRoot
     .querySelector('#sidebar-close-btn')
     .addEventListener('click', () => {
-      sidebar.closeAction();
+      sidebar.closeSidebar();
     });
 
-  const main = sidebar.shadowRoot.querySelector('.main');
-  const sub = sidebar.shadowRoot.querySelector('.sub');
-  main.addEventListener('click', () => {
-    sub.classList.remove('hide');
-  });
+  const container = sidebar.shadowRoot.querySelector('.container');
+  const main = sidebar.shadowRoot.querySelector('sidebar-main-element');
+  const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
 
-  sub.addEventListener('click', () => {
-    sub.classList.add('hide');
+  main.addEventListener('click', () => {
+    sub.addEventListener('click', () => {});
   });
 });

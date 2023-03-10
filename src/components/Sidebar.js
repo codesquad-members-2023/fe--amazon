@@ -7,19 +7,13 @@ class Sidebar extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
     this.isOpen = false;
     shadow.innerHTML = `
-      <icon-element name="close" size="24" fill="var(--black-60)" id="sidebar-close-btn"></icon-element>
-      <div class="container">
-        <section class="main">
-          <sidebar-back-element> </sidebar-back-element>
-          <sidebar-category-element> </sidebar-category-element>
-          <sidebar-fold-element> </sidebar-fold-element>
-          <sidebar-header-element> </sidebar-header-element>
-          <sidebar-list-element> </sidebar-list-element>
-          <sidebar-title-element> </sidebar-title-element>
-        </section>
-        <section class="sub hide">
-          Sub
-        </section>
+      
+      <div class="wrap">
+        <icon-element name="close" size="24" fill="var(--black-60)" id="sidebar-close-btn"></icon-element>
+        <div class="container">
+          <sidebar-main-element></sidebar-main-element>
+          <sidebar-sub-element></sidebar-sub-element>
+        </div>
       </div>
 
       <backdrop-element></backdrop-element>
@@ -28,14 +22,18 @@ class Sidebar extends HTMLElement {
     this.shadowRoot.append(this.getStyle());
   }
 
-  showAction() {
+  showSidebar() {
     document.body.append(this);
     this.isOpen = true;
   }
 
-  closeAction() {
-    this.remove();
-    this.isOpen = false;
+  closeSidebar() {
+    const wrap = this.shadowRoot.querySelector('.wrap');
+    wrap.style.animation = 'slide-right .3s forwards';
+    setTimeout(() => {
+      this.remove();
+      this.isOpen = false;
+    }, 300);
   }
 
   getStyle() {
@@ -50,8 +48,19 @@ class Sidebar extends HTMLElement {
         z-index: 1;
       }
 
+      .wrap {
+        animation: slide-left .5s;
+        transition: var(--default-transition);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: ${SIDEBAR_SIZE + 8 + 24}px;
+        height: 100%;
+        z-index: 1;
+      }
+
       icon-element[name="close"] {
-        position: absolute;
+        position: fixed;
         z-index: 2;
         top: 8px;
         left: ${SIDEBAR_SIZE + 8}px;
@@ -64,41 +73,45 @@ class Sidebar extends HTMLElement {
       .container {
         width: ${SIDEBAR_SIZE}px;
         height: 100%;
-        z-index: 1;
-        position: relative;
+        display: flex;
         background-color: var(--white);
         overflow-x: hidden;
+        position: relative;
       }
 
-      .main, .sub {
+      sidebar-main-element {
         position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
+        
       }
 
-      .main {
-        background-color: red;
-        animation: slide 1s forwards;
+      sidebar-sub-element {
+        position: absolute;
+        left: 320px;
       }
 
-      .sub {
-        background-color: yellow;
-        animation: slide 1s forwards;
+      .show {
+        display: block;
       }
-
 
       .hide {
         display: none;
-        opactiy: 0;
       }
 
-      @keyframes slide {
+      @keyframes slide-left {
         0% {
-          transform: translateX(100%);
+          transform: translateX(-100%);
         }
         100% {
           transform: translateX(0%);
+        }
+      }
+
+      @keyframes slide-right {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-100%);
         }
       }
 
