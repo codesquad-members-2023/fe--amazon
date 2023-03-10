@@ -16,7 +16,7 @@ aside {
   background-color: black;
 }
 
-aside span, aside img, #view_tab {
+aside span, aside img, #view_all {
   cursor: pointer;
 }
 
@@ -25,7 +25,7 @@ aside h3 {
   padding: 16px 16px 16px 32px;
 }
 
-aside li:not(#view_tab) {
+aside li:not(#view_all) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -35,11 +35,11 @@ aside li:not(#view_tab) {
   padding: 8px 16px 8px 32px;
 }
 
-.side_bar_digital li:last-child, #view_tab {
+.side_bar_digital li:last-child, #view_all {
   border-bottom: 1px solid #EFF2F2;
 }
 
-#view_tab {
+#view_all {
   height: 40px;
   padding: 8px 16px 8px 32px;
 }
@@ -54,7 +54,7 @@ aside li:not(#view_tab) {
   Height : 12px;
 }
 
-#view_tab img {
+#view_all img {
   width: 12px;
   Height: 7px;
 }
@@ -107,4 +107,10 @@ aside li:not(#view_tab) {
   animation: contract 0.5s ease-in-out;
 }
 
-.
+.unfold_content {
+  background-color: #FFFFFF;
+  color: black;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}

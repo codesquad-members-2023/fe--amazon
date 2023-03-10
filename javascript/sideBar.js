@@ -2,6 +2,7 @@ const $every = document.getElementById('every');
 const $close = document.getElementById('side_bar_close');
 const $side_bar = document.querySelector('aside');
 const $side_bar_menu = document.querySelectorAll('.side_bar_container li');
+const $view_all = document.getElementById('view_all');
 
 
 $every.addEventListener('click', e => {
@@ -29,4 +30,13 @@ $side_bar_menu.forEach(element => {
   element.addEventListener('mouseleave', e => {
     e.target.style.backgroundColor = 'inherit';
   });
-})
+});
+
+$view_all.addEventListener('click' ,e => {
+  const content = e.target.nextElementSibling;
+  if (content.style.maxHeight){
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
+});
