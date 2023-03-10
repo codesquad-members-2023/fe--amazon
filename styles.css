@@ -379,19 +379,12 @@ body {
 
 @keyframes other-buttons__slide--top-to-bottom {
   from {
-    /* transform: scaleY(0); */
     height: 100%;
   }
 
   to {
-    /* transform: scaleY(1); */
     height: 0;
   }
-}
-
-.other-buttons-container {
-  position: relative;
-  /* animation: other-buttons__slide--top-to-bottom 1000ms ease-in-out forwards; */
 }
 
 /* .other-buttons-container__items {
@@ -404,6 +397,10 @@ body {
   overflow-y: hidden;
   animation: other-buttons__slide--top-to-bottom 300ms ease-in-out forwards;
 } */
+
+.other-buttons-container {
+  position: relative;
+}
 
 .window {
   position: absolute;
