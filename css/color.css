@@ -1,7 +1,11 @@
 :root {
   --color-white: #ffffff;
   --color-PrimaryOrange100: #fcb057;
+  --color-PrimaryYellow200:#FED15F;
+  --color-PrimaryYellow300:#FEBE30;
+  --color-PrimaryYellow400:#DE9408;
   --color-black: #10141a;
   --color-gray900: #1b232f;
   --color-gray400: #d5d5d5;
+  --color-SecondaryNavy: #074099;
 }

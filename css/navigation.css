@@ -43,7 +43,7 @@
   align-items: center;
 }
 
-a {
+.nav-main a {
   color: var(--color-white);
   text-decoration: none;
 }
@@ -52,21 +52,6 @@ a {
   display: flex;
   flex-direction: row;
   font-size: large;
-}
-
-.login {
-  width: 80px;
-}
-
-.login span.login-prompt {
-  font-size: 11px;
-  letter-spacing: -0.06em;
-  color: var(--color-gray400);
-}
-
-.login span.Accounts and lists {
-  font-size: 13px;
-  color: var(--color-white);
 }
 
 .return-order span.return {
@@ -98,3 +83,4 @@ a {
   flex: 1;
   flex-direction: row-reverse;
 }
+
