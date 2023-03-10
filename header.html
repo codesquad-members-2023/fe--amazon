@@ -3,77 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="css/nav_popup.css">
-    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/all-css.css">
 </head>
 <body>
-    <div class="nav">
+    <div class="nav flex__row">
         <div class="nav__logo" >
             <a href="" class="nav_logo_img" target="_self">
                 <img src="asset/logo.svg">
             </a>
         </div>
         <div class="nav__shipping">
-            <div class="nav__shipping_img_text">
+            <div class="nav__shipping_img_text ">
                 <img src="asset/location.svg">
                 <span>배송처</span>
             </div>
             <a href="" target="_self">
-                <div class="shipping_text">대한민국</div>
+                <div class="shipping_text font__size">대한민국</div>
             </a>
         </div>
-        <div class="nav__search">
+        <div class="nav__search flex__row">
             <input type="text" class="nav__search_text" placeholder="검색 Amazon" style="border:none";>
-            <a href="" class="nav__search_img" target="_self">
+            <a href="" class="nav__search_img flex__row" target="_self">
                 <img src="asset/search.svg">
             </a>
         </div>
         <div class="nav__language">
-            <a href="" target="_self">
+            <a href="" target="_self" class="align__center">
                 <img src="asset/Nation.svg">
-                <div class="language_txt">KO</div>
+                <div class="language_txt font__size">KO</div>
             </a>
         </div>
         <div class="nav__login">
-            <div class="nav__login_text">
+            <div class="nav__login_text align__center">
                 <a href="" target="_self">
                     <span>안녕하세요,로그인</span>
-                    <div class="login_text">계정 및 목록</div>
+                    <div class="login_text font__size">계정 및 목록</div>
                 </a>
             </div>
             <div class="nav__login_popup">
-                <button class="nav__login_popup_button">로그인</button>
-                <div class="login_popup_text">
-                    <div>기존 사용자가 아니십니까?</div>
-                    <a href="#" class="login_popup_text_click">
-                        <div>여기에서 시작합니다.</div></a>
+                <div class="nav__login_popup-shape">
+                    </div>
+                <div class="nav__login_popup-box">
+                    <button class="nav__login_popup_button">로그인</button>
+                    <div class="login_popup_text">
+                        <div>기존 사용자가 아니십니까?</div>
+                        <a href="#" class="login_popup_text_click">
+                            <div>여기에서 시작합니다.</div></a>
+                    </div>
                 </div>
             </div>
 
         </div>
-        <div class="nav__order">
-            <a href="" target="_self">
+        <div class="nav__order flex__row">
+            <a href="" target="_self" class="nav__order">
                 <span>반품</span>
-                <div class="order_text">&주문</div>
+                <div class="order_text font__size">&주문</div>
             </a>
         </div>
         <div class="nav__shopping">
-            <a href="" target="_self">
+            <a href="" target="_self" class="align__center">
                 <img src="asset/cart.svg">
-                <div class="shopping_text">장바구니</div>
+                <div class="shopping_text font__size">장바구니</div>
             </a>
         </div>
     </div>
-    <ul class="sub">
-        <li class="sub__all"><a href="">
+    <ul class="sub flex__row">
+        <li ><a href="#" class="align__center sub__menu">
             <img src="asset/menu.svg">
             <div>모두</div></a></li>
-        <li class="sub__today-deal"><a href="">오늘의 딜</a></li>
-        <li class="sub__service"><a href="">고객 서비스</a></li>
-        <li class="sub__registry"><a href="">레지스트리</a></li>
-        <li class="sub__gift-card"><a href="">기프트 카드</a></li>
-        <li class="sub__sell"><a href="">판매</a></li>
-        <li class="sub__shopping"><a href="">지금 특가 상품 쇼핑하기</a></li>
+        <li><a href="#" class="sub__menu">오늘의 딜</a></li>
+        <li><a href="#" class="sub__menu">고객 서비스</a></li>
+        <li><a href="#" class="sub__menu">레지스트리</a></li>
+        <li><a href="#" class="sub__menu">기프트 카드</a></li>
+        <li><a href="#" class="sub__menu">판매</a></li>
+        <li><a href="#" class="sub__menu">지금 특가 상품 쇼핑하기</a></li>
     </ul>
 </body>
 </html>

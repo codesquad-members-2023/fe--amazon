@@ -1,13 +1,27 @@
 .nav__login_popup{
+    position: absolute;
+    width: 235px;
+    height: 100px;
+    left: 873px;
+    top: 48px;
+}
+.nav__login_popup-shape{
+    width: 18.93px;
+    height: 18.93px;
+    background: #FFFFFF;
+    margin-left: 170px;
+    transform: rotate(45deg);
+}
+.nav__login_popup-box{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: white;
     border-radius: 4px;
+    margin-top: -10px;
     width: 235px;
     height: 90px;
-    position: absolute;
     box-shadow: 1px 1px 1px 1px gray;
 }
 .login_popup_text{
