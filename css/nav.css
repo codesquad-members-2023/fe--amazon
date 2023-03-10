@@ -405,3 +405,9 @@ body:not(.detail_popup :hover) {
 .hidden {
   display: none;
 }
+
+.flex {
+  display: flex;
+}
+
+/* 구조로 지정하는 것 보다 의미로 지정하는 게  유지보수가 좋다 */

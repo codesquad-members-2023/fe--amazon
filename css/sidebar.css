@@ -25,7 +25,7 @@ aside h3 {
   padding: 16px 16px 16px 32px;
 }
 
-aside li:not(#view_all) {
+aside li:not(#view_all, #view_close) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -39,7 +39,7 @@ aside li:not(#view_all) {
   border-bottom: 1px solid #EFF2F2;
 }
 
-#view_all {
+#view_all, #view_close {
   height: 40px;
   padding: 8px 16px 8px 32px;
 }
@@ -54,7 +54,7 @@ aside li:not(#view_all) {
   Height : 12px;
 }
 
-#view_all img {
+#view_all img, #view_close img {
   width: 12px;
   Height: 7px;
 }
