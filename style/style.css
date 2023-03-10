@@ -423,6 +423,7 @@ html, body {
   z-index: 5;
   transition: all 0.3s;
   animation: slow-load, pop-from-left 1s forwards;
+  overflow: scroll;
 }
 
 .sidebar__header {
@@ -451,8 +452,8 @@ html, body {
   border-bottom: 1px var(--color-gray-100) solid;
 }
 
-.sidebar__machine-list, .sidebar__department-list {
-  line-height: 2.5rem;
+.sidebar__machine-list, .sidebar__department-list, .sidebar__others-list {
+  line-height: 2rem;
   font-weight: var(--weight-regular);
   font-size: var(--font-md);
   color: var(--color-black);
@@ -471,12 +472,30 @@ html, body {
 .department-list__electronic,
 .department-list__computer,
 .department-list__smart-home,
-.department-list__art {
+.department-list__art,
+.others-list__car-things,
+.others-list__child,
+.others-list__beauty,
+.others-list__fashion-female,
+.others-list__fashion-male,
+.others-list__fashion-female-child,
+.others-list__fashion-male-child,
+.others-list__health,
+.others-list__kitchen,
+.others-list__industry,
+.others-list__journey-carrier,
+.others-list__movie,
+.others-list__pet,
+.others-list__software,
+.others-list__sports,
+.others-list__building-tool,
+.others-list__toy,
+.others-list__video-game {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.other__text {
+.show-all__text {
   padding-right: 1rem;
 }
