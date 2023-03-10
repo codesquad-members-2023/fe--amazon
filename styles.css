@@ -15,6 +15,13 @@ li {
   list-style: none;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  font-family: inherit;
+}
+
 /* font color랑 font-size 메인 만들면서 비교해보고 header로 빼기 */
 
 body {
@@ -97,12 +104,8 @@ body {
   width: 40px;
   height: 40px;
   background-color: #fcb057;
-  border: none;
+  /* border: none; */
   border-radius: 0px 4px 4px 0px;
-}
-
-.search-form__button:hover {
-  cursor: pointer;
 }
 
 .container {
@@ -209,13 +212,8 @@ body {
   padding: 9.5px 10px;
 }
 
-.button:hover {
-  cursor: pointer;
-}
-
 .button--large {
   width: 160px;
-  height: 32px;
 }
 
 .seperator-line {
@@ -233,9 +231,6 @@ body {
 .list {
   display: flex;
   flex-direction: column;
-}
-
-.list--login-pop-up {
   gap: 4px;
   white-space: nowrap;
   width: 150px;
@@ -243,55 +238,18 @@ body {
 
 .list__label {
   font-weight: 800;
-}
-
-.list__label--login-pop-up {
   letter-spacing: -0.06em;
   font-size: 13px;
-}
-
-.list__label--side-bar {
-  display: block;
-  font-size: 18px;
-  padding: 16px 16px 16px 32px;
 }
 
 .list__items {
   display: flex;
   flex-direction: column;
-}
-
-.list__items--login-pop-up {
   gap: 4px;
 }
 
-.list__item--login-pop-up {
+.list__item {
   width: 150px;
-}
-
-.list__anchor {
-  width: 320px;
-  display: flex;
-  gap: 8px;
-  /* overflow-x: hidden; */
-
-  font-size: 13px;
-  padding: 8px 16px 8px 32px;
-  color: #10141a;
-}
-
-.list__anchor:hover {
-  /* 색 수정 */
-  background-color: yellow;
-}
-
-.list__anchor:hover .list__icon {
-  /* 색 수정 */
-  color: white;
-}
-
-.list__text {
-  flex-grow: 1;
 }
 
 @keyframes slide--right-to-left {
@@ -304,19 +262,10 @@ body {
   }
 }
 
-.list__sub {
-  position: absolute;
-  width: 320px;
-  height: 100%;
-  top: 0px;
-  left: -320px;
-  background-color: white;
-
-  animation: slide--right-to-left 2500ms ease-in-out;
-}
-
 .main {
   position: relative;
+
+  /* 테스트용 추후 제거 */
   height: 1300px;
 }
 
@@ -337,7 +286,8 @@ body {
   position: fixed;
 }
 
-/* aside */
+/* sidebar */
+
 @keyframes side-bar__slide--left-to-right {
   from {
     transform: translateX(-100%);
@@ -348,6 +298,14 @@ body {
   }
 }
 
+.show-side-bar {
+  animation: side-bar__slide--left-to-right 250ms ease-in-out;
+}
+
+.hide-side-bar {
+  animation: side-bar__slide--left-to-right 250ms ease-in-out reverse forwards;
+}
+
 .side-bar {
   position: absolute;
   top: 0;
@@ -355,7 +313,7 @@ body {
   height: 100%;
   z-index: 100;
 
-  /* animation: slide-bar__slide--left-to-right 250ms ease-in-out; */
+  /* animation: side-bar__slide--left-to-right 250ms ease-in-out; */
 }
 
 .side-bar__close {
@@ -394,19 +352,72 @@ body {
   display: block;
 }
 
-.side-bar__anchor {
+.side-bar__show-all,
+.side-bar__button {
   padding: 8px 16px 8px 32px;
   display: flex;
-  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
 
   font-weight: 500;
   font-size: 13px;
 }
 
+.side-bar__text {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.side-bar__show-all:hover,
 .submenu__back:hover,
-.side-bar__anchor:hover {
+.side-bar__button:hover {
   background-color: #eff2f2;
 }
+
+/* other buttons */
+
+@keyframes other-buttons__slide--top-to-bottom {
+  from {
+    /* transform: scaleY(0); */
+    height: 100%;
+  }
+
+  to {
+    /* transform: scaleY(1); */
+    height: 0;
+  }
+}
+
+.other-buttons-container {
+  position: relative;
+  /* animation: other-buttons__slide--top-to-bottom 1000ms ease-in-out forwards; */
+}
+
+/* .other-buttons-container__items {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 320px;
+  height: 100%;
+  overflow-y: hidden;
+  animation: other-buttons__slide--top-to-bottom 300ms ease-in-out forwards;
+} */
+
+.window {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 320px;
+
+  z-index: 1;
+  background-color: white;
+  animation: other-buttons__slide--top-to-bottom 1000ms ease-in-out forwards;
+}
+
+/* sub menu */
 
 @keyframes sub-menu__slide--right-to-left {
   from {
@@ -451,6 +462,7 @@ body {
   gap: 12px;
   align-items: center;
   padding: 8px 16px 8px 32px;
+  width: 100%;
 }
 
 /* 작동안함 일단 보류 */
@@ -461,4 +473,6 @@ body {
 .submenu__back-text {
   font-weight: 500;
   font-size: 13px;
+  width: 100%;
+  text-align: left;
 }

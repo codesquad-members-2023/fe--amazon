@@ -27,8 +27,8 @@ const sideBarCloseButton = document.querySelector(".side-bar__close");
 
 // sidebar
 const sideBarContent = document.querySelector(".side-bar__content");
-const sideBarParentAnchors = document.querySelectorAll(
-  ".side-bar__anchor--parent"
+const sideBarParentButtons = document.querySelectorAll(
+  ".side-bar__button--parent"
 );
 const subMenus = document.querySelector(".submenus");
 const allSubMenus = document.querySelectorAll(".submenu");
@@ -89,11 +89,9 @@ function main() {
   sideBarContent.addEventListener("click", (e) => {
     e.preventDefault();
     if (subMenus.contains(e.target)) return;
-    const parentAnchor = [...sideBarParentAnchors].find((el) =>
+    const parentAnchor = [...sideBarParentButtons].find((el) =>
       el.contains(e.target)
     );
-
-    console.log(parentAnchor);
 
     const id = parentAnchor.dataset.id;
     const subMenu = [...allSubMenus].find((el) => el.dataset.parentId === id);
