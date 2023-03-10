@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-a:-webkit-any-link {
+a {
   color: white;
   text-decoration-line: none;
 }
@@ -217,8 +217,16 @@ a:-webkit-any-link {
   gap: 16px;
 }
 
+.nav-bottom__selectAll {
+  border: 0;
+  padding: 0;
+  background: 0;
+  cursor: pointer;
+}
+
 .nav-bottom__container {
   display: flex;
+  align-items: center;
   gap: 12px;
 }
 
