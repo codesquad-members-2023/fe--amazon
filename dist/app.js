@@ -9,6 +9,8 @@ class App {
         this.$addressChanging = this.$('.address-changing');
         this.$sidebar = this.$('.sidebar');
         this.$navbarAllList = this.$('.nav-bar__all-list');
+        this.$departmentListAllTag = this.$('.department-list__show-all');
+        this.$sidebarOthersContent = this.$('.sidebar__others-content');
     }
     $(selector) {
         return document.querySelector(selector);
@@ -51,8 +53,14 @@ class App {
             this.$sidebar.style.display = 'none';
         });
     }
+    showSidebarOthers() {
+        this.$departmentListAllTag.addEventListener('click', () => {
+            this.$sidebarOthersContent.style.display = 'block';
+        });
+    }
 }
 const app = new App();
 app.toggleExpandLogin();
 app.toggleAddressChanging();
 app.toggleSidebar();
+app.showSidebarOthers();
