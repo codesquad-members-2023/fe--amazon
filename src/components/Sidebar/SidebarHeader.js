@@ -1,3 +1,4 @@
+import { SIDEBAR_HEADER_HEIGHT } from '../../constant.js';
 class SidebarHeader extends HTMLElement {
   constructor() {
     super();
@@ -5,7 +6,7 @@ class SidebarHeader extends HTMLElement {
     const text = this.innerText;
     const shadow = this.attachShadow({ mode: 'open' });
 
-    shadow.innerHTML = `<button>header</button>`;
+    shadow.innerHTML = `<icon-element name="user" fill="var(--white)"></icon-element>안녕하세요, 로그인`;
     this.shadowRoot.append(this.getStyle());
   }
 
@@ -14,29 +15,23 @@ class SidebarHeader extends HTMLElement {
     const type = this.getAttribute('type');
 
     style.textContent = `
-      button {
+      :host {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
         align-items: center;
-        padding: 0px 10px;
-        height: 32px;
-        width: ${type === 'flexible' ? '160px' : 'auto'};
-        
-        background: linear-gradient(174.6deg, var(--white) 4.31%, var(--primary-yellow-100) 50.01%, var(--primary-yellow-200) 95.71%);
+        gap: 8px;
+        width: 100%;
+        background-color: var(--black);
+        color: var(--white);
+        height: ${SIDEBAR_HEADER_HEIGHT}px;
+        padding: 16px 16px 16px 32px;
+        box-sizing: border-box;
 
-        border: 1px solid var(--primary-yellow-300);
-        border-radius: 4px;
-
-        font-weight: var(--bold-sm-weight);
-        font-size: var(--bold-sm-size);
-        line-height: var(--bold-sm-height);
-        letter-spacing: var(--bold-sm-spacing);
+        font-weight: var(--bold-lg-weight);
+        font-size: var(--bold-lg-size);
+        line-height: var(--bold-lg-height);
+        letter-spacing: var(--bold-lg-spacing);
       }
-
-      button:hover {
-        cursor: pointer;
-      }
+      
     `;
     return style;
   }

@@ -5,7 +5,7 @@ class SidebarFold extends HTMLElement {
     const text = this.innerText;
     const shadow = this.attachShadow({ mode: 'open' });
 
-    shadow.innerHTML = `<button>fold</button>`;
+    shadow.innerHTML = `<button>모두 보기<icon-element name="chevron-down" fill="var(--gray-600)"></icon-element></button>`;
     this.shadowRoot.append(this.getStyle());
   }
 
@@ -17,21 +17,20 @@ class SidebarFold extends HTMLElement {
       button {
         display: flex;
         flex-direction: row;
-        justify-content: center;
         align-items: center;
-        padding: 0px 10px;
-        height: 32px;
+
+        gap: 8px;
+        padding: 8px 16px 8px 32px;
         width: 100%;
         
-        background: linear-gradient(174.6deg, var(--white) 4.31%, var(--primary-yellow-100) 50.01%, var(--primary-yellow-200) 95.71%);
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid var(--gray-100);
 
-        border: 1px solid var(--primary-yellow-300);
-        border-radius: 4px;
-
-        font-weight: var(--bold-sm-weight);
-        font-size: var(--bold-sm-size);
-        line-height: var(--bold-sm-height);
-        letter-spacing: var(--bold-sm-spacing);
+        font-weight: var(--body-md-weight);
+        font-size: var(--body-md-size);
+        line-height: var(--body-md-height);
+        letter-spacing: var(--body-md-spacing);
       }
 
       button:hover {

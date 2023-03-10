@@ -1,6 +1,5 @@
 import Sidebar from '../components/Sidebar.js';
 import { loginActionElement } from './modals.js';
-import SidebarSub from '../components/Sidebar/SidebarSub.js';
 
 const showAllBtn = document
   .querySelector('navbar-element')
@@ -18,6 +17,7 @@ showAllBtn.addEventListener('click', (e) => {
   const foldingBtn = sidebar.shadowRoot
     .querySelector('sidebar-main-element')
     .shadowRoot.querySelector('#folidng-btn');
+
   const unfoldingBtn = sidebar.shadowRoot
     .querySelector('sidebar-main-element')
     .shadowRoot.querySelector('#unfolidng-btn');
@@ -42,7 +42,16 @@ showAllBtn.addEventListener('click', (e) => {
   const main = sidebar.shadowRoot.querySelector('sidebar-main-element');
   const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
 
-  main.addEventListener('click', () => {
-    sub.addEventListener('click', () => {});
+  const mainCategories = main.shadowRoot.querySelectorAll(
+    'sidebar-category-element'
+  );
+  mainCategories.forEach((category) =>
+    category.addEventListener('click', () => {
+      container.classList.add('slide-right');
+    })
+  );
+
+  sub.addEventListener('click', () => {
+    sub.classList.add('hide');
   });
 });

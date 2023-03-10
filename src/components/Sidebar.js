@@ -1,4 +1,4 @@
-import { SIDEBAR_SIZE } from '../constant.js';
+import { SIDEBAR_SIZE, SIDEBAR_HEADER_HEIGHT } from '../constant.js';
 
 class Sidebar extends HTMLElement {
   constructor() {
@@ -10,10 +10,13 @@ class Sidebar extends HTMLElement {
       
       <div class="wrap">
         <icon-element name="close" size="24" fill="var(--black-60)" id="sidebar-close-btn"></icon-element>
-        <div class="container">
-          <sidebar-main-element></sidebar-main-element>
-          <sidebar-sub-element></sidebar-sub-element>
-        </div>
+        
+          <sidebar-header-element> </sidebar-header-element>
+          <div class="container">
+            <sidebar-main-element></sidebar-main-element>
+            <sidebar-sub-element></sidebar-sub-element>
+          </div>
+        
       </div>
 
       <backdrop-element></backdrop-element>
@@ -70,6 +73,10 @@ class Sidebar extends HTMLElement {
         cursor: pointer;
       }
 
+      sidebar-header-element {
+        width: ${SIDEBAR_SIZE}px;
+      }
+
       .container {
         width: ${SIDEBAR_SIZE}px;
         height: 100%;
@@ -79,22 +86,24 @@ class Sidebar extends HTMLElement {
         position: relative;
       }
 
+      
+
       sidebar-main-element {
         position: absolute;
-        
       }
 
       sidebar-sub-element {
         position: absolute;
-        left: 320px;
+        transform: translateX(100%);
       }
 
-      .show {
-        display: block;
+
+      .slide-left sidebar-main-element, .slide-left sidebar-sub-element {
+        animation: slide-left .5s forwards;
       }
 
-      .hide {
-        display: none;
+      .slide-right sidebar-main-element, .slide-right sidebar-sub-element {
+        animation: slide-right .5s forwards;
       }
 
       @keyframes slide-left {

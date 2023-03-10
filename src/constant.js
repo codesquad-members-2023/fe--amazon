@@ -11,3 +11,4 @@ export const ACTION_SIZE = {
 };
 
 export const SIDEBAR_SIZE = 320;
+export const SIDEBAR_HEADER_HEIGHT = 53;
