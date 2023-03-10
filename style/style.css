@@ -399,6 +399,15 @@ html, body {
   color: var(--color-black);
 }
 
+@keyframes pop-from-left {
+  0% {
+    left: -20rem;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 /* side bar */
 .sidebar {
   position: fixed;
@@ -413,4 +422,6 @@ html, body {
   background-color: red;
   z-index: 5;
   transition: all 0.3s;
+  animation: slow-load, pop-from-left 1s forwards;
+
 }

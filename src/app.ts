@@ -71,6 +71,7 @@ class App {
 }
 
 const app = new App();
+
 app.toggleExpandLogin();
 app.toggleAddressChanging();
 app.toggleSidebar();
