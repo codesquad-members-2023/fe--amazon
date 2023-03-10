@@ -1,69 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/font.css">
-  <link rel="stylesheet" href="/css/nav.css">
-  <link rel="icon" href="./asset/images/Amazon_icon.svg">
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='stylesheet' href='/css/reset.css'>
+  <link rel='stylesheet' href='/css/font.css'>
+  <link rel='stylesheet' href='/css/nav.css'>
+  <link rel='stylesheet' href='/css/sidebar.css'>
+  <link rel='icon' href='./asset/images/Amazon_icon.svg'>
   <title>Amazon</title>
 </head>
 
 <body>
-  <header class="nav_bar">
-    <div class="nav_bar_main">
-      <div class="bi"><img src="/asset/images/vectors/BI.svg"></div>
-      <div class="shipping_address">
-        <div class="BoldSM"><img src="/asset/images/vectors/ShippingAddress.svg">배송처</div>
-        <div class="BoldMD">대한민국</div>
+  <header>
+    <div class='nav_bar'>
+      <div class='bi'><img src='/asset/images/vectors/BI.svg'></div>
+      <div class='shipping_address'>
+        <div class='BoldSM'>
+          <img src='/asset/images/vectors/ShippingAddress.svg'>배송처
+        </div>
+        <div class='BoldMD'>대한민국</div>
       </div>
-      <div class="shipping_address_popup BodySM hidden">
+      <div class='shipping_address_popup BodySM hidden'>
         <div>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</div>
         <div>
-          <button id="continue_btn" class="BodySM">계속</button>
-          <button id="change_address_btn" class="BodySM">주소변경</button>
+          <button id='continue_btn' class='BodySM'>계속</button>
+          <button id='change_address_btn' class='BodySM'>주소변경</button>
         </div>
-        <div class="triangle"></div>
+        <div class='triangle'></div>
       </div>
-      <form class="search_bar__form">
-        <input class="BodyMD" type="text" placeholder="검색 Amazon">
-        <button id="search_bar__btn"><img src="/asset/images/vectors/SearchBar.svg"></button>
+      <form class='search_bar__form'>
+        <input class='BodyMD' type='text' placeholder='검색 Amazon'>
+        <button id='search_bar__btn'>
+          <img src='/asset/images/vectors/SearchBar.svg'>
+        </button>
       </form>
-      <div class="nation BoldMD">🇰🇷 KO</div>
-      <div class="login_container">
-        <div class="login_bar">
-          <p class="BoldSM">안녕하세요, 로그인</p>
-          <p class="BoldMD">계정 및 목록</p>
+      <div class='nation BoldMD'>🇰🇷 KO</div>
+
+    <!-- 로그인 컨테이너 -->
+      <div class='login_container'>
+        <div class='login_bar'>
+          <p class='BoldSM'>안녕하세요, 로그인</p>
+          <p class='BoldMD'>계정 및 목록</p>
         </div>
-        <div class="login_popup fade_in">
-          <button class="login__btn BodySM">로그인</button>
+        <div class='login_popup fade_in'>
+          <button class='login__btn BodySM'>로그인</button>
           <div>
-            <span class="BodySM">기존 사용자가 아니십니까?</span> <a class="BodySM">여기에서 시작합니다.</a>
+            <span class='BodySM'>기존 사용자가 아니십니까?</span>
+            <a class='BodySM'>여기에서 시작합니다.</a>
           </div>
-          <div class="triangle fade_in"></div>
+          <div class='triangle fade_in'></div>
         </div>
-        <div class="login_popup_detail hidden">
-          <div class="login_popup_detail_up">
-            <button class="login__btn BodySM">로그인</button>
+        <div class='login_popup_detail hidden'>
+          <div class='login_popup_detail_up'>
+            <button class='login__btn BodySM'>로그인</button>
             <div>
-              <span class="BodySM">기존 사용자가 아니십니까?</span> <a class="BodySM">여기에서 시작합니다.</a>
+              <span class='BodySM'>기존 사용자가 아니십니까?</span>
+              <a class='BodySM'>여기에서 시작합니다.</a>
             </div>
           </div>
-          <div class="login_popup_detail_bottom">
-            <div class="login_popup_detail_left">
-              <h3 class="BoldMD">귀하의 목록</h3>
-              <ul class="BodySM">
+          <div class='login_popup_detail_bottom'>
+            <div class='login_popup_detail_left'>
+              <h3 class='BoldMD'>귀하의 목록</h3>
+              <ul class='BodySM'>
                 <li>목록 생성</li>
                 <li>목록 또는 레지스트리 찾기</li>
                 <li>AmazonSmile 자선 품목 목록</li>
               </ul>
             </div>
-            <div class="login_popup_detail_right">
-              <h3 class="BoldMD">계정</h3>
-              <ul class="BodySM">
+            <div class='login_popup_detail_right'>
+              <h3 class='BoldMD'>계정</h3>
+              <ul class='BodySM'>
                 <li>계정</li>
                 <li>주문</li>
                 <li>권장 사항</li>
@@ -78,104 +87,162 @@
               </ul>
             </div>
           </div>
-          <div class="triangle"></div>
+          <div class='triangle'></div>
         </div>
       </div>
-      <div class="mypage">
-        <p class="BoldSM">반품</p>
-        <p class="BoldMD">&주문</p>
+      <div class='mypage'>
+        <p class='BoldSM'>반품</p>
+        <p class='BoldMD'>&주문</p>
       </div>
-      <div class="cart BoldMD"><img src="/asset/images/vectors/Cart.svg">장바구니</div>
+      <div class='cart BoldMD'>
+        <img src='/asset/images/vectors/Cart.svg'>장바구니
+      </div>
     </div>
-    <div class="nav_bar_sub">
-      <div class="left_btn">
-        <div class="side_bar BoldMD"><img src="/asset/images/vectors/SideBar.svg">모두</div>
-        <div class="BoldMD">오늘의 딜</div>
-        <div class="BoldMD">고객 서비스</div>
-        <div class="BoldMD">레지스트리</div>
-        <div class="BoldMD">기프트 카드</div>
-        <div class="BoldMD">판매</div>
+
+    <!-- 네비게이션바 sub -->
+    <div class='nav_bar_sub'>
+      <div class='left_btn'>
+        <div id ='every' class='BoldMD'>
+          <img src='/asset/images/vectors/SideBar.svg'> 모두
+        </div>
+        <div class='BoldMD'>오늘의 딜</div>
+        <div class='BoldMD'>고객 서비스</div>
+        <div class='BoldMD'>레지스트리</div>
+        <div class='BoldMD'>기프트 카드</div>
+        <div class='BoldMD'>판매</div>
       </div>
-      <div class="right_btn BoldMD">지금 특가 상품 쇼핑하기</div>
+      <div class='right_btn BoldMD'>지금 특가 상품 쇼핑하기</div>
     </div>
   </header>
-  <div class="main">
+
+    <!-- side bar -->
+  <aside>
+    <h3 class='side_bar_login BoldLG'>
+      <img src='/asset/images/vectors/Person.svg'> 안녕하세요, 로그인
+    </h3>
+    <div class='side_bar_container'>
+      <h3 class='BoldLG'>디지털 콘텐츠 및 기기</h3>
+      <!-- category (화살표 입력 다른 방법 생각해보기 for 중복제거) -->
+      <ul class='side_bar_digital'>
+        <li class='BodyMD'>
+          <span>Amazon Music</span>
+          <img src='/asset/images/vectors/Right.svg'>
+        </li>
+        <li class='BodyMD'>
+          <span>Kindle E-Reader 및 도서</span>
+          <img src='/asset/images/vectors/Right.svg'>
+        </li>
+        <li class='BodyMD'>
+          <span>안드로이드 앱스토어</span>
+          <img src='/asset/images/vectors/Right.svg'>
+        </li>
+      </ul>
+      <h3 class='BoldLG'>부서별 쇼핑</h3>
+      <ul class='side_bar_shopping'>
+        <li class='BodyMD'>
+          <span>전자</span>
+          <img src='/asset/images/vectors/Right.svg'>
+        </li>
+        <li class='BodyMD'>
+          <span>컴퓨터</span>
+          <img src='/asset/images/vectors/Right.svg'>
+        </li>
+        <li class='BodyMD'>
+          <span>Alexa 스마트 홈</span>
+          <img src='/asset/images/vectors/Right.svg'>
+        </li>
+        <li class='BodyMD'>
+          <span>예술 및 공예</span>
+          <img src='/asset/images/vectors/Right.svg'>
+        </li>
+        <!-- unfold -->
+        <li id='view_tab' class='BodyMD'>모두 보기
+          <img src='/asset/images/vectors/Bottom.svg'>
+        </li>
+      </ul>
+    </div>
+    <div id='side_bar_close'><img src='/asset/images/vectors/X.svg'></div>
+  </aside>
+
+  <div class='main'>
     <!-- 히어로영역 -->
     <div></div>
-    <div class="card_container">
-      <div class="card_column">
+
+    <!-- board layout -->
+    <div class='card_container'>
+      <div class='card_column'>
         <div>
-          <button class="login__btn">로그인</button>
+          <button class='login__btn'>로그인</button>
           <p>최상의 경험을 위해 로그인하세요</p>
         </div>
         <div>
-          <img src="/asset/images/rectangles/Rectangle1.svg">
+          <img src='/asset/images/rectangles/Rectangle1.svg'>
           <h2>집에서 입어보기</h2>
           <a>더보기</a>
         </div>
         <div>
-          <img src="/asset/images/rectangles/Rectangle2.svg">
+          <img src='/asset/images/rectangles/Rectangle2.svg'>
           <h2>특가</h2>
           <a>지금 쇼핑하세요</a>
         </div>
         <div>
-          <img src="/asset/images/rectangles/Rectangle3.svg">
+          <img src='/asset/images/rectangles/Rectangle3.svg'>
           <h2>피트니스용</h2>
           <a>지금 쇼핑하세요</a>
         </div>
       </div>
       <div>
         <div>
-          <img src="">
+          <img src='''>
           <h2></h2>
           <a></a>
         </div>
         <div>
-          <img src="">
+          <img src='''>
           <h2></h2>
           <a></a>
         </div>
         <div>
-          <img src="">
-          <h2></h2>
-          <a></a>
-        </div>
-      </div>
-      <div>
-        <div>
-          <img src="">
-          <h2></h2>
-          <a></a>
-        </div>
-        <div>
-          <img src="">
-          <h2></h2>
-          <a></a>
-        </div>
-        <div>
-          <img src="">
-          <h2></h2>
-          <a></a>
-        </div>
-        <div>
-          <img src="">
+          <img src=''>
           <h2></h2>
           <a></a>
         </div>
       </div>
       <div>
         <div>
-          <img src="">
+          <img src=''>
           <h2></h2>
           <a></a>
         </div>
         <div>
-          <img src="">
+          <img src='''>
           <h2></h2>
           <a></a>
         </div>
         <div>
-          <img src="">
+          <img src='''>
+          <h2></h2>
+          <a></a>
+        </div>
+        <div>
+          <img src=''>
+          <h2></h2>
+          <a></a>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src=''>
+          <h2></h2>
+          <a></a>
+        </div>
+        <div>
+          <img src='''>
+          <h2></h2>
+          <a></a>
+        </div>
+        <div>
+          <img src='''>
           <h2></h2>
           <a></a>
         </div>
@@ -239,7 +306,10 @@
       </div>
     </div>
   </footer>
-  <script src="/javascript/nav.js"></script>
+
+  <script src='/javascript/nav.js'></script>
+  <script src='/javascript/sideBar.js'></script>
+
 </body>
 
 </html>
