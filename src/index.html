@@ -11,19 +11,34 @@
     <header class="header">
       <!-- header 내부 header_main -->
       <div class="header_main">
-        <a href="#" class="header_href">
+        <a href="" class="header_href">
           <div class="logo">
             <img src="assets/images/BI.svg" id="logo_image" />
           </div>
         </a>
+        <div class="shipping_section">
+          <a href="" class="shipping_container header_href">
+            <div class="shipping">
+              <img src="assets/images/name=location.svg" id="shipping_image" />
+              <span class="top_text">배송처</span>
+              <span class="bottom_text">대한민국</span>
+            </div>
+          </a>
 
-        <a href="#" class="shipping header_href">
-          <div class="shipping">
-            <img src="assets/images/name=location.svg" id="shipping_image" />
-            <span class="top_text">배송처</span>
-            <span class="bottom_text">대한민국</span>
+          <div class="shipping_pop-up hidden">
+            <div class="pop-up_triangle shipping_pop-up_triangle"></div>
+            <div class="shipping_pop-up_contents">
+              <span
+                >KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 주소를
+                변경하십시오.</span
+              >
+              <div class="shipping_pop-up_buttons">
+                <button type="button" class="shipping_pop-up_button">계속</button>
+                <button type="button" class="shipping_pop-up_button">주소 변경</button>
+              </div>
+            </div>
           </div>
-        </a>
+        </div>
 
         <div class="search_bar">
           <input class="search_input" type="search" placeholder="검색 Amazon" />
@@ -38,14 +53,14 @@
         </div>
 
         <div class="login_section">
-          <a href="#" class="login_container header_href">
+          <a href="" class="login_container header_href">
             <span class="top_text">안녕하세요, 로그인</span>
             <span class="bottom_text">계정 및 목록</span>
           </a>
 
           <div class="login_pop-up hidden">
-            <div class="pop-up_triangle"></div>
-            <div class="pop-up_contents">
+            <div class="pop-up_triangle login_pop-up_triangle"></div>
+            <div class="login_pop-up_contents">
               <button class="login_pop-up_button" type="button">로그인</button>
               <div class="login_pop-up_description">
                 <span>기존 사용자가 아니십니까?</span>
@@ -99,23 +114,28 @@
       <!-- 메뉴 항목에 li 태그를 적용하는 부분 고민 필요 -->
       <div class="navbar">
         <ul class="navbar_left">
-          <li>
-            <a href="#" class="nav_list">모두</a>
+          <li class="nav_list">
+            <a href="" class="sidebar_section"><img src="assets/images/Vector.svg" alt="" />모두</a>
           </li>
-          <li>
-            <a href="#" class="nav_list">오늘의 딜</a>
+          <li class="nav_list">
+            <a href="">오늘의 딜</a>
           </li>
-          <li><a href="#" class="nav_list">고객서비스</a></li>
-          <li><a href="#" class="nav_list">레지스트리</a></li>
-          <li><a href="#" class="nav_list">기프트카드</a></li>
-          <li><a href="#" class="nav_list">판매</a></li>
+          <li class="nav_list"><a href="">고객서비스</a></li>
+          <li class="nav_list"><a href="">레지스트리</a></li>
+          <li class="nav_list"><a href="">기프트카드</a></li>
+          <li class="nav_list"><a href="">판매</a></li>
         </ul>
 
         <ul class="navbar_right">
-          <li><a href="#">지금 특가상품 쇼핑하기</a></li>
+          <li class="nav_list"><a href="">지금 특가상품 쇼핑하기</a></li>
         </ul>
       </div>
     </header>
+
+    <main class="main">
+      <div class="dimmed hidden"></div>
+    </main>
+
     <script src="./js/index.js"></script>
   </body>
 </html>
