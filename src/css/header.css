@@ -114,7 +114,7 @@
 .login {
   position: relative;
 }
-.login >div:first-child {
+.login > div:first-child {
   display: flex;
   flex-direction: column;
 }
@@ -144,8 +144,9 @@
   top: -18px;
   left: 30px;
 }
-.login_btn {
-  cursor: pointer;
+.login_dim .yellow_btn {
+  width: 60%;
+  height: 30%;
 }
 .login_dim_bottom {
   margin-top: 3px;
