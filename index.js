@@ -20,12 +20,21 @@ const shippingAddressContainer = document.querySelector(
 const dimmedMain = document.querySelector(".dimmed--main");
 const dimmedBody = document.querySelector(".dimmed--body");
 
-// aside
+// side-bar
 const allAnchor = document.querySelector(".nav__anchor--all");
 const sideBar = document.querySelector(".side-bar");
 const sideBarCloseButton = document.querySelector(".side-bar__close");
 
-// sidebar
+// 모두 보기
+const showAllButton = document.querySelector(".side-bar__show-all");
+const otherButtonContainer = document.querySelector(
+  ".other-buttons-container__items"
+);
+const closeAllButton = document.querySelector(
+  ".side-bar__button--close-others"
+);
+
+// submenu
 const sideBarContent = document.querySelector(".side-bar__content");
 const sideBarParentButtons = document.querySelectorAll(
   ".side-bar__button--parent"
@@ -75,6 +84,8 @@ function main() {
 
     dimmedBody.classList.remove("hidden");
     sideBar.classList.remove("hidden");
+    sideBar.classList.remove("hide-side-bar");
+    sideBar.classList.add("show-side-bar");
   });
 
   // 사이드바 닫기 버튼 click
@@ -82,21 +93,35 @@ function main() {
     e.preventDefault();
 
     dimmedBody.classList.add("hidden");
-    sideBar.classList.add("hidden");
+    sideBar.classList.remove("show-side-bar");
+    sideBar.classList.add("hide-side-bar");
+  });
+
+  // 모두보기 click
+  showAllButton.addEventListener("click", () => {
+    otherButtonContainer.classList.remove("hidden");
+    otherButtonContainer.classList.remove("hide-others");
+    otherButtonContainer.classList.add("show-others");
+  });
+
+  // 접기 클릭
+  closeAllButton.addEventListener("click", () => {
+    otherButtonContainer.classList.remove("show-others");
+    otherButtonContainer.classList.add("hide-others");
   });
 
   // submenu 열기
   sideBarContent.addEventListener("click", (e) => {
     e.preventDefault();
     if (subMenus.contains(e.target)) return;
-    const parentAnchor = [...sideBarParentButtons].find((el) =>
+    const parentButton = [...sideBarParentButtons].find((el) =>
       el.contains(e.target)
     );
 
-    const id = parentAnchor.dataset.id;
+    const id = parentButton.dataset.id;
     const subMenu = [...allSubMenus].find((el) => el.dataset.parentId === id);
-    subMenu.classList.remove("sub-menu__slide--left-to-right");
-    subMenu.classList.add("sub-menu__slide--right-to-left");
+    subMenu.classList.remove("hide-sub-menu");
+    subMenu.classList.add("show-sub-menu");
   });
 
   // submenu 닫기
@@ -104,11 +129,9 @@ function main() {
     subMenuBack.addEventListener("click", (e) => {
       if (!subMenuBack.contains(e.target)) return;
 
-      subMenuBack.parentElement.classList.remove(
-        "sub-menu__slide--right-to-left"
-      );
+      subMenuBack.parentElement.classList.remove("show-sub-menu");
 
-      subMenuBack.parentElement.classList.add("sub-menu__slide--left-to-right");
+      subMenuBack.parentElement.classList.add("hide-sub-menu");
     });
   });
 }
