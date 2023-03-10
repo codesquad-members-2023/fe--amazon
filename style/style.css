@@ -419,9 +419,64 @@ html, body {
   justify-content: flex-start;
   width: 20rem;
   height: 100%;
-  background-color: red;
+  background-color: var(--color-white);
   z-index: 5;
   transition: all 0.3s;
   animation: slow-load, pop-from-left 1s forwards;
+}
 
+.sidebar__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--color-black);
+}
+
+.sidebar__greeting {
+  font-weight: var(--weight-bold);
+  font-size: var(--font-lg);
+  color: var(--color-white);
+}
+
+.sidebar__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 1rem;
+}
+
+.sidebar__first-content, .sidebar__second-content {
+  border-bottom: 1px var(--color-gray-100) solid;
+}
+
+.sidebar__machine-list, .sidebar__department-list {
+  line-height: 2.5rem;
+  font-weight: var(--weight-regular);
+  font-size: var(--font-md);
+  color: var(--color-black);
+}
+
+.machine-list__title, .department-list__title {
+  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-lg);
+  color: var(--color-black);
+  margin-top: 1rem;
+}
+
+.machine-list__amazon-music,
+.machine-list__e-reader,
+.machine-list__android,
+.department-list__electronic,
+.department-list__computer,
+.department-list__smart-home,
+.department-list__art {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.other__text {
+  padding-right: 1rem;
 }
