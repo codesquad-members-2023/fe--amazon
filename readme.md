@@ -32,4 +32,4 @@ HTML, CSS, JavaScript를 사용하여 아마존 웹페이지를 만들어본다.
 
 # 학습내용
 
-[학습정리](https://www.notion.so/FS-1-6662064ee3424e239fbdfc70219861fb?pvs=4)
+[학습정리](https://stitch-dart-ccd.notion.site/FS-1-6662064ee3424e239fbdfc70219861fb)
