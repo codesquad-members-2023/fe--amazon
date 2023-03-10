@@ -19,7 +19,6 @@
   font-style: normal;
   font-weight: 800;
   font-size: 13px;
-  line-height: 16px;
   letter-spacing: -0.06em;
 }
 
@@ -39,4 +38,11 @@
   font-size: 11px;
   line-height: 160%;
   letter-spacing: -0.03em;
+}
+
+.BoldLG {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
 }

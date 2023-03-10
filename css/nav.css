@@ -2,20 +2,22 @@
   box-sizing: border-box;
 }
 
-.nav_bar {
+header {
+  position: fixed;
+  z-index: 0;
   width: 1280px;
   height: 88px;
   color: #FFFFFF;
 }
 
-.nav_bar_main {
+.nav_bar {
   display: flex;
   flex-direction: row;
   align-items: center;
 
   width: 1280px;
   height: 56px;
-  padding: 8px 16px;
+  padding: 0px 16px;
   gap: 24px;
   background-color: #10141A;
 }
@@ -44,8 +46,9 @@
   align-items: flex-start;
 
   width: 43px;
-  height: 29px;
   padding: 0px;
+
+  cursor: pointer;
 }
 
 .shipping_address > div:nth-child(1) {
@@ -85,6 +88,8 @@
   border-radius: 4px;
   color: #10141A;
   box-shadow: 0px 3px 5px -2px gray;
+
+  cursor: pointer;
 }
 
 .shipping_address_popup > div:nth-child(1) {
@@ -125,7 +130,7 @@
 
   width: 747px;
   height: 40px;
-  padding: 0px 0px 0px 12px;
+  padding-left: 12px;
 
   border-radius: 4px;
 }
@@ -152,6 +157,9 @@
   border-radius: 0px 4px 4px 0px;
   background: #FCB057;
 }
+
+/* @media (min-width: 1120px) {
+} */
 
 .nation {
   width: 35px;
@@ -339,19 +347,10 @@
 .left_btn {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
   justify-content: space-between;
 
   width: 387px;
   height: 32px;
-}
-
-.side_bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  width: 58px;
 }
 
 .left_btn div {
@@ -391,6 +390,17 @@ body:not(.detail_popup :hover) {
   background: rgba(0,0,0,.5);
 }
 */
+
+/* .dim {
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index:999;
+} */
 
 .hidden {
   display: none;
