@@ -58,6 +58,11 @@
   cursor: pointer;
 }
 
+.homeSidebar__subTitle:hover {
+  background-color: beige;
+  font-weight: 800;
+}
+
 .homeSidebar__subTitle i,
 .homeSidebar__seeAll i {
   color: #878787;
