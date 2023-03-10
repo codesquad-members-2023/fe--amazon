@@ -16,8 +16,13 @@ a:-webkit-any-link {
 .nav {
   display: flex;
   flex-direction: column;
+  position: fixed;
+
   background-color: #000000;
   height: 88px;
+  width: 100%;
+
+  z-index: 1;
 }
 
 .nav-top,
