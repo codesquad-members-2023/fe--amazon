@@ -53,7 +53,7 @@
   width: 12px;
   height: 12px;
 }
-.shipping_address_dim {
+.shipping_address_modal {
   position: absolute;
   top: 50px;
   left: -30px;
@@ -79,7 +79,7 @@
 
   color: #10141a;
 }
-.shipping_address_dim:after {
+.shipping_address_modal:after {
   content: '';
 
   border: 10px solid transparent;
@@ -89,10 +89,10 @@
   top: -18px;
   left: 30px;
 }
-.shipping_address_dim > span {
+.shipping_address_modal > span {
   padding: 10px;
 }
-.shipping_address_dim_bottom {
+.shipping_address_modal_bottom {
   width: 100%;
   padding-right: 10px;
   padding-left: 10px;
@@ -100,13 +100,13 @@
   display: flex;
   justify-content: flex-end;
 }
-.shipping_address_dim_bottom > div {
+.shipping_address_modal_bottom > div {
   height: 32px;
 }
-.shipping_address_dim_bottom > div:first-child {
+.shipping_address_modal_bottom > div:first-child {
   width: 40px;
 }
-.shipping_address_dim_bottom > div:last-child {
+.shipping_address_modal_bottom > div:last-child {
   width: 60px;
   margin-left: 10px;
 }
@@ -178,7 +178,7 @@
   display: flex;
   flex-direction: column;
 }
-.login_dim {
+.login_modal {
   position: absolute;
   top: 50px;
   left: -30px;
@@ -194,7 +194,7 @@
   border: 1px solid #000;
   border-radius: 5px;
 }
-.login_dim:after {
+.login_modal:after {
   content: '';
 
   border: 10px solid transparent;
@@ -204,14 +204,14 @@
   top: -18px;
   left: 30px;
 }
-.login_dim .yellow_btn {
+.login_modal .modal_btn {
   width: 60%;
   height: 30%;
 }
-.login_dim_bottom {
+.login_modal_bottom {
   margin-top: 3px;
 }
-.login_dim_bottom > span {
+.login_modal_bottom > span {
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 500;
@@ -220,10 +220,10 @@
 
   letter-spacing: -0.03em;
 }
-.login_dim_bottom > span:first-child {
+.login_modal_bottom > span:first-child {
   color: #10141a;
 }
-.login_dim_bottom > span:last-child {
+.login_modal_bottom > span:last-child {
   color: #074099;
 }
 
