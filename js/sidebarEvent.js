@@ -5,6 +5,7 @@ const header = document.querySelector('#head_navigation_bar');
 const closeButton = document.querySelector('#closeButton');
 const allButton = document.querySelector('.sidebar_all_button');
 const hiddenMenus = document.querySelector('.sidebar_hidden_menus');
+const hiddenButton = document.querySelector('.sidebar_hidden_button');
 
 allLink.addEventListener('click', () => {
   sideBar.style.display = 'flex';
@@ -31,4 +32,15 @@ sideBar.addEventListener('animationend', (e) => {
 
 allButton.addEventListener('click', () => {
   hiddenMenus.style.display = 'block';
+  hiddenMenus.style.animation = 'fadeInUp 0.5s forwards';
+  // sideBar.style.animation = 'fadeInRight 0.5s forwards';
+});
+
+hiddenButton.addEventListener('click', () => {
+  // hiddenMenus.style.display = 'hidden';
+  hiddenMenus.style.animation = 'fadeInDown 0.5s forwards';
+});
+
+hiddenMenus.addEventListener('animationend', (e) => {
+  if (e.animationName === 'fadeInDown') hiddenMenus.style.display = 'none';
 });
