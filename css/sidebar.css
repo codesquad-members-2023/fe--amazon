@@ -9,6 +9,9 @@ aside {
   color: black;
   border-right: 1px solid #EFF2F2;
   background-color: #FFFFFF;
+
+  position: fixed;
+  z-index: 2;
 }
 
 aside span, aside img, #view_all {
@@ -41,7 +44,7 @@ aside li:not(#view_all, #view_close) {
   border-bottom: 1px solid #EFF2F2;
 }
 
-.side_bar_login img, #side_bar_close img {
+.side_bar_login img, #side_bar_close img, #back_btn img {
   width: 15px;
   height: 15px;
 }
@@ -67,6 +70,15 @@ aside li:not(#view_all, #view_close) {
 .side_bar_container li:hover {
   background-color: rgba(179, 179, 179, 0.58);
   font-weight: 700;
+}
+
+#back_btn {
+  height: 40px;
+  padding: 8px 16px 8px 32px;
+}
+
+.view_detail {
+  display: none;
 }
 
 @keyframes expand {
@@ -104,5 +116,3 @@ aside li:not(#view_all, #view_close) {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
-
-/* 애니메이션 : will-change */
