@@ -1,7 +1,7 @@
 // login 팝업 element
 const logInAnchor = document.querySelector(".header__anchor--login");
-const seperatorLine = document.querySelector(".seperator-line");
-const logInPopUpList = document.querySelector(".pop-up__list");
+const expandedLogInPopUp = document.querySelector(".pop-up__expanded");
+
 const logInPopUp = document.querySelector(".pop-up--login");
 const loginContainer = document.querySelector(".container--login");
 
@@ -43,97 +43,130 @@ const subMenus = document.querySelector(".submenus");
 const allSubMenus = document.querySelectorAll(".submenu");
 const allSubMenuBacks = document.querySelectorAll(".submenu__back");
 
-function showPopUpWithDelay(delay) {
-  setTimeout(() => {
-    logInPopUp.classList.remove("hidden");
-  }, delay);
-}
+const showPopUpWithDelay = (delay) => setTimeout(showLogInPopUp, delay);
 
-function main() {
-  showPopUpWithDelay(1000);
+const showDimmedMain = () => {
+  dimmedMain.classList.remove("hidden");
+};
 
-  // login 레이어 팝업 mouseenter
-  logInAnchor.addEventListener("mouseenter", () => {
-    seperatorLine.classList.remove("hidden");
-    logInPopUpList.classList.remove("hidden");
-    logInPopUp.classList.remove("hidden");
-    dimmedMain.classList.remove("hidden");
-  });
+const hideDimmedMain = () => {
+  dimmedMain.classList.add("hidden");
+};
 
-  // login 레이어 팝업 mouseleave
-  loginContainer.addEventListener("mouseleave", () => {
-    logInPopUp.classList.add("hidden");
-    dimmedMain.classList.add("hidden");
-  });
+const showDimmedBody = () => {
+  dimmedBody.classList.remove("hidden");
+};
 
-  // shipping address 레이어 팝업 mouseenter
-  shippingAddressAnchor.addEventListener("mouseenter", () => {
-    shippingAddressPopUp.classList.remove("hidden");
-    dimmedMain.classList.remove("hidden");
-  });
+const hideDimmedBody = () => {
+  dimmedBody.classList.add("hidden");
+};
 
-  // shipping address 레이어 팝업 mouseleave
-  shippingAddressContainer.addEventListener("mouseleave", () => {
-    shippingAddressPopUp.classList.add("hidden");
-    dimmedMain.classList.add("hidden");
-  });
+const showLogInPopUp = () => {
+  logInPopUp.classList.remove("hidden");
+};
 
-  // 사이드바 click
+const hideLogInPopUp = () => {
+  logInPopUp.classList.add("hidden");
+};
+
+const showExpandedLogInPopUp = () => {
+  showLogInPopUp();
+  showDimmedMain();
+  expandedLogInPopUp.classList.remove("hidden");
+};
+
+const hideExpandedLogInPopUp = () => {
+  hideLogInPopUp();
+  hideDimmedMain();
+  expandedLogInPopUp.classList.add("hidden");
+};
+
+const showShippingAddressPopUp = () => {
+  showDimmedMain();
+  shippingAddressPopUp.classList.remove("hidden");
+};
+
+const hideShippingAddressPopUp = () => {
+  hideDimmedMain();
+  shippingAddressPopUp.classList.add("hidden");
+};
+
+const showSideBar = (e) => {
+  e.preventDefault();
+
+  showDimmedBody();
+  sideBar.classList.remove("hidden");
+  sideBar.classList.remove("hide-side-bar");
+  sideBar.classList.add("show-side-bar");
+};
+
+const hideSideBar = () => {
+  hideDimmedBody();
+  sideBar.classList.remove("show-side-bar");
+  sideBar.classList.add("hide-side-bar");
+};
+
+const unfoldOtherButtons = () => {
+  otherButtonContainer.classList.remove("hidden");
+  otherButtonContainer.classList.remove("hide-others");
+  otherButtonContainer.classList.add("show-others");
+};
+
+const foldOtherButtons = () => {
+  otherButtonContainer.classList.remove("show-others");
+  otherButtonContainer.classList.add("hide-others");
+};
+
+const showSubMenu = (e) => {
+  if (subMenus.contains(e.target)) return;
+
+  const parentButton = [...sideBarParentButtons].find((el) =>
+    el.contains(e.target)
+  );
+  const id = parentButton.dataset.id;
+  const subMenu = [...allSubMenus].find((el) => el.dataset.parentId === id);
+
+  subMenu.classList.remove("hide-sub-menu");
+  subMenu.classList.add("show-sub-menu");
+};
+
+const hideSubMenu = (subMenuBack) => {
+  subMenuBack.parentElement.classList.remove("show-sub-menu");
+  subMenuBack.parentElement.classList.add("hide-sub-menu");
+};
+
+const setHeader = () => {
+  logInAnchor.addEventListener("mouseenter", showExpandedLogInPopUp);
+  loginContainer.addEventListener("mouseleave", hideExpandedLogInPopUp);
+  shippingAddressAnchor.addEventListener(
+    "mouseenter",
+    showShippingAddressPopUp
+  );
+  shippingAddressContainer.addEventListener(
+    "mouseleave",
+    hideShippingAddressPopUp
+  );
+};
+
+const setSideBar = () => {
   allAnchor.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    dimmedBody.classList.remove("hidden");
-    sideBar.classList.remove("hidden");
-    sideBar.classList.remove("hide-side-bar");
-    sideBar.classList.add("show-side-bar");
+    showSideBar(e);
   });
-
-  // 사이드바 닫기 버튼 click
-  sideBarCloseButton.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    dimmedBody.classList.add("hidden");
-    sideBar.classList.remove("show-side-bar");
-    sideBar.classList.add("hide-side-bar");
-  });
-
-  // 모두보기 click
-  showAllButton.addEventListener("click", () => {
-    otherButtonContainer.classList.remove("hidden");
-    otherButtonContainer.classList.remove("hide-others");
-    otherButtonContainer.classList.add("show-others");
-  });
-
-  // 접기 클릭
-  closeAllButton.addEventListener("click", () => {
-    otherButtonContainer.classList.remove("show-others");
-    otherButtonContainer.classList.add("hide-others");
-  });
-
-  // submenu 열기
+  sideBarCloseButton.addEventListener("click", hideSideBar);
+  showAllButton.addEventListener("click", unfoldOtherButtons);
+  closeAllButton.addEventListener("click", foldOtherButtons);
   sideBarContent.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (subMenus.contains(e.target)) return;
-    const parentButton = [...sideBarParentButtons].find((el) =>
-      el.contains(e.target)
-    );
-
-    const id = parentButton.dataset.id;
-    const subMenu = [...allSubMenus].find((el) => el.dataset.parentId === id);
-    subMenu.classList.remove("hide-sub-menu");
-    subMenu.classList.add("show-sub-menu");
+    showSubMenu(e);
   });
-
-  // submenu 닫기
   [...allSubMenuBacks].forEach((subMenuBack) => {
-    subMenuBack.addEventListener("click", (e) => {
-      if (!subMenuBack.contains(e.target)) return;
-
-      subMenuBack.parentElement.classList.remove("show-sub-menu");
-
-      subMenuBack.parentElement.classList.add("hide-sub-menu");
-    });
+    subMenuBack.addEventListener("click", () => hideSubMenu(subMenuBack));
   });
-}
+};
+
+const main = () => {
+  showPopUpWithDelay(1000);
+  setHeader();
+  setSideBar();
+};
 
 main();

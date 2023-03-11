@@ -153,10 +153,26 @@ body {
   z-index: 100;
 }
 
+@keyframes page-load-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .pop-up--login {
   right: 10px;
   /* top 값 바꾸기 */
   top: 54px;
+  gap: 8px;
+  animation: page-load-fade-in 250ms ease-in-out forwards;
+}
+
+.pop-up__expanded {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
