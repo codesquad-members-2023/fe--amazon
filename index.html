@@ -120,10 +120,10 @@
   <!-- side bar -->
   <aside class="side_bar">
 
-    <!-- 로그인 높이 53px 고정 -->
-    <h3 class='side_bar_login BoldLG'>
+    <!-- 사이드바 로그인 fix -->
+    <div class='side_bar_login BoldLG'>
       <img src='/asset/images/vectors/Person.svg'> 안녕하세요, 로그인
-    </h3>
+    </div>
 
     <div class='side_bar_container'>
       <!-- category (화살표 입력 다른 방법 생각해보기 for 중복제거 / JS 로 아이콘 넣을 수 없을지 생각) -->
@@ -164,10 +164,10 @@
           <img src='/asset/images/vectors/Bottom.svg'>
         </li>
 
-        <!-- unfold li tag 내부에 text, img를 나눠야할까 아닐까 -->
+        <!-- unfold li tag 내부에 text, img를 나눠야할까 아닐까 (li tag 가운데정렬 x)-->
         <div class="unfold_content">
           <ul class="BodyMD">
-            <li id="car_supplies">자동차 용품
+            <li id="car_supply_tab">자동차 용품
               <img src='/asset/images/vectors/Right.svg'>
             </li>
             <li><span>유아</span>
@@ -226,13 +226,14 @@
             </li>
           </ul>
         </div>
+
         <!-- 상세보기 -->
-        <div class="view_detail BodyMD">
+        <div class="view_detail BodyMD hidden">
           <!-- 주메뉴 정렬 필요함 -->
           <div id='back_btn'>
             <img src="./asset/images/vectors/ArrowLeft.svg"> 주메뉴
           </div>
-          <div id='car_supplies' class="detail_content">
+          <div id='car_supply' class="tab-content">
             <h3 class="BoldLG">자동차 용품</h3>
             <ul>
               <li>자동차 관리</li>

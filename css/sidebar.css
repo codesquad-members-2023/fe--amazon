@@ -36,6 +36,8 @@ aside li:not(#view_all, #view_close) {
 }
 
 .side_bar_login {
+  height: 53px;
+  padding: 16px 16px 16px 32px;
   color: white;
   background-color: black;
 }
@@ -77,10 +79,6 @@ aside li:not(#view_all, #view_close) {
   padding: 8px 16px 8px 32px;
 }
 
-.view_detail {
-  display: none;
-}
-
 @keyframes expand {
   from {
     opacity: 0;
@@ -115,4 +113,46 @@ aside li:not(#view_all, #view_close) {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+
+.view_detail {
+  z-index: 3;
+  position: fixed;
+  top: 53px;
+  left: 0;
+  height: 100%;
+  width: 320px;
+  overflow: hidden;
+  /* animation: fadeInLeft 0.3s; */
+  background-color: #FFFFFF;
+}
+
+.appear {
+  display: inline-block;
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translateZ(0);
+  }
+}
+
+@keyframes fadeInLeftOut {
+  from {
+    transform: translateZ(0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 0.3s ease-in;
+}
+
+.fadeInLeftOut {
+  animation: fadeInLeftOut 0.3s ease-in;
 }
