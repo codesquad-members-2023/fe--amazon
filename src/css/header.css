@@ -21,7 +21,8 @@
   background-color: #10141a;
 }
 #nav_main > div,
-#nav_main > form {
+#nav_main #amazon_icon,
+#nav_main .nav_main_search_form {
   margin: 10px;
 }
 /* nav 상단 글씨체 */
@@ -47,20 +48,20 @@
   color: #ffffff;
 }
 
-.shipping_address,
-.shipping_address_section {
+.shipping_address {
   position: relative;
-
+}
+.shipping_address_section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.shipping_address_icon_text {
+.shipping_address_top {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.shipping_address_icon_text > img {
+.shipping_address_top > img {
   width: 12px;
   height: 12px;
 }
@@ -74,7 +75,7 @@
   align-items: center;
   justify-content: center;
 
-  background-color: #fff;
+  background-color: #ffffff;
   width: 320px;
   height: 126px;
   border: 1px solid #000;
@@ -93,7 +94,7 @@
 .shipping_address_modal > span {
   padding: 10px;
 }
-.shipping_address_modal_bottom {
+.shipping_address_modal_btns {
   width: 100%;
   padding-right: 10px;
   padding-left: 10px;
@@ -101,15 +102,15 @@
   display: flex;
   justify-content: flex-end;
 }
-.shipping_address_modal_bottom > div {
-  height: 32px;
-}
-.shipping_address_modal_bottom > div:first-child {
+.shipping_address_modal_btns > div:first-child {
   width: 40px;
 }
-.shipping_address_modal_bottom > div:last-child {
+.shipping_address_modal_btns > div:last-child {
   width: 60px;
   margin-left: 10px;
+}
+.shipping_address_modal_btn {
+  height: 32px;
 }
 
 .nav_main_search_form {
@@ -175,7 +176,8 @@
 .login {
   position: relative;
 }
-.login_section {
+.login_section,
+.login_modal {
   display: flex;
   flex-direction: column;
 }
@@ -184,12 +186,10 @@
   top: 50px;
   left: -30px;
 
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  background-color: #fff;
+  background-color: #ffffff;
   width: 235px;
   height: 90px;
   border: 1px solid #000;
@@ -227,7 +227,7 @@
   content: '';
 
   border: 10px solid transparent;
-  border-bottom: 10px solid #fff;
+  border-bottom: 10px solid #ffffff;
 
   position: absolute;
   top: -18px;
@@ -246,22 +246,20 @@
 
   background: #1b232f;
 }
+
+/* nav 하단 글씨체 */
 #nav_sub a {
   color: #ffffff;
 }
-
-/* nav 하단 글씨체 */
 .nav_sub_left_text {
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
-
-  color: #ffffff;
 }
 .side_bar,
-.nav_sub_right_btn > a {
+.nav_sub_right_btn {
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 800;
@@ -269,26 +267,19 @@
   line-height: 16px;
 
   letter-spacing: -0.06em;
-
-  color: #ffffff;
 }
 
 .nav_sub_left_btns,
-.nav_sub_left_btns > li,
-.side_bar,
-.nav_sub_right_btn {
+.side_bar {
   display: flex;
   align-items: flex-start;
 }
 
-.nav_sub_left_btns > li {
-  padding: 8px;
-  gap: 4px;
+.nav_sub_left_btns .side_bar,
+.nav_sub_left_btns > a {
+  margin-right: 20px;
 }
-.nav_sub_left_btns > li > a,
-.nav_sub_right_btn > a {
-  display: flex;
-}
+
 .side_bar img {
   width: 16px;
   height: 16px;

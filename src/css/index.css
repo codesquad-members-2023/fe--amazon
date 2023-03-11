@@ -6,6 +6,10 @@ body {
   background-color: #fff;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 .modal_btn {
   background: linear-gradient(174.6deg, #ffffff 4.31%, #fed15f 50.01%, #febe30 95.71%);
 
@@ -25,9 +29,5 @@ body {
 
   color: #10141a;
 
-  cursor: pointer;
-}
-
-.cursor {
   cursor: pointer;
 }

@@ -12,23 +12,23 @@
 <body>
   <header class="nav">
     <div id="nav_main">
-      <div class="amazon_icon"><img src="./src/image/logo.svg" alt="amazon logo"></img></div>
+      <img id="amazon_icon" src="./src/image/logo.svg" alt="amazon logo"></img>
       <div class="shipping_address">
         <div class="shipping_address_section cursor">
-          <div class="shipping_address_icon_text">
+          <div class="shipping_address_top">
             <img src="./src/image/location.svg" alt="location icon">
             <span class="nav_main_top_text">배송처</span>
           </div>
           <span class="nav_main_bottom_text">대한민국</span>
         </div>
-        <div class="shipping_address_modal">
+        <section class="shipping_address_modal">
           <div class="triangle"></div>
           <span>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</span>
-          <div class="shipping_address_modal_bottom">
+          <div class="shipping_address_modal_btns">
             <div class="shipping_address_modal_btn modal_btn">계속</div>
             <div class="shipping_address_modal_btn modal_btn">주소 변경</div>
           </div>
-        </div>
+        </section>
       </div>
       <form class="nav_main_search_form">
         <input type="text" class="searchFormInput" placeholder="검색 Amazon">
@@ -45,14 +45,14 @@
           <span class="nav_main_top_text">안녕하세요, 로그인</span>
           <span class="nav_main_bottom_text">계정 및 목록</span>
         </div>
-        <div class="login_modal">
+        <section class="login_modal">
           <div class="triangle"></div>
           <div class="modal_btn">로그인</div>
           <div class="login_modal_bottom">
             <span>기존 사용자가 아니십니까?</span>
             <span>여기에서 시작합니다</span>
           </div>
-        </div>
+        </section>
       </div>
       <div class="my_page">
         <span class="nav_main_top_text">반품</span>
@@ -64,19 +64,16 @@
       </div>
     </div>
     <div id="nav_sub">
-      <ul class="nav_sub_left_btns nav_sub_left_text">
-        <li class="side_bar">
-          <a href=""><img src="./src/image/menu.svg" alt="menu icon">모두</a>
-        </li>
-        <li><a href="">오늘의 딜</a></li>
-        <li><a href="">고객 서비스</a></li>
-        <li><a href="">레지스토리</a></li>
-        <li><a href="">기프트 카드</a></li>
-        <li><a href="">판매</a></li>
-      </ul>
-      <div class="nav_sub_right_btn">
-        <a href="">지금 특가 상품 쇼핑하기</a>
+      <div class="nav_sub_left_btns nav_sub_left_text">
+        <span class="side_bar cursor">
+          <img src="./src/image/menu.svg" alt="menu icon">모두 </span>
+        <a href="">오늘의 딜</a>
+        <a href="">고객 서비스</a>
+        <a href="">레지스토리</a>
+        <a href="">기프트 카드</a>
+        <a href="">판매</a>
       </div>
+      <a class="nav_sub_right_btn" href="">지금 특가 상품 쇼핑하기</a>
     </div>
   </header>
   <section id="main_content"></section>
