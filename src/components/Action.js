@@ -103,7 +103,7 @@ class Action extends HTMLElement {
         display: block;
 
         width: 365px;
-
+        
         padding: 16px;
         background-color: var(--white);
         border-radius: 4px;

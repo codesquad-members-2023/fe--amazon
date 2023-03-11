@@ -79,7 +79,7 @@ class Sidebar extends HTMLElement {
 
       .container {
         width: ${SIDEBAR_SIZE}px;
-        height: 100%;
+        height: calc(100% - ${SIDEBAR_HEADER_HEIGHT}px);
         display: flex;
         background-color: var(--white);
         overflow-x: hidden;
