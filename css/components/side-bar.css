@@ -17,7 +17,6 @@
 .homeSidebar__lists {
   font-size: 13px;
   width: 100%;
-  /* position: relative; */
 }
 
 .homeSidebar__lists li {
@@ -28,7 +27,7 @@
 }
 
 .homeSidebar__login {
-  background-color: #10141a;
+  background-color: #222f3e;
   color: white;
   font-size: 18px;
   font-weight: 800;
@@ -55,24 +54,37 @@
 }
 
 .homeSidebar__subTitle:hover {
-  background-color: beige;
+  background-color: #eaeded;
   font-weight: 800;
 }
 
 .homeSidebar__subTitle i,
-.homeSidebar__seeAll i,
-.homeSidebar__closeSeeAll i {
+.homeSidebar__mode--seeAll i,
+.homeSidebar__mode--closeSeeAll i {
   color: #878787;
 }
 
-.homeSidebar__seeAll i,
-.homeSidebar__closeSeeAll i {
+.homeSidebar__mode--seeAll i,
+.homeSidebar__mode--closeSeeAll i {
   margin-left: 10px;
 }
 
-.homeSidebar__lists li:last-child,
-.homeSidebar__lists li:nth-child(5) {
+.homeSidebar__mode--seeAll:hover,
+.homeSidebar__mode--closeSeeAll:hover {
+  font-weight: 800;
+}
+
+.hoverIcon:hover i {
+  color: black;
+}
+
+.homeSidebar__mode--seeAll,
+.homeSidebar__mode--closeSeeAll {
   border-bottom: solid 1px #eff2f2;
+}
+
+.homeSidebar__title {
+  border-top: solid 1px #eff2f2;
 }
 
 .homeSidebar__lists li:last-child {

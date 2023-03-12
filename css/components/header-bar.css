@@ -84,3 +84,7 @@
 .homeHeader__location {
   position: relative;
 }
+
+.homeHeader:hover {
+  cursor: pointer;
+}
