@@ -331,9 +331,12 @@ li {
   gap: 2px;
 }
 
+/* dimmed 처리 css*/
+
 .main {
   position: relative;
-  height: 1500px;
+  height: 100vh;
+  /**/
 }
 
 .dimmed {
@@ -344,4 +347,76 @@ li {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+}
+
+/* sidebar css*/
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  /* left: -320px; */
+  width: 320px;
+  height: 100%;
+  /* border: 2px solid green; */
+  background-color: var(--color-white);
+  z-index: 3;
+}
+
+.sidebar_header {
+  display: flex;
+  align-items: center;
+  padding: 16px 16px 16px 32px;
+  gap: 8px;
+
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.sidebar_header_icon {
+  width: 15px;
+  height: 15px;
+}
+
+.sidebar_list_title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 800;
+  padding: 16px 16px 16px 32px;
+  height: 53px;
+  font-size: 18px;
+}
+
+.sidebar_list {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  font-size: 13px;
+  padding: 8px 16px 8px 32px;
+}
+
+.sidebar_list_icon {
+  width: 11px;
+  height: 11px;
+}
+
+.sidebar_list_fold {
+  width: 120px;
+}
+
+.sidebar_list_fold_icon {
+  width: 11px;
+  height: 11px;
+}
+
+.sidebar_close_icon {
+  position: absolute;
+  top: 18px;
+  right: -24px;
+}
+
+.sidebar_dividing_line {
+  height: 1px;
+  background-color: var(--color-gray100);
 }
