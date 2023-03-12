@@ -11,50 +11,61 @@ class Action extends HTMLElement {
     this.isOpen = false;
 
     shadow.innerHTML = `
-      <div class="container">
-        <section class="body">
-          <p class="text"><slot name="text"></slot></p>
-        </section>
-        
-        <section class="footer">
-          <div class="btn-container">
-            ${
-              flexibleBtn
-                ? `<btn-element type="flexible">${flexibleBtn}</btn-element>`
-                : ''
-            }
-            ${
-              mainBtn ? `<btn-element type="main">${mainBtn}</btn-element>` : ''
-            }
-            ${subBtn ? `<btn-element type="sub">${subBtn}</btn-element>` : ''}
-          </div>
-          <p class="caption"><slot name="caption"></slot><p>
-          <slot name="bottom"></slot>
-        </section>
+      <div class="wrap">
+        <div class="pointer"></div>
+        <div class="container">
+          <section class="body">
+            <p class="text"><slot name="text"></slot></p>
+          </section>
+          <section class="footer">
+            <div class="btn-container">
+              ${
+                flexibleBtn
+                  ? `<btn-element type="flexible">${flexibleBtn}</btn-element>`
+                  : ''
+              }
+              ${
+                mainBtn
+                  ? `<btn-element type="main">${mainBtn}</btn-element>`
+                  : ''
+              }
+              ${subBtn ? `<btn-element type="sub">${subBtn}</btn-element>` : ''}
+            </div>
+            <p class="caption"><slot name="caption"></slot><p>
+            <slot name="bottom"></slot>
+          </section>
+        </div>
       </div>
     `;
 
     this.shadowRoot.append(this.getStyle());
   }
 
-  setActionPosition(event) {
+  setActionPosition(event, id) {
     const e = !!event.detail ? event.detail : event;
-
     const docWidth = window.innerWidth;
     const action = this.shadowRoot.querySelector('action-element');
     const actionWidth = action.getBoundingClientRect().width;
-    const targetX = e.target.getBoundingClientRect().x;
-    const targetY = e.target.getBoundingClientRect().y;
+    const targetX = e.target.getBoundingClientRect().left;
+    const targetY = e.target.getBoundingClientRect().top;
     const targetHeight = e.target.getBoundingClientRect().height;
+    const targetWidth = e.target.getBoundingClientRect().width;
     action.style.position = 'absolute';
-    const isWidthOverflow = targetX + actionWidth > docWidth;
-    if (!isWidthOverflow) {
-      action.style.left = `${targetX}px`;
-    } else {
+
+    const isWidthOverflowLeft = targetX - actionWidth / 2 < 0;
+    const isWidthOverflowRight = targetX + actionWidth > docWidth;
+
+    if (isWidthOverflowLeft) {
+      action.style.left = `16px`;
+    } else if (isWidthOverflowRight) {
       action.style.right = `16px`;
+    } else {
+      action.style.transform = `translateX(-${targetWidth / 2}px)`;
     }
-    action.style.top = `${targetY + targetHeight + 16}px`;
+    action.style.top = `${targetY + targetHeight}px`;
     action.translateX = '-50%';
+
+    this.setPointerPosition(e, id);
   }
 
   setPointerPosition(event, id) {
@@ -64,31 +75,33 @@ class Action extends HTMLElement {
     const targetX = e.target.getBoundingClientRect().x;
     const targetWidth = e.target.getBoundingClientRect().width;
     const pointerPosition = targetX - actionX + targetWidth / 2;
-    const container = this.shadowRoot
+    const wrap = this.shadowRoot
       .querySelector('action-element')
-      .shadowRoot.querySelector('.container');
-    container.style.setProperty(`--${id}-pointer-left`, `${pointerPosition}px`);
+      .shadowRoot.querySelector('.wrap');
+    wrap.style.setProperty(`--${id}-pointer-left`, `${pointerPosition}px`);
   }
 
   setWidth(id) {
-    const container = this.shadowRoot
+    const wrap = this.shadowRoot
       .querySelector('action-element')
-      .shadowRoot.querySelector('.container');
+      .shadowRoot.querySelector('.wrap');
 
-    container.style.width = `${ACTION_SIZE[id]}px`;
+    wrap.style.width = `${ACTION_SIZE[id]}px`;
   }
 
   showAction(e, id) {
-    document.body.append(this);
+    e.detail.target.shadowRoot.append(this);
+    this.backdrop = document.createElement('backdrop-element');
+    document.body.append(this.backdrop);
     this.isOpen = true;
     this.setWidth(id);
-    this.setActionPosition(e);
-    this.setPointerPosition(e, id);
+    this.setActionPosition(e, id);
   }
 
   closeAction() {
     this.remove();
     this.isOpen = false;
+    this.backdrop.remove();
   }
 
   getStyle() {
@@ -99,15 +112,17 @@ class Action extends HTMLElement {
         position: absolute;
       }
 
-      .container {
+      .wrap {
         display: block;
-
         width: 365px;
-        
-        padding: 16px;
-        background-color: var(--white);
-        border-radius: 4px;
+        padding-top: 12px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      }
+
+      .container {
+        background-color: var(--white);
+        padding: 16px;
+        border-radius: 4px;
       }
 
       section.header {
@@ -119,12 +134,11 @@ class Action extends HTMLElement {
         text-align: center;
       }
 
-      .container::before {
+      .pointer {
         content: "";
         position: absolute;
-        top: -28px;
+        top: -16px;
         left: var(--${this.id}-pointer-left);
-        margin-left: -10px;
         border-width: 10px;
         border-style: solid;
         border-top: 18px solid transparent;

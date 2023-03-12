@@ -1,5 +1,5 @@
 import Sidebar from '../components/Sidebar.js';
-import { loginActionElement } from './modals.js';
+import { currentAction } from './action.js';
 import SidebarSubContent from '../components/Sidebar/SidebarSubContent.js';
 import { menus } from '../data/menu.js';
 
@@ -8,8 +8,8 @@ const showAllBtn = document
   .shadowRoot.querySelector('#showAllBtn');
 
 showAllBtn.addEventListener('click', (e) => {
-  if (loginActionElement) {
-    loginActionElement.closeAction();
+  if (currentAction) {
+    currentAction.closeAction();
   }
 
   const sidebar = new Sidebar();

@@ -4,7 +4,6 @@ class LoginActionWithFooter extends Action {
   constructor(id, hasFooter) {
     super();
 
-    const text = this.innerText;
     const shadow = this.shadowRoot;
 
     shadow.innerHTML = `
@@ -42,7 +41,6 @@ class LoginActionWithFooter extends Action {
       }
       
     </action-element>
-    <backdrop-element></backdrop-element>
     `;
 
     this.shadowRoot.append(this.getStyle());
@@ -53,6 +51,10 @@ class LoginActionWithFooter extends Action {
     const type = this.getAttribute('type');
 
     style.textContent = `
+      :host {
+        color: var(--black);
+      }  
+
       action-element {
         z-index: 1;
       }

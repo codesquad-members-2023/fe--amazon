@@ -1,2 +1,2 @@
-import './modals.js';
+import './action.js';
 import './sidebar.js';

@@ -63,6 +63,8 @@ class MainMenu extends HTMLElement {
         font-weight: 800;
         color: var(--white);
         line-height: 16px;
+        display: flex;
+        align-items: center;
       }
     `;
     return style;
