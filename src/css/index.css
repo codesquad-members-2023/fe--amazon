@@ -2,6 +2,7 @@
 @import './font.css';
 @import './header.css';
 @import './modal.css';
+@import './sideBar.css';
 
 html {
   overflow-y: scroll;
