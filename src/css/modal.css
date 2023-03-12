@@ -1,0 +1,97 @@
+.shipping_address_modal {
+  position: absolute;
+  top: 50px;
+  left: -30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ffffff;
+  width: 320px;
+  height: 126px;
+  border: 1px solid #000;
+  border-radius: 5px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 160%;
+
+  letter-spacing: -0.03em;
+
+  color: #10141a;
+}
+.shipping_address_modal > span {
+  padding: 10px;
+}
+.shipping_address_modal_btns {
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+.shipping_address_modal_btns > div:first-child {
+  width: 40px;
+}
+.shipping_address_modal_btns > div:last-child {
+  width: 60px;
+  margin-left: 10px;
+}
+.shipping_address_modal_btn {
+  height: 32px;
+}
+
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.login_modal {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: -30px;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ffffff;
+  width: 235px;
+  height: 90px;
+  border: 1px solid #000;
+  border-radius: 5px;
+
+  animation: fade_in 1s ease-in-out;
+}
+.login_modal .modal_btn {
+  width: 60%;
+  height: 30%;
+}
+.login_modal_bottom {
+  margin-top: 3px;
+}
+.login_modal_bottom > span {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 160%;
+
+  letter-spacing: -0.03em;
+}
+.login_modal_bottom > span:first-child {
+  color: #10141a;
+}
+.login_modal_bottom > span:last-child {
+  color: #074099;
+}

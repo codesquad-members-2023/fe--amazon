@@ -1,9 +1,12 @@
 @import './reset.css';
 @import './font.css';
 @import './header.css';
+@import './modal.css';
 
 body {
   background-color: #fff;
+  min-width: 70rem;
+  min-height: 100vh;
 }
 
 .cursor {
