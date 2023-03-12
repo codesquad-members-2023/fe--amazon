@@ -40,14 +40,14 @@ class SidebarMain extends HTMLElement {
                   })
                   .join('')}
                 <div id="folding-container">
-                  <sidebar-fold-element id="folidng-btn"></sidebar-fold-element>
-                  <ul class="folidng-list" id="folidng-list">
+                  <sidebar-fold-element id="unfolidng-btn"></sidebar-fold-element>
+                  <ul id="folidng-list">
                     ${menuOverflowed
                       .map((category) => {
                         return `<sidebar-category-element id=${category.id}>${category.name}</sidebar-category-element>`;
                       })
                       .join('')}
-                    <sidebar-unfold-element id="unfolidng-btn"></sidebar-unfold-element>
+                    <sidebar-unfold-element id="folidng-btn"></sidebar-unfold-element>
                   </ul>
                 </div>
               </section>`;
@@ -81,7 +81,7 @@ class SidebarMain extends HTMLElement {
         height: 100%;
       }
 
-      .folidng-list {
+      #folidng-list {
         padding: 0;
         list-style: none;
         margin: 0;
@@ -90,10 +90,17 @@ class SidebarMain extends HTMLElement {
         overflow: hidden;
       }
 
-      .unfolded {
+      #folidng-list.unfolded {
         opacity: 1;
         height: auto;
-        transition: height .3s ease-in, opacity .3s ease-in;
+      }
+
+      #folidng-list.slide-down {
+        animation: slide-down .3s forwards;
+      }
+
+      #folidng-list.slide-up {
+        animation: slide-up .3s forwards;
       }
 
       ul {
@@ -108,6 +115,27 @@ class SidebarMain extends HTMLElement {
       .section:last-of-type {
         border-bottom: none;
       }
+
+      @keyframes slide-up {
+        0% {
+          opacity: 1;
+          height: auto;
+        }
+        100% {
+          opacity: 0;
+          height: 0;
+        }
+      }
+
+      @keyframes slide-down {
+        0% {
+          opacity: 0;
+          height: 0;
+        }
+        100% {
+          opacity: 1;
+          height: auto;
+        }
     `;
     return style;
   }

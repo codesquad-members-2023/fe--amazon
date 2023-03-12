@@ -23,16 +23,7 @@ class SidebarSub extends HTMLElement {
         display: block;
         width: ${SIDEBAR_SIZE}px;
         height: 100%;
-      }
-
-
-      @keyframes slide-right {
-        0% {
-          transform: translateX(100%);
-        }
-        100% {
-          transform: translateX(0%);
-        }
+        background-color: var(--white);
       }
     `;
     return style;

@@ -14,6 +14,7 @@ class SidebarSub extends HTMLElement {
           const categories = submenu.categories;
 
           return `
+          
             <section>
               <sidebar-title-element>${title}</sidebar-title-element>
               ${categories

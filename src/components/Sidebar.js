@@ -21,17 +21,37 @@ class Sidebar extends HTMLElement {
   }
 
   showSidebar() {
+    const wrap = this.shadowRoot.querySelector('.wrap');
+    wrap.style.animation = 'show .3s forwards';
     document.body.append(this);
     this.isOpen = true;
   }
 
   closeSidebar() {
     const wrap = this.shadowRoot.querySelector('.wrap');
-    wrap.style.animation = 'slide-right .3s forwards';
+    wrap.style.animation = 'close .3s forwards';
     setTimeout(() => {
       this.remove();
       this.isOpen = false;
     }, 300);
+  }
+
+  showSubSidebar() {
+    const contianer = this.shadowRoot.querySelector('.container');
+    contianer.classList.remove('slide-left');
+    contianer.classList.add('slide-right');
+    // setTimeout(() => {
+    //   contianer.scrollTop = 0;
+    // });
+  }
+
+  closeSubSidebar(sideSubContent) {
+    const contianer = this.shadowRoot.querySelector('.container');
+    contianer.classList.remove('slide-right');
+    contianer.classList.add('slide-left');
+    setTimeout(() => {
+      sideSubContent.remove();
+    }, 500);
   }
 
   getStyle() {
@@ -90,15 +110,23 @@ class Sidebar extends HTMLElement {
         transform: translateX(100%);
       }
 
-      .slide-left sidebar-main-element, .slide-left sidebar-sub-element {
-        animation: slide-left .5s;
+      .slide-left sidebar-main-element {
+        animation: slide-left-main .5s forwards;
       }
 
-      .slide-right sidebar-main-element, .slide-right sidebar-sub-element {
-        animation: slide-right .5s forwards;
+      .slide-left sidebar-sub-element {
+        animation: slide-left-sub .5s forwards;
       }
 
-      @keyframes slide-left {
+      .slide-right sidebar-main-element {
+        animation: slide-right-main .5s forwards;
+      }
+
+      .slide-right sidebar-sub-element {
+        animation: slide-right-sub .5s forwards;
+      }
+
+      @keyframes show {
         0% {
           transform: translateX(-100%);
         }
@@ -107,12 +135,48 @@ class Sidebar extends HTMLElement {
         }
       }
 
-      @keyframes slide-right {
+      @keyframes close {
         0% {
           transform: translateX(0%);
         }
         100% {
           transform: translateX(-100%);
+        }
+      }
+
+      @keyframes slide-left-main {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+
+      @keyframes slide-left-sub {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      @keyframes slide-right-main {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      @keyframes slide-right-sub {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0%);
         }
       }
 
