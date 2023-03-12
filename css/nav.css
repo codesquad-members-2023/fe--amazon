@@ -1,0 +1,20 @@
+.nav {
+  background-color: #1b232f;
+  padding: 0px 16px;
+  color: #fff;
+  font-size: 13px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav__anchor {
+  display: inline-block;
+  padding: 8px;
+}

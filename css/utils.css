@@ -1,0 +1,27 @@
+/* 명시도 높이기 */
+.hidden.hidden {
+  display: none;
+}
+
+.seperator-line {
+  height: 1px;
+  width: 100%;
+  background-color: #eff2f2;
+}
+
+.dimmed {
+  background-color: rgba(16, 20, 26, 0.4);
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.dimmed--main {
+  position: absolute;
+}
+
+.dimmed--body {
+  position: fixed;
+}

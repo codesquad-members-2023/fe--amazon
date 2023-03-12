@@ -57,13 +57,15 @@ export default class SideBar {
     const parentButton = [...this.sideBarParentButtons].find((el) =>
       el.contains(e.target)
     );
-    const id = parentButton.dataset.id;
+    const id = parentButton?.dataset.id;
+    if (!id) return;
+
     const subMenu = [...this.allSubMenus].find(
       (el) => el.dataset.parentId === id
     );
 
-    subMenu.classList.remove("hide-sub-menu");
-    subMenu.classList.add("show-sub-menu");
+    subMenu?.classList.remove("hide-sub-menu");
+    subMenu?.classList.add("show-sub-menu");
   };
 
   hideSubMenu = (subMenuBack) => {
