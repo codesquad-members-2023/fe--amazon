@@ -28,17 +28,19 @@ showAllBtn.addEventListener('click', (e) => {
     sidebar.closeSidebar();
   });
 
-  foldingBtn.addEventListener('click', () => {
-    const foldingList = sidebar.shadowRoot
-      .querySelector('sidebar-main-element')
-      .shadowRoot.querySelector('#folidng-list');
+  if (sidebar.isOpen) {
+    foldingBtn.addEventListener('click', () => {
+      const foldingList = sidebar.shadowRoot
+        .querySelector('sidebar-main-element')
+        .shadowRoot.querySelector('#folidng-list');
 
-    foldingList.classList.add('unfolded');
+      foldingList.classList.add('unfolded');
 
-    unfoldingBtn.addEventListener('click', () => {
-      foldingList.classList.remove('unfolded');
+      unfoldingBtn.addEventListener('click', () => {
+        foldingList.classList.remove('unfolded');
+      });
     });
-  });
+  }
 
   const container = sidebar.shadowRoot.querySelector('.container');
   const main = sidebar.shadowRoot.querySelector('sidebar-main-element');

@@ -25,8 +25,9 @@ class SidebarMain extends HTMLElement {
                 .join('')}
             </section>`;
           }
-          const menuDefault = menu.categories.splice(0, dividingNum);
-          const menuOverflowed = menu.categories.splice(
+
+          const menuDefault = menu.categories.slice(0, dividingNum);
+          const menuOverflowed = menu.categories.slice(
             dividingNum,
             menu.categories.length
           );
