@@ -331,6 +331,10 @@ li {
   gap: 2px;
 }
 
+.sidebar_section {
+  cursor: pointer;
+}
+
 /* dimmed 처리 css*/
 
 .main {
@@ -354,12 +358,17 @@ li {
 .sidebar {
   position: absolute;
   top: 0;
-  /* left: -320px; */
+  left: -320px;
   width: 320px;
   height: 100%;
   /* border: 2px solid green; */
   background-color: var(--color-white);
   z-index: 3;
+  transition: left 0.5s ease-in-out;
+}
+
+.sidebar.active {
+  left: 0;
 }
 
 .sidebar_header {
