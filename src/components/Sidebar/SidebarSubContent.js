@@ -1,14 +1,32 @@
 import { SIDEBAR_SIZE } from '../../constant.js';
 
 class SidebarSub extends HTMLElement {
-  constructor() {
+  constructor(submenus) {
     super();
 
     const shadow = this.attachShadow({ mode: 'open' });
     this.isOpen = false;
+
     shadow.innerHTML = `
-      <sidebar-back-element></sidebar-back-element>
-      <div id="sidebar-sub-content"></div>
+      ${submenus
+        .map((submenu) => {
+          const title = submenu.title;
+          const categories = submenu.categories;
+
+          return `
+            <section>
+              <sidebar-title-element>${title}</sidebar-title-element>
+              ${categories
+                .map((category) => {
+                  return `
+                    <sidebar-category-element>${category}</sidebar-category-element>
+                  `;
+                })
+                .join('')}
+            </section>
+        `;
+        })
+        .join('')}
     `;
 
     this.shadowRoot.append(this.getStyle());
@@ -25,6 +43,9 @@ class SidebarSub extends HTMLElement {
         height: 100%;
       }
 
+      section {
+        border-top: 1px solid #e5e5e5;
+      }
 
       @keyframes slide-right {
         0% {

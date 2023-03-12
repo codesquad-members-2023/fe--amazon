@@ -7,21 +7,16 @@ class Sidebar extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
     this.isOpen = false;
     shadow.innerHTML = `
-      
       <div class="wrap">
         <icon-element name="close" size="24" fill="var(--black-60)" id="sidebar-close-btn"></icon-element>
-        
-          <sidebar-header-element> </sidebar-header-element>
-          <div class="container">
-            <sidebar-main-element></sidebar-main-element>
-            <sidebar-sub-element></sidebar-sub-element>
-          </div>
-        
+        <sidebar-header-element> </sidebar-header-element>
+        <div class="container">
+          <sidebar-main-element></sidebar-main-element>
+          <sidebar-sub-element></sidebar-sub-element>
+        </div>
       </div>
-
       <backdrop-element></backdrop-element>
     `;
-
     this.shadowRoot.append(this.getStyle());
   }
 
@@ -83,10 +78,8 @@ class Sidebar extends HTMLElement {
         display: flex;
         background-color: var(--white);
         overflow-x: hidden;
-        position: relative;
+        position: fixed;
       }
-
-      
 
       sidebar-main-element {
         position: absolute;
@@ -97,9 +90,8 @@ class Sidebar extends HTMLElement {
         transform: translateX(100%);
       }
 
-
       .slide-left sidebar-main-element, .slide-left sidebar-sub-element {
-        animation: slide-left .5s forwards;
+        animation: slide-left .5s;
       }
 
       .slide-right sidebar-main-element, .slide-right sidebar-sub-element {
