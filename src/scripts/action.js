@@ -1,9 +1,8 @@
 import ChangeAdressAction from '../components/Action/ChangeAddressAction.js';
 import LoginAction from '../components/Action/LoginAction.js';
-import Sidebar from '../components/Sidebar.js';
 import { ID } from '../constant.js';
 
-export let currentAction = null;
+export let loginActionElement = null;
 let changeAddressActionElement = null;
 
 function runLoginAction() {
@@ -13,7 +12,7 @@ function runLoginAction() {
 
   const id = ID.LOGIN_ACTION;
   const loginAction = new LoginAction(id, false);
-  currentAction = loginAction;
+  loginActionElement = loginAction;
 
   const e = new CustomEvent('open-login-action', {
     bubbles: true,
@@ -34,8 +33,8 @@ function hoverSelectAddressBtn() {
   selectAddressBtn.addEventListener('mouseenter', () => {
     if (changeAddressActionElement) return;
 
-    if (currentAction) {
-      currentAction.closeAction();
+    if (loginActionElement) {
+      loginActionElement.closeAction();
     }
 
     const id = ID.CHANGE_ADDRESS_ACTION;
@@ -61,8 +60,8 @@ function hoverLoginBtn() {
     .querySelector('navbar-element')
     .shadowRoot.querySelector('#loginBtn');
   loginBtn.addEventListener('mouseenter', () => {
-    if (currentAction) {
-      currentAction.closeAction();
+    if (loginActionElement) {
+      loginActionElement.closeAction();
     }
     const id = ID.LOGIN_ACTION_WITH_FOOTER;
     const loginActionWithFooter = new LoginAction(id, true);

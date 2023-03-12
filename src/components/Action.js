@@ -1,4 +1,4 @@
-import { ID, ACTION_SIZE } from '../constant';
+import { ACTION_SIZE } from '../constant';
 
 class Action extends HTMLElement {
   constructor() {
