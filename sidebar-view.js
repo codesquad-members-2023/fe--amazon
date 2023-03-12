@@ -25,3 +25,24 @@ const toDisplayNone = (e) => {
 homeSideOpen.addEventListener("click", openSide);
 homeSideClose.addEventListener("click", hiddenSide);
 homeSide.addEventListener("animationend", toDisplayNone);
+
+const homeSidePlus = document.querySelector(".hideLists");
+const homeSideSeeAll = document.querySelector(".homeSidebar__mode--open");
+const homeSideCloseAll = document.querySelector(".homeSidebar__mode--close");
+
+const openSideMore = () => {
+  homeSidePlus.style.display = "block";
+  homeSidePlus.classList.remove("closeAnimation");
+  homeSidePlus.classList.add("openAnimation");
+};
+
+const closeSideMore = () => {
+  homeSidePlus.classList.remove("openAnimation");
+  homeSidePlus.classList.add("closeAnimation");
+  setTimeout(() => {
+    homeSidePlus.style.display = "none";
+  }, 500);
+};
+
+homeSideSeeAll.addEventListener("click", openSideMore);
+homeSideCloseAll.addEventListener("click", closeSideMore);

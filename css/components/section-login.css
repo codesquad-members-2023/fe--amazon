@@ -54,10 +54,6 @@
   transform: rotate(45deg);
 }
 
-.homeHeader__login:hover {
-  cursor: pointer;
-}
-
 .homeHeader__login:hover + .section__login {
   display: none;
 }
