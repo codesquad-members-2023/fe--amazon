@@ -110,6 +110,9 @@ span{
 .sub__shopping {
     flex-grow: 1;
     text-align: right;
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
 }
 
 .sub__menu {
