@@ -18,6 +18,7 @@
     animation: slowshow 1s forwards;
     animation-delay: 1s;
 }
+
 .nav__login_popup-shape{
     width: 18.93px;
     height: 18.93px;
@@ -36,6 +37,32 @@
     width: 235px;
     height: 90px;
     box-shadow: 1px 1px 1px 1px gray;
+}
+.nav__login_popup-box:hover{
+    height: 300px;
+}
+
+.nav__login_popup-box:hover .nav__login_popup_extension{
+    display: block;
+}
+.nav__login_popup_extension{
+    display: none;
+}
+.login_popup_extension-left-box{
+    float: left;
+}
+.login_popup_extension-right-box{
+    float: right;
+}
+.login_popup_extension-title{
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 16px;
+}
+.login_popup_extension-list{
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 160%;
 }
 .login_popup_text{
     display: flex;
