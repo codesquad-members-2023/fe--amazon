@@ -1,12 +1,16 @@
+.triangle {
+  content: '';
+
+  border: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+
+  position: absolute;
+}
+
 .shipping_address_modal {
   position: absolute;
   top: 50px;
   left: -30px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
   background-color: #ffffff;
   width: 320px;
@@ -25,9 +29,15 @@
   color: #10141a;
 }
 .shipping_address_modal > span {
+  position: absolute;
+  margin-top: 20px;
   padding: 10px;
 }
 .shipping_address_modal_btns {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 20px;
   width: 100%;
   padding-right: 10px;
   padding-left: 10px;
@@ -45,6 +55,10 @@
 .shipping_address_modal_btn {
   height: 32px;
 }
+.shipping_address_modal .triangle {
+  top: -18px;
+  left: 30px;
+}
 
 @keyframes fade_in {
   from {
@@ -56,29 +70,25 @@
 }
 
 .login_modal {
-  display: flex;
-  flex-direction: column;
   position: absolute;
   top: 50px;
-  left: -30px;
-
-  align-items: center;
-  justify-content: center;
+  left: -210px;
 
   background-color: #ffffff;
-  width: 235px;
-  height: 90px;
+  width: 335px;
   border: 1px solid #000;
   border-radius: 5px;
 
   animation: fade_in 1s ease-in-out;
 }
 .login_modal .modal_btn {
+  margin: 15px auto 0 auto;
   width: 60%;
-  height: 30%;
+  height: 30px;
 }
 .login_modal_bottom {
-  margin-top: 3px;
+  margin: 3px auto 10px auto;
+  text-align: center;
 }
 .login_modal_bottom > span {
   font-family: 'Pretendard';
@@ -94,4 +104,40 @@
 }
 .login_modal_bottom > span:last-child {
   color: #074099;
+}
+.login_modal:hover .login_modal_more {
+  display: flex;
+}
+.login_modal_more {
+  width: 90%;
+  border-top: 1px #eff2f2 solid;
+  padding-top: 10px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 160%;
+
+  letter-spacing: -0.03em;
+
+  color: #10141a;
+}
+.login_modal_more p {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+
+  letter-spacing: -0.06em;
+}
+
+.login_modal .triangle {
+  top: -18px;
+  left: 218px;
 }
