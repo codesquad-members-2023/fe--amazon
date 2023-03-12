@@ -12,15 +12,21 @@ allLink.addEventListener('click', () => {
   sideBar.style['z-index'] = '101';
   sideBar.style.animation = 'fadeInLeft 0.5s forwards';
   dimLayer.style.display = 'block';
-  dimLayer.style.background = 'rgba(16, 20, 26, 0.4)';
 });
 
 closeButton.addEventListener('click', () => {
   sideBar.style.animation = 'fadeInRight 0.5s forwards';
   sideBar.style['z-index'] = '-1';
   // z-index를 ''로 설정했을 시 닫고난 후 모두 버튼이 클릭되지 않는 현상 발생
+  // 이걸 왜 해야하냐면 sideBar의 display를 none으로 설정하는 것은 animation이 끝날때 해야하기 때문에
+  // 일단 z-index를 -1로 두는 것이다!
   // z-index를 -1로 둠으로써 문제 해결.
+  closeButton.style.display = 'none';
   dimLayer.style.display = 'none';
+});
+
+sideBar.addEventListener('animationend', (e) => {
+  if (e.animationName === 'fadeInLeft') closeButton.style.display = 'block';
 });
 
 sideBar.addEventListener('animationend', (e) => {
@@ -36,7 +42,7 @@ allButton.addEventListener('click', () => {
 });
 
 hiddenButton.addEventListener('click', () => {
-  hiddenMenus.style.animation = 'fadeInDown 0.5s forwards';
+  hiddenMenus.style.animation = 'fadeInDown 0.4s forwards';
 });
 
 hiddenMenus.addEventListener('animationend', (e) => {
