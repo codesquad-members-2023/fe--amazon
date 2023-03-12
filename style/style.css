@@ -409,7 +409,7 @@ html, body {
 }
 
 /* side bar */
-.sidebar {
+.sidebar-main {
   position: fixed;
   top: 0;
   left: 0;
@@ -473,7 +473,7 @@ html, body {
 .department-list__computer,
 .department-list__smart-home,
 .department-list__art,
-.others-list__car-things,
+.others-list__car,
 .others-list__child,
 .others-list__beauty,
 .others-list__fashion-female,
@@ -502,4 +502,56 @@ html, body {
 
 .sidebar__others-content {
   display: none;
+}
+
+@keyframes pop-from-left-sub {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 20rem;
+  }
+}
+
+.sidebar-sub {
+  position: fixed;
+  left: 20rem;
+  display: none;
+
+  width: 20rem;
+  height: 100%;
+  background-color: var(--color-white);
+  z-index: 4;
+  transition: all 0.3s;
+  animation: slow-load,pop-from-left-sub 1s forwards;
+  overflow: scroll;
+}
+
+.sidebar-sub__content {
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.5rem 1rem;
+}
+
+.sidebar-sub-list {
+  line-height: 2rem;
+  font-weight: var(--weight-regular);
+  font-size: var(--font-md);
+  color: var(--color-black);
+}
+
+.sidebar-sub-list__title {
+  font-weight: var(--weight-bold);
+  font-size: var(--font-lg);
+  color: var(--color-black);
+  margin-top: 1.5rem;
+}
+
+.sidebar-sub__back {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
 }
