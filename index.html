@@ -159,12 +159,12 @@
       </nav>
     </header>
 
-    <aside class="sidebar">
+    <div id="closeButton">
       <a href="#">
-        <div id="closeButton">
-          <img src="asset/close_icon.svg" />
-        </div>
+        <img src="asset/close_icon.svg" />
       </a>
+    </div>
+    <aside class="sidebar">
       <!-- 좌측 사이드 메뉴 -->
       <a href="#">
         <header class="sidebar_header">
@@ -173,7 +173,7 @@
         </header>
       </a>
 
-      <section class="sidebar_section">
+      <section class="sidebar_section sidebar_main_section">
         <header class="sidebar_section_header">디지털 콘텐츠 및 기기</header>
         <ul class="sidebar_section_list">
           <a href="#">
@@ -199,9 +199,9 @@
         </ul>
       </section>
 
-      <section class="sidebar_section">
+      <section class="sidebar_section sidebar_main_section">
         <header class="sidebar_section_header">부서별 쇼핑</header>
-        <ul class="sidebar_section_list">
+        <ul class="sidebar_section_list sidebar_main_section_list">
           <a href="#">
             <li>
               <div>전자</div>
@@ -238,7 +238,7 @@
           </a>
         </ul>
 
-        <ul class="sidebar_hidden_menus sidebar_section_list">
+        <ul class="sidebar_hidden_menus">
           <a href="#">
             <li>
               <div>자동차 용품</div>
@@ -357,6 +357,46 @@
           </a>
         </ul>
       </section>
+
+      <section class="sidebar_section sidebar_detail_section">
+        <header class="sidebar_section_header">음악 스트리밍</header>
+        <ul class="sidebar_section_list">
+          <a href="#">
+            <li>
+              <div>Amazon Music Unlimited</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>Amazon Music HD</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>Podcast</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>웹 플레이어 열기</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>Download the App</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+        </ul>
+      </section>
     </aside>
 
     <main>
@@ -370,4 +410,5 @@
   <script src="js/loginEvent.js"></script>
   <script src="js/shippingRegionEvent.js"></script>
   <script src="js/sidebarEvent.js"></script>
+  <script src="js/sidebarMoveEvent.js"></script>
 </html>
