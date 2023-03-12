@@ -163,7 +163,7 @@
   font-size: 13px;
   line-height: 16px;
 }
-.side_bar,
+.side_bar_btn,
 .nav_sub_right_btn {
   font-family: 'Pretendard';
   font-style: normal;
@@ -177,17 +177,17 @@
 }
 
 .nav_sub_left_btns,
-.side_bar {
+.side_bar_btn {
   display: flex;
   align-items: flex-start;
 }
 
-.nav_sub_left_btns .side_bar,
+.nav_sub_left_btns .side_bar_btn,
 .nav_sub_left_btns > a {
   margin-right: 20px;
 }
 
-.side_bar img {
+.side_bar_btn img {
   width: 16px;
   height: 16px;
 
