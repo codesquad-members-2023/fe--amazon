@@ -110,6 +110,7 @@
   /* top 값 바꾸기 */
   top: 54px;
   gap: 8px;
+  opacity: 0;
   animation: page-load-fade-in 250ms ease-in-out forwards;
 }
 

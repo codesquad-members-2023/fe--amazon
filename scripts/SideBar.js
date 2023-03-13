@@ -25,37 +25,31 @@ export default class SideBar {
     this.dimmedBody = new DimmedBody();
   }
 
-  showSideBar = (e) => {
+  showSideBar(e) {
     e.preventDefault();
 
     this.dimmedBody.showDimmedBody();
-    this.sideBar.classList.remove("hidden");
-    this.sideBar.classList.remove("hide-side-bar");
     this.sideBar.classList.add("show-side-bar");
-  };
+  }
 
-  hideSideBar = () => {
+  hideSideBar() {
     this.dimmedBody.hideDimmedBody();
     this.sideBar.classList.remove("show-side-bar");
-    this.sideBar.classList.add("hide-side-bar");
-  };
+  }
 
-  unfoldOtherButtons = () => {
-    this.otherButtonContainer.classList.remove("hidden");
-    this.otherButtonContainer.classList.remove("hide-others");
+  unfoldOtherButtons() {
     this.otherButtonContainer.classList.add("show-others");
-  };
+  }
 
-  foldOtherButtons = () => {
+  foldOtherButtons() {
     this.otherButtonContainer.classList.remove("show-others");
-    this.otherButtonContainer.classList.add("hide-others");
-  };
+  }
 
-  showSubMenu = (e) => {
-    if (this.subMenus.contains(e.target)) return;
+  showSubMenu({ target }) {
+    if (this.subMenus.contains(target)) return;
 
     const parentButton = [...this.sideBarParentButtons].find((el) =>
-      el.contains(e.target)
+      el.contains(target)
     );
     const id = parentButton?.dataset.id;
     if (!id) return;
@@ -64,22 +58,26 @@ export default class SideBar {
       (el) => el.dataset.parentId === id
     );
 
-    subMenu?.classList.remove("hide-sub-menu");
     subMenu?.classList.add("show-sub-menu");
-  };
+  }
 
-  hideSubMenu = (subMenuBack) => {
+  hideSubMenu(subMenuBack) {
     subMenuBack.parentElement.classList.remove("show-sub-menu");
-    subMenuBack.parentElement.classList.add("hide-sub-menu");
-  };
+  }
 
-  setSideBar = () => {
+  setSideBar() {
     this.allAnchor.addEventListener("click", (e) => {
       this.showSideBar(e);
     });
-    this.sideBarCloseButton.addEventListener("click", this.hideSideBar);
-    this.showAllButton.addEventListener("click", this.unfoldOtherButtons);
-    this.closeAllButton.addEventListener("click", this.foldOtherButtons);
+    this.sideBarCloseButton.addEventListener("click", () => {
+      this.hideSideBar();
+    });
+    this.showAllButton.addEventListener("click", () => {
+      this.unfoldOtherButtons();
+    });
+    this.closeAllButton.addEventListener("click", () => {
+      this.foldOtherButtons();
+    });
     this.sideBarContent.addEventListener("click", (e) => {
       this.showSubMenu(e);
     });
@@ -88,5 +86,5 @@ export default class SideBar {
         this.hideSubMenu(subMenuBack)
       );
     });
-  };
+  }
 }
