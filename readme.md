@@ -31,27 +31,32 @@
 
 ## 🌳 Jayden's Organization
 
-- `draft` Pull Request
-  - 아직 변경 사항이 완료되지 않았고 리뷰 및 피드백을 받길 원할 때 설정한다.
-  - 작업을 공유하고 다른 기여자들로부터 피드백을 받을 수 있다.
-  - 변경 사항이 완료되기 전에 검토하여, 프로세스 초기에 잠재적인 문제를 파악할 수 있다.
-  - 아직 병합하면 안되는 PR임을 가시적으로 알 수 있다.
+### `draft` Pull Request
 
-- 코딩 컨벤션
-  - 읽고 관리하기 쉬운 코드를 작성하기 위한 코딩 스타일 약속
-  - 특히 자바스크립트는 다른 언어에 비해 유연한 문법구조를 갖고 있기에 더욱더 중요하다.
-  - 보통 ESLint와 같은 린터를 사용한다는 가정하에 린터로 검출할 수 없는 모호한 부분을 가이드로 작성한다.
-  - 참고: [Toast UI 코딩 컨벤션](https://ui.toast.com/fe-guide/ko_CODING-CONVENTION)
+- 아직 변경 사항이 완료되지 않았고 리뷰 및 피드백을 받길 원할 때 설정한다.
+- 작업을 공유하고 다른 기여자들로부터 피드백을 받을 수 있다.
+- 변경 사항이 완료되기 전에 검토하여, 프로세스 초기에 잠재적인 문제를 파악할 수 있다.
+- 아직 병합하면 안되는 PR임을 가시적으로 알 수 있다.
 
-- upstream에서 fork 후 local로 clone할 때, main 브랜치 없이 clone이 가능한가?
-  - clone 후에 main 브랜치를 삭제하면 된다.(혹시 모르니 일단은 두기로)
+### 코딩 컨벤션
+  
+- 읽고 관리하기 쉬운 코드를 작성하기 위한 코딩 스타일 약속
+- 특히 자바스크립트는 다른 언어에 비해 유연한 문법구조를 갖고 있기에 더욱더 중요하다.
+- 보통 ESLint와 같은 린터를 사용한다는 가정하에 린터로 검출할 수 없는 모호한 부분을 가이드로 작성한다.
+- 참고: [Toast UI 코딩 컨벤션](https://ui.toast.com/fe-guide/ko_CODING-CONVENTION)
 
-- feature1 브랜치에서 작업 후, pr을 날린 상태에서 feature1을 기반으로 feature2를 작업해야한다. 이 때, 아직 feature1이 머지가 안되었다면 어떻게 할까?
-  - feature1에서 feature2 브랜치를 따서 작업한다. 이후 feature1이 main에 머지되면 자연스럽게 feature2도 main에서 따온 것처럼 된다.
+### upstream에서 fork 후 local로 clone할 때, main 브랜치 없이 clone이 가능한가?
+  
+- clone 후에 main 브랜치를 삭제하면 된다.(혹시 모르니 일단은 두기로)
 
-- css에서 변수를 만들어서 사용하기
-  - 아래와 같이 `:root` 에 변수를 설정해준다.
-  - 설정한 변수를 `var(변수명)`형태로 사용한다.
+### feature1 브랜치에서 작업 후, pr을 날린 상태에서 feature1을 기반으로 feature2를 작업해야한다. 이 때, 아직 feature1이 머지가 안되었다면 어떻게 할까?
+  
+- feature1에서 feature2 브랜치를 따서 작업한다. 이후 feature1이 main에 머지되면 자연스럽게 feature2도 main에서 따온 것처럼 된다.
+
+### css에서 변수를 만들어서 사용하기
+
+- 아래와 같이 `:root` 에 변수를 설정해준다.
+- 설정한 변수를 `var(변수명)`형태로 사용한다.
 
 ```css
 /* Global */
@@ -94,36 +99,67 @@ div {
 }
 ```
 
-- box-sizing 설정
-  - 기본적으로 `content-box`로 설정되어있다.
-    - content-box: width, height가 padding 내부의 content를 기준으로 한다.
-    - border-box: width, height가 content, padding, border를 포함한 것을 기준으로 한다.
+### box-sizing 설정
 
-- `reset css` vs `normalize css`
-  - reset css: 브라우저가 기본적으로 제공하는 내장 스타일을 모두 초기화
-    - 최근에는 [new css reset](https://elad2412.github.io/the-new-css-reset/)이 자주 사용된다.
-  - normalize css: 가능한 브라우저들의 내장 스타일을 건드리지 않는 선에서 브라우저들 간의 차이점을 통일
-    - 같은 `h1` 태그라도 브라우저마다 여백의 크기가 조금씩 다를 수 있다. 이런 부분을 동일하게 통일해준다.
+- 기본적으로 `content-box`로 설정되어있다.
+  - content-box: width, height가 padding 내부의 content를 기준으로 한다.
+  - border-box: width, height가 content, padding, border를 포함한 것을 기준으로 한다.
 
-- css 상속(inheritance)과 적용 우선 순위(cascading)
-  - 상속: 상위(부모) 태그에 적용된 스타일이 하위(자식) 태그에도 상속되어 적용되는 것
-    - 몇몇 상속이 안되는 스타일이 있는데, 주로 box-model과 관련된 스타일이다. ex) padding
-  - 적용 우선 순위: css는 어떻게 스타일을 적용하느냐에 따라 그 우선순위가 다르다.
-    - 우선순위로는 `사용자 설정` - `inline style` - `internal stylesheet` - `external stylesheet` - `browser default`로 점점 낮아진다.
-    - 또한, css의 `specificity`에 따라 `class`보다 `id`가 스타일에 대한 우선순위를 갖는다.(더욱 자세한 선택자일수록 우선순위를 갖는다.)
-  - (주의) css의 상속과 캐스케이딩은 엄밀히 다른 개념!!!
+### `reset css` vs `normalize css`
 
-- `display: flex`에서 `flex-grow` 속성이란?
-  - display가 flex로 설정된 태그의 자식 태그들에 사용하며, 각 자식 태그들은 기본적으로 `flex-grow: 0;`이다.
-  - 더 높은 숫자를 설정하게 되 다른 태그들과의 사이에서 해당 숫자의 크기 비율을 갖는다.
+- reset css: 브라우저가 기본적으로 제공하는 내장 스타일을 모두 초기화
+  - 최근에는 [new css reset](https://elad2412.github.io/the-new-css-reset/)이 자주 사용된다.
+- normalize css: 가능한 브라우저들의 내장 스타일을 건드리지 않는 선에서 브라우저들 간의 차이점을 통일
+  - 같은 `h1` 태그라도 브라우저마다 여백의 크기가 조금씩 다를 수 있다. 이런 부분을 동일하게 통일해준다.
 
-- css 상대 단위 2대장: `em` vs `rem`
-  - em: 위치한 곳을 기준으로 font-size에 대한 배율(해당 요소에 font-size 없으면 부모 요소, 없으면 또 부모 요소)
-  - rem: 위치한 곳과 상관없이 가장 최상위 요소(root; html 태그)의 font-size에 대한 배율
-  - (주의) em은 너무 상대적인 느낌이고 rem은 그나마 절대적인 root를 기준으로 하기에, rem 사용을 좀더 추천한다.
-  - (나만의 팁) 전체적인 레이아웃은 %로 맞추되, 그 안에 디테일한 박스 크기는 rem으로 해주면 편한 것 같다!
-- 웹 접근성(예정)
-- 웹 사이트 접속 시 브라우저의 렌더링 과정(예정)
+### css 상속(inheritance)과 적용 우선 순위(cascading)
+
+- 상속: 상위(부모) 태그에 적용된 스타일이 하위(자식) 태그에도 상속되어 적용되는 것
+  - 몇몇 상속이 안되는 스타일이 있는데, 주로 box-model과 관련된 스타일이다. ex) padding
+- 적용 우선 순위: css는 어떻게 스타일을 적용하느냐에 따라 그 우선순위가 다르다.
+  - 우선순위로는 `사용자 설정` - `inline style` - `internal stylesheet` - `external stylesheet` - `browser default`로 점점 낮아진다.
+  - 또한, css의 `specificity`에 따라 `class`보다 `id`가 스타일에 대한 우선순위를 갖는다.(더욱 자세한 선택자일수록 우선순위를 갖는다.)
+- (주의) css의 상속과 캐스케이딩은 엄밀히 다른 개념!!!
+
+### `display: flex`에서 `flex-grow` 속성이란?
+
+- display가 flex로 설정된 태그의 자식 태그들에 사용하며, 각 자식 태그들은 기본적으로 `flex-grow: 0;`이다.
+- 더 높은 숫자를 설정하게 되 다른 태그들과의 사이에서 해당 숫자의 크기 비율을 갖는다.
+
+### css 상대 단위 2대장: `em` vs `rem`
+
+- em: 위치한 곳을 기준으로 font-size에 대한 배율(해당 요소에 font-size 없으면 부모 요소, 없으면 또 부모 요소)
+- rem: 위치한 곳과 상관없이 가장 최상위 요소(root; html 태그)의 font-size에 대한 배율
+- (주의) em은 너무 상대적인 느낌이고 rem은 그나마 절대적인 root를 기준으로 하기에, rem 사용을 좀더 추천한다.
+- (나만의 팁) 전체적인 레이아웃은 %로 맞추되, 그 안에 디테일한 박스 크기는 rem으로 해주면 편한 것 같다!
+
+### 웹 접근성(예정)
+
+### 웹 사이트 접속 시 브라우저의 렌더링 과정(예정)
+
+### DOM api가 존재하는 이유
+
+- DOM Tree를 탐색하기 위해 JS로 탐색 알고리즘을 구현하면 너무 힘고 번거롭다.
+- 해서 브라우저에서 DOM Tree를 탐색하기 위한 다양한 DOM api를 제공한다.
+
+### textNode vs elementNode
+
+- DOM의 노드들은 대부분 text 노드와 element 노드로 나누어진다.
+- firstChild, nextSibling 등은 태그 사이의 공백인 textNode까지 인식한다.
+- firstElementChild, firstElementChild 등은 textNode를 제외한 elementNode만 인식한다.
+- 우리는 주로 textNode를 이용할 일이 없기 때문에, 주로 element가 들어간 api를 이용한다.
+
+### 이벤트 위임
+
+- 발생한 이벤트에 대한 리스너를 버블링(혹은 캡쳐링)을 이용해서 상위 태그에 달아서 이벤트에 따른 함수를 실행하는 방법
+  - 버블링: 이벤트가 발생한 요소에서 상위 요소로 가는 단계
+  - 캡쳐링: 상위 요소에서 이벤트가 발생한 요소로 가는 단계
+  - 캡쳐링은 이용할 일이 거의 없고, 주로 버블링을 통한 이벤트 위임을 사용한다.
+
+### `stopPropagation` vs `preventDefault`
+
+- stopPropagation: 특정 태그에서 이벤트의 전달을 막는 api
+- preventDefault: 해당 태그가 가진 기본적인 기능을 막는 api
 
 ## 🪵 Reference
 
@@ -134,3 +170,5 @@ div {
 - [reset css과 normalize css](https://www.daleseo.com/css-normalize-reset/)
 - [css 상속(inheritance)과 적용 우선 순위(cascading)](https://poiemaweb.com/css3-inheritance-cascading)
 - [css media query](https://www.daleseo.com/css-media-queries/)
+- [이벤트 위임](https://www.grapecity.com/blogs/html-and-wijmo-events/)
+- [stopPropagation vs preventDefault](https://ismydream.tistory.com/98)
