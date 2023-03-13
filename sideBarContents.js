@@ -1,6 +1,25 @@
-
-const carGoodsItems = [
+const EXTENDED_ITEMS = [
   '자동차 용품',
+  '유아',
+  '뷰티 및 퍼스널 케어',
+  '여성 패션',
+  '남성 패션',
+  '여아용 의류',
+  '남아용 의류',
+  '건강 및 가정용품',
+  '가정 및 주방',
+  '산업용 및 과학용',
+  '여행 가방',
+  '영화 및 TV',
+  '애완동물 용품',
+  '소프트웨어',
+  '스포츠 및 야외 활동',
+  '공구 및 주택 개조',
+  '장난감 및 게임',
+  '비디오 게임',
+]
+
+const CAR_GOODS_ITEMS = [
   '자동차 관리',
   '자동차 전자기기 및 악세서리',
   '실외용품 악세서리',
@@ -18,6 +37,41 @@ const carGoodsItems = [
   '대형차 및 상용차 장비'
 ]
 
-carGoodsItems.forEach((item) => {
-  `<li>${item}</li>`
-})
+function createCarGoodsItems () {
+  const ul = document.querySelector('.side-menu__contents > ul')
+
+  CAR_GOODS_ITEMS.forEach(item => {
+    const li = document.createElement('li')
+    const span = document.createElement('span')
+    
+    span.textContent = item
+    li.classList.add('side-menu__item')
+
+    ul.appendChild(li)
+    li.appendChild(span)
+  })
+}
+
+createCarGoodsItems()
+
+function createExtensionItems () {
+  const reference = document.querySelector('.side-menu__hide-button')
+  const parent = reference.parentNode
+
+  EXTENDED_ITEMS.forEach(item => {
+    const li = document.createElement('li')
+    const span = document.createElement('span')
+    const img = document.createElement('img')
+    
+    span.textContent = item
+    li.classList.add('side-menu__item')
+    img.setAttribute("src", "./asset/extendArrow.svg")
+    img.setAttribute("alt", "extendArrow")
+
+    parent.insertBefore(li, reference)
+    li.appendChild(span)
+    li.appendChild(img)
+  })
+}
+
+createExtensionItems()
