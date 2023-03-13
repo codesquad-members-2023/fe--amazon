@@ -421,7 +421,6 @@ html, body {
   height: 100%;
   background-color: var(--color-white);
   z-index: 5;
-  transition: all 0.3s;
   animation: slow-load, pop-from-left 1s forwards;
   overflow: scroll;
 }
@@ -457,6 +456,11 @@ html, body {
   font-weight: var(--weight-regular);
   font-size: var(--font-md);
   color: var(--color-black);
+}
+
+.sidebar__others-content {
+  animation: slow-load 1s forwards;
+  animation-play-state: revert;
 }
 
 .machine-list__title, .department-list__title {
