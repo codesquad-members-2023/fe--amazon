@@ -11,38 +11,93 @@
     <header class="header">
       <!-- header 내부 header_main -->
       <div class="header_main">
-        <a href="#">
+        <a href="" class="header_href">
           <div class="logo">
             <img src="assets/images/BI.svg" id="logo_image" />
           </div>
         </a>
+        <div class="shipping_section">
+          <a href="" class="shipping_container header_href">
+            <div class="shipping">
+              <img src="assets/images/name=location.svg" id="shipping_image" />
+              <span class="top_text">배송처</span>
+              <span class="bottom_text">대한민국</span>
+            </div>
+          </a>
 
-        <a href="#" class="shipping">
-          <div class="shipping">
-            <img src="assets/images/name=location.svg" id="shipping_image" />
-            <span class="top_text">배송처</span>
-            <span class="bottom_text">대한민국</span>
+          <div class="shipping_pop-up hidden">
+            <div class="pop-up_triangle shipping_pop-up_triangle"></div>
+            <div class="shipping_pop-up_contents">
+              <span
+                >KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 주소를
+                변경하십시오.</span
+              >
+              <div class="shipping_pop-up_buttons">
+                <button type="button" class="shipping_pop-up_button">계속</button>
+                <button type="button" class="shipping_pop-up_button">주소 변경</button>
+              </div>
+            </div>
           </div>
-        </a>
+        </div>
 
         <div class="search_bar">
           <input class="search_input" type="search" placeholder="검색 Amazon" />
-          <button class="search_button" type="button">
+          <button class="search_button">
             <img src="assets/images/name=search.svg" />
           </button>
         </div>
 
         <div class="nation_contianer">
           <img src="assets/images/flag.svg" />
-          <span>KO</span>
+          <span>US</span>
         </div>
 
-        <a href="#" class="login_container">
-          <div class="login_container">
+        <div class="login_section">
+          <a href="" class="login_container header_href">
             <span class="top_text">안녕하세요, 로그인</span>
             <span class="bottom_text">계정 및 목록</span>
+          </a>
+
+          <div class="login_pop-up hidden">
+            <div class="pop-up_triangle login_pop-up_triangle"></div>
+            <div class="login_pop-up_contents">
+              <button class="login_pop-up_button" type="button">로그인</button>
+              <div class="login_pop-up_description">
+                <span>기존 사용자가 아니십니까?</span>
+                <a href="">여기에서 시작합니다.</a>
+              </div>
+
+              <div class="dividing_line hidden"></div>
+
+              <div class="list_container hidden">
+                <div class="list_left">
+                  <ul class="list_items">
+                    <li class="list_label">귀하의 목록</li>
+                    <li class="list_item">목록생성</li>
+                    <li class="list_item">목록 또는 레지스트리 찾기</li>
+                    <li class="list_item">AmazonSmile 자선 품목 목록</li>
+                  </ul>
+                </div>
+                <div class="list_right">
+                  <ul class="list_items">
+                    <li class="list_label">계정</li>
+                    <li class="list_item">계정</li>
+                    <li class="list_item">주문</li>
+                    <li class="list_item">권장 사항</li>
+                    <li class="list_item">검색 기록</li>
+                    <li class="list_item">위치리스트</li>
+                    <li class="list_item">비디오 구매 및 대여</li>
+                    <li class="list_item">Kindle 언리미티드</li>
+                    <li class="list_item">콘텐츠 및 기기</li>
+                    <li class="list_item">항목 구독 및 저장</li>
+                    <li class="list_item">멤버십 및 구독</li>
+                    <li class="list_item">음악 라이브러리</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-        </a>
+        </div>
 
         <div class="mypage_container">
           <span class="top_text">반품</span>
@@ -50,30 +105,89 @@
         </div>
 
         <div class="cart_container">
-          <img />
+          <img src="assets/images/name=cart.svg" />
           <span>장바구니</span>
         </div>
       </div>
 
       <!-- header 내부 navbar-->
+      <!-- 메뉴 항목에 li 태그를 적용하는 부분 고민 필요 -->
       <div class="navbar">
         <ul class="navbar_left">
-          <li>
-            <a href="#" class="nav_list">모두</a>
+          <li class="nav_list">
+            <div class="sidebar_section sidebar_active_button">
+              <img src="assets/images/Vector.svg" alt="" />모두
+            </div>
           </li>
-          <li>
-            <a href="#" class="nav_list">오늘의 딜</a>
+
+          <li class="nav_list">
+            <a href="">오늘의 딜</a>
           </li>
-          <li><a href="#" class="nav_list">고객서비스</a></li>
-          <li><a href="#" class="nav_list">레지스트리</a></li>
-          <li><a href="#" class="nav_list">기프트카드</a></li>
-          <li><a href="#" class="nav_list">판매</a></li>
+          <li class="nav_list"><a href="">고객서비스</a></li>
+          <li class="nav_list"><a href="">레지스트리</a></li>
+          <li class="nav_list"><a href="">기프트카드</a></li>
+          <li class="nav_list"><a href="">판매</a></li>
         </ul>
 
         <ul class="navbar_right">
-          <li><a href="#">지금 특가상품 쇼핑하기</a></li>
+          <li class="nav_list"><a href="">지금 특가상품 쇼핑하기</a></li>
         </ul>
       </div>
     </header>
+
+    <aside class="sidebar non-active">
+      <h3 class="sidebar_header">
+        <img class="sidebar_header_icon" src="assets/images/sidebar login.svg" />
+        안녕하세요, 로그인
+      </h3>
+      <div>
+        <h4 class="sidebar_list_title">디지털 콘텐츠 및 기기</h4>
+        <ul>
+          <li class="sidebar_list">
+            Amazon Music
+            <img src="assets/images/button=sidebarList.svg" class="sidebar_list_icon" />
+          </li>
+
+          <li class="sidebar_list">
+            Kindle E-Reader 및 도서
+            <img src="assets/images/button=sidebarList.svg" class="sidebar_list_icon" />
+          </li>
+          <li class="sidebar_list">
+            안드로이드 앱스토어
+            <img src="assets/images/button=sidebarList.svg" class="sidebar_list_icon" />
+          </li>
+        </ul>
+        <div class="sidebar_dividing_line"></div>
+        <h4 class="sidebar_list_title">부서별 쇼핑</h4>
+        <ul>
+          <li class="sidebar_list">
+            전자<img src="assets/images/button=sidebarList.svg" class="sidebar_list_icon" />
+          </li>
+          <li class="sidebar_list">
+            컴퓨터 <img src="assets/images/button=sidebarList.svg" class="sidebar_list_icon" />
+          </li>
+          <li class="sidebar_list">
+            Alexa 스마트 홈
+            <img src="assets/images/button=sidebarList.svg" class="sidebar_list_icon" />
+          </li>
+          <li class="sidebar_list">
+            예술 및 공예
+            <img src="assets/images/button=sidebarList.svg" class="sidebar_list_icon" />
+          </li>
+          <li class="sidebar_list sidebar_list_fold">
+            모두 보기
+            <img src="assets/images/button=sidebarFold.svg" class="sidebar_list_fold_icon" />
+          </li>
+          <div class="sidebar_dividing_line"></div>
+        </ul>
+      </div>
+      <img src="assets/images/close.svg" class="sidebar_close_icon" />
+    </aside>
+
+    <main class="main">
+      <div class="dimmed hidden"></div>
+    </main>
+
+    <script src="./js/index.js"></script>
   </body>
 </html>

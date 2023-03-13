@@ -50,7 +50,7 @@
 }
 
 .top_text {
-  font-family: 'Pretendard';
+  font-family: 'Pretendard', sans-serif;
   font-weight: 600;
   font-size: 11px;
   color: var(--color-gray400);
@@ -58,7 +58,7 @@
 
 .bottom_text {
   display: block;
-  font-family: 'Pretendard';
+  font-family: 'Pretendard', sans-serif;
   font-weight: 800;
   font-size: 13px;
   color: var(--color-white);
@@ -88,6 +88,208 @@
   background-color: var(--color-primaryOrange200);
 }
 
+.shipping_pop-up {
+  position: absolute;
+  width: 320px;
+  height: 126px;
+  top: 53px;
+  left: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 0px 16px;
+  gap: 26px;
+  border-radius: 4px;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  z-index: 2;
+}
+
+.shipping_pop-up_triangle {
+  transform: translate(-380%, -35%);
+  top: 0;
+  right: 100px;
+}
+
+.shipping_pop-up_contents span {
+  display: block;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 160%;
+  border: 2px solid green;
+}
+
+.shipping_pop-up_buttons {
+  display: flex;
+  flex-direction: row;
+  float: right;
+  gap: 3px;
+  border: 2px solid blue;
+}
+
+.shipping_pop-up_button {
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+
+  width: 58px;
+  height: 32px;
+
+  background: linear-gradient(174.6deg, #ffffff 4.31%, #fed15f 50.01%, #febe30 95.71%);
+  border: 1px solid #de9408;
+  border-radius: 4px;
+}
+
+.login_pop-up {
+  position: absolute;
+  top: 53px;
+  right: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+  border-radius: 4px;
+  background-color: var(--color-white);
+  z-index: 2;
+}
+
+.pop-up_triangle {
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: var(--color-white);
+  /* transform: translate(310%, -30%);
+  top: 0;
+  right: 100px; */
+}
+
+.login_pop-up_triangle {
+  transform: translate(310%, -35%);
+  top: 0;
+  right: 100px;
+}
+
+.login_pop-up_contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+  color: var(--color-black);
+}
+
+.login_pop-up_button {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+  width: 160px;
+  height: 32px;
+  background: linear-gradient(174.6deg, #ffffff 4.31%, #fed15f 50.01%, #febe30 95.71%);
+  border: 1px solid var(--color-primaryYellow300);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login_pop-up_description {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  width: 203px;
+  height: 18px;
+}
+
+.login_pop-up_description span {
+  display: inline;
+  width: 112px;
+  height: 18px;
+  font-family: 'Pretendard', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 160%;
+  white-space: nowrap;
+  color: var(--color-black);
+}
+
+.login_pop-up_description a {
+  display: inline;
+  width: 88px;
+  height: 18px;
+  font-family: 'Pretendard', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 160%;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--color-secondaryNavy);
+}
+
+.dividing_line {
+  /* display: none; */
+  width: 303px;
+  height: 1px;
+  background-color: var(--color-gray100);
+}
+
+.list_container {
+  /* display: none; */
+  display: flex;
+  justify-content: space-evenly;
+  width: 303px;
+  height: 195px;
+}
+
+.list_label {
+  font-family: 'Pretendard', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.list_label_text {
+  font-family: 'Pretendard', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.list_item {
+  font-family: 'Pretendard', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 160%;
+}
+
+.hidden {
+  display: none;
+}
+
+.header_href {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* header 중 navbar css*/
 
 .navbar {
@@ -104,16 +306,126 @@
   display: flex;
   justify-content: space-between;
   width: 500px;
-  font-family: 'Pretendard';
+  font-family: 'Pretendard', sans-serif;
 }
 
 li {
   list-style: none;
 }
 
-.header a {
-  display: block;
+.nav_list {
+  text-align: center;
+  color: inherit;
+  padding: 0px;
+}
+
+.nav_list a {
   text-align: center;
   text-decoration: none;
   color: inherit;
+  margin: 0px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 2px;
+}
+
+.sidebar_section {
+  cursor: pointer;
+}
+
+/* dimmed 처리 css*/
+
+.main {
+  position: relative;
+  height: 100vh;
+  /**/
+}
+
+.dimmed {
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* sidebar css*/
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: -320px;
+  width: 320px;
+  height: 100%;
+  /* border: 2px solid green; */
+  background-color: var(--color-white);
+  z-index: 3;
+  transition: left 0.5s ease-in-out;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar_header {
+  display: flex;
+  align-items: center;
+  padding: 16px 16px 16px 32px;
+  gap: 8px;
+
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.sidebar_header_icon {
+  width: 15px;
+  height: 15px;
+}
+
+.sidebar_list_title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 800;
+  padding: 16px 16px 16px 32px;
+  height: 53px;
+  font-size: 18px;
+}
+
+.sidebar_list {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  font-size: 13px;
+  padding: 8px 16px 8px 32px;
+}
+
+.sidebar_list_icon {
+  width: 11px;
+  height: 11px;
+}
+
+.sidebar_list_fold {
+  width: 120px;
+}
+
+.sidebar_list_fold_icon {
+  width: 11px;
+  height: 11px;
+}
+
+.sidebar_close_icon {
+  position: absolute;
+  top: 18px;
+  right: -24px;
+}
+
+.sidebar_dividing_line {
+  height: 1px;
+  background-color: var(--color-gray100);
 }
