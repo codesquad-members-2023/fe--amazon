@@ -1,0 +1,18 @@
+@import "reset.css";
+@import "font.css";
+@import "sidebar.css";
+@import "nav.css";
+@import "nav_popup.css";
+
+* {
+    box-sizing: border-box;
+}
+body{
+    font-family: ‘Pretendard’;
+}
+
+a{
+    text-decoration-line: none;
+    color: inherit;
+}
+
