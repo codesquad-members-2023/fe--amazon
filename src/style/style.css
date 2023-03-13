@@ -410,11 +410,11 @@ li {
   height: 11px;
 }
 
-.sidebar_list_fold {
+.sidebar_list_unfold {
   width: 120px;
 }
 
-.sidebar_list_fold_icon {
+.sidebar_list_unfold_icon {
   width: 11px;
   height: 11px;
 }
@@ -428,4 +428,23 @@ li {
 .sidebar_dividing_line {
   height: 1px;
   background-color: var(--color-gray100);
+}
+
+.sidebar_list_hidden {
+  display: none;
+  overflow: hidden;
+  transition: all 3s;
+}
+
+.sidebar_list_hidden.show {
+  display: block;
+}
+
+.sidebar_list_fold {
+  width: 130px;
+}
+
+.sidebar_list_fold_icon {
+  width: 11px;
+  height: 11px;
 }

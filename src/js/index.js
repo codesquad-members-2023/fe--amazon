@@ -10,6 +10,9 @@ const dimmedSection = document.querySelector('.dimmed');
 const sidebarActivateButton = document.querySelector('.sidebar_active_button');
 const sidebar = document.querySelector('.sidebar');
 const sidebarInactivateButton = document.querySelector('.sidebar_close_icon');
+const showHiddenSidebarListButton = document.querySelector('.sidebar_list_unfold_icon');
+const hiddenSidebarList = document.querySelector('.sidebar_list_hidden');
+const hideHiddenSidebarListButton = document.querySelector('.sidebar_list_fold');
 
 const showLoginInitLayer = () => {
   loginPopup.classList.remove('hidden');
@@ -45,6 +48,14 @@ const inactivateSidebar = () => {
   sidebar.classList.remove('active');
 };
 
+const showHiddenSidebarList = () => {
+  hiddenSidebarList.classList.add('show');
+};
+
+const hideHiddenSidebarList = () => {
+  hiddenSidebarList.classList.remove('show');
+};
+
 const main = () => {
   setTimeout(() => {
     showLoginInitLayer();
@@ -55,6 +66,8 @@ const main = () => {
   shippingSection.addEventListener('mouseleave', hideShippingLayer);
   sidebarActivateButton.addEventListener('click', activateSidebar);
   sidebarInactivateButton.addEventListener('click', inactivateSidebar);
+  showHiddenSidebarListButton.addEventListener('click', showHiddenSidebarList);
+  hideHiddenSidebarListButton.addEventListener('click', hideHiddenSidebarList);
 };
 
 main();
