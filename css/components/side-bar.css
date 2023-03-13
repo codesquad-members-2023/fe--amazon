@@ -4,7 +4,7 @@
   align-items: flex-start;
   position: fixed;
   width: 320px;
-  height: 100%;
+  height: auto;
   left: 0;
   top: 0;
   bottom: 0;
@@ -33,7 +33,6 @@
   font-size: 18px;
   font-weight: 800;
   line-height: 21px;
-  flex: none;
   cursor: pointer;
 }
 
@@ -42,7 +41,7 @@
 }
 
 .homeSidebar__title {
-  font-family: "Pretendard";
+  font-family: "Pretendard", "Kanit";
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
@@ -130,6 +129,7 @@
 
 .hideLists {
   display: none;
+  overflow-y: hidden;
 }
 
 .openAnimation {
