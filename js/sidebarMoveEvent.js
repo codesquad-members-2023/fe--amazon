@@ -1,3 +1,6 @@
+import SIDEBAR_DETAIL from '../data/sidebarData.js';
+
+console.log(SIDEBAR_DETAIL);
 const mainMenuArr = document.querySelectorAll('.sidebar_main_section');
 const detailMenu = document.querySelector('.sidebar_detail_section');
 const backButton = document.querySelector('.sidebar_detail_back_button');
