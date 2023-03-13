@@ -1,4 +1,4 @@
-# Week1 day1 - 아마존#1
+# Week1 - 아마존#1 header 영역 구현
 
 ## :one: 월요일 학습계획
 
@@ -60,7 +60,7 @@
   - css font 스타일 변수화 해보기.
   - 또 있을까?
 
-## :four: Week1 day4 학습계획
+## :four: 학습계획
 
 - [ ] : crong 리뷰 고려 코드 리팩 시도 해보기
   - [ ] : html 리팩
@@ -75,9 +75,26 @@
 - [x] : 모달창 팝업시 딤 처리 기능 구현
 - [x] : header-top shipping-address 모달창 구현
 
-## :five: Week1 day5 학습계획
+## :five: 학습계획
 
 - [x] : sidebar 레이아웃 구현
  - [x] : sidebar 탑 영역 구현
  - [x] : sidebar 메뉴 영역 구현
  - [x] : sidebar 부서별 쇼핑 모두 보기 영역 구현
+
+--- 
+
+# Week2 - 아마존#2 sidebar 레이아웃 & 애니매이션 구현
+
+## :one: 월요일 학습계획
+
+- [ ] : sidebar 애니매이션 구현
+  - [ ] : sidebar 부서별 쇼핑 모두 보기 영역 애니매이션 구현
+  - [ ] : sidebar 자동차 용품 클릭시 sub menu 애니매이션 구현
+- [ ] : 이번 주 학습자료 'DOM API' 학습
+  - [ ] : 크롱 강의 자료 학습
+  - [ ] : 관련 내용 노션 정리
+- [ ] : 코드 리팩토링 진행
+  - [ ] : font style 변수화 및 적용
+  - [ ] : 클래스명 점검
+
