@@ -98,13 +98,11 @@ const sideBarCloseAllBtn = document.querySelector('.sidebar__contents.btn.closea
 const sideBarExtraShoppingList = document.querySelector('.sidebar__shopping.extra');
 
 sideBarShowAllBtn.addEventListener('click', () => {
-  // sideBarExtraShoppingList.style.height = '100%';
-  sideBarExtraShoppingList.classList.add('expended');
+  sideBarExtraShoppingList.style.height = '100%';
 })
 
 sideBarCloseAllBtn.addEventListener('click', () => {
-  // sideBarExtraShoppingList.style.height = '0';
-  sideBarExtraShoppingList.classList.remove('expended');
+  sideBarExtraShoppingList.style.height = '0';
 })
 
 // sidebar menu right 영역

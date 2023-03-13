@@ -46,13 +46,12 @@
   display: flex;
   flex-flow: column;
   width: 100%;
+  /* height: auto; */
 }
 
 .sidebar__login--top__container {
   display: flex;
-  justify-content: space-between;
   background-color: black;
-  gap: 3%;
   font-weight: 800;
   font-size: 18px;
   line-height: 21px;
@@ -61,26 +60,31 @@
   align-items: center;
 }
 
-.sidebar__login--link {
+.sidebar__login__link {
   display: flex;
   height: auto;
   padding: 4% 10%;
   position: relative;
+  width: 100%;
 }
 
-.sidebar__login--link::before {
+.sidebar__login__txt {
+  padding-left: 5%;
+}
+
+.sidebar__login__link::before {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 95%;
+  width: 100%;
   height: 95%;
   border: white 2px solid;
   border-radius: 5px;
   opacity: 0;
 }
 
-.sidebar__login--link:hover::before {
+.sidebar__login__link:hover::before {
   opacity: 1;
 }
 
@@ -101,8 +105,8 @@
   position: absolute;
   bottom: -1px;
   left: 0;
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  height: 100%;
   border: white 2px solid;
   border-radius: 5px;
   opacity: 0;
@@ -167,16 +171,13 @@
 
 .sidebar__shopping.extra {
   height: 0;
-}
-
-.sidebar__shopping.extra.expended {
-  height: 100%;
   transition: height .4s ease-in-out;
   overflow: hidden;
 }
 
 .sidebar__menu {
   display: flex;
+  height: auto;
 }
 
 .sidebar__menu.main {
