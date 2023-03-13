@@ -1,56 +1,45 @@
-const loginSection = document.querySelector('.login_section');
-const loginContainer = document.querySelector('.login_container');
-const loginPopup = document.querySelector('.login_pop-up');
-const dividingLine = document.querySelector('.dividing_line');
-const loginListContainer = document.querySelector('.login_list_container');
-const shippingSection = document.querySelector('.shipping_section');
-const shippingContainer = document.querySelector('.shipping_container');
-const shippingPopup = document.querySelector('.shipping_pop-up');
-const dimmedSection = document.querySelector('.dimmed');
-const sidebarActivateButton = document.querySelector('.sidebar_active_button');
-const sidebar = document.querySelector('.sidebar');
-const sidebarInactivateButton = document.querySelector('.sidebar_close_icon');
-const showHiddenSidebarListButton = document.querySelector('.sidebar_list_unfold_icon');
-const hiddenSidebarList = document.querySelector('.sidebar_list_hidden');
-const hideHiddenSidebarListButton = document.querySelector('.sidebar_list_fold');
+import { header } from './header_module.js';
+import { sidebar } from './sidebar_module.js';
+import { global } from './amazon_module.js';
 
 const showLoginInitLayer = () => {
-  loginPopup.classList.remove('hidden');
+  console.log('good');
+  header.loginPopup.classList.remove('hidden');
 };
 
 const showLoginExtendedLayer = () => {
-  loginPopup.classList.remove('hidden');
-  dividingLine.classList.remove('hidden');
-  loginListContainer.classList.remove('hidden');
-  dimmedSection.classList.remove('hidden');
+  header.loginPopup.classList.remove('hidden');
+  header.dividingLine.classList.remove('hidden');
+  header.loginListContainer.classList.remove('hidden');
+  global.dimmedSection.classList.remove('hidden');
 };
 
 const hideLayer = () => {
-  loginPopup.classList.add('hidden');
-  shippingPopup.classList.add('hidden');
-  dimmedSection.classList.add('hidden');
+  header.loginPopup.classList.add('hidden');
+  header.shippingPopup.classList.add('hidden');
+  global.dimmedSection.classList.add('hidden');
 };
 
 const showShippingLayer = () => {
-  shippingPopup.classList.remove('hidden');
-  loginPopup.classList.add('hidden');
-  dimmedSection.classList.remove('hidden');
+  header.shippingPopup.classList.remove('hidden');
+  header.loginPopup.classList.add('hidden');
+  global.dimmedSection.classList.remove('hidden');
 };
 
 const activeSidebarHandler = () => {
-  sidebar.classList.add('active');
+  sidebar.sidebar.classList.add('active');
 };
 
 const inactiveSidebarHandler = () => {
-  sidebar.classList.remove('active');
+  sidebar.sidebar.classList.remove('active');
 };
 
 const showHiddenSidebarList = () => {
-  hiddenSidebarList.classList.add('show');
+  sidebar.hiddenSidebarList.classList.add('show');
 };
 
 const hideHiddenSidebarList = () => {
-  hiddenSidebarList.classList.remove('show');
+  sidebar.hiddenSidebarList.classList.remove('show');
 };
 
 const main = () => {
@@ -58,14 +47,14 @@ const main = () => {
   setTimeout(() => {
     showLoginInitLayer();
   }, loadingTime);
-  loginContainer.addEventListener('mouseenter', showLoginExtendedLayer);
-  loginSection.addEventListener('mouseleave', hideLayer);
-  shippingContainer.addEventListener('mouseenter', showShippingLayer);
-  shippingSection.addEventListener('mouseleave', hideLayer);
-  sidebarActivateButton.addEventListener('click', activeSidebarHandler);
-  sidebarInactivateButton.addEventListener('click', inactiveSidebarHandler);
-  showHiddenSidebarListButton.addEventListener('click', showHiddenSidebarList);
-  hideHiddenSidebarListButton.addEventListener('click', hideHiddenSidebarList);
+  header.loginContainer.addEventListener('mouseenter', showLoginExtendedLayer);
+  header.loginSection.addEventListener('mouseleave', hideLayer);
+  header.shippingContainer.addEventListener('mouseenter', showShippingLayer);
+  header.shippingSection.addEventListener('mouseleave', hideLayer);
+  sidebar.sidebarActivateButton.addEventListener('click', activeSidebarHandler);
+  sidebar.sidebarInactivateButton.addEventListener('click', inactiveSidebarHandler);
+  sidebar.showHiddenSidebarListButton.addEventListener('click', showHiddenSidebarList);
+  sidebar.hideHiddenSidebarListButton.addEventListener('click', hideHiddenSidebarList);
 };
 
 main();
