@@ -1,5 +1,15 @@
 nav {
-  width: 1280px;
+  width: 1300px;
+}
+
+.dim_layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
 }
 
 #logo {
@@ -155,7 +165,7 @@ nav {
   align-items: center;
   height: 56px;
   padding: 8px 16px 8px 16px;
-  background-color: black;
+  background: black;
   color: #ffffff;
 }
 

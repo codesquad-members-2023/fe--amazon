@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amazon Clone</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="icon" href="/asset/amazon_logo.favicon.svg" />
+    <link rel="apple-touch-icon" href="/asset/amazon_logo.favicon." />
   </head>
 
   <body>
-    <header>
+    <div class="dim_layer"></div>
+    <header id="head_navigation_bar">
       <!-- 상단 네비게이션 바 -->
       <nav>
         <div class="up_nav">
@@ -135,7 +138,7 @@
         <div class="down_nav">
           <div class="down_nav_left_list">
             <ul>
-              <a href="#">
+              <a class="all_link" href="#">
                 <div>
                   <img src="asset/more.svg" />
                   <li>모두</li>
@@ -156,8 +159,244 @@
       </nav>
     </header>
 
-    <aside>
+    <div id="closeButton">
+      <a href="#">
+        <img src="asset/close_icon.svg" />
+      </a>
+    </div>
+    <aside class="sidebar">
       <!-- 좌측 사이드 메뉴 -->
+      <a href="#">
+        <header class="sidebar_header">
+          <img src="asset/login_person_icon.svg" />
+          <span>안녕하세요, 로그인</span>
+        </header>
+      </a>
+
+      <section class="sidebar_section sidebar_main_section">
+        <header class="sidebar_section_header">디지털 콘텐츠 및 기기</header>
+        <ul class="sidebar_section_list">
+          <a href="#">
+            <li>
+              <div>Amazon Music</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>Kindle E-Reader 및 도서</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>안드로이드 앱스토어</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+        </ul>
+      </section>
+
+      <section class="sidebar_section sidebar_main_section">
+        <header class="sidebar_section_header">부서별 쇼핑</header>
+        <ul class="sidebar_section_list sidebar_main_section_list">
+          <a href="#">
+            <li>
+              <div>전자</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>컴퓨터</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>Alexa 스마트 홈</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>예술 및 공예</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li class="sidebar_all_button">
+              <div>모두 보기</div>
+              <img src="asset/down_arrow_icon.svg" />
+            </li>
+          </a>
+        </ul>
+
+        <ul class="sidebar_hidden_menus">
+          <a href="#">
+            <li>
+              <div>자동차 용품</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>유아</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>뷰티 및 퍼스널 케어</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>여성 패션</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>남성 패션</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>여아용 의류</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>남아용 의류</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>건강 및 가정용품</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>가정 및 주방</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>산업용 및 과학용</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>여행 가방</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>영화 및 TV</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>애완동물 용품</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>소프트웨어</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>스포츠 및 야외 활동</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>공구 및 주택 개조</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>장난감 및 게임</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div>비디오 게임</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li class="sidebar_hidden_button">
+              <div>간단히 보기</div>
+              <img src="asset/up_arrow_icon.svg" />
+            </li>
+          </a>
+        </ul>
+      </section>
+
+      <section class="sidebar_section sidebar_detail_section">
+        <header class="sidebar_section_header">음악 스트리밍</header>
+        <ul class="sidebar_section_list">
+          <a href="#">
+            <li>
+              <div>Amazon Music Unlimited</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>Amazon Music HD</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>Podcast</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>웹 플레이어 열기</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+
+          <a href="#">
+            <li>
+              <div>Download the App</div>
+              <img src="asset/right_arrow_icon.svg" />
+            </li>
+          </a>
+        </ul>
+      </section>
     </aside>
 
     <main>
@@ -170,4 +409,6 @@
   </body>
   <script src="js/loginEvent.js"></script>
   <script src="js/shippingRegionEvent.js"></script>
+  <script src="js/sidebarEvent.js"></script>
+  <script src="js/sidebarMoveEvent.js"></script>
 </html>
