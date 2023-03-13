@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  box-shadow: 0px 3px 6px var(--color-black) (0 0 0 / 50%);
+  box-shadow: 0px 3px 6px var(--color-gray500);
   position: absolute;
   top: 55px;
   right: 120px;
@@ -50,7 +50,7 @@
   color: var(--color-gray400);
 }
 
-.login span.Accounts and lists {
+.login span.Accounts-lists {
   font-size: 13px;
   color: var(--color-white);
 }
@@ -65,4 +65,27 @@
 .login-link a {
   color: var(--color-SecondaryNavy);
   text-decoration: none;
+}
+
+.login-hover {
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 120px;
+  gap: 8px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0px 3px 6px var(--color-gray500);
+}
+
+.login-modal:hover + .login-hover {
+  display: block;
+}
+
+.login-hover-list {
+  border-top: 1px solid var(--color-gray400);
+  display: flex;
+  margin: 0 10px;
 }
