@@ -2,6 +2,8 @@
   width: 320px;
   height: 1897px;
   background-color: rgb(254, 245, 245);
+  position: fixed;
+  top: 0;
 }
 
 .sidebar-header {
@@ -28,9 +30,4 @@
   display: flex;
   padding: 20px;
   justify-content: space-between;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: var(--color-black);
 }
