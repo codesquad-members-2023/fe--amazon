@@ -40,11 +40,11 @@ const hideShippingLayer = () => {
   dimmedSection.classList.add('hidden');
 };
 
-const activateSidebar = () => {
+const activeSidebarHandler = () => {
   sidebar.classList.add('active');
 };
 
-const inactivateSidebar = () => {
+const inactiveSidebarHandler = () => {
   sidebar.classList.remove('active');
 };
 
@@ -65,8 +65,8 @@ const main = () => {
   loginSection.addEventListener('mouseleave', hideLoginExtendedLayer);
   shippingContainer.addEventListener('mouseenter', showShippingLayer);
   shippingSection.addEventListener('mouseleave', hideShippingLayer);
-  sidebarActivateButton.addEventListener('click', activateSidebar);
-  sidebarInactivateButton.addEventListener('click', inactivateSidebar);
+  sidebarActivateButton.addEventListener('click', activeSidebarHandler);
+  sidebarInactivateButton.addEventListener('click', inactiveSidebarHandler);
   showHiddenSidebarListButton.addEventListener('click', showHiddenSidebarList);
   hideHiddenSidebarListButton.addEventListener('click', hideHiddenSidebarList);
 };
