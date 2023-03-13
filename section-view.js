@@ -7,10 +7,12 @@ const sectionViewInit = () => {
 
   const dimmDivIndex2 = document.querySelector(".dimmed--zIndex2");
 
+  const SET_TIME_OUT_1000 = 1000;
+
   setTimeout(function () {
     loginSection.classList.add("visible");
     loginSection.classList.remove("hidden");
-  }, 1000);
+  }, SET_TIME_OUT_1000);
 
   const removeLoginSection = () => {
     loginSection.classList.remove("visible");

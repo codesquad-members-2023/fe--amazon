@@ -31,6 +31,8 @@ const sidebarViewInit = () => {
   const homeSideSeeAll = document.querySelector(".homeSidebar__mode--open");
   const homeSideCloseAll = document.querySelector(".homeSidebar__mode--close");
 
+  const SET_TIME_OUT_500 = 500;
+
   const openSideMore = () => {
     homeSidePlus.style.display = "block";
     homeSidePlus.classList.remove("closeAnimation");
@@ -42,7 +44,7 @@ const sidebarViewInit = () => {
     homeSidePlus.classList.add("closeAnimation");
     setTimeout(() => {
       homeSidePlus.style.display = "none";
-    }, 500);
+    }, SET_TIME_OUT_500);
   };
 
   homeSideSeeAll.addEventListener("click", openSideMore);
