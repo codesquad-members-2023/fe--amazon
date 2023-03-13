@@ -35,7 +35,7 @@ mainMenuArr.forEach((mainMenu) => {
   mainMenu.addEventListener('click', (e) => {
     if (Object.keys(sidebarData).includes(e.target.innerText)) {
       const title = e.target.innerText;
-      const data = sidebarData[e.target.innerText];
+      const data = sidebarData[title];
 
       mainMenuArr.forEach((menu) => {
         menu.style.display = 'none';

@@ -6,6 +6,19 @@ const closeButton = document.querySelector('#closeButton');
 const allButton = document.querySelector('.sidebar_all_button');
 const hiddenMenus = document.querySelector('.sidebar_hidden_menus');
 const hiddenButton = document.querySelector('.sidebar_hidden_button');
+const hoverAreaArr = document.querySelectorAll('.hover_img');
+// console.log(hoverAreaArr);
+
+const areaArr = [...hoverAreaArr].map((hoverArea) => hoverArea.parentNode);
+
+areaArr.forEach((area) => {
+  area.addEventListener('mouseover', (e) => {
+    e.target.children[1].style.filter = 'brightness(0%)';
+  });
+  area.addEventListener('mouseout', (e) => {
+    e.target.children[1].style.filter = '';
+  });
+});
 
 allLink.addEventListener('click', () => {
   sideBar.style.display = 'flex';
