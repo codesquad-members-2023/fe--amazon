@@ -3,6 +3,7 @@ const shippingMenu = document.querySelector(".nav__shipping");
 const dimmed = document.querySelector(".dim-layer");
 const subbarAll = document.querySelector(".sub__all-menu");
 const sidebar = document.querySelector(".sidebar");
+const sidebarClose = document.querySelector(".sidebar__btn_close");
 
 loginMenu.addEventListener("mouseover", () => {
   dimmed.style.display = "block";
@@ -22,4 +23,8 @@ shippingMenu.addEventListener("mouseout", () => {
 
 subbarAll.addEventListener("click", () => {
   sidebar.style.display = "block";
+});
+
+sidebarClose.addEventListener("click", () => {
+  sidebar.style.display = "none";
 });
