@@ -1,25 +1,11 @@
-@import url("./fonts.css");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* font color랑 font-size 메인 만들면서 비교해보고 header로 빼기 */
-body {
-  color: #fff;
-  font-size: 13px;
-  font-family: "Pretendard", sans-serif;
-  letter-spacing: -0.06em;
-}
-
 .header {
   background-color: #000;
   padding: 0px 16px;
   display: flex;
   flex-wrap: nowrap;
   gap: 24px;
+  color: #fff;
+  font-size: 13px;
 }
 
 .header__logo,
@@ -41,7 +27,6 @@ body {
 }
 
 .header__anchor {
-  list-style: none;
   display: flex;
   align-items: center;
 }
@@ -49,8 +34,6 @@ body {
 .header__anchor,
 .nav__anchor,
 .nav__special-offer {
-  text-decoration: none;
-  color: #fff;
   font-weight: 800;
 }
 
@@ -88,48 +71,14 @@ body {
   width: 40px;
   height: 40px;
   background-color: #fcb057;
-  border: none;
+  /* border: none; */
   border-radius: 0px 4px 4px 0px;
-}
-
-.search-form__button:hover {
-  cursor: pointer;
 }
 
 .container {
   position: relative;
   display: flex;
   align-items: center;
-}
-
-.nav {
-  background-color: #1b232f;
-  padding: 0px 16px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav__list {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.nav__item {
-  list-style: none;
-}
-
-.nav__anchor {
-  display: inline-block;
-  padding: 8px;
-}
-
-/* 글로벌로 뺀다? */
-
-/* 명시도 높이기 */
-.hidden.hidden {
-  display: none;
 }
 
 .pop-up {
@@ -147,10 +96,26 @@ body {
   z-index: 100;
 }
 
+@keyframes page-load-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .pop-up--login {
   right: 10px;
   /* top 값 바꾸기 */
   top: 54px;
+  gap: 8px;
+  animation: page-load-fade-in 250ms ease-in-out forwards;
+}
+
+.pop-up__expanded {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
@@ -208,56 +173,34 @@ body {
 
 .button--large {
   width: 160px;
-  height: 32px;
 }
 
-.seperator-line {
-  height: 1px;
-  width: 100%;
-  background-color: #eff2f2;
-}
-
-.list {
+.pop-up__list {
   color: #10141a;
   display: flex;
   justify-content: space-between;
 }
 
-.list__container {
+.list {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  white-space: nowrap;
+  width: 150px;
 }
 
 .list__label {
-  font-size: 13px;
   font-weight: 800;
   letter-spacing: -0.06em;
+  font-size: 13px;
 }
 
 .list__items {
   display: flex;
   flex-direction: column;
   gap: 4px;
-
-  list-style: none;
 }
 
 .list__item {
   width: 150px;
-}
-
-.main {
-  position: relative;
-  height: 1300px;
-}
-
-.dimmed {
-  background-color: rgba(16, 20, 26, 0.4);
-  z-index: 10;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
 }
