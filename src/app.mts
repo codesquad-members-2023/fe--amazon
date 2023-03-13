@@ -111,9 +111,12 @@ class App {
     });
     this.$wrapperDim.addEventListener('click', () => {
       this.$wrapperDim.style.zIndex = '1';
-      this.$wrapperDim.style.display = 'none';
-      this.$sidebar.style.display = 'none';
-      this.$sidebarSub.style.display = 'none';
+      [this.$wrapperDim, this.$sidebar, this.$sidebarSub].forEach((el) => {
+        el.style.display = 'none';
+      })
+      // this.$wrapperDim.style.display = 'none';
+      // this.$sidebar.style.display = 'none';
+      // this.$sidebarSub.style.display = 'none';
       this.$sidebarSubList.innerHTML =
         "<li class='sidebar-sub-list__title'></li>";
     });
@@ -140,7 +143,7 @@ class App {
         this.$sidebarSub.style.display = 'flex';
 
         const categoryName: string =
-          target.parentNode!.firstElementChild!.className.split('__')[0]!;
+          target.parentElement!.className.split('__')[1]!;
         const subCategories =
           this.subCategories[categoryName as keyof typeof this.subCategories];
         subCategories.forEach((v, i) => {
