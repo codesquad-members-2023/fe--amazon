@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+}
+
 :root {
   --color-white: #ffffff;
   --color-gray100: #eff2f2;
@@ -213,7 +217,7 @@
   height: 18px;
 }
 
-.login_pop-up_description span {
+.login_pop-up_description_text {
   display: inline;
   width: 112px;
   height: 18px;
@@ -226,7 +230,7 @@
   color: var(--color-black);
 }
 
-.login_pop-up_description a {
+.login_pop-up_description_link {
   display: inline;
   width: 88px;
   height: 18px;
@@ -262,14 +266,6 @@
   font-size: 13px;
   line-height: 16px;
 }
-
-/* .list_label_text {
-  font-family: 'Pretendard', sans-serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
-} */
 
 .login_list_item {
   font-family: 'Pretendard', sans-serif;
@@ -307,10 +303,6 @@
   justify-content: space-between;
   width: 500px;
   font-family: 'Pretendard', sans-serif;
-}
-
-li {
-  list-style: none;
 }
 
 .nav_list {
