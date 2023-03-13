@@ -45,26 +45,23 @@ class Action extends HTMLElement {
 
   setActionPosition(event, id) {
     const e = !!event.detail ? event.detail : event;
-    const docWidth = window.innerWidth;
+    const targetRect = e.target.getBoundingClientRect();
     const action = this.shadowRoot.querySelector('action-element');
-    const actionWidth = action.getBoundingClientRect().width;
-    const targetX = e.target.getBoundingClientRect().left;
-    const targetY = e.target.getBoundingClientRect().top;
-    const targetHeight = e.target.getBoundingClientRect().height;
-    const targetWidth = e.target.getBoundingClientRect().width;
-    action.style.position = 'absolute';
+    const actionRect = action.getBoundingClientRect();
 
-    const isWidthOverflowLeft = targetX - actionWidth / 2 < 0;
-    const isWidthOverflowRight = targetX + actionWidth > docWidth;
+    action.style.position = 'absolute';
+    const isWidthOverflowLeft = targetRect.left - actionRect.width / 2 < 0;
+    const isWidthOverflowRight =
+      targetRect.left + actionRect.width > window.innerWidth;
 
     if (isWidthOverflowLeft) {
       action.style.left = `16px`;
     } else if (isWidthOverflowRight) {
       action.style.right = `16px`;
     } else {
-      action.style.transform = `translateX(-${targetWidth / 2}px)`;
+      action.style.transform = `translateX(-${targetRect.width / 2}px)`;
     }
-    action.style.top = `${targetY + targetHeight}px`;
+    action.style.top = `${targetRect.top + targetRect.height}px`;
     action.translateX = '-50%';
 
     this.setPointerPosition(e, id);
@@ -73,10 +70,9 @@ class Action extends HTMLElement {
   setPointerPosition(event, id) {
     const e = !!event.detail ? event.detail : event;
     const action = this.shadowRoot.querySelector('action-element');
-    const actionX = action.getBoundingClientRect().x;
-    const targetX = e.target.getBoundingClientRect().x;
-    const targetWidth = e.target.getBoundingClientRect().width;
-    const pointerPosition = targetX - actionX + targetWidth / 2;
+    const actionRect = action.getBoundingClientRect();
+    const targetRect = e.target.getBoundingClientRect();
+    const pointerPosition = targetRect.x - actionRect.x + targetRect.width / 2;
     const wrap = this.shadowRoot
       .querySelector('action-element')
       .shadowRoot.querySelector('.wrap');
@@ -87,7 +83,6 @@ class Action extends HTMLElement {
     const wrap = this.shadowRoot
       .querySelector('action-element')
       .shadowRoot.querySelector('.wrap');
-
     wrap.style.width = `${ACTION_SIZE[id]}px`;
   }
 
