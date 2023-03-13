@@ -4,7 +4,8 @@
   "description": "- `23.03.06(Mon) ~ 23.03.10(Fri)`",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && vite build"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.4",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "vite": "^4.1.4"
   }
 }

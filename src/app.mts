@@ -1,4 +1,8 @@
+import { $ } from './utils/$.mjs';
+
 class App {
+  private readonly $: (selector: string) => HTMLElement | null;
+
   $userAccount: HTMLElement;
   $login: HTMLElement;
   $userExpansion: HTMLElement;
@@ -39,6 +43,7 @@ class App {
   };
 
   constructor() {
+    this.$ = $;
     // toggleExpandLogin 관련
     this.$userAccount = this.$('.user-account')!;
     this.$login = this.$('.login')!;
@@ -66,9 +71,9 @@ class App {
     this.$sidebarSubList = this.$('.sidebar-sub-list')!;
   }
 
-  private $(selector: string): HTMLElement | null {
-    return document.querySelector(selector);
-  }
+  // private $(selector: string): HTMLElement | null {
+  //   return document.querySelector(selector);
+  // }
 
   toggleExpandLogin() {
     this.$login.addEventListener('mouseenter', () => {
@@ -104,7 +109,7 @@ class App {
       this.$wrapperDim.style.display = 'block';
       this.$wrapperDim.style.zIndex = '3';
     });
-    this.$wrapperDim.addEventListener('click', (e) => {
+    this.$wrapperDim.addEventListener('click', () => {
       this.$wrapperDim.style.zIndex = '1';
       this.$wrapperDim.style.display = 'none';
       this.$sidebar.style.display = 'none';
