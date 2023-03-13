@@ -57,9 +57,10 @@ const hideHiddenSidebarList = () => {
 };
 
 const main = () => {
+  const loadingTime = 1000;
   setTimeout(() => {
     showLoginInitLayer();
-  }, 1000);
+  }, loadingTime);
   loginContainer.addEventListener('mouseenter', showLoginExtendedLayer);
   loginSection.addEventListener('mouseleave', hideLoginExtendedLayer);
   shippingContainer.addEventListener('mouseenter', showShippingLayer);
