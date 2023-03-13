@@ -87,7 +87,7 @@ li {
   cursor: pointer;
 }
 
-.search_button img {
+.search_button_icon {
   display: block;
   background-color: var(--color-primaryOrange200);
 }
@@ -116,7 +116,7 @@ li {
   right: 100px;
 }
 
-.shipping_pop-up_contents span {
+.shipping_pop-up_contents_text {
   display: block;
   font-family: 'Pretendard';
   font-style: normal;
@@ -311,7 +311,7 @@ li {
   padding: 0px;
 }
 
-.nav_list a {
+.nav_list_link {
   text-align: center;
   text-decoration: none;
   color: inherit;
