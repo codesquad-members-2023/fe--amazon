@@ -44,7 +44,7 @@
   gap: 24px;
 }
 
-#shipping_image {
+.shipping_image {
   width: 12px;
   height: 12px;
 }
@@ -247,7 +247,7 @@
   background-color: var(--color-gray100);
 }
 
-.list_container {
+.login_list_container {
   /* display: none; */
   display: flex;
   justify-content: space-evenly;
@@ -255,7 +255,7 @@
   height: 195px;
 }
 
-.list_label {
+.login_list_label {
   font-family: 'Pretendard', sans-serif;
   font-style: normal;
   font-weight: 800;
@@ -263,15 +263,15 @@
   line-height: 16px;
 }
 
-.list_label_text {
+/* .list_label_text {
   font-family: 'Pretendard', sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 13px;
   line-height: 16px;
-}
+} */
 
-.list_item {
+.login_list_item {
   font-family: 'Pretendard', sans-serif;
   font-style: normal;
   font-weight: 500;

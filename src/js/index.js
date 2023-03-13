@@ -2,7 +2,7 @@ const loginSection = document.querySelector('.login_section');
 const loginContainer = document.querySelector('.login_container');
 const loginPopup = document.querySelector('.login_pop-up');
 const dividingLine = document.querySelector('.dividing_line');
-const listContainer = document.querySelector('.list_container');
+const loginListContainer = document.querySelector('.login_list_container');
 const shippingSection = document.querySelector('.shipping_section');
 const shippingContainer = document.querySelector('.shipping_container');
 const shippingPopup = document.querySelector('.shipping_pop-up');
@@ -21,7 +21,7 @@ const showLoginInitLayer = () => {
 const showLoginExtendedLayer = () => {
   loginPopup.classList.remove('hidden');
   dividingLine.classList.remove('hidden');
-  listContainer.classList.remove('hidden');
+  loginListContainer.classList.remove('hidden');
   dimmedSection.classList.remove('hidden');
 };
 
