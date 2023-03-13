@@ -25,8 +25,9 @@ const showLoginExtendedLayer = () => {
   dimmedSection.classList.remove('hidden');
 };
 
-const hideLoginExtendedLayer = () => {
+const hideLayer = () => {
   loginPopup.classList.add('hidden');
+  shippingPopup.classList.add('hidden');
   dimmedSection.classList.add('hidden');
 };
 
@@ -34,10 +35,6 @@ const showShippingLayer = () => {
   shippingPopup.classList.remove('hidden');
   loginPopup.classList.add('hidden');
   dimmedSection.classList.remove('hidden');
-};
-const hideShippingLayer = () => {
-  shippingPopup.classList.add('hidden');
-  dimmedSection.classList.add('hidden');
 };
 
 const activeSidebarHandler = () => {
@@ -62,9 +59,9 @@ const main = () => {
     showLoginInitLayer();
   }, loadingTime);
   loginContainer.addEventListener('mouseenter', showLoginExtendedLayer);
-  loginSection.addEventListener('mouseleave', hideLoginExtendedLayer);
+  loginSection.addEventListener('mouseleave', hideLayer);
   shippingContainer.addEventListener('mouseenter', showShippingLayer);
-  shippingSection.addEventListener('mouseleave', hideShippingLayer);
+  shippingSection.addEventListener('mouseleave', hideLayer);
   sidebarActivateButton.addEventListener('click', activeSidebarHandler);
   sidebarInactivateButton.addEventListener('click', inactiveSidebarHandler);
   showHiddenSidebarListButton.addEventListener('click', showHiddenSidebarList);
