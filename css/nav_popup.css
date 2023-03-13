@@ -1,3 +1,4 @@
+
 .nav__shipping:hover .nav__shipping_popup{
     display: flex;
 }
@@ -69,8 +70,8 @@
     position: absolute;
     width: 235px;
     height: 100px;
-    left: 873px;
-    top: 48px;
+    left: -170px;
+    top: 44px;
     animation: slowshow 1s forwards;
     animation-delay: 1s;
 }
@@ -79,7 +80,7 @@
     width: 18.93px;
     height: 18.93px;
     background: #FFFFFF;
-    margin-left: 170px;
+    margin-left: 200px;
     transform: rotate(45deg);
 }
 .nav__login_popup-box{
@@ -156,4 +157,5 @@
     top:0px;
     left: 0px;
     display: none;
+    z-index: 0;
 }
