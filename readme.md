@@ -8,7 +8,6 @@
   - flex, grid
 - CSS
   - BEM
-  - Scss
 - HTML, CSS 디버깅
 - branch, commit 올바른 분리
 - 코딩 컨밴션
@@ -137,6 +136,43 @@ div {
 
 ### 웹 사이트 접속 시 브라우저의 렌더링 과정(예정)
 
+## 🪵 Reference
+
+- [Naver Coding Convention](https://github.com/naver/eslint-config-naver/blob/master/STYLE_GUIDE.md)
+- [CSS BEM](https://nykim.work/15)
+- [HTML elements & attributes](https://heropy.blog/2019/05/26/html-elements/)
+- [Box-model: content-box vs border-box](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
+- [reset css과 normalize css](https://www.daleseo.com/css-normalize-reset/)
+- [css 상속(inheritance)과 적용 우선 순위(cascading)](https://poiemaweb.com/css3-inheritance-cascading)
+- [css media query](https://www.daleseo.com/css-media-queries/)
+
+# 🪴 Jayden's Week-02
+
+- `23.03.13(Mon) ~ 23.03.17(Fri)`
+
+## 🌵 Jayden's Keywords
+
+- CSS
+  - SCSS, 그 외 다른 CSS 라이브러리
+- DOM api
+- Vite 번들러
+
+## 🌴 Jayden's Rules
+
+- DOM api를 명확히 알고 사용한다.
+- 최대한 DOM 조작에서 안전한 js 코드를 짠다.
+- 리팩토링에 많은 공을 들여보자!!!
+
+## 🌲 Jayden's Check List
+
+- [x] readme 작성하기
+- [x] sidebar
+  - [x] 항목 접기/펼치기
+  - [x] 하위 메뉴 영역 노출
+- [ ] `리팩토링`(변수명, 함수 분리 등)
+
+## 🌳 Jayden's Organization
+
 ### DOM api가 존재하는 이유
 
 - DOM Tree를 탐색하기 위해 JS로 탐색 알고리즘을 구현하면 너무 힘고 번거롭다.
@@ -154,7 +190,7 @@ div {
 - 발생한 이벤트에 대한 리스너를 버블링(혹은 캡쳐링)을 이용해서 상위 태그에 달아서 이벤트에 따른 함수를 실행하는 방법
   - 버블링: 이벤트가 발생한 요소에서 상위 요소로 가는 단계
   - 캡쳐링: 상위 요소에서 이벤트가 발생한 요소로 가는 단계
-  - 캡쳐링은 이용할 일이 거의 없고, 주로 버블링을 통한 이벤트 위임을 사용한다.
+  - 캡쳐링은 사용할 일이 거의 없고, 주로 버블링을 통한 이벤트 위임을 사용한다.
 
 ### `stopPropagation` vs `preventDefault`
 
@@ -163,12 +199,5 @@ div {
 
 ## 🪵 Reference
 
-- [Naver Coding Convention](https://github.com/naver/eslint-config-naver/blob/master/STYLE_GUIDE.md)
-- [CSS BEM](https://nykim.work/15)
-- [HTML elements & attributes](https://heropy.blog/2019/05/26/html-elements/)
-- [Box-model: content-box vs border-box](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
-- [reset css과 normalize css](https://www.daleseo.com/css-normalize-reset/)
-- [css 상속(inheritance)과 적용 우선 순위(cascading)](https://poiemaweb.com/css3-inheritance-cascading)
-- [css media query](https://www.daleseo.com/css-media-queries/)
 - [이벤트 위임](https://www.grapecity.com/blogs/html-and-wijmo-events/)
 - [stopPropagation vs preventDefault](https://ismydream.tistory.com/98)

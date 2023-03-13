@@ -1,4 +1,4 @@
-import { $ } from './utils/$.mjs';
+import $ from './utils/$.mjs'
 
 class App {
   private readonly $: (selector: string) => HTMLElement | null;
