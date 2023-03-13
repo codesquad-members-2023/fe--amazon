@@ -1,0 +1,40 @@
+.homeMenu {
+  background-color: #222f3e;
+  color: white;
+  width: 100%;
+  min-width: 800px;
+  margin: 0 auto;
+  height: 32px;
+  z-index: 3;
+  position: sticky;
+  display: flex;
+  align-items: center;
+}
+
+.homeMenu__lists {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding: 0px 16px;
+  cursor: pointer;
+}
+
+.homeMenu__lists li:hover {
+  font-weight: 800;
+}
+
+.homeMenu__todaySale {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.homeMenu__lists li {
+  padding: 3px;
+  margin: 0px 10px;
+}
+
+.homeMenu__lists li:first-child i {
+  margin-right: 8px;
+}

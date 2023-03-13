@@ -1,0 +1,159 @@
+.homeSidebar {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed;
+  width: 320px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 6;
+  background-color: #ffffff;
+  box-shadow: 0px 3px 6px rgba(0 0 0 / 50%);
+  overflow-y: scroll;
+}
+
+.homeSidebar__lists {
+  font-size: 13px;
+  height: 100%;
+  width: 100%;
+}
+
+.homeSidebar__lists li {
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  height: 30px;
+}
+
+.homeSidebar__login {
+  background-color: #222f3e;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 21px;
+  flex: none;
+  cursor: pointer;
+}
+
+.homeSidebar__login i {
+  margin-right: 10px;
+}
+
+.homeSidebar__title {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.homeSidebar__subTitle {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.homeSidebar__subTitle:hover {
+  background-color: #eaeded;
+  font-weight: 800;
+}
+
+.homeSidebar__subTitle i,
+.homeSidebar__mode--open i,
+.homeSidebar__mode--close i {
+  color: #878787;
+}
+
+.homeSidebar__mode--open i,
+.homeSidebar__mode--close i {
+  margin-left: 10px;
+}
+
+.homeSidebar__mode--open:hover,
+.homeSidebar__mode--close:hover {
+  font-weight: 800;
+}
+
+.hoverIcon:hover i {
+  color: black;
+}
+
+.homeSidebar__mode--open,
+.homeSidebar__mode--close {
+  border-bottom: solid 1px #eff2f2;
+}
+
+.homeSidebar__title {
+  border-top: solid 1px #eff2f2;
+}
+
+.homeSidebar__lists li:last-child {
+  cursor: pointer;
+}
+
+.homeSidebar__closeBtn {
+  color: white;
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  cursor: pointer;
+}
+
+.showAnimation {
+  will-change: transform;
+  animation: showSidebarSoft 1s ease-in-out forwards;
+}
+
+.hideAnimation {
+  will-change: transform;
+  animation: hideSidebarSoft 1s ease-in-out forwards;
+}
+
+@keyframes showSidebarSoft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hideSidebarSoft {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.hideLists {
+  display: none;
+}
+
+.openAnimation {
+  animation: openTopToBottom 0.5s ease-out forwards;
+}
+
+.closeAnimation {
+  animation: closeBottomToTop 0.5s ease-in forwards;
+}
+
+@keyframes openTopToBottom {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 100%;
+  }
+}
+
+@keyframes closeBottomToTop {
+  from {
+    max-height: 100%;
+  }
+  to {
+    max-height: 0;
+  }
+}
