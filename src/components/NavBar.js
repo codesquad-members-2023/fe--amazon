@@ -15,7 +15,7 @@ class Navbar extends HTMLElement {
       </div>
       <div class="sub">
         <div class="left-buttons">
-          <navbar-submenu-element icon="menu"><span class="bold">모두</span></navbar-submenu-element>
+          <navbar-submenu-element icon="menu" id="showAllBtn"><span class="bold">모두</span></navbar-submenu-element>
           <navbar-submenu-element><span>오늘의 딜</span></navbar-submenu-element>
           <navbar-submenu-element><span>고객 서비스</span></navbar-submenu-element>
           <navbar-submenu-element><span>레지스터리</span></navbar-submenu-element>

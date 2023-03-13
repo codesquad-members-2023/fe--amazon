@@ -10,8 +10,18 @@ import Image from './Image.js';
 import TextInput from './TextInput.js';
 import Action from './Action.js';
 import LoginAction from './Action/LoginAction.js';
-import LoginActionWithFooter from './Action/LoginActionWithFooter.js';
 import ChangeAdressAction from './Action/ChangeAddressAction.js';
+import Backdrop from './Backdrop.js';
+import SideBarBack from './Sidebar/SidebarBack.js';
+import SidebarCategory from './Sidebar/SidebarCategory.js';
+import SidebarFold from './Sidebar/SidebarFold.js';
+import SidebarUnfold from './Sidebar/SidebarUnFold.js';
+import SidebarHeader from './Sidebar/SidebarHeader.js';
+import SideBarList from './Sidebar/SidebarList.js';
+import SideBarTitle from './Sidebar/SidebarTitle.js';
+import SidebarMain from './Sidebar/SidebarMain.js';
+import SidebarSub from './Sidebar/SidebarSub.js';
+import SidebarSubContent from './Sidebar/SidebarSubContent.js';
 
 customElements.define('btn-element', Button);
 customElements.define('footer-element', Footer);
@@ -25,8 +35,15 @@ customElements.define('image-element', Image);
 customElements.define('text-input-element', TextInput);
 customElements.define('action-element', Action);
 customElements.define('login-action-element', LoginAction);
-customElements.define(
-  'login-action-with-footer-element',
-  LoginActionWithFooter
-);
 customElements.define('change-address-action-element', ChangeAdressAction);
+customElements.define('backdrop-element', Backdrop);
+customElements.define('sidebar-back-element', SideBarBack);
+customElements.define('sidebar-category-element', SidebarCategory);
+customElements.define('sidebar-fold-element', SidebarFold);
+customElements.define('sidebar-header-element', SidebarHeader);
+customElements.define('sidebar-list-element', SideBarList);
+customElements.define('sidebar-title-element', SideBarTitle);
+customElements.define('sidebar-main-element', SidebarMain);
+customElements.define('sidebar-sub-element', SidebarSub);
+customElements.define('sidebar-unfold-element', SidebarUnfold);
+customElements.define('sidebar-sub-content-element', SidebarSubContent);
