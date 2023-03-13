@@ -1,0 +1,36 @@
+.sidebar {
+  width: 320px;
+  height: 1897px;
+  background-color: rgb(254, 245, 245);
+}
+
+.sidebar-header {
+  display: flex;
+  background-color: var(--color-black);
+  width: 320px;
+  height: 53px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-header span {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.sidebar-menu {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.sidebar li {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: var(--color-black);
+}
