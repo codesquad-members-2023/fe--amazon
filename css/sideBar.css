@@ -90,21 +90,23 @@
 
 /* sub menu */
 
-.submenu.show-sub-menu {
+.submenu-container.show-sub-menu {
   left: 0;
+}
+
+.submenu-container {
+  width: 320px;
+  position: absolute;
+  top: 0;
+  left: 320px;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  transition: left 250ms ease-in-out;
 }
 
 .submenu {
   width: 320px;
-  position: absolute;
-  left: 320px;
-  top: 0;
-  height: 100%;
-  background-color: #fff;
-
-  z-index: 1000;
-
-  transition: left 250ms ease-in-out;
 }
 
 .submenu__back {
