@@ -1,27 +1,51 @@
-@keyframes show {
+@keyframes open_side_bar {
   from {
-    left: -320px;
+    left: -374px;
   }
   to {
     left: 0;
   }
 }
-.show {
-  animation: show 1s ease-in forwards;
+@keyframes close_side_bar {
+  from {
+    left: 0;
+  }
+  to {
+    left: -374px;
+  }
 }
+
+.open_side_bar {
+  animation: open_side_bar 1s ease-in-out forwards;
+}
+.close_side_bar {
+  animation: close_side_bar 1s ease-in-out forwards;
+}
+
+.close_side_bar_btn {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: -30px;
+  top: 8px;
+}
+
 .side_bar {
+  width: 320px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -374px;
+}
+.side_bar_main {
   width: 320px;
   height: 100%;
   background-color: #ffffff;
   color: #10141a;
 
-  position: fixed;
-  top: 0;
-  left: -320px;
-
   overflow-y: scroll;
 }
-.side_bar > header,
+.side_bar_main > header,
 .digital_content_and_devices > header,
 .shopping_category > header {
   height: 53px;
@@ -33,7 +57,7 @@
   font-size: 18px;
   line-height: 21px;
 }
-.side_bar li {
+.side_bar_main li {
   height: 40px;
   padding: 8px 16px 8px 32px;
 

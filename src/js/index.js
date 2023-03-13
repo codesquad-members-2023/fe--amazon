@@ -15,8 +15,15 @@ const main = () => {
 
   const $sideBarBtn = $('.side_bar_btn');
   const $sideBar = $('.side_bar');
+  const $closeSideBarBtn = $('.close_side_bar_btn', $sideBar);
+
   $sideBarBtn.addEventListener('click', () => {
-    $sideBar.classList.add('show');
+    if ($sideBar.classList.contains('close_side_bar')) $sideBar.classList.remove('close_side_bar');
+    $sideBar.classList.add('open_side_bar');
+  });
+  $closeSideBarBtn.addEventListener('click', () => {
+    if ($sideBar.classList.contains('open_side_bar')) $sideBar.classList.remove('open_side_bar');
+    $sideBar.classList.add('close_side_bar');
   });
 };
 
