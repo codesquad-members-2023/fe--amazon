@@ -101,6 +101,7 @@
 .nav__login_popup-box:hover .nav__login_popup_extension{
     display: block;
 }
+
 .nav__login_popup_extension{
     display: none;
 }
@@ -142,12 +143,17 @@
     background: linear-gradient(174.6deg, #FFFFFF 4.31%, #FED15F 50.01%, #FEBE30 95.71%);
     border: 1px solid #DE9408;
     border-radius: 4px;
-
 }
 
 .login_popup_text_click{
     color: #074099;
 }
-.nav__shipping_popup{
-
+.dim-layer{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top:0px;
+    left: 0px;
+    display: none;
 }
