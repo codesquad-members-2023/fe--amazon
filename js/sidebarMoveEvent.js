@@ -4,6 +4,8 @@ let mainMenuArr = document.querySelectorAll('.sidebar_main_section');
 const sidebar = document.querySelector('.sidebar');
 const sidebarData = SIDEBAR_DETAIL.SIDEBAR_DETAIL;
 
+let mainMenuElement = null;
+
 function createHTML(title, data) {
   let htmlForm = `
   <section class="sidebar_section sidebar_detail_section">
@@ -21,7 +23,6 @@ function createHTML(title, data) {
     htmlForm += `<a href="#">
     <li>
     <div>${menuName}</div>
-    <img src="asset/right_arrow_icon.svg" />
     </li>
     </a>`;
   });
@@ -32,21 +33,24 @@ function createHTML(title, data) {
 
 mainMenuArr.forEach((mainMenu) => {
   mainMenu.addEventListener('click', (e) => {
-    console.log(e.target, e.currentTarget);
-    if (
-      !e.target.innerText.includes('모두 보기') &&
-      e.target.innerText !== '간단히 보기'
-    ) {
+    if (Object.keys(sidebarData).includes(e.target.innerText)) {
       const title = e.target.innerText;
       const data = sidebarData[e.target.innerText];
 
       mainMenuArr.forEach((menu) => {
         menu.style.display = 'none';
-        // menu.style.opacity = 0;
-        // menu.style['z-index'] = '-2';
       });
 
-      sidebar.innerHTML += createHTML(title, data);
+      if (mainMenuElement !== null) {
+        // 만약 이미 상세메뉴를 한번 갔다왔다면... 상세메뉴를 child에 넣어놨다면...
+        const detailMenu = document.querySelector('.sidebar_detail_section');
+        detailMenu.parentNode.removeChild(detailMenu);
+      }
+
+      mainMenuElement = document.createElement('section');
+      mainMenuElement.innerHTML = createHTML(title, data);
+      sidebar.appendChild(mainMenuElement);
+
       const detailMenu = document.querySelector('.sidebar_detail_section');
       detailMenu.style.animation = 'appearDetail 0.5s forwards';
       detailMenu.style.display = 'block';
@@ -55,11 +59,11 @@ mainMenuArr.forEach((mainMenu) => {
       backButton.addEventListener('click', () => {
         detailMenu.style.display = 'none';
         mainMenuArr = document.querySelectorAll('.sidebar_main_section');
+        // 이렇게 하면 click 이벤트가 없어진다. 이 코드 없이 밑에걸 렌더링 해야한다....
+        // 하지만 스눕의 element를 저장해뒀다가 appendChild 해줌으로써 해결해버렸다.
+        // 스눕 짱!
         mainMenuArr.forEach((mainMenu) => {
           mainMenu.style.display = 'block';
-          // console.log(mainMenu);
-          // mainMenu.style.opacity = 1;
-          // mainMenu.style['z-index'] = '';
           mainMenu.style.animation = 'hideDetail 0.5s forwards';
         });
       });
