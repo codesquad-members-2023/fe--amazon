@@ -6,7 +6,7 @@ class SidebarMain extends HTMLElement {
     super();
 
     const shadow = this.attachShadow({ mode: 'open' });
-    this.isOpen = false;
+
     const dividingNum = 4;
 
     shadow.innerHTML = `

@@ -9,7 +9,6 @@ class Action extends HTMLElement {
     const mainBtn = this.getAttribute('mainBtn');
     const subBtn = this.getAttribute('subBtn');
     const shadow = this.attachShadow({ mode: 'open' });
-    this.isOpen = false;
 
     shadow.innerHTML = `
       <div class="wrap">
@@ -43,12 +42,25 @@ class Action extends HTMLElement {
     this.shadowRoot.append(actionStyle(id));
   }
 
-  setActionPosition(event, id) {
-    const e = !!event.detail ? event.detail : event;
-    const targetRect = e.target.getBoundingClientRect();
+  showAction(eventTarget, id) {
+    eventTarget.shadowRoot.append(this);
+    this.backdrop = document.createElement('backdrop-element');
+    document.body.append(this.backdrop);
+
+    this.setWidth(id);
+    this.setActionPosition(eventTarget);
+    this.setPointerPosition(eventTarget, id);
+  }
+
+  closeAction() {
+    this.remove();
+    this.backdrop.remove();
+  }
+
+  setActionPosition(eventTarget) {
+    const targetRect = eventTarget.getBoundingClientRect();
     const action = this.shadowRoot.querySelector('action-element');
     const actionRect = action.getBoundingClientRect();
-
     action.style.position = 'absolute';
     const isWidthOverflowLeft = targetRect.left - actionRect.width / 2 < 0;
     const isWidthOverflowRight =
@@ -63,15 +75,12 @@ class Action extends HTMLElement {
     }
     action.style.top = `${targetRect.top + targetRect.height}px`;
     action.translateX = '-50%';
-
-    this.setPointerPosition(e, id);
   }
 
-  setPointerPosition(event, id) {
-    const e = !!event.detail ? event.detail : event;
+  setPointerPosition(eventTarget, id) {
     const action = this.shadowRoot.querySelector('action-element');
     const actionRect = action.getBoundingClientRect();
-    const targetRect = e.target.getBoundingClientRect();
+    const targetRect = eventTarget.getBoundingClientRect();
     const pointerPosition = targetRect.x - actionRect.x + targetRect.width / 2;
     const wrap = this.shadowRoot
       .querySelector('action-element')
@@ -84,21 +93,6 @@ class Action extends HTMLElement {
       .querySelector('action-element')
       .shadowRoot.querySelector('.wrap');
     wrap.style.width = `${ACTION_SIZE[id]}px`;
-  }
-
-  showAction(e, id) {
-    e.detail.target.shadowRoot.append(this);
-    this.backdrop = document.createElement('backdrop-element');
-    document.body.append(this.backdrop);
-    this.isOpen = true;
-    this.setWidth(id);
-    this.setActionPosition(e, id);
-  }
-
-  closeAction() {
-    this.remove();
-    this.isOpen = false;
-    this.backdrop.remove();
   }
 }
 

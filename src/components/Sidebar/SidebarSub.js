@@ -5,7 +5,7 @@ class SidebarSub extends HTMLElement {
     super();
 
     const shadow = this.attachShadow({ mode: 'open' });
-    this.isOpen = false;
+
     shadow.innerHTML = `
       <sidebar-back-element></sidebar-back-element>
       <div id="sidebar-sub-content"></div>

@@ -5,8 +5,6 @@ class SidebarSub extends HTMLElement {
     super();
 
     const shadow = this.attachShadow({ mode: 'open' });
-    this.isOpen = false;
-
     shadow.innerHTML = `
       ${submenus
         .map((submenu) => {
