@@ -1,3 +1,5 @@
+import imageStyle from '../styles/components/image.js';
+
 class Image extends HTMLElement {
   constructor() {
     super();
@@ -29,7 +31,7 @@ class Image extends HTMLElement {
             ? svg.replace(/fill=\".+\"/g, `fill="${this.getAttribute('fill')}"`)
             : svg;
 
-          this.shadowRoot.append(this.getStyle());
+          this.shadowRoot.append(imageStyle(width, height));
         })
         .catch((error) => console.error(error));
     } else {
@@ -37,20 +39,6 @@ class Image extends HTMLElement {
       img.src = `public/assets/images/${name}.${extension}`;
       shadow.appendChild(img);
     }
-  }
-
-  getStyle() {
-    const style = document.createElement('style');
-    const width = this.width;
-    const height = this.height;
-
-    style.textContent = `
-      :host {
-        display: inline-block;
-        ${width && height ? `width: ${width}px; height: ${height}px` : ''};
-      }
-    `;
-    return style;
   }
 }
 

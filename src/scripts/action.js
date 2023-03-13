@@ -14,13 +14,7 @@ function runLoginAction() {
   const loginAction = new LoginAction(id, false);
   loginActionElement = loginAction;
 
-  const e = new CustomEvent('open-login-action', {
-    bubbles: true,
-    cancelable: true,
-    detail: { target: loginBtn },
-  });
-
-  loginAction.showAction(e, id);
+  loginAction.showAction(loginBtn, id);
   setTimeout(() => {
     loginAction.closeAction();
   }, 1000);
@@ -39,16 +33,9 @@ function hoverSelectAddressBtn() {
 
     const id = ID.CHANGE_ADDRESS_ACTION;
     changeAddressActionElement = new ChangeAdressAction(id);
+    changeAddressActionElement.showAction(selectAddressBtn, id);
 
-    const e = new CustomEvent('open-change-address-action', {
-      bubbles: true,
-      cancelable: true,
-      detail: { target: selectAddressBtn },
-    });
-
-    changeAddressActionElement.showAction(e, id);
-
-    selectAddressBtn.addEventListener('mouseleave', (e) => {
+    selectAddressBtn.addEventListener('mouseleave', () => {
       changeAddressActionElement?.closeAction();
       changeAddressActionElement = null;
     });
@@ -65,14 +52,9 @@ function hoverLoginBtn() {
     }
     const id = ID.LOGIN_ACTION_WITH_FOOTER;
     const loginActionWithFooter = new LoginAction(id, true);
-    const e = new CustomEvent('open-change-address-action', {
-      bubbles: true,
-      cancelable: true,
-      detail: { target: loginBtn },
-    });
-    loginActionWithFooter.showAction(e, id);
+    loginActionWithFooter.showAction(loginBtn, id);
 
-    loginBtn.addEventListener('mouseleave', (e) => {
+    loginBtn.addEventListener('mouseleave', () => {
       loginActionWithFooter.closeAction();
     });
   });

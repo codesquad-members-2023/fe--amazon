@@ -1,19 +1,7 @@
-class SidebarFold extends HTMLElement {
-  constructor() {
-    super();
+export default function sidebarFoldStyle() {
+  const style = document.createElement('style');
 
-    const text = this.innerText;
-    const shadow = this.attachShadow({ mode: 'open' });
-
-    shadow.innerHTML = `<button>모두 보기<icon-element name="chevron-down" fill="var(--gray-600)"></icon-element></button>`;
-    this.shadowRoot.append(this.getStyle());
-  }
-
-  getStyle() {
-    const style = document.createElement('style');
-    const type = this.getAttribute('type');
-
-    style.textContent = `
+  style.textContent = `
       button {
         display: flex;
         flex-direction: row;
@@ -37,8 +25,5 @@ class SidebarFold extends HTMLElement {
         cursor: pointer;
       }
     `;
-    return style;
-  }
+  return style;
 }
-
-export default SidebarFold;
