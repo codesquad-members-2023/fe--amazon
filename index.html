@@ -233,7 +233,13 @@
           <a href="#">
             <li class="sidebar_all_button">
               <div>모두 보기</div>
-              <img src="asset/down_arrow_icon.svg" />
+              <object
+                id="svg-object"
+                type="image/svg+xml"
+                data="asset/down_arrow_icon.svg"
+              >
+                <img />
+              </object>
             </li>
           </a>
         </ul>
@@ -359,6 +365,13 @@
       </section>
 
       <section class="sidebar_section sidebar_detail_section">
+        <a href="#">
+          <div class="sidebar_detail_back_button">
+            <img src="asset/left_arrow_icon.svg" />
+            <span>주메뉴</span>
+          </div>
+        </a>
+
         <header class="sidebar_section_header">음악 스트리밍</header>
         <ul class="sidebar_section_list">
           <a href="#">
