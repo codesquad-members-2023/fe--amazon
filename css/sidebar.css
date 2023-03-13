@@ -1,10 +1,14 @@
-.sidebar{
+
+.sidebar-box{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 320px;
     height: 100%;
     background: #FFFFFF;
+    top:0px;
+    left: 0px;
+    position: fixed;
 }
 
 .sidebar__color {
@@ -56,4 +60,21 @@
 }
 .sidebar_line{
     background: #EFF2F2;
+}
+
+.sidebar__btn_close:before,.sidebar__btn_close:after{
+    content:'';
+    width:20px;
+    height:1px;
+    position:absolute;
+    left:335px;
+    top: 18px;
+    border-radius:4px;
+    background:#000
+}
+.sidebar__btn_close:before{
+    transform:translate(-50%,-50%) rotate(-45deg)
+}
+.sidebar__btn_close:after{
+    transform:translate(-50%,-50%) rotate(45deg)
 }
