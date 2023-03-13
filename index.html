@@ -1,57 +1,83 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon</title>
-    <link rel="stylesheet" href="./src/css/index.css">
-  </head>
-  <body>
-    <header id="nav">
-      <div class="nav_main">
-        <div class="amazon_icon"><img src="./src/image/logo.svg" alt="amazon logo"></img></div>
-        <div class="shipping_address">
-          <div class="shipping_address_icon_text">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon</title>
+  <link rel="stylesheet" href="./src/css/index.css">
+</head>
+
+<body>
+  <header class="nav">
+    <div id="nav_main">
+      <img id="amazon_icon" src="./src/image/logo.svg" alt="amazon logo"></img>
+      <div class="shipping_address">
+        <div class="shipping_address_section cursor">
+          <div class="shipping_address_top">
             <img src="./src/image/location.svg" alt="location icon">
             <span class="nav_main_top_text">배송처</span>
           </div>
           <span class="nav_main_bottom_text">대한민국</span>
         </div>
-        <form class="header_search_form">
-          <input type="text" id="searchFormInput" placeholder="검색 Amazon">
-          <button type="submit" id="searchFormBtn"><img src="./src/image/search.svg"
-              alt="search form submit button icon"></button>
-        </form>
-        <a class="flag" href="">
-          <img src="./src/image/flag.svg" alt="flag">
-          <span class="nav_main_bottom_text">KO</span>
-        </a>
-        <a class="login" href="">
+        <section class="shipping_address_modal">
+          <div class="triangle"></div>
+          <span>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</span>
+          <div class="shipping_address_modal_btns">
+            <div class="shipping_address_modal_btn modal_btn">계속</div>
+            <div class="shipping_address_modal_btn modal_btn">주소 변경</div>
+          </div>
+        </section>
+      </div>
+      <form class="nav_main_search_form">
+        <input type="text" class="searchFormInput" placeholder="검색 Amazon">
+        <button type="submit" class="searchFormBtn">
+          <img src="./src/image/search.svg" alt="search form submit button icon">
+        </button>
+      </form>
+      <div class="flag">
+        <img src="./src/image/flag.svg" alt="flag">
+        <span class="nav_main_bottom_text">KO</span>
+      </div>
+      <div class="login">
+        <div class="login_section cursor">
           <span class="nav_main_top_text">안녕하세요, 로그인</span>
           <span class="nav_main_bottom_text">계정 및 목록</span>
-        </a>
-        <a class="my_page" href="">
-          <span class="nav_main_top_text">반품</span>
-          <span class="nav_main_bottom_text">&주문</span>
-        </a>
-        <a class="cart" href=""><img src="./src/image/cart.svg" alt="cart icon"><span class="nav_main_bottom_text">장바구니</span></a>
-      </div>
-      <div class="nav_sub">
-        <ul class="nav_sub_left_buttons">
-          <li><a href=""></a><img src="./src/image/menu.svg" alt="menu icon"><span class="menu_title nav_main_bottom_text">모두</span></li>
-          <li><a href="">오늘의 딜</a></li>
-          <li><a href="">고객 서비스</a></li>
-          <li><a href="">레지스토리</a></li>
-          <li><a href="">기프트 카드</a></li>
-          <li><a href="">판매</a></li>
-        </ul>
-        <div class="nav_sub_right_button">
-          <a href="">지금 특가 상품 쇼핑하기</a>
         </div>
+        <section class="login_modal">
+          <div class="triangle"></div>
+          <div class="modal_btn">로그인</div>
+          <div class="login_modal_bottom">
+            <span>기존 사용자가 아니십니까?</span>
+            <span>여기에서 시작합니다</span>
+          </div>
+        </section>
       </div>
-    </header>
-    <section id="main_content"></section>
-    <footer id="footer"></footer>
-  </body>
+      <div class="my_page">
+        <span class="nav_main_top_text">반품</span>
+        <span class="nav_main_bottom_text">&주문</span>
+      </div>
+      <div class="cart">
+        <img src="./src/image/cart.svg" alt="cart icon">
+        <span class="nav_main_bottom_text">장바구니</span>
+      </div>
+    </div>
+    <div id="nav_sub">
+      <div class="nav_sub_left_btns nav_sub_left_text">
+        <span class="side_bar cursor">
+          <img src="./src/image/menu.svg" alt="menu icon">모두 </span>
+        <a href="">오늘의 딜</a>
+        <a href="">고객 서비스</a>
+        <a href="">레지스토리</a>
+        <a href="">기프트 카드</a>
+        <a href="">판매</a>
+      </div>
+      <a class="nav_sub_right_btn" href="">지금 특가 상품 쇼핑하기</a>
+    </div>
+  </header>
+  <section id="main_content"></section>
+  <footer id="footer"></footer>
+</body>
+
 </html>
