@@ -1,3 +1,5 @@
+@import url(valuables.css);
+
 .sidebar-elements {
   display: block;
   position: absolute;
@@ -10,7 +12,7 @@
 
   height: 100vh;
   width: 35vh;
-  background-color: #FFFFFF;
+  background-color: var(--color-white);
   z-index: 1;
 
   animation-duration: 1s;
@@ -21,24 +23,24 @@
 @keyframes slideRightWard {
   from {
     opacity: 0;
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
   }
 
   to {
     opacity: 1;
-    transform: translate3d(100%, 0, 0);
+    transform: translateX(100%);
   }
 }
 
 @keyframes slideLeftWard {
   from {
     opacity: 1;
-    transform: translate3d(100%, 0, 0);
+    transform: translateX(100%);
   }
 
   to {
     opacity: 0;
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
   }
 }
 
@@ -51,10 +53,9 @@
 
 .sidebar__login--top__container {
   display: flex;
-  background-color: black;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 21px;
+  background-color: var(--color-black);
+  font-weight: var(--weight-extra-bold);
+  font-size: var(--font-lg);
   position: relative;
   width: 100%;
   align-items: center;
@@ -79,7 +80,7 @@
   left: 0;
   width: 100%;
   height: 95%;
-  border: white 2px solid;
+  border: var(--color-white) 2px solid;
   border-radius: 5px;
   opacity: 0;
 }
@@ -107,7 +108,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border: white 2px solid;
+  border: var(--color-white) 2px solid;
   border-radius: 5px;
   opacity: 0;
 }
@@ -121,21 +122,20 @@
   display: flex;
   flex-flow: column;
 
-  border-bottom: 1px solid #EFF2F2;
+  border-bottom: var(--border-bottom);
 }
 
 .sidebar__digital-content__title,
 .sidebar__shopping__title {
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 21px;
+  font-weight: var(--weight-extra-bold);
+  font-size: var(--font-lg);
   padding: 6% 6% 6% 10%;
 }
 
 .sidebar__digital-content__title-link,
 .sidebar__shopping__title-link {
   font-weight: bold;
-  color: black
+  color: var(--color-black);
 }
 
 .sidebar__digital-content__menu,
@@ -144,7 +144,7 @@
   flex-flow: column;
 
   font-weight: normal;
-  font-size: 14px;
+  font-size: var(--font-md);
   line-height: 160%;
 }
 
@@ -152,26 +152,26 @@
   display: flex;
   justify-content: space-between;
   padding: 4% 6% 4% 10%;
-  font-weight: 500;
-  color: black
+  font-weight: var(--weight-medium);
+  color: var(--color-black)
 }
 
 .sidebar__contents:hover {
-  background-color: #e0e0e0;
+  background-color: var(--color-gray-200);
 }
 
 .sidebar__contents.btn {
   display: flex;
   justify-content: unset;
   padding: 4% 6% 4% 10%;
-  font-weight: 500;
-  color: black;
+  font-weight: var(--weight-medium);
+  color: var(--color-black);
   gap: 3%;
 }
 
 .sidebar__shopping.extra {
   height: 0;
-  transition: height .4s ease-in-out;
+  transition: height .5s ease-in-out;
   overflow: hidden;
 }
 
@@ -183,7 +183,6 @@
 .sidebar__menu.main {
   display: flex;
   flex-flow: column;
-
   animation-duration: 1s;
   animation-fill-mode: forwards;
   overflow-y: auto;
@@ -194,7 +193,6 @@
   position: absolute;
   left: 33vh;
   width: 100%;
-
   animation-duration: 1s;
   animation-fill-mode: forwards;
   overflow-y: auto;
@@ -204,30 +202,30 @@
   display: flex;
   justify-content: space-between;
   padding: 4% 6% 4% 10%;
-  font-weight: 500;
-  color: black
+  font-weight: var(--weight-medium);
+  color: var(--color-black)
 }
 
 .sidebar__contents-shopping__electron:hover {
-  background-color: #e0e0e0;
+  background-color: var(--color-gray-200);
 }
 
 @keyframes slideMenuLeftWard {
   from {
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
   }
 
   to {
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
   }
 }
 
 @keyframes slideMenuRightWard {
   from {
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
   }
 
   to {
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
   }
 }

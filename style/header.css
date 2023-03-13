@@ -84,11 +84,11 @@ a {
 }
 
 .nav-top__locate {
-  font-size: 11px;
+  font-size: var(--font-sm);
 }
 
 .nav-top__line2 {
-  font-size: 13px;
+  font-size: var(--font-md);
 }
 
 .nav-top__search {
@@ -108,12 +108,12 @@ a {
   flex: 1;
   border: none;
   border-radius: 4px 0 0 4px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 160%;
+  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-md);
+  line-height: var(--line-height);
   padding: 9.5px 9.5px 12px 12px;
-  letter-spacing: -0.03em;
-  color: #878787;
+  letter-spacing: var(--letter-spacing-sm);
+  color: var(--color-gray-var(--weight-semi-bold));
 }
 
 .nav-top__search-btn {
@@ -121,7 +121,7 @@ a {
   height: 40px;
   border-radius: 0 4px 4px 0;
   display: flex;
-  background: #FCB057;
+  background: var(--color-orange-100);
   border: none;
   cursor: pointer;
 }
@@ -134,7 +134,7 @@ a {
 
 .nav-top__right {
   display: flex;
-  padding: 16px;
+  padding: var(--line-height-nav-top);
   gap: 24px;
 }
 
@@ -144,16 +144,13 @@ a {
   gap: 4px;
 }
 
-.nav-top__text {
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
+.nav-top__text,
+.nav-top__text,
+.nav-top__account-line2 {
+  font-weight: var(--weight-extra-bold);
+  font-size: var(--font-md);
+  line-height: var(--line-height-nav-top);
 }
-
-/* .na-top__account-container {
-  position: relative;
-
-} */
 
 .nav-top__account-link {
   position: relative;
@@ -162,33 +159,16 @@ a {
   z-index: 2;
 }
 
+.nav-top__refund-text,
 .nav-top__account-line1 {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 13px;
-}
-
-.nav-top__account-line2 {
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
+  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-sm);
+  line-height: var(--font-md);
 }
 
 .nav-top__refund-order {
   display: flex;
   flex-flow: column;
-}
-
-.nav-top__refund-text {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 13px;
-}
-
-.nav-top__order-text {
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
 }
 
 .nav-top__basket {
@@ -198,23 +178,17 @@ a {
   margin: 1%;
 }
 
-.nav-top__text{
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
-}
-
 .nav-bottom {
   display: flex;
   height: 32px;
-  background-color: #1B232F;
+  background-color: var(--color-gray-900);
   align-items: center;
   padding: 1%;
 }
 
 .nav-bottom__left {
   display: flex;
-  gap: 16px;
+  gap: var(--line-height-nav-top);
 }
 
 .nav-bottom__selectAll {
@@ -238,10 +212,10 @@ a {
 
 .nav-bottom__text {
   display: flex;
-  gap: 16px;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 16px;
-  color: #FFFFFF;
+  gap: var(--line-height-nav-top);
+  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-md);
+  line-height: var(--line-height-nav-top);
+  color: var(--color-white);
 }
 
