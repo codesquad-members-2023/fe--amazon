@@ -3,52 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <title>amazon clone</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header>
-      <div class="nav-top">
-        <img src="./assets/Group.svg" />
-        <div class="delivery">
-          <span><img src="./assets/Vector1.svg" alt="shipping logo" /> 배송처</span>
+      <!-- 네비게이션 상단 -->
+      <div class="nav-belt">
+        <div class="nav-logo">
+          <img src="./assets/logo.svg" />
+        </div>
+
+        <div class="shipping-country">
+          <div class="shipping-container">
+            <img src="./assets/shipping.svg" alt="shipping" />
+            <span>배송처</span>
+          </div>
           <div class="country">대한민국</div>
         </div>
+
         <div class="search">
           <input class="search-input" type="search" placeholder="검색 Amazon" />
           <button class="search-button">
-            <img src="./assets/Vector3.svg" alt="" />
+            <img src="./assets/search.svg" alt="" />
           </button>
         </div>
+
         <div class="language">
           <span>🇰🇷</span>
           <span>KO</span>
         </div>
+        <!-- 로그인창 -->
         <div class="login">
-          <span class="login-prompt">안녕하세요, 로그인</span>
-          <div class="Accounts and lists">계정및목록</div>
+          <div class="login-menu">
+            <span class="login-prompt">안녕하세요, 로그인</span>
+            <span class="Accounts-lists">계정및목록</span>
+          </div>
+
+          <div class="login-modal">
+            <div><button class="login-button">로그인</button></div>
+            <div class="login-link">
+              <span>기존 사용자가 아니십니까?</span>
+              <a href="">여기에서 시작합니다.</a>
+            </div>
+            <div class="login-pointer"></div>
+          </div>
         </div>
+
         <div class="return-order">
           <span class="return">반품</span>
           <div class="order">&주문</div>
         </div>
         <div>
-          <img src="./assets/Vector4.svg" />
+          <img src="./assets/shoppingBasket.svg" />
           <span>장바구니</span>
         </div>
       </div>
-      <div class="nav-bottom">
+
+      <div class="nav-main">
         <div class="nav-shop">
-          <li>
-            <a href=""><img src="./assets/Vector2.svg" /> 모두</a>
-          </li>
-          <li><a href="">오늘의 딜</a></li>
-          <li><a href="">고객 서비스</a></li>
-          <li><a href="">레지스트리</a></li>
-          <li><a href="">기프트 카드</a></li>
-          <li><a href="">판매</a></li>
+          <div class="nav-sidebar">
+            <a href=""
+              ><img src="./assets/sidebar.svg" />
+              <span>모두</span>
+            </a>
+          </div>
+          <a href="">오늘의 딜</a>s
+          <a href="">고객 서비스</a>
+          <a href="">레지스트리</a>
+          <a href="">기프트 카드</a>
+          <a href="">판매</a>
         </div>
-        <div class="shopping">
-          <li><a href="">지금 특가 상품 쇼핑하기</a></li>
+        <div class="shop-deals">
+          <a href="">지금 특가 상품 쇼핑하기</a>
         </div>
       </div>
     </header>
