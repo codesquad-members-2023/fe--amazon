@@ -72,6 +72,11 @@
   line-height: 160%;
 
   letter-spacing: -0.03em;
+
+  cursor: pointer;
+}
+.side_bar_main li:hover {
+  background: #eff2f2;
 }
 .side_bar_login {
   background-color: #10141a;
