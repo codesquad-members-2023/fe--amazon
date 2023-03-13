@@ -7,12 +7,13 @@ const backButton = document.querySelector('.sidebar_detail_back_button');
 
 [...mainMenuArr].forEach((mainMenu) => {
   mainMenu.addEventListener('click', (e) => {
-    // console.log(e);
     if (
       !e.target.innerText.includes('모두 보기') &&
       e.target.innerText !== '간단히 보기'
     ) {
-      [...mainMenuArr].map((menu) => {
+      const title = e.target.innerText;
+      console.log(SIDEBAR_DETAIL.SIDEBAR_DETAIL[title]);
+      [...mainMenuArr].forEach((menu) => {
         menu.style.display = 'none';
       });
       detailMenu.style.animation = 'appearDetail 0.5s forwards';

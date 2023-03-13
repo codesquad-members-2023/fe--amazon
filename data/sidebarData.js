@@ -1,5 +1,5 @@
 const SIDEBAR_DETAIL = {
-  '음악 스트리밍': [
+  'Amazon Music': [
     'Amazon Music Unlimited',
     'Amazon Music HD',
     'Podcast',
@@ -7,7 +7,7 @@ const SIDEBAR_DETAIL = {
     '웹 플레이어 열기',
     'Download the app',
   ],
-  'Kindle E-Reader': [
+  'Kindle E-Reader 및 도서': [
     'All-new Kindle Kids',
     'All-new Kindel',
     'Kindel Paperwhite',
