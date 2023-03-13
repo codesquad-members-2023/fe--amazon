@@ -85,6 +85,9 @@
   padding: 8px 16px 8px 32px;
   gap: 8px;
 }
+#sidebarButton {
+  border-bottom: solid 1px #eff2f2;
+}
 
 #closeButton {
   display: none;
