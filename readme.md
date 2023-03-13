@@ -74,3 +74,10 @@
 - [x] : 로그인 모달창 호버 속성 점검
 - [x] : 모달창 팝업시 딤 처리 기능 구현
 - [x] : header-top shipping-address 모달창 구현
+
+## :five: Week1 day5 학습계획
+
+- [x] : sidebar 레이아웃 구현
+ - [x] : sidebar 탑 영역 구현
+ - [x] : sidebar 메뉴 영역 구현
+ - [x] : sidebar 부서별 쇼핑 모두 보기 영역 구현
