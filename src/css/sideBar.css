@@ -75,13 +75,48 @@
 
   cursor: pointer;
 }
+
+/* 사이드바 아이콘 */
+.right_arrow_icon {
+  display: inline-block;
+  width: 8px;
+  height: 12px;
+  background-size: cover;
+  background-image: url('../image/rightArrow.svg');
+}
+.bottom_arrow_icon,
+.up_arrow_icon {
+  display: inline-block;
+  margin-left: 10px;
+  width: 12px;
+  height: 8px;
+  background-size: cover;
+}
+.bottom_arrow_icon {
+  background-image: url('../image/bottomArrow.svg');
+}
+.up_arrow_icon {
+  background-image: url('../image/upArrow.svg');
+}
+
 .side_bar_main li:hover {
   background: #eff2f2;
 }
+.side_bar_main li:hover .right_arrow_icon {
+  background-image: url('../image/rightArrowBlack.svg');
+}
+.side_bar_main li:hover .bottom_arrow_icon {
+  background-image: url('../image/bottomArrowBlack.svg');
+}
+.side_bar_main li:hover .up_arrow_icon {
+  background-image: url('../image/upArrowBlack.svg');
+}
+
 .side_bar_login {
   background-color: #10141a;
   color: #ffffff;
 }
+
 .shopping_category_list li:last-child,
 .shopping_category_list_more li:last-child {
   justify-content: start;
