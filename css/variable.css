@@ -1,0 +1,41 @@
+:root {
+  --font-family-pretendard : 'Pretendard';
+  --font-style-normal : normal;
+  --line-height-160 : 160%;
+  --line-height-160 : 200%;
+  --letter-spacing-3em : -0.03em;
+
+  /* font-size */
+  --font-size-sm: 11px;
+  --font-size-md: 13px;
+  --font-size-lg: 18px;
+  --font-size-xl: 28px;
+
+  /* font-weight */
+  --font-weight-body: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 800;
+
+  /* color */
+  --color-white: #ffffff;
+  --color-gray-100: #eff2f2;
+  --color-gray-200: #e5e9e9;
+  --color-gray-300: #dce0e0;
+  --color-gray-400: #d5d5d5;
+  --color-gray-500: #c1c1c1;
+  --color-gray-600: #878787;
+  --color-gray-700: #535353;
+  --color-gray-800: #2a3648;
+  --color-gray-900: #1b232f;
+  --color-gray-30: rgba(179, 179, 179, 0.3);
+  --color-black: #10141a;
+  --color-black-40: rgba(0, 0, 0, 0.4);
+  --color-yellow-100: #fed15f;
+  --color-yellow-200: #febe30;
+  --color-yellow-300: #de9408;
+  --color-orange-100: #fcb057;
+  --color-orange-200: #ff9900;
+  --color-purple: #941387;
+  --color-navy: #074099;
+  --color-green: #0c5e72;
+}

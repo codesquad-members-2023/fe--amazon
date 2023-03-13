@@ -22,8 +22,10 @@ $close.addEventListener('click', e => {
   $side_bar.classList.add('slideLeft');
 });
 
-$side_bar.addEventListener('animationend', e => {
-  if(e.animationName === 'slideLeft' && e.target.className.includes('side_bar')) {
+$side_bar.addEventListener('animationend', ({animationName, target}) => {
+// $side_bar.addEventListener('animationend', (e) => {
+  // if(e.animationName === 'slideLeft' && e.target.className.includes('side_bar')) {
+  if(animationName === 'slideLeft' && target.className.includes('side_bar')) {
     $side_bar.style.display = 'none';
     $side_bar.classList.remove('slideRight');
     $modal_bg.classList.add('hidden');
