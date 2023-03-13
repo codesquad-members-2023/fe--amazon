@@ -101,29 +101,28 @@
 
 .showAnimation {
   will-change: transform;
-  animation: showSidebarSoft 1s ease-in-out forwards;
+  animation: showSidebarSoft 0.5s ease-out forwards;
 }
 
 .hideAnimation {
   will-change: transform;
-  animation: hideSidebarSoft 1s ease-in-out forwards;
+  animation: hideSidebarSoft 0.5s ease-in forwards;
 }
 
 @keyframes showSidebarSoft {
   from {
-    opacity: 0;
+    transform: translateX(-100%);
   }
   to {
-    opacity: 1;
+    transform: translateX(0);
   }
 }
 @keyframes hideSidebarSoft {
   from {
-    opacity: 1;
+    transform: translateX(0);
   }
   to {
-    opacity: 0;
-    visibility: hidden;
+    transform: translateX(-100%);
   }
 }
 
