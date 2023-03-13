@@ -1,0 +1,135 @@
+.side_bar {
+  z-index: 2;
+  position: fixed;
+  top:0;
+
+  width: 320px;
+  height: 100%;
+
+  display: none;
+  flex-direction: column;
+
+  color: black;
+  border-right: 1px solid #EFF2F2;
+  background-color: #FFFFFF;
+}
+
+.side_login, .side_container h3 {
+  height: 53px;
+  padding: 16px 16px 16px 32px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.side_login img {
+  width: 15px;
+  height: 15px;
+  margin: auto 5px auto 0px;
+}
+
+.side_container img {
+  width: 12px;
+  height: 12px;
+}
+
+#view_all, #view_simple, #back_btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#view_all img, #view_simple img {
+  margin: auto 0px auto 5px;
+}
+
+#back_btn img {
+  margin: auto 5px auto 0px;
+}
+
+.side_login {
+  display: flex;
+  color: white;
+  background-color: black;
+}
+
+.side_container li {
+  height: 40px;
+  padding: 8px 16px 8px 32px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.side_container li:last-child {
+  border-bottom: 1px solid #EFF2F2;
+}
+
+.side_container li:hover {
+  background-color: rgba(179, 179, 179, 0.3);
+  font-weight: 700;
+}
+
+#side_bar_close {
+  position: absolute;
+  top: 15px;
+  left: 330px;
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.slideRight {
+  animation: slideRight 0.5s ease-in-out;
+}
+
+.slideLeft {
+  animation: slideLeft 0.5s ease-in-out;
+}
+
+.fold_content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.view_detail {
+  z-index: 3;
+  position: fixed;
+  top: 53px;
+  left: 0;
+  width: 320px;
+  height: 100%;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+#back_btn {
+  height: 53px;
+  padding: 16px 16px 16px 32px;
+  font-weight: 700;
+  font-size: 13px;
+  border-bottom: 1px solid #EFF2F2;
+}
