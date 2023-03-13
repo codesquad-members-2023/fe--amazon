@@ -65,12 +65,12 @@
 - [ ] : crong 리뷰 고려 코드 리팩 시도 해보기
   - [ ] : html 리팩
     - [ ] : class명 점검하기
-    - [ ] : header-bottom left 레이아웃 변경 
+    - [x] : header-bottom left 레이아웃 변경 
   - [ ] : css 리팩
     - [ ] : font 변수화 시도해보기
     - [ ] : font-size 점검
-    - [ ] : display:flex 속성 점검
-    - [ ] : position:absolute 점검
-- [ ] : 로그인 모달창 호버 속성 점검
-- [ ] : 모달창 팝업시 딤 처리 기능 구현
-- [ ] : header-top shipping-address 모달창 구현
+    - [x] : display:flex 속성 점검
+    - [x] : position:absolute 점검
+- [x] : 로그인 모달창 호버 속성 점검
+- [x] : 모달창 팝업시 딤 처리 기능 구현
+- [x] : header-top shipping-address 모달창 구현
