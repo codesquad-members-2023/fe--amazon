@@ -1,13 +1,24 @@
 @import './reset.css';
 @import './font.css';
 @import './header.css';
+@import './modal.css';
+@import './sideBar.css';
+
+html {
+  overflow-y: scroll;
+}
 
 body {
   background-color: #fff;
+  min-width: 70rem;
+  min-height: 100vh;
 }
 
 .cursor {
   cursor: pointer;
+}
+.hidden {
+  display: none;
 }
 
 .modal_btn {
