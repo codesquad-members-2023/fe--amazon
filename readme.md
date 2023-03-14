@@ -156,6 +156,8 @@ div {
   - SCSS, 그 외 다른 CSS 라이브러리
 - DOM api
 - Vite 번들러
+- component
+- vanilla extract
 
 ## 🌴 Jayden's Rules
 
@@ -171,6 +173,8 @@ div {
   - [x] 하위 메뉴 영역 노출
 - [ ] `리팩토링`(변수명, 함수 분리 등)
   - [x] css 파일 분리
+  - [ ] class component 화
+  - [ ] vanilla extract 사용해보기
 
 ## 🌳 Jayden's Organization
 
@@ -185,6 +189,17 @@ div {
 - firstChild, nextSibling 등은 태그 사이의 공백인 textNode까지 인식한다.
 - firstElementChild, firstElementChild 등은 textNode를 제외한 elementNode만 인식한다.
 - 우리는 주로 textNode를 이용할 일이 없기 때문에, 주로 element가 들어간 api를 이용한다.
+
+### Event(이벤트)
+
+- 주로 유저에 행동에 의해 발생하는 사건
+- ex) click, scroll, mouseover, mouseenter 등
+
+### Event Listener(이벤트 리스너)
+
+- addEventListener의 인자로 전달된 콜백 함수
+- 말 그대로 어떤 이벤트를 듣게 되었을 때, 실행되는 함수를 의미한다.
+- Event Handler(이벤트 핸들러)라고도 한다.
 
 ### 이벤트 위임
 
@@ -208,13 +223,21 @@ div {
   - a 브랜치에서 b 브랜치를 따고 b 브랜치에서 작업을 한 뒤 커밋을 한다. 그러고 나서 또다시 로컬(워킹 디렉토리)에서 작업을 하고 a로 옮기려고 하면 에러가 발생한다.
   - 이 때, stash로 변경사항을 잠깐 빼두든가 아니면 또다시 커밋을 해서 변경사항을 반영하고 옮기면 된다.
 
-### el.firstChild가 때로는 textNode가 뜨지 않을 때!(feat. 브라우저)
+### el.firstChild가 때로는 textNode로 뜨지 않을 때!(feat. 브라우저)
 
 - 브라우저에서는 html 파일들의 요소들이 최적화되어 공백없이(textNode가 없이) 정리된다.
 - 해서 firstChild로 textNode가 안찍히기도 한다!
+
+### 템플릿 엔진이란?
+
+- 템플릿 양식과 특정 데이터 모델에 따른 입력 자료를 합성하여 결과 문서를 출력하는 소프트웨어(또는 소프트웨어 컴포넌트). 그냥 템플릿 라이브러리라고 생각하면 된다.  
+- 지정된 템플릿 양식에 데이터가 합쳐져서 html 문서를 출력하는 소프트웨어 즉, 화면을 어떻게 만들지 도와주는 양식이다.
+- 그저 이름을 템플릿 엔진이라고 붙여서 조금 헷갈린다.
+- Handlebars, Mustache 등이 있다.(넓게 보면 react, vue 등도 템플릿 엔진이다.)
 
 ## 🪵 Reference
 
 - [이벤트 위임](https://www.grapecity.com/blogs/html-and-wijmo-events/)
 - [stopPropagation vs preventDefault](https://ismydream.tistory.com/98)
 - [Git stash](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Stashing%EA%B3%BC-Cleaning)
+- [템플릿 엔진](https://velog.io/@hi_potato/Template-Engine-Template-Engine)
