@@ -35,13 +35,14 @@ const hideSideBar = () => {
 
 const oepnAllItems = () => {
   allItemsButton.addEventListener('click', () => {
-    allItems.style.display = 'block'
+    allItems.style.transform = 'scaleY(1)'
+
   })
 }
 
 const closeAllItems = () => {
   simpleItemsButton.addEventListener('click', () => {
-    allItems.style.display = 'none'
+    allItems.style.transform = 'scaleY(0)'
   })
 }
 
