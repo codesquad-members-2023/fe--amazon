@@ -2,6 +2,18 @@
   display: none;
   position: absolute;
   height: 0;
+  top: 64px;
+  right: 20px;
+}
+
+.modal__pointer1 {
+  position: absolute;
+  width: 18.93px;
+  height: 18.93px;
+  top: -1px;
+  left: 25px;
+  background: var(--color-white);
+  transform: rotate(45deg);
 }
 
 .modal__display1 {
@@ -11,24 +23,11 @@
   padding: 16px;
   gap: 8px;
 
-  top: 19px;
-  left: -150px;
-
   position: relative;
   width: 235px;
 
   background: var(--color-white);
   border-radius: var(--border-radius);
-}
-
-.modal__pointer1 {
-  position: absolute;
-  width: 18.93px;
-  height: 18.93px;
-  top: 17px;
-  left: 25px;
-  background: var(--color-white);
-  transform: rotate(45deg);
 }
 
 .modal__actions1 {
@@ -85,14 +84,14 @@
   position: absolute;
   height: 0;
   z-index: 1;
+
+  top: 45px;
+  right: 20px;
 }
 
 .modal__path2 {
   display: none;
   position: relative;
-
-  top: 10%;
-  left: -15px;
   
   width: 7rem;
   height: 1.2rem;
@@ -106,9 +105,6 @@
   align-items: center;
   padding: 16px;
   gap: 8px;
-
-  top: 0px;
-  left: -150px;
 
   position: relative;
   width: 235px;
@@ -244,12 +240,12 @@
   transform: rotate(45deg);
 }
 
-.nav-top__location:hover .modal__location {
+.nav-top__elements.location:hover .modal__location {
   display: block;
   z-index: 1;
 }
 
-.nav-top__location:hover .modal__location-path {
+.nav-top__elements.location:hover .modal__location-path {
   display: block;
   
   top: 15px;

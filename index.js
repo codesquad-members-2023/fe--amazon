@@ -14,7 +14,7 @@ const loginModal2 = document.querySelector(".modal__login2");
   }, delay)
 })(1000);
 
-const loginButton = document.querySelector(".nav-top__account-link");
+const loginButton = document.querySelector(".nav-top__elements.account-link");
 const dimLayer = document.querySelector(".dim__layer");
 
 loginButton.addEventListener("mouseover", () => {
@@ -75,7 +75,7 @@ modalLayouts.forEach((node) => {
  * sidebar 버튼 및 레이아웃 영역  
  */
 
-const sideBarOpenBtn = document.querySelector(".nav-bottom__selectAll");
+const sideBarOpenBtn = document.querySelector(".nav-bottom__category.select-all");
 const sideBarLayer = document.querySelector(".sidebar__layer");
 const sideBarCloseBtn = document.querySelector(".sidebar__closeBtn--container");
 const sideBarCloseBtnLayer = document.querySelector(".sidebar__closeBtn")
