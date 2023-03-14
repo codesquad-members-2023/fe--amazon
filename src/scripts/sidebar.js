@@ -31,29 +31,25 @@ function scrollSubmenu(sidebar) {
 }
 
 function clickCategories(sidebar) {
-  const main = sidebar.shadowRoot.querySelector('sidebar-main-element');
-  const mainCategories = main.shadowRoot.querySelectorAll(
-    'sidebar-category-element'
-  );
-  mainCategories.forEach((category) => {
-    const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
-    category.addEventListener('click', (e) => {
-      const sectionId =
-        e.target.parentNode.id === 'folding-list'
-          ? e.target.parentNode.parentNode.parentNode.id
-          : e.target.parentNode.id;
-      const categoryId = e.target.id;
-      const submenu = menus
-        .find((menu) => menu.id === sectionId)
-        .categories.find((category) => category.id === categoryId).subMenu;
-      sidebar.showSubSidebar();
+  const main = sidebar.shadowRoot.querySelector(
+    'sidebar-main-element'
+  ).shadowRoot;
+  const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
 
-      const sideSubContent = new SidebarSubContent(submenu);
-      sub.shadowRoot
-        .querySelector('#sidebar-sub-content')
-        .append(sideSubContent);
-      goBack(sideSubContent, sidebar);
-    });
+  main.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.tagName !== 'SIDEBAR-CATEGORY-ELEMENT') return;
+    const sectionId = target.closest('section').id;
+    const categoryId = e.target.id;
+
+    const submenu = menus
+      .find((menu) => menu.id === sectionId)
+      .categories.find((category) => category.id === categoryId).subMenu;
+
+    sidebar.showSubSidebar();
+    const sideSubContent = new SidebarSubContent(submenu);
+    sub.shadowRoot.querySelector('#sidebar-sub-content').append(sideSubContent);
+    goBack(sideSubContent, sidebar);
   });
 }
 
@@ -79,7 +75,6 @@ function unfoldCategories(sidebar) {
       .querySelector('sidebar-main-element')
       .shadowRoot.querySelector('#folding-list');
     foldingList.classList.add('unfolded');
-
     foldCategories(sidebar);
   });
 }
@@ -89,7 +84,6 @@ function foldCategories(sidebar) {
     .querySelector('sidebar-main-element')
     .shadowRoot.querySelector('#folidng-btn');
   unfoldingBtn.addEventListener('click', () => {
-    const main = sidebar.shadowRoot.querySelector('sidebar-main-element');
     const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
     const foldingList = sidebar.shadowRoot
       .querySelector('sidebar-main-element')
