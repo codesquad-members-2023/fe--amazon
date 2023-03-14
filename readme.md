@@ -7,7 +7,7 @@
 ## crong's review
 
 - [ ] defer vs asyc
-- [ ] `DOMContentLoaded` vs `load`
+- [x] `DOMContentLoaded` vs `load`
   - `addEventListener('DOMContentLoaded', () => {})`  
     초기 HTML 문서를 완전히 불러오고 분석했을 때 발생한다. 스타일 시트, 이미지, 하위 프레임의 로딩은 기다리지 않는다.
   - `addEventListener('load', () => {})`  
@@ -70,11 +70,11 @@
 - [ ] 사이드바 애니메이션 (trasition 사용)
   - [ ] 항목 접기
   - [ ] 항목 펼치기
-- [ ] 하위 메뉴 영역 노출
+- [x] 하위 메뉴 영역 노출
 - DOM 조작시 아래 메서드 활용
-  - [ ] `createElement`
-  - [ ] `appendChild`
-  - [ ] `insertBefore`
+  - [x] `createElement`
+  - [x] `appendChild`
+  - [x] `insertBefore`
 - [ ] rem 단위 사용해보기
 
 ## 📒 reference

@@ -1,7 +1,7 @@
 const sideMenu = document.querySelector('.side-menu')
 const openButton = document.querySelector('.all-menu')
 const sideMain = document.querySelector('.side-menu__main')
-const carGoodsPage = document.querySelector('.side-menu__car-goods')
+const sideMenuDetail = document.querySelector('.side-menu__detail')
 const simpleItemsButton = document.querySelector('.side-menu__hide-button')
 const allItems = document.querySelector('.side-menu__all-items')
 const allItemsButton = document.querySelector('.side-menu__show-button')
@@ -30,7 +30,7 @@ const hideSideBar = () => {
       sideMenu.style.animation = 'slide-hide .5s forwards'
       dim.style.display = 'none'
     }
-  }) 
+  })
 }
 
 const oepnAllItems = () => {
@@ -47,14 +47,10 @@ const closeAllItems = () => {
   })
 }
 
-const openItemMenu = () => {
-  const carGoodsButton = document.querySelector('.item__car-goods')
-
-  carGoodsButton.addEventListener('click', () => {
-    sideMain.style.display = 'none'
-    carGoodsPage.style.display = 'block'
-    carGoodsPage.style.animation = 'slide-appear-menu .5s forwards'
-  })
+const openDetailMenu = () => {
+  sideMain.style.display = 'none'
+  sideMenuDetail.style.display = 'block'
+  sideMenuDetail.style.animation = 'slide-appear-menu .5s forwards'
 }
 
 const moveMain = () => {
@@ -62,10 +58,9 @@ const moveMain = () => {
   
   backMainButton.addEventListener('click', () => {
     sideMain.style.display = 'block'
-    carGoodsPage.style.display = 'none'
+    sideMenuDetail.style.display = 'none'
     sideMain.style.animation = 'slide-appear .5s forwards'
   })
-
 }
 
 const actSideBar = () => {
@@ -73,11 +68,7 @@ const actSideBar = () => {
   hideSideBar()
   oepnAllItems()
   closeAllItems()
-  openItemMenu()
   moveMain()
 }
 
 actSideBar()
-
-
-

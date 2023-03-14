@@ -353,7 +353,7 @@ header {
   height: 100%;
   top: 0;
   background-color: #FFF;
-  animation: slide-appear .5s;
+  animation: slide-appear .5s forwards;
   z-index: 1;
 }
 
@@ -412,7 +412,7 @@ header {
   margin-left: 15px;
 }
 
-.side-menu__car-goods {
+.side-menu__detail {
   display: none;
   position: absolute;
   top: 53px;
