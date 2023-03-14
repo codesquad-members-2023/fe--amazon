@@ -64,7 +64,8 @@
 
 .homeSidebar__subTitle i,
 .homeSidebar__mode--open i,
-.homeSidebar__mode--close i {
+.homeSidebar__mode--close i,
+.homeSidebar__mode--back i {
   color: #878787;
 }
 
@@ -73,8 +74,13 @@
   margin-left: 10px;
 }
 
+.homeSidebar__mode--back i {
+  margin-right: 10px;
+}
+
 .homeSidebar__mode--open:hover,
-.homeSidebar__mode--close:hover {
+.homeSidebar__mode--close:hover,
+.homeSidebar__mode--back:hover {
   font-weight: 800;
 }
 
@@ -92,7 +98,8 @@
 }
 
 .homeSidebar__mode--open,
-.homeSidebar__mode--close {
+.homeSidebar__mode--close,
+.homeSidebar__mode--back {
   cursor: pointer;
 }
 
@@ -160,4 +167,8 @@
   to {
     max-height: 0;
   }
+}
+
+.hideDetail {
+  display: none;
 }
