@@ -1,0 +1,11 @@
+@mixin header-padding {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+@mixin typography($type) {
+  font-size: nth($type, 1);
+  font-weight: nth($type, 2);
+  letter-spacing: nth($type, 3);
+  line-height: nth($type, 4);
+}

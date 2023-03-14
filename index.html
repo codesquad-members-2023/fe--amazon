@@ -140,7 +140,7 @@
               src="./assets/images/cart.svg"
               alt="cart image"
             />
-            <span class="header__cart__text">장바구니</span>
+            <span class="header__text">장바구니</span>
           </div>
         </div>
       </a>
@@ -179,8 +179,10 @@
     </nav>
 
     <!-- side bar -->
-    <aside class="side-bar hidden">
-      <button class="side-bar__close">X</button>
+    <aside class="side-bar">
+      <button class="side-bar__close">
+        <img class="side-bar__close-image" src="assets/images/close.svg" />
+      </button>
       <a class="side-bar__log-in" href="">
         <img class="side-bar__log-in-image" src="./assets/images/person.svg" />
         <span class="side-bar__log-in-text" href="">안녕하세요, 로그인</span>
@@ -277,8 +279,7 @@
         <div class="seperator-line"></div>
 
         <div class="other-buttons-container">
-          <!-- <div class="window"></div> -->
-          <ul class="other-buttons-container__items hidden">
+          <ul class="other-buttons-container__items">
             <li class="other-buttons-container__item">
               <button
                 class="side-bar__button side-bar__button--parent"
@@ -315,152 +316,14 @@
           </ul>
         </div>
 
-        <div class="submenus">
-          <div class="submenu" data-parent-id="1">
-            <button class="submenu__back" href="">
-              <img
-                class="submenu__back-image"
-                src="./assets/images/left-arrow.svg"
-              />
-              <span class="submenu__back-text">주메뉴</span>
-            </button>
-            <div class="seperator-line"></div>
-            <span class="side-bar__label">음악 스트리밍</span>
-            <ul class="side-bar__items">
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">Amazon Music Unlimited</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">Amazon Music HD</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">Podcast</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">웹 플레이어 열기</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">웹 플레이어 열기</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">Downolad the app</span>
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div class="submenu" data-parent-id="4">
-            <button class="submenu__back" href="">
-              <img
-                class="submenu__back-image"
-                src="./assets/images/left-arrow.svg"
-              />
-              <span class="submenu__back-text">주 메뉴</span>
-            </button>
-            <div class="seperator-line"></div>
-            <span class="side-bar__label">전자</span>
-            <ul class="side-bar__items">
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">액세서리 및 용품</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">카메라 및 사진</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">자동차 및 전자기기</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">웹 플레이어 열기</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">웹 플레이어 열기</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">Downolad the app</span>
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div class="submenu" data-parent-id="8">
-            <button class="submenu__back" href="">
-              <img
-                class="submenu__back-image"
-                src="./assets/images/left-arrow.svg"
-              />
-              <span class="submenu__back-text">주 메뉴</span>
-            </button>
-            <div class="seperator-line"></div>
-            <span class="side-bar__label">자동차 용품</span>
-            <ul class="side-bar__items">
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">자동차 관리</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text"
-                    >자동차 전자기기 및 악세서리</span
-                  >
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">실외용품 악세서리</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">인테리어 악세서리</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">램프 및 조명 악세서리</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text"
-                    >오토바이 및 파워스포츠 차량 용품</span
-                  >
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">오일 및 유체</span>
-                </button>
-              </li>
-              <li class="side-bar__item">
-                <button class="side-bar__button" href="">
-                  <span class="side-bar__text">페인트 및 도장용품</span>
-                </button>
-              </li>
-            </ul>
-          </div>
+        <div class="submenu-container">
+          <button class="submenu__back" href="">
+            <img
+              class="submenu__back-image"
+              src="./assets/images/left-arrow.svg"
+            />
+            <span class="submenu__back-text">주메뉴</span>
+          </button>
         </div>
       </div>
     </aside>

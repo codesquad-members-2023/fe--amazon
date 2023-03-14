@@ -1,0 +1,18 @@
+.nav {
+  background-color: $gray900;
+  padding: 0px 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__anchor {
+    display: inline-block;
+    padding: 8px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+  }
+}

@@ -20,56 +20,56 @@ export default class Header {
     this.dimmedMain = new DimmedMain();
   }
 
-  showPopUpWithDelay = (delay) => setTimeout(this.showLogInPopUp, delay);
+  showPopUpWithDelay(delay) {
+    setTimeout(() => {
+      this.showLogInPopUp();
+    }, delay);
+  }
 
-  showLogInPopUp = () => {
+  showLogInPopUp() {
     this.logInPopUp.classList.remove("hidden");
-  };
+  }
 
-  hideLogInPopUp = () => {
+  hideLogInPopUp() {
     this.logInPopUp.classList.add("hidden");
-  };
+  }
 
-  showExpandedLogInPopUp = () => {
+  showExpandedLogInPopUp() {
     this.showLogInPopUp();
     this.dimmedMain.showDimmedMain();
     this.expandedLogInPopUp.classList.remove("hidden");
-  };
+  }
 
-  hideExpandedLogInPopUp = () => {
+  hideExpandedLogInPopUp() {
     this.hideLogInPopUp();
     this.dimmedMain.hideDimmedMain();
     this.expandedLogInPopUp.classList.add("hidden");
-  };
+  }
 
-  showShippingAddressPopUp = () => {
+  showShippingAddressPopUp() {
     this.dimmedMain.showDimmedMain();
     this.shippingAddressPopUp.classList.remove("hidden");
-  };
+  }
 
-  hideShippingAddressPopUp = () => {
+  hideShippingAddressPopUp() {
     this.dimmedMain.hideDimmedMain();
     this.shippingAddressPopUp.classList.add("hidden");
-  };
+  }
 
-  setHeader = () => {
+  setHeader() {
     this.showPopUpWithDelay(1000);
 
-    this.logInAnchor.addEventListener(
-      "mouseenter",
-      this.showExpandedLogInPopUp
-    );
-    this.loginContainer.addEventListener(
-      "mouseleave",
-      this.hideExpandedLogInPopUp
-    );
-    this.shippingAddressAnchor.addEventListener(
-      "mouseenter",
-      this.showShippingAddressPopUp
-    );
-    this.shippingAddressContainer.addEventListener(
-      "mouseleave",
-      this.hideShippingAddressPopUp
-    );
-  };
+    this.logInAnchor.addEventListener("mouseenter", () => {
+      this.showExpandedLogInPopUp();
+    });
+    this.loginContainer.addEventListener("mouseleave", () => {
+      this.hideExpandedLogInPopUp();
+    });
+    this.shippingAddressAnchor.addEventListener("mouseenter", () => {
+      this.showShippingAddressPopUp();
+    });
+    this.shippingAddressContainer.addEventListener("mouseleave", () => {
+      this.hideShippingAddressPopUp();
+    });
+  }
 }
