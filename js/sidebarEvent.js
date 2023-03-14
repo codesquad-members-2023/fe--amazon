@@ -13,10 +13,10 @@ const areaArr = [...hoverAreaArr].map((hoverArea) => hoverArea.parentNode);
 
 areaArr.forEach((area) => {
   area.addEventListener('mouseover', (e) => {
-    e.target.children[1].style.filter = 'brightness(0%)';
+    e.currentTarget.children[1].style.filter = 'brightness(0%)';
   });
   area.addEventListener('mouseout', (e) => {
-    e.target.children[1].style.filter = '';
+    e.currentTarget.children[1].style.filter = '';
   });
 });
 
