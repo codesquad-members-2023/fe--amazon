@@ -23,8 +23,11 @@ shippingMenu.addEventListener("mouseout", () => {
 
 subbarAll.addEventListener("click", () => {
   sidebar.style.display = "block";
+  dimmed.style.display = "block";
+  dimmed.style.zIndex = 1;
 });
 
 sidebarClose.addEventListener("click", () => {
   sidebar.style.display = "none";
+  dimmed.style.display = "none";
 });
