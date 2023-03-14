@@ -23,12 +23,17 @@
     justify-content: center;
   }
 
+  &__location-image {
+    width: 10px;
+    height: 10px;
+  }
+
   &__anchor {
     display: flex;
     align-items: center;
   }
 
-  &__translage,
+  &__translate,
   &__cart {
     display: flex;
     align-items: center;

@@ -210,10 +210,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center; }
+  .header__location-image {
+    width: 10px;
+    height: 10px; }
   .header__anchor {
     display: flex;
     align-items: center; }
-  .header__translage, .header__cart {
+  .header__translate, .header__cart {
     display: flex;
     align-items: center;
     gap: 4px; }
@@ -266,7 +269,9 @@ body {
     left: 0; }
   .side-bar__close {
     position: absolute;
-    left: 320px; }
+    left: 320px;
+    margin-top: 12px;
+    margin-left: 12px; }
   .side-bar__log-in {
     display: flex;
     align-items: center;
@@ -323,5 +328,5 @@ body {
       padding: 8px 16px 8px 32px;
       width: 100%; }
     .side-bar .submenu__back-text {
-      width: 100%;
+      flex-grow: 1;
       text-align: left; }

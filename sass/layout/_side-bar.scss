@@ -13,6 +13,8 @@
   &__close {
     position: absolute;
     left: 320px;
+    margin-top: 12px;
+    margin-left: 12px;
   }
 
   &__log-in {
@@ -102,7 +104,7 @@
     }
 
     &__back-text {
-      width: 100%;
+      flex-grow: 1;
       text-align: left;
     }
   }
