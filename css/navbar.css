@@ -2,6 +2,9 @@ nav {
   width: 1300px;
 }
 
+#head_navigation_bar {
+  position: fixed;
+}
 .dim_layer {
   display: none;
   position: fixed;
