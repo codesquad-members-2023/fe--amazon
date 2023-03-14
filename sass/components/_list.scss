@@ -1,0 +1,22 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  white-space: nowrap;
+  width: 150px;
+
+  &__label {
+    font-weight: 800;
+    font-size: 13px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__item {
+    width: 150px;
+  }
+}

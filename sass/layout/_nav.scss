@@ -1,0 +1,25 @@
+.nav {
+  background-color: #1b232f;
+  padding: 0px 16px;
+  color: #fff;
+  font-size: 13px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__anchor,
+  &__special-offer {
+    font-weight: 800;
+  }
+
+  &__anchor {
+    display: inline-block;
+    padding: 8px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+  }
+}

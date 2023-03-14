@@ -63,6 +63,7 @@ export default class SideBar {
     const subMenu = [...this.allSubMenus].find(
       (el) => el.dataset.parentId === id
     );
+
     subMenu.classList.remove("hidden");
     this.subMenuContainer.node.classList.add("show-sub-menu");
   }

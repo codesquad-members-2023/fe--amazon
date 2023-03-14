@@ -1,0 +1,82 @@
+@keyframes page-load-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pop-up {
+  position: absolute;
+  padding: 16px;
+  background-color: #fff;
+  letter-spacing: -0.03em;
+  font-size: 11px;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  &--login {
+    /* top 값 바꾸기 */
+    top: 54px;
+    right: 10px;
+    gap: 8px;
+    opacity: 0;
+    animation: page-load-fade-in 250ms ease-in-out forwards;
+  }
+
+  &--shipping-address {
+    top: 54px;
+    left: 0px;
+    gap: 26px;
+
+    width: 320px;
+  }
+
+  &__expanded {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__text {
+    color: #10141a;
+
+    &--login {
+      white-space: nowrap;
+    }
+  }
+
+  &__link {
+    color: #074099;
+  }
+
+  &__triangle {
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    transform: translateY(-30%);
+    background-color: inherit;
+    top: 0;
+
+    &--login {
+      right: 10px;
+    }
+
+    &--shipping-address {
+      left: 10px;
+    }
+  }
+
+  &__list {
+    color: #10141a;
+    display: flex;
+    justify-content: space-between;
+  }
+}
