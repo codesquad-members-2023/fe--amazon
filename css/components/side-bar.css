@@ -91,7 +91,8 @@
   border-top: solid 1px #eff2f2;
 }
 
-.homeSidebar__lists li:last-child {
+.homeSidebar__mode--open,
+.homeSidebar__mode--close {
   cursor: pointer;
 }
 
