@@ -98,12 +98,6 @@ button {
   }
 }
 
-@keyframes slid-down {
-  to {
-    height: 100%;
-    opacity: 1;
-  }
-}
 
 /* SECTION */
 section {
@@ -417,7 +411,7 @@ header {
   overflow: hidden;
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-out;
 }
 
 .back__main span {
