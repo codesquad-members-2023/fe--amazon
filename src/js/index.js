@@ -25,6 +25,16 @@ const main = () => {
     if ($sideBar.classList.contains('open_side_bar')) $sideBar.classList.remove('open_side_bar');
     $sideBar.classList.add('close_side_bar');
   });
+
+  const $expandedShoppingCategoryBtn = $('.expanded_shopping_category_btn', $sideBar);
+  const $expandedShoppingCategoryList = $('.expanded_shopping_category_list', $sideBar);
+  $expandedShoppingCategoryBtn.addEventListener('click', () => {
+    if ($expandedShoppingCategoryList.classList.contains('hidden')) {
+      $expandedShoppingCategoryList.classList.remove('hidden');
+      return;
+    }
+    $expandedShoppingCategoryList.classList.add('hidden');
+  });
 };
 
 main();

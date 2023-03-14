@@ -118,10 +118,14 @@
 }
 
 .shopping_category_list li:last-child,
-.shopping_category_list_more li:last-child {
+.expanded_shopping_category_list li:last-child {
   justify-content: start;
 }
 .shopping_category_list li:last-child img,
-.shopping_category_list_more li:last-child img {
+.expanded_shopping_category_list li:last-child img {
   margin-left: 10px;
+}
+
+.expanded_shopping_category_list {
+  width: 100%;
 }
