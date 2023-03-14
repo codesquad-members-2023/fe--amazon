@@ -4,6 +4,7 @@ const dimmed = document.querySelector(".dim-layer");
 const subbarAll = document.querySelector(".sub__all-menu");
 const sidebar = document.querySelector(".sidebar");
 const sidebarClose = document.querySelector(".sidebar__btn_close");
+const loginPopupBox = document.querySelector(".nav__login_popup");
 
 loginMenu.addEventListener("mouseover", () => {
   dimmed.style.display = "block";
@@ -25,6 +26,8 @@ subbarAll.addEventListener("click", () => {
   sidebar.style.display = "block";
   dimmed.style.display = "block";
   dimmed.style.zIndex = 1;
+  loginMenu.style.display = "";
+  loginPopupBox.style.animation = 0;
 });
 
 sidebarClose.addEventListener("click", () => {
