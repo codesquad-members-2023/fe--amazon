@@ -332,7 +332,6 @@ li {
 .main {
   position: relative;
   height: 100vh;
-  /**/
 }
 
 .dimmed {
@@ -348,12 +347,15 @@ li {
 /* sidebar css*/
 
 .sidebar {
-  position: absolute;
-  top: 0;
-  left: -320px;
+  position: fixed;
+  overflow-y: auto;
+
   width: 320px;
   height: 100%;
-  /* border: 2px solid green; */
+
+  top: 0;
+  left: -320px;
+
   background-color: var(--color-white);
   z-index: 3;
   transition: left 0.5s ease-in-out;
@@ -412,9 +414,16 @@ li {
 }
 
 .sidebar_close_icon {
-  position: absolute;
+  position: fixed;
   top: 18px;
-  right: -24px;
+  left: -24px;
+
+  z-index: 3;
+  transition: left 0.5s ease-in-out;
+}
+
+.sidebar_close_icon.active {
+  left: 344px;
 }
 
 .sidebar_dividing_line {
@@ -422,14 +431,42 @@ li {
   background-color: var(--color-gray100);
 }
 
-.sidebar_list_hidden {
+/* .sidebar_extra_list_container {
   display: none;
   overflow: hidden;
   transition: all 3s;
 }
 
-.sidebar_list_hidden.show {
+.sidebar_extra_list_container.show {
   display: block;
+} */
+
+.sidebar_extra_list_items {
+  overflow-y: hidden;
+  width: 320px;
+  max-height: 0;
+  transition: max-height 500ms ease-in-out;
+}
+
+.sidebar_extra_list_items.show {
+  max-height: 100%;
+}
+
+.sidebar_extra_list_item {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  font-size: 13px;
+  padding: 8px 16px 8px 32px;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.sidebar_extra_list_item.show {
+  opacity: 1;
 }
 
 .sidebar_list_fold {

@@ -3,7 +3,6 @@ import { sidebar } from './sidebar_module.js';
 import { global } from './amazon_module.js';
 
 const showLoginInitLayer = () => {
-  console.log('good');
   header.loginPopup.classList.remove('hidden');
 };
 
@@ -28,18 +27,35 @@ const showShippingLayer = () => {
 
 const activeSidebarHandler = () => {
   sidebar.sidebar.classList.add('active');
+  sidebar.sidebarInactivateButton.classList.add('active');
+  header.loginPopup.classList.add('hidden');
+  global.dimmedSection.classList.remove('hidden');
 };
 
 const inactiveSidebarHandler = () => {
   sidebar.sidebar.classList.remove('active');
+  sidebar.sidebarInactivateButton.classList.remove('active');
+  global.dimmedSection.classList.add('hidden');
 };
 
 const showHiddenSidebarList = () => {
-  sidebar.hiddenSidebarList.classList.add('show');
+  const delayTime = 100;
+  sidebar.extraSidebarList.classList.add('show');
+  sidebar.extraSidebarListItem.forEach((item, index) => {
+    setTimeout(() => {
+      item.classList.add('show');
+    }, index * delayTime);
+  });
+  global.dimmedSection.classList.remove('hidden');
 };
 
 const hideHiddenSidebarList = () => {
-  sidebar.hiddenSidebarList.classList.remove('show');
+  const delayTime = 100;
+  sidebar.extraSidebarListItem.forEach((item, index) => {
+    setTimeout(() => {
+      item.classList.remove('show');
+    }, (sidebar.extraSidebarListItem.length - index) * delayTime);
+  });
 };
 
 const main = () => {
@@ -53,8 +69,8 @@ const main = () => {
   header.shippingSection.addEventListener('mouseleave', hideLayer);
   sidebar.sidebarActivateButton.addEventListener('click', activeSidebarHandler);
   sidebar.sidebarInactivateButton.addEventListener('click', inactiveSidebarHandler);
-  sidebar.showHiddenSidebarListButton.addEventListener('click', showHiddenSidebarList);
-  sidebar.hideHiddenSidebarListButton.addEventListener('click', hideHiddenSidebarList);
+  sidebar.showExtraSidebarListButton.addEventListener('click', showHiddenSidebarList);
+  sidebar.hideExtraSidebarListButton.addEventListener('click', hideHiddenSidebarList);
 };
 
 main();
