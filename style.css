@@ -24,25 +24,82 @@ body {
 
 @font-face {
   font-family: "Pretendard";
-  /*보통 다운 받은 파일 이름 그대로*/
   font-style: normal;
-  /*이탈릭 체는 italic*/
   font-weight: 500;
-  src: url("./assets/fonts/web/static/woff2/Pretendard-Medium.woff2") format("woff2"), url("./assets/fonts/web/static/woff/Pretendard-Medium.woff") format("woff"); }
+  src: url("assets/fonts/web/static/woff2/Pretendard-Medium.woff2") format("woff2"), url("assets/fonts/web/static/woff/Pretendard-Medium.woff") format("woff"); }
 
 @font-face {
   font-family: "Pretendard";
-  /*보통 다운 받은 파일 이름 그대로*/
   font-style: normal;
-  /*이탈릭 체는 italic*/
   font-weight: 600;
-  src: url("./assets/fonts/web/static/woff2/Pretendard-SemiBold.woff2") format("woff2"), url("./assets/fonts/web/static/woff/Pretendard-SemiBold.woff") format("woff"); }
+  src: url("assets/fonts/web/static/woff2/Pretendard-SemiBold.woff2") format("woff2"), url("assets/fonts/web/static/woff/Pretendard-SemiBold.woff") format("woff"); }
 
 @font-face {
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 800;
-  src: url("./assets/fonts/web/static/woff2/Pretendard-ExtraBold.woff2") format("woff2"), url("./assets/fonts/web/static/woff/Pretendard-ExtraBold.woff") format("woff"); }
+  src: url("assets/fonts/web/static/woff2/Pretendard-ExtraBold.woff2") format("woff2"), url("assets/fonts/web/static/woff/Pretendard-ExtraBold.woff") format("woff"); }
+
+.list__label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1; }
+
+.pop-up {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.6;
+  color: #10141a; }
+  .pop-up__link {
+    color: #074099; }
+
+.header {
+  color: #ffffff; }
+  .header__text {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: 1; }
+    .header__text--upper {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: #d5d5d5; }
+
+.nav {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px; }
+  .nav__all, .nav__special-offer {
+    font-weight: 800; }
+
+.side-bar__log-in {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  color: #ffffff; }
+
+.side-bar__content {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.6; }
+
+.side-bar__label {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1; }
+
+.submenu {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.6; }
 
 .hidden.hidden {
   display: none; }
@@ -66,9 +123,6 @@ body {
   gap: 4px;
   white-space: nowrap;
   width: 150px; }
-  .list__label {
-    font-weight: 800;
-    font-size: 13px; }
   .list__items {
     display: flex;
     flex-direction: column;
@@ -86,8 +140,6 @@ body {
   position: absolute;
   padding: 16px;
   background-color: #fff;
-  letter-spacing: -0.03em;
-  font-size: 11px;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -110,12 +162,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px; }
-  .pop-up__text {
-    color: #10141a; }
-    .pop-up__text--login {
-      white-space: nowrap; }
-  .pop-up__link {
-    color: #074099; }
+  .pop-up__text--login {
+    white-space: nowrap; }
   .pop-up__triangle {
     clip-path: polygon(50% 0, 0 100%, 100% 100%);
     width: 18px;
@@ -129,7 +177,6 @@ body {
     .pop-up__triangle--shipping-address {
       left: 10px; }
   .pop-up__list {
-    color: #10141a;
     display: flex;
     justify-content: space-between; }
 
@@ -146,15 +193,14 @@ body {
     position: fixed; }
 
 .header {
-  background-color: #000;
+  background-color: #10141a;
   padding: 0px 16px;
   display: flex;
   flex-wrap: nowrap;
-  gap: 24px;
-  color: #fff;
-  font-size: 13px; }
-  .header__logo, .header__anchor,
-  .header .search-form {
+  gap: 24px; }
+  .header__logo, .header__anchor {
+    padding-top: 8px;
+    padding-bottom: 8px;
     padding-top: 8px;
     padding-bottom: 8px; }
   .header__logo {
@@ -172,6 +218,8 @@ body {
     align-items: center;
     gap: 4px; }
   .header .search-form {
+    padding-top: 8px;
+    padding-bottom: 8px;
     flex-grow: 1;
     display: flex; }
     .header .search-form__input {
@@ -197,13 +245,9 @@ body {
 .nav {
   background-color: #1b232f;
   padding: 0px 16px;
-  color: #fff;
-  font-size: 13px;
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  .nav__anchor, .nav__special-offer {
-    font-weight: 800; }
   .nav__anchor {
     display: inline-block;
     padding: 8px; }
@@ -229,10 +273,7 @@ body {
     gap: 8px;
     width: 320px;
     padding: 16px 16px 16px 32px;
-    background-color: #10141a;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 800; }
+    background-color: #10141a; }
   .side-bar__content {
     height: 100%;
     position: relative;
@@ -240,21 +281,16 @@ body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    color: #10141a;
     background-color: #ffffff; }
   .side-bar__label {
     padding: 16px 16px 16px 32px;
-    font-weight: 800;
-    font-size: 18px;
     display: block; }
   .side-bar__show-all, .side-bar__button {
     padding: 8px 16px 8px 32px;
     display: flex;
     gap: 8px;
     align-items: center;
-    width: 100%;
-    font-weight: 500;
-    font-size: 13px; }
+    width: 100%; }
   .side-bar__text {
     flex-grow: 1;
     text-align: left; }
@@ -267,17 +303,17 @@ body {
     width: 320px;
     height: 0;
     transition: height 500ms ease-in-out; }
-  .side-bar .submenu-container.show-sub-menu {
-    left: 0; }
   .side-bar .submenu-container {
     width: 320px;
     position: absolute;
     top: 0;
     left: 320px;
     height: 100%;
-    background-color: #fff;
+    background-color: #ffffff;
     z-index: 1000;
     transition: left 250ms ease-in-out; }
+    .side-bar .submenu-container.show-sub-menu {
+      left: 0; }
   .side-bar .submenu {
     width: 320px; }
     .side-bar .submenu__back {
@@ -287,7 +323,5 @@ body {
       padding: 8px 16px 8px 32px;
       width: 100%; }
     .side-bar .submenu__back-text {
-      font-weight: 500;
-      font-size: 13px;
       width: 100%;
       text-align: left; }

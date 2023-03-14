@@ -1,17 +1,15 @@
 .header {
-  background-color: #000;
+  background-color: $black;
   padding: 0px 16px;
   display: flex;
   flex-wrap: nowrap;
   gap: 24px;
-  color: #fff;
-  font-size: 13px;
 
   &__logo,
-  &__anchor,
-  .search-form {
+  &__anchor {
     padding-top: 8px;
     padding-bottom: 8px;
+    @include header-padding;
   }
 
   &__logo {
@@ -38,6 +36,7 @@
   }
 
   .search-form {
+    @include header-padding;
     flex-grow: 1;
 
     display: flex;
@@ -52,7 +51,7 @@
     &__button {
       width: 40px;
       height: 40px;
-      background-color: #fcb057;
+      background-color: $primary-orange100;
       border-radius: 0px 4px 4px 0px;
     }
   }

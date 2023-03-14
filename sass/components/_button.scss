@@ -1,11 +1,11 @@
 .button {
   background: linear-gradient(
     174.6deg,
-    #ffffff 4.31%,
-    #fed15f 50.01%,
-    #febe30 95.71%
+    $white 4.31%,
+    $primary-yellow100 50.01%,
+    $primary-yellow200 95.71%
   );
-  border: 1px solid #de9408;
+  border: 1px solid $primary-yellow300;
   border-radius: 4px;
 
   padding: 9.5px 10px;

@@ -3,7 +3,7 @@ import { DimmedBody } from "./Dimmed";
 
 export default class SideBar {
   constructor() {
-    this.allAnchor = document.querySelector(".nav__anchor--all");
+    this.allAnchors = document.querySelector(".nav__anchor--all");
     this.sideBar = document.querySelector(".side-bar");
     this.sideBarCloseButton = document.querySelector(".side-bar__close");
 
@@ -65,11 +65,11 @@ export default class SideBar {
     );
 
     subMenu.classList.remove("hidden");
-    this.subMenuContainer.node.classList.add("show-sub-menu");
+    this.subMenuContainer.element.classList.add("show-sub-menu");
   }
 
   hideSubMenu() {
-    this.subMenuContainer.node.classList.remove("show-sub-menu");
+    this.subMenuContainer.element.classList.remove("show-sub-menu");
   }
 
   setSideBar() {
@@ -77,7 +77,7 @@ export default class SideBar {
       el.setAttribute("data-id", `${idx + 1}`);
     });
 
-    this.allAnchor.addEventListener("click", (e) => {
+    this.allAnchors.addEventListener("click", (e) => {
       this.showSideBar(e);
     });
     this.sideBarCloseButton.addEventListener("click", () => {

@@ -11,8 +11,6 @@
   position: absolute;
   padding: 16px;
   background-color: #fff;
-  letter-spacing: -0.03em;
-  font-size: 11px;
   border-radius: 4px;
 
   display: flex;
@@ -45,15 +43,9 @@
   }
 
   &__text {
-    color: #10141a;
-
     &--login {
       white-space: nowrap;
     }
-  }
-
-  &__link {
-    color: #074099;
   }
 
   &__triangle {
@@ -75,7 +67,6 @@
   }
 
   &__list {
-    color: #10141a;
     display: flex;
     justify-content: space-between;
   }

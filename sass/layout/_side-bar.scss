@@ -21,10 +21,7 @@
     gap: 8px;
     width: 320px;
     padding: 16px 16px 16px 32px;
-    background-color: #10141a;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 800;
+    background-color: $black;
   }
 
   &__content {
@@ -36,14 +33,11 @@
     display: flex;
     flex-direction: column;
 
-    color: #10141a;
-    background-color: #ffffff;
+    background-color: $white;
   }
 
   &__label {
     padding: 16px 16px 16px 32px;
-    font-weight: 800;
-    font-size: 18px;
     display: block;
   }
 
@@ -54,9 +48,6 @@
     gap: 8px;
     align-items: center;
     width: 100%;
-
-    font-weight: 500;
-    font-size: 13px;
   }
 
   &__text {
@@ -67,7 +58,7 @@
   .submenu__back:hover,
   &__show-all:hover,
   &__button:hover {
-    background-color: #eff2f2;
+    background-color: $gray100;
   }
 
   .other-buttons-container {
@@ -84,19 +75,19 @@
     }
   }
 
-  .submenu-container.show-sub-menu {
-    left: 0;
-  }
-
   .submenu-container {
     width: 320px;
     position: absolute;
     top: 0;
     left: 320px;
     height: 100%;
-    background-color: #fff;
+    background-color: $white;
     z-index: 1000;
     transition: left 250ms ease-in-out;
+
+    &.show-sub-menu {
+      left: 0;
+    }
   }
 
   .submenu {
@@ -111,8 +102,6 @@
     }
 
     &__back-text {
-      font-weight: 500;
-      font-size: 13px;
       width: 100%;
       text-align: left;
     }
