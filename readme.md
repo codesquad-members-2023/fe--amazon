@@ -198,7 +198,23 @@ div {
 - stopPropagation: 특정 태그에서 이벤트의 전달을 막는 api
 - preventDefault: 해당 태그가 가진 기본적인 기능을 막는 api
 
+### git stash
+
+- a 브랜치에서 b 브랜치를 따고 로컬에서만 b 브랜치에 변경 사항이 발생하면 a 브랜치로 스위치가 가능하다.
+  - 이유: commit을 기준으로는 변경이 일어나지 않았고, 로컬에서 워킹 디렉토리에서만 변경이 있기 때문에 b에서의 변경사항 이 a로 그대로 가져가진다.
+  - 이 때! stash 혹은 commit을 해서 변경사항을 반영할 수 있는데, 솔직히 커밋은 기능 단위로 하는 경우가 많기에 함부로 commit을 하기 애매하다.
+  - 이 때 stash를 통해 최근 커밋 기준 다음 변경사항들을 따로 빼두는 것이다.
+  - 그렇다면 언제 `브랜치를 변경하기 전에 commit 혹은 stash를 하라`는 에러가 발생할까?
+  - a 브랜치에서 b 브랜치를 따고 b 브랜치에서 작업을 한 뒤 커밋을 한다. 그러고 나서 또다시 로컬(워킹 디렉토리)에서 작업을 하고 a로 옮기려고 하면 에러가 발생한다.
+  - 이 때, stash로 변경사항을 잠깐 빼두든가 아니면 또다시 커밋을 해서 변경사항을 반영하고 옮기면 된다.
+
+### el.firstChild가 때로는 textNode가 뜨지 않을 때!(feat. 브라우저)
+
+- 브라우저에서는 html 파일들의 요소들이 최적화되어 공백없이(textNode가 없이) 정리된다.
+- 해서 firstChild로 textNode가 안찍히기도 한다!
+
 ## 🪵 Reference
 
 - [이벤트 위임](https://www.grapecity.com/blogs/html-and-wijmo-events/)
 - [stopPropagation vs preventDefault](https://ismydream.tistory.com/98)
+- [Git stash](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Stashing%EA%B3%BC-Cleaning)
