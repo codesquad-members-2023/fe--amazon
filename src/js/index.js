@@ -38,11 +38,11 @@ const main = () => {
   const $expandedShoppingCategoryBtn = $('.expanded_shopping_category_btn', $sideBar);
   const $expandedShoppingCategoryList = $('.expanded_shopping_category_list', $sideBar);
   $expandedShoppingCategoryBtn.addEventListener('click', () => {
-    if ($expandedShoppingCategoryList.classList.contains('hidden')) {
-      $expandedShoppingCategoryList.classList.remove('hidden');
-      return;
+    if ($expandedShoppingCategoryList.maxHeight) {
+      $expandedShoppingCategoryList.style.maxHeight = null;
+    } else {
+      $expandedShoppingCategoryList.style.maxHeight = `${$expandedShoppingCategoryList.scrollHeight}px`;
     }
-    $expandedShoppingCategoryList.classList.add('hidden');
   });
 };
 

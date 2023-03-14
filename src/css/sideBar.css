@@ -128,5 +128,7 @@
 }
 
 .expanded_shopping_category_list {
-  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease-out;
 }
