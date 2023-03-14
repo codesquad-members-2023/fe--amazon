@@ -36,6 +36,7 @@
   position: fixed;
   top: 0;
   left: -374px;
+  z-index: 2;
 }
 .side_bar_main {
   width: 320px;
