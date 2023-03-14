@@ -31,3 +31,9 @@
   padding: 20px;
   justify-content: space-between;
 }
+
+.sidebar-other-contents {
+  height: 0;
+  transition: height 4s ease-in-out;
+  overflow: hidden;
+}
