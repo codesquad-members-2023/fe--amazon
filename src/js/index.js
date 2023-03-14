@@ -29,6 +29,12 @@ const main = () => {
     $dimCover.classList.add('hidden');
   });
 
+  $dimCover.addEventListener('click', () => {
+    if ($sideBar.classList.contains('open_side_bar')) $sideBar.classList.remove('open_side_bar');
+    $sideBar.classList.add('close_side_bar');
+    $dimCover.classList.add('hidden');
+  });
+
   const $expandedShoppingCategoryBtn = $('.expanded_shopping_category_btn', $sideBar);
   const $expandedShoppingCategoryList = $('.expanded_shopping_category_list', $sideBar);
   $expandedShoppingCategoryBtn.addEventListener('click', () => {
