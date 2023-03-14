@@ -1,3 +1,5 @@
+import { SIDEBAR_FOLDING_BTN_HEIGHT } from '../../../../constant.js';
+
 export default function sidebarFoldStyle() {
   const style = document.createElement('style');
 
@@ -6,9 +8,10 @@ export default function sidebarFoldStyle() {
         display: flex;
         flex-direction: row;
         align-items: center;
+        height: ${SIDEBAR_FOLDING_BTN_HEIGHT}px;
 
         gap: 8px;
-        padding: 8px 16px 8px 32px;
+        padding: 0 16px 0 32px;
         width: 100%;
         
         background-color: transparent;

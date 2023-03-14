@@ -1,5 +1,9 @@
 import { menus } from '../../data/menu.js';
 import sidebarMainStyle from '../../styles/components/sidebar/sidebarMain.js';
+import {
+  SIDEBAR_CATEGORY_HEIGHT,
+  SIDEBAR_FOLDING_BTN_HEIGHT,
+} from '../../constant.js';
 
 class SidebarMain extends HTMLElement {
   constructor() {
@@ -54,7 +58,11 @@ class SidebarMain extends HTMLElement {
         .join('')}
     `;
 
-    this.shadowRoot.append(sidebarMainStyle());
+    const foldingListHeight =
+      SIDEBAR_CATEGORY_HEIGHT * (menus[1].categories.length - dividingNum) +
+      SIDEBAR_FOLDING_BTN_HEIGHT * 2;
+
+    this.shadowRoot.append(sidebarMainStyle.call(this, foldingListHeight));
   }
 
   createTitle(parent, text) {

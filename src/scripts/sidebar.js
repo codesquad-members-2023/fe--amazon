@@ -84,11 +84,13 @@ function foldCategories(sidebar) {
     .querySelector('sidebar-main-element')
     .shadowRoot.querySelector('#folidng-btn');
   unfoldingBtn.addEventListener('click', () => {
+    const container = sidebar.shadowRoot.querySelector('.container');
     const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
     const foldingList = sidebar.shadowRoot
       .querySelector('sidebar-main-element')
       .shadowRoot.querySelector('#folding-list');
     sub.style.top = '0px';
     foldingList.classList.remove('unfolded');
+    container.scrollTop = 0;
   });
 }

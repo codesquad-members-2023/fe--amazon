@@ -1,6 +1,6 @@
 import { SIDEBAR_SIZE } from '../../../constant.js';
 
-export default function sidebarMainStyle(height) {
+export default function sidebarMainStyle(foldingListHeight) {
   const style = document.createElement('style');
 
   style.textContent = `
@@ -35,7 +35,7 @@ export default function sidebarMainStyle(height) {
 
     #folding-list.unfolded {
       opacity: 1;
-      max-height: 100%;
+      max-height: ${foldingListHeight}px;
     }
 
 

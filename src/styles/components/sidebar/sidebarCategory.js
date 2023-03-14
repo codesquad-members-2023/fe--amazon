@@ -1,3 +1,5 @@
+import { SIDEBAR_CATEGORY_HEIGHT } from '../../../constant.js';
+
 export default function sidebarCateoryStyle() {
   const style = document.createElement('style');
 
@@ -5,9 +7,10 @@ export default function sidebarCateoryStyle() {
     button {
       display: flex;
       align-items: center;
-      padding: 8px 16px 8px 32px;
+      padding: 0 16px 0 32px;
       gap: 8px;
       border: none;
+      height: 40px;
 
       width: 100%;
       background: var(--white);
