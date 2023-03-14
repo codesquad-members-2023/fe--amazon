@@ -10,8 +10,8 @@ function createHTML(title, data) {
   let htmlForm = `
   <section class="sidebar_section sidebar_detail_section">
     <a href="#">
-      <div class="sidebar_detail_back_button">
-        <img src="asset/left_arrow_icon.svg" />
+      <div class="sidebar_detail_back_button ">
+        <img src="asset/left_arrow_icon.svg" class=".hover_img" />
         <span>주메뉴</span>
       </div>
     </a>
@@ -66,6 +66,12 @@ mainMenuArr.forEach((mainMenu) => {
           mainMenu.style.display = 'block';
           mainMenu.style.animation = 'hideDetail 0.5s forwards';
         });
+      });
+      backButton.addEventListener('mouseover', (e) => {
+        e.currentTarget.children[0].style.filter = 'brightness(0%)';
+      });
+      backButton.addEventListener('mouseout', (e) => {
+        e.currentTarget.children[0].style.filter = '';
       });
     }
   });
