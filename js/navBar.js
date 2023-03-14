@@ -4,7 +4,7 @@ const logInSection = document.querySelector('.log-in')
 const logInModal = document.querySelector('.log-in .modal')
 
 const showLogInModal = () => {
-  window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('load', () => {
     logInModal.style.animation = 'slow-appear 1s forwards'
     logInModal.style.animationDelay = '1s'
   })
@@ -22,6 +22,7 @@ const showDim = (element) => {
     dim.style.display = 'block'
   })
 }
+
 const hideDim = (element) => {
   element.addEventListener("mouseout", () => {
     dim.style.display = 'none'
