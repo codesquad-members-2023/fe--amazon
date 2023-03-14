@@ -71,15 +71,12 @@ class App {
     this.$sidebarSubList = this.$('.sidebar-sub-list')!;
   }
 
-  // private $(selector: string): HTMLElement | null {
-  //   return document.querySelector(selector);
-  // }
-
   toggleExpandLogin() {
-    this.$login.addEventListener('mouseenter', () => {
+    this.$login.addEventListener('mouseenter', (e) => {
       this.$login.style.height = '20rem';
       this.$userExpansion.style.display = 'flex';
       this.$wrapperDim.style.display = 'block';
+      console.log(e);
     });
     this.$login.addEventListener('mouseleave', () => {
       this.$login.style.display = 'none';
@@ -114,9 +111,6 @@ class App {
       [this.$wrapperDim, this.$sidebar, this.$sidebarSub].forEach((el) => {
         el.style.display = 'none';
       })
-      // this.$wrapperDim.style.display = 'none';
-      // this.$sidebar.style.display = 'none';
-      // this.$sidebarSub.style.display = 'none';
       this.$sidebarSubList.innerHTML =
         "<li class='sidebar-sub-list__title'></li>";
     });
