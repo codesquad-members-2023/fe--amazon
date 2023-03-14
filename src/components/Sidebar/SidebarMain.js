@@ -6,7 +6,6 @@ class SidebarMain extends HTMLElement {
     super();
 
     const shadow = this.attachShadow({ mode: 'open' });
-
     const dividingNum = 4;
 
     shadow.innerHTML = `
@@ -39,17 +38,17 @@ class SidebarMain extends HTMLElement {
                   return `<sidebar-category-element id=${category.id}>${category.name}</sidebar-category-element>`;
                 })
                 .join('')}
-              <div id="folding-container">
-                <sidebar-fold-element id="unfolidng-btn"></sidebar-fold-element>
-                <ul id="folidng-list">
-                  ${menuOverflowed
-                    .map((category) => {
-                      return `<sidebar-category-element id=${category.id}>${category.name}</sidebar-category-element>`;
-                    })
-                    .join('')}
-                  <sidebar-unfold-element id="folidng-btn"></sidebar-unfold-element>
-                </ul>
-              </div>
+                <div id="folding-container">
+                  <sidebar-fold-element id="unfolidng-btn"></sidebar-fold-element>
+                  <ul id="folding-list" class="folded">
+                    ${menuOverflowed
+                      .map((category) => {
+                        return `<sidebar-category-element id=${category.id}>${category.name}</sidebar-category-element>`;
+                      })
+                      .join('')}
+                    <sidebar-unfold-element id="folidng-btn"></sidebar-unfold-element>
+                  </ul>
+                </div>
             </section>`;
         })
         .join('')}

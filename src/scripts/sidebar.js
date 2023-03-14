@@ -39,7 +39,7 @@ function clickCategories(sidebar) {
     const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
     category.addEventListener('click', (e) => {
       const sectionId =
-        e.target.parentNode.id === 'folidng-list'
+        e.target.parentNode.id === 'folding-list'
           ? e.target.parentNode.parentNode.parentNode.id
           : e.target.parentNode.id;
       const categoryId = e.target.id;
@@ -77,27 +77,24 @@ function unfoldCategories(sidebar) {
   foldingBtn.addEventListener('click', () => {
     const foldingList = sidebar.shadowRoot
       .querySelector('sidebar-main-element')
-      .shadowRoot.querySelector('#folidng-list');
+      .shadowRoot.querySelector('#folding-list');
     foldingList.classList.add('unfolded');
-    foldingList.classList.add('slide-down');
-    if (foldingList.classList.contains('slide-up'))
-      foldingList.classList.remove('slide-up');
+
     foldCategories(sidebar);
   });
 }
 
 function foldCategories(sidebar) {
-  const foldingList = sidebar.shadowRoot
-    .querySelector('sidebar-main-element')
-    .shadowRoot.querySelector('#folidng-list');
   const unfoldingBtn = sidebar.shadowRoot
     .querySelector('sidebar-main-element')
     .shadowRoot.querySelector('#folidng-btn');
   unfoldingBtn.addEventListener('click', () => {
+    const main = sidebar.shadowRoot.querySelector('sidebar-main-element');
     const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
+    const foldingList = sidebar.shadowRoot
+      .querySelector('sidebar-main-element')
+      .shadowRoot.querySelector('#folding-list');
     sub.style.top = '0px';
     foldingList.classList.remove('unfolded');
-    foldingList.classList.add('slide-up');
-    foldingList.classList.remove('slide-down');
   });
 }

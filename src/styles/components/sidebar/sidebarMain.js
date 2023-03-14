@@ -1,6 +1,6 @@
 import { SIDEBAR_SIZE } from '../../../constant.js';
 
-export default function sidebarMainStyle() {
+export default function sidebarMainStyle(height) {
   const style = document.createElement('style');
 
   style.textContent = `
@@ -10,27 +10,34 @@ export default function sidebarMainStyle() {
       height: 100%;
     }
 
-    #folidng-list {
+    #folding-container {
+      display: block;
+      height: 100%;
+    }
+
+    sidebar-fold-element {
+      height: auto;
+      display: block;
+    }
+
+    #folding-list {
       padding: 0;
       list-style: none;
       margin: 0;
-      opacity: 0;
-      height: 0;
+      max-height: 0;
+      
       overflow: hidden;
+      display: block;
+      opacity: 0;
+      max-height: 0;
+      transition: max-height .3s, opacity .3s;
     }
 
-    #folidng-list.unfolded {
+    #folding-list.unfolded {
       opacity: 1;
-      height: auto;
+      max-height: 100%;
     }
 
-    #folidng-list.slide-down {
-      animation: slide-down .3s forwards;
-    }
-
-    #folidng-list.slide-up {
-      animation: slide-up .3s forwards;
-    }
 
     ul {
       margin: 0;
@@ -39,32 +46,12 @@ export default function sidebarMainStyle() {
 
     .section {
       border-bottom: 1px solid var(--gray-100);
+      height: auto;
     }
 
     .section:last-of-type {
       border-bottom: none;
     }
-
-    @keyframes slide-up {
-      0% {
-        opacity: 1;
-        height: auto;
-      }
-      100% {
-        opacity: 0;
-        height: 0;
-      }
-    }
-
-    @keyframes slide-down {
-      0% {
-        opacity: 0;
-        height: 0;
-      }
-      100% {
-        opacity: 1;
-        height: auto;
-      }
   `;
   return style;
 }

@@ -36,7 +36,7 @@ function hoverSelectAddressBtn() {
     changeAddressActionElement.showAction(selectAddressBtn, id);
 
     selectAddressBtn.addEventListener('mouseleave', () => {
-      changeAddressActionElement?.closeAction();
+      changeAddressActionElement.closeAction();
       changeAddressActionElement = null;
     });
   });
