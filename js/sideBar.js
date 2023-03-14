@@ -10,7 +10,7 @@ const allItemsButton = document.querySelector('.side-menu__show-button')
 const openSideBar = () => {
   openButton.addEventListener('click', () => {
     sideMenu.style.display = 'flex'
-    sideMenu.style.animation = 'slide-appear .5s'
+    sideMenu.style.animation = 'slide-to-right .5s'
     dim.style.display = 'block'
     dim.style.top = '-85px'
   })
@@ -36,14 +36,12 @@ const hideSideBar = () => {
 const oepnAllItems = () => {
   allItemsButton.addEventListener('click', () => {
     allItems.style.display = 'block'
-    allItems.style.animation = 'slow-appear-menu 1s forwards'
   })
 }
 
 const closeAllItems = () => {
   simpleItemsButton.addEventListener('click', () => {
     allItems.style.display = 'none'
-    allItems.style.animation = 'slow-hide 1s'
   })
 }
 
@@ -58,8 +56,8 @@ const moveMain = () => {
   
   backMainButton.addEventListener('click', () => {
     sideMain.style.display = 'block'
+    sideMain.style.animation = 'slide-to-right .5s'
     sideMenuDetail.style.display = 'none'
-    sideMain.style.animation = 'slide-appear .5s forwards'
   })
 }
 

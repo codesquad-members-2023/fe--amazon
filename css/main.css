@@ -76,6 +76,17 @@ button {
   }
 }
 
+@keyframes slide-to-right {
+  from {
+    left: -320px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
 @keyframes slide-hide {
   from {
     left: 0;
@@ -350,10 +361,8 @@ header {
   position: fixed;
   overflow-y: scroll;
   width: 320px;
-  height: 100%;
   top: 0;
   background-color: #FFF;
-  animation: slide-appear .5s forwards;
   z-index: 1;
 }
 
@@ -405,7 +414,6 @@ header {
 
 .side-menu__all-items {
   display: none;
-  height: 0;
 }
 
 .back__main span {
@@ -421,7 +429,7 @@ header {
 }
 
 .side-menu__close {
-  position: absolute;
+  position: fixed;
   top: 17px;
   left: 330px;
   cursor: pointer;
