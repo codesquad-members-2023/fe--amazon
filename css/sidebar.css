@@ -7,6 +7,7 @@
   height: 100%;
   overflow: scroll;
   transition: 1s ease-in-out;
+  z-index: 2;
 }
 
 .sidebar-header {
@@ -31,7 +32,7 @@
 
 .sidebar li {
   display: flex;
-  padding: 18px;
+  padding: 15px;
   justify-content: space-between;
 }
 
@@ -48,4 +49,14 @@
   top: 5px;
   border: 0;
   background-color: transparent;
+  opacity: 0%;
+  transition: opacity 1s ease-in-out;
+}
+
+.categories :hover {
+  background-color: black;
+}
+
+.body {
+  background-color: beige;
 }

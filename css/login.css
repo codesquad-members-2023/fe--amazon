@@ -126,7 +126,3 @@
   background-color: var(--color-white);
   transform: rotate(45deg);
 }
-
-.shipping-country:hover + .shipping-hover {
-  display: block;
-}
