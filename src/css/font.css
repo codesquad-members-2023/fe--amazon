@@ -1,21 +1,82 @@
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-    format('woff');
-  font-weight: 800;
-  font-style: normal;
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css');
+
+:root {
+  --bold-xl-size: 28px;
+  --bold-xl-weight: 800;
+  --bold-xl-line-height: auto;
+  --bold-xl-spacing: 0;
+
+  --bold-lg-size: 18px;
+  --bold-lg-weight: 800;
+  --bold-lg-line-height: auto;
+  --bold-lg-spacing: 0;
+
+  --bold-md-size: 13px;
+  --bold-md-weight: 800;
+  --bold-md-line-height: auto;
+  --bold-md-spacing: -0.06em;
+
+  --bold-sm-size: 11px;
+  --bold-sm-weight: 600;
+  --bold-sm-line-height: auto;
+  --bold-sm-spacing: -0.06em;
+
+  --body-md-size: 13px;
+  --body-md-weight: 500;
+  --body-md-line-height: 160%;
+  --body-md-spacing: -0.03em;
+
+  --body-sm-size: 11px;
+  --body-sm-weight: 500;
+  --body-sm-line-height: 160%;
+  --body-sm-spacing: -0.03em;
 }
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-    format('woff');
-  font-weight: 600;
-  font-style: normal;
+
+body {
+  font-family: Pretendard, sans-serif;
 }
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-    format('woff');
-  font-weight: 500;
-  font-style: normal;
+
+/* color는 각각 파일에서 지정 */
+
+/* bold-xl */
+/* bold-lg */
+.side_bar_main_header {
+  font-size: var(--bold-lg-size);
+  font-weight: var(--bold-lg-weight);
+  line-height: var(--bold-lg-line-height);
+  letter-spacing: var(--bold-lg-spacing);
+}
+/* bold-md */
+.nav_main_bottom_text,
+.side_bar_btn,
+.nav_sub_right_btn,
+.login_modal_more p {
+  font-size: var(--bold-md-size);
+  font-weight: var(--bold-md-weight);
+  line-height: var(--bold-md-line-height);
+  letter-spacing: var(--bold-md-spacing);
+}
+/* bold-sm */
+.nav_main_top_text,
+.modal_btn {
+  font-size: var(--bold-sm-size);
+  font-weight: var(--bold-sm-weight);
+  line-height: var(--bold-sm-line-height);
+  letter-spacing: var(--bold-sm-spacing);
+}
+/* body-md */
+.searchFormInput,
+.side_bar_main li {
+  font-size: var(--body-md-size);
+  font-weight: var(--body-md-weight);
+  line-height: var(--body-md-line-height);
+  letter-spacing: var(--body-md-spacing);
+}
+/* body-sm */
+.shipping_address_modal,
+.login_modal {
+  font-size: var(--body-sm-size);
+  font-weight: var(--body-sm-weight);
+  line-height: var(--body-sm-line-height);
+  letter-spacing: var(--body-sm-spacing);
 }

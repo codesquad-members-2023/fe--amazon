@@ -27,24 +27,9 @@
 }
 /* nav 상단 글씨체 */
 .nav_main_top_text {
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 13px;
-  letter-spacing: -0.06em;
-
   color: #d5d5d5;
 }
 .nav_main_bottom_text {
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
-
-  letter-spacing: -0.06em;
-
   color: #ffffff;
 }
 
@@ -65,53 +50,6 @@
   width: 12px;
   height: 12px;
 }
-.shipping_address_modal {
-  position: absolute;
-  top: 50px;
-  left: -30px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background-color: #ffffff;
-  width: 320px;
-  height: 126px;
-  border: 1px solid #000;
-  border-radius: 5px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 160%;
-
-  letter-spacing: -0.03em;
-
-  color: #10141a;
-}
-.shipping_address_modal > span {
-  padding: 10px;
-}
-.shipping_address_modal_btns {
-  width: 100%;
-  padding-right: 10px;
-  padding-left: 10px;
-
-  display: flex;
-  justify-content: flex-end;
-}
-.shipping_address_modal_btns > div:first-child {
-  width: 40px;
-}
-.shipping_address_modal_btns > div:last-child {
-  width: 60px;
-  margin-left: 10px;
-}
-.shipping_address_modal_btn {
-  height: 32px;
-}
 
 .nav_main_search_form {
   display: flex;
@@ -129,14 +67,6 @@
 }
 .searchFormInput {
   height: 21px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 160%;
-
-  letter-spacing: -0.03em;
 
   color: #878787;
 
@@ -176,62 +106,14 @@
 .login {
   position: relative;
 }
-.login_section,
-.login_modal {
+.login_section {
   display: flex;
   flex-direction: column;
-}
-.login_modal {
-  position: absolute;
-  top: 50px;
-  left: -30px;
-
-  align-items: center;
-  justify-content: center;
-
-  background-color: #ffffff;
-  width: 235px;
-  height: 90px;
-  border: 1px solid #000;
-  border-radius: 5px;
-}
-.login_modal .modal_btn {
-  width: 60%;
-  height: 30%;
-}
-.login_modal_bottom {
-  margin-top: 3px;
-}
-.login_modal_bottom > span {
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 160%;
-
-  letter-spacing: -0.03em;
-}
-.login_modal_bottom > span:first-child {
-  color: #10141a;
-}
-.login_modal_bottom > span:last-child {
-  color: #074099;
 }
 
 .cart > img {
   width: 24px;
   height: 24px;
-}
-
-.triangle {
-  content: '';
-
-  border: 10px solid transparent;
-  border-bottom: 10px solid #ffffff;
-
-  position: absolute;
-  top: -18px;
-  left: 30px;
 }
 
 /* nav 하단 */
@@ -248,39 +130,28 @@
 }
 
 /* nav 하단 글씨체 */
-#nav_sub a {
+#nav_sub a,
+.side_bar_btn {
   color: #ffffff;
 }
 .nav_sub_left_text {
-  font-family: 'Pretendard';
-  font-style: normal;
+  /* 글씨체 type에 없는 속성값을 가지기 때문에 따로 지정 */
   font-weight: 600;
   font-size: 13px;
-  line-height: 16px;
-}
-.side_bar,
-.nav_sub_right_btn {
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
-
-  letter-spacing: -0.06em;
 }
 
 .nav_sub_left_btns,
-.side_bar {
+.side_bar_btn {
   display: flex;
   align-items: flex-start;
 }
 
-.nav_sub_left_btns .side_bar,
+.nav_sub_left_btns .side_bar_btn,
 .nav_sub_left_btns > a {
   margin-right: 20px;
 }
 
-.side_bar img {
+.side_bar_btn img {
   width: 16px;
   height: 16px;
 
