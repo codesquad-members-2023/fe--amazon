@@ -36,6 +36,7 @@ button {
   z-index: 1;
 }
 
+/* nva bar log in modal */
 @keyframes slow-appear {
   from {
     opacity: 0;
@@ -45,27 +46,8 @@ button {
   }
 }
 
-@keyframes slow-hide {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes slide-appear-menu {
-  from {
-    left: -320px;
-    opacity: 0;
-  }
-  to {
-    left: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes slide-appear-menu {
+/* open detail menu */
+@keyframes slide-to-left__open {
   from {
     left: 330px;
     opacity: 0;
@@ -76,6 +58,19 @@ button {
   }
 }
 
+/* open side bar, move to main */
+@keyframes slide-to-right {
+  from {
+    left: -320px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+/* close side bar */
 @keyframes slide-hide {
   from {
     left: 0;
@@ -84,13 +79,6 @@ button {
   to {
     left: -320px;
     opacity: 0;
-  }
-}
-
-@keyframes slid-down {
-  to {
-    height: 100%;
-    opacity: 1;
   }
 }
 
@@ -235,11 +223,11 @@ header {
 }
 
 .main-menu .log-in .modal {
-  opacity: 0;
   display: flex;
-  flex-direction: column;
   width: 235px;
   right: 0;
+  flex-direction: column;
+  opacity: 0;
 }
 
 .main-menu .log-in .modal button {
@@ -280,7 +268,6 @@ header {
   width: 160px;
   margin-bottom: 8px;
 }
-
 
 .main-menu .log-in .modal__extension__bottom {
   display: flex;
@@ -349,17 +336,17 @@ header {
   display: none;
   flex-direction: column;
   position: fixed;
+  height: 100%;
   overflow-y: scroll;
   width: 320px;
-  height: 100%;
   top: 0;
   background-color: #FFF;
-  animation: slide-appear .5s;
   z-index: 1;
 }
 
 .side-menu__main {
   display: block;
+  height: 100%;
 }
 
 .side-menu__log-in {
@@ -372,19 +359,19 @@ header {
   box-sizing: border-box;
 }
 
-.side-menu__contents {
-  padding: 0 16px 16px 32px;
-}
-
 .side-menu__title {
   height: 53px;
   line-height: 3.5;
   font-weight: 800;
   font-size: 18px;
+  padding: 0 16px 0 32px;
 }
 
 .side-menu__item {
   display: flex;
+  width: 100%;
+  padding: 0 16px 0 32px;
+  box-sizing: border-box;
 }
 
 .side-menu__item:hover {
@@ -405,27 +392,26 @@ header {
 }
 
 .side-menu__all-items {
-  display: none;
-  height: 0;
-}
-
-.back__main {
-  margin-left: 30px;
+  overflow: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .2s ease-out;
 }
 
 .back__main span {
   margin-left: 15px;
 }
 
-.side-menu__car-goods {
+.side-menu__detail {
   display: none;
   position: absolute;
   top: 53px;
   left: 330px;
+  width: 100%;
 }
 
 .side-menu__close {
-  position: absolute;
+  position: fixed;
   top: 17px;
   left: 330px;
   cursor: pointer;

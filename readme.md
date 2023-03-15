@@ -1,99 +1,42 @@
 # 🎯 아마존
 
-## ✏️ 학습 내용
+## 학습정리
 
-###
+### 2주차
 
-## git
+### crong's review
 
-- pull request
+- [x] defer vs asyc
+- [x] `DOMContentLoaded` vs `load`
+  - `addEventListener('DOMContentLoaded', () => {})`  
+    초기 HTML 문서를 완전히 불러오고 분석했을 때 발생한다. 스타일 시트, 이미지, 하위 프레임의 로딩은 기다리지 않는다.
+  - `addEventListener('load', () => {})`  
+    리소스와 그것에 의존하는 리소스들의 로딩이 완료되면 실행된다.
+- [x] transition으로 애니메이션 구현해보기
+- [x] list 형태는 `li` 태그 사용하기
 
-  1. Fork  
-     Upstream Repository를 자신의 저장소로 Fork(Origin Repository)한다.
-  2. Clone & remote 설정
+### DOM, EVENT 제어
 
-  ```
-  $ git clone {복사한 URL}
-  ```
+- [x] `template literal`
+- [x] `createElement`
+- [x] `appendChild`
+- [x] `insertBefore`
+- [x] `event.target`
+- [x] `event.preventDefault()`
+- Event delegation
+  - [x] 버블링
+  - [x] 캡쳐링
 
-  3. 내 컴퓨터에 생성된 로컬저장소에 원격저장소를 추가
+### CSS
 
-  ```
-  $ git remote add post{별명} {복사한 URL}
-  ```
+- 단위 공부
+  - [x] em : 부모 요소의 글꼴 크기에 따라 상대적으로 크기를 조정 (상대적)
+  - [x] rem : HTML 요소의 루트 요소(일반적으로 html 요소)의 글꼴 크기에 따라 상대적으로 크기를 조정 (상대적)
 
-  4. branch 생성
+### 추가 요구 사항
 
-  ```
-  $ git switch -c {브랜치 명}
-
-  // branch 확인
-  $ git branch
-  ```
-
-  5. 수정 후 add, commit, push
-
-  - editor를 통해 코드 수정한다.
-  - 작업이 완료되면 Github Repository(origin)에 add, commit, push한다.
-
-  ```
-  $ git push origin {브랜치 명}
-  ```
-
-  6. pull request
-
-  - push 완료후 자신의 github 저장소에서 **Compare & pull request** 버튼이 활성화 되어있는걸 확인할 수 있다.
-  - 버튼을 클릭해 Pull Request를 생성한다.
-
-  7. Merge pull request
-
-  - pr을 받은 관리자는 코드 변경 내역을 확인하고 merge를 결정한다.
-
-  8. Merge 이후 동기화 및 branch 삭제
-
-  - Merge가 완료되면 로컬 코드와 원본의 코드를 병합하고 최신의 상태를 유지하게 위해 동기화한다.
-  - upstream 확인
-
-  ```
-  $ git remote -v
-  ```
-
-  - upstream 추가
-
-  ```
-  $ git remote add upstream
-  $ git fetch upstream
-  $ git merge upstream/master
-  $ git branch -d {브랜치 명}
-  ```
-
-- 위 명령어를 통해 동기화하고, 브랜치를 삭제한다.
-- 나중에 추가적으로 작업이 또 필요하다면, 동기화를 한 뒤 3-7번을 반복하면서 작업하면 된다.
-
-- pull request를 하는 이유
-  - 자연스러운 코드 리뷰를 위해
-  - push 권한이 없는 오픈 소스 프로젝트에 기여할 때
-- pull request와 merge request의 차이  
-  사실상 같은 용어이며 아래와 같은 차이가 있다.
-  - [github] pull request : 내가 작업한 branch를 master 입장에서 pull 하는 것
-  - [gitlab] merge request :내가 작업한 branch 입장에서 master에 merge 하는 것
-- draft  
-  [full request] - [Reviewers] - [still in progress?] - [Convert to draft] click  
-  <img width="320" alt="image" src="https://user-images.githubusercontent.com/88878874/223031668-051e4067-d4b9-4aae-82e0-567ccef22166.png">
-  - 아직 작업 중인 것을 알릴 수 있으며 코드 리뷰는 받을 수 없다.
-  - merge도 불가능하다.
-  - [Ready for review] : 보통의 pull request 상태로 변경된다.
-
-## html
-
-### sementic tag
-
-- div
-- header
-- section
-- nav
-- footer
-- aside
+- [ ] 메뉴 항목의 갯수가 증가/감소 한다고 생각하면 코드에서 어떻게 대응해야 할까?
+- [ ] 메뉴 항목의 애니메이션 표현방식이 변경되면 코드에서 어떻게 대응해야 할까?
 
 ## 💻 기능 구현
 
@@ -123,6 +66,18 @@
   - [x] [간단히 보기]를 클릭하면 애니메이션 효과와 함께 목록이 다시 접히게 한다.
   - [x] [부서별 쇼핑] 하위 카테고리를 클릭하면 우측에서 좌측으로 내역이 보이도록 애니메이션을 준다.
   - [x] 각 카테고리 항목은 실제로 작동하지 않는다.
+
+### 2주차
+
+- [ ] 사이드바 애니메이션 (trasition 사용)
+  - [ ] 항목 접기
+  - [ ] 항목 펼치기
+- [x] 하위 메뉴 영역 노출
+- DOM 조작시 아래 메서드 활용
+  - [x] `createElement`
+  - [x] `appendChild`
+  - [x] `insertBefore`
+- [ ] rem 단위 사용해보기
 
 ## 📒 reference
 
