@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Pretendard', Sans-Serif;
+}
+
 .nav_bar {
   position: fixed;
   z-index: 1;
@@ -9,7 +13,6 @@
   width: 1280px;
   height: 90px;
 
-  font-family: 'Pretendard', Sans-Serif;
   font-style: var(--font-style-normal);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-md);
