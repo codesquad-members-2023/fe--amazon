@@ -43,11 +43,6 @@
   align-items: center;
 }
 
-.nav-main a {
-  color: var(--color-white);
-  text-decoration: none;
-}
-
 .language {
   display: flex;
   flex-direction: row;
@@ -71,6 +66,7 @@
   background: var(--color-gray900);
   align-items: center;
   padding: 0px 16px;
+  color: var(--color-white);
 }
 
 .nav-shop {
@@ -83,4 +79,3 @@
   flex: 1;
   flex-direction: row-reverse;
 }
-

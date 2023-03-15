@@ -1,10 +1,12 @@
 .sidebar {
   width: 320px;
-  height: 1897px;
   background-color: rgb(254, 245, 245);
   position: fixed;
   top: 0;
+  left: -400px;
+  height: 100%;
   overflow: scroll;
+  transition: 1s ease-in-out;
 }
 
 .sidebar-header {
@@ -29,11 +31,12 @@
 
 .sidebar li {
   display: flex;
-  padding: 20px;
+  padding: 18px;
   justify-content: space-between;
 }
 
 .sidebar-other-contents {
-  height: 0;
-  transition: height 4s ease-in-out;
+  height: 0%;
+  overflow: hidden;
+  transition: 1s ease-in-out;
 }

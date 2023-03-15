@@ -3,13 +3,21 @@ setTimeout(() => {
   el.classList.add("visible");
 }, 1000);
 
+const sidebarButton = document.querySelector(".nav-sidebar-button");
+const sidebar = document.querySelector(".sidebar");
+
+sidebarButton.addEventListener("click", () => {
+  sidebar.style.left = "0";
+});
+
 const sidebarView = document.querySelector(".view-all-contents");
 const sidebarOtherContents = document.querySelector(".sidebar-other-contents");
+const sidebarQuickView = document.querySelector(".quick-view");
 
-sidebarView.addEventListener("click", (e) => {
+sidebarView.addEventListener("click", () => {
   sidebarOtherContents.style.height = "100%";
 });
 
-sidebarView.addEventListener("dblclick", (e) => {
-  sidebarOtherContents.style.height = "0%";
+sidebarQuickView.addEventListener("click", () => {
+  sidebarOtherContents.style.height = "0";
 });
