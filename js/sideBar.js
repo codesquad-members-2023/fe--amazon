@@ -48,7 +48,7 @@ const closeAllItems = () => {
 const openDetailMenu = () => {
   sideMain.style.display = 'none'
   sideMenuDetail.style.display = 'block'
-  sideMenuDetail.style.animation = 'slide-appear-menu .5s forwards'
+  sideMenuDetail.style.animation = 'slide-to-left__open .5s forwards'
 }
 
 const moveMain = () => {

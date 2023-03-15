@@ -4,19 +4,18 @@
 
 ### 2주차
 
-## crong's review
+### crong's review
 
-- [ ] defer vs asyc
+- [x] defer vs asyc
 - [x] `DOMContentLoaded` vs `load`
   - `addEventListener('DOMContentLoaded', () => {})`  
     초기 HTML 문서를 완전히 불러오고 분석했을 때 발생한다. 스타일 시트, 이미지, 하위 프레임의 로딩은 기다리지 않는다.
   - `addEventListener('load', () => {})`  
     리소스와 그것에 의존하는 리소스들의 로딩이 완료되면 실행된다.
-- [ ] transition으로 애니메이션 구현해보기
-- [ ] list 형태는 `li` 태그 사용하기
-- [ ] `.5s forwards` 중복 제거하기
+- [x] transition으로 애니메이션 구현해보기
+- [x] list 형태는 `li` 태그 사용하기
 
-## DOM, EVENT 제어
+### DOM, EVENT 제어
 
 - [x] `template literal`
 - [x] `createElement`
@@ -28,13 +27,13 @@
   - [x] 버블링
   - [x] 캡쳐링
 
-## CSS
+### CSS
 
 - 단위 공부
-  - [ ] em
-  - [ ] rem
+  - [x] em : 부모 요소의 글꼴 크기에 따라 상대적으로 크기를 조정 (상대적)
+  - [x] rem : HTML 요소의 루트 요소(일반적으로 html 요소)의 글꼴 크기에 따라 상대적으로 크기를 조정 (상대적)
 
-## 추가 요구 사항
+### 추가 요구 사항
 
 - [ ] 메뉴 항목의 갯수가 증가/감소 한다고 생각하면 코드에서 어떻게 대응해야 할까?
 - [ ] 메뉴 항목의 애니메이션 표현방식이 변경되면 코드에서 어떻게 대응해야 할까?
