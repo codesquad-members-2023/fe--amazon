@@ -1,5 +1,5 @@
 .side_bar {
-  z-index: 2;
+  z-index: 1;
   position: fixed;
   top:0;
 
@@ -9,16 +9,16 @@
   display: none;
   flex-direction: column;
 
-  color: black;
-  border-right: 1px solid #EFF2F2;
-  background-color: #FFFFFF;
+  color: var(--color-black);
+  border-right: 1px solid var(--color-gray-100);
+  background-color: var(--color-white);
 }
 
 .side_login, .side_container h3 {
   height: 53px;
   padding: 16px 16px 16px 32px;
-  font-weight: 800;
-  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
 }
 
 .side_login img {
@@ -48,8 +48,16 @@
 
 .side_login {
   display: flex;
-  color: white;
-  background-color: black;
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.side_container {
+  overflow-y: auto;
+}
+
+.side_container::-webkit-scrollbar, .fold_detail::-webkit-scrollbar {
+  display:none;
 }
 
 .side_container li {
@@ -60,17 +68,17 @@
   justify-content: space-between;
   align-items: center;
 
-  font-weight: 500;
-  font-size: 13px;
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-md);
 }
 
 .side_container li:last-child {
-  border-bottom: 1px solid #EFF2F2;
+  border-bottom: 1px solid var(--color-gray-100);
 }
 
 .side_container li:hover {
-  background-color: rgba(179, 179, 179, 0.3);
-  font-weight: 700;
+  background-color: var(--color-gray-30);
+  font-weight: var(--font-weight-bold);
 }
 
 #side_bar_close {
@@ -82,31 +90,31 @@
 @keyframes slideRight {
   from {
     opacity: 0;
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
   }
   to {
     opacity: 1;
-    transform: translateZ(0);
+    transform: 0;
   }
 }
 
 @keyframes slideLeft {
   from {
     opacity: 1;
-    transform: translateZ(0);
+    transform: 0;
   }
   to {
     opacity: 0;
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
   }
 }
 
 .slideRight {
-  animation: slideRight 0.5s ease-in-out;
+  animation: slideRight 0.3s ease-in-out;
 }
 
 .slideLeft {
-  animation: slideLeft 0.5s ease-in-out;
+  animation: slideLeft 0.3s ease-in-out;
 }
 
 .fold_content {
@@ -115,21 +123,26 @@
   transition: max-height 0.2s ease-out;
 }
 
-.view_detail {
-  z-index: 3;
+.fold_detail {
   position: fixed;
   top: 53px;
   left: 0;
   width: 320px;
   height: 100%;
   overflow: hidden;
-  background-color: #FFFFFF;
+  overflow-y: auto;
+  background-color: var(--color-white);
 }
 
 #back_btn {
+  width: inherit;
   height: 53px;
   padding: 16px 16px 16px 32px;
-  font-weight: 700;
-  font-size: 13px;
-  border-bottom: 1px solid #EFF2F2;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.tab_content {
+  padding-bottom: 53px;
 }
