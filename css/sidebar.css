@@ -1,10 +1,21 @@
+
 .sidebar{
+    display: none;
+    position: fixed;
+    z-index: 2;
+
+}
+.sidebar-box{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 320px;
     height: 100%;
     background: #FFFFFF;
+    top:0px;
+    left: 0px;
+    position: fixed;
+    overflow: scroll;
 }
 
 .sidebar__color {
@@ -26,13 +37,20 @@
     font-size: 18px;
     line-height: 21px;
 }
+.sidebar__all-menu_extend > li:hover,
+.sidebar__menu > ul > li:hover {
+    background-color: darkgrey;
+}
+.sidebar__all-menu_extend > li:hover img,
+.sidebar__menu > ul > li:hover img{
+    filter: invert(85%) sepia(58%) saturate(4611%) hue-rotate(317deg) brightness(102%) contrast(95%);
+}
 
 .sidebar__menu-title{
     display: flex;
     padding: 16px 16px 16px 32px;
 }
-
-.sidebar__menu-list{
+.sidebar__all-menu_extend li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -42,18 +60,39 @@
     font-weight: 500;
     font-size: 13px;
     line-height: 160%;
+    color: black;
+    text-align: center;
+    text-decoration: none;
 }
-
-.sidebar__menu-all{
+.sidebar__menu > ul > li{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     padding: 8px 16px 8px 32px;
     width: 320px;
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
     line-height: 160%;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
+.sidebar__menu-all img{
+    margin-left: 10px;
 }
 .sidebar_line{
     background: #EFF2F2;
+}
+
+.sidebar__btn_close{
+    width:20px;
+    position:absolute;
+    left:335px;
+    top: 8px;
+}
+
+.sidebar_menu_summary img{
+    margin-left: 10px;
 }

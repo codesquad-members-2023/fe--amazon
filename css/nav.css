@@ -18,11 +18,16 @@
     font-size: 13px;
 }
 
+.nav_container{
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+}
 .nav{
     background: #10141A;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 16px;
+    padding: 8px 10px;
     height: 56px;
 }
 
@@ -34,7 +39,6 @@
     width: 50px;
 
 }
-
 .shipping_text{
     width: 50px;
     height: 16px;
@@ -71,7 +75,7 @@
     height: 16px;
     color: white;
 }
-.nav__login_text{
+.nav__login{
     position: relative;
 }
 
