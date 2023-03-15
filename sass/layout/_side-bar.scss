@@ -12,7 +12,7 @@
 
   &__close {
     position: absolute;
-    left: 320px;
+    left: 32rem;
     margin-top: 12px;
     margin-left: 12px;
   }
@@ -21,15 +21,15 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    width: 320px;
-    padding: 16px 16px 16px 32px;
+    width: 32rem;
+    padding: 1.6rem 1.6rem 1.6rem 3.2rem;
     background-color: $black;
   }
 
   &__content {
     height: 100%;
     position: relative;
-    width: 320px;
+    width: 32rem;
     overflow-x: hidden;
 
     display: flex;
@@ -39,7 +39,7 @@
   }
 
   &__label {
-    padding: 16px 16px 16px 32px;
+    padding: 1.6rem 1.6rem 1.6rem 3.2rem;
     display: block;
   }
 
@@ -70,7 +70,7 @@
 
     &__items {
       overflow-y: hidden;
-      width: 320px;
+      width: 32rem;
       height: 0;
 
       transition: height 500ms ease-in-out;
@@ -78,10 +78,10 @@
   }
 
   .submenu-container {
-    width: 320px;
+    width: 32rem;
     position: absolute;
     top: 0;
-    left: 320px;
+    left: 32rem;
     height: 100%;
     background-color: $white;
     z-index: 1000;
@@ -93,7 +93,7 @@
   }
 
   .submenu {
-    width: 320px;
+    width: 32rem;
 
     &__back {
       display: flex;

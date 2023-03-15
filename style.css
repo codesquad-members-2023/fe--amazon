@@ -15,10 +15,12 @@ button {
   cursor: pointer;
   border: none;
   background-color: inherit;
-  font-family: inherit; }
+  font: inherit; }
+
+html {
+  font-size: 62.5%; }
 
 body {
-  font-family: "Pretendard", sans-serif;
   height: 100%;
   position: relative; }
 
@@ -40,14 +42,17 @@ body {
   font-weight: 800;
   src: url("assets/fonts/web/static/woff2/Pretendard-ExtraBold.woff2") format("woff2"), url("assets/fonts/web/static/woff/Pretendard-ExtraBold.woff") format("woff"); }
 
+body {
+  font-family: "Pretendard", sans-serif; }
+
 .list__label {
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: -0.06em;
   line-height: 1; }
 
 .pop-up {
-  font-size: 11px;
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.6;
@@ -58,12 +63,12 @@ body {
 .header {
   color: #ffffff; }
   .header__text {
-    font-size: 13px;
+    font-size: 1.3rem;
     font-weight: 800;
     letter-spacing: -0.06em;
     line-height: 1; }
     .header__text--upper {
-      font-size: 11px;
+      font-size: 1.1rem;
       font-weight: 600;
       letter-spacing: -0.03em;
       line-height: 1;
@@ -72,31 +77,31 @@ body {
 .nav {
   color: #ffffff;
   font-weight: 600;
-  font-size: 13px; }
+  font-size: 1.3rem; }
   .nav__all, .nav__special-offer {
     font-weight: 800; }
 
 .side-bar__log-in {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1;
   color: #ffffff; }
 
 .side-bar__content {
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.6; }
 
 .side-bar__label {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1; }
 
 .submenu {
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.6; }
@@ -113,22 +118,22 @@ body {
   background: linear-gradient(174.6deg, #ffffff 4.31%, #fed15f 50.01%, #febe30 95.71%);
   border: 1px solid #de9408;
   border-radius: 4px;
-  padding: 9.5px 10px; }
+  padding: 0.95rem 1rem; }
   .button--large {
-    width: 160px; }
+    width: 16rem; }
 
 .list {
   display: flex;
   flex-direction: column;
   gap: 4px;
   white-space: nowrap;
-  width: 150px; }
+  width: 15rem; }
   .list__items {
     display: flex;
     flex-direction: column;
     gap: 4px; }
   .list__item {
-    width: 150px; }
+    width: 15rem; }
 
 @keyframes page-load-fade-in {
   from {
@@ -148,8 +153,8 @@ body {
   z-index: 100; }
   .pop-up--login {
     /* top 값 바꾸기 */
-    top: 54px;
-    right: 10px;
+    top: 5.4rem;
+    right: 1rem;
     gap: 8px;
     opacity: 0;
     animation: page-load-fade-in 250ms ease-in-out forwards; }
@@ -157,7 +162,7 @@ body {
     top: 54px;
     left: 0px;
     gap: 26px;
-    width: 320px; }
+    width: 32rem; }
   .pop-up__expanded {
     display: flex;
     flex-direction: column;
@@ -173,9 +178,9 @@ body {
     background-color: inherit;
     top: 0; }
     .pop-up__triangle--login {
-      right: 10px; }
+      right: 1rem; }
     .pop-up__triangle--shipping-address {
-      left: 10px; }
+      left: 1rem; }
   .pop-up__list {
     display: flex;
     justify-content: space-between; }
@@ -231,8 +236,8 @@ body {
       border-radius: 4px 0px 0px 4px;
       padding: 12px 9.5px; }
     .header .search-form__button {
-      width: 40px;
-      height: 40px;
+      width: 4rem;
+      height: 4rem;
       background-color: #fcb057;
       border-radius: 0px 4px 4px 0px; }
   .header .container {
@@ -269,26 +274,26 @@ body {
     left: 0; }
   .side-bar__close {
     position: absolute;
-    left: 320px;
+    left: 32rem;
     margin-top: 12px;
     margin-left: 12px; }
   .side-bar__log-in {
     display: flex;
     align-items: center;
     gap: 8px;
-    width: 320px;
-    padding: 16px 16px 16px 32px;
+    width: 32rem;
+    padding: 1.6rem 1.6rem 1.6rem 3.2rem;
     background-color: #10141a; }
   .side-bar__content {
     height: 100%;
     position: relative;
-    width: 320px;
+    width: 32rem;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
     background-color: #ffffff; }
   .side-bar__label {
-    padding: 16px 16px 16px 32px;
+    padding: 1.6rem 1.6rem 1.6rem 3.2rem;
     display: block; }
   .side-bar__show-all, .side-bar__button {
     padding: 8px 16px 8px 32px;
@@ -305,14 +310,14 @@ body {
     height: 100%; }
   .side-bar .other-buttons-container__items {
     overflow-y: hidden;
-    width: 320px;
+    width: 32rem;
     height: 0;
     transition: height 500ms ease-in-out; }
   .side-bar .submenu-container {
-    width: 320px;
+    width: 32rem;
     position: absolute;
     top: 0;
-    left: 320px;
+    left: 32rem;
     height: 100%;
     background-color: #ffffff;
     z-index: 1000;
@@ -320,7 +325,7 @@ body {
     .side-bar .submenu-container.show-sub-menu {
       left: 0; }
   .side-bar .submenu {
-    width: 320px; }
+    width: 32rem; }
     .side-bar .submenu__back {
       display: flex;
       gap: 12px;

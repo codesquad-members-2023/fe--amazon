@@ -25,6 +25,10 @@
     url("assets/fonts/web/static/woff/Pretendard-ExtraBold.woff") format("woff");
 }
 
+body {
+  font-family: "Pretendard", sans-serif;
+}
+
 .list__label {
   @include typography($bold-md);
 }
@@ -53,7 +57,7 @@
 .nav {
   color: $white;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.3rem;
 
   &__all,
   &__special-offer {

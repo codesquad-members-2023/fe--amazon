@@ -21,8 +21,8 @@
 
   &--login {
     /* top 값 바꾸기 */
-    top: 54px;
-    right: 10px;
+    top: 5.4rem;
+    right: 1rem;
     gap: 8px;
     opacity: 0;
     animation: page-load-fade-in 250ms ease-in-out forwards;
@@ -33,7 +33,7 @@
     left: 0px;
     gap: 26px;
 
-    width: 320px;
+    width: 32rem;
   }
 
   &__expanded {
@@ -58,11 +58,11 @@
     top: 0;
 
     &--login {
-      right: 10px;
+      right: 1rem;
     }
 
     &--shipping-address {
-      left: 10px;
+      left: 1rem;
     }
   }
 

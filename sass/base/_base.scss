@@ -17,11 +17,14 @@ button {
   cursor: pointer;
   border: none;
   background-color: inherit;
-  font-family: inherit;
+  font: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
-  font-family: "Pretendard", sans-serif;
   height: 100%;
   position: relative;
 }

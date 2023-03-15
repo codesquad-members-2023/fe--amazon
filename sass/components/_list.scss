@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 4px;
   white-space: nowrap;
-  width: 150px;
+  width: 15rem;
 
   &__items {
     display: flex;
@@ -12,6 +12,6 @@
   }
 
   &__item {
-    width: 150px;
+    width: 15rem;
   }
 }
