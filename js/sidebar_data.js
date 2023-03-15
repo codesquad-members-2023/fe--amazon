@@ -1,14 +1,16 @@
-const menuAllDetail = document.querySelector(".sidebar__all-menu_extend");
+const sidebar1 = document.querySelector(".sidebar");
 const menuAll = document.querySelector(".sidebar__menu-all");
-const sidebar2 = document.querySelector(".sidebar");
-sidebar2.addEventListener("click", (e) => {
+const menuAllDetail = document.querySelector(".sidebar__all-menu_extend");
+
+sidebar1.addEventListener("click", (e) => {
   if (e.target.className === "sidebar_menu_summary") {
     menuAllDetail.style.display = "none";
   }
 });
+
 menuAll.addEventListener("click", () => {
   if (!menuAllDetail.innerHTML) {
-    allMenuData.forEach((data) => {
+    TITLE_DETAIL.forEach((data) => {
       menuAllDetail.insertAdjacentHTML(
         "afterbegin",
         `<li><div>${data}</div><img src="asset/chevron-right.svg"></li>`
