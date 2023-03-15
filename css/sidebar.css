@@ -18,7 +18,7 @@
   height: 53px;
   padding: 16px 16px 16px 32px;
   font-weight: var(--font-weight-bold);
-  font-size: 18px;
+  font-size: var(--font-size-lg);
 }
 
 .side_login img {
@@ -52,6 +52,14 @@
   background-color: var(--color-black);
 }
 
+.side_container {
+  overflow-y: scroll;
+}
+
+.side_container::-webkit-scrollbar, .fold_detail::-webkit-scrollbar {
+  display:none;
+}
+
 .side_container li {
   height: 40px;
   padding: 8px 16px 8px 32px;
@@ -60,8 +68,8 @@
   justify-content: space-between;
   align-items: center;
 
-  font-weight: 500;
-  font-size: 13px;
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-md);
 }
 
 .side_container li:last-child {
@@ -82,7 +90,7 @@
 @keyframes slideRight {
   from {
     opacity: 0;
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
   }
   to {
     opacity: 1;
@@ -97,16 +105,16 @@
   }
   to {
     opacity: 0;
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
   }
 }
 
 .slideRight {
-  animation: slideRight 0.5s ease-in-out;
+  animation: slideRight 0.3s ease-in-out;
 }
 
 .slideLeft {
-  animation: slideLeft 0.5s ease-in-out;
+  animation: slideLeft 0.3s ease-in-out;
 }
 
 .fold_content {
@@ -115,21 +123,26 @@
   transition: max-height 0.2s ease-out;
 }
 
-.view_detail {
-  z-index: 3;
+.fold_detail {
   position: fixed;
   top: 53px;
   left: 0;
   width: 320px;
   height: 100%;
   overflow: hidden;
+  overflow-y: scroll;
   background-color: var(--color-white);
 }
 
 #back_btn {
+  width: inherit;
   height: 53px;
   padding: 16px 16px 16px 32px;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-md);
   border-bottom: 1px solid var(--color-gray-100);
+}
+
+.tab_content {
+  padding-bottom: 53px;
 }

@@ -4,10 +4,10 @@ const $side_bar = document.querySelector('.side_bar');
 const $view_all = document.getElementById('view_all');
 const $view_simple = document.getElementById('view_simple');
 const $fold_content = document.querySelector('.fold_content');
-const $view_detail = document.querySelector('.view_detail');
+const $fold_detail = document.querySelector('.fold_detail');
+const $side_container = document.querySelector('.side_container');
 const $back_btn = document.getElementById('back_btn');
-const $car_supply_tab = document.getElementById('car_supply_tab');
-// const $car_supply = document.getElementById('car_supply');
+
 
 $every.addEventListener('click', e => {
   const $modal_bg = document.querySelector('.modal_background');
@@ -48,19 +48,41 @@ $view_simple.addEventListener('click', e => {
   $view_all.lastElementChild.outerHTML = "<img src=\"/asset/images/vectors/Bottom.svg\">"
 });
 
-$car_supply_tab.addEventListener('click', e => {
-  $view_detail.classList.remove('slideLeft');
-  $view_detail.classList.add('slideRight');
-  $view_detail.classList.remove('hidden');
+$side_container.addEventListener('click', e => {
+  const target = e.target;
+  const isLi = target.closest('li');
+  const $tab = document.querySelector('.tab_content');
+
+  if(isLi !== null) {
+    const title = target.closest('li').innerText;
+    const isTitle = SIDEBAR_DETAIL.hasOwnProperty(title);
+    const isId = target.id !== 'view_all' && target.id !== 'view_simple';
+
+    if(isTitle && isId && isLi.tagName === 'LI') {
+      if ($tab.hasChildNodes()) $tab.replaceChildren();
+
+      const data = SIDEBAR_DETAIL[title];
+      let text = `<h3>${title}</h3><ul>`;
+      data.forEach(list => {
+        text += `<li>${list}</li>`;
+      });
+      text += `</ul>`;
+      $tab.insertAdjacentHTML('beforeend', text);
+
+      $fold_detail.classList.remove('slideLeft');
+      $fold_detail.classList.add('slideRight');
+      $fold_detail.classList.remove('hidden');
+    }
+  }
 });
 
 $back_btn.addEventListener('click', e => {
-  $view_detail.classList.remove('slideRight');
-  $view_detail.classList.add('slideLeft');
+  $fold_detail.classList.remove('slideRight');
+  $fold_detail.classList.add('slideLeft');
 });
 
-$view_detail.addEventListener('animationend', e => {
-  if(e.animationName === 'slideLeft' && e.target.className.includes('view_detail')) {
-    $view_detail.classList.add('hidden');
+$fold_detail.addEventListener('animationend', e => {
+  if(e.animationName === 'slideLeft' && e.target.className.includes('fold_detail')) {
+    $fold_detail.classList.add('hidden');
   }
 });
