@@ -47,7 +47,7 @@ export default function sidebarStyle() {
     }
 
     sidebar-main-element {
-      position: absolute;
+      overflow-y: scroll;
     }
 
     sidebar-sub-element {
