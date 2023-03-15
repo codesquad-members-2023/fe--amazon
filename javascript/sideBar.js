@@ -22,6 +22,10 @@ $close.addEventListener('click', e => {
   $side_bar.classList.add('slideLeft');
 });
 
+$modal_bg.addEventListener('click', e => {
+  $side_bar.classList.add('slideLeft');
+});
+
 $side_bar.addEventListener('animationend', ({animationName, target}) => {
 // $side_bar.addEventListener('animationend', (e) => {
   // if(e.animationName === 'slideLeft' && e.target.className.includes('side_bar')) {
