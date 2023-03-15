@@ -10,14 +10,14 @@
   display: block;
   position: fixed;
 
-  height: 100vh;
+  height: 100%;
   width: 35vh;
   background-color: var(--color-white);
   z-index: 1;
 
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  overflow-y: auto;
+  overflow-y: scroll;
 } 
 
 @keyframes slideRightWard {
@@ -48,7 +48,6 @@
   display: flex;
   flex-flow: column;
   width: 100%;
-  /* height: auto; */
 }
 
 .sidebar__login--top__container {
@@ -177,7 +176,7 @@
 
 .sidebar__menu {
   display: flex;
-  height: auto;
+  position: relative;
 }
 
 .sidebar__menu.main {
@@ -185,17 +184,16 @@
   flex-flow: column;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  overflow-y: auto;
+  height: auto;
 }
 
 .sidebar__menu.right {
   display: block;
   position: absolute;
-  left: 33vh;
+  height: 100vh;
   width: 100%;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  overflow-y: auto;
 }
 
 .sidebar__contents-shopping__electron {
@@ -227,5 +225,25 @@
 
   to {
     transform: translateX(0);
+  }
+}
+
+@keyframes slideSubMenuLeftWard {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideSubMenuRightWard {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
   }
 }
