@@ -9,11 +9,11 @@
   }
 }
 
-/* nav 상단 */
+/* * nav 상단 */
 #nav_main {
   display: flex;
   align-items: center;
-  padding: 8px 16px;
+  padding: 0 16px;
 
   width: 100%;
   height: 56px;
@@ -23,9 +23,13 @@
 #nav_main > div,
 #nav_main #amazon_icon,
 #nav_main .nav_main_search_form {
-  margin: 10px;
+  margin: 0 10px;
 }
-/* nav 상단 글씨체 */
+#nav_main > div {
+  height: 100%;
+}
+
+/* nav 상단 글씨 색깔 */
 .nav_main_top_text {
   color: #d5d5d5;
 }
@@ -33,18 +37,36 @@
   color: #ffffff;
 }
 
-.shipping_address {
-  position: relative;
-}
-.shipping_address_section {
+/* nav 상단 flex */
+.shipping_address,
+.shipping_address_section,
+.login,
+.my_page {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
 }
-.shipping_address_top {
+.shipping_address_top,
+.nav_main_search_form,
+.searchFormBtn,
+.flag,
+.cart {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
+}
+
+/* * 개별 css 속성 */
+.flag,
+.cart {
+  padding: 0px;
+  gap: 4px;
+}
+
+.shipping_address {
+  position: relative;
 }
 .shipping_address_top > img {
   width: 12px;
@@ -52,8 +74,6 @@
 }
 
 .nav_main_search_form {
-  display: flex;
-  align-items: center;
   padding-left: 12px;
   background: #ffffff;
   border-radius: 4px;
@@ -73,10 +93,6 @@
   flex-grow: 1;
 }
 .searchFormBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   width: 40px;
   height: 40px;
 
@@ -86,21 +102,6 @@
 .searchFormBtn > img {
   width: 24px;
   height: 24px;
-}
-
-.flag,
-.cart {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 4px;
-}
-.login,
-.my_page {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .login {
@@ -116,11 +117,8 @@
   height: 24px;
 }
 
-/* nav 하단 */
+/* * nav 하단 */
 #nav_sub {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0px 16px;
 
   width: 100%;
@@ -129,7 +127,7 @@
   background: #1b232f;
 }
 
-/* nav 하단 글씨체 */
+/* nav 하단 글씨 */
 #nav_sub a,
 .side_bar_btn {
   color: #ffffff;
@@ -140,12 +138,19 @@
   font-size: 13px;
 }
 
+/* nav 하단 flex */
+#nav_sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .nav_sub_left_btns,
 .side_bar_btn {
   display: flex;
   align-items: flex-start;
 }
 
+/* 개별 css 속성 */
 .nav_sub_left_btns .side_bar_btn,
 .nav_sub_left_btns > a {
   margin-right: 20px;
