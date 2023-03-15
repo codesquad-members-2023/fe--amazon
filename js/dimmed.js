@@ -33,4 +33,5 @@ subbarAll.addEventListener("click", () => {
 sidebarClose.addEventListener("click", () => {
   sidebar.style.display = "none";
   dimmed.style.display = "none";
+  dimmed.style.zIndex = 0;
 });
