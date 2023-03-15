@@ -10,7 +10,7 @@
   height: 90px;
 
   font-family: 'Pretendard', Sans-Serif;
-  font-style: normal;
+  font-style: var(--font-style-normal);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-md);
   color: var(--color-white);

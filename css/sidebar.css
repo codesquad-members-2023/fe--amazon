@@ -53,7 +53,7 @@
 }
 
 .side_container {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .side_container::-webkit-scrollbar, .fold_detail::-webkit-scrollbar {
@@ -130,7 +130,7 @@
   width: 320px;
   height: 100%;
   overflow: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: var(--color-white);
 }
 
