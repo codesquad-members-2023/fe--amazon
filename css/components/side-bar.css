@@ -3,8 +3,8 @@
   flex-direction: column;
   align-items: flex-start;
   position: fixed;
-  width: 320px;
-  height: 100%;
+  width: 310px;
+  height: auto;
   left: 0;
   top: 0;
   bottom: 0;
@@ -12,6 +12,10 @@
   background-color: #ffffff;
   box-shadow: 0px 3px 6px rgba(0 0 0 / 50%);
   overflow-y: scroll;
+}
+
+.homeSidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .homeSidebar__lists {
@@ -33,7 +37,6 @@
   font-size: 18px;
   font-weight: 800;
   line-height: 21px;
-  flex: none;
   cursor: pointer;
 }
 
@@ -42,7 +45,7 @@
 }
 
 .homeSidebar__title {
-  font-family: "Pretendard";
+  font-family: "Pretendard", "Kanit";
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
@@ -61,7 +64,8 @@
 
 .homeSidebar__subTitle i,
 .homeSidebar__mode--open i,
-.homeSidebar__mode--close i {
+.homeSidebar__mode--close i,
+.homeSidebar__mode--back i {
   color: #878787;
 }
 
@@ -70,8 +74,13 @@
   margin-left: 10px;
 }
 
+.homeSidebar__mode--back i {
+  margin-right: 10px;
+}
+
 .homeSidebar__mode--open:hover,
-.homeSidebar__mode--close:hover {
+.homeSidebar__mode--close:hover,
+.homeSidebar__mode--back:hover {
   font-weight: 800;
 }
 
@@ -88,7 +97,9 @@
   border-top: solid 1px #eff2f2;
 }
 
-.homeSidebar__lists li:last-child {
+.homeSidebar__mode--open,
+.homeSidebar__mode--close,
+.homeSidebar__mode--back {
   cursor: pointer;
 }
 
@@ -102,34 +113,34 @@
 
 .showAnimation {
   will-change: transform;
-  animation: showSidebarSoft 1s ease-in-out forwards;
+  animation: showSidebarSoft 0.5s ease-out forwards;
 }
 
 .hideAnimation {
   will-change: transform;
-  animation: hideSidebarSoft 1s ease-in-out forwards;
+  animation: hideSidebarSoft 0.5s ease-in forwards;
 }
 
 @keyframes showSidebarSoft {
   from {
-    opacity: 0;
+    transform: translateX(-100%);
   }
   to {
-    opacity: 1;
+    transform: translateX(0);
   }
 }
 @keyframes hideSidebarSoft {
   from {
-    opacity: 1;
+    transform: translateX(0);
   }
   to {
-    opacity: 0;
-    visibility: hidden;
+    transform: translateX(-100%);
   }
 }
 
 .hideLists {
   display: none;
+  overflow-y: hidden;
 }
 
 .openAnimation {
@@ -156,4 +167,12 @@
   to {
     max-height: 0;
   }
+}
+
+.homeSidebar__detail {
+  display: flex;
+}
+
+.hideDetail {
+  display: none;
 }
