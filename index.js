@@ -1,126 +1,127 @@
-const loginPointer1 = document.querySelector(".modal__pointer1");
-const loginModal1 = document.querySelector(".modal__login1");
+(function main(){
+  const loginModal1 = document.querySelector(".modal__login1");
+  
+  (function (delay) {
+    setTimeout(function() {
+      loginModal1.style.display = 'block';
+    }, delay)
+  })(1000);
 
-// login 버튼 영역 변수화
-const loginPath2 = document.querySelector(".modal__path2");
-const loginPointer2 = document.querySelector(".modal__pointer2");
-const loginModal2 = document.querySelector(".modal__login2");
+  const nav = document.querySelector('.nav');
+  const dimLayer = document.querySelector(".dim__layer");
+  
+  const findNordUpWard = (target, node) => target.closest(node);
+  const findLastChildNode = (target) => target.lastElementChild;
+  const findSibling = (node, targetIndex) => {
+    const parent = node.parentNode;
+    const children = parent.childNodes;
+    const index = Array.prototype.indexOf.call(children, node);
+    if (index < children.length - 1 && index >= 0) return children[index + targetIndex];
+    else return null; // index가 children 배열크기를 넘어가는 경우
+  }
 
+  nav.addEventListener('mouseover', (evt) => {
+    const ontarget = evt.target;
 
-(function (delay) {
-  setTimeout(function() {
-    loginPointer1.style.display = 'block';
-    loginModal1.style.display = 'block';
-  }, delay)
-})(1000);
+    if(ontarget.tagName === 'A') {
+      ontarget.classList.add('border');
+    }
+    
+    const [parent, element] = ontarget.className.split(" ");
+    
+    if(element === 'location') {
+      findLastChildNode(ontarget).style.display = 'block';
+      dimLayer.style.display = 'block';
+    }
 
-const loginButton = document.querySelector(".nav-top__elements.account-link");
-const dimLayer = document.querySelector(".dim__layer");
+    if(findNordUpWard(ontarget, '.modal__location')) {
+      findNordUpWard(ontarget, '.modal__location').style.display = 'block';
+      dimLayer.style.display = 'block';
+    }
 
-loginButton.addEventListener("mouseover", () => {
-  loginModal1.style.display = 'none';
-  loginModal2.style.display = 'block';
-  loginPointer2.style.display = 'block';
-  loginPath2.style.display = 'block';
-  dimLayer.style.display = 'block';
-})
+    if(element === 'account-link') {
+      findSibling(ontarget, 2).style.display = 'none';
+      findSibling(ontarget, 4).style.display = 'block';
+      dimLayer.style.display = 'block';
+    }
 
-const loginModal2Layout = [loginPath2, loginModal2];
+    if(findNordUpWard(ontarget, '.modal__login2')) {
+      findNordUpWard(ontarget, '.modal__login2').style.display = 'block';
+      dimLayer.style.display = 'block';
+    }
+  })
+  
+  nav.addEventListener('mouseout', (evt) => {
+    const ontarget = evt.target;
+    const [parent, element] = ontarget.className.split(" ");
 
-loginButton.addEventListener("mouseout", () => {
-  loginModal2.style.display = 'none';
-  loginPointer2.style.display = 'none';
-})
+    if(ontarget.tagName === 'A') {
+      ontarget.classList.remove('border');
+      if(element != 'select-all') dimLayer.style.display = 'none';
+    }
 
-loginPath2.addEventListener("mouseover", () => {
-  loginModal2.style.display = 'block';
-  loginPointer2.style.display = 'block';
-})
+    if(element === 'location') {
+      findLastChildNode(ontarget).style.display = 'none';
+      dimLayer.style.display = 'none';
+    }
 
-loginModal2.addEventListener("mouseover", () => {
-  loginModal2.style.display = 'block';
-  loginPointer2.style.display = 'block';
-})
+    if(findNordUpWard(ontarget, '.modal__location')){
+      findNordUpWard(ontarget, '.modal__location').style.display = 'none';
+      dimLayer.style.display = 'none';
+    }
 
-loginPath2.addEventListener("mouseout", () => {
-  loginModal2.style.display = 'none';
-  loginPointer2.style.display = 'none';
-})
+    if(element === 'account-link') {
+      findSibling(ontarget, 2).style.display = 'none';
+      findSibling(ontarget, 4).style.display = 'none';
+      dimLayer.style.display = 'none';
+    }
 
-loginModal2.addEventListener("mouseout", () => {
-  loginModal2.style.display = 'none';
-  loginPointer2.style.display = 'none';
-})
+    if(findNordUpWard(ontarget, '.modal__login2')) {
+      findNordUpWard(ontarget, '.modal__login2').style.display = 'none';
+      dimLayer.style.display = 'none';
+    }
+  })
 
-/*     딤처리 부분      */
-// location 버튼 영역 변수화
-const locationButton = document.querySelector(".nav-top__link");
-const locationModal = document.querySelector(".modal__location");
-
-const modalLayouts = [locationButton, locationModal, loginButton, loginModal2, loginPath2];
-
-modalLayouts.forEach((node) => {
-  node.addEventListener("mouseover", () => {
+  /**
+   * sidebar 버튼 및 레이아웃 영역  
+   */
+  
+  const sideBarOpenBtn = document.querySelector(".nav-bottom__category.select-all");
+  const sideBarLayer = document.querySelector(".sidebar__layer");
+  
+  sideBarOpenBtn.addEventListener('click', () => {
+    sideBarLayer.style['animation-name'] = 'slideRightWard';
     dimLayer.style.display = 'block';
+  });
+
+  sideBarLayer.addEventListener('click', (evt) => {
+    const ontarget = evt.target;
+
+    const [parent, element, name] = ontarget.className.split(" ");
+
+    if(parent === "sidebar__closeBtn--container") { 
+      sideBarLayer.style['animation-name'] = 'slideLeftWard';
+      dimLayer.style.display = 'none';
+    }
+
+    if(name === 'showall') {
+      findSibling(findNordUpWard(ontarget,'.sidebar__shopping'), 2).style.height = '100%';
+    }
+    if(name === 'closeall') {
+      findNordUpWard(ontarget,'.sidebar__shopping.extra').style.height = '0';
+    }
+
+    // sidebar menu right 영역
+
+    // 열기
+    if(name === 'electron') {
+      findNordUpWard(ontarget, '.sidebar__menu.main').style['animation-name'] = 'slideMenuLeftWard';
+      findSibling(findNordUpWard(ontarget, '.sidebar__menu.main'), 2).style['animation-name'] = 'slideMenuLeftWard';
+    }
+
+    if(name === 'close-right-menu') {
+      findNordUpWard(ontarget, '.sidebar__menu.right').style['animation-name'] = 'slideMenuRightWard';
+      findSibling(findNordUpWard(ontarget, '.sidebar__menu.right'), -2).style['animation-name'] = 'slideMenuRightWard';
+    }
   })
-})
-
-modalLayouts.forEach((node) => {
-  node.addEventListener("mouseout", () => {
-    if(sideBarLayer.style['animation-name'] != 'slideRightWard') dimLayer.style.display = 'none';
-  })
-})
-
-/**
- * sidebar 버튼 및 레이아웃 영역  
- */
-
-const sideBarOpenBtn = document.querySelector(".nav-bottom__category.select-all");
-const sideBarLayer = document.querySelector(".sidebar__layer");
-const sideBarCloseBtn = document.querySelector(".sidebar__closeBtn--container");
-const sideBarCloseBtnLayer = document.querySelector(".sidebar__closeBtn")
-
-sideBarOpenBtn.addEventListener('click', () => {
-  sideBarLayer.style['animation-name'] = 'slideRightWard';
-  dimLayer.style.display = 'block';
-});
-
-sideBarCloseBtn.addEventListener('click', () => {
-  sideBarLayer.style['animation-name'] = 'slideLeftWard';
-
-  dimLayer.style.display = 'none';
-})
-
-// slidebar shopping extra menu 영역
-
-const sideBarShowAllBtn = document.querySelector('.sidebar__contents.btn.showall');
-const sideBarCloseAllBtn = document.querySelector('.sidebar__contents.btn.closeall');
-const sideBarExtraShoppingList = document.querySelector('.sidebar__shopping.extra');
-
-sideBarShowAllBtn.addEventListener('click', () => {
-  sideBarExtraShoppingList.style.height = '100%';
-})
-
-sideBarCloseAllBtn.addEventListener('click', () => {
-  sideBarExtraShoppingList.style.height = '0';
-})
-
-// sidebar menu right 영역
-
-//  열기
-const sideBarMenuMain = document.querySelector('.sidebar__menu.main');
-const sideBarMenuRight = document.querySelector('.sidebar__menu.right');
-const sideBarShoppingElectronBtn = document.querySelector('.sidebar__contents-shopping__electron');
-
-sideBarShoppingElectronBtn.addEventListener('click', () => {
-  sideBarMenuMain.style['animation-name'] = 'slideMenuLeftWard';
-  sideBarMenuRight.style['animation-name'] = 'slideMenuLeftWard';
-})
-
-//닫기
-const sideBarMenuRightCloseBtn = document.querySelector('.sidebar__contents.btn.close-right-menu');
-
-sideBarMenuRightCloseBtn.addEventListener('click', () => {
-  sideBarMenuMain.style['animation-name'] = 'slideMenuRightWard';
-  sideBarMenuRight.style['animation-name'] = 'slideMenuRightWard';
-})
+})();
