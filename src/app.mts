@@ -1,4 +1,8 @@
+import $ from './utils/$.mjs'
+
 class App {
+  private readonly $: (selector: string) => HTMLElement | null;
+
   $userAccount: HTMLElement;
   $login: HTMLElement;
   $userExpansion: HTMLElement;
@@ -39,6 +43,7 @@ class App {
   };
 
   constructor() {
+    this.$ = $;
     // toggleExpandLogin 관련
     this.$userAccount = this.$('.user-account')!;
     this.$login = this.$('.login')!;
@@ -66,15 +71,12 @@ class App {
     this.$sidebarSubList = this.$('.sidebar-sub-list')!;
   }
 
-  private $(selector: string): HTMLElement | null {
-    return document.querySelector(selector);
-  }
-
   toggleExpandLogin() {
-    this.$login.addEventListener('mouseenter', () => {
+    this.$login.addEventListener('mouseenter', (e) => {
       this.$login.style.height = '20rem';
       this.$userExpansion.style.display = 'flex';
       this.$wrapperDim.style.display = 'block';
+      console.log(e);
     });
     this.$login.addEventListener('mouseleave', () => {
       this.$login.style.display = 'none';
@@ -104,11 +106,11 @@ class App {
       this.$wrapperDim.style.display = 'block';
       this.$wrapperDim.style.zIndex = '3';
     });
-    this.$wrapperDim.addEventListener('click', (e) => {
+    this.$wrapperDim.addEventListener('click', () => {
       this.$wrapperDim.style.zIndex = '1';
-      this.$wrapperDim.style.display = 'none';
-      this.$sidebar.style.display = 'none';
-      this.$sidebarSub.style.display = 'none';
+      [this.$wrapperDim, this.$sidebar, this.$sidebarSub].forEach((el) => {
+        el.style.display = 'none';
+      })
       this.$sidebarSubList.innerHTML =
         "<li class='sidebar-sub-list__title'></li>";
     });
@@ -135,7 +137,7 @@ class App {
         this.$sidebarSub.style.display = 'flex';
 
         const categoryName: string =
-          target.parentNode!.firstElementChild!.className.split('__')[0]!;
+          target.parentElement!.className.split('__')[1]!;
         const subCategories =
           this.subCategories[categoryName as keyof typeof this.subCategories];
         subCategories.forEach((v, i) => {
