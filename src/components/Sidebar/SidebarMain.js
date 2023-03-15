@@ -15,52 +15,15 @@ class SidebarMain extends HTMLElement {
     shadow.innerHTML = `
       ${menus
         .map((menu) => {
-          if (menu.categories.length <= dividingNum) {
-            return `
-            <section class="section" id="${menu.id}">
-              <sidebar-title-element>${menu.title}</sidebar-title-element>
-              ${menu.categories
-                .map((category) => {
-                  return `
-                    <sidebar-category-element id=${category.id}>${category.name}</sidebar-category-element>
-                  `;
-                })
-                .join('')}
-            </section>`;
-          }
-
-          const menuDefault = menu.categories.slice(0, dividingNum);
-          const menuOverflowed = menu.categories.slice(
-            dividingNum,
-            menu.categories.length
-          );
-          return `
-            <section class="section" id="${menu.id}">
-              <sidebar-title-element>${menu.title}</sidebar-title-element>
-              ${menuDefault
-                .map((category) => {
-                  return `<sidebar-category-element id=${category.id}>${category.name}</sidebar-category-element>`;
-                })
-                .join('')}
-                <div id="folding-container">
-                  <sidebar-fold-element id="unfolidng-btn"></sidebar-fold-element>
-                  <ul id="folding-list" class="folded">
-                    ${menuOverflowed
-                      .map((category) => {
-                        return `<sidebar-category-element id=${category.id}>${category.name}</sidebar-category-element>`;
-                      })
-                      .join('')}
-                    <sidebar-unfold-element id="folidng-btn"></sidebar-unfold-element>
-                  </ul>
-                </div>
-            </section>`;
+          const data = encodeURIComponent(JSON.stringify(menu));
+          return `<sidebar-main-section-element data=${data}></sidebar-main-section-element>`;
         })
         .join('')}
     `;
 
     const foldingListHeight =
       SIDEBAR_CATEGORY_HEIGHT * (menus[1].categories.length - dividingNum) +
-      SIDEBAR_FOLDING_BTN_HEIGHT * 2;
+      SIDEBAR_FOLDING_BTN_HEIGHT;
 
     this.shadowRoot.append(sidebarMainStyle.call(this, foldingListHeight));
   }

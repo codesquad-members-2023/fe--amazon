@@ -6,8 +6,9 @@ class Button extends HTMLElement {
 
     const text = this.innerText;
     const shadow = this.attachShadow({ mode: 'open' });
+    const style = this.getAttribute('style');
 
-    shadow.innerHTML = `<button>${text}</button>`;
+    shadow.innerHTML = `<button style="${style}">${text}</button>`;
 
     const type = this.getAttribute('type');
     this.shadowRoot.append(buttonStyle(type));

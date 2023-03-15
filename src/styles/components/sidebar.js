@@ -52,7 +52,7 @@ export default function sidebarStyle() {
 
     sidebar-sub-element {
       position: absolute;
-      transform: translateX(100%);
+      transform: translate(100%, 0px);
     }
 
     .slide-left sidebar-main-element {

@@ -13,15 +13,6 @@ export default function sidebarSubContentStyle() {
       section {
         border-top: 1px solid #e5e5e5;
       }
-
-      @keyframes slide-right {
-        0% {
-          transform: translateX(100%);
-        }
-        100% {
-          transform: translateX(0%);
-        }
-      }
     `;
   return style;
 }

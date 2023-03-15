@@ -64,6 +64,57 @@ export const menus = [
           },
         ],
       },
+      {
+        name: '안드로이드 앱스토어',
+        id: 'digital-android-app2',
+        subMenu: [
+          {
+            title: '음악 스트리밍',
+            categories: [
+              'Amazon Music Unlimited',
+              'Amazon Music HD',
+              'Podcast',
+              '웹 플레이어 열기',
+              '웹 플레이어 열기',
+              'Download the app',
+            ],
+          },
+        ],
+      },
+      {
+        name: '안드로이드 앱스토어',
+        id: 'digital-android-app3',
+        subMenu: [
+          {
+            title: '음악 스트리밍',
+            categories: [
+              'Amazon Music Unlimited',
+              'Amazon Music HD',
+              'Podcast',
+              '웹 플레이어 열기',
+              '웹 플레이어 열기',
+              'Download the app',
+            ],
+          },
+        ],
+      },
+      {
+        name: '안드로이드 앱스토어',
+        id: 'digital-android-app4',
+        subMenu: [
+          {
+            title: '음악 스트리밍',
+            categories: [
+              'Amazon Music Unlimited',
+              'Amazon Music HD',
+              'Podcast',
+              '웹 플레이어 열기',
+              '웹 플레이어 열기',
+              'Download the app',
+            ],
+          },
+        ],
+      },
     ],
   },
   {
