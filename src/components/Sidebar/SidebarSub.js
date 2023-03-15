@@ -1,32 +1,17 @@
-import { SIDEBAR_SIZE } from '../../constant.js';
+import sidebarSubStyle from '../../styles/components/sidebar/sidebarSubStyle.js';
 
 class SidebarSub extends HTMLElement {
   constructor() {
     super();
 
     const shadow = this.attachShadow({ mode: 'open' });
-    this.isOpen = false;
+
     shadow.innerHTML = `
       <sidebar-back-element></sidebar-back-element>
       <div id="sidebar-sub-content"></div>
     `;
 
-    this.shadowRoot.append(this.getStyle());
-  }
-
-  getStyle() {
-    const style = document.createElement('style');
-    const type = this.getAttribute('type');
-
-    style.textContent = `
-      :host {
-        display: block;
-        width: ${SIDEBAR_SIZE}px;
-        height: 100%;
-        background-color: var(--white);
-      }
-    `;
-    return style;
+    this.shadowRoot.append(sidebarSubStyle.call(this));
   }
 }
 

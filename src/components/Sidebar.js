@@ -1,11 +1,11 @@
-import { SIDEBAR_SIZE, SIDEBAR_HEADER_HEIGHT } from '../constant.js';
+import sidebarStyle from '../styles/components/sidebarStyle.js';
 
 class Sidebar extends HTMLElement {
   constructor() {
     super();
 
     const shadow = this.attachShadow({ mode: 'open' });
-    this.isOpen = false;
+
     shadow.innerHTML = `
       <div class="wrap">
         <icon-element name="close" size="24" fill="var(--black-60)" id="sidebar-close-btn"></icon-element>
@@ -17,14 +17,13 @@ class Sidebar extends HTMLElement {
       </div>
       <backdrop-element></backdrop-element>
     `;
-    this.shadowRoot.append(this.getStyle());
+    this.shadowRoot.append(sidebarStyle.call(this));
   }
 
   showSidebar() {
     const wrap = this.shadowRoot.querySelector('.wrap');
     wrap.style.animation = 'show .3s forwards';
     document.body.append(this);
-    this.isOpen = true;
   }
 
   closeSidebar() {
@@ -32,7 +31,6 @@ class Sidebar extends HTMLElement {
     wrap.style.animation = 'close .3s forwards';
     setTimeout(() => {
       this.remove();
-      this.isOpen = false;
     }, 300);
   }
 
@@ -40,9 +38,6 @@ class Sidebar extends HTMLElement {
     const contianer = this.shadowRoot.querySelector('.container');
     contianer.classList.remove('slide-left');
     contianer.classList.add('slide-right');
-    // setTimeout(() => {
-    //   contianer.scrollTop = 0;
-    // });
   }
 
   closeSubSidebar(sideSubContent) {
@@ -52,136 +47,6 @@ class Sidebar extends HTMLElement {
     setTimeout(() => {
       sideSubContent.remove();
     }, 500);
-  }
-
-  getStyle() {
-    const style = document.createElement('style');
-    const type = this.getAttribute('type');
-
-    style.textContent = `
-      :host {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        z-index: 1;
-      }
-
-      .wrap {
-        animation: slide-left .5s;
-        transition: var(--default-transition);
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: ${SIDEBAR_SIZE + 8 + 24}px;
-        height: 100%;
-        z-index: 1;
-      }
-
-      icon-element[name="close"] {
-        position: fixed;
-        z-index: 2;
-        top: 8px;
-        left: ${SIDEBAR_SIZE + 8}px;
-      }
-
-      icon-element[name="close"]:hover {
-        cursor: pointer;
-      }
-
-      sidebar-header-element {
-        width: ${SIDEBAR_SIZE}px;
-      }
-
-      .container {
-        width: ${SIDEBAR_SIZE}px;
-        height: calc(100% - ${SIDEBAR_HEADER_HEIGHT}px);
-        display: flex;
-        background-color: var(--white);
-        overflow-x: hidden;
-        position: fixed;
-      }
-
-      sidebar-main-element {
-        position: absolute;
-      }
-
-      sidebar-sub-element {
-        position: absolute;
-        transform: translateX(100%);
-      }
-
-      .slide-left sidebar-main-element {
-        animation: slide-left-main .5s forwards;
-      }
-
-      .slide-left sidebar-sub-element {
-        animation: slide-left-sub .5s forwards;
-      }
-
-      .slide-right sidebar-main-element {
-        animation: slide-right-main .5s forwards;
-      }
-
-      .slide-right sidebar-sub-element {
-        animation: slide-right-sub .5s forwards;
-      }
-
-      @keyframes show {
-        0% {
-          transform: translateX(-100%);
-        }
-        100% {
-          transform: translateX(0%);
-        }
-      }
-
-      @keyframes close {
-        0% {
-          transform: translateX(0%);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
-
-      @keyframes slide-left-main {
-        0% {
-          transform: translateX(-100%);
-        }
-        100% {
-          transform: translateX(0%);
-        }
-      }
-
-      @keyframes slide-left-sub {
-        0% {
-          transform: translateX(0%);
-        }
-        100% {
-          transform: translateX(100%);
-        }
-      }
-
-      @keyframes slide-right-main {
-        0% {
-          transform: translateX(0%);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
-
-      @keyframes slide-right-sub {
-        0% {
-          transform: translateX(100%);
-        }
-        100% {
-          transform: translateX(0%);
-        }
-      }
-
-    `;
-    return style;
   }
 }
 

@@ -1,6 +1,6 @@
 import Sidebar from '../components/Sidebar.js';
 import { loginActionElement } from './action.js';
-import SidebarSubContent from '../components/Sidebar/SidebarSubContent.js';
+import SidebarSubContent from '../components/Sidebar/SidebarSub/SidebarSubContent.js';
 import { menus } from '../data/menu.js';
 
 const showAllBtn = document
@@ -18,42 +18,28 @@ showAllBtn.addEventListener('click', (e) => {
   unfoldCategories(sidebar);
   closeSidebar(sidebar);
   clickCategories(sidebar);
-  scrollSubmenu(sidebar);
 });
 
-function scrollSubmenu(sidebar) {
-  const container = sidebar.shadowRoot.querySelector('.container');
-  container.addEventListener('scroll', (e) => {
-    const move = e.target.scrollTop;
-    const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
-    sub.style.top = `${move}px`;
-  });
-}
-
 function clickCategories(sidebar) {
-  const main = sidebar.shadowRoot.querySelector('sidebar-main-element');
-  const mainCategories = main.shadowRoot.querySelectorAll(
-    'sidebar-category-element'
-  );
-  mainCategories.forEach((category) => {
-    const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
-    category.addEventListener('click', (e) => {
-      const sectionId =
-        e.target.parentNode.id === 'folidng-list'
-          ? e.target.parentNode.parentNode.parentNode.id
-          : e.target.parentNode.id;
-      const categoryId = e.target.id;
-      const submenu = menus
-        .find((menu) => menu.id === sectionId)
-        .categories.find((category) => category.id === categoryId).subMenu;
-      sidebar.showSubSidebar();
+  const main = sidebar.shadowRoot.querySelector(
+    'sidebar-main-element'
+  ).shadowRoot;
+  const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
 
-      const sideSubContent = new SidebarSubContent(submenu);
-      sub.shadowRoot
-        .querySelector('#sidebar-sub-content')
-        .append(sideSubContent);
-      goBack(sideSubContent, sidebar);
-    });
+  main.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.tagName !== 'SIDEBAR-CATEGORY-ELEMENT') return;
+    const sectionId = target.closest('section').id;
+    const categoryId = e.target.id;
+
+    const submenu = menus
+      .find((menu) => menu.id === sectionId)
+      .categories.find((category) => category.id === categoryId).subMenu;
+
+    sidebar.showSubSidebar();
+    const sideSubContent = new SidebarSubContent(submenu);
+    sub.shadowRoot.querySelector('#sidebar-sub-content').append(sideSubContent);
+    goBack(sideSubContent, sidebar);
   });
 }
 
@@ -71,33 +57,24 @@ function goBack(sideSubContent, sidebar) {
 }
 
 function unfoldCategories(sidebar) {
-  const foldingBtn = sidebar.shadowRoot
+  const sections = sidebar.shadowRoot
     .querySelector('sidebar-main-element')
-    .shadowRoot.querySelector('#unfolidng-btn');
-  foldingBtn.addEventListener('click', () => {
-    const foldingList = sidebar.shadowRoot
-      .querySelector('sidebar-main-element')
-      .shadowRoot.querySelector('#folidng-list');
-    foldingList.classList.add('unfolded');
-    foldingList.classList.add('slide-down');
-    if (foldingList.classList.contains('slide-up'))
-      foldingList.classList.remove('slide-up');
-    foldCategories(sidebar);
+    .shadowRoot.querySelectorAll('sidebar-main-section-element');
+
+  sections.forEach((section) => {
+    const unfoldingBtn = section.querySelector('.unfolidng-btn');
+    unfoldingBtn.addEventListener('click', () => {
+      const foldingList = section.querySelector('.folding-list');
+      foldingList.classList.add('unfolded');
+      foldCategories(sidebar, section);
+    });
   });
 }
 
-function foldCategories(sidebar) {
-  const foldingList = sidebar.shadowRoot
-    .querySelector('sidebar-main-element')
-    .shadowRoot.querySelector('#folidng-list');
-  const unfoldingBtn = sidebar.shadowRoot
-    .querySelector('sidebar-main-element')
-    .shadowRoot.querySelector('#folidng-btn');
+function foldCategories(sidebar, section) {
+  const unfoldingBtn = section.querySelector('.folidng-btn');
   unfoldingBtn.addEventListener('click', () => {
-    const sub = sidebar.shadowRoot.querySelector('sidebar-sub-element');
-    sub.style.top = '0px';
+    const foldingList = section.querySelector('.folding-list');
     foldingList.classList.remove('unfolded');
-    foldingList.classList.add('slide-up');
-    foldingList.classList.remove('slide-down');
   });
 }
