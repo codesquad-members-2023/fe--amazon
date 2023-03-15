@@ -29,27 +29,29 @@ body {
   font-family: "Pretendard", sans-serif;
 }
 
-.list__label {
-  @include typography($bold-md);
-}
-
-.pop-up {
-  @include typography($body-sm);
-  color: $black;
-
-  &__link {
-    color: $secondary-navy;
-  }
-}
-
 .header {
   color: $white;
+
+  &__translate-lang,
   &__text {
     @include typography($bold-md);
 
     &--upper {
       @include typography($bold-sm);
       color: $gray400;
+    }
+  }
+
+  .pop-up {
+    @include typography($body-sm);
+    color: $black;
+
+    &__link {
+      color: $secondary-navy;
+    }
+
+    .list__label {
+      @include typography($bold-md);
     }
   }
 }
@@ -78,8 +80,8 @@ body {
   &__label {
     @include typography($bold-lg);
   }
-}
 
-.submenu {
-  @include typography($body-md);
+  .submenu {
+    @include typography($body-md);
+  }
 }

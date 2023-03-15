@@ -1,6 +1,6 @@
 export default class SubMenuContainer {
   constructor() {
-    this.element = document.querySelector(".submenu-container");
+    this.subMenuContainer = document.querySelector(".submenu-container");
     this.subMenuConfing = [
       {
         label: "음악 스트리밍",
@@ -213,6 +213,6 @@ export default class SubMenuContainer {
       fragment.appendChild(tempElement.firstElementChild);
     });
 
-    this.element.appendChild(fragment);
+    this.subMenuContainer.appendChild(fragment);
   }
 }

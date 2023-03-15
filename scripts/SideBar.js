@@ -65,11 +65,11 @@ export default class SideBar {
     );
 
     subMenu.classList.remove("hidden");
-    this.subMenuContainer.element.classList.add("show-sub-menu");
+    this.subMenuContainer.subMenuContainer.classList.add("show-sub-menu");
   }
 
   hideSubMenu() {
-    this.subMenuContainer.element.classList.remove("show-sub-menu");
+    this.subMenuContainer.subMenuContainer.classList.remove("show-sub-menu");
   }
 
   setSideBar() {

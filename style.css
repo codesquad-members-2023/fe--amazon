@@ -45,34 +45,32 @@ body {
 body {
   font-family: "Pretendard", sans-serif; }
 
-.list__label {
-  font-size: 1.3rem;
-  font-weight: 800;
-  letter-spacing: -0.06em;
-  line-height: 1; }
-
-.pop-up {
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1.6;
-  color: #10141a; }
-  .pop-up__link {
-    color: #074099; }
-
 .header {
   color: #ffffff; }
-  .header__text {
+  .header__translate-lang, .header__text {
     font-size: 1.3rem;
     font-weight: 800;
     letter-spacing: -0.06em;
     line-height: 1; }
-    .header__text--upper {
+    .header__translate-lang--upper, .header__text--upper {
       font-size: 1.1rem;
       font-weight: 600;
       letter-spacing: -0.03em;
       line-height: 1;
       color: #d5d5d5; }
+  .header .pop-up {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.6;
+    color: #10141a; }
+    .header .pop-up__link {
+      color: #074099; }
+    .header .pop-up .list__label {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      line-height: 1; }
 
 .nav {
   color: #ffffff;
@@ -100,7 +98,7 @@ body {
   letter-spacing: 0;
   line-height: 1; }
 
-.submenu {
+.side-bar .submenu {
   font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: -0.03em;
