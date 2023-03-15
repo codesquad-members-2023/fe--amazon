@@ -1,4 +1,4 @@
-import sidebarFoldStyle from '../../../styles/components/sidebar/sidebarMain/sidebarFold.js';
+import sidebarFoldStyle from '../../../styles/components/sidebar/sidebarMain/sidebarFoldStyle.js';
 
 class SidebarFold extends HTMLElement {
   constructor() {
@@ -8,7 +8,7 @@ class SidebarFold extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
 
     shadow.innerHTML = `<button>모두 보기<icon-element name="chevron-down" fill="var(--gray-600)"></icon-element></button>`;
-    this.shadowRoot.append(sidebarFoldStyle());
+    this.shadowRoot.append(sidebarFoldStyle.call(this));
   }
 }
 

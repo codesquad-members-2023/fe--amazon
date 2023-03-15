@@ -1,4 +1,4 @@
-import navbarStyle from '../styles/components/navbar.js';
+import navbarStyle from '../styles/components/navbarStyle.js';
 
 class Navbar extends HTMLElement {
   constructor() {
@@ -30,7 +30,7 @@ class Navbar extends HTMLElement {
       </div>
     `;
 
-    this.shadowRoot.append(navbarStyle());
+    this.shadowRoot.append(navbarStyle.call(this));
   }
 }
 

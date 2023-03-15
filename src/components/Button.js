@@ -1,4 +1,4 @@
-import buttonStyle from '../styles/components/button.js';
+import buttonStyle from '../styles/components/buttonStyle.js';
 
 class Button extends HTMLElement {
   constructor() {
@@ -11,7 +11,7 @@ class Button extends HTMLElement {
     shadow.innerHTML = `<button style="${style}">${text}</button>`;
 
     const type = this.getAttribute('type');
-    this.shadowRoot.append(buttonStyle(type));
+    this.shadowRoot.append(buttonStyle.call(this, type));
   }
 }
 

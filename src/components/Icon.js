@@ -1,4 +1,4 @@
-import iconStyle from '../styles/components/icon.js';
+import iconStyle from '../styles/components/iconStyle.js';
 
 class Icon extends HTMLElement {
   constructor() {
@@ -22,7 +22,7 @@ class Icon extends HTMLElement {
           ? svg.replace(/fill=\".+\"/g, `fill="${this.getAttribute('fill')}"`)
           : svg;
 
-        this.shadowRoot.append(iconStyle(size));
+        this.shadowRoot.append(iconStyle.call(this, size));
       })
       .catch((error) => console.error(error));
   }

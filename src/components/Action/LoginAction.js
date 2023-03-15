@@ -1,5 +1,5 @@
 import Action from '../Action.js';
-import loginActionStyle from '../../styles/components/action/loginAction.js';
+import loginActionStyle from '../../styles/components/action/loginActionStyle.js';
 
 class LoginActionWithFooter extends Action {
   constructor(id, hasFooter) {
@@ -44,7 +44,7 @@ class LoginActionWithFooter extends Action {
     </action-element>
     `;
 
-    this.shadowRoot.append(loginActionStyle());
+    this.shadowRoot.append(loginActionStyle.call(this));
   }
 }
 

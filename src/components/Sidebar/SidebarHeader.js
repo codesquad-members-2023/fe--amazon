@@ -1,4 +1,4 @@
-import sidebarHeaderStyle from '../../styles/components/sidebar/sidebarHeader.js';
+import sidebarHeaderStyle from '../../styles/components/sidebar/sidebarHeaderStyle.js';
 class SidebarHeader extends HTMLElement {
   constructor() {
     super();
@@ -7,7 +7,7 @@ class SidebarHeader extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
 
     shadow.innerHTML = `<icon-element name="user" fill="var(--white)"></icon-element>안녕하세요, 로그인`;
-    this.shadowRoot.append(sidebarHeaderStyle());
+    this.shadowRoot.append(sidebarHeaderStyle.call(this));
   }
 }
 

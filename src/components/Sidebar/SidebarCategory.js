@@ -1,4 +1,4 @@
-import sidebarCateoryStyle from '../../styles/components/sidebar/sidebarCategory.js';
+import sidebarCateoryStyle from '../../styles/components/sidebar/sidebarCategoryStyle.js';
 
 class SidebarCategory extends HTMLElement {
   constructor() {
@@ -11,7 +11,7 @@ class SidebarCategory extends HTMLElement {
     shadow.innerHTML = `<button>${
       icon ? `<icon-element name="${icon}">` : ''
     }</icon-element><p>${text}</p><icon-element name="chevron-right" fill="var(--gray-600)"></icon-element></button>`;
-    this.shadowRoot.append(sidebarCateoryStyle());
+    this.shadowRoot.append(sidebarCateoryStyle.call(this));
   }
 }
 

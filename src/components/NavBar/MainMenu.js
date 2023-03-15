@@ -1,4 +1,4 @@
-import mainMenuStyle from '../../styles/components/navbar/mainMenu.js';
+import mainMenuStyle from '../../styles/components/navbar/mainMenuStyle.js';
 
 class MainMenu extends HTMLElement {
   constructor() {
@@ -13,7 +13,7 @@ class MainMenu extends HTMLElement {
       </button>
     `;
 
-    this.shadowRoot.append(mainMenuStyle());
+    this.shadowRoot.append(mainMenuStyle.call(this));
   }
 }
 

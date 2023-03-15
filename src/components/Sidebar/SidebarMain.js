@@ -1,5 +1,5 @@
 import { menus } from '../../data/menu.js';
-import sidebarMainStyle from '../../styles/components/sidebar/sidebarMain.js';
+import sidebarMainStyle from '../../styles/components/sidebar/sidebarMainStyle.js';
 import {
   SIDEBAR_CATEGORY_HEIGHT,
   SIDEBAR_FOLDING_BTN_HEIGHT,

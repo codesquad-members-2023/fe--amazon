@@ -1,4 +1,4 @@
-import sidebarSubContentStyle from '../../../styles/components/sidebar/sidebarSub/sidebarSubContent.js';
+import sidebarSubContentStyle from '../../../styles/components/sidebar/sidebarSub/sidebarSubContentStyle.js';
 
 class SidebarSub extends HTMLElement {
   constructor(submenus) {
@@ -27,7 +27,7 @@ class SidebarSub extends HTMLElement {
         .join('')}
     `;
 
-    this.shadowRoot.append(sidebarSubContentStyle());
+    this.shadowRoot.append(sidebarSubContentStyle.call(this));
   }
 }
 

@@ -1,4 +1,4 @@
-import sidebarTitleStyle from '../../styles/components/sidebar/sidebarTitle.js';
+import sidebarTitleStyle from '../../styles/components/sidebar/sidebarTitleStyle.js';
 
 class SideBarTitle extends HTMLElement {
   constructor() {
@@ -8,7 +8,7 @@ class SideBarTitle extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
 
     shadow.innerHTML = `<p>${text}</p>`;
-    this.shadowRoot.append(sidebarTitleStyle());
+    this.shadowRoot.append(sidebarTitleStyle.call(this));
   }
 }
 

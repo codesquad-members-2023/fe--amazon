@@ -1,4 +1,4 @@
-import subMenuStyle from '../../styles/components/navbar/subMenu.js';
+import subMenuStyle from '../../styles/components/navbar/subMenuStyle.js';
 
 class SubMenu extends HTMLElement {
   constructor() {
@@ -19,7 +19,7 @@ class SubMenu extends HTMLElement {
       </button>
     `;
 
-    this.shadowRoot.append(subMenuStyle());
+    this.shadowRoot.append(subMenuStyle.call(this));
   }
 }
 

@@ -1,4 +1,4 @@
-import imageStyle from '../styles/components/image.js';
+import imageStyle from '../styles/components/imageStyle.js';
 
 class Image extends HTMLElement {
   constructor() {
@@ -31,7 +31,7 @@ class Image extends HTMLElement {
             ? svg.replace(/fill=\".+\"/g, `fill="${this.getAttribute('fill')}"`)
             : svg;
 
-          this.shadowRoot.append(imageStyle(width, height));
+          this.shadowRoot.append(imageStyle.call(this, width, height));
         })
         .catch((error) => console.error(error));
     } else {

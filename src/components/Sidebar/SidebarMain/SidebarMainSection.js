@@ -1,4 +1,4 @@
-import sidebarMainSectionStyle from '../../../styles/components/sidebar/sidebarMain/sidebarMainSection.js';
+import sidebarMainSectionStyle from '../../../styles/components/sidebar/sidebarMain/sidebarMainSectionStyle.js';
 import {
   SIDEBAR_CATEGORY_HEIGHT,
   SIDEBAR_FOLDING_BTN_HEIGHT,

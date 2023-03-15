@@ -1,4 +1,4 @@
-import sidebarUnfoldStyle from '../../../styles/components/sidebar/sidebarMain/sidebarUnfold.js';
+import sidebarUnfoldStyle from '../../../styles/components/sidebar/sidebarMain/sidebarUnfoldStyle.js';
 
 class SidebarUnfold extends HTMLElement {
   constructor() {
@@ -7,7 +7,7 @@ class SidebarUnfold extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
 
     shadow.innerHTML = `<button>간단히 보기<icon-element name="chevron-down"></icon-element></button>`;
-    this.shadowRoot.append(sidebarUnfoldStyle());
+    this.shadowRoot.append(sidebarUnfoldStyle.call(this));
   }
 }
 

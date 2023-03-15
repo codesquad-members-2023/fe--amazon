@@ -1,5 +1,5 @@
 import { ACTION_SIZE } from '../constant';
-import actionStyle from '../styles/components/action.js';
+import actionStyle from '../styles/components/actionStyle.js';
 
 class Action extends HTMLElement {
   constructor() {
@@ -39,7 +39,7 @@ class Action extends HTMLElement {
     `;
 
     const id = this.id;
-    this.shadowRoot.append(actionStyle(id));
+    this.shadowRoot.append(actionStyle.call(this, id));
   }
 
   showAction(eventTarget, id) {
