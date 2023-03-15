@@ -21,3 +21,9 @@ sidebarView.addEventListener("click", () => {
 sidebarQuickView.addEventListener("click", () => {
   sidebarOtherContents.style.height = "0";
 });
+
+const sidebarCloseButton = document.querySelector(".sidebar-close-button");
+
+sidebarCloseButton.addEventListener("click", () => {
+  sidebar.style.left = "-400px";
+});

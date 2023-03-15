@@ -40,3 +40,12 @@
   overflow: hidden;
   transition: 1s ease-in-out;
 }
+
+.sidebar-close-button {
+  font-size: 30px;
+  position: fixed;
+  left: 320px;
+  top: 5px;
+  border: 0;
+  background-color: transparent;
+}
