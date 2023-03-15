@@ -46,17 +46,10 @@
 
   overflow-y: scroll;
 }
-.side_bar_main > header,
-.digital_content_and_devices > header,
-.shopping_category > header {
+
+.side_bar_main_header {
   height: 53px;
   padding: 16px 16px 16px 32px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 21px;
 }
 .side_bar_main li {
   height: 40px;
@@ -65,14 +58,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 160%;
-
-  letter-spacing: -0.03em;
 
   cursor: pointer;
 }

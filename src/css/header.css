@@ -27,24 +27,9 @@
 }
 /* nav 상단 글씨체 */
 .nav_main_top_text {
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 13px;
-  letter-spacing: -0.06em;
-
   color: #d5d5d5;
 }
 .nav_main_bottom_text {
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
-
-  letter-spacing: -0.06em;
-
   color: #ffffff;
 }
 
@@ -82,14 +67,6 @@
 }
 .searchFormInput {
   height: 21px;
-
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 160%;
-
-  letter-spacing: -0.03em;
 
   color: #878787;
 
@@ -153,27 +130,14 @@
 }
 
 /* nav 하단 글씨체 */
-#nav_sub a {
+#nav_sub a,
+.side_bar_btn {
   color: #ffffff;
 }
 .nav_sub_left_text {
-  font-family: 'Pretendard';
-  font-style: normal;
+  /* 글씨체 type에 없는 속성값을 가지기 때문에 따로 지정 */
   font-weight: 600;
   font-size: 13px;
-  line-height: 16px;
-}
-.side_bar_btn,
-.nav_sub_right_btn {
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 13px;
-  line-height: 16px;
-
-  letter-spacing: -0.06em;
-
-  color: #ffffff;
 }
 
 .nav_sub_left_btns,
