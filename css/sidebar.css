@@ -1,0 +1,51 @@
+.sidebar {
+  width: 320px;
+  background-color: rgb(254, 245, 245);
+  position: fixed;
+  top: 0;
+  left: -400px;
+  height: 100%;
+  overflow: scroll;
+  transition: 1s ease-in-out;
+}
+
+.sidebar-header {
+  display: flex;
+  background-color: var(--color-black);
+  width: 320px;
+  height: 53px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-header span {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.sidebar-menu {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.sidebar li {
+  display: flex;
+  padding: 18px;
+  justify-content: space-between;
+}
+
+.sidebar-other-contents {
+  height: 0%;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+}
+
+.sidebar-close-button {
+  font-size: 30px;
+  position: fixed;
+  left: 320px;
+  top: 5px;
+  border: 0;
+  background-color: transparent;
+}
