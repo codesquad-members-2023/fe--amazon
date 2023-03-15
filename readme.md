@@ -50,7 +50,7 @@
 - [ ] 대체폰트, 폰트정리
 - [ ] JS 리팩토링, 함수안에 넣기
 - [x] Event delegation
-- [ ] DOM template literal 문법
+- [x] DOM template literal 문법
 
 
 ### 주요 개발 feature
@@ -62,7 +62,7 @@
 - [ ] 월 :리뷰 보완하기
 - [x] 화 : 학습 강의 보고 정리하기
 - [ ] 수 : Javascript file 코드 수정
-  - [ ] max - height
-  - [ ] overflow
-  - [ ] 딤 배경 이벤트 추가
+  - [x] max - height
+  - [x] overflow
+  - [x] 딤 이벤트 추가
 - [ ] 목 : 구현 보강하기
