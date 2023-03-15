@@ -40,9 +40,18 @@ const main = () => {
   $expandedShoppingCategoryBtn.addEventListener('click', () => {
     if ($expandedShoppingCategoryList.maxHeight) {
       $expandedShoppingCategoryList.style.maxHeight = null;
-    } else {
-      $expandedShoppingCategoryList.style.maxHeight = `${$expandedShoppingCategoryList.scrollHeight}px`;
+      return;
     }
+    $expandedShoppingCategoryList.style.maxHeight = `${$expandedShoppingCategoryList.scrollHeight}px`;
+  });
+
+  const $closeExpandedShoppingCategory = $('.close_expanded_shopping_category_btn', $sideBar);
+  $closeExpandedShoppingCategory.addEventListener('click', () => {
+    if (!$expandedShoppingCategoryList.maxHeight) {
+      $expandedShoppingCategoryList.style.maxHeight = null;
+      return;
+    }
+    $expandedShoppingCategoryList.style.maxHeight = `${$expandedShoppingCategoryList.scrollHeight}px`;
   });
 };
 
