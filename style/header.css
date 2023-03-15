@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: white;
+  text-decoration-line: none;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+
+  background-color: #000000;
+  height: 88px;
+  width: 100%;
+
+  z-index: 1;
+}
+
+/* nav-top 영역 */
+
+.nav-top {
+  height: 56px;
+  padding: 10px;
+}
+
+.nav-top__inner-wrap {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.nav-top__elements {
+  height: 56px;
+  padding: 10px;
+  display: inherit;
+  align-items: center;
+  position: relative;
+}
+
+.nav-top__elements.language,
+.nav-top__elements.basket {
+  gap: 5px;
+}
+
+/* nav-top location 버튼 */
+
+.nav-top__elements.location {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.nav-top__line1 {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-top__locate {
+  font-size: var(--font-sm);
+}
+
+.nav-top__line2 {
+  font-size: var(--font-md);
+}
+
+.nav-top__pointer {
+  width: 8px;
+  height: 10px;
+}
+
+.nav-top__pointer > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* nav-top 검색창 */
+
+.nav-top.search {
+  flex-grow: 1;
+}
+
+.nav-top__search-bar {
+  margin: 0;
+}
+
+.nav-top__search-field {
+  display: flex;
+  height: 100%;
+}
+
+.nav-top__input {
+  flex: 1;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-md);
+  line-height: var(--line-height);
+  padding: 9.5px 9.5px 12px 12px;
+}
+
+.nav-top__search-btn {
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  background: var(--color-orange-100);
+  border: none;
+  cursor: pointer;
+}
+
+.nav-top__search-icon {
+  align-self: center;
+}
+
+.nav-top.language {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-top__text,
+.nav-top__account-line2,
+.nav-top__order-text,
+.nav-top__basket-text {
+  font-weight: var(--weight-extra-bold);
+  font-size: var(--font-md);
+  line-height: var(--line-height-nav-top);
+}
+
+.nav-top__elements.account-link {
+  flex-flow: column;
+  justify-content: center;
+}
+
+.nav-top__refund-text,
+.nav-top__account-line1 {
+  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-sm);
+  line-height: var(--font-md);
+}
+
+.nav-top__elements.refund-order {
+  flex-flow: column;
+  justify-content: center;
+}
+
+.nav-top.basket {
+  display: flex;
+  align-items: center;
+  gap: 6.33px;
+}
+
+.nav-bottom {
+  display: flex;
+  height: 32px;
+  background-color: var(--color-gray-900);
+  align-items: center;
+}
+
+.nav-bottom__left {
+  height: 100%;
+  display: flex;
+  flex-grow: 1;
+}
+
+.nav-bottom__category {
+  display: inherit;
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-md);
+  color: var(--color-white);
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+}
+
+.nav-bottom__category.select-all{
+  display: flex;
+  gap: 10px;
+}
+
+.border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 95%;
+  height: 95%;
+  border: var(--color-white) 2px solid;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.border:hover::before {
+  opacity: 1;
+}
+

@@ -1,57 +1,142 @@
-const loginPointer = document.querySelector(".modal__pointer1");
-const loginModalLoad = document.querySelector(".modal__login1");
-
-(function (delay) {
-  setTimeout(function() {
-    loginPointer.style.display = 'block';
-    loginModalLoad.style.display = 'block';
-  }, delay)
-})(1000);
-
-const loginButton = document.querySelector(".nav-top__account-link");
-const loginModal1 = document.querySelector(".modal__login1");
-const dimLayer = document.querySelector(".dim__layer");
-
-loginButton.addEventListener("mouseover", () => {
-  loginModal1.style.display = 'none';
-  dimLayer.style.display = 'block';
-})
-
-/*     딤처리 부분      */
-// location 버튼 영역 변수화
-const locationButton = document.querySelector(".nav-top__link");
-const locationModal = document.querySelector(".modal__location");
-
-// login 버튼 영역 변수화
-const loginModal2 = document.querySelector(".modal__login2");
-const loginPath = document.querySelector(".modal__path2");
-
-const modalLayouts = [locationButton, locationModal, loginButton, loginModal2, loginPath];
-
-modalLayouts.forEach((node) => {
-  node.addEventListener("mouseover", () => {
+function sideBarHandler(findNodeModule, dimLayer){
+  const {findNordUpWard, findSibling} = findNodeModule;
+  const sideBarOpenBtn = document.querySelector(".nav-bottom__category.select-all");
+  const sideBarLayer = document.querySelector(".sidebar__layer");
+  
+  sideBarOpenBtn.addEventListener('click', () => {
+    sideBarLayer.style['animation-name'] = 'slideRightWard';
     dimLayer.style.display = 'block';
+  });
+  sideBarLayer.addEventListener('click', (evt) => {
+    const ontarget = evt.target;
+    const [parent, element, name] = ontarget.className.split(" ");
+  
+    if(parent === "sidebar__closeBtn--container") { 
+      sideBarLayer.style['animation-name'] = 'slideLeftWard';
+      dimLayer.style.display = 'none';
+    }
+  
+    if(name === 'showall') {
+      findSibling(findNordUpWard(ontarget,'.sidebar__shopping'), 2).style.height = '100%';
+    }
+    if(name === 'closeall') {
+      findNordUpWard(ontarget,'.sidebar__shopping.extra').style.height = '0';
+    }
+    
+    /**
+     * 사이드바에서 클릭 이벤트 발생시 right sub menu 생성
+     */
+    if(parent + '.' + element != 'sidebar__contents.btn'){
+      const rightSideBarData = Object.entries(SIDEBAR_DETAIL);
+      const categoryNumber = evt.target.dataset.indexNumber;
+      const newRightSideBar = makeSubSideBar(rightSideBarData[categoryNumber], categoryNumber);
+      const rightSideBarList = ontarget.closest('.sidebar__container').lastElementChild.childNodes;
+
+      rightSideBarList.forEach((rightSideBar) => {
+        if(rightSideBar.nodeName != '#text'){
+          const name = rightSideBar.className;
+          const nameInArray = name.split(" ");
+          if(nameInArray[nameInArray.length - 1] != categoryNumber){
+            findNordUpWard(ontarget, '.sidebar__menu.main').insertAdjacentHTML('afterend', newRightSideBar);
+          }
+          rightSideBar.style['animation-name'] = 'slideSubMenuLeftWard';
+        }
+      })
+      findNordUpWard(ontarget, '.sidebar__menu.main').style['animation-name'] = 'slideMenuLeftWard';
+    };
+  
+    if(name === 'close-right-menu') {
+      findNordUpWard(ontarget, '.sidebar__menu.right').style['animation-name'] = 'slideSubMenuRightWard';
+      findNordUpWard(ontarget, '#sidebarmenu').firstElementChild.style['animation-name'] = 'slideMenuRightWard';
+    }
   })
-})
+}
 
-modalLayouts.forEach((node) => {
-  node.addEventListener("mouseout", () => {
-    if(sideBar.style.display != 'block') dimLayer.style.display = 'none';
+const navHandler = (findNodeModule, dimLayer) => {
+  const {findNordUpWard, findSibling} = findNodeModule;
+  const nav = document.querySelector('.nav');
+  
+  nav.addEventListener('mouseover', (evt) => {
+    const ontarget = evt.target;
+  
+    if(ontarget.tagName === 'A') {
+      ontarget.classList.add('border');
+    }
+    
+    const [parent, element] = ontarget.className.split(" ");
+    
+    if(element === 'location') {
+      ontarget.lastElementChild.style.display = 'block';
+      dimLayer.style.display = 'block';
+    }
+    if(findNordUpWard(ontarget, '.modal__location')) {
+      findNordUpWard(ontarget, '.modal__location').style.display = 'block';
+      dimLayer.style.display = 'block';
+    }
+    if(element === 'account-link') {
+      findSibling(ontarget, 2).style.display = 'none';
+      findSibling(ontarget, 4).style.display = 'block';
+      dimLayer.style.display = 'block';
+    }
+    if(findNordUpWard(ontarget, '.modal__login2')) {
+      findNordUpWard(ontarget, '.modal__login2').style.display = 'block';
+      dimLayer.style.display = 'block';
+    }
   })
-})
+  
+  nav.addEventListener('mouseout', (evt) => {
+    const ontarget = evt.target;
+    const [parent, element] = ontarget.className.split(" ");
+  
+    if(ontarget.tagName === 'A') {
+      ontarget.classList.remove('border');
+      if(element != 'select-all') dimLayer.style.display = 'none';
+    }
+    if(element === 'location') {
+      ontarget.lastElementChild.style.display = 'none';
+      dimLayer.style.display = 'none';
+    }
+    if(findNordUpWard(ontarget, '.modal__location')){
+      findNordUpWard(ontarget, '.modal__location').style.display = 'none';
+      dimLayer.style.display = 'none';
+    }
+    if(element === 'account-link') {
+      findSibling(ontarget, 2).style.display = 'none';
+      findSibling(ontarget, 4).style.display = 'none';
+      dimLayer.style.display = 'none';
+    }
+    if(findNordUpWard(ontarget, '.modal__login2')) {
+      findNordUpWard(ontarget, '.modal__login2').style.display = 'none';
+      dimLayer.style.display = 'none';
+    }
+  })
+}
 
-/* sidebar 버튼 및 레이아웃 영역 */
-
-const sideBarOpenBtn = document.querySelector(".nav-bottom__selectAll");
-const sideBar = document.querySelector(".sidebar-elements");
-const sideBarCloseBtn = document.querySelector(".sidebar__closeBtn");
-
-sideBarOpenBtn.addEventListener('click', () => {
-  sideBar.style.display = 'block';
-  dimLayer.style.display = 'block';
+const findNodeModule = (() => {
+  const findNordUpWard = (target, node) => target.closest(node);
+  const findSibling = (node, targetIndex) => {
+    const parent = node.parentNode;
+    const children = parent.childNodes;
+    const index = Array.prototype.indexOf.call(children, node);
+    if (index < children.length - 1 && index >= 0) return children[index + targetIndex];
+    else return null; // index가 children 배열크기를 넘어가는 경우
+  };
+  return {
+    findNordUpWard,
+    findSibling
+  }
 });
 
-sideBarCloseBtn.addEventListener('click', () => {
-  sideBar.style.display = 'none';
-  dimLayer.style.display = 'none';
-})
+(function init(){
+  (function (delay) {
+    const loginModal1 = document.querySelector(".modal__login1");
+    setTimeout(function() {
+      loginModal1.style.display = 'block';
+    }, delay)
+  })(1000);
+
+  const dimLayer = document.querySelector(".dim__layer");
+
+  navHandler(findNodeModule(), dimLayer);
+  sideBarHandler(findNodeModule(), dimLayer);
+})()

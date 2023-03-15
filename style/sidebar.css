@@ -1,0 +1,249 @@
+@import url(valuables.css);
+
+.sidebar-elements {
+  display: block;
+  position: absolute;
+  left: -35vh;
+}
+
+.sidebar__layer {
+  display: block;
+  position: fixed;
+
+  height: 100%;
+  width: 35vh;
+  background-color: var(--color-white);
+  z-index: 1;
+
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  overflow-y: scroll;
+} 
+
+@keyframes slideRightWard {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideLeftWard {
+  from {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+.sidebar__container {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.sidebar__login--top__container {
+  display: flex;
+  background-color: var(--color-black);
+  font-weight: var(--weight-extra-bold);
+  font-size: var(--font-lg);
+  position: relative;
+  width: 100%;
+  align-items: center;
+}
+
+.sidebar__login__link {
+  display: flex;
+  height: auto;
+  padding: 4% 10%;
+  position: relative;
+  width: 100%;
+}
+
+.sidebar__login__txt {
+  padding-left: 5%;
+}
+
+.sidebar__login__link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  border: var(--color-white) 2px solid;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.sidebar__login__link:hover::before {
+  opacity: 1;
+}
+
+.sidebar__closeBtn--container {
+  padding: 4% 6%;
+  cursor: pointer;
+  position: relative;
+}
+
+.sidebar__closeBtn {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.sidebar__closeBtn--container::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: var(--color-white) 2px solid;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.sidebar__closeBtn--container:hover::before {
+  opacity: 1;
+}
+
+.sidebar__digital-content,
+.sidebar__shopping {
+  display: flex;
+  flex-flow: column;
+
+  border-bottom: var(--border-bottom);
+}
+
+.sidebar__digital-content__title,
+.sidebar__shopping__title {
+  font-weight: var(--weight-extra-bold);
+  font-size: var(--font-lg);
+  padding: 6% 6% 6% 10%;
+}
+
+.sidebar__digital-content__title-link,
+.sidebar__shopping__title-link {
+  font-weight: bold;
+  color: var(--color-black);
+}
+
+.sidebar__digital-content__menu,
+.sidebar__shopping__menu {
+  display: flex;
+  flex-flow: column;
+
+  font-weight: normal;
+  font-size: var(--font-md);
+  line-height: 160%;
+}
+
+.sidebar__contents {
+  display: flex;
+  justify-content: space-between;
+  padding: 4% 6% 4% 10%;
+  font-weight: var(--weight-medium);
+  color: var(--color-black)
+}
+
+.sidebar__contents:hover {
+  background-color: var(--color-gray-200);
+}
+
+.sidebar__contents.btn {
+  display: flex;
+  justify-content: unset;
+  padding: 4% 6% 4% 10%;
+  font-weight: var(--weight-medium);
+  color: var(--color-black);
+  gap: 3%;
+}
+
+.sidebar__shopping.extra {
+  height: 0;
+  transition: height .5s ease-in-out;
+  overflow: hidden;
+}
+
+.sidebar__menu {
+  display: flex;
+  position: relative;
+}
+
+.sidebar__menu.main {
+  display: flex;
+  flex-flow: column;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  height: auto;
+}
+
+.sidebar__menu.right {
+  display: block;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.sidebar__contents-shopping__electron {
+  display: flex;
+  justify-content: space-between;
+  padding: 4% 6% 4% 10%;
+  font-weight: var(--weight-medium);
+  color: var(--color-black)
+}
+
+.sidebar__contents-shopping__electron:hover {
+  background-color: var(--color-gray-200);
+}
+
+@keyframes slideMenuLeftWard {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideMenuRightWard {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideSubMenuLeftWard {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideSubMenuRightWard {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
