@@ -40,7 +40,6 @@
   top: -8px;
   right: 85px;
   background-color: var(--color-white);
-  z-index: 2;
   transform: rotate(45deg);
 }
 
@@ -78,10 +77,6 @@
   border-radius: 4px;
   padding: 20px;
   box-shadow: 0px 3px 6px var(--color-gray500);
-}
-
-.login-modal:hover + .login-hover {
-  display: block;
 }
 
 .login-hover-list {
@@ -129,7 +124,6 @@
   top: 30px;
   right: -2px;
   background-color: var(--color-white);
-  z-index: 2;
   transform: rotate(45deg);
 }
 
