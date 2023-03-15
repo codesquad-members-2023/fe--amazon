@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  src: url("assets/fonts/web/static/woff2/Pretendard-Medium.woff2")
+      format("woff2"),
+    url("assets/fonts/web/static/woff/Pretendard-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  src: url("assets/fonts/web/static/woff2/Pretendard-SemiBold.woff2")
+      format("woff2"),
+    url("assets/fonts/web/static/woff/Pretendard-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 800;
+  src: url("assets/fonts/web/static/woff2/Pretendard-ExtraBold.woff2")
+      format("woff2"),
+    url("assets/fonts/web/static/woff/Pretendard-ExtraBold.woff") format("woff");
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+}
+
+.header {
+  color: $white;
+
+  &__translate-lang,
+  &__text {
+    @include typography($bold-md);
+
+    &--upper {
+      @include typography($bold-sm);
+      color: $gray400;
+    }
+  }
+
+  .pop-up {
+    @include typography($body-sm);
+    color: $black;
+
+    &__link {
+      color: $secondary-navy;
+    }
+
+    .list__label {
+      @include typography($bold-md);
+    }
+  }
+}
+
+.nav {
+  color: $white;
+  font-weight: 600;
+  font-size: 1.3rem;
+
+  &__all,
+  &__special-offer {
+    font-weight: 800;
+  }
+}
+
+.side-bar {
+  &__log-in {
+    @include typography($bold-lg);
+    color: $white;
+  }
+
+  &__content {
+    @include typography($body-md);
+  }
+
+  &__label {
+    @include typography($bold-lg);
+  }
+
+  .submenu {
+    @include typography($body-md);
+  }
+}

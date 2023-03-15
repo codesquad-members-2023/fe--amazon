@@ -1,0 +1,73 @@
+@keyframes page-load-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pop-up {
+  position: absolute;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  &--login {
+    /* top 값 바꾸기 */
+    top: 5.4rem;
+    right: 1rem;
+    gap: 8px;
+    opacity: 0;
+    animation: page-load-fade-in 250ms ease-in-out forwards;
+  }
+
+  &--shipping-address {
+    top: 54px;
+    left: 0px;
+    gap: 26px;
+
+    width: 32rem;
+  }
+
+  &__expanded {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__text {
+    &--login {
+      white-space: nowrap;
+    }
+  }
+
+  &__triangle {
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    transform: translateY(-30%);
+    background-color: inherit;
+    top: 0;
+
+    &--login {
+      right: 1rem;
+    }
+
+    &--shipping-address {
+      left: 1rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+}

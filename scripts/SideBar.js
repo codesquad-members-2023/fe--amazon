@@ -1,8 +1,9 @@
+import SubMenuContainer from "./SubMenuContainer";
 import { DimmedBody } from "./Dimmed";
 
 export default class SideBar {
   constructor() {
-    this.allAnchor = document.querySelector(".nav__anchor--all");
+    this.allAnchors = document.querySelector(".nav__anchor--all");
     this.sideBar = document.querySelector(".side-bar");
     this.sideBarCloseButton = document.querySelector(".side-bar__close");
 
@@ -18,75 +19,81 @@ export default class SideBar {
     this.sideBarParentButtons = document.querySelectorAll(
       ".side-bar__button--parent"
     );
-    this.subMenus = document.querySelector(".submenus");
+
+    // SubMenus의 setSubMenus 이후에 allSubMenus를 선택해야만 하는 의존성 문제
+    this.subMenuContainer = new SubMenuContainer();
+    this.subMenuContainer.setSubMenuContainer();
+
     this.allSubMenus = document.querySelectorAll(".submenu");
-    this.allSubMenuBacks = document.querySelectorAll(".submenu__back");
+    this.subMenuBack = document.querySelector(".submenu__back");
 
     this.dimmedBody = new DimmedBody();
   }
 
-  showSideBar = (e) => {
+  showSideBar(e) {
     e.preventDefault();
 
     this.dimmedBody.showDimmedBody();
-    this.sideBar.classList.remove("hidden");
-    this.sideBar.classList.remove("hide-side-bar");
     this.sideBar.classList.add("show-side-bar");
-  };
+  }
 
-  hideSideBar = () => {
+  hideSideBar() {
     this.dimmedBody.hideDimmedBody();
     this.sideBar.classList.remove("show-side-bar");
-    this.sideBar.classList.add("hide-side-bar");
-  };
+  }
 
-  unfoldOtherButtons = () => {
-    this.otherButtonContainer.classList.remove("hidden");
-    this.otherButtonContainer.classList.remove("hide-others");
+  unfoldOtherButtons() {
     this.otherButtonContainer.classList.add("show-others");
-  };
+  }
 
-  foldOtherButtons = () => {
+  foldOtherButtons() {
     this.otherButtonContainer.classList.remove("show-others");
-    this.otherButtonContainer.classList.add("hide-others");
-  };
+  }
 
-  showSubMenu = (e) => {
-    if (this.subMenus.contains(e.target)) return;
-
+  showSubMenu({ target }) {
     const parentButton = [...this.sideBarParentButtons].find((el) =>
-      el.contains(e.target)
+      el.contains(target)
     );
-    const id = parentButton?.dataset.id;
-    if (!id) return;
 
+    if (!parentButton) return;
+
+    const id = parentButton.dataset.id;
+
+    this.allSubMenus.forEach((el) => el.classList.add("hidden"));
     const subMenu = [...this.allSubMenus].find(
       (el) => el.dataset.parentId === id
     );
 
-    subMenu?.classList.remove("hide-sub-menu");
-    subMenu?.classList.add("show-sub-menu");
-  };
+    subMenu.classList.remove("hidden");
+    this.subMenuContainer.subMenuContainer.classList.add("show-sub-menu");
+  }
 
-  hideSubMenu = (subMenuBack) => {
-    subMenuBack.parentElement.classList.remove("show-sub-menu");
-    subMenuBack.parentElement.classList.add("hide-sub-menu");
-  };
+  hideSubMenu() {
+    this.subMenuContainer.subMenuContainer.classList.remove("show-sub-menu");
+  }
 
-  setSideBar = () => {
-    this.allAnchor.addEventListener("click", (e) => {
+  setSideBar() {
+    [...this.sideBarParentButtons].forEach((el, idx) => {
+      el.setAttribute("data-id", `${idx + 1}`);
+    });
+
+    this.allAnchors.addEventListener("click", (e) => {
       this.showSideBar(e);
     });
-    this.sideBarCloseButton.addEventListener("click", this.hideSideBar);
-    this.showAllButton.addEventListener("click", this.unfoldOtherButtons);
-    this.closeAllButton.addEventListener("click", this.foldOtherButtons);
+    this.sideBarCloseButton.addEventListener("click", () => {
+      this.hideSideBar();
+    });
+    this.showAllButton.addEventListener("click", () => {
+      this.unfoldOtherButtons();
+    });
+    this.closeAllButton.addEventListener("click", () => {
+      this.foldOtherButtons();
+    });
     this.sideBarContent.addEventListener("click", (e) => {
       this.showSubMenu(e);
     });
-    [...this.allSubMenuBacks].forEach((subMenuBack) => {
-      subMenuBack.addEventListener("click", () =>
-        this.hideSubMenu(subMenuBack)
-      );
+    this.subMenuBack.addEventListener("click", () => {
+      this.hideSubMenu();
     });
-  };
+  }
 }

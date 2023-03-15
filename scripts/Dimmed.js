@@ -2,12 +2,12 @@ export class DimmedMain {
   constructor() {
     this.dimmedMain = document.querySelector(".dimmed--main");
   }
-  showDimmedMain = () => {
+  showDimmedMain() {
     this.dimmedMain.classList.remove("hidden");
-  };
-  hideDimmedMain = () => {
+  }
+  hideDimmedMain() {
     this.dimmedMain.classList.add("hidden");
-  };
+  }
 }
 
 export class DimmedBody {
@@ -15,11 +15,11 @@ export class DimmedBody {
     this.dimmedBody = document.querySelector(".dimmed--body");
   }
 
-  showDimmedBody = () => {
+  showDimmedBody() {
     this.dimmedBody.classList.remove("hidden");
-  };
+  }
 
-  hideDimmedBody = () => {
+  hideDimmedBody() {
     this.dimmedBody.classList.add("hidden");
-  };
+  }
 }

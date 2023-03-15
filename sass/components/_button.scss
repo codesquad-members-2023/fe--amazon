@@ -1,0 +1,16 @@
+.button {
+  background: linear-gradient(
+    174.6deg,
+    $white 4.31%,
+    $primary-yellow100 50.01%,
+    $primary-yellow200 95.71%
+  );
+  border: 1px solid $primary-yellow300;
+  border-radius: 4px;
+
+  padding: 0.95rem 1rem;
+
+  &--large {
+    width: 16rem;
+  }
+}
