@@ -99,6 +99,20 @@
   - [x] : font style 변수화 및 적용
   - [x] : 클래스명 점검
 
+# :two: 화요일 학습계획 
+
+- [x] : header 영역 레이아웃 변경, js 코드 리팩토링
+  - [x] : header 영역 불필요한 태그 삭제
+  - [x] : header 영역 불필요한 속성 삭제
+  - [x] :  header 영역 요소 클래스명 통일화, css 통일화
+  - [x] : header 영역 버튼 요소에 hover 적용 - border 라인
+  - [x] : header, sidebar 영역 관련 js 코드 전체적으로 리팩토링 진행
+
+# :three: 수요일 학습계획 
+
+- [x] : js prototype, scope 개념 공부
+- [x] : header 영역 js 및 css 오류 해결
+
 ---
 
 ## 주차별 피드백 및 회고
