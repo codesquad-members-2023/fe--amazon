@@ -4,7 +4,6 @@ const SIDEBAR_DETAIL = {
     "Amazon Music HD",
     "Podcast",
     "웹 플레이어 열기",
-    "웹 플레이어 열기",
     "Download the app",
   ],
   "1-2": [

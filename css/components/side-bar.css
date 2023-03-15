@@ -18,13 +18,15 @@
   display: none;
 }
 
-.homeSidebar__lists {
+.homeSidebar__lists,
+.himeSidebar__lists--detail {
   font-size: 13px;
   height: 100%;
   width: 100%;
 }
 
-.homeSidebar__lists li {
+.homeSidebar__lists li,
+.himeSidebar__lists--detail li {
   display: flex;
   align-items: center;
   padding: 8px 20px;
@@ -169,10 +171,14 @@
   }
 }
 
-.homeSidebar__detail {
-  display: flex;
+.himeSidebar__lists--detail {
+  display: none;
 }
 
-.hideDetail {
+.showDetail {
+  display: block;
+}
+
+.none {
   display: none;
 }
