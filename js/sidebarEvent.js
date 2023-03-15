@@ -6,6 +6,19 @@ const closeButton = document.querySelector('#closeButton');
 const allButton = document.querySelector('.sidebar_all_button');
 const hiddenMenus = document.querySelector('.sidebar_hidden_menus');
 const hiddenButton = document.querySelector('.sidebar_hidden_button');
+const hoverAreaArr = document.querySelectorAll('.hover_img');
+
+const areaArr = [...hoverAreaArr].map((hoverArea) => hoverArea.parentNode);
+// hover_img class를 가진 놈들은 다 잡아와야함.
+
+areaArr.forEach((area) => {
+  area.addEventListener('mouseover', (e) => {
+    e.currentTarget.children[1].style.filter = 'brightness(0%)';
+  });
+  area.addEventListener('mouseout', (e) => {
+    e.currentTarget.children[1].style.filter = '';
+  });
+});
 
 allLink.addEventListener('click', () => {
   sideBar.style.display = 'flex';
