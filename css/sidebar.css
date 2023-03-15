@@ -4,6 +4,7 @@
   background-color: rgb(254, 245, 245);
   position: fixed;
   top: 0;
+  overflow: scroll;
 }
 
 .sidebar-header {
@@ -35,5 +36,4 @@
 .sidebar-other-contents {
   height: 0;
   transition: height 4s ease-in-out;
-  overflow: hidden;
 }
