@@ -62,13 +62,13 @@ class Action extends HTMLElement {
     const action = this.shadowRoot.querySelector('action-element');
     const actionRect = action.getBoundingClientRect();
     action.style.position = 'absolute';
-    const isWidthOverflowLeft = targetRect.left - actionRect.width / 2 < 0;
-    const isWidthOverflowRight =
+    const isActionOverflowLeft = targetRect.left - actionRect.width / 2 < 0;
+    const isActionOverflowRight =
       targetRect.left + actionRect.width > window.innerWidth;
 
-    if (isWidthOverflowLeft) {
+    if (isActionOverflowLeft) {
       action.style.left = `16px`;
-    } else if (isWidthOverflowRight) {
+    } else if (isActionOverflowRight) {
       action.style.right = `16px`;
     } else {
       action.style.transform = `translateX(-${targetRect.width / 2}px)`;
