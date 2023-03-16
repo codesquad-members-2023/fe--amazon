@@ -3,6 +3,9 @@ import { DimmedBody } from "./Dimmed";
 
 export default class SideBar {
   constructor() {
+    this.subMenuContainer = new SubMenuContainer();
+    this.subMenuContainer.setSubMenuContainer();
+
     this.allAnchors = document.querySelector(".nav__anchor--all");
     this.sideBar = document.querySelector(".side-bar");
     this.sideBarCloseButton = document.querySelector(".side-bar__close");
@@ -20,9 +23,9 @@ export default class SideBar {
       ".side-bar__button--parent"
     );
 
-    // SubMenus의 setSubMenus 이후에 allSubMenus를 선택해야만 하는 의존성 문제
-    this.subMenuContainer = new SubMenuContainer();
-    this.subMenuContainer.setSubMenuContainer();
+    [...this.sideBarParentButtons].forEach((el, idx) => {
+      el.setAttribute("data-id", `${idx + 1}`);
+    });
 
     this.allSubMenus = document.querySelectorAll(".submenu");
     this.subMenuBack = document.querySelector(".submenu__back");
@@ -57,7 +60,9 @@ export default class SideBar {
 
     if (!parentButton) return;
 
-    const id = parentButton.dataset.id;
+    const {
+      dataset: { id },
+    } = parentButton;
 
     this.allSubMenus.forEach((el) => el.classList.add("hidden"));
     const subMenu = [...this.allSubMenus].find(
@@ -72,11 +77,7 @@ export default class SideBar {
     this.subMenuContainer.subMenuContainer.classList.remove("show-sub-menu");
   }
 
-  setSideBar() {
-    [...this.sideBarParentButtons].forEach((el, idx) => {
-      el.setAttribute("data-id", `${idx + 1}`);
-    });
-
+  onSideBar() {
     this.allAnchors.addEventListener("click", (e) => {
       this.showSideBar(e);
     });

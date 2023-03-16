@@ -5,8 +5,8 @@ const main = () => {
   const header = new Header();
   const sideBar = new SideBar();
 
-  header.setHeader();
-  sideBar.setSideBar();
+  header.onHeader();
+  sideBar.onSideBar();
 };
 
 main();
