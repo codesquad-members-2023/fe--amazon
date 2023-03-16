@@ -1,4 +1,4 @@
-const sideBarExtend = () => {
+const sideBarExtendInit = () => {
   const DOWN_LIST = [
     "자동차 용품",
     "유아",
@@ -23,9 +23,6 @@ const sideBarExtend = () => {
       const closeMore = document.querySelector(".homeSidebar__mode--close");
       li.innerText = item;
       li.classList.add("homeSidebar__subTitle", "hoverIcon");
-      // data-columns 부여
-      // li.setAttribute("data-columns", `2-${count}`);
-      // li.dataset.columns = `2-${count}`;
       li.dataset.columns = count;
       count++;
       icon.classList.add("fa-solid", "fa-chevron-right");
@@ -60,4 +57,4 @@ const sideBarExtend = () => {
   appendExtentionList();
 };
 
-sideBarExtend();
+sideBarExtendInit();
