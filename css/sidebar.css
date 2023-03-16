@@ -1,6 +1,6 @@
 .sidebar {
   width: 320px;
-  background-color: rgb(254, 245, 245);
+  background-color: var(--color-white);
   position: fixed;
   top: 0;
   left: -400px;
@@ -53,10 +53,3 @@
   transition: opacity 1s ease-in-out;
 }
 
-.categories :hover {
-  background-color: black;
-}
-
-.body {
-  background-color: beige;
-}
