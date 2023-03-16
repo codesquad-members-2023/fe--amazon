@@ -9,6 +9,11 @@
   }
 }
 
+.nav {
+  position: absolute;
+  z-index: 2;
+}
+
 /* * nav 상단 */
 #nav_main {
   display: flex;

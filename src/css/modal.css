@@ -9,8 +9,8 @@
 
 .shipping_address_modal {
   position: absolute;
-  top: 50px;
-  left: -30px;
+  top: 100%;
+  left: -50%;
 
   background-color: #ffffff;
   width: 320px;
@@ -60,17 +60,15 @@
     opacity: 1;
   }
 }
-
 .login_modal {
   position: absolute;
-  top: 50px;
-  left: -210px;
+  top: 100%;
+  left: -200%;
 
   background-color: #ffffff;
   width: 335px;
   border: 1px solid #000;
   border-radius: 5px;
-
   animation: fade_in 1s ease-in-out;
 }
 .login_modal .modal_btn {
@@ -86,6 +84,8 @@
 .login_modal_bottom > span:last-child {
   color: #074099;
 }
+
+/* 초기 login modal에 호버할 경우 추가 login modal창이 뜸 */
 .login_modal:hover .login_modal_more {
   display: flex;
 }
@@ -95,11 +95,11 @@
   padding-top: 10px;
   margin: 0 auto;
 
-  display: flex;
+  display: none;
   justify-content: space-between;
 }
 
 .login_modal .triangle {
   top: -18px;
-  left: 218px;
+  left: 170px;
 }
