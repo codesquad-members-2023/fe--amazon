@@ -14,7 +14,7 @@ const sideBarExtend = () => {
     "영화 및 TV",
   ];
 
-  const addList = () => {
+  const appendExtentionList = () => {
     let count = 5;
     DOWN_LIST.forEach((item) => {
       const ul = document.querySelector(".hideLists");
@@ -34,10 +34,10 @@ const sideBarExtend = () => {
   };
 
   const homeSidePlus = document.querySelector(".hideLists");
-  const homeSideSeeAll = document.querySelector(".homeSidebar__mode--open");
-  const homeSideCloseAll = document.querySelector(".homeSidebar__mode--close");
+  const homeSideExtOpen = document.querySelector(".homeSidebar__mode--open");
+  const homeSideExtClose = document.querySelector(".homeSidebar__mode--close");
 
-  const SET_TIME_OUT_500 = 500;
+  const loginUiLazyTime = 500;
 
   const openSideMore = () => {
     homeSidePlus.style.display = "block";
@@ -50,13 +50,13 @@ const sideBarExtend = () => {
     homeSidePlus.classList.add("closeAnimation");
     setTimeout(() => {
       homeSidePlus.style.display = "none";
-    }, SET_TIME_OUT_500);
+    }, loginUiLazyTime);
   };
 
-  homeSideSeeAll.addEventListener("click", openSideMore);
-  homeSideCloseAll.addEventListener("click", closeSideMore);
+  homeSideExtOpen.addEventListener("click", openSideMore);
+  homeSideExtClose.addEventListener("click", closeSideMore);
 
-  addList();
+  appendExtentionList();
 };
 
 sideBarExtend();

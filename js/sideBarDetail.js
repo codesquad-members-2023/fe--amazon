@@ -52,6 +52,12 @@ const selectListInSidebar = (event) => {
 
   // 이벤트 타겟이 근처 li를 찾게 한다.
   const eventTarget = event.target.closest("li");
+
+  // eventTarget이 null인 경우 예외처리
+  if (!eventTarget) {
+    return;
+  }
+
   // 클릭된 li의 고유번호 data-columns를 찾는다.
   const columnNumber = eventTarget.dataset.columns;
   // 숨겨진 디테일 ul 전체 리스트 배열
