@@ -1,9 +1,8 @@
 const makeSubSideBar = (data, categoryNumber) => {
-  console.log(data);
   const [title, list] = data;
 
   let str = `<div class="sidebar__menu right ${categoryNumber}">
-  <div class="sidebar__shopping right>
+  <div class="sidebar__shopping right">
     <div class="sidebar__shopping__menu">
       <a href="" class="sidebar__contents btn close-right-menu" onclick="return false;">
         <img src="asset/leftdir.svg" alt="" class="sidebar__submenu btn close-right-menu">
@@ -16,9 +15,7 @@ const makeSubSideBar = (data, categoryNumber) => {
     str += tag;
   });
 
-  str += `</div>
-  </div>
-  </div>`
+  str += `</div></div></div>`
 
   return str;
 }

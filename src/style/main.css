@@ -1,6 +1,6 @@
-@import 'header.css';
-@import 'modal.css';
-@import 'sidebar.css';
+@import './header.css';
+@import './modal.css';
+@import './sidebar.css';
 
 /* li 스타일 임시 사용 */
 li {
