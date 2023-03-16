@@ -1,4 +1,4 @@
-import textinputStyle from '../styles/components/textinputStyle.js';
+import textinputStyle from './textinputStyle.js';
 
 class TextInput extends HTMLElement {
   constructor() {

@@ -1,4 +1,4 @@
-import iconStyle from '../styles/components/iconStyle.js';
+import iconStyle from './iconStyle.js';
 
 class Icon extends HTMLElement {
   constructor() {

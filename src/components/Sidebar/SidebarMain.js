@@ -1,10 +1,10 @@
-import { menus } from '../../data/menu.js';
-import sidebarMainStyle from '../../styles/components/sidebar/sidebarMainStyle.js';
+import { menus } from '@data/menu.js';
+import sidebarMainStyle from './sidebarMainStyle.js';
 import {
   SIDEBAR_CATEGORY_HEIGHT,
   SIDEBAR_FOLDING_BTN_HEIGHT,
   FOLD_THRESHOLD,
-} from '../../constant.js';
+} from '@constant';
 
 class SidebarMain extends HTMLElement {
   constructor() {

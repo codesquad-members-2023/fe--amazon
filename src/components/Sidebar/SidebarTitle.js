@@ -1,4 +1,4 @@
-import sidebarTitleStyle from '../../styles/components/sidebar/sidebarTitleStyle.js';
+import sidebarTitleStyle from './sidebarTitleStyle.js';
 
 class SideBarTitle extends HTMLElement {
   constructor() {

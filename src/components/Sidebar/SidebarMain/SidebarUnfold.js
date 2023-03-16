@@ -1,4 +1,4 @@
-import sidebarUnfoldStyle from '../../../styles/components/sidebar/sidebarMain/sidebarUnfoldStyle.js';
+import sidebarUnfoldStyle from './sidebarUnfoldStyle.js';
 
 class SidebarUnfold extends HTMLElement {
   constructor() {

@@ -1,10 +1,10 @@
-import sidebarMainSectionStyle from '../../../../styles/components/sidebar/sidebarMain/sidebarMainSectionStyle.js';
 import {
   SIDEBAR_CATEGORY_HEIGHT,
   SIDEBAR_FOLDING_BTN_HEIGHT,
-} from '../../../../constant.js';
+  FOLD_THRESHOLD,
+} from '@constant';
 import SidebarMainSection from '../SidebarMainSection.js';
-import { FOLD_THRESHOLD } from '../../../../constant.js';
+import sidebarMainSectionStyle from './sidebarMainSectionStyle';
 
 class SidebarMainSectionWithFoldingBtn extends SidebarMainSection {
   constructor() {

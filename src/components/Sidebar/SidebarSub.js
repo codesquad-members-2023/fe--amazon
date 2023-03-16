@@ -1,4 +1,4 @@
-import sidebarSubStyle from '../../styles/components/sidebar/sidebarSubStyle.js';
+import sidebarSubStyle from './sidebarSubStyle.js';
 
 class SidebarSub extends HTMLElement {
   constructor() {

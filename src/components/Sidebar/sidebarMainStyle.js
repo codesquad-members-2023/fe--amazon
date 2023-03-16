@@ -1,4 +1,4 @@
-import { SIDEBAR_SIZE } from '../../../constant.js';
+import { SIDEBAR_SIZE } from '@constant';
 
 export default function sidebarMainStyle(foldingListHeight) {
   const style = document.createElement('style');

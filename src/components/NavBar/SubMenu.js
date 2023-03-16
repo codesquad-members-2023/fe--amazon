@@ -1,4 +1,4 @@
-import subMenuStyle from '../../styles/components/navbar/subMenuStyle.js';
+import subMenuStyle from './subMenuStyle.js';
 
 class SubMenu extends HTMLElement {
   constructor() {

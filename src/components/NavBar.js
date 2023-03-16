@@ -1,4 +1,4 @@
-import navbarStyle from '../styles/components/navbarStyle.js';
+import navbarStyle from './navbarStyle.js';
 
 class Navbar extends HTMLElement {
   constructor() {

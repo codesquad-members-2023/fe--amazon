@@ -1,4 +1,4 @@
-import sidebarHeaderStyle from '../../styles/components/sidebar/sidebarHeaderStyle.js';
+import sidebarHeaderStyle from './sidebarHeaderStyle.js';
 class SidebarHeader extends HTMLElement {
   constructor() {
     super();

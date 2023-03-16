@@ -1,5 +1,5 @@
-import { ACTION_SIZE } from '../constant';
-import actionStyle from '../styles/components/actionStyle.js';
+import { ACTION_SIZE } from '@constant';
+import actionStyle from './actionStyle.js';
 
 class Action extends HTMLElement {
   constructor() {

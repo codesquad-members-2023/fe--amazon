@@ -1,4 +1,4 @@
-import { SIDEBAR_FOLDING_BTN_HEIGHT } from '../../../../constant.js';
+import { SIDEBAR_FOLDING_BTN_HEIGHT } from '@constant';
 
 export default function sidebarUnfoldStyle() {
   const style = document.createElement('style');

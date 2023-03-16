@@ -1,5 +1,5 @@
 import Action from '../Action.js';
-import loginActionStyle from '../../styles/components/action/loginActionStyle.js';
+import loginActionStyle from './loginActionStyle.js';
 
 class LoginActionWithFooter extends Action {
   constructor(id, hasFooter) {

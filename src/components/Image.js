@@ -1,4 +1,4 @@
-import imageStyle from '../styles/components/imageStyle.js';
+import imageStyle from './imageStyle.js';
 
 class Image extends HTMLElement {
   constructor() {

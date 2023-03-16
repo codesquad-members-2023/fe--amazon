@@ -1,4 +1,4 @@
-import sidebarFoldStyle from '../../../styles/components/sidebar/sidebarMain/sidebarFoldStyle.js';
+import sidebarFoldStyle from './sidebarFoldStyle.js';
 
 class SidebarFold extends HTMLElement {
   constructor() {

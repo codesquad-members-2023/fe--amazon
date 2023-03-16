@@ -1,4 +1,4 @@
-import sidebarBackStyle from '../../../styles/components/sidebar/sidebarSub/sidebarBackStyle.js';
+import sidebarBackStyle from './sidebarBackStyle.js';
 
 class SideBarBack extends HTMLElement {
   constructor() {

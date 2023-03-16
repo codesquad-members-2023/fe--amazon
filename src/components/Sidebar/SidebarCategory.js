@@ -1,4 +1,4 @@
-import sidebarCateoryStyle from '../../styles/components/sidebar/sidebarCategoryStyle.js';
+import sidebarCateoryStyle from './sidebarCategoryStyle.js';
 
 class SidebarCategory extends HTMLElement {
   constructor() {

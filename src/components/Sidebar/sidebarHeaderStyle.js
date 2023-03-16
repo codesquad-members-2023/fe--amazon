@@ -1,4 +1,4 @@
-import { SIDEBAR_HEADER_HEIGHT } from '../../../constant.js';
+import { SIDEBAR_HEADER_HEIGHT } from '@constant';
 
 export default function sidebarHeaderStyle() {
   const style = document.createElement('style');

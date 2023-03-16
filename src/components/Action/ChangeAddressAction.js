@@ -1,5 +1,5 @@
 import Action from '../Action.js';
-import changeAddressActionStyle from '../../styles/components/action/changeAddressActionStyle.js';
+import changeAddressActionStyle from './changeAddressActionStyle.js';
 
 class ChangeAdressAction extends Action {
   constructor(id) {

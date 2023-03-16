@@ -1,4 +1,4 @@
-import backdropStyle from '../styles/components/backdropStyle.js';
+import backdropStyle from './backdropStyle.js';
 
 class Backdrop extends HTMLElement {
   constructor() {

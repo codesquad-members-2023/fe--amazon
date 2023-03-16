@@ -1,6 +1,6 @@
-import { SIDEBAR_SIZE } from '../../../../constant.js';
+import { SIDEBAR_SIZE } from '@constant';
 
-export default function sidebarSubContentStyle() {
+export default function sidebarSubStyle() {
   const style = document.createElement('style');
 
   style.textContent = `
@@ -8,10 +8,7 @@ export default function sidebarSubContentStyle() {
         display: block;
         width: ${SIDEBAR_SIZE}px;
         height: 100%;
-      }
-
-      section {
-        border-top: 1px solid #e5e5e5;
+        background-color: var(--white);
       }
     `;
   return style;

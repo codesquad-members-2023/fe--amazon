@@ -1,4 +1,4 @@
-import buttonStyle from '../styles/components/buttonStyle.js';
+import buttonStyle from './buttonStyle.js';
 
 class Button extends HTMLElement {
   constructor() {

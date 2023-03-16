@@ -1,4 +1,4 @@
-import sidebarSubContentStyle from '../../../styles/components/sidebar/sidebarSub/sidebarSubContentStyle.js';
+import sidebarSubContentStyle from './sidebarSubContentStyle.js';
 
 class SidebarSub extends HTMLElement {
   constructor(submenus) {

@@ -1,5 +1,3 @@
-import { SIDEBAR_CATEGORY_HEIGHT } from '../../../constant.js';
-
 export default function sidebarCateoryStyle() {
   const style = document.createElement('style');
 

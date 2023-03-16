@@ -1,4 +1,4 @@
-import mainMenuStyle from '../../styles/components/navbar/mainMenuStyle.js';
+import mainMenuStyle from './mainMenuStyle.js';
 
 class MainMenu extends HTMLElement {
   constructor() {
