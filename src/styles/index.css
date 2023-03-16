@@ -1,3 +1,8 @@
 @import './reset.css';
 @import './color.css';
 @import './typography.css';
+
+#warp {
+  display: flex;
+  flex-direction: column;
+}
