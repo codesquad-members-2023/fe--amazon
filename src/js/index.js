@@ -60,7 +60,9 @@ const hideHiddenSidebarList = () => {
 };
 
 const sidebarInactiveSubmenuHandler = () => {
-  //뒤로 가기 작성 필요
+  const submenu = document.querySelector('.submenu');
+  submenu.remove();
+  sidebar.sidebarMain.classList.remove('hidden');
 };
 
 // sidebar의 submenu html 구조를 만드는 함수
@@ -88,7 +90,7 @@ const createSidebarSubmenuFragment = (title, submenu) => {
     const li = document.createElement('li');
     li.innerText = list;
     li.classList.add('sidebar_list');
-    submenuLists.appendChild(li);
+    submenuLists.append(li);
   });
 
   backButtonSection.append(backButtonImg, backButtonSectionTextSection);
@@ -109,7 +111,7 @@ const sidebarActiveSubmenuHandler = (e) => {
   const submenu = createSidebarSubmenuFragment(submenuTitle, submenuList);
 
   sidebar.sidebarMain.classList.add('hidden');
-  sidebar.sidebar.appendChild(submenu);
+  sidebar.sidebar.insertBefore(submenu, sidebar.sidebar.firstElementChild.nextElementSibling);
 };
 
 const main = () => {

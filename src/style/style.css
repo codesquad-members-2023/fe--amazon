@@ -360,7 +360,7 @@ li {
 }
 
 .sidebar_main.hidden {
-  display: none;
+  visibility: hidden;
 }
 
 .sidebar_main_header {
