@@ -1,6 +1,22 @@
 import { $, $$ } from './util/dom.js';
+import { SIDEBAR_DETAIL } from './constant/sideBarDetail.js';
 
 const main = () => {
+  const $sideBar = $('.side_bar');
+  const $expandedShoppingCategoryList = $('.expanded_shopping_category_list', $sideBar);
+  const SIDEBAR_CATEGORY = Object.keys(SIDEBAR_DETAIL);
+  const carIdx = SIDEBAR_CATEGORY.indexOf('자동차 용품');
+  const EXPANDED_CATEGORY = SIDEBAR_CATEGORY.slice(carIdx);
+  const expandedCategoryTemplate = EXPANDED_CATEGORY.reduce(
+    (template, category) =>
+      template +
+      String.raw`
+      <li>${category}<span class="right_arrow_icon"></span></li>`,
+    ''
+  );
+
+  $expandedShoppingCategoryList.insertAdjacentHTML('afterbegin', expandedCategoryTemplate);
+
   const $headerDimCover = $('.dim_cover_in_header');
 
   const $shippingAddress = $('.shipping_address');
@@ -28,7 +44,6 @@ const main = () => {
   });
 
   const $sideBarBtn = $('.side_bar_btn');
-  const $sideBar = $('.side_bar');
   const $closeSideBarBtn = $('.close_side_bar_btn', $sideBar);
   const $sideBarDimCover = $('.dim_cover_in_sideBar');
 
@@ -50,7 +65,6 @@ const main = () => {
   });
 
   const $expandedShoppingCategoryBtn = $('.expanded_shopping_category_btn', $sideBar);
-  const $expandedShoppingCategoryList = $('.expanded_shopping_category_list', $sideBar);
   $expandedShoppingCategoryBtn.addEventListener('click', () => {
     if ($expandedShoppingCategoryList.maxHeight) {
       $expandedShoppingCategoryList.style.maxHeight = null;
