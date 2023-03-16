@@ -22,7 +22,7 @@ a {
   height: 88px;
   width: 100%;
 
-  z-index: 1;
+  z-index: 2;
 }
 
 /* nav-top 영역 */
@@ -161,6 +161,7 @@ a {
 
 .nav-bottom {
   display: flex;
+  padding: 0 10px;
   height: 32px;
   background-color: var(--color-gray-900);
   align-items: center;

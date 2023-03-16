@@ -2,7 +2,8 @@
 
 .sidebar-elements {
   display: block;
-  position: absolute;
+  position: relative;
+  z-index: 3;
   left: -35vh;
 }
 
@@ -68,10 +69,6 @@
   width: 100%;
 }
 
-.sidebar__login__txt {
-  padding-left: 5%;
-}
-
 .sidebar__login__link::before {
   content: '';
   position: absolute;
@@ -86,6 +83,10 @@
 
 .sidebar__login__link:hover::before {
   opacity: 1;
+}
+
+.side__login--txt__icon {
+
 }
 
 .sidebar__closeBtn--container {
@@ -152,7 +153,8 @@
   justify-content: space-between;
   padding: 4% 6% 4% 10%;
   font-weight: var(--weight-medium);
-  color: var(--color-black)
+  color: var(--color-black);
+  cursor: pointer;
 }
 
 .sidebar__contents:hover {
@@ -166,6 +168,16 @@
   font-weight: var(--weight-medium);
   color: var(--color-black);
   gap: 3%;
+}
+
+.sidebar__contents__sub-menu {
+  color: var(--color-black);
+  padding: 4% 6% 4% 10%;
+  font-size: var(--font-md);
+}
+
+.sidebar__contents__sub-menu:hover {
+  background-color: var(--color-gray-200);
 }
 
 .sidebar__shopping.extra {
