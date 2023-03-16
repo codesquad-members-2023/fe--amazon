@@ -191,17 +191,18 @@
   }
   to {
     left: 0;
-    opacity: 1;
   }
 }
 
 @keyframes hideDetail {
   from {
-    left: 320px;
-    opacity: 0;
+    left: -330px;
   }
   to {
     left: 0;
-    opacity: 1;
   }
+}
+
+.sidebar_main_section {
+  position: relative;
 }

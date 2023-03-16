@@ -36,7 +36,6 @@ mainMenuArr.forEach((mainMenu) => {
     const title = e.target.textContent.trim();
     if (Object.keys(sidebarData).includes(title)) {
       const data = sidebarData[title];
-
       mainMenuArr.forEach((menu) => {
         menu.style.display = 'none';
       });
@@ -63,8 +62,8 @@ mainMenuArr.forEach((mainMenu) => {
         // 하지만 스눕의 element를 저장해뒀다가 appendChild 해줌으로써 해결해버렸다.
         // 스눕 짱!
         mainMenuArr.forEach((mainMenu) => {
-          mainMenu.style.animation = 'hideDetail 0.5s forwards';
           mainMenu.style.display = 'block';
+          mainMenu.style.animation = 'hideDetail 0.5s forwards';
         });
       });
       backButton.addEventListener('mouseover', (e) => {
