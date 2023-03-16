@@ -3,9 +3,8 @@ import { TITLE_DETAIL } from "../../model/data.js";
 
 const summarySidebar = () => {
   ALL_SELECTORS.sidebar.addEventListener("click", (e) => {
-    if (e.target.className === "sidebar_menu_summary") {
+    if (e.target.className === "sidebar_menu_summary")
       ALL_SELECTORS.menuAllDetail.style.display = "none";
-    }
   });
 };
 
