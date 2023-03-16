@@ -3,6 +3,7 @@ import sidebarMainStyle from '../../styles/components/sidebar/sidebarMainStyle.j
 import {
   SIDEBAR_CATEGORY_HEIGHT,
   SIDEBAR_FOLDING_BTN_HEIGHT,
+  FOLD_THRESHOLD,
 } from '../../constant.js';
 
 class SidebarMain extends HTMLElement {
@@ -10,19 +11,22 @@ class SidebarMain extends HTMLElement {
     super();
 
     const shadow = this.attachShadow({ mode: 'open' });
-    const dividingNum = 4;
 
     shadow.innerHTML = `
       ${menus
         .map((menu) => {
           const data = encodeURIComponent(JSON.stringify(menu));
-          return `<sidebar-main-section-element data=${data}></sidebar-main-section-element>`;
+          const isOverflowed = menu.categories.length > FOLD_THRESHOLD;
+          if (isOverflowed) {
+            return `<sidebar-main-section-with-folding-btn-element data=${data}></sidebar-main-section-with-folding-btn-element>`;
+          }
+          return `<sidebar-main-section-default-element data=${data}></sidebar-main-section-default-element>`;
         })
         .join('')}
     `;
 
     const foldingListHeight =
-      SIDEBAR_CATEGORY_HEIGHT * (menus[1].categories.length - dividingNum) +
+      SIDEBAR_CATEGORY_HEIGHT * (menus[1].categories.length - FOLD_THRESHOLD) +
       SIDEBAR_FOLDING_BTN_HEIGHT;
 
     this.shadowRoot.append(sidebarMainStyle.call(this, foldingListHeight));

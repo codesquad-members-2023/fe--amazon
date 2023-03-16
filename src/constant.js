@@ -14,3 +14,5 @@ export const SIDEBAR_SIZE = 320;
 export const SIDEBAR_HEADER_HEIGHT = 53;
 export const SIDEBAR_CATEGORY_HEIGHT = 40;
 export const SIDEBAR_FOLDING_BTN_HEIGHT = 40;
+
+export const FOLD_THRESHOLD = 4;

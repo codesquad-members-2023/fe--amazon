@@ -59,7 +59,9 @@ function goBack(sideSubContent, sidebar) {
 function unfoldCategories(sidebar) {
   const sections = sidebar.shadowRoot
     .querySelector('sidebar-main-element')
-    .shadowRoot.querySelectorAll('sidebar-main-section-element');
+    .shadowRoot.querySelectorAll(
+      'sidebar-main-section-with-folding-btn-element'
+    );
 
   sections.forEach((section) => {
     const unfoldingBtn = section.querySelector('.unfolidng-btn');

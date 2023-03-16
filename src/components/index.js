@@ -21,7 +21,8 @@ import SideBarTitle from './Sidebar/SidebarTitle.js';
 import SidebarMain from './Sidebar/SidebarMain.js';
 import SidebarSub from './Sidebar/SidebarSub.js';
 import SidebarSubContent from './Sidebar/SidebarSub/SidebarSubContent.js';
-import SidebarMainSection from './Sidebar/SidebarMain/SidebarMainSection.js';
+import SidebarMainSectionDefault from './Sidebar/SidebarMain/SidebarMainSection/SidebarMainSectionDefault';
+import SidebarMainSectionWithFoldingBtn from './Sidebar/SidebarMain/SidebarMainSection/SidebarMainSectionWithFoldingBtn.js';
 
 customElements.define('btn-element', Button);
 customElements.define('footer-element', Footer);
@@ -46,4 +47,11 @@ customElements.define('sidebar-main-element', SidebarMain);
 customElements.define('sidebar-sub-element', SidebarSub);
 customElements.define('sidebar-unfold-element', SidebarUnfold);
 customElements.define('sidebar-sub-content-element', SidebarSubContent);
-customElements.define('sidebar-main-section-element', SidebarMainSection);
+customElements.define(
+  'sidebar-main-section-default-element',
+  SidebarMainSectionDefault
+);
+customElements.define(
+  'sidebar-main-section-with-folding-btn-element',
+  SidebarMainSectionWithFoldingBtn
+);
