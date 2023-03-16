@@ -1,9 +1,22 @@
 import { $, $$ } from './util/dom.js';
 
 const main = () => {
+  const $headerDimCover = $('.dim_cover_in_header');
+
+  const $shippingAddress = $('.shipping_address');
+  const $shippingAddressModal = $('.shipping_address_modal', $shippingAddress);
+
+  $shippingAddress.addEventListener('mouseenter', () => {
+    $shippingAddressModal.classList.remove('hidden');
+    $headerDimCover.classList.remove('hidden');
+  });
+  $shippingAddress.addEventListener('mouseleave', () => {
+    $shippingAddressModal.classList.add('hidden');
+    $headerDimCover.classList.add('hidden');
+  });
+
   const $login = $('.login');
   const $loginModal = $('.login_modal', $login);
-  const $headerDimCover = $('.dim_cover_in_header');
 
   $login.addEventListener('mouseenter', () => {
     $loginModal.classList.remove('hidden');
