@@ -33,8 +33,8 @@ function createHTML(title, data) {
 
 mainMenuArr.forEach((mainMenu) => {
   mainMenu.addEventListener('click', (e) => {
-    if (Object.keys(sidebarData).includes(e.target.innerText)) {
-      const title = e.target.innerText;
+    const title = e.target.textContent.trim();
+    if (Object.keys(sidebarData).includes(title)) {
       const data = sidebarData[title];
 
       mainMenuArr.forEach((menu) => {
@@ -63,8 +63,8 @@ mainMenuArr.forEach((mainMenu) => {
         // 하지만 스눕의 element를 저장해뒀다가 appendChild 해줌으로써 해결해버렸다.
         // 스눕 짱!
         mainMenuArr.forEach((mainMenu) => {
-          mainMenu.style.display = 'block';
           mainMenu.style.animation = 'hideDetail 0.5s forwards';
+          mainMenu.style.display = 'block';
         });
       });
       backButton.addEventListener('mouseover', (e) => {
@@ -76,7 +76,3 @@ mainMenuArr.forEach((mainMenu) => {
     }
   });
 });
-
-// detailMenu.addEventListener('animationend', (e) => {
-//   if (e.animationName === 'hideDetail') detailMenu.style.display = 'none';
-// });

@@ -1,11 +1,10 @@
 const loginMenu = document.querySelector('.login_section');
 const loginModal = document.querySelector('.login_modal');
-const header2 = document.querySelector('#head_navigation_bar');
+const headNavBar = document.querySelector('#head_navigation_bar');
 const hoverLoginModal = document.querySelector('.hover_login_modal');
 const loginSection = document.querySelector('.login_section');
 const body = document.querySelector('body');
 const dimLayer2 = document.querySelector('.dim_layer');
-
 const shippingRegion = document.querySelector('.menu1');
 const selectRegionModal = document.querySelector('.region_modal');
 
@@ -24,13 +23,13 @@ shippingRegion.addEventListener('mouseout', (e) => {
 });
 
 // 마우스가 로그인 영역에 들어간다면 상세 로그인 모달을 띄운다.
-header2.addEventListener('mouseover', (e) => {
+headNavBar.addEventListener('mouseover', (e) => {
   // 이렇게 하면 이벤트가 너무 많아져.... 그냥 section mouseenter로 해야함.
   if (e.target.id === 'loginMenu') {
     loginModal.style.display = 'none';
     hoverLoginModal.style.display = 'flex';
 
-    header2.style['z-index'] = '101';
+    headNavBar.style['z-index'] = '101';
     hoverLoginModal.style['z-index'] = '101';
     dimLayer2.style.display = 'block';
   }
@@ -40,7 +39,7 @@ header2.addEventListener('mouseover', (e) => {
 loginSection.addEventListener('mouseout', (e) => {
   if (e.currentTarget === loginSection) {
     dimLayer2.style.display = 'none';
-    header2.style['z-index'] = '';
+    headNavBar.style['z-index'] = '';
     hoverLoginModal.style['z-index'] = '';
     hoverLoginModal.style.display = 'none';
     loginModal.style.display = 'none';
