@@ -9,13 +9,8 @@ function appendLoginHoverList() {
   const loginHoverList = document.querySelector(".hover-list1");
   const loginHoverAccount = document.querySelector(".hover-list2");
 
-  loginListItems.forEach((el) => {
-    loginHoverList.insertAdjacentHTML("beforeend", `<li>${el}</li>`);
-  });
-
-  accountMenuItems.forEach((el) => {
-    loginHoverAccount.insertAdjacentHTML("beforeend", `<li>${el}</li>`);
-  });
+  loginListItems.forEach((el) => loginHoverList.insertAdjacentHTML("beforeend", `<li>${el}</li>`));
+  accountMenuItems.forEach((el) => loginHoverAccount.insertAdjacentHTML("beforeend", `<li>${el}</li>`));
 }
 
 function loginMenuHover() {
