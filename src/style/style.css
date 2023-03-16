@@ -359,10 +359,6 @@ li {
   left: 0;
 }
 
-.sidebar_main.hidden {
-  visibility: hidden;
-}
-
 .sidebar_main_header {
   display: flex;
   align-items: center;
@@ -490,4 +486,30 @@ li {
   font-weight: 500;
   font-size: 13px;
   line-height: 160%;
+}
+
+@keyframes slide_left {
+  from {
+    left: 320px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+.submenu {
+  position: absolute;
+  animation: slide_left 250ms ease-in-out;
+}
+
+.sidebar_main.slide {
+  position: absolute;
+  left: -320px;
+}
+
+.sidebar_main {
+  position: absolute;
+  left: 0;
+  transition: left 250ms ease-in-out;
 }

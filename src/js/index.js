@@ -62,7 +62,7 @@ const hideHiddenSidebarList = () => {
 const sidebarInactiveSubmenuHandler = () => {
   const submenu = document.querySelector('.submenu');
   submenu.remove();
-  sidebar.sidebarMain.classList.remove('hidden');
+  sidebar.sidebarMain.classList.remove('slide');
 };
 
 // sidebar의 submenu html 구조를 만드는 함수
@@ -106,12 +106,14 @@ const sidebarActiveSubmenuHandler = (e) => {
 
   if (className.indexOf('non') !== -1) return;
 
-  const submenuTitle = innerText;
-  const submenuList = sidebarDetail[id];
-  const submenu = createSidebarSubmenuFragment(submenuTitle, submenuList);
+  if (className.indexOf('list') !== -1) {
+    const submenuTitle = innerText;
+    const submenuList = sidebarDetail[id];
+    const submenu = createSidebarSubmenuFragment(submenuTitle, submenuList);
 
-  sidebar.sidebarMain.classList.add('hidden');
-  sidebar.sidebar.insertBefore(submenu, sidebar.sidebar.firstElementChild.nextElementSibling);
+    sidebar.sidebarMain.classList.add('slide');
+    sidebar.sidebarMain.insertAdjacentElement('beforebegin', submenu);
+  }
 };
 
 const main = () => {
@@ -127,9 +129,7 @@ const main = () => {
   sidebar.sidebarInactivateButton.addEventListener('click', inactiveSidebarHandler);
   sidebar.showExtraSidebarListButton.addEventListener('click', showHiddenSidebarList);
   sidebar.hideExtraSidebarListButton.addEventListener('click', hideHiddenSidebarList);
-  sidebar.sidebarLists.forEach((lists) =>
-    lists.addEventListener('click', sidebarActiveSubmenuHandler)
-  );
+  sidebar.sidebarMain.addEventListener('click', sidebarActiveSubmenuHandler);
 };
 
 main();
