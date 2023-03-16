@@ -1,13 +1,5 @@
-const sideMenu = document.querySelector('.side-menu')
-const openButton = document.querySelector('.all-menu')
-const sideMain = document.querySelector('.side-menu__main')
-const sideMenuDetail = document.querySelector('.side-menu__detail')
-const simpleItemsButton = document.querySelector('.side-menu__hide-button')
-const allItems = document.querySelector('.side-menu__all-items')
-const allItemsButton = document.querySelector('.side-menu__show-button')
-
-
-const openSideBar = () => {
+const openSideBar = (...element) => {
+  const [sideMenu, openButton] = element
   openButton.addEventListener('click', () => {
     sideMenu.style.display = 'flex'
     sideMenu.style.animation = 'slide-to-right .5s'
@@ -16,7 +8,8 @@ const openSideBar = () => {
   })
 }
 
-const hideSideBar = () => {
+const hideSideBar = (...element) => {
+  const [sideMenu, openButton] = element
   const closeButton = document.querySelector('.side-menu__close')
   const body = document.querySelector('body')
 
@@ -33,25 +26,22 @@ const hideSideBar = () => {
   })
 }
 
-const oepnAllItems = () => {
+const openAllItems = (...element) => {
+  const [allItems, allItemsButton] = element
   allItemsButton.addEventListener('click', () => {
     allItems.style.transform = 'scaleY(1)'
   })
 }
 
-const closeAllItems = () => {
+const closeAllItems = (...element) => {
+  const [simpleItemsButton, allItems] = element
   simpleItemsButton.addEventListener('click', () => {
     allItems.style.transform = 'scaleY(0)'
   })
 }
 
-const openDetailMenu = () => {
-  sideMain.style.display = 'none'
-  sideMenuDetail.style.display = 'block'
-  sideMenuDetail.style.animation = 'slide-to-left__open .5s forwards'
-}
-
-const moveMain = () => {
+const moveMain = (...element) => {
+  const [sideMain, sideMenuDetail] = element
   const backMainButton = document.querySelector('.back__main')
   
   backMainButton.addEventListener('click', () => {
@@ -62,11 +52,19 @@ const moveMain = () => {
 }
 
 const actSideBar = () => {
-  openSideBar()
-  hideSideBar()
-  oepnAllItems()
-  closeAllItems()
-  moveMain()
+  const sideMenu = document.querySelector('.side-menu')
+  const openButton = document.querySelector('.all-menu')
+  const sideMain = document.querySelector('.side-menu__main')
+  const sideMenuDetail = document.querySelector('.side-menu__detail')
+  const simpleItemsButton = document.querySelector('.side-menu__hide-button')
+  const allItems = document.querySelector('.side-menu__all-items')
+  const allItemsButton = document.querySelector('.side-menu__show-button')
+
+  openSideBar(sideMenu, openButton)
+  hideSideBar(sideMenu, openButton)
+  openAllItems(allItems, allItemsButton)
+  closeAllItems(simpleItemsButton, allItems)
+  moveMain(sideMain, sideMenuDetail)
 }
 
 actSideBar()

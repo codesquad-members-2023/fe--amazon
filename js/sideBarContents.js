@@ -81,15 +81,25 @@ const createExtensionItems = () => {
 
 createExtensionItems()
 
-const detailMenuItemsHendler = () => {
-  document.querySelector('aside').addEventListener('click', (event) => {
-    const menu = event.target.textContent
+const detailMenuItemsHandler = () => {
+  document.querySelector('aside').addEventListener('click', ({
+    target: { textContent: menu }
+  }) => {
     const detailMenuItems = SIDE_BAR_ITEMS[menu]
   
     if (detailMenuItems) {
       createDetailMenuItems(menu)
     }
   })
+}
+
+const openDetailMenu = () => {
+  const sideMain = document.querySelector('.side-menu__main')
+  const sideMenuDetail = document.querySelector('.side-menu__detail')
+
+  sideMain.style.display = 'none'
+  sideMenuDetail.style.display = 'block'
+  sideMenuDetail.style.animation = 'slide-to-left__open .5s forwards'
 }
 
 const createDetailMenuItems = (menu) => {
@@ -110,4 +120,4 @@ const createDetailMenuItems = (menu) => {
   openDetailMenu()
 }
 
-detailMenuItemsHendler()
+detailMenuItemsHandler()
