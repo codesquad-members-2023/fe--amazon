@@ -10,10 +10,10 @@ const DATA_KEYS_ARRAY = Object.keys(SIDEBAR_DETAIL);
 /* --------------------------------------------------------------------*/
 
 // 최초 모든 사이드바 디테일 ul 만들기
-DATA_KEYS_ARRAY.forEach((dataKey) => {
+DATA_KEYS_ARRAY.forEach((dataKey, index) => {
   const ul = document.createElement("ul");
   ul.classList.add("himeSidebar__lists--detail");
-  ul.dataset.columns = dataKey;
+  ul.dataset.columns = index + 1;
 
   const loginli = document.createElement("li");
   const loginIcon = document.createElement("i");
@@ -39,6 +39,11 @@ DATA_KEYS_ARRAY.forEach((dataKey) => {
   ul.appendChild(backButtonLi);
   backButtonLi.appendChild(backButtonIcon);
   backButtonLi.appendChild(backButtonSpan);
+
+  const titleLi = document.createElement("li");
+  titleLi.innerText = dataKey;
+  titleLi.classList.add("homeSidebar__title");
+  ul.appendChild(titleLi);
 
   SIDEBAR_DETAIL[dataKey].forEach((item) => {
     const li = document.createElement("li");

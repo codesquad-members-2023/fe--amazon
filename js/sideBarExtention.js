@@ -15,7 +15,7 @@ const sideBarExtend = () => {
   ];
 
   const appendExtentionList = () => {
-    let count = 5;
+    let count = 8;
     DOWN_LIST.forEach((item) => {
       const ul = document.querySelector(".hideLists");
       const li = document.createElement("li");
@@ -25,7 +25,8 @@ const sideBarExtend = () => {
       li.classList.add("homeSidebar__subTitle", "hoverIcon");
       // data-columns 부여
       // li.setAttribute("data-columns", `2-${count}`);
-      li.dataset.columns = `2-${count}`;
+      // li.dataset.columns = `2-${count}`;
+      li.dataset.columns = count;
       count++;
       icon.classList.add("fa-solid", "fa-chevron-right");
       ul.insertBefore(li, closeMore);
