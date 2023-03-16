@@ -72,11 +72,10 @@ class App {
   }
 
   toggleExpandLogin() {
-    this.$login.addEventListener('mouseenter', (e) => {
+    this.$login.addEventListener('mouseenter', () => {
       this.$login.style.height = '20rem';
       this.$userExpansion.style.display = 'flex';
       this.$wrapperDim.style.display = 'block';
-      console.log(e);
     });
     this.$login.addEventListener('mouseleave', () => {
       this.$login.style.display = 'none';
@@ -140,12 +139,12 @@ class App {
           target.parentElement!.className.split('__')[1]!;
         const subCategories =
           this.subCategories[categoryName as keyof typeof this.subCategories];
-        subCategories.forEach((v, i) => {
+        subCategories.forEach((subCategory, i) => {
           if (i === 0) {
-            this.$sidebarSubList.firstElementChild!.innerHTML += v;
+            this.$sidebarSubList.firstElementChild!.innerHTML += subCategory;
             return;
           }
-          this.$sidebarSubList.innerHTML += `<li>${v}</li>`;
+          this.$sidebarSubList.innerHTML += `<li>${subCategory}</li>`;
         });
       }
     });
