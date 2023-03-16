@@ -47,8 +47,8 @@
 ## NANII - FE2. Amazon Website
 
 ### 학습 키워드
-- [ ] 대체폰트, 폰트정리
-- [ ] JS 리팩토링, 함수안에 넣기
+- [x] 대체폰트, 폰트정리
+- [x] JS 리팩토링, 함수안에 넣기
 - [x] Event delegation
 - [x] DOM template literal 문법
 
@@ -59,15 +59,18 @@
   - [x] 하위 메뉴 영역 노출
 
 ### 학습 계획
-- [ ] 월 :리뷰 보완하기
+- [x] 월 :리뷰 보완하기
 - [x] 화 : 학습 강의 보고 정리하기
-- [ ] 수 : Javascript file 코드 수정
+- [x] 수 : Javascript file 코드 수정
   - [x] max - height
   - [x] overflow
   - [x] 딤 이벤트 추가
-- [ ] 목 : 구현 보강하기
+- [x] 목 : 구현 보강하기
   - [ ] css 애니메이션 코드 수정하기
-  - [ ] js eventListener 함수로 구현하기
-    - [ ] 들여쓰기 제거
-    - [ ] 해체할당 적용
-    - [ ] reduce 활용
+  - [x] js eventListener 함수로 구현하기
+    - [x] 들여쓰기 제거
+    - [x] 해체할당 적용
+    - [x] reduce 활용
+- [ ] 금 : 리팩토링
+  - [ ] css 애니메이션 -> transition으로만 시도해보기
+  - [ ] js 중복 최소화, 함수분리
