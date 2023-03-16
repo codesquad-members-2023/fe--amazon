@@ -5,6 +5,19 @@ function showModalAfterTimeout() {
   }, 1000);
 }
 
+function appendLoginHoverList() {
+  const loginHoverList = document.querySelector(".hover-list1");
+  const loginHoverAccount = document.querySelector(".hover-list2");
+
+  loginListItems.forEach((el) => {
+    loginHoverList.insertAdjacentHTML("beforeend", `<li>${el}</li>`);
+  });
+
+  accountMenuItems.forEach((el) => {
+    loginHoverAccount.insertAdjacentHTML("beforeend", `<li>${el}</li>`);
+  });
+}
+
 function loginMenuHover() {
   const loginMenu = document.querySelector(".login-menu");
   const loginHover = document.querySelector(".login-hover");
@@ -41,6 +54,7 @@ function shippingHover() {
   });
 }
 
+appendLoginHoverList();
 showModalAfterTimeout();
 loginMenuHover();
 shippingHover();
