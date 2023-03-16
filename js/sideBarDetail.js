@@ -15,26 +15,30 @@ DATA_KEYS_ARRAY.forEach((dataKey) => {
   ul.classList.add("himeSidebar__lists--detail");
   ul.dataset.columns = dataKey;
 
-  const li = document.createElement("li");
-  const icon = document.createElement("i");
-  const span = document.createElement("span");
+  const loginli = document.createElement("li");
+  const loginIcon = document.createElement("i");
+  const loginSpan = document.createElement("span");
 
-  li.classList.add("homeSidebar__login");
-  icon.classList.add("fa-solid", "fa-circle-user");
-  span.innerText = "안녕하세요, 로그인";
-  ul.appendChild(li);
-  li.appendChild(icon);
-  li.appendChild(span);
+  loginli.classList.add("homeSidebar__login");
+  loginIcon.classList.add("fa-solid", "fa-circle-user");
+  loginSpan.innerText = "안녕하세요, 로그인";
+  ul.appendChild(loginli);
+  loginli.appendChild(loginIcon);
+  loginli.appendChild(loginSpan);
 
   sideBar.appendChild(ul);
 
-  li.classList.add("homeSidebar__mode--back", "hoverIcon");
-  icon.classList.add("fa-solid", "fa-arrow-left");
-  span.innerText = "주 메뉴";
+  const backButtonLi = document.createElement("li");
+  const backButtonIcon = document.createElement("i");
+  const backButtonSpan = document.createElement("span");
 
-  ul.appendChild(li);
-  li.appendChild(icon);
-  li.appendChild(span);
+  backButtonLi.classList.add("homeSidebar__mode--back", "hoverIcon");
+  backButtonIcon.classList.add("fa-solid", "fa-arrow-left");
+  backButtonSpan.innerText = "주 메뉴";
+
+  ul.appendChild(backButtonLi);
+  backButtonLi.appendChild(backButtonIcon);
+  backButtonLi.appendChild(backButtonSpan);
 
   SIDEBAR_DETAIL[dataKey].forEach((item) => {
     const li = document.createElement("li");
