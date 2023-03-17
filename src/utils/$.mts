@@ -1,5 +1,5 @@
-const $ = (selector: string): HTMLElement | null => {
-  return document.querySelector(selector);
+const $ = (selector: string, parent: HTMLElement | Document = document): HTMLElement | null => {
+  return parent.querySelector(selector);
 };
 
 export default $;

@@ -1,10 +1,5 @@
 @import url(reset.css);
 @import url(variable.css);
-@import url(dim.css);
-@import url(./header/nav.css);
-@import url(./header/login-modal.css);
-@import url(./header/address-modal.css);
-@import url(./aside/sidebar.css);
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css');
 
 html, body {
@@ -40,8 +35,3 @@ html, body {
   }
 }
 
-.header {
-  width: 100%;
-  height: 5.5rem;
-  z-index: 2;
-}

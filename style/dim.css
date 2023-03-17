@@ -1,11 +1,11 @@
-/* dim layer */
-.wrapper__dim {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-black-tr40);
-  z-index: 1;
-  display: none;
-}
+/*!* dim layer *!*/
+/*.wrapper__dim {*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  background-color: var(--color-black-tr40);*/
+/*  z-index: 1;*/
+/*  display: none;*/
+/*}*/
