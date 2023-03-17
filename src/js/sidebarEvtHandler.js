@@ -1,3 +1,4 @@
+import { makeSubSideBar } from "./subSideBar.js";
 import { SUB_SIDEBAR_DATA } from "./subSideBarData.js";
 
 const sideBarOpenBtnEvtHandler = (sideBarLayer, dimLayer) => {
@@ -22,9 +23,9 @@ const sideBarEvtHandler = (sideBarLayer, dimLayer, findUpWard, findSiblingForwar
   
     if(name === 'showall') {
       const sidebarShoppingNode = findUpWard(ontarget,'.sidebar__shopping');
-      findSiblingForward(sidebarShoppingNode, '.sidebar__shopping.extra').style.height = '100%';
+      findSiblingForward(sidebarShoppingNode, 'sidebar__shopping.extra').style.height = '100%';
     }
-    if(name === 'closeall') findUpWard(ontarget,'.sidebar__shopping.extra').style.height = '0';
+    if(name === 'closeall') findUpWard(ontarget,'sidebar__shopping extra').style.height = '0';
     /**
      * 사이드바에서 클릭 이벤트 발생시 sub sidebar menu 생성
      */

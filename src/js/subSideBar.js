@@ -1,4 +1,4 @@
-const makeSubSideBar = (data, categoryNumber) => {
+export const makeSubSideBar = (data, categoryNumber) => {
   const [title, list] = data;
 
   let str = `<div class="sidebar__menu right ${categoryNumber}">
