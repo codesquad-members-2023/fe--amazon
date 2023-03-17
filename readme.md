@@ -1,29 +1,26 @@
-# 학습 계획
+# 1주차 학습 계획
 
-- [ ] PR 보내는 방법 익히기
-- [ ] HTML에 대한 학습
-  - [ ] HTML 구조에 대한 학습
-    - [ ] `header`, `section`, `nav`, `footer`, `aside` 태그
-  - [ ] HTML `tag` 의 attribute 학습
-    - [ ] `class`, `id`, `data`, `style`
-  - [ ] HTML에서의 주석처리
-  - [ ] `block` VS `inline`
-  - [ ] HTML 시멘틱 태그란?
-  - [ ] 웹접근성이란?
-- [ ] CSS에 대한 학습
-  - [ ] CSS Style을 html 페이지에 적용하는 세가지 방법에 대해 알아보고 어떤 방법이 좋은지 고민해보기.
-    - [ ] `inline`
-    - [ ] `internal`
-    - [ ] `external`
-  - [ ] CSS 특징
-    - [ ] Cascading
-    - [ ] 상속
-  - [ ] CSS Selector 문법 공부
-  - [ ] CSS 레이아웃
-  - [ ] CSS Flexbox 사용법 익히기
-- [ ] DOM
-  - [ ] DOM이란?
-  - [ ] DOM APIs
+- [x] PR 보내는 방법 익히기
+- [x] HTML에 대한 학습
+  - [x] HTML 구조에 대한 학습
+    - [x] `header`, `section`, `nav`, `footer`, `aside` 태그
+  - [x] HTML `tag` 의 attribute 학습
+    - [x] `class`, `id`, `data`, `style`
+  - [x] HTML에서의 주석처리
+  - [x] `block` VS `inline`
+- [x] CSS에 대한 학습
+  - [x] CSS Style을 html 페이지에 적용하는 세가지 방법에 대해 알아보고 어떤 방법이 좋은지 고민해보기.
+    - [x] `inline`
+    - [x] `internal`
+    - [x] `external`
+  - [x] CSS 특징
+    - [x] Cascading
+    - [x] 상속
+  - [x] CSS Selector 문법 공부
+  - [x] CSS 레이아웃
+- [x] DOM
+  - [x] DOM이란?
+  - [x] DOM APIs
     - 탐색
       - `querySelector()`
     - 노드이동
@@ -33,5 +30,31 @@
     - 노드 추가
       - innerHTML (함수방식으로 동작하지 않는다)
       - insertBefore
-- [ ] Event
-  - [ ] `addEventListener`
+- [x] Event
+
+  - [x] `addEventListener`
+
+# 1주차 학습정리 링크
+
+[1주차 학습정리 노션](https://hoonding.notion.site/1-d305ac53384948c1ad01cd476e0ed243)
+
+# 2주차 체크리스트
+
+### DOM, Event 제어
+
+- [ ] Template Literal 문법 공부하기.
+- [ ] createElement, appendChild, insertBefore 메서드 공부
+- [ ] event 객체에 대한 공부
+- [ ] 이벤트 버블링
+- [ ] 이벤트 캡쳐링
+- [ ] event 위임
+
+### 프로토타입
+
+- [ ] native 객체(Array, Function, Number, Sttring…)에서 프로토타입을 어떻게 활용하는지에 대한 공부
+
+### Scope
+
+- [ ] 함수가 실행될때 scope가 어떻게 형성되는지 알아보기
+- [ ] scope chain 공부
+- [ ] closure 개념 공부.

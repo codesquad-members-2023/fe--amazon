@@ -33,10 +33,9 @@ function createHTML(title, data) {
 
 mainMenuArr.forEach((mainMenu) => {
   mainMenu.addEventListener('click', (e) => {
-    if (Object.keys(sidebarData).includes(e.target.innerText)) {
-      const title = e.target.innerText;
+    const title = e.target.textContent.trim();
+    if (Object.keys(sidebarData).includes(title)) {
       const data = sidebarData[title];
-
       mainMenuArr.forEach((menu) => {
         menu.style.display = 'none';
       });
@@ -76,7 +75,3 @@ mainMenuArr.forEach((mainMenu) => {
     }
   });
 });
-
-// detailMenu.addEventListener('animationend', (e) => {
-//   if (e.animationName === 'hideDetail') detailMenu.style.display = 'none';
-// });
