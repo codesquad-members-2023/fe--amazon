@@ -10,7 +10,7 @@ const selectRegionModal = document.querySelector('.region_modal');
 
 shippingRegion.addEventListener('mouseover', (e) => {
   selectRegionModal.style.display = 'flex';
-  header2.style['z-index'] = '101';
+  headNavBar.style['z-index'] = '101';
   selectRegionModal.style['z-index'] = '101';
   dimLayer2.style.display = 'block';
 });
@@ -18,7 +18,7 @@ shippingRegion.addEventListener('mouseover', (e) => {
 shippingRegion.addEventListener('mouseout', (e) => {
   selectRegionModal.style.display = 'none';
   dimLayer2.style.display = 'none';
-  header2.style['z-index'] = '';
+  headNavBar.style['z-index'] = '';
   selectRegionModal.style['z-index'] = '';
 });
 
