@@ -3,13 +3,6 @@ const shippingAddress = document.querySelector('.shipping-address')
 const logInSection = document.querySelector('.log-in')
 const logInModal = document.querySelector('.log-in .modal')
 
-const showLogInModal = () => {
-  window.addEventListener('load', () => {
-    logInModal.style.animation = 'slow-appear 1s forwards'
-    logInModal.style.animationDelay = '1s'
-  })
-}
-
 const extendLogInModal = () => {
   logInSection.addEventListener('mouseover', () => {
     logInModal.style.display = 'none'
@@ -30,9 +23,9 @@ const hideDim = (element) => {
 }
 
 const actNavBar = () => {
-  showLogInModal()
   extendLogInModal()
   showDim(shippingAddress)
+  showDim(logInSection)
   hideDim(shippingAddress)
   hideDim(logInSection)
 }
