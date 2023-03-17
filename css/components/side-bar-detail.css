@@ -1,0 +1,37 @@
+.hideSidebar__lists--detail {
+  display: none;
+  position: relative;
+}
+
+.showDetail {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.showSidebarDetailAnimation {
+  animation: showSidebarSoft 0.5s ease-out forwards;
+}
+
+.hideSidebarDetailAnimation {
+  animation: hideSidebarSoft 0.5s ease-in forwards;
+}
+
+@keyframes showSidebarDeatilSoft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: 0;
+  }
+}
+@keyframes hideSidebarDeatilSoft {
+  from {
+    left: 310px;
+  }
+  to {
+    left: 0px;
+  }
+}
