@@ -1,5 +1,5 @@
 const global = {
-  dimmedSection: document.querySelector('.dimmed'),
+  dimmedSection: document.querySelector('.main_dimmed'),
 };
 
 export { global };

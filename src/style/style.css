@@ -152,6 +152,7 @@ li {
 
 .login_pop-up {
   position: absolute;
+
   top: 53px;
   right: 200px;
   display: flex;
@@ -171,9 +172,6 @@ li {
   height: 30px;
   position: absolute;
   background-color: var(--color-white);
-  /* transform: translate(310%, -30%);
-  top: 0;
-  right: 100px; */
 }
 
 .login_pop-up_triangle {
@@ -245,14 +243,12 @@ li {
 }
 
 .dividing_line {
-  /* display: none; */
   width: 303px;
   height: 1px;
   background-color: var(--color-gray100);
 }
 
 .login_list_container {
-  /* display: none; */
   display: flex;
   justify-content: space-evenly;
   width: 303px;
@@ -334,10 +330,8 @@ li {
   height: 100vh;
 }
 
-.dimmed {
+.main_dimmed {
   position: absolute;
-  /* top: 0;
-  left: 0; */
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -365,7 +359,11 @@ li {
   left: 0;
 }
 
-.sidebar_header {
+.sidebar_main.hidden {
+  visibility: hidden;
+}
+
+.sidebar_main_header {
   display: flex;
   align-items: center;
   padding: 16px 16px 16px 32px;
@@ -375,7 +373,7 @@ li {
   background-color: var(--color-black);
 }
 
-.sidebar_header_icon {
+.sidebar_main_header_icon {
   width: 15px;
   height: 15px;
 }
@@ -397,6 +395,11 @@ li {
   height: 48px;
   font-size: 13px;
   padding: 8px 16px 8px 32px;
+}
+
+.sidebar_list:hover,
+.sidebar_extra_list_item:hover {
+  background-color: var(--color-gray200);
 }
 
 .sidebar_list_icon {
@@ -431,16 +434,6 @@ li {
   background-color: var(--color-gray100);
 }
 
-/* .sidebar_extra_list_container {
-  display: none;
-  overflow: hidden;
-  transition: all 3s;
-}
-
-.sidebar_extra_list_container.show {
-  display: block;
-} */
-
 .sidebar_extra_list_items {
   overflow-y: hidden;
   width: 320px;
@@ -458,6 +451,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 305px;
   height: 48px;
   font-size: 13px;
   padding: 8px 16px 8px 32px;
@@ -476,4 +470,24 @@ li {
 .sidebar_list_fold_icon {
   width: 11px;
   height: 11px;
+}
+
+/* sidebar submenu css*/
+
+.submenu_back-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 8px 32px;
+  gap: 8px;
+
+  width: 320px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.submenu_back-button_text {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 160%;
 }
