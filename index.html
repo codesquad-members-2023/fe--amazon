@@ -2,102 +2,88 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>amazon clone</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
   </head>
   <body>
     <header>
-      <!-- 네비게이션 상단 -->
-      <div class="nav-belt">
-        <div class="nav-logo">
-          <img src="./assets/logo.svg" />
+      <div class="nav__sub">
+        <div class="nav__logo">
+          <img src="./assets/amazon_logo.svg" />
         </div>
-        <div class="shipping">
-          <div class="shipping-country">
-            <div class="shipping-container">
-              <img src="./assets/shipping.svg" alt="shipping" />
-              <span>배송처</span>
-            </div>
-            <div class="country">대한민국</div>
+        <div class="nav__shipping-address">
+          <div class="shpping-address__top">
+            <img src="./assets/shipping_adress.svg" />
+            <span>배송처</span>
           </div>
-
-          <div class="shipping-hover">
-            <div class="shipping-box">
-              <span>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</span>
-              <div><button class="button1">계속</button></div>
-              <div><button class="button1">주소변경</button></div>
-            </div>
-            <div class="shipping-pointer"></div>
+          <div class="shipping-address_bottom">
+            <span>대한민국</span>
           </div>
         </div>
-
-        <div class="search">
-          <input class="search-input" type="search" placeholder="검색 Amazon" />
-          <button class="search-button">
-            <img src="./assets/search.svg" alt="" />
-          </button>
+        <div class="nav__search">
+          <input class="nav__search-input" type="search" placeholder="검색 Amazon" />
+          <button class="nav__search-button">
+            <img src="./assets/searchIcon.svg" />
         </div>
 
-        <div class="language">
+        <div class="nav__language">
           <span>🇰🇷</span>
           <span>KO</span>
         </div>
-        <!-- 로그인창 -->
+        
         <div class="login">
-          <div class="login-menu">
-            <span class="login-prompt">안녕하세요, 로그인</span>
-            <span class="Accounts-lists">계정및목록</span>
+          <div class="nav__login">
+            <span class="login">안녕하세요, 로그인</span>
+            <span class="AccountsList">계정및목록</span>
           </div>
-
-          <div class="login-modal">
-            <div><button class="login-button">로그인</button></div>
-            <div class="login-link">
+          
+          <div class="login__modal-fadeIn">
+            <div><button class="login-modal-button">로그인</button></div>
+            <div class="login__modal-link">
               <span>기존 사용자가 아니십니까?</span>
               <a href="">여기에서 시작합니다.</a>
             </div>
-            <div class="login-pointer"></div>
+            <div class="login__modal-pointer"></div>
           </div>
-
-          <div class="login-hover">
-            <div><button class="login-button">로그인</button></div>
-            <div class="login-link">
+          
+          <div class="login__modal-hover">
+            <div><button class="login__modal-button">로그인</button></div>
+            <div class="login__modal-link">
               <span>기존 사용자가 아니십니까?</span>
               <a href="">여기에서 시작합니다.</a>
             </div>
-            <div class="login-hover-list">
-              <ul class="hover-list1"></ul>
-              <ul class="hover-list2"></ul>
+            <div class="login__modal-accountsList">
+              <ul class="List__items"></ul>
+              <ul class="accounts__items"></ul>
             </div>
-            <div class="login-pointer"></div>
+            <div class="modal-pointer"></div>
           </div>
         </div>
-
-        <div class="return-order">
-          <span class="return">반품</span>
+        <div class="nav__order">
+          <div class="return">반품</div>
           <div class="order">&주문</div>
         </div>
-        <div>
-          <img src="./assets/shoppingBasket.svg" />
+        <div class="nav__cart">
+          <img src="./assets/cart.svg" />
           <span>장바구니</span>
         </div>
       </div>
 
-      <div class="nav-main">
-        <div class="nav-shop">
-          <div class="nav-sidebar-button">
-            <img src="./assets/sidebar.svg" />
+      <div class="nev__main">
+        <div class="nav__shop">
+          <div class="nav__sidebar_button">
+            <img src="./assets/sidebarButton.svg" />
             <span>모두</span>
           </div>
+          <div>모두</div>
           <div>오늘의 딜</div>
           <div>고객 서비스</div>
           <div>레지스트리</div>
           <div>기프트 카드</div>
           <div>판매</div>
         </div>
-
-        <div class="shop-deals">
-          <div>지금 특가 상품 쇼핑하기</div>
-        </div>
+        <div class="shop__deals">지금 특가 상품 쇼핑하기</div>
       </div>
     </header>
 
@@ -105,8 +91,8 @@
 
     <aside>
       <div class="sidebar">
-        <button class="sidebar-close-button">X</button>
-        <div class="sidebar-header">
+        <button class="sidebar__close-button">X</button>
+        <div class="sidebar__header">
           <img src="./assets/login_icon.svg" />
           <span>안녕하세요, 로그인</span>
         </div>
@@ -117,12 +103,10 @@
               <div>Amazon Music</div>
               <img src="./assets/arrow.svg" />
             </li>
-
             <li>
               <div>Kindle E-Reader 및 도서</div>
               <img src="./assets/arrow.svg" />
             </li>
-
             <li>
               <div>안드로이드 앱스토어</div>
               <img src="./assets/arrow.svg" />
@@ -159,13 +143,9 @@
         </section>
         <hr class="sidebar-line" />
         <ul class="sidebar-other-contents">
-          <div class="quick-view">
-          </div>
+          <div class="quick-view"></div>
         </ul>
       </div>
     </aside>
-    <script src="./js/sidebar.js"></script>
-    <script src="./js/data.js"></script>
-    <script src="./js/navigation.js"></script>
   </body>
 </html>
