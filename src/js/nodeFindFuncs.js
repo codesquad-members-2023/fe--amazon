@@ -1,4 +1,3 @@
-
 export const findUpWard = (target, node) => target.closest(node);
 export const findSiblingForward = (node, targetNode) => {
     let nextSibling = node.nextElementSibling;
