@@ -1,14 +1,19 @@
-export default function sliderStyle(rotate) {
+export default function sliderStyle(position) {
   const style = document.createElement('style');
+  const rotate = position === 'right' ? '-90' : '90';
 
   style.textContent = `
     :host {
-      
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    :host(:hover) {
+      cursor: pointer;
     }
 
     .controller {
-      position: relative;
-      display: inline-block;
       width: 54px;
       height: 20px;
       transform: rotate(${rotate}deg);

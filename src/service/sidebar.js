@@ -7,13 +7,13 @@ const showAllBtn = document
   .querySelector('navbar-element')
   .shadowRoot.querySelector('#showAllBtn');
 
-showAllBtn.addEventListener('click', (e) => {
+showAllBtn.addEventListener('click', () => {
   if (loginActionElement) {
     loginActionElement.closeAction();
   }
 
   const sidebar = new Sidebar();
-  sidebar.showSidebar(e);
+  sidebar.showSidebar();
 
   unfoldCategories(sidebar);
   closeSidebar(sidebar);
