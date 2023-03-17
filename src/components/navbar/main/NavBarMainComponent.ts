@@ -28,6 +28,9 @@ export class NavBarMainComponent extends BaseComponent<HTMLElement> {
     login.element.style.position = 'relative';
     const loginPop = new LoginPopComponent();
     loginPop.attachTo(login.element);
+    window.addEventListener('load', () => {
+      loginPop.element.style.opacity = '1';
+    });
     const myPage = new TwoRowTextComponent('반품', '& 주문');
     const cart = new SymbolTextComponent('assets/nav-bar/cart.svg', '장바구니');
     cart.attachTo(this.element);

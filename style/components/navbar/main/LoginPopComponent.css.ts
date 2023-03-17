@@ -13,4 +13,6 @@ export const LoginPopComponentStyle = style({
   backgroundColor: 'var(--color-white)',
   top: '2.5rem',
   left: '-10rem',
+  opacity: '0',
+  transition: 'opacity 1s ease-in 1s',
 });
