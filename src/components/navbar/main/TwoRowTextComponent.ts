@@ -1,4 +1,4 @@
-import { BaseComponent } from '../../../Base';
+import { BaseComponent } from '../../Base';
 import { TextComponent } from '../../basic/TextComponent';
 import { TwoRowTextComponentStyle } from '../../../../style/components/navbar/main/TwoRowTextComponent.css';
 

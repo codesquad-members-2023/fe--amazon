@@ -1,4 +1,4 @@
-import { BaseComponent } from '../../Base';
+import { BaseComponent } from '../Base';
 import { SymbolComponent } from '../basic/SymbolComponent';
 import { TextComponent } from '../basic/TextComponent';
 import { SymbolTextComponentStyle } from '../../../style/components/navbar/SymbolTextComponent.css';

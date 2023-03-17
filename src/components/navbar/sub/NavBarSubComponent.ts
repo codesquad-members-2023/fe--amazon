@@ -1,4 +1,4 @@
-import { BaseComponent } from '../../../Base';
+import { BaseComponent } from '../../Base';
 import { TextComponent } from '../../basic/TextComponent';
 import { SymbolTextComponent } from '../SymbolTextComponent';
 import { NavBarSubComponentStyle } from '../../../../style/components/navbar/sub/NavBarSubComponent.css';
@@ -28,7 +28,5 @@ export class NavBarSubComponent extends BaseComponent<HTMLElement> {
     menuEls.forEach((menuEl) => menuEl.attachTo(this.element, 'beforeend'));
     console.log(this.element.lastElementChild);
     (this.element.lastElementChild! as HTMLElement).style.marginLeft = 'auto';
-    // const leftEl = new BaseComponent(`<div class='navbar-sub__left'></div>`);
-    // const rightEl = new BaseComponent(`<div class='navbar-sub__right'></div>`);
   }
 }

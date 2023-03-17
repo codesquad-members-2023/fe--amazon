@@ -3,7 +3,7 @@ export interface Base {
 }
 
 export class BaseComponent<T extends HTMLElement> implements Base {
-  protected readonly element: T;
+  readonly element: T;
   constructor(htmlString: string) {
     const template = document.createElement('template');
     template.innerHTML = htmlString;

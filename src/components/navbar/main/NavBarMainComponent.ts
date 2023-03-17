@@ -1,9 +1,10 @@
-import { BaseComponent } from '../../../Base';
+import { BaseComponent } from '../../Base';
 import { ImageComponent } from '../../basic/ImageComponent';
 import { SearchBarComponent } from './SearchBarComponent';
 import { TwoRowTextComponent } from './TwoRowTextComponent';
 import { SymbolTextComponent } from '../SymbolTextComponent';
 import { NavBarMainComponentStyle } from '../../../../style/components/navbar/main/NavBarMainComponent.css';
+import { LoginPopComponent } from './LoginPopComponent';
 
 export class NavBarMainComponent extends BaseComponent<HTMLElement> {
   constructor() {
@@ -16,7 +17,11 @@ export class NavBarMainComponent extends BaseComponent<HTMLElement> {
     const shippingAddress = new TwoRowTextComponent('배송처', '대한민국');
     const searchBar = new SearchBarComponent();
     const nation = new SymbolTextComponent('assets/nav-bar/flag-un.svg', 'UN');
+
     const login = new TwoRowTextComponent('안녕하세요, 로그인', '계정 및 목록');
+    login.element.style.position = 'relative';
+    const loginPop = new LoginPopComponent();
+    loginPop.attachTo(login.element);
     const myPage = new TwoRowTextComponent('반품', '& 주문');
     const cart = new SymbolTextComponent('assets/nav-bar/cart.svg', '장바구니');
     cart.attachTo(this.element);

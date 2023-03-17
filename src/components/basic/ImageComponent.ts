@@ -1,4 +1,4 @@
-import { BaseComponent } from '../../Base';
+import { BaseComponent } from '../Base';
 import { ImageComponentStyle } from '../../../style/components/basic/ImageComponent.css';
 
 export class ImageComponent extends BaseComponent<HTMLImageElement> {

@@ -1,4 +1,4 @@
-import { BaseComponent } from '../../../Base';
+import { BaseComponent } from '../../Base';
 import {
   SearchBarComponentStyle,
   SearchBarInputComponentStyle,

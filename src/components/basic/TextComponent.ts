@@ -1,4 +1,4 @@
-import { BaseComponent } from '../../Base';
+import { BaseComponent } from '../Base';
 import { TextComponentStyle } from '../../../style/components/basic/TextComponent.css';
 
 export class TextComponent extends BaseComponent<HTMLSpanElement> {
