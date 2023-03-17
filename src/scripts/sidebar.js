@@ -1,6 +1,6 @@
-import Sidebar from '@components/Sidebar.js';
+import Sidebar from '@components/Sidebar/Sidebar.js';
 import { loginActionElement } from './action.js';
-import SidebarSubContent from '@components/Sidebar/SidebarSub/SidebarSubContent.js';
+import SidebarSubContent from '@components/Sidebar/SidebarSub/SidebarSubContent/SidebarSubContent.js';
 import { menus } from '@data/menu.js';
 
 const showAllBtn = document

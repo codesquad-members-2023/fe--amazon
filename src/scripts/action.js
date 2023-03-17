@@ -1,5 +1,5 @@
-import ChangeAdressAction from '@components/Action/ChangeAddressAction.js';
-import LoginAction from '@components/Action/LoginAction.js';
+import ChangeAdressAction from '@components/Action/ChangeAddressAction/ChangeAddressAction.js';
+import LoginAction from '@components/Action/LoginAction/LoginAction.js';
 import { ID } from '@constant';
 
 export let loginActionElement = null;

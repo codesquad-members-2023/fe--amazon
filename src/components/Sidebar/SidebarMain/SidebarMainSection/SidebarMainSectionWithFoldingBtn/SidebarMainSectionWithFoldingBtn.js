@@ -4,7 +4,7 @@ import {
   FOLD_THRESHOLD,
 } from '@constant';
 import SidebarMainSection from '../SidebarMainSection.js';
-import sidebarMainSectionStyle from './sidebarMainSectionStyle';
+import sidebarMainSectionStyle from '../sidebarMainSectionStyle';
 
 class SidebarMainSectionWithFoldingBtn extends SidebarMainSection {
   constructor() {

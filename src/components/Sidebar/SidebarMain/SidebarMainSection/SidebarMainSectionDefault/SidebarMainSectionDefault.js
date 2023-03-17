@@ -1,5 +1,5 @@
 import SidebarMainSection from '../SidebarMainSection.js';
-import sidebarMainSectionStyle from './sidebarMainSectionStyle';
+import sidebarMainSectionStyle from '../sidebarMainSectionStyle';
 import {
   SIDEBAR_CATEGORY_HEIGHT,
   SIDEBAR_FOLDING_BTN_HEIGHT,
