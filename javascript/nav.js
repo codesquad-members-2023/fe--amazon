@@ -1,31 +1,52 @@
-const $header = document.querySelector('header');
-const $fade_in_popup = document.querySelector('.fade_in');
-const $login = document.querySelector('.login');
-const $login_popup_detail = document.querySelector('.login_popup_detail');
-const $shipping_address = document.querySelector('.address');
-const $shipping_address_popup = document.querySelector('.address_popup');
-const $modal_bg = document.querySelector('.modal_background');
+const navBarEventHandler = () => {
+  const $header = document.querySelector('header');
+  const $shipping_address_container = document.querySelector('.address_container');
+  const $shipping_address_popup = document.querySelector('.address_popup');
+  const $login_popup_container = document.querySelector('.login_container');
+  const $login_popup_detail = document.querySelector('.login_popup_detail');
 
-$header.addEventListener('mouseenter', e => {
+  $header.addEventListener('mouseenter', hidePopup);
+  $shipping_address_container.addEventListener('mouseenter', popUpShippingAddress);
+  $login_popup_container.addEventListener('mouseenter', popUpLogin);
+
+  $shipping_address_container.addEventListener('mouseleave', hideShippingAddress);
+  $shipping_address_popup.addEventListener('mouseleave', hideShippingAddress);
+
+  $login_popup_container.addEventListener('mouseleave', hideLogin);
+  $login_popup_detail.addEventListener('mouseleave', hideLogin);
+}
+
+const hidePopup = () => {
+  const $fade_in_popup = document.querySelector('.fade_in');
   $fade_in_popup.classList.add('hidden');
-});
+}
 
-$login.addEventListener('mouseenter', e => {
-  $login_popup_detail.classList.remove('hidden');
-  $modal_bg.classList.remove('hidden');
-});
-
-$shipping_address.addEventListener('mouseenter', e => {
+const popUpShippingAddress = () => {
+  const $shipping_address_popup = document.querySelector('.address_popup');
+  const $modal_bg = document.querySelector('.modal_background');
   $shipping_address_popup.classList.remove('hidden');
   $modal_bg.classList.remove('hidden');
-});
+}
 
-$login_popup_detail.addEventListener('mouseleave', e => {
-  $login_popup_detail.classList.add('hidden');
-  $modal_bg.classList.add('hidden');
-});
-
-$shipping_address_popup.addEventListener('mouseleave', e => {
+const hideShippingAddress = () => {
+  const $shipping_address_popup = document.querySelector('.address_popup');
+  const $modal_bg = document.querySelector('.modal_background');
   $shipping_address_popup.classList.add('hidden');
   $modal_bg.classList.add('hidden');
-});
+}
+
+const popUpLogin = () => {
+  const $login_popup_detail = document.querySelector('.login_popup_detail');
+  const $modal_bg = document.querySelector('.modal_background');
+  $login_popup_detail.classList.remove('hidden');
+  $modal_bg.classList.remove('hidden');
+}
+
+const hideLogin = () => {
+  const $login_popup_detail = document.querySelector('.login_popup_detail');
+  const $modal_bg = document.querySelector('.modal_background');
+  $login_popup_detail.classList.add('hidden');
+  $modal_bg.classList.add('hidden');
+}
+
+navBarEventHandler();

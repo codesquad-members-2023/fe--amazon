@@ -1,9 +1,21 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Pretendard', Sans-Serif;
+}
+
+.item_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav_bar {
@@ -31,6 +43,16 @@ body {
   background-color: var(--color-black);
 }
 
+.nav_main > div {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav_sub {
   height: 30px;
   background-color: var(--color-gray-900);
@@ -49,13 +71,6 @@ body {
   line-height: 30px;
 }
 
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-}
-
 .nav_tab_top {
   display: flex;
   font-weight: var(--font-weight-semi-bold);
@@ -68,23 +83,17 @@ body {
 }
 
 .address {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 50px;
-  height: 60px;
 }
 
 .address_popup {
   top: 60px;
-  left: -20px;
+  left: -3px;
   width: 320px;
 
   justify-content: space-between;
 
   height: 125px;
-  padding: 16px;
 
   font-weight: var(--font-weight-body);
   font-size: var(--font-size-sm);
@@ -171,7 +180,6 @@ body {
 .login {
   display: flex;
   flex-direction: column;
-
   width: 90px;
 }
 
@@ -181,7 +189,7 @@ body {
 }
 
 .login_popup {
-  top: 45px;
+  top: 60px;
   left: -125px;
   width: 280px;
   height: 100px;
@@ -214,7 +222,7 @@ body {
 }
 
 .login_popup_detail {
-  top: 45px;
+  top: 60px;
   left: -130px;
   width: 320px;
 
@@ -296,15 +304,7 @@ button {
 }
 
 .order {
-  display: flex;
   flex-direction: column;
-  align-content: flex-start;
-}
-
-.cart {
-  display: flex;
-  justify-content: space-between;
-  width: 65px;
 }
 
 .hidden {
