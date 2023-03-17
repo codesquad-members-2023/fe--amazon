@@ -31,17 +31,17 @@ const popUpShippingAddressModal = e => {
   $modal_bg.classList.remove('hidden');
 }
 
-const hideDetailLoginModal = e => {
-  const $login_popup_detail = document.querySelector('.login_popup_detail');
-  const $modal_bg = document.querySelector('.modal_background');
-  $login_popup_detail.classList.add('hidden');
-  $modal_bg.classList.add('hidden');
-}
-
 const hideShippingAddress = e => {
   const $shipping_address_popup = document.querySelector('.address_popup');
   const $modal_bg = document.querySelector('.modal_background');
   $shipping_address_popup.classList.add('hidden');
+  $modal_bg.classList.add('hidden');
+}
+
+const hideDetailLoginModal = e => {
+  const $login_popup_detail = document.querySelector('.login_popup_detail');
+  const $modal_bg = document.querySelector('.modal_background');
+  $login_popup_detail.classList.add('hidden');
   $modal_bg.classList.add('hidden');
 }
 

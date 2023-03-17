@@ -34,7 +34,7 @@ const closeSideBar = e => {
   const $modal_bg = document.querySelector('.modal_background');
 
   $side_bar.classList.add('slideLeft');
-  $side_bar.addEventListener('animationend', ({animationName, target}) => {
+  $side_bar.addEventListener('animationend', ({ animationName, target }) => {
     if(animationName === 'slideLeft' && target.className.includes('side_bar')) {
       $side_bar.style.display = 'none';
       $side_bar.classList.remove('slideRight');
@@ -64,8 +64,7 @@ const clickViewSimple = e => {
   $view_all.lastElementChild.outerHTML = "<img src=\"/asset/images/vectors/Bottom.svg\">"
 }
 
-const insertDetailDataHandler = e => {
-  const target = e.target;
+const insertDetailDataHandler = ({ target }) => {
   const isLI = target.closest('li');
   const isId = target.id !== 'view_all' && target.id !== 'view_simple';
 
@@ -95,7 +94,7 @@ const clickBackBtnHandler = e => {
   const $fold_detail = document.querySelector('.fold_detail');
   $fold_detail.classList.remove('slideRight');
   $fold_detail.classList.add('slideLeft');
-  $fold_detail.addEventListener('animationend', ({animationName, target}) => {
+  $fold_detail.addEventListener('animationend', ({ animationName, target }) => {
     if(animationName === 'slideLeft' && target.className.includes('fold_detail')) {
       $fold_detail.classList.add('hidden');
     }
