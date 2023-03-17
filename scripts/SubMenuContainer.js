@@ -1,7 +1,7 @@
 export default class SubMenuContainer {
   constructor() {
     this.subMenuContainer = document.querySelector(".submenu-container");
-    this.subMenuConfing = [
+    this.subMenuConfig = [
       {
         label: "음악 스트리밍",
         items: [
@@ -12,6 +12,7 @@ export default class SubMenuContainer {
           "웹 플레이어 열기",
           "Download the app",
         ],
+        parentId: 1,
       },
       {
         label: "Kindle E-Reader",
@@ -23,6 +24,7 @@ export default class SubMenuContainer {
           "Introducing Kindle Scribe",
           "액세서리",
         ],
+        parentId: 2,
       },
       {
         label: "안드로이드 앱스토어",
@@ -34,6 +36,7 @@ export default class SubMenuContainer {
           "Amazon 앱",
           "앱 및 구독",
         ],
+        parentId: 3,
       },
       {
         label: "전자",
@@ -56,6 +59,7 @@ export default class SubMenuContainer {
           "웨어러블 테크 제품",
           "전자책 리더 및 액세서리",
         ],
+        parentId: 4,
       },
       {
         label: "컴퓨터",
@@ -77,6 +81,7 @@ export default class SubMenuContainer {
           "태블릿 부품(교체용)",
           "품질보증 및 서비스",
         ],
+        parentId: 5,
       },
       {
         label: "Alexa 스마트 홈",
@@ -98,6 +103,7 @@ export default class SubMenuContainer {
           "WI-FI 및 네트워크",
           "기타 솔루션",
         ],
+        parentId: 6,
       },
       {
         label: "예술 및 공예",
@@ -116,6 +122,7 @@ export default class SubMenuContainer {
           "파티 장식 및 용품",
           "선물 포장 용품",
         ],
+        parentId: 7,
       },
       {
         label: "자동차 용품",
@@ -136,6 +143,7 @@ export default class SubMenuContainer {
           "자동차 매니아용 상품",
           "대형차 및 상용차 장비",
         ],
+        parentId: 8,
       },
       {
         label: "유아",
@@ -156,6 +164,7 @@ export default class SubMenuContainer {
           "유모차 및 액세서리",
           "여행 용품",
         ],
+        parentId: 9,
       },
       {
         label: "뷰티 및 퍼스널 케어",
@@ -170,6 +179,7 @@ export default class SubMenuContainer {
           "퍼스널 케어",
           "구강 케어",
         ],
+        parentId: 10,
       },
       {
         label: "여성 패션",
@@ -184,15 +194,16 @@ export default class SubMenuContainer {
           "여아용 의류",
           "남아용 의류",
         ],
+        parentId: 11,
       },
     ];
   }
 
   setSubMenuContainer() {
-    const fragment = document.createDocumentFragment();
+    const template = document.createElement("template");
 
-    this.subMenuConfing.forEach((config, idx) => {
-      const subMenuItems = config.items.reduce((acc, cur) => {
+    const domString = this.subMenuConfig.reduce((acc, cur, idx) => {
+      const subMenuItems = cur.items.reduce((acc, cur) => {
         return (acc += `<li class="side-bar__item">
                       <button class="side-bar__button" href="">
                         <span class="side-bar__text">${cur}</span>
@@ -200,19 +211,19 @@ export default class SubMenuContainer {
                     </li>`);
       }, "");
 
-      const subMenu = `<div class="submenu hidden" data-parent-id="${idx + 1}">
-      <div class="seperator-line"></div>
-      <span class="side-bar__label">${config.label}</span>
-      <ul class="side-bar__items">
-       ${subMenuItems}
-      </ul>
-    </div>`;
-      const tempElement = document.createElement("div");
-      tempElement.innerHTML = subMenu;
+      return (
+        acc +
+        `<div class="submenu hidden" data-parent-id="${cur.parentId}">
+     <div class="seperator-line"></div>
+     <span class="side-bar__label">${cur.label}</span>
+     <ul class="side-bar__items">
+      ${subMenuItems}
+     </ul>
+   </div>`
+      );
+    }, "");
 
-      fragment.appendChild(tempElement.firstElementChild);
-    });
-
-    this.subMenuContainer.appendChild(fragment);
+    template.innerHTML = domString;
+    this.subMenuContainer.appendChild(template.content);
   }
 }

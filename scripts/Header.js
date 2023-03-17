@@ -56,7 +56,7 @@ export default class Header {
     this.shippingAddressPopUp.classList.add("hidden");
   }
 
-  setHeader() {
+  onHeader() {
     this.showPopUpWithDelay(1000);
 
     this.logInAnchor.addEventListener("mouseenter", () => {
