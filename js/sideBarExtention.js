@@ -1,4 +1,4 @@
-const sideBarExtend = () => {
+const sideBarExtendInit = () => {
   const DOWN_LIST = [
     "자동차 용품",
     "유아",
@@ -14,8 +14,8 @@ const sideBarExtend = () => {
     "영화 및 TV",
   ];
 
-  const addList = () => {
-    let count = 5;
+  const appendExtentionList = () => {
+    let count = 8;
     DOWN_LIST.forEach((item) => {
       const ul = document.querySelector(".hideLists");
       const li = document.createElement("li");
@@ -23,9 +23,7 @@ const sideBarExtend = () => {
       const closeMore = document.querySelector(".homeSidebar__mode--close");
       li.innerText = item;
       li.classList.add("homeSidebar__subTitle", "hoverIcon");
-      // data-columns 부여
-      // li.setAttribute("data-columns", `2-${count}`);
-      li.dataset.columns = `2-${count}`;
+      li.dataset.columns = count;
       count++;
       icon.classList.add("fa-solid", "fa-chevron-right");
       ul.insertBefore(li, closeMore);
@@ -34,10 +32,10 @@ const sideBarExtend = () => {
   };
 
   const homeSidePlus = document.querySelector(".hideLists");
-  const homeSideSeeAll = document.querySelector(".homeSidebar__mode--open");
-  const homeSideCloseAll = document.querySelector(".homeSidebar__mode--close");
+  const homeSideExtOpen = document.querySelector(".homeSidebar__mode--open");
+  const homeSideExtClose = document.querySelector(".homeSidebar__mode--close");
 
-  const SET_TIME_OUT_500 = 500;
+  const loginUiLazyTime = 500;
 
   const openSideMore = () => {
     homeSidePlus.style.display = "block";
@@ -50,13 +48,13 @@ const sideBarExtend = () => {
     homeSidePlus.classList.add("closeAnimation");
     setTimeout(() => {
       homeSidePlus.style.display = "none";
-    }, SET_TIME_OUT_500);
+    }, loginUiLazyTime);
   };
 
-  homeSideSeeAll.addEventListener("click", openSideMore);
-  homeSideCloseAll.addEventListener("click", closeSideMore);
+  homeSideExtOpen.addEventListener("click", openSideMore);
+  homeSideExtClose.addEventListener("click", closeSideMore);
 
-  addList();
+  appendExtentionList();
 };
 
-sideBarExtend();
+sideBarExtendInit();

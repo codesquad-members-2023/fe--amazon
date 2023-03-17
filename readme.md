@@ -36,7 +36,7 @@ HTML, CSS, JavaScript를 사용하여 아마존 웹페이지를 만들어본다.
   - [x] : [모두보기] 클릭시 목록 확장
   - [x] : [간단히 보기] 클릭시 목록 축소
   - [x] : 펼쳐지고 접히는 애니메이션 적용
-  - [ ] : 목록 클릭시 우측으로 하위 카테고리 출력
+  - [x] : 목록 클릭시 우측으로 하위 카테고리 출력
   - [ ] : 우측에서 좌측으로 목록이 이동되는 애니메이션 적용
 - [x] : DOM API 학습
 - [x] : 이벤트 위임 학습
@@ -48,5 +48,5 @@ HTML, CSS, JavaScript를 사용하여 아마존 웹페이지를 만들어본다.
 
 # 학습내용
 
-[1주차 학습정리](https://stitch-dart-ccd.notion.site/FS-1-6662064ee3424e239fbdfc70219861fb)
+[1주차 학습정리](https://stitch-dart-ccd.notion.site/FS-1-6662064ee3424e239fbdfc70219861fb)  
 [2주차 학습정리](https://stitch-dart-ccd.notion.site/FE-2-e7bb31fa82e94bbf9c4978b1641c8834)
