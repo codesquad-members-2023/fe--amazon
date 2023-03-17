@@ -1,16 +1,19 @@
 const navBarEventHandler = () => {
   const $header = document.querySelector('header');
-  const $login = document.querySelector('.login');
   const $shipping_address_container = document.querySelector('.address_container');
   const $shipping_address_popup = document.querySelector('.address_popup');
+  const $login_popup_container = document.querySelector('.login_container');
   const $login_popup_detail = document.querySelector('.login_popup_detail');
 
   $header.addEventListener('mouseenter', hidePopup);
-  $login.addEventListener('mouseenter', loginModalHandler);
-  $shipping_address_container.addEventListener('mouseenter', popUpShippingAddressModalHandler);
-  $shipping_address_container.addEventListener('mouseleave', hideShippingAddressModalHandler);
-  $shipping_address_popup.addEventListener('mouseleave', hideShippingAddressModalHandler);
-  $login_popup_detail.addEventListener('mouseleave', loginModalHandler);
+  $shipping_address_container.addEventListener('mouseenter', popUpShippingAddress);
+  $login_popup_container.addEventListener('mouseenter', popUpLogin);
+
+  $shipping_address_container.addEventListener('mouseleave', hideShippingAddress);
+  $shipping_address_popup.addEventListener('mouseleave', hideShippingAddress);
+
+  $login_popup_container.addEventListener('mouseleave', hideLogin);
+  $login_popup_detail.addEventListener('mouseleave', hideLogin);
 }
 
 const hidePopup = () => {
@@ -18,25 +21,32 @@ const hidePopup = () => {
   $fade_in_popup.classList.add('hidden');
 }
 
-const popUpShippingAddressModalHandler = () => {
+const popUpShippingAddress = () => {
   const $shipping_address_popup = document.querySelector('.address_popup');
   const $modal_bg = document.querySelector('.modal_background');
   $shipping_address_popup.classList.remove('hidden');
   $modal_bg.classList.remove('hidden');
 }
 
-const hideShippingAddressModalHandler = () => {
+const hideShippingAddress = () => {
   const $shipping_address_popup = document.querySelector('.address_popup');
   const $modal_bg = document.querySelector('.modal_background');
   $shipping_address_popup.classList.add('hidden');
   $modal_bg.classList.add('hidden');
 }
 
-const loginModalHandler = () => {
+const popUpLogin = () => {
   const $login_popup_detail = document.querySelector('.login_popup_detail');
   const $modal_bg = document.querySelector('.modal_background');
-  $login_popup_detail.classList.toggle('hidden');
-  $modal_bg.classList.toggle('hidden');
+  $login_popup_detail.classList.remove('hidden');
+  $modal_bg.classList.remove('hidden');
+}
+
+const hideLogin = () => {
+  const $login_popup_detail = document.querySelector('.login_popup_detail');
+  const $modal_bg = document.querySelector('.modal_background');
+  $login_popup_detail.classList.add('hidden');
+  $modal_bg.classList.add('hidden');
 }
 
 navBarEventHandler();

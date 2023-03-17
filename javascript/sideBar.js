@@ -10,9 +10,9 @@ const sideBarEventHandler = () => {
   $every.addEventListener('click', openSideBar);
   $close.addEventListener('click', closeSideBar);
   $modal_bg.addEventListener('click', closeSideBar);
-  $view_all.addEventListener('click', toggleFoldContentHandler);
-  $view_simple.addEventListener('click', toggleFoldContentHandler);
-  $side_container.addEventListener('click', insertDetailDataHandler);
+  $view_all.addEventListener('click', toggleFoldContent);
+  $view_simple.addEventListener('click', toggleFoldContent);
+  $side_container.addEventListener('click', insertDetailData);
   $back_btn.addEventListener('click', clickBackBtnHandler);
 }
 
@@ -44,8 +44,7 @@ const closeSideBar = e => {
   });
 }
 
-//e.target이 viewAll이거나,, viewSimple일경우 같은 로직이기때문에 조건문처리
-const toggleFoldContentHandler = ({ target }) => {
+const toggleFoldContent = ({ target }) => {
   const $fold_content = document.querySelector('.fold_content');
   const $view_all = document.getElementById('view_all');
 
@@ -58,7 +57,7 @@ const toggleFoldContentHandler = ({ target }) => {
   }
 }
 
-const insertDetailDataHandler = ({ target }) => {
+const insertDetailData = ({ target }) => {
   const isLI = target.closest('li');
   const isId = target.id !== 'view_all' && target.id !== 'view_simple';
 
@@ -69,7 +68,6 @@ const insertDetailDataHandler = ({ target }) => {
   if(isTitle && isId && isLI.tagName === 'LI') {
     const $tab = document.querySelector('.tab_content');
     const $fold_detail = document.querySelector('.fold_detail');
-    if ($tab.hasChildNodes()) $tab.replaceChildren();
 
     const data = SIDEBAR_DETAIL[title];
     const text = data.reduce((acc, cur) => {
@@ -85,6 +83,9 @@ const insertDetailDataHandler = ({ target }) => {
 }
 
 const clickBackBtnHandler = e => {
+  const $tab = document.querySelector('.tab_content');
+  if ($tab.hasChildNodes()) $tab.replaceChildren();
+
   const $fold_detail = document.querySelector('.fold_detail');
   $fold_detail.classList.remove('slideRight');
   $fold_detail.classList.add('slideLeft');
