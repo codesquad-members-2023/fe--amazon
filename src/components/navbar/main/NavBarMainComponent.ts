@@ -5,6 +5,7 @@ import { TwoRowTextComponent } from './TwoRowTextComponent';
 import { SymbolTextComponent } from '../SymbolTextComponent';
 import { NavBarMainComponentStyle } from '../../../../style/components/navbar/main/NavBarMainComponent.css';
 import { LoginPopComponent } from './LoginPopComponent';
+import { AddressPopComponent } from './AddressPopComponent';
 
 export class NavBarMainComponent extends BaseComponent<HTMLElement> {
   constructor() {
@@ -14,7 +15,12 @@ export class NavBarMainComponent extends BaseComponent<HTMLElement> {
       '6rem',
       '2.5rem',
     );
+
     const shippingAddress = new TwoRowTextComponent('배송처', '대한민국');
+    shippingAddress.element.style.position = 'relative';
+    const addressPop = new AddressPopComponent();
+    addressPop.attachTo(shippingAddress.element);
+
     const searchBar = new SearchBarComponent();
     const nation = new SymbolTextComponent('assets/nav-bar/flag-un.svg', 'UN');
 

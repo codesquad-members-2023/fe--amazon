@@ -26,7 +26,6 @@ export class NavBarSubComponent extends BaseComponent<HTMLElement> {
     });
     sideBarHamburgerEl.attachTo(this.element);
     menuEls.forEach((menuEl) => menuEl.attachTo(this.element, 'beforeend'));
-    console.log(this.element.lastElementChild);
     (this.element.lastElementChild! as HTMLElement).style.marginLeft = 'auto';
   }
 }

@@ -1,8 +1,8 @@
 import { BaseComponent } from '../../Base';
 import { TextComponent } from '../../basic/TextComponent';
 import { ButtonComponent } from '../../basic/ButtonComponent';
+import { FlexContainerComponent } from '../../container/FlexContainerComponent';
 import { LoginPopComponentStyle } from '../../../../style/components/navbar/main/LoginPopComponent.css';
-import { FlexContainerComponent } from '../../basic/FlexContainerComponent';
 
 export class LoginPopComponent extends BaseComponent<HTMLElement> {
   constructor() {

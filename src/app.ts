@@ -1,6 +1,6 @@
 import { NavBarMainComponent } from './components/navbar/main/NavBarMainComponent';
 import { NavBarSubComponent } from './components/navbar/sub/NavBarSubComponent';
-import { LoginPopComponent } from './components/navbar/main/LoginPopComponent';
+import $ from './utils/$';
 
 class App {
   constructor(appRoot: HTMLElement) {
@@ -11,4 +11,4 @@ class App {
   }
 }
 
-new App(document.querySelector('#app')! as HTMLElement);
+new App($('#app')! as HTMLElement);

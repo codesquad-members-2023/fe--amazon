@@ -5,4 +5,6 @@ export const FlexContainerComponentStyle = style({
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
+  gap: '1rem',
+  width: '100%',
 });
