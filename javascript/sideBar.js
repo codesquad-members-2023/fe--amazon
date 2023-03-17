@@ -10,8 +10,8 @@ const sideBarEventHandler = () => {
   $every.addEventListener('click', openSideBar);
   $close.addEventListener('click', closeSideBar);
   $modal_bg.addEventListener('click', closeSideBar);
-  $view_all.addEventListener('click', clickViewAll);
-  $view_simple.addEventListener('click', clickViewSimple);
+  $view_all.addEventListener('click', toggleFoldContentHandler);
+  $view_simple.addEventListener('click', toggleFoldContentHandler);
   $side_container.addEventListener('click', insertDetailDataHandler);
   $back_btn.addEventListener('click', clickBackBtnHandler);
 }
@@ -44,24 +44,18 @@ const closeSideBar = e => {
   });
 }
 
-const clickViewAll = e => {
+//e.target이 viewAll이거나,, viewSimple일경우 같은 로직이기때문에 조건문처리
+const toggleFoldContentHandler = ({ target }) => {
   const $fold_content = document.querySelector('.fold_content');
   const $view_all = document.getElementById('view_all');
 
-  if ($fold_content.style.maxHeight){
+  if ($fold_content.style.maxHeight || target.id === 'view_simple'){
     $fold_content.style.maxHeight = null;
     $view_all.lastElementChild.outerHTML = "<img src=\"/asset/images/vectors/Bottom.svg\">"
   } else {
     $view_all.lastElementChild.outerHTML = "<img src=\"/asset/images/vectors/Up.svg\">"
     $fold_content.style.maxHeight = $fold_content.scrollHeight + "px";
   }
-}
-
-const clickViewSimple = e => {
-  const $fold_content = document.querySelector('.fold_content');
-  const $view_all = document.getElementById('view_all');
-  $fold_content.style.maxHeight = null;
-  $view_all.lastElementChild.outerHTML = "<img src=\"/asset/images/vectors/Bottom.svg\">"
 }
 
 const insertDetailDataHandler = ({ target }) => {

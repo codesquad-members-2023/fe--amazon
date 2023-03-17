@@ -6,43 +6,29 @@ const navBarEventHandler = () => {
   const $login_popup_detail = document.querySelector('.login_popup_detail');
 
   $header.addEventListener('mouseenter', hidePopup);
-  $login.addEventListener('mouseenter', PopupLoginModal);
-  $shipping_address.addEventListener('mouseenter', popUpShippingAddressModal);
-  $shipping_address_popup.addEventListener('mouseleave', hideShippingAddress);
-  $login_popup_detail.addEventListener('mouseleave', hideDetailLoginModal);
+  $login.addEventListener('mouseenter', loginModalHandler);
+  $shipping_address.addEventListener('mouseenter', shippingAddressModalHandler);
+  $shipping_address_popup.addEventListener('mouseleave', shippingAddressModalHandler);
+  $login_popup_detail.addEventListener('mouseleave', loginModalHandler);
 }
 
-const hidePopup = e => {
+const hidePopup = () => {
   const $fade_in_popup = document.querySelector('.fade_in');
   $fade_in_popup.classList.add('hidden');
 }
 
-const PopupLoginModal = e => {
-  const $login_popup_detail = document.querySelector('.login_popup_detail');
-  const $modal_bg = document.querySelector('.modal_background');
-  $login_popup_detail.classList.remove('hidden');
-  $modal_bg.classList.remove('hidden');
-}
-
-const popUpShippingAddressModal = e => {
+const shippingAddressModalHandler = () => {
   const $shipping_address_popup = document.querySelector('.address_popup');
   const $modal_bg = document.querySelector('.modal_background');
-  $shipping_address_popup.classList.remove('hidden');
-  $modal_bg.classList.remove('hidden');
+  $shipping_address_popup.classList.toggle('hidden');
+  $modal_bg.classList.toggle('hidden');
 }
 
-const hideShippingAddress = e => {
-  const $shipping_address_popup = document.querySelector('.address_popup');
-  const $modal_bg = document.querySelector('.modal_background');
-  $shipping_address_popup.classList.add('hidden');
-  $modal_bg.classList.add('hidden');
-}
-
-const hideDetailLoginModal = e => {
+const loginModalHandler = () => {
   const $login_popup_detail = document.querySelector('.login_popup_detail');
   const $modal_bg = document.querySelector('.modal_background');
-  $login_popup_detail.classList.add('hidden');
-  $modal_bg.classList.add('hidden');
+  $login_popup_detail.classList.toggle('hidden');
+  $modal_bg.classList.toggle('hidden');
 }
 
 navBarEventHandler();
