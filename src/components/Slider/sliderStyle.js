@@ -22,14 +22,20 @@ export default function sliderStyle() {
       background-size: cover;
       transform: translateX(100%);
       transition: transform 0.5s;
+      position: absolute;
+      top: 0;
+      
     }
 
     li.slide.show {
       transform: translateX(0);
+      position: inherit;
     }
 
     li.slide.hide {
       transform: translateX(-100%);
+      position: absolute;
+      
     }
 
     .controller-container {
