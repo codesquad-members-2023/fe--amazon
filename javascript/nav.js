@@ -1,19 +1,19 @@
 const navBarEventHandler = () => {
   const $header = document.querySelector('header');
-  const $shipping_address_container = document.querySelector('.address_container');
-  const $shipping_address_popup = document.querySelector('.address_popup');
-  const $login_popup_container = document.querySelector('.login_container');
-  const $login_popup_detail = document.querySelector('.login_popup_detail');
+  const $address_container = document.querySelector('.address_container');
+  const $address_popup = document.querySelector('.address_popup');
+  const $login_container = document.querySelector('.login_container');
+  const $login_detail = document.querySelector('.login_detail');
 
   $header.addEventListener('mouseenter', hidePopup);
-  $shipping_address_container.addEventListener('mouseenter', popUpShippingAddress);
-  $login_popup_container.addEventListener('mouseenter', popUpLogin);
+  $address_container.addEventListener('mouseenter', popUpShippingAddress);
+  $login_container.addEventListener('mouseenter', popUpLogin);
 
-  $shipping_address_container.addEventListener('mouseleave', hideShippingAddress);
-  $shipping_address_popup.addEventListener('mouseleave', hideShippingAddress);
+  $address_container.addEventListener('mouseleave', hideShippingAddress);
+  $address_popup.addEventListener('mouseleave', hideShippingAddress);
 
-  $login_popup_container.addEventListener('mouseleave', hideLogin);
-  $login_popup_detail.addEventListener('mouseleave', hideLogin);
+  $login_container.addEventListener('mouseleave', hideLogin);
+  $login_detail.addEventListener('mouseleave', hideLogin);
 }
 
 const hidePopup = () => {
@@ -22,30 +22,30 @@ const hidePopup = () => {
 }
 
 const popUpShippingAddress = () => {
-  const $shipping_address_popup = document.querySelector('.address_popup');
+  const $address_popup = document.querySelector('.address_popup');
   const $modal_bg = document.querySelector('.modal_background');
-  $shipping_address_popup.classList.remove('hidden');
+  $address_popup.classList.remove('hidden');
   $modal_bg.classList.remove('hidden');
 }
 
 const hideShippingAddress = () => {
-  const $shipping_address_popup = document.querySelector('.address_popup');
+  const $address_popup = document.querySelector('.address_popup');
   const $modal_bg = document.querySelector('.modal_background');
-  $shipping_address_popup.classList.add('hidden');
+  $address_popup.classList.add('hidden');
   $modal_bg.classList.add('hidden');
 }
 
 const popUpLogin = () => {
-  const $login_popup_detail = document.querySelector('.login_popup_detail');
+  const $login_detail = document.querySelector('.login_detail');
   const $modal_bg = document.querySelector('.modal_background');
-  $login_popup_detail.classList.remove('hidden');
+  $login_detail.classList.remove('hidden');
   $modal_bg.classList.remove('hidden');
 }
 
 const hideLogin = () => {
-  const $login_popup_detail = document.querySelector('.login_popup_detail');
+  const $login_detail = document.querySelector('.login_detail');
   const $modal_bg = document.querySelector('.modal_background');
-  $login_popup_detail.classList.add('hidden');
+  $login_detail.classList.add('hidden');
   $modal_bg.classList.add('hidden');
 }
 

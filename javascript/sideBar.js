@@ -8,10 +8,13 @@ const sideBarEventHandler = () => {
   const $back_btn = document.getElementById('back_btn');
 
   $every.addEventListener('click', openSideBar);
+
   $close.addEventListener('click', closeSideBar);
   $modal_bg.addEventListener('click', closeSideBar);
+
   $view_all.addEventListener('click', toggleFoldContent);
   $view_simple.addEventListener('click', toggleFoldContent);
+
   $side_container.addEventListener('click', insertDetailData);
   $back_btn.addEventListener('click', clickBackBtnHandler);
 }
@@ -61,7 +64,7 @@ const insertDetailData = ({ target }) => {
   const isLI = target.closest('li');
   const isId = target.id !== 'view_all' && target.id !== 'view_simple';
 
-  if(isLI === null) return;
+  if(!isLI) return;
   const title = isLI.innerText;
   const isTitle = SIDEBAR_DETAIL.hasOwnProperty(title);
 
@@ -69,16 +72,16 @@ const insertDetailData = ({ target }) => {
     const $tab = document.querySelector('.tab_content');
     const $fold_detail = document.querySelector('.fold_detail');
 
-    const data = SIDEBAR_DETAIL[title];
-    const text = data.reduce((acc, cur) => {
+    const sideBardata = SIDEBAR_DETAIL[title];
+    const text = sideBardata.reduce((acc, cur) => {
       acc += `<li>${cur}</li>`;
       return acc;
     }, `<h3>${title}</h3><ul>`) + `</ul>` ;
 
     $tab.insertAdjacentHTML('beforeend', text);
     $fold_detail.classList.remove('slideLeft');
-    $fold_detail.classList.add('slideRight');
     $fold_detail.classList.remove('hidden');
+    $fold_detail.classList.add('slideRight');
   }
 }
 
