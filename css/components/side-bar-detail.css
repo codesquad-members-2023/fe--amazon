@@ -12,26 +12,27 @@
 }
 
 .showSidebarDetailAnimation {
-  animation: showSidebarSoft 0.5s ease-out forwards;
+  animation: showSidebarDetailSoft 0.5s ease-out forwards;
 }
 
 .hideSidebarDetailAnimation {
-  animation: hideSidebarSoft 0.5s ease-in forwards;
+  animation: hideSidebarDetailSoft 0.5s ease-in forwards;
 }
 
-@keyframes showSidebarDeatilSoft {
+@keyframes showSidebarDetailSoft {
   from {
     transform: translateX(100%);
   }
   to {
-    transform: 0;
+    transform: translateX(0);
   }
 }
-@keyframes hideSidebarDeatilSoft {
+
+@keyframes hideSidebarDetailSoft {
   from {
-    left: 310px;
+    transform: translateX(-100%);
   }
   to {
-    left: 0px;
+    transform: translateX(0);
   }
 }

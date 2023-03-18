@@ -20,6 +20,7 @@
 
 .homeSidebar__lists,
 .hideSidebar__lists--detail {
+  display: block;
   font-size: 13px;
   height: 100%;
   width: 310px;
