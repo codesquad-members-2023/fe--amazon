@@ -5,14 +5,14 @@ const openSidebarDetail = () => {
   const selectListInSidebar = (event) => {
     const liEventTarget = event.target.closest("li");
 
-    if (!liEventTarget) {
-      return;
-    }
+    if (!liEventTarget) return;
 
     // 클릭된 li의 고유번호 data-columns를 찾는다.
     const columnNumber = liEventTarget.dataset.columns;
     const selector = `ul[data-columns="${columnNumber}"]`;
     const element = sideBar.querySelector(selector);
+
+    if (!element) return;
 
     const elementColumns = element.getAttribute("data-columns");
 
