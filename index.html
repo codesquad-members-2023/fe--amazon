@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,19 +12,31 @@
         <div class="nav__logo">
           <img src="./assets/amazon_logo.svg" />
         </div>
-        <div class="nav__shipping-address">
-          <div class="shpping-address__top">
-            <img src="./assets/shipping_adress.svg" />
-            <span>배송처</span>
+        
+        <div class="nav__shipping">
+          <div class="nav__shipping-address">
+            <div class="shpping__address-top">
+              <img src="./assets/shipping_adress.svg" />
+              <span>배송처</span>
+            </div>
+            <div class="shipping__address-bottom">
+              <span>대한민국</span>
+            </div>
           </div>
-          <div class="shipping-address_bottom">
-            <span>대한민국</span>
+          <div class="shipping__modal-hover">
+            <div class="shipping-box">
+              <span>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</span>
+              <button class="modal__button">계속</button>
+              <button class="modal__button">주소변경</button>
+            </div>
+            <div class="modal__pointer"></div>
           </div>
         </div>
+
         <div class="nav__search">
           <input class="nav__search-input" type="search" placeholder="검색 Amazon" />
           <button class="nav__search-button">
-            <img src="./assets/searchIcon.svg" />
+            <img src="./assets/search_icon.svg" />
         </div>
 
         <div class="nav__language">
@@ -39,16 +51,16 @@
           </div>
           
           <div class="login__modal-fadeIn">
-            <div><button class="login-modal-button">로그인</button></div>
+            <div><button class="modal__button">로그인</button></div>
             <div class="login__modal-link">
               <span>기존 사용자가 아니십니까?</span>
               <a href="">여기에서 시작합니다.</a>
             </div>
-            <div class="login__modal-pointer"></div>
+            <div class="modal__pointer"></div>
           </div>
           
           <div class="login__modal-hover">
-            <div><button class="login__modal-button">로그인</button></div>
+            <div><button class="modal__button">로그인</button></div>
             <div class="login__modal-link">
               <span>기존 사용자가 아니십니까?</span>
               <a href="">여기에서 시작합니다.</a>
@@ -57,13 +69,15 @@
               <ul class="List__items"></ul>
               <ul class="accounts__items"></ul>
             </div>
-            <div class="modal-pointer"></div>
+            <div class="modal__pointer"></div>
           </div>
         </div>
+        
         <div class="nav__order">
           <div class="return">반품</div>
           <div class="order">&주문</div>
         </div>
+        
         <div class="nav__cart">
           <img src="./assets/cart.svg" />
           <span>장바구니</span>
@@ -73,7 +87,7 @@
       <div class="nev__main">
         <div class="nav__shop">
           <div class="nav__sidebar_button">
-            <img src="./assets/sidebarButton.svg" />
+            <img src="./assets/sidebar_button.svg" />
             <span>모두</span>
           </div>
           <div>모두</div>
@@ -93,12 +107,12 @@
       <div class="sidebar">
         <button class="sidebar__close-button">X</button>
         <div class="sidebar__header">
-          <img src="./assets/login_icon.svg" />
+          <img src="./assets/sidebar_header_icon.svg" />
           <span>안녕하세요, 로그인</span>
         </div>
         <section>
           <ul>
-            <li><div class="sidebar-menu">디지털 콘텐츠 및 기기</div></li>
+            <li><div class="sidebar__catogory-border">디지털 콘텐츠 및 기기</div></li>
             <li>
               <div>Amazon Music</div>
               <img src="./assets/arrow.svg" />
@@ -114,9 +128,9 @@
           </ul>
         </section>
         <section>
-          <hr class="sidebar-line" />
+          <hr class="sidebar__line" />
           <ul>
-            <li><div class="sidebar-menu">부서별 쇼핑</div></li>
+            <li><div class="sidebar__catogory-border">부서별 쇼핑</div></li>
             <li>
               <div>전자</div>
               <img src="./assets/arrow.svg" />
@@ -133,17 +147,17 @@
               <div>예술 및 공예</div>
               <img src="./assets/arrow.svg" />
             </li>
-            <div class="view-all-contents">
+            <div class="show__hidden-items">
               <li>
                 <div>모두 보기</div>
-                <img src="./assets/arrow-bottom.svg" />
+                <img src="./assets/arrow_down.svg" />
               </li>
             </div>
           </ul>
         </section>
-        <hr class="sidebar-line" />
-        <ul class="sidebar-other-contents">
-          <div class="quick-view"></div>
+        <hr class="sidebar__line" />
+        <ul class="sidebar__hidden-items">
+          <div class="quick__view"></div>
         </ul>
       </div>
     </aside>
