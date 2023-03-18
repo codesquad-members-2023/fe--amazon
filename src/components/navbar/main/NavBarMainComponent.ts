@@ -6,6 +6,7 @@ import { SymbolTextComponent } from '../SymbolTextComponent';
 import { NavBarMainComponentStyle } from '../../../../style/components/navbar/main/NavBarMainComponent.css';
 import { LoginPopComponent } from './LoginPopComponent';
 import { AddressPopComponent } from './AddressPopComponent';
+import { LoginPopSubComponent } from './LoginPopSubComponent';
 
 export class NavBarMainComponent extends BaseComponent<HTMLElement> {
   constructor() {
@@ -27,10 +28,20 @@ export class NavBarMainComponent extends BaseComponent<HTMLElement> {
     const login = new TwoRowTextComponent('안녕하세요, 로그인', '계정 및 목록');
     login.element.style.position = 'relative';
     const loginPop = new LoginPopComponent();
+    // 먼저 loginPop을 login.element에 붙여서 페이지를 그리고 나서
+    // load가 되고나서 opacity 1을 줘야 transition이 그 변경을 캐치하고 애니메이션 효과가 일어난다.
     loginPop.attachTo(login.element);
     window.addEventListener('load', () => {
       loginPop.element.style.opacity = '1';
     });
+    const loginPopSub = new LoginPopSubComponent();
+    login.element.addEventListener('mouseenter', () => {
+      loginPopSub.attachTo(login.element);
+    });
+    login.element.addEventListener('mouseleave', () => {
+      loginPopSub.removeFrom(login.element);
+    });
+
     const myPage = new TwoRowTextComponent('반품', '& 주문');
     const cart = new SymbolTextComponent('assets/nav-bar/cart.svg', '장바구니');
     cart.attachTo(this.element);
