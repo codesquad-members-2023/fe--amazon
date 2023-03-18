@@ -1,0 +1,16 @@
+@import './reset.css';
+@import './color.css';
+@import './typography.css';
+@import './global.css';
+
+#warp {
+  display: flex;
+  flex-direction: column;
+}
+
+#container {
+  width: 100%;
+  height: auto;
+  margin-top: calc(var(--nav-main-height) + var(--nav-sub-height));
+  overflow-x: hidden;
+}

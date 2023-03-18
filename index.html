@@ -3,22 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <title>Amazon Clone Project</title>
-    <link rel="stylesheet" type="text/css" href="src/styles/global.css" />
+    <link rel="stylesheet" type="text/css" href="src/styles/index.css" />
     <script type="module" src="src/components/index.js" defer></script>
-    <script type="module" src="src/scripts/index.js" defer></script>
+    <script type="module" src="src/service/index.js" defer></script>
   </head>
   <body>
     <div id="warp">
       <navbar-element></navbar-element>
-      <div id="container"></div>
+      <div id="container">
+        <slider-element></slider-element>
+        <div
+          style="
+            background-color: white;
+            width: 400px;
+            height: 200px;
+            margin: 0 auto;
+          "
+        ></div>
+      </div>
       <div id="footer"></div>
     </div>
   </body>
-
-  <style>
-    #warp {
-      display: flex;
-      flex-direction: column;
-    }
-  </style>
 </html>

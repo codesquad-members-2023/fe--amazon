@@ -1,3 +1,4 @@
-@import './reset.css';
-@import './color.css';
-@import './typography.css';
+:root {
+  --nav-main-height: 56px;
+  --nav-sub-height: 32px;
+}

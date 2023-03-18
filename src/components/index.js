@@ -1,27 +1,30 @@
-import Button from './Button.js';
-import Footer from './Footer.js';
-import Loading from './Loading.js';
-import Navbar from './NavBar.js';
-import MainMenu from './NavBar/MainMenu.js';
-import SubMenu from './NavBar/SubMenu.js';
-import Sidebar from './Sidebar.js';
-import Icon from './Icon.js';
-import Image from './Image.js';
-import TextInput from './TextInput.js';
-import Action from './Action.js';
-import LoginAction from './Action/LoginAction.js';
-import ChangeAdressAction from './Action/ChangeAddressAction.js';
-import Backdrop from './Backdrop.js';
-import SideBarBack from './Sidebar/SidebarSub/SidebarBack.js';
-import SidebarCategory from './Sidebar/SidebarCategory.js';
-import SidebarFold from './Sidebar/SidebarMain/SidebarFold.js';
-import SidebarUnfold from './Sidebar/SidebarMain/SidebarUnfold.js';
-import SidebarHeader from './Sidebar/SidebarHeader.js';
-import SideBarTitle from './Sidebar/SidebarTitle.js';
-import SidebarMain from './Sidebar/SidebarMain.js';
-import SidebarSub from './Sidebar/SidebarSub.js';
-import SidebarSubContent from './Sidebar/SidebarSub/SidebarSubContent.js';
-import SidebarMainSection from './Sidebar/SidebarMain/SidebarMainSection.js';
+import Button from './Button/Button.js';
+import Footer from './Footer/Footer.js';
+import Loading from './Loading/Loading.js';
+import Navbar from './NavBar/NavBar.js';
+import MainMenu from './NavBar/MainMenu/MainMenu.js';
+import SubMenu from './NavBar/SubMenu/SubMenu.js';
+import Sidebar from './Sidebar/Sidebar.js';
+import Icon from './Icon/Icon.js';
+import Image from './Image/Image.js';
+import TextInput from './TextInput/TextInput.js';
+import Action from './Action/Action.js';
+import LoginAction from './Action/LoginAction/LoginAction.js';
+import ChangeAdressAction from './Action/ChangeAddressAction/ChangeAddressAction.js';
+import Backdrop from './BackDrop/BackDrop.js';
+import SideBarBack from './Sidebar/SidebarSub/SidebarBack/SidebarBack.js';
+import SidebarCategory from './Sidebar/SidebarCategory/SidebarCategory.js';
+import SidebarFold from './Sidebar/SidebarMain/SidebarFold/SidebarFold.js';
+import SidebarUnfold from './Sidebar/SidebarMain/SidebarUnfold/SidebarUnfold.js';
+import SidebarHeader from './Sidebar/SidebarHeader/SidebarHeader.js';
+import SideBarTitle from './Sidebar/SidebarTitle/SidebarTitle.js';
+import SidebarMain from './Sidebar/SidebarMain/SidebarMain.js';
+import SidebarSub from './Sidebar/SidebarSub/SidebarSub.js';
+import SidebarSubContent from './Sidebar/SidebarSub/SidebarSubContent/SidebarSubContent.js';
+import SidebarMainSectionDefault from './Sidebar/SidebarMain/SidebarMainSection/SidebarMainSectionDefault/SidebarMainSectionDefault';
+import SidebarMainSectionWithFoldingBtn from './Sidebar/SidebarMain/SidebarMainSection/SidebarMainSectionWithFoldingBtn/SidebarMainSectionWithFoldingBtn.js';
+import Slider from './Slider/Slider.js';
+import SliderController from './Slider/SliderController/SliderController.js';
 
 customElements.define('btn-element', Button);
 customElements.define('footer-element', Footer);
@@ -46,4 +49,13 @@ customElements.define('sidebar-main-element', SidebarMain);
 customElements.define('sidebar-sub-element', SidebarSub);
 customElements.define('sidebar-unfold-element', SidebarUnfold);
 customElements.define('sidebar-sub-content-element', SidebarSubContent);
-customElements.define('sidebar-main-section-element', SidebarMainSection);
+customElements.define(
+  'sidebar-main-section-default-element',
+  SidebarMainSectionDefault
+);
+customElements.define(
+  'sidebar-main-section-with-folding-btn-element',
+  SidebarMainSectionWithFoldingBtn
+);
+customElements.define('slider-element', Slider);
+customElements.define('slider-controller-element', SliderController);
