@@ -190,8 +190,8 @@ body {
 
 .login_popup {
   top: 58px;
-  left: -125px;
-  width: 280px;
+  left: -130px;
+  width: 320px;
   height: 100px;
   padding: 16px;
 
@@ -207,7 +207,7 @@ body {
 
 .login_popup > .triangle {
   top: -12px;
-  left: 146px;
+  left: 156px;
 }
 
 @keyframes fadein {
@@ -231,11 +231,15 @@ body {
 }
 
 .login_detail > .login_popup {
+  height: 84px;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  height: 70px;
+
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-sm);
   padding-top: 0;
 }
 
@@ -264,7 +268,7 @@ body {
 
 .login_detail > .triangle {
   top: -12px;
-  left: 150px;
+  left: 156px;
 }
 
 .modal_box {

@@ -1,9 +1,7 @@
 const navBarEventHandler = () => {
   const $header = document.querySelector('header');
   const $addressContainer = document.querySelector('.address_container');
-  const $addressPopup = document.querySelector('.address_popup');
   const $loginContainer = document.querySelector('.login_container');
-  const $loginDetail = document.querySelector('.login_detail');
 
   $header.addEventListener('mouseenter', hidePopup);
   $addressContainer.addEventListener('mouseenter', popUpAddress);
@@ -15,7 +13,7 @@ const navBarEventHandler = () => {
 
 const hidePopup = () => {
   const $fadeInPopup = document.querySelector('.fade_in');
-  $fadeInPopup.classList.add('hidden');
+  return hide($fadeInPopup);
 }
 
 const popUpAddress = () => {
