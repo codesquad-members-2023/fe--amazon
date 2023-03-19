@@ -6,7 +6,6 @@
   width: 320px;
   height: 100%;
 
-  display: none;
   flex-direction: column;
 
   color: var(--color-black);

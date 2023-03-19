@@ -101,7 +101,7 @@ body {
   letter-spacing: var(--letter-spacing-3em);
 }
 
-.address_popup .btns {
+.address_popup > .btns {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;

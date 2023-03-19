@@ -1,100 +1,106 @@
 const sideBarEventHandler = () => {
   const $every = document.querySelector('.every');
   const $close = document.getElementById('side_bar_close');
-  const $modal_bg = document.querySelector('.modal_background');
-  const $view_all = document.getElementById('view_all');
-  const $view_simple = document.getElementById('view_simple');
-  const $side_container = document.querySelector('.side_container');
-  const $back_btn = document.getElementById('back_btn');
+  const $modalBackground = document.querySelector('.modal_background');
+  const $viewAll = document.getElementById('view_all');
+  const $viewSimple = document.getElementById('view_simple');
+  const $sideContainer = document.querySelector('.side_container');
+  const $backBtn = document.getElementById('back_btn');
 
   $every.addEventListener('click', openSideBar);
-
   $close.addEventListener('click', closeSideBar);
-  $modal_bg.addEventListener('click', closeSideBar);
+  $modalBackground.addEventListener('click', closeSideBar);
 
-  $view_all.addEventListener('click', toggleFoldContent);
-  $view_simple.addEventListener('click', toggleFoldContent);
+  $viewAll.addEventListener('click', toggleFoldContent);
+  $viewSimple.addEventListener('click', toggleFoldContent);
 
-  $side_container.addEventListener('click', insertDetailData);
-  $back_btn.addEventListener('click', clickBackBtnHandler);
+  $sideContainer.addEventListener('click', insertDetailDataHandler);
+  $backBtn.addEventListener('click', clickBackBtn);
 }
 
 // 사이드바 여는 함수
 const openSideBar = e => {
-  const $side_bar = document.querySelector('.side_bar');
-  const $modal_bg = document.querySelector('.modal_background');
+  const $sideBar = document.querySelector('.side_bar');
+  const $modalBackground = document.querySelector('.modal_background');
 
-  $side_bar.classList.add('slideRight');
-  $side_bar.classList.remove('slideLeft');
-  $side_bar.style.display = 'flex';
-  $modal_bg.classList.remove('hidden');
-  $modal_bg.style.zIndex = '1';
+  $sideBar.classList.add('slideRight');
+  $sideBar.classList.add('flex');
+  $sideBar.classList.add('hidden');
+  $sideBar.classList.remove('slideLeft');
+  $modalBackground.classList.remove('hidden');
+  $modalBackground.style.zIndex = '1';
 }
 
 // 사이드바 닫는 함수
 const closeSideBar = e => {
-  const $side_bar = document.querySelector('.side_bar');
-  const $modal_bg = document.querySelector('.modal_background');
+  const $sideBar = document.querySelector('.side_bar');
+  const $modalBackground = document.querySelector('.modal_background');
 
-  $side_bar.classList.add('slideLeft');
-  $side_bar.addEventListener('animationend', ({ animationName, target }) => {
+  $sideBar.classList.add('slideLeft');
+  $sideBar.addEventListener('animationend', ({ animationName, target }) => {
     if(animationName === 'slideLeft' && target.className.includes('side_bar')) {
-      $side_bar.style.display = 'none';
-      $side_bar.classList.remove('slideRight');
-      $modal_bg.classList.add('hidden');
-      $modal_bg.style.zIndex = 'inherit';
+      $sideBar.classList.add('hidden');
+      $sideBar.classList.remove('flex');
+      $sideBar.classList.remove('slideRight');
+      $modalBackground.classList.add('hidden');
+      $modalBackground.style.zIndex = 'inherit';
     }
   });
 }
 
 const toggleFoldContent = ({ target }) => {
-  const $fold_content = document.querySelector('.fold_content');
-  const $view_all = document.getElementById('view_all');
+  const $foldContent = document.querySelector('.fold_content');
+  const $viewAll = document.getElementById('view_all');
 
-  if ($fold_content.style.maxHeight || target.id === 'view_simple'){
-    $fold_content.style.maxHeight = null;
-    $view_all.lastElementChild.outerHTML = "<img src=\"/asset/images/vectors/Bottom.svg\">"
+  if ($foldContent.style.maxHeight || target.id === 'view_simple'){
+    $foldContent.style.maxHeight = null;
+    $viewAll.lastElementChild.outerHTML = "<img src=\"/asset/images/vectors/Bottom.svg\">"
   } else {
-    $view_all.lastElementChild.outerHTML = "<img src=\"/asset/images/vectors/Up.svg\">"
-    $fold_content.style.maxHeight = $fold_content.scrollHeight + "px";
+    $viewAll.lastElementChild.outerHTML = "<img src=\"/asset/images/vectors/Up.svg\">"
+    $foldContent.style.maxHeight = $foldContent.scrollHeight + "px";
   }
 }
 
-const insertDetailData = ({ target }) => {
+const insertDetailDataHandler = ({ target }) => {
   const isLI = target.closest('li');
   const isId = target.id !== 'view_all' && target.id !== 'view_simple';
 
-  if(!isLI) return;
-  const title = isLI.innerText;
-  const isTitle = SIDEBAR_DETAIL.hasOwnProperty(title);
-
-  if(isTitle && isId && isLI.tagName === 'LI') {
-    const $tab = document.querySelector('.tab_content');
-    const $fold_detail = document.querySelector('.fold_detail');
-
-    const sideBardata = SIDEBAR_DETAIL[title];
-    const text = sideBardata.reduce((acc, cur) => {
-      acc += `<li>${cur}</li>`;
-      return acc;
-    }, `<h3>${title}</h3><ul>`) + `</ul>` ;
-
-    $tab.insertAdjacentHTML('beforeend', text);
-    $fold_detail.classList.remove('slideLeft');
-    $fold_detail.classList.remove('hidden');
-    $fold_detail.classList.add('slideRight');
+  if(!isLI || !isId) return;
+  if(isLI.tagName === 'LI') {
+    const title = isLI.innerText;
+    const isTitle = SIDEBAR_DETAIL.hasOwnProperty(title);
+    if(!isTitle) return;
+    insertDetailData(title);
   }
 }
 
-const clickBackBtnHandler = e => {
+const insertDetailData = title => {
+  const $tab = document.querySelector('.tab_content');
+  const $foldDetail = document.querySelector('.fold_detail');
+
+  const sideBarData = SIDEBAR_DETAIL[title];
+  const dataLI = sideBarData.reduce((list, data) => {
+    list += `<li>${data}</li>`;
+    return list;
+  }, `<h3>${title}</h3><ul>`) + `</ul>`;
+
+  $tab.insertAdjacentHTML('beforeend', dataLI);
+  $foldDetail.classList.remove('slideLeft');
+  $foldDetail.classList.remove('hidden');
+  $foldDetail.classList.add('slideRight');
+}
+
+const clickBackBtn = e => {
   const $tab = document.querySelector('.tab_content');
   if ($tab.hasChildNodes()) $tab.replaceChildren();
 
-  const $fold_detail = document.querySelector('.fold_detail');
-  $fold_detail.classList.remove('slideRight');
-  $fold_detail.classList.add('slideLeft');
-  $fold_detail.addEventListener('animationend', ({ animationName, target }) => {
-    if(animationName === 'slideLeft' && target.className.includes('fold_detail')) {
-      $fold_detail.classList.add('hidden');
+  const $foldDetail = document.querySelector('.fold_detail');
+  $foldDetail.classList.remove('slideRight');
+  $foldDetail.classList.add('slideLeft');
+  $foldDetail.addEventListener('animationend', ({ animationName, target }) => {
+    if(animationName === 'slideLeft' &&
+    target.className.includes('fold_detail')) {
+      $foldDetail.classList.add('hidden');
     }
   });
 }
