@@ -20,7 +20,12 @@ export class NavBarMainComponent extends BaseComponent<HTMLElement> {
     const shippingAddress = new TwoRowTextComponent('배송처', '대한민국');
     shippingAddress.element.style.position = 'relative';
     const addressPop = new AddressPopComponent();
-    addressPop.attachTo(shippingAddress.element);
+    shippingAddress.element.addEventListener('mouseenter', () => {
+      addressPop.attachTo(shippingAddress.element);
+    });
+    shippingAddress.element.addEventListener('mouseleave', () => {
+      addressPop.removeFrom(shippingAddress.element);
+    });
 
     const searchBar = new SearchBarComponent();
     const nation = new SymbolTextComponent('assets/nav-bar/flag-un.svg', 'UN');
