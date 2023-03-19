@@ -1,6 +1,7 @@
 import { BaseComponent } from '../Base';
 import { SideBarComponentStyle } from '../../../style/components/sidebar/SideBarComponent.css';
 import { SymbolTextComponent } from '../navbar/SymbolTextComponent';
+import { CategoryComponent } from './CategoryComponent';
 
 export class SideBarComponent extends BaseComponent<HTMLElement> {
   constructor() {
@@ -14,5 +15,7 @@ export class SideBarComponent extends BaseComponent<HTMLElement> {
     titleUser.element.style.width = '100%';
     titleUser.element.style.height = '3.25rem';
     titleUser.attachTo(this.element);
+    const test = new CategoryComponent('테스트', 'sub');
+    test.attachTo(this.element);
   }
 }
