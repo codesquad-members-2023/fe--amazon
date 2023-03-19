@@ -5,14 +5,14 @@ const sectionViewInit = () => {
   const loginSection = document.querySelector(".section__login");
   const loginSectionDetail = document.querySelector(".section__login2");
 
-  const dimmDivIndex2 = document.querySelector(".dimmed--zIndex2");
+  const dimmForHeader = document.querySelector(".dimm--header");
 
-  const loginUiLazyTime = 1000;
+  const loginUILazyTime = 1000;
 
   setTimeout(function () {
     loginSection.classList.add("visible");
     loginSection.classList.remove("hidden");
-  }, loginUiLazyTime);
+  }, loginUILazyTime);
 
   const removeLoginSection = () => {
     loginSection.classList.remove("visible");
@@ -21,12 +21,12 @@ const sectionViewInit = () => {
 
   const showLoginSectionDetail = () => {
     loginSectionDetail.style.display = "flex";
-    dimmDivIndex2.classList.remove("hidden");
+    dimmForHeader.classList.remove("hidden");
   };
 
   const hiddenLoginSectionDetail = () => {
     loginSectionDetail.style.display = "none";
-    dimmDivIndex2.classList.add("hidden");
+    dimmForHeader.classList.add("hidden");
   };
 
   // 최초 1회 보이는 로그인 센션 제거
@@ -39,11 +39,11 @@ const sectionViewInit = () => {
   loginSectionDetail.addEventListener("mouseout", hiddenLoginSectionDetail);
 
   const showLocationSectionDetail = () => {
-    dimmDivIndex2.classList.remove("hidden");
+    dimmForHeader.classList.remove("hidden");
   };
 
   const hiddenLocationSectionDetail = () => {
-    dimmDivIndex2.classList.add("hidden");
+    dimmForHeader.classList.add("hidden");
   };
 
   // 로케이선 호버 이벤트 리스트
