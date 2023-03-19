@@ -8,11 +8,11 @@ const closeSidebarDetail = () => {
 
     if (liEventTarget) {
       const backButtons = document.querySelectorAll(".homeSidebar__mode--back");
-      const seltedBtn = [...backButtons].find((button) => {
+      const selected = [...backButtons].find((button) => {
         return button.contains(event.target);
       });
 
-      if (seltedBtn && liEventTarget.className === seltedBtn.className) {
+      if (selected && liEventTarget.className === selected.className) {
         sidebarlists.classList.add("hideSidebarDetailAnimation");
         sidebarlists.classList.remove("none");
         thisElement.classList.remove("show", "showSidebarDetailAnimation");
