@@ -1,4 +1,4 @@
-const SIDEBAR_DETAIL = {
+export const SUB_SIDEBAR_DATA = {
   '음악 스트리밍': [
     'Amazon Music Unlimited',
     'Amazon Music HD',
@@ -272,7 +272,7 @@ const SIDEBAR_DETAIL = {
     '파충류 및 양서류',
     '소형 동물',
   ],
-  소프트웨어: [
+  '소프트웨어': [
     '회계 및 재무',
     '안티바이러스 및 보안',
     '기업 및 사무소',
