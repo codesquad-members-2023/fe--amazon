@@ -1,7 +1,6 @@
-import { BaseComponent } from '../../Base';
-import { SymbolComponent } from '../../basic/SymbolComponent';
-import { SideBarComponentStyle } from '../../../../style/components/sidebar/main/SideBarComponent.css';
-import { SymbolTextComponent } from '../../navbar/SymbolTextComponent';
+import { BaseComponent } from '../Base';
+import { SideBarComponentStyle } from '../../../style/components/sidebar/SideBarComponent.css';
+import { SymbolTextComponent } from '../navbar/SymbolTextComponent';
 
 export class SideBarComponent extends BaseComponent<HTMLElement> {
   constructor() {
