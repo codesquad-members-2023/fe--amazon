@@ -3,7 +3,7 @@
   position: relative;
 }
 
-.showDetail {
+.show {
   display: block;
 }
 
@@ -15,24 +15,28 @@
   animation: showSidebarDetailSoft 0.5s ease-out forwards;
 }
 
-.hideSidebarDetailAnimation {
-  animation: hideSidebarDetailSoft 0.5s ease-in forwards;
-}
-
 @keyframes showSidebarDetailSoft {
   from {
+    opacity: 0;
     transform: translateX(100%);
   }
   to {
+    opacity: 1;
     transform: translateX(0);
   }
 }
 
+.hideSidebarDetailAnimation {
+  animation: hideSidebarDetailSoft 0.5s ease-out forwards;
+}
+
 @keyframes hideSidebarDetailSoft {
   from {
+    opacity: 0;
     transform: translateX(-100%);
   }
   to {
+    opacity: 1;
     transform: translateX(0);
   }
 }

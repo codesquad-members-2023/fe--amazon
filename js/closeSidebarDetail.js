@@ -13,20 +13,14 @@ const closeSidebarDetail = () => {
       });
 
       if (seltedBtn && liEventTarget.className === seltedBtn.className) {
-        thisElement.classList.add("hideSidebarDetailAnimation");
-        thisElement.classList.remove(
-          "showDetail",
-          "showSidebarDetailAnimation"
-        );
-        setTimeout(() => {
-          thisElement.classList.remove("hideSidebarDetailAnimation");
-          sidebarlists.classList.remove("none");
-        }, 500); // 500ms = 0.5s (애니메이션 지속 시간과 동일한 값으로 설정)
-      } else return;
+        sidebarlists.classList.add("hideSidebarDetailAnimation");
+        sidebarlists.classList.remove("none");
+        thisElement.classList.remove("show", "showSidebarDetailAnimation");
+        thisElement.classList.remove("hideSidebarDetailAnimation");
+      }
     }
   };
 
   sidebar.addEventListener("click", selectListInSidebarDeail);
 };
-
 closeSidebarDetail();

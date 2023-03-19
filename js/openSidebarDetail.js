@@ -18,7 +18,7 @@ const openSidebarDetail = () => {
 
     // 숨겨진 ul중에서 클릭된 li의 columns과 같은 ul을 찾는다.
     if (columnNumber === elementColumns) {
-      element.classList.add("showDetail", "showSidebarDetailAnimation");
+      element.classList.add("show", "showSidebarDetailAnimation");
       sidebarLists.classList.add("none");
     }
   };
