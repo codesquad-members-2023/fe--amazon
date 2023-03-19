@@ -99,10 +99,8 @@ const createSidebarSubmenuFragment = (title, submenu) => {
   return submenuContainer;
 };
 
-// sidebar의 submenu를 동작하는 함수
-const sidebarActiveSubmenuHandler = (e) => {
-  const { className, id, innerText } = e.target;
-
+// sidebar의 submenu 동작하는 함수
+const sidebarActiveSubmenuHandler = ({ target: { className, id, innerText } }) => {
   if (className.indexOf('non') !== -1) return;
 
   if (className.indexOf('list') !== -1) {
