@@ -1,13 +1,13 @@
 const sidebar = {
-  sidebarActivateButton: document.querySelector('.sidebar_active_button'),
-  sidebar: document.querySelector('.sidebar'),
-  sidebarInactivateButton: document.querySelector('.sidebar_close_icon'),
-  sidebarLists: document.querySelectorAll('.sidebar_lists'),
-  sidebarMain: document.querySelector('.sidebar_main'),
-  showExtraSidebarListButton: document.querySelector('.sidebar_list_unfold'),
-  extraSidebarList: document.querySelector('.sidebar_extra_list_items'),
-  extraSidebarListItem: document.querySelectorAll('.sidebar_extra_list_item'),
-  hideExtraSidebarListButton: document.querySelector('.sidebar_list_fold'),
+  container: document.querySelector('.sidebar'),
+  ActivateButton: document.querySelector('.sidebar_active_button'),
+  InactivateButton: document.querySelector('.sidebar_close_icon'),
+  Lists: document.querySelectorAll('.sidebar_lists'),
+  Main: document.querySelector('.sidebar_main'),
+  showExtraListButton: document.querySelector('.sidebar_list_unfold'),
+  extraList: document.querySelector('.sidebar_extra_list_items'),
+  extraListItem: document.querySelectorAll('.sidebar_extra_list_item'),
+  hideExtraListButton: document.querySelector('.sidebar_list_fold'),
 };
 
 export { sidebar };

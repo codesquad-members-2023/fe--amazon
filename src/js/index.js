@@ -27,41 +27,41 @@ const showShippingLayer = () => {
 };
 
 const activeSidebarHandler = () => {
-  sidebar.sidebar.classList.add('active');
-  sidebar.sidebarInactivateButton.classList.add('active');
+  sidebar.container.classList.add('active');
+  sidebar.InactivateButton.classList.add('active');
   header.loginPopup.classList.add('hidden');
   dimmed.MainIncludingHeader.classList.remove('hidden');
 };
 
 const inactiveSidebarHandler = () => {
-  sidebar.sidebar.classList.remove('active');
-  sidebar.sidebarInactivateButton.classList.remove('active');
+  sidebar.container.classList.remove('active');
+  sidebar.InactivateButton.classList.remove('active');
   dimmed.MainIncludingHeader.classList.add('hidden');
 };
 
-const showHiddenSidebarList = () => {
+const showExtraSidebarList = () => {
   const delayTime = 30;
-  sidebar.extraSidebarList.classList.add('show');
-  sidebar.extraSidebarListItem.forEach((item, index) => {
+  sidebar.extraList.classList.add('show');
+  sidebar.extraListItem.forEach((item, index) => {
     setTimeout(() => {
       item.classList.add('show');
     }, index * delayTime);
   });
 };
 
-const hideHiddenSidebarList = () => {
+const hideExtraSidebarList = () => {
   const delayTime = 30;
-  sidebar.extraSidebarListItem.forEach((item, index) => {
+  sidebar.extraListItem.forEach((item, index) => {
     setTimeout(() => {
       item.classList.remove('show');
-    }, (sidebar.extraSidebarListItem.length - index) * delayTime);
+    }, (sidebar.extraListItem.length - index) * delayTime);
   });
 };
 
 const sidebarInactiveSubmenuHandler = () => {
   const submenu = document.querySelector('.submenu');
   submenu.remove();
-  sidebar.sidebarMain.classList.remove('slide');
+  sidebar.Main.classList.remove('slide');
 };
 
 // sidebar의 submenu html 구조를 만드는 함수
@@ -110,8 +110,8 @@ const sidebarActiveSubmenuHandler = (e) => {
     const submenuList = sidebarDetail[id];
     const submenu = createSidebarSubmenuFragment(submenuTitle, submenuList);
 
-    sidebar.sidebarMain.classList.add('slide');
-    sidebar.sidebarMain.insertAdjacentElement('beforebegin', submenu);
+    sidebar.Main.classList.add('slide');
+    sidebar.Main.insertAdjacentElement('beforebegin', submenu);
   }
 };
 
@@ -124,11 +124,11 @@ const main = () => {
   header.loginSection.addEventListener('mouseleave', hideLayer);
   header.shippingContainer.addEventListener('mouseenter', showShippingLayer);
   header.shippingSection.addEventListener('mouseleave', hideLayer);
-  sidebar.sidebarActivateButton.addEventListener('click', activeSidebarHandler);
-  sidebar.sidebarInactivateButton.addEventListener('click', inactiveSidebarHandler);
-  sidebar.showExtraSidebarListButton.addEventListener('click', showHiddenSidebarList);
-  sidebar.hideExtraSidebarListButton.addEventListener('click', hideHiddenSidebarList);
-  sidebar.sidebarMain.addEventListener('click', sidebarActiveSubmenuHandler);
+  sidebar.ActivateButton.addEventListener('click', activeSidebarHandler);
+  sidebar.InactivateButton.addEventListener('click', inactiveSidebarHandler);
+  sidebar.showExtraListButton.addEventListener('click', showExtraSidebarList);
+  sidebar.hideExtraListButton.addEventListener('click', hideExtraSidebarList);
+  sidebar.Main.addEventListener('click', sidebarActiveSubmenuHandler);
 };
 
 main();
