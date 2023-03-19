@@ -21,7 +21,7 @@ body {
   display: none;
 }
 
-.modal_btn {
+.modal-btn {
   background: linear-gradient(174.6deg, #ffffff 4.31%, #fed15f 50.01%, #febe30 95.71%);
 
   display: flex;
@@ -36,7 +36,7 @@ body {
   cursor: pointer;
 }
 
-.dim_cover {
+.dim-cover {
   position: fixed;
   top: 0;
   left: 0;
@@ -46,9 +46,9 @@ body {
   opacity: 0.6;
   background-color: black;
 }
-.dim_cover_in_sideBar {
+.dim-cover__in-sideBar {
   z-index: 3;
 }
-.dim_cover_in_header {
+.dim-cover__in-header {
   z-index: 1;
 }

@@ -1,4 +1,4 @@
-@keyframes open_side_bar {
+@keyframes open_side-bar {
   from {
     left: -374px;
   }
@@ -6,7 +6,7 @@
     left: 0;
   }
 }
-@keyframes close_side_bar {
+@keyframes close_side-bar {
   from {
     left: 0;
   }
@@ -15,14 +15,14 @@
   }
 }
 
-.open_side_bar {
-  animation: open_side_bar 1s ease-in-out forwards;
+.open_side-bar {
+  animation: open_side-bar 1s ease-in-out forwards;
 }
-.close_side_bar {
-  animation: close_side_bar 1s ease-in-out forwards;
+.close_side-bar {
+  animation: close_side-bar 1s ease-in-out forwards;
 }
 
-.close_side_bar_btn {
+.side-bar__close-btn {
   position: absolute;
   width: 24px;
   height: 24px;
@@ -30,7 +30,7 @@
   top: 8px;
 }
 
-.side_bar {
+.side-bar {
   width: 320px;
   height: 100%;
   position: fixed;
@@ -38,7 +38,7 @@
   left: -374px;
   z-index: 4;
 }
-.side_bar_main {
+.side-bar__main {
   width: 320px;
   height: 100%;
   background-color: #ffffff;
@@ -47,11 +47,11 @@
   overflow-y: scroll;
 }
 
-.side_bar_main_header {
+.side-bar__main-header {
   height: 53px;
   padding: 16px 16px 16px 32px;
 }
-.side_bar_main li {
+.side-bar__main li {
   height: 40px;
   padding: 8px 16px 8px 32px;
 
@@ -63,56 +63,56 @@
 }
 
 /* 사이드바 아이콘 */
-.right_arrow_icon {
+.right-arrow-icon {
   display: inline-block;
   width: 8px;
   height: 12px;
   background-size: cover;
   background-image: url('../image/rightArrow.svg');
 }
-.bottom_arrow_icon,
-.up_arrow_icon {
+.bottom-arrow-icon,
+.up-arrow-icon {
   display: inline-block;
   margin-left: 10px;
   width: 12px;
   height: 8px;
   background-size: cover;
 }
-.bottom_arrow_icon {
+.bottom-arrow-icon {
   background-image: url('../image/bottomArrow.svg');
 }
-.up_arrow_icon {
+.up-arrow-icon {
   background-image: url('../image/upArrow.svg');
 }
 
-.side_bar_main li:hover {
+.side-bar__main li:hover {
   background: #eff2f2;
 }
-.side_bar_main li:hover .right_arrow_icon {
+.side-bar__main li:hover .right-arrow-icon {
   background-image: url('../image/rightArrowBlack.svg');
 }
-.side_bar_main li:hover .bottom_arrow_icon {
+.side-bar__main li:hover .bottom-arrow-icon {
   background-image: url('../image/bottomArrowBlack.svg');
 }
-.side_bar_main li:hover .up_arrow_icon {
+.side-bar__main li:hover .up-arrow-icon {
   background-image: url('../image/upArrowBlack.svg');
 }
 
-.side_bar_login {
+.side-bar__login {
   background-color: #10141a;
   color: #ffffff;
 }
 
-.shopping_category_list li:last-child,
-.expanded_shopping_category_list li:last-child {
+.shopping-category__list li:last-child,
+.shopping-category__expanded-list li:last-child {
   justify-content: start;
 }
-.shopping_category_list li:last-child img,
-.expanded_shopping_category_list li:last-child img {
+.shopping-category__list li:last-child img,
+.shopping-category__expanded-list li:last-child img {
   margin-left: 10px;
 }
 
-.expanded_shopping_category_list {
+.shopping-category__expanded-list {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.6s ease-out;
