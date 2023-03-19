@@ -1,6 +1,7 @@
 import { NavBarMainComponent } from './components/navbar/main/NavBarMainComponent';
 import { NavBarSubComponent } from './components/navbar/sub/NavBarSubComponent';
 import $ from './utils/$';
+import { SideBarComponent } from './components/sidebar/main/SideBarComponent';
 
 class App {
   constructor(appRoot: HTMLElement) {
@@ -8,6 +9,8 @@ class App {
     navBarMain.attachTo(appRoot);
     const navBarSub = new NavBarSubComponent();
     navBarSub.attachTo(appRoot, 'beforeend');
+    const sideBar = new SideBarComponent();
+    sideBar.attachTo(appRoot, 'beforeend');
   }
 }
 
