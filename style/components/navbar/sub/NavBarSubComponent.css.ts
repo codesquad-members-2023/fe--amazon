@@ -10,4 +10,6 @@ export const NavBarSubComponentStyle = style({
   padding: '0 1rem',
   backgroundColor: 'var(--color-gray-900)',
   gap: '1rem',
+  position: 'relative',
+  zIndex: 1,
 });

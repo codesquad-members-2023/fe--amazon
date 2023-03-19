@@ -14,4 +14,5 @@ export const LoginPopSubComponentStyle = style({
   top: '8rem',
   left: '-10rem',
   transition: 'opacity 1s ease-in 1s',
+  zIndex: 3,
 });

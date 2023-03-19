@@ -7,6 +7,7 @@ import { NavBarMainComponentStyle } from '../../../../style/components/navbar/ma
 import { LoginPopComponent } from './LoginPopComponent';
 import { AddressPopComponent } from './AddressPopComponent';
 import { LoginPopSubComponent } from './LoginPopSubComponent';
+import { DimLayerComponent } from '../../layer/DimLayerComponent';
 
 export class NavBarMainComponent extends BaseComponent<HTMLElement> {
   constructor() {
@@ -16,15 +17,20 @@ export class NavBarMainComponent extends BaseComponent<HTMLElement> {
       '6rem',
       '2.5rem',
     );
+    const dimLayer = new DimLayerComponent();
+    dimLayer.attachTo(document.querySelector('#app')! as HTMLElement);
 
     const shippingAddress = new TwoRowTextComponent('배송처', '대한민국');
     shippingAddress.element.style.position = 'relative';
+
     const addressPop = new AddressPopComponent();
     shippingAddress.element.addEventListener('mouseenter', () => {
       addressPop.attachTo(shippingAddress.element);
+      dimLayer.on();
     });
     shippingAddress.element.addEventListener('mouseleave', () => {
       addressPop.removeFrom(shippingAddress.element);
+      dimLayer.off();
     });
 
     const searchBar = new SearchBarComponent();
@@ -42,9 +48,11 @@ export class NavBarMainComponent extends BaseComponent<HTMLElement> {
     const loginPopSub = new LoginPopSubComponent();
     login.element.addEventListener('mouseenter', () => {
       loginPopSub.attachTo(login.element);
+      dimLayer.on();
     });
     login.element.addEventListener('mouseleave', () => {
       loginPopSub.removeFrom(login.element);
+      dimLayer.off();
     });
 
     const myPage = new TwoRowTextComponent('반품', '& 주문');

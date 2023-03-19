@@ -9,4 +9,6 @@ export const NavBarMainComponentStyle = style({
   height: '3.5rem',
   padding: '.5rem 1rem',
   backgroundColor: 'var(--color-black)',
+  position: 'relative',
+  zIndex: 2,
 });

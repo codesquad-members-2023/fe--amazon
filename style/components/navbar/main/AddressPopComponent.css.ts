@@ -14,4 +14,5 @@ export const AddressPopComponentStyle = style({
   top: '2.5rem',
   left: '0rem',
   gap: '1rem',
+  zIndex: 3,
 });
