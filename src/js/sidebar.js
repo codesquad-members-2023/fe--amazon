@@ -41,7 +41,6 @@ const sidebarInactiveSubmenuHandler = () => {
   sidebar.Main.classList.remove('slide');
 };
 
-// sidebar의 submenu html 구조를 만드는 함수
 const createSidebarSubmenuFragment = (title, submenu) => {
   const submenuContainer = document.createElement('div');
   const backButtonSection = document.createElement('div');
@@ -76,9 +75,8 @@ const createSidebarSubmenuFragment = (title, submenu) => {
   return submenuContainer;
 };
 
-// sidebar의 submenu 동작하는 함수
 const sidebarActiveSubmenuHandler = ({ target: { className, id, innerText } }) => {
-  if (className.indexOf('non') !== -1) return;
+  if (className.indexOf('non_submenu') !== -1 || className.indexOf('title') !== -1) return;
 
   if (className.indexOf('list') !== -1) {
     const submenuTitle = innerText;
