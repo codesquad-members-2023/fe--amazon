@@ -1,7 +1,7 @@
-import { header } from './header_module.js';
-import { sidebar } from './sidebar_module.js';
-import { global } from './amazon_module.js';
-import { sidebarDetail } from './sidebar_submenu_dataset.js';
+import { header } from './headerElement.js';
+import { sidebar } from './sidebarElement.js';
+import { dimmed } from './dimmedElement.js';
+import { sidebarDetail } from './sidebarSubmenuDataset.js';
 
 const showLoginInitLayer = () => {
   header.loginPopup.classList.remove('hidden');
@@ -11,32 +11,32 @@ const showLoginExtendedLayer = () => {
   header.loginPopup.classList.remove('hidden');
   header.dividingLine.classList.remove('hidden');
   header.loginListContainer.classList.remove('hidden');
-  global.dimmedSection.classList.remove('hidden');
+  dimmed.MainExceptHeader.classList.remove('hidden');
 };
 
 const hideLayer = () => {
   header.loginPopup.classList.add('hidden');
   header.shippingPopup.classList.add('hidden');
-  global.dimmedSection.classList.add('hidden');
+  dimmed.MainExceptHeader.classList.add('hidden');
 };
 
 const showShippingLayer = () => {
   header.shippingPopup.classList.remove('hidden');
   header.loginPopup.classList.add('hidden');
-  global.dimmedSection.classList.remove('hidden');
+  dimmed.MainExceptHeader.classList.remove('hidden');
 };
 
 const activeSidebarHandler = () => {
   sidebar.sidebar.classList.add('active');
   sidebar.sidebarInactivateButton.classList.add('active');
   header.loginPopup.classList.add('hidden');
-  global.dimmedSection.classList.remove('hidden');
+  dimmed.MainIncludingHeader.classList.remove('hidden');
 };
 
 const inactiveSidebarHandler = () => {
   sidebar.sidebar.classList.remove('active');
   sidebar.sidebarInactivateButton.classList.remove('active');
-  global.dimmedSection.classList.add('hidden');
+  dimmed.MainIncludingHeader.classList.add('hidden');
 };
 
 const showHiddenSidebarList = () => {
@@ -47,7 +47,6 @@ const showHiddenSidebarList = () => {
       item.classList.add('show');
     }, index * delayTime);
   });
-  global.dimmedSection.classList.remove('hidden');
 };
 
 const hideHiddenSidebarList = () => {

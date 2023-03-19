@@ -1,5 +1,5 @@
-const global = {
-  dimmedMainExceptHeader: document.querySelector('.main_except_header'),
-  dimmedMainIncludingHeader: document.querySelector('.main_including_header'),
+const dimmed = {
+  MainExceptHeader: document.querySelector('.main_except_header'),
+  MainIncludingHeader: document.querySelector('.main_including_header'),
 };
-export { global };
+export { dimmed };

@@ -1,5 +1,5 @@
-/* @import 'reset.css'; */
 @import 'fonts.css';
+@import 'root.css';
 
 * {
   margin: 0;
@@ -11,32 +11,12 @@ li {
   list-style: none;
 }
 
-:root {
-  --color-white: #ffffff;
-  --color-gray100: #eff2f2;
-  --color-gray200: #e5e9e9;
-  --color-gray300: #dce0e0;
-  --color-gray400: #d5d5d5;
-  --color-gray500: #c1c1c1;
-  --color-gray600: #878787;
-  --color-gray700: #535353;
-  --color-gray800: #2a3648;
-  --color-gray900: #1b232f;
-  --color-black: #10141a;
-  --color-black40: #10141acc;
-  --color-primaryYellow100: #fed15f;
-  --color-primaryYellow200: #febe30;
-  --color-primaryYellow300: #de9408;
-  --color-primaryOrange100: #fcb057;
-  --color-primaryOrange200: #ff9900;
-  --color-secondaryPurple: #941387;
-  --color-secondaryNavy: #074099;
-  --color-secondaryGreen: #0c5e72;
-}
-
 .header {
+  position: relative;
   background-color: var(--color-black);
   color: var(--color-white);
+  /* z-index: 2; */
+  z-index: var(--z-index-header);
 }
 
 /* header 중 main css */
@@ -107,7 +87,8 @@ li {
   border-radius: 4px;
   color: var(--color-black);
   background-color: var(--color-white);
-  z-index: 2;
+  /* z-index: 2; */
+  z-index: var(--z-index-header-modal);
 }
 
 .shipping_pop-up_triangle {
@@ -118,7 +99,7 @@ li {
 
 .shipping_pop-up_contents_text {
   display: block;
-  font-family: 'Pretendard';
+  font-family: 'Pretendard', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 11px;
@@ -163,7 +144,8 @@ li {
   gap: 8px;
   border-radius: 4px;
   background-color: var(--color-white);
-  z-index: 2;
+  /* z-index: 2; */
+  z-index: var(--z-index-header-modal);
 }
 
 .pop-up_triangle {
@@ -273,6 +255,7 @@ li {
 
 .hidden {
   display: none;
+  /* visibility: hidden; */
 }
 
 .header_href {
@@ -325,17 +308,20 @@ li {
 
 /* dimmed 처리 css*/
 
-.main {
-  position: relative;
-  height: 100vh;
-}
-
-.main_dimmed {
-  position: absolute;
+.dimmed {
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+}
+
+.dimmed.main_except_header {
+  z-index: var(--z-index-main-except-header);
+}
+
+.dimmed.main_including_header {
+  z-index: var(--z-index-main-including-header);
 }
 
 /* sidebar css*/
@@ -351,8 +337,8 @@ li {
   left: -320px;
 
   background-color: var(--color-white);
-  z-index: 3;
-  transition: left 0.5s ease-in-out;
+  z-index: var(--z-index-sidebar);
+  transition: left 0.3s ease-in-out;
 }
 
 .sidebar.active {
@@ -390,7 +376,7 @@ li {
   align-items: center;
   height: 48px;
   font-size: 13px;
-  padding: 8px 16px 8px 32px;
+  padding: 8px 29px 8px 32px;
 }
 
 .sidebar_list:hover,
@@ -404,25 +390,27 @@ li {
 }
 
 .sidebar_list_unfold {
-  width: 120px;
+  width: 320px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .sidebar_list_unfold_icon {
   width: 11px;
   height: 11px;
+  margin-left: 10px;
 }
 
 .sidebar_close_icon {
   position: fixed;
   top: 18px;
   left: -24px;
-
-  z-index: 3;
-  transition: left 0.5s ease-in-out;
+  transition: left 0.3s ease-in-out;
 }
 
 .sidebar_close_icon.active {
   left: 344px;
+  z-index: var(--z-index-sidebar);
 }
 
 .sidebar_dividing_line {
@@ -460,12 +448,15 @@ li {
 }
 
 .sidebar_list_fold {
-  width: 130px;
+  width: 320px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .sidebar_list_fold_icon {
   width: 11px;
   height: 11px;
+  margin-left: 10px;
 }
 
 /* sidebar submenu css*/
@@ -506,10 +497,12 @@ li {
 .sidebar_main.slide {
   position: absolute;
   left: -320px;
+  opacity: 0;
 }
 
 .sidebar_main {
   position: absolute;
   left: 0;
-  transition: left 250ms ease-in-out;
+  opacity: 1;
+  transition: all 250ms ease-in-out;
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/style.css" />
     <title>Poco-Amazon</title>
   </head>
-  <body>
+  <body class="body">
     <header class="header">
       <!-- header 내부 header_main -->
       <div class="header_main">
@@ -285,9 +285,8 @@
         <img src="assets/images/close.svg" class="sidebar_close_icon" />
       </div>
     </aside>
-    <main class="main">
-      <div class="main_dimmed hidden"></div>
-    </main>
+    <div class="dimmed main_except_header hidden"></div>
+    <div class="dimmed main_including_header hidden"></div>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>
