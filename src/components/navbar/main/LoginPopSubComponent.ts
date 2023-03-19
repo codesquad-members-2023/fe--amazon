@@ -8,7 +8,12 @@ export class LoginPopSubComponent extends BaseComponent<HTMLElement> {
   constructor() {
     super(`<section class='${LoginPopSubComponentStyle}'></section>`);
 
-    const leftContainer = new FlexContainerComponent('column', 'flex-start');
+    const leftContainer = new FlexContainerComponent(
+      'column',
+      'flex-start',
+      '',
+      '.5rem',
+    );
     leftContainer.element.style.height = '100%';
     const leftTitle = new TextComponent(
       '귀하의 목록',
@@ -32,7 +37,12 @@ export class LoginPopSubComponent extends BaseComponent<HTMLElement> {
       'var(--font-sm)',
     );
 
-    const rightContainer = new FlexContainerComponent('column', 'flex-start');
+    const rightContainer = new FlexContainerComponent(
+      'column',
+      'flex-start',
+      '',
+      '.5rem',
+    );
     rightContainer.element.style.height = '100%';
     const rightTitle = new TextComponent(
       '계정',
