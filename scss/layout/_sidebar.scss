@@ -132,9 +132,10 @@
 
 .sidebar_hidden_menus {
   position: relative;
+  height: 0;
   display: block;
   overflow: hidden;
-  height: 0;
+
   transition: height 0.5s ease;
 }
 

@@ -233,6 +233,7 @@ nav {
   opacity: 0;
   animation: appearAnimation 1s forwards;
   animation-delay: 1s;
+  z-index: 9;
 }
 
 .hover_login_modal {

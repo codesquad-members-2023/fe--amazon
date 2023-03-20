@@ -62,6 +62,11 @@ body {
   font-family: 'Pretendard';
   position: relative; }
 
+main {
+  position: fixed;
+  top: 104px;
+  z-index: -1; }
+
 button {
   cursor: pointer;
   border: none;
@@ -388,7 +393,8 @@ nav {
 .login {
   opacity: 0;
   animation: appearAnimation 1s forwards;
-  animation-delay: 1s; }
+  animation-delay: 1s;
+  z-index: 9; }
 
 .hover_login_modal {
   display: none; }
@@ -623,9 +629,9 @@ nav {
 
 .sidebar_hidden_menus {
   position: relative;
+  height: 0;
   display: block;
   overflow: hidden;
-  height: 0;
   transition: height 0.5s ease; }
 
 .hidden_menus_appear {
