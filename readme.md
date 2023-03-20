@@ -42,19 +42,40 @@
 
 ### DOM, Event 제어
 
-- [ ] Template Literal 문법 공부하기.
-- [ ] createElement, appendChild, insertBefore 메서드 공부
-- [ ] event 객체에 대한 공부
-- [ ] 이벤트 버블링
-- [ ] 이벤트 캡쳐링
-- [ ] event 위임
+- [x] Template Literal 문법 공부하기.
+- [x] createElement, appendChild, insertBefore 메서드 공부
+- [x] event 객체에 대한 공부
+- [x] 이벤트 버블링
+- [x] 이벤트 캡쳐링
+- [x] event 위임
 
 ### 프로토타입
 
-- [ ] native 객체(Array, Function, Number, Sttring…)에서 프로토타입을 어떻게 활용하는지에 대한 공부
+- [x] native 객체(Array, Function, Number, Sttring…)에서 프로토타입을 어떻게 활용하는지에 대한 공부
 
 ### Scope
 
-- [ ] 함수가 실행될때 scope가 어떻게 형성되는지 알아보기
-- [ ] scope chain 공부
+- [x] 함수가 실행될때 scope가 어떻게 형성되는지 알아보기
+- [x] scope chain 공부
 - [ ] closure 개념 공부.
+
+# 3주차 체크리스트
+
+### CSS 전처리기(Preprocessor) 활용
+
+- [ ] SASS란?
+- [ ] SASS 변수 사용
+- [ ] SASS 중첩 사용
+- [ ] SASS `@mixin` 지시어
+
+### 캐로셀(Carouseol) - 무한 슬라이더
+
+- [ ] 애니메이션이란?
+- [ ] VSync,
+- [ ] JS 애니메이션
+
+### JS에서의 OOP
+
+- [ ] OOP의 기본 개념들 학습
+- [ ] Class에 대한 학습
+- [ ] Prototype에 대한 학습
