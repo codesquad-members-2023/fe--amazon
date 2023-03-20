@@ -643,3 +643,16 @@ main {
   background-image: url(../../asset/main_image1.jpg);
   background-size: contain;
   background-repeat: no-repeat; }
+
+.carousel_buttons {
+  display: flex;
+  justify-content: space-between; }
+
+.carousel_button {
+  padding-top: 86px; }
+
+.carousel_left {
+  padding-left: 80px; }
+
+.carousel_right {
+  padding-right: 80px; }

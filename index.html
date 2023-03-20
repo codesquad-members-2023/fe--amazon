@@ -481,7 +481,24 @@
 
     <main>
       <!-- 메인 뷰 -->
-      <!-- <img id="mainImage" src="asset/main_image1.jpg" /> -->
+      <section class="carousel">
+        <section class="carousel_buttons">
+          <div class="carousel_button carousel_left">
+            <a href="#">
+              <img src="asset/LeftButton.svg" />
+            </a>
+          </div>
+          <div class="carousel_button carousel_right">
+            <a href="#">
+              <img src="asset/RightButton.svg" />
+            </a>
+          </div>
+        </section>
+
+        <section class="carousel_window">
+          <ul class="carousel_container"></ul>
+        </section>
+      </section>
     </main>
 
     <footer>
@@ -492,4 +509,5 @@
   <script src="js/sidebarEvent.js"></script>
   <script src="data/sidebarData.js" type="module"></script>
   <script src="js/sidebarMoveEvent.js" type="module"></script>
+  <script src="js/carousel.js"></script>
 </html>
