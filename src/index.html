@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/style.css" />
     <title>Poco-Amazon</title>
   </head>
-  <body>
+  <body class="body">
     <header class="header">
       <!-- header 내부 header_main -->
       <div class="header_main">
@@ -174,9 +174,12 @@
             예술 및 공예
             <img src="assets/images/button=sidebarList.svg" class="sidebar_list_icon" />
           </li>
-          <li class="sidebar_list sidebar_list_unfold sidebar_non_submenu">
+          <li class="sidebar_list sidebar_extra_list_unfold sidebar_non_submenu">
             모두 보기
-            <img src="assets/images/button=sidebarUnfold.svg" class="sidebar_list_unfold_icon" />
+            <img
+              src="assets/images/button=sidebarUnfold.svg"
+              class="sidebar_extra_list_unfold_icon"
+            />
           </li>
         </ul>
         <div class="sidebar_dividing_line"></div>
@@ -274,9 +277,12 @@
                 class="sidebar_list_icon"
               />
             </li>
-            <li class="sidebar_extra_list_item sidebar_list_fold sidebar_non_submenu">
+            <li class="sidebar_extra_list_item sidebar_extra_list_fold sidebar_non_submenu">
               간단히 보기
-              <img src="assets/images/button=sidebarListFold.svg" class="sidebar_list_fold_icon" />
+              <img
+                src="assets/images/button=sidebarListFold.svg"
+                class="sidebar_extra_list_fold_icon"
+              />
             </li>
           </ul>
         </div>
@@ -285,9 +291,8 @@
         <img src="assets/images/close.svg" class="sidebar_close_icon" />
       </div>
     </aside>
-    <main class="main">
-      <div class="main_dimmed hidden"></div>
-    </main>
+    <div class="dimmed main_except_header hidden"></div>
+    <div class="dimmed main_including_header hidden"></div>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>
