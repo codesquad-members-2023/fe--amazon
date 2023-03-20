@@ -63,6 +63,8 @@ body {
   position: relative; }
 
 main {
+  width: 1300px;
+  height: 100%;
   position: fixed;
   top: 104px;
   z-index: -1; }
@@ -636,3 +638,8 @@ nav {
 
 .hidden_menus_appear {
   height: 100%; }
+
+main {
+  background-image: url(../../asset/main_image1.jpg);
+  background-size: contain;
+  background-repeat: no-repeat; }
