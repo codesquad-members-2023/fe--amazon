@@ -5,7 +5,8 @@ export const MainCategoryBundleStyle = style({
   flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  width: '20rem',
+  width: '100%',
   height: 'auto',
   backgroundColor: 'var(--color-white)',
+  paddingTop: '1rem',
 });

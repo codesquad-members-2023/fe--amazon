@@ -22,5 +22,15 @@ export class SideBarComponent extends BaseComponent<HTMLElement> {
       const mainCategoryBundle = new MainCategoryBundle(i);
       mainCategoryBundle.attachTo(this.element, 'beforeend');
     });
+
+    const allShow = new CategoryComponent(
+      '모두 보기',
+      'main',
+      'assets/left-sidebar/chevron-down.svg',
+    );
+    allShow.element.style.justifyContent = 'flex-start';
+    allShow.element.style.gap = '1rem';
+
+    allShow.attachTo(this.element, 'beforeend');
   }
 }
