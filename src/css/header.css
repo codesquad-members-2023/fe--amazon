@@ -16,42 +16,15 @@
 
 /* * nav 상단 */
 #nav-main {
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
+  padding: 0 1rem;
 
-  width: 100%;
-  height: 56px;
+  height: 3.5rem;
 
   background-color: #10141a;
 }
-#nav-main > div,
-#nav-main #amazon-icon,
-#nav-main .nav-main__search-form {
-  margin: 0 10px;
-}
-#nav-main > div {
-  height: 100%;
-}
-
-/* nav 상단 글씨 색깔 */
-.nav-main__top-text {
-  color: #d5d5d5;
-}
-.nav-main__bottom-text {
-  color: #ffffff;
-}
 
 /* nav 상단 flex */
-.nav-main__shipping-address,
-.shipping-address__section,
-.nav-main__login,
-.nav-main__my-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
+#nav-main,
 .shipping-address__top,
 .nav-main__search-form,
 .search-form__btn,
@@ -61,6 +34,33 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+.nav-main__shipping-address,
+.shipping-address__section,
+.nav-main__login,
+.login__section,
+.nav-main__my-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#amazon-icon,
+.nav-main__item,
+.nav-main__search-form {
+  margin: 0 10px;
+}
+.nav-main__item {
+  height: 100%;
+}
+
+/* nav 상단 글씨 색깔 */
+.nav-main__top-text {
+  color: #d5d5d5;
+}
+.nav-main__bottom-text {
+  color: #ffffff;
 }
 
 /* * 개별 css 속성 */
@@ -112,10 +112,6 @@
 .nav-main__login {
   position: relative;
 }
-.login__section {
-  display: flex;
-  flex-direction: column;
-}
 
 .nav-main__cart > img {
   width: 24px;
@@ -133,29 +129,29 @@
 }
 
 /* nav 하단 글씨 */
-#nav-sub a,
-.side-bar-btn {
-  color: #ffffff;
-}
-.nav-sub__left-text {
+#nav-sub {
   /* 글씨체 type에 없는 속성값을 가지기 때문에 따로 지정 */
   font-weight: 600;
   font-size: 13px;
 }
+#nav-sub a,
+.side-bar-btn {
+  color: #ffffff;
+}
 
 /* nav 하단 flex */
-#nav-sub {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav-sub__left-btns,
+#nav-sub,
 .side-bar-btn {
   display: flex;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 /* 개별 css 속성 */
+#nav-sub a,
+.side-bar-btn {
+  padding: 8px;
+}
 .nav-sub__left-btns .side-bar-btn,
 .nav-sub__left-btns > a {
   margin-right: 20px;
@@ -166,4 +162,7 @@
   height: 16px;
 
   margin-right: 5px;
+}
+.nav-sub__right-btn {
+  margin-left: auto;
 }
