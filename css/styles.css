@@ -10,7 +10,7 @@
 
 /* SCREENS */
 @import "screens/dimmed.css";
-@import "screens/main.css";
+@import "scss/screens/banner-style.css";
 
 body {
   font-family: "Kanit", sans-serif;

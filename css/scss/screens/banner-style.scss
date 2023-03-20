@@ -1,0 +1,9 @@
+$card-width: 1500px;
+$card-height: 600px;
+
+.banner__card {
+  width: $card-width;
+  height: $card-height;
+  display: flex;
+  margin: auto;
+}
