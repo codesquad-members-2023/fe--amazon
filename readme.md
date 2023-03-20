@@ -179,10 +179,10 @@ div {
 - [x] sidebar
   - [x] 항목 접기/펼치기
   - [x] 하위 메뉴 영역 노출
-- [ ] `리팩토링`(변수명, 함수 분리 등)
+- [x] `리팩토링`(변수명, 함수 분리 등)
   - [x] css 파일 분리
-  - [ ] class component
-  - [ ] vanilla extract 사용해보기
+  - [x] class component
+  - [x] vanilla extract 사용해보기
 
 ## 🌳 Jayden's Record
 
@@ -249,3 +249,59 @@ div {
 - [stopPropagation vs preventDefault](https://ismydream.tistory.com/98)
 - [Git stash](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Stashing%EA%B3%BC-Cleaning)
 - [템플릿 엔진](https://velog.io/@hi_potato/Template-Engine-Template-Engine)
+
+# 🪴 Jayden's Week-03
+
+- `23.03.20(Mon) ~ 23.03.24(Fri)`
+
+## 🌵 Jayden's Keyword
+
+- 애니메이션 원리
+- 레이아웃, 페인트, 컴포지트
+- Sass
+- 캐로셀(무한 슬라이드)
+- OOP
+
+## 🌴 Jayden's Rule
+
+- CSS 전처리기가 무엇인지 확실히 공부하자
+- Sass, Scss에 대해서 깊이 있게 공부하고 무조건 쓰는 게 좋은건지 의문을 갖자
+- 브라우저가 html, css, js를 읽고 페이지를 그리기까지의 과정을 설명할 수 있을 정도로 깊게 알기
+- 프론트엔드에게 있어 OOP는 어떻게 사용하면 될지 고민해보기
+- 무한 슬라이드가 되는 캐로셀 구현하기
+
+## 🌾 Jayden's Learning Plan
+
+- Mon: 학습 계획 작성 및 개념 공부 정리, 저번주 못한 부분 최대한 마무리
+- Tue: 최대한 리펙토링할 수 있는 코드 리펙토링해보자
+- Wed: 캐로셀에 대해 공부하고 일단 유한한 캐로셀 구현하기
+- Thu: 무한 슬라이드로 캐로셀 구현해보기
+- Fri: 개념 복습 및 못다한 구현, 코드 정리
+
+## 🌲 Jayden's Check List
+
+- [x] readme 작성하기
+- [ ] 학습 내용 정리 및 개념 공부
+  - [x] Sass
+  - [x] 애니메이션
+  - [x] 웹 페이지 렌더링 과정
+  - [ ] 프론트엔드의 OOP 그리고 prototype
+  - [ ] 캐로셀 + 무한 슬라이드
+- [ ] 지난번 못다한 내용
+  - [ ] 사이드바 완성
+  - [ ] 애니메이션 처리
+  - [ ] 구현 시각적인 부분 디테일 살리기
+- [ ] 캐로셀 구현
+  - [ ] 유한 슬라이드
+  - [ ] 무한 슬라이드
+
+## 🌳 Jayden's Record
+
+### CSS Preprocessor
+
+- 작성 예정
+
+## 🪵 Reference
+
+- [Sass, Scss](https://www.biew.co.kr/entry/Sass%E3%86%8DSCSS-%EC%86%94%EC%A7%81%ED%95%9C-%EC%9E%A5%E3%86%8D%EB%8B%A8%EC%A0%90-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95)
+- [브라우저에서 페이지를 렌더링하는 방식](https://ajdkfl6445.gitbook.io/study/web/browser-rendering)

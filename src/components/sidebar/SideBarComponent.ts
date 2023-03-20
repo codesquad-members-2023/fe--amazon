@@ -15,7 +15,7 @@ export class SideBarComponent extends BaseComponent<HTMLElement> {
     titleUser.element.style.width = '100%';
     titleUser.element.style.height = '3.25rem';
     titleUser.attachTo(this.element);
-    const test = new CategoryComponent('테스트', 'sub');
+    const test = new CategoryComponent('테스트');
     test.attachTo(this.element);
   }
 }
