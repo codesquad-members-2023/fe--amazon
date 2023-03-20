@@ -1,16 +1,11 @@
 import { style } from '@vanilla-extract/css';
 
-export const SideBarComponentStyle = style({
+export const MainCategoryBundleStyle = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'center',
   width: '20rem',
-  height: '100%',
+  height: 'auto',
   backgroundColor: 'var(--color-white)',
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  zIndex: 3,
-  overflow: 'auto',
 });

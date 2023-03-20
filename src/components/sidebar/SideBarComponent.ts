@@ -2,6 +2,8 @@ import { BaseComponent } from '../Base';
 import { SideBarComponentStyle } from '../../../style/components/sidebar/SideBarComponent.css';
 import { SymbolTextComponent } from '../navbar/SymbolTextComponent';
 import { CategoryComponent } from './CategoryComponent';
+import { menus } from '../../data/menu';
+import { MainCategoryBundle } from './main/MainCategoryBundle';
 
 export class SideBarComponent extends BaseComponent<HTMLElement> {
   constructor() {
@@ -13,9 +15,12 @@ export class SideBarComponent extends BaseComponent<HTMLElement> {
     );
     titleUser.element.style.backgroundColor = 'var(--color-black)';
     titleUser.element.style.width = '100%';
-    titleUser.element.style.height = '3.25rem';
+    titleUser.element.style.minHeight = '3.25rem';
+
     titleUser.attachTo(this.element);
-    const test = new CategoryComponent('테스트');
-    test.attachTo(this.element);
+    menus.forEach((_, i) => {
+      const mainCategoryBundle = new MainCategoryBundle(i);
+      mainCategoryBundle.attachTo(this.element, 'beforeend');
+    });
   }
 }

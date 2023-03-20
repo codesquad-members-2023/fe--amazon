@@ -305,3 +305,4 @@ div {
 
 - [Sass, Scss](https://www.biew.co.kr/entry/Sass%E3%86%8DSCSS-%EC%86%94%EC%A7%81%ED%95%9C-%EC%9E%A5%E3%86%8D%EB%8B%A8%EC%A0%90-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95)
 - [브라우저에서 페이지를 렌더링하는 방식](https://ajdkfl6445.gitbook.io/study/web/browser-rendering)
+- [window.requestAnimationFrame()](https://developer.mozilla.org/ko/docs/Web/API/window/requestAnimationFrame)
