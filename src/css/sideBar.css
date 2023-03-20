@@ -1,27 +1,3 @@
-@keyframes open_side-bar {
-  from {
-    left: -374px;
-  }
-  to {
-    left: 0;
-  }
-}
-@keyframes close_side-bar {
-  from {
-    left: 0;
-  }
-  to {
-    left: -374px;
-  }
-}
-
-.open_side-bar {
-  animation: open_side-bar 1s ease-in-out forwards;
-}
-.close_side-bar {
-  animation: close_side-bar 1s ease-in-out forwards;
-}
-
 .side-bar__close-btn {
   position: absolute;
   width: 24px;
@@ -37,7 +13,13 @@
   top: 0;
   left: -374px;
   z-index: 4;
+  transition: all 1s ease-in-out;
 }
+
+.open {
+  left: 0;
+}
+
 .side-bar__main {
   width: 320px;
   height: 100%;
