@@ -229,16 +229,6 @@ nav {
   }
 }
 
-@keyframes appearAnimation {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 .login {
   opacity: 0;
   animation: appearAnimation 1s forwards;

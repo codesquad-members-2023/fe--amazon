@@ -97,30 +97,6 @@
   z-index: 101;
 }
 
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateZ(0);
-  }
-}
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 1;
-    transform: translateZ(0);
-  }
-
-  to {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
 .sidebar_section_list li:hover,
 .sidebar_detail_back_button:hover,
 .sidebar_hidden_menus li:hover {
@@ -134,18 +110,6 @@
   display: none;
   top: 53px;
   position: absolute;
-}
-
-@keyframes fadeInDetail {
-  0% {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateZ(0);
-  }
 }
 
 .sidebar_detail_back_button {
@@ -162,52 +126,8 @@
   }
 }
 
-@keyframes appearDetail {
-  from {
-    left: 330px;
-  }
-
-  to {
-    left: 0;
-  }
-}
-
-@keyframes hideDetail {
-  from {
-    left: -330px;
-  }
-
-  to {
-    left: 0;
-  }
-}
-
 .sidebar_main_section {
   position: relative;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0.5;
-    height: 0;
-  }
-
-  to {
-    opacity: 1;
-    height: 100%;
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 1;
-    height: 100%;
-  }
-
-  100% {
-    opacity: 0.7;
-    height: 0%;
-  }
 }
 
 .sidebar_hidden_menus {

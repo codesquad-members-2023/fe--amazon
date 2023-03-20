@@ -1,6 +1,6 @@
 {
   "type": "module",
   "scripts": {
-    "scss": "node-sass scss/styles.scss css/style.css -w"
+    "scss": "node-sass scss/main.scss css/style.css -w"
   }
 }
