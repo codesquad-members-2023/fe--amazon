@@ -18,19 +18,12 @@ export class SideBarComponent extends BaseComponent<HTMLElement> {
     titleUser.element.style.minHeight = '3.25rem';
 
     titleUser.attachTo(this.element);
-    menus.forEach((_, i) => {
-      const mainCategoryBundle = new MainCategoryBundle(i);
+    menus.forEach((_, i, array) => {
+      const mainCategoryBundle = new MainCategoryBundle(
+        i,
+        array.length - 1 === i,
+      );
       mainCategoryBundle.attachTo(this.element, 'beforeend');
     });
-
-    const allShow = new CategoryComponent(
-      '모두 보기',
-      'main',
-      'assets/left-sidebar/chevron-down.svg',
-    );
-    allShow.element.style.justifyContent = 'flex-start';
-    allShow.element.style.gap = '1rem';
-
-    allShow.attachTo(this.element, 'beforeend');
   }
 }
