@@ -29,7 +29,8 @@ class SidebarMain extends HTMLElement {
       SIDEBAR_CATEGORY_HEIGHT * (menus[1].categories.length - FOLD_THRESHOLD) +
       SIDEBAR_FOLDING_BTN_HEIGHT;
 
-    this.shadowRoot.append(sidebarMainStyle.call(this, foldingListHeight));
+    const style = sidebarMainStyle.call(this, foldingListHeight);
+    this.shadowRoot.append(style);
   }
 
   createTitle(parent, text) {

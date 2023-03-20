@@ -41,14 +41,15 @@
   - [x] SidebarSub 를 열 때 스크롤 때문에 애니메이션이 어색해보이는 버그 해결
 
 - [ ] Sidebar 이미 꺼낸 것은 다시 렌더링하지 않도록 쌓아두기
-- [X] 메인 콘텐츠 슬라이드 작업
+- [x] 메인 콘텐츠 슬라이드 작업
 - [ ] Search 작업
 
 # 3주차
+
 - [ ] 리팩토링
-  - [ ] Icon 생성자 줄이기
-  - [ ] Icon 로딩 영역 다른 방법 생각해보기
-  - [ ] this.append(sidebarMainSectionStyle.call(this, id, foldingListHeight)); 부분 변수로 변경
+  - [x] Icon 생성자 줄이기
+  - [x] Icon 로딩 영역 다른 방법 생각해보기
+  - [x] this.append(sidebarMainSectionStyle.call(this, id, foldingListHeight)); 부분 변수로 변경
   - [ ] SidebarMainSectionDefault.js - section/data 변수명 구체적으로 변경
   - [ ] slider.js - light, right 처리 과정 중복 처리
   - [ ] setInterval 문제점 찾아보기
@@ -64,8 +65,7 @@
 - [ ] Footer 추가하기
 
 # 4주차
+
 - [ ] Search 작업
 - [ ] Sidebar 이미 꺼낸 것은 다시 렌더링하지 않도록 쌓아두기
 - [ ] Sidebar 경계선에 border 추가
-
-

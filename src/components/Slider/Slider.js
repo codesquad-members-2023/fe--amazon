@@ -48,7 +48,8 @@ class Slider extends HTMLElement {
     middleSlide.previousElementSibling.classList.add('left');
     middleSlide.nextElementSibling.classList.add('right');
 
-    this.shadowRoot.append(sliderStyle.call(this));
+    const style = sliderStyle.call(this);
+    this.shadowRoot.append(style);
   }
 }
 

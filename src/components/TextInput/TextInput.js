@@ -14,7 +14,8 @@ class TextInput extends HTMLElement {
       <button><icon-element name="search"></icon-element></button>
     `;
 
-    this.shadowRoot.append(textinputStyle.call(this));
+    const style = textinputStyle.call(this);
+    this.shadowRoot.append(style);
   }
 }
 

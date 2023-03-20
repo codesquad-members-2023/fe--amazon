@@ -11,7 +11,8 @@ class SliderController extends HTMLElement {
       <div class="controller"></div>
     `;
 
-    this.shadowRoot.append(sliderControllerStyle.call(this, position));
+    const style = sliderControllerStyle.call(this, position);
+    this.shadowRoot.append(style);
   }
 }
 

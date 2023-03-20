@@ -7,7 +7,8 @@ class SidebarUnfold extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
 
     shadow.innerHTML = `<button>간단히 보기<icon-element name="chevron-down"></icon-element></button>`;
-    this.shadowRoot.append(sidebarUnfoldStyle.call(this));
+    const style = sidebarUnfoldStyle.call(this);
+    this.shadowRoot.append(style);
   }
 }
 

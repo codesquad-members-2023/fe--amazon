@@ -27,7 +27,8 @@ class SidebarSub extends HTMLElement {
         .join('')}
     `;
 
-    this.shadowRoot.append(sidebarSubContentStyle.call(this));
+    const style = sidebarSubContentStyle.call(this);
+    this.shadowRoot.append(style);
   }
 }
 

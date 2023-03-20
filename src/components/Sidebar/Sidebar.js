@@ -17,7 +17,9 @@ class Sidebar extends HTMLElement {
       </div>
       <backdrop-element></backdrop-element>
     `;
-    this.shadowRoot.append(sidebarStyle.call(this));
+
+    const style = sidebarStyle.call(this);
+    this.shadowRoot.append(style);
   }
 
   showSidebar() {

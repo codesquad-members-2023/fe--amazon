@@ -30,7 +30,8 @@ class SidebarMainSectionDefault extends SidebarMainSection {
       SIDEBAR_FOLDING_BTN_HEIGHT;
 
     this.append(section);
-    this.append(sidebarMainSectionStyle.call(this, id, foldingListHeight));
+    const style = sidebarMainSectionStyle.call(this, id, foldingListHeight);
+    this.append(style);
   }
 }
 
