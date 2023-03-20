@@ -10,18 +10,20 @@ class SidebarMainSectionWithFoldingBtn extends SidebarMainSection {
   constructor() {
     super();
 
-    const section = document.createElement('section');
-    const data = JSON.parse(decodeURIComponent(this.getAttribute('data')));
-    const id = data.id;
-    section.id = id;
-
-    const menuDefault = data.categories.slice(0, FOLD_THRESHOLD);
-    const menuOverflowed = data.categories.slice(
-      FOLD_THRESHOLD,
-      data.categories.length
+    const hostElement = document.createElement('section');
+    const categoryData = JSON.parse(
+      decodeURIComponent(this.getAttribute('data-category'))
     );
-    section.innerHTML = `
-    <sidebar-title-element>${data.title}</sidebar-title-element>
+    const id = categoryData.id;
+    hostElement.id = id;
+
+    const menuDefault = categoryData.categories.slice(0, FOLD_THRESHOLD);
+    const menuOverflowed = categoryData.categories.slice(
+      FOLD_THRESHOLD,
+      categoryData.categories.length
+    );
+    hostElement.innerHTML = `
+    <sidebar-title-element>${categoryData.title}</sidebar-title-element>
     ${menuDefault
       .map((category) => {
         return `<sidebar-category-element id=${category.id}>${category.name}</sidebar-category-element>`;
@@ -40,12 +42,12 @@ class SidebarMainSectionWithFoldingBtn extends SidebarMainSection {
       </div>
     `;
 
-    const categoryLength = data.categories.length;
+    const categoryLength = categoryData.categories.length;
     const foldingListHeight =
       SIDEBAR_CATEGORY_HEIGHT * (categoryLength - FOLD_THRESHOLD) +
       SIDEBAR_FOLDING_BTN_HEIGHT;
 
-    this.append(section);
+    this.append(hostElement);
     const style = sidebarMainSectionStyle.call(this, id, foldingListHeight);
     this.append(style);
   }

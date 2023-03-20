@@ -15,12 +15,12 @@ class SidebarMain extends HTMLElement {
     shadow.innerHTML = `
       ${menus
         .map((menu) => {
-          const data = encodeURIComponent(JSON.stringify(menu));
+          const categoryData = encodeURIComponent(JSON.stringify(menu));
           const isOverflowed = menu.categories.length > FOLD_THRESHOLD;
           if (isOverflowed) {
-            return `<sidebar-main-section-with-folding-btn-element data=${data}></sidebar-main-section-with-folding-btn-element>`;
+            return `<sidebar-main-section-with-folding-btn-element data-category=${categoryData}></sidebar-main-section-with-folding-btn-element>`;
           }
-          return `<sidebar-main-section-default-element data=${data}></sidebar-main-section-default-element>`;
+          return `<sidebar-main-section-default-element data-category=${categoryData}></sidebar-main-section-default-element>`;
         })
         .join('')}
     `;

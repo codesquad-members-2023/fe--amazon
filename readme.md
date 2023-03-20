@@ -50,7 +50,7 @@
   - [x] Icon 생성자 줄이기
   - [x] Icon 로딩 영역 다른 방법 생각해보기
   - [x] this.append(sidebarMainSectionStyle.call(this, id, foldingListHeight)); 부분 변수로 변경
-  - [ ] SidebarMainSectionDefault.js - section/data 변수명 구체적으로 변경
+  - [x] SidebarMainSectionDefault.js - section/data 변수명 구체적으로 변경
   - [ ] slider.js - light, right 처리 과정 중복 처리
   - [ ] setInterval 문제점 찾아보기
   - [ ] prototype 방식의 객체 표현 방식을 1개 이상 구현해보기
