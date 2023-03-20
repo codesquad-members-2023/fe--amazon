@@ -6,9 +6,12 @@
 - 주차별 학습계획
   - [Week1 - header 영역, sidebar 영역구현](#week1---header-영역-구현)
   - [Week2 - sidebar 동적 기능 개발](#week2---아마존2-sidebar-레이아웃--애니매이션-구현)
+  - [Week3 - Carousel UX](#week3---carousel-ux)
 - 주차별 마스터 피드백 및 회고
-  - [Week1 - midpoint](#1주차-midpoint)
-  - [Week1 - final](#1주차-final)
+  - [Week1 - midpoint](#roundpushpin-1주차-midpoint)
+  - [Week1 - final](#roundpushpin-1주차-final)
+  - [Week2 - midpint](#roundpushpin-2주차-midpoint)
+  - [Week2 - final](#roundpushpin-2주차-final)
 
 ---
 
@@ -99,7 +102,7 @@
   - [x] : font style 변수화 및 적용
   - [x] : 클래스명 점검
 
-# :two: 화요일 학습계획 
+#### :two: 화요일 학습계획 
 
 - [x] : header 영역 레이아웃 변경, js 코드 리팩토링
   - [x] : header 영역 불필요한 태그 삭제
@@ -108,12 +111,12 @@
   - [x] : header 영역 버튼 요소에 hover 적용 - border 라인
   - [x] : header, sidebar 영역 관련 js 코드 전체적으로 리팩토링 진행
 
-# :three: 수요일 학습계획 
+#### :three: 수요일 학습계획 
 
 - [x] : js prototype, scope 개념 공부
 - [x] : header 영역 js 및 css 오류 해결
 
-# :four: 목요일 학습계획
+#### :four: 목요일 학습계획
 
 - [ ] : 리팩토링
   - [ ] : js 코드 무거운 함수들 기능별로 나누기
@@ -125,19 +128,54 @@
   - [x] : sub menu list css 속성 수정
   - [x] : dimlayer 상황별 z-index 부여
 
-# :five: 금요일 학습계획
+#### :five: 금요일 학습계획
 
-- [ ] : 리팩토링
+- [x] : 리팩토링
   - [ ] : js 파일에서 노드의 속성 값을 직접적으로 할당하는 기능 수정
     - [ ] : classList 활용 - js 의존성 고려
-  - [ ] : 함수 기능별로 분리 - 함수명만 보고 이 함수가 어떤 역할하는지 알 수 있게 수정해보기
+  - [x] : 함수 기능별로 분리 - 함수명만 보고 이 함수가 어떤 역할하는지 알 수 있게 수정해보기
 - [ ] : sidebar css 오류 수정
 
 ---
 
+### Week3 - Carousel UX
+
+#### :one: 월요일 학습계획
+
+- [ ] : 리뷰 기반 리팩토링 진행
+  - [ ] : 함수 내에 if문으로 조건체크한 부분들 개선 해보기.
+  - [ ] : login1, login2 클래스명 변경하기
+  - [ ] : Array.from 간단히 표현하는 방법 찾아보고 바꿔보기
+  - [ ] : openSubMenu함수 로직 개선해보기.
+- [ ] : Sass 개념 공부하기
+
+#### :two: 화요일 학습계획
+
+- [ ] : 리팩토링 진행
+  - [ ] : 로직 개선, 불필요한 중복 줄이기
+- [ ] : Sass 개념 공부 + 코드에 적용해보기
+
+#### :three: 수요일 학습계획
+
+- [ ] : 루카스 OOP 파트 학습 및 적용
+
+#### :four: 목요일 학습계획
+
+- [ ] : midpoint 리뷰 기반 리팩토링 진행
+- [ ] : 루카스 웹 애니메이션 파트 개념 학습
+- [ ] : 랜더링 - templete literal 개념 학습
+- [ ] : 캐로셀 구현 원리 학습 및 적용
+  - [ ] : 유한 슬라이더 혹은 무한 슬라이더 구현
+
+#### :five: 금요일 학습계획
+
+- [ ] : 랜더링 - templete literal 개념 코드에 적용해보기
+- [ ] : 슬라이더 이어서 구현
+
+
 ## 주차별 피드백 및 회고
 
-### 1주차 Midpoint
+### :round_pushpin: 1주차 Midpoint
 
 **피드백**
 
@@ -157,7 +195,7 @@ absolute 속성을 이해해보고, 이를 대체할 속성을 학습해보자. 
 - html 각각의 tag의 class 명이 일관된 룰 안에서 작성되지 못 했다.
 - css 리팩을 여러 방식으로 할 수 있지 않을까? css font 스타일 변수화도 시도해보고 다른 방법이 있을지 더 검색해봐야겠다.
 
-### 1주차 Final
+### :round_pushpin: 1주차 Final
 
 **피드백**
 
@@ -173,7 +211,7 @@ js 코드에서 변수들을 전역에 놓지 말고, 함수와 클래스를 활
 
 계획 후 실행의 중요성을 뼈저리게 느꼈던 한 주다. 미션 수행에 급급하다보니, 코드를 구현하고 나서 다시 여러가지 변수로 인해 코드를 수정하는 일이 자주 발생했다. 앞으로는 어느정도 틀을 잡아 놓고 코드 구현을 진행할 예정이다.
 
-### 2주차 피드백 Midpoint
+### :round_pushpin: 2주차 Midpoint
 
 > 이 정도 함수는 비교적 너무 크긴해요. 더 작은 부분으로 분리해보면 좋겠네요. 어떤 부분을 분리할지 생각해보세요.  
 
@@ -221,3 +259,36 @@ const findSiblingForward = (node, targetNode) => {
 ```
 
 결론. 다음 부터 이런 유틸 함수를 구현하기 전에, 원하는 기능이 이미 구현되어 있나 잘 알아보자.
+
+### :round_pushpin: 2주차 Final
+
+```js
+const displayLocationModal = (element, target, dimLayer) => {
+  if(element === 'location') {
+```
+
+> element 체크가 꼭 필요한지 생각해보기  
+> 체크를 이 함수안에서 해야하는게 좋을까? 이함수를 호출하는 쪽에서 하는게 좋을까?  
+> if(element !== 'locatin') 으로 체크하면 코드가 어떻게 변하는가?  
+
+```js
+findSiblingForward(target, 'modal__login1').style.display = 'none';
+findSiblingForward(target, 'modal__login2').style.display = 'block';
+```
+
+> login1,2 보다 의미있는 이름이면 더 좋을듯.
+
+```js
+unfoldMenu(name, target);
+foldMenu(name, target);
+```
+
+> 코드 읽을때 약간 이해는 안가요.  
+> unfold 그 다음 fold? 왜 이러지하고요.
+
+```js
+const openSubMenu = (parent, element, target) => {
+```
+
+> 나중에 시간되면 openSubMenu 를 어떻게 개선할지? 한번 고민해보세요.  
+> selector 가 복잡해보여서 로직이 좀 복잡해보이고요, 그렇다고 아주 긴 함수는 아는것 같고요.
