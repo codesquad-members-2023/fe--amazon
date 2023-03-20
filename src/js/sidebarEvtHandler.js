@@ -14,65 +14,50 @@ const sideBarOpenBtnEvtHandler = (sideBarLayer, dimLayer) => {
   const sideBarOpenBtn = document.querySelector(".nav-bottom__category.select-all");
   sideBarOpenBtn.addEventListener('click', () => {
     sideBarLayer.style['animation-name'] = 'slideRightWard';
-    dimLayer.style.display = 'block';
-    dimLayer.style['z-index'] = '2';
+    dimLayer.classList.add('dim__sidebar');
   });
 }
 
 const addsideBarClickEvt = (sideBarLayer, dimLayer) => {
   sideBarLayer.addEventListener('click', ({ target, currentTarget }) => {
-    const [parent, element, name] = target.className.split(" ");
-    
-    closeSideBar(parent, currentTarget, dimLayer);
-    unfoldMenu(name, target);
-    foldMenu(name, target);
-    openSubMenu(parent, element, target);
-    closeSubMenu(name, target)
+    if(findUpWard(target, '.sidebar__closeBtn--container')) closeSideBar(currentTarget, dimLayer, target);
+    if(findUpWard(target, '.sidebar__contents.btn.showall')) unfoldMenu(target);
+    if(findUpWard(target, '.sidebar__contents.btn.closeall')) foldMenu(target);
+    if(findUpWard(target, '.sidebar__contents')) openSubMenu(target);
+    if(findUpWard(target, '.sidebar__contents__btn')) closeSubMenu(target);
   })
 }
 
-const closeSideBar = (parent, currentTarget, dimLayer) => {
-  if(parent === "sidebar__closeBtn--container") { 
-    currentTarget.style['animation-name'] = 'slideLeftWard';
-    dimLayer.style.display = 'none';
-    dimLayer.style['z-index'] = '1';
-  }
+const closeSideBar = (currentTarget, dimLayer) => {
+  currentTarget.style['animation-name'] = 'slideLeftWard';
+  dimLayer.classList.remove('dim__sidebar');
 }
 
-const unfoldMenu = (name, target) => {
-  if(name === 'showall') {
-    const sidebarShoppingNode = findUpWard(target,'.sidebar__shopping');
-    findSiblingForward(sidebarShoppingNode, 'sidebar__shopping extra').style.height = '100%';
-  }
+const unfoldMenu = (target) => {
+  const sidebarShoppingNode = findUpWard(target,'.sidebar__shopping');
+  findSiblingForward(sidebarShoppingNode, 'sidebar__shopping extra').style.height = '100%';
 }
 
-const foldMenu = (name, target) => {
-  if(name === 'closeall') findUpWard(target,'.sidebar__shopping.extra').style.height = '0';
-}
+const foldMenu = (target) => findUpWard(target,'.sidebar__shopping.extra').style.height = '0';
 
-const openSubMenu = (parent, element, target) => {
-  if(parent != 'sidebar__menu' && element != 'btn'){
-    const subSideBarData = Object.entries(SUB_SIDEBAR_DATA);
-    const list = target.closest('.sidebar__contents');
-    const listId = list.dataset.indexNumber;
-    const newRightSideBar = makeSubSideBar(subSideBarData[listId], listId);
-    const sideBarMenuChilds = target.closest('.sidebar__container').lastElementChild.childNodes;
+const openSubMenu = (target) => {
+  const subSideBarData = Object.entries(SUB_SIDEBAR_DATA);
+  const listId = target.closest('.sidebar__contents').dataset.indexNumber;
+  const newSubSideBar = makeSubSideBar(subSideBarData[listId], listId);
+  const sideBarMenuChilds = target.closest('.sidebar__container').lastElementChild.childNodes;
 
-    // 해당 인덱스의 서브 사이드바가 이미 존재한다면
-    if(isSubSideBarExist(sideBarMenuChilds, listId)){
-      getSubSideBar(target ,listId).style['animation-name'] = 'slideSubMenuLeftWard';
-      findUpWard(target, '.sidebar__menu.main').style['animation-name'] = 'slideMenuLeftWard'
-    } else {      // 해당 인덱스의 서브 사이드바가 존재하지 않으면
-      findUpWard(target, '.sidebar__menu.main').insertAdjacentHTML('afterend', newRightSideBar);
-      getSubSideBar(target, listId).style['animation-name'] = 'slideSubMenuLeftWard';
-      findUpWard(target, '.sidebar__menu.main').style['animation-name'] = 'slideMenuLeftWard';
-    }
+  // 해당 인덱스의 서브 사이드바가 이미 존재한다면
+  if(isSubSideBarExist(sideBarMenuChilds, listId)){
+    getSubSideBar(target, listId).style['animation-name'] = 'slideSubMenuLeftWard';
+    findUpWard(target, '.sidebar__menu.main').style['animation-name'] = 'slideMenuLeftWard'
+  } else {      // 해당 인덱스의 서브 사이드바가 존재하지 않으면
+    findUpWard(target, '.sidebar__menu.main').insertAdjacentHTML('afterend', newSubSideBar);
+    getSubSideBar(target, listId).style['animation-name'] = 'slideSubMenuLeftWard';
+    findUpWard(target, '.sidebar__menu.main').style['animation-name'] = 'slideMenuLeftWard';
   };
 }
 
-const closeSubMenu = (name, target) => {
-  if(name === 'close-right-menu') {
-    findUpWard(target, '.sidebar__menu.right').style['animation-name'] = 'slideSubMenuRightWard';
-    findUpWard(target, '#sidebarmenu').firstElementChild.style['animation-name'] = 'slideMenuRightWard';
-  }
+const closeSubMenu = (target) => {
+  findUpWard(target, '.sidebar__menu.right').style['animation-name'] = 'slideSubMenuRightWard';
+  findUpWard(target, '#sidebarmenu').firstElementChild.style['animation-name'] = 'slideMenuRightWard';
 }

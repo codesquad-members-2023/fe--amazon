@@ -153,11 +153,12 @@
   cursor: pointer;
 }
 
-.sidebar__contents:hover {
+.sidebar__contents:hover,
+.sidebar__contents__btn:hover {
   background-color: var(--color-gray-200);
 }
 
-.sidebar__contents.btn {
+.sidebar__contents__btn {
   display: flex;
   justify-content: unset;
   padding: 4% 6% 4% 10%;
