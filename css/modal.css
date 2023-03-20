@@ -1,0 +1,123 @@
+/* 배송처 */
+.nav__shipping {
+  position: relative;
+}
+
+.shipping__box {
+  position: absolute;
+  top: 2.688rem;
+  left: -1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 20rem;
+  height: 7.875rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.688rem;
+  background-color: var(--color-white);
+  box-shadow: 0rem 0.188rem 0.375rem var(--color-gray500);
+}
+
+.shipping__modal-pointer {
+  position: absolute;
+  top: 2.125rem;
+  left: 0.875rem;
+  border-bottom: 1rem solid var(--color-white);
+  border-left: 0.563rem solid transparent;
+  border-right: 0.563rem solid transparent;
+}
+
+.modal__button {
+  height: 2rem;
+  padding: 0rem 0.625rem;
+  border: 0.063rem solid var(--color-primaryYellow300);
+  border-radius: 0.25rem;
+  background-image: linear-gradient(174.6deg, var(--color-white) 4.31%, var(--color-primaryYellow100) 50.01%, var(--color-primaryYellow200) 95.71%);
+}
+
+/* 배송처 호버 */
+.shipping__modal-hover {
+  display: none;
+}
+
+.nav__shipping-address:hover + .shipping__modal-hover {
+  display: block;
+}
+
+/* 로그인 */
+.login {
+  position: relative;
+}
+
+.login__modal-fadeIn {
+  position: absolute;
+  top: 2.688rem;
+  right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 16rem;
+  height: 5.625rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--color-white);
+  box-shadow: 0rem 0.188rem 0.375rem var(--color-gray500);
+  font-size: 0.688rem;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.login__modal-fadeIn.visible {
+  opacity: 1;
+}
+
+.modal__login-button {
+  width: 10rem;
+  height: 2rem;
+  padding: 0rem 0.625rem;
+  border: 0.063rem solid var(--color-primaryYellow300);
+  border-radius: 0.25rem;
+  background-image: linear-gradient(174.6deg, var(--color-white) 4.31%, var(--color-primaryYellow100) 50.01%, var(--color-primaryYellow200) 95.71%);
+}
+
+.login__modal-pointer {
+  position: absolute;
+  top: -0.75rem;
+  right: 1.625rem;
+  border-bottom: 1rem solid var(--color-white);
+  border-left: 0.563rem solid transparent;
+  border-right: 0.563rem solid transparent;
+}
+
+.login__modal-hover {
+  position: absolute;
+  top: 2.688rem;
+  right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 16rem;
+  height: 5.625rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--color-white);
+  box-shadow: 0rem 0.188rem 0.375rem var(--color-gray500);
+  font-size: 0.688rem;
+}
+
+/* 로그인 호버 */
+/* .login__modal-hover {
+  display: none;
+}
+
+.nav__login:hover + .login__modal-fadeIn {
+  display: none;
+}
+
+.nav__login:hover + .login__modal-hover {
+  display: block;
+} */

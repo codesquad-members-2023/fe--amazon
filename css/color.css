@@ -1,13 +1,23 @@
 :root {
+  font-size: 16px;
   --color-white: #ffffff;
-  --color-PrimaryOrange100: #fcb057;
-  --color-PrimaryYellow200:#FED15F;
-  --color-PrimaryYellow300:#FEBE30;
-  --color-PrimaryYellow400:#DE9408;
-  --color-black: #10141a;
-  --color-gray500:#5f5f5f;
-  --color-gray900: #1b232f;
+  --color-gray100: #eff2f2;
+  --color-gray200: #e5e9e9;
+  --color-gray300: #dce0e0;
   --color-gray400: #d5d5d5;
-  --color-SecondaryNavy: #074099;
-  --color-gray600: #00000099;
+  --color-gray500: #c1c1c1;
+  --color-gray600: #878787;
+  --color-gray700: #535353;
+  --color-gray800: #2a3648;
+  --color-gray900: #1b232f;
+  --color-black: #10141a;
+  /* --color-black40: #10141A, 투명도 40% */
+  --color-primaryYellow100: #fed15f;
+  --color-primaryYellow200: #febe30;
+  --color-primaryYellow300: #de9408;
+  --color-primaryOrange100: #fcb057;
+  --color-primaryOrange200: #ff9900;
+  --color-secondaryPurple: #941387;
+  --color-secondaryNavy: #074099;
+  --color-secondaryGreen: #0c5e72;
 }

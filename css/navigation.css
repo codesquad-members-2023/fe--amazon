@@ -1,98 +1,81 @@
-header {
-  position: relative;
-  z-index: 1;
+@media (max-width: 1280px) {
+  body {
+    width: 1280px;
+  }
 }
 
-.nav-belt {
+@media (min-width: 1280px) {
+  .nav__search {
+    flex-grow: 1;
+  }
+  .nav__search-input {
+    flex-grow: 1;
+  }
+}
+
+.nav__sub {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  height: 56px;
-  padding: 0px 16px;
-  gap: 24px;
-  background: var(--color-black);
-  color: var(--color-white);
+  height: 3.5rem;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+  background-color: var(--color-black);
 }
 
-.shipping-container {
-  font-size: 11px;
+.nav__logo img {
+  width: 5.625rem;
+  height: 1.875rem;
+}
+
+.sub__menu-top {
   color: var(--color-gray400);
+  font-size: 0.688rem;
+  font-weight: 600;
 }
 
-.country {
-  width: 43px;
+.sub__menu-bottom {
+  color: var(--color-white);
+  font-size: 0.813rem;
   font-weight: 800;
-  font-size: 13px;
-  color: var(--color-white);
-  letter-spacing: -0.06em;
 }
 
-.search {
+.nav__search {
   display: flex;
-  flex-grow: 1;
 }
 
-.search-input {
-  flex-grow: 1;
-  padding: 12px;
+.nav__search-input {
+  width: 46.688rem;
+  height: 2.5rem;
+  padding-left: 0.75rem;
   border: none;
-  border-radius: 4px 0px 0px 4px;
-  background: var(--color-white);
+  border-radius: 0.25rem 0rem 0rem 0.25rem;
 }
 
-.search-button {
-  width: 40px;
-  height: 40px;
-  border: 0;
-  border-radius: 0px 4px 4px 0px;
-  background: var(--color-PrimaryOrange100);
+.nav__search-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 0rem 0.25rem 0.25rem 0rem;
+  background-color: var(--color-primaryOrange100);
+}
+
+.nav__main {
+  display: flex;
   align-items: center;
-}
-
-.language {
-  display: flex;
-  flex-direction: row;
-  font-size: large;
-}
-
-.return-order span.return {
-  font-size: 11px;
-  letter-spacing: -0.06em;
-  color: var(--color-gray400);
-}
-
-.return-order span.order {
-  font-size: 13px;
+  height: 2rem;
+  padding: 0rem 1rem;
   color: var(--color-white);
-}
-
-.nav-main {
-  display: flex;
-  height: 32px;
   background: var(--color-gray900);
-  align-items: center;
-  padding: 0px 16px;
-  color: var(--color-white);
 }
 
-.nav-shop {
+.nav__shop {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
 }
 
-.shop-deals {
+.shop__deals {
   display: flex;
-  flex: 1;
   flex-direction: row-reverse;
-}
-
-.dimmed {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background: var(--color-gray600);
-  display: none;
+  flex: 1;
 }
