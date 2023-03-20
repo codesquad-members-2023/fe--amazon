@@ -1,0 +1,9 @@
+.nav__shipping:hover .nav__shipping_popup{
+    display: flex;
+}
+.nav__login:hover .nav__login_popup_extension{
+    visibility: visible;
+}
+.nav__login:hover .nav__login_popup-box{
+    visibility: hidden;
+}

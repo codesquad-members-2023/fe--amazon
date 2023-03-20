@@ -1,0 +1,21 @@
+@import "reset.css";
+@import "font.css";
+@import "../sidebar/sidebar.css";
+@import "../nav/nav.css";
+@import "../nav/navPopup.css";
+@import "../nav/navAnimation.css";
+@import "../nav/hoverNav.css";
+@import "../sub/sub.css";
+
+* {
+    box-sizing: border-box;
+}
+body{
+    font-family: ‘Pretendard’;
+}
+
+a{
+    text-decoration-line: none;
+    color: inherit;
+}
+

@@ -1,4 +1,4 @@
-import { ALL_SELECTORS } from "../allQuery.js";
+import { ALL_SELECTORS } from "../all/allQuery.js";
 
 const clearDimmedNav = () => (ALL_SELECTORS.dimmed.style.display = "none");
 const dimmedNav = () => (ALL_SELECTORS.dimmed.style.display = "block");

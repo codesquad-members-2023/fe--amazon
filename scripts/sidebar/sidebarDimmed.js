@@ -1,4 +1,4 @@
-import { ALL_SELECTORS } from "../allQuery.js";
+import { ALL_SELECTORS } from "../all/allQuery.js";
 
 const dimmedSidebar = () => {
   ALL_SELECTORS.dimmed.style.display = "block";

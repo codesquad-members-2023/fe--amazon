@@ -105,24 +105,4 @@ span{
     width: 50px;
 }
 
-.sub{
-    align-items: center;
-    height: 32px;
-    background: #1B232F;
-}
-
-.sub__shopping {
-    flex-grow: 1;
-    text-align: right;
-    color: white;
-    text-decoration: none;
-    padding: 14px 16px;
-}
-
-.sub__menu {
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
 

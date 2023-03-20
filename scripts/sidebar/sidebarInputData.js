@@ -1,4 +1,4 @@
-import { ALL_SELECTORS } from "../allQuery.js";
+import { ALL_SELECTORS } from "../all/allQuery.js";
 import { TITLE_DETAIL } from "../../model/data.js";
 
 const summarySidebar = () => {

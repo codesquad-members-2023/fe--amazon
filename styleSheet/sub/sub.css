@@ -1,0 +1,17 @@
+.sub{
+    align-items: center;
+    height: 32px;
+    background: #1B232F;
+}
+.sub li{
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+.sub__shopping {
+    display: flex;
+    flex-direction: row-reverse;
+    flex:1;
+}
+

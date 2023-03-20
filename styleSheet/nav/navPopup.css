@@ -1,8 +1,3 @@
-
-.nav__shipping:hover .nav__shipping_popup{
-    display: flex;
-}
-
 .nav__shipping_popup{
     display: none;
     height: 0px;
@@ -27,6 +22,7 @@
     padding: 16px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
 .nav__login_popup-box_text{
     width: 270px;
     height: 36px;
@@ -56,26 +52,6 @@
     border: 1px solid #DE9408;
     border-radius: 4px;
 }
-@keyframes slowshow {
-    from{
-        opacity: 0;
-        visibility: hidden;
-    }
-    to{
-        opacity: 1;
-        visibility: visible;
-         }
-}
-.nav__login_popup{
-    visibility: hidden;
-    position: absolute;
-    width: 235px;
-    height: 100px;
-    left: -170px;
-    top: 44px;
-    animation: slowshow 1s forwards;
-    animation-delay: 1s;
-}
 
 .nav__login_popup-shape{
     width: 18.93px;
@@ -96,19 +72,35 @@
     height: 90px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.nav__login_popup-box:hover{
-    height: 300px;
-}
 
-.nav__login_popup-box:hover .nav__login_popup_extension{
-    display: block;
-}
 
 .nav__login_popup_extension{
-    display: none;
+    visibility: hidden;
+    position: absolute;
+    width: 235px;
+    height: 100px;
+    left: -170px;
+    top: 44px;
+
+}
+
+.nav__login_popup-box_extension{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 4px;
+    margin-top: -10px;
+    width: 235px;
+    height: 390px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .login_popup_extension-left-box{
     float: left;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 160%;
 }
 .login_popup_extension-right-box{
     float: right;
@@ -118,11 +110,7 @@
     font-size: 13px;
     line-height: 16px;
 }
-.login_popup_extension-list{
-    font-weight: 500;
-    font-size: 9px;
-    line-height: 160%;
-}
+
 .login_popup_text{
     display: flex;
     flex-direction: row;
