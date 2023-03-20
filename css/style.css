@@ -1,7 +1,7 @@
-@import "./reset.css";
-@import "./navigation.css";
-@import "./color.css";
-@import "./modal.css";
-@import "./sidebar.css";
-
-/* @import "./typography.css" */
+/* common */
+@import url('./common/reset.css');
+@import url('./common/variables.css');
+/* components */
+@import url('./components/modal.css');
+@import url('./components/navigation.css');
+@import url('./components/sidebar.css');

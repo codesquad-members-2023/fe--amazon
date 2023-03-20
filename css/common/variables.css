@@ -1,5 +1,8 @@
 :root {
+  /* font */
   font-size: 16px;
+
+  /* color */
   --color-white: #ffffff;
   --color-gray100: #eff2f2;
   --color-gray200: #e5e9e9;
