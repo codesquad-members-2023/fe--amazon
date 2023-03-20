@@ -2,7 +2,6 @@ export interface Base {
   attachTo(parent: HTMLElement, position?: InsertPosition): void;
   removeFrom(parent: HTMLElement): void;
 }
-
 export class BaseComponent<T extends HTMLElement> implements Base {
   element: T;
   constructor(htmlString: string) {

@@ -3,7 +3,8 @@ import { menus } from '../../../data/menu';
 import { CategoryComponent } from '../CategoryComponent';
 import { TextComponent } from '../../basic/TextComponent';
 import { MainCategoryBundleStyle } from '../../../../style/components/sidebar/main/MainCategoryBundle.css';
-import { SymbolTextComponent } from '../../navbar/SymbolTextComponent';
+import { SubCategoryBundle } from '../sub/SubCategoryBundle';
+
 export class MainCategoryBundle extends BaseComponent<HTMLElement> {
   constructor(menuNumber: number, allShow: boolean = false) {
     super(`<section class='${MainCategoryBundleStyle}'></section>`);
@@ -20,6 +21,15 @@ export class MainCategoryBundle extends BaseComponent<HTMLElement> {
       menu.categories.forEach((category, i) => {
         if (i > 3) return;
         const categoryComponent = new CategoryComponent(category.name);
+        const subBundle = new SubCategoryBundle(
+          category.name,
+          category.subMenu[0]!.categories,
+        );
+        subBundle.attachTo(categoryComponent.element);
+        categoryComponent.element.addEventListener('click', () => {
+          let display = subBundle.element.style.display;
+          subBundle.element.style.display = !display ? 'flex' : 'none';
+        });
         categoryComponent.attachTo(this.element, 'beforeend');
       });
       if (allShow) {

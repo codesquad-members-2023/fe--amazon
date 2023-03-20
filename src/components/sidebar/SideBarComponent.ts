@@ -18,6 +18,7 @@ export class SideBarComponent extends BaseComponent<HTMLElement> {
     titleUser.element.style.minHeight = '3.25rem';
 
     titleUser.attachTo(this.element);
+
     menus.forEach((_, i, array) => {
       const mainCategoryBundle = new MainCategoryBundle(
         i,
