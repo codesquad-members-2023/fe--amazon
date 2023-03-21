@@ -1,18 +1,12 @@
-import { ALL_SELECTORS } from "../all/allQuery.js";
+import { COMMON, SIDEBAR ,SUBMENU} from "../all/allQuery.js";
 
-const dimmedSidebar = () => {
-  ALL_SELECTORS.dimmed.style.display = "block";
-  ALL_SELECTORS.dimmed.style.zIndex = 1;
-};
+const dimmedSidebar = () => COMMON.DIM.classList.remove("hidden")
 
-const clearDimmedSidebar = () => {
-  ALL_SELECTORS.dimmed.style.display = "none";
-  ALL_SELECTORS.dimmed.style.zIndex = 0;
-};
+const clearDimmedSidebar = () => COMMON.DIM.classList.add("hidden")
 
 const dimmedSidebarEvent = () => {
-  ALL_SELECTORS.sidebarAll.addEventListener("click", dimmedSidebar);
-  ALL_SELECTORS.sidebarClose.addEventListener("click", clearDimmedSidebar);
+    SUBMENU.ALLMENU.addEventListener("click", dimmedSidebar);
+    SIDEBAR.CLOSEBUTTON.addEventListener("click", clearDimmedSidebar);
 };
 
 dimmedSidebarEvent();

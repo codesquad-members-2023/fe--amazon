@@ -1,5 +1,4 @@
 .nav__shipping_popup{
-    display: none;
     height: 0px;
 }
 .nav__shipping_popup-shape{
@@ -75,7 +74,6 @@
 
 
 .nav__login_popup_extension{
-    visibility: hidden;
     position: absolute;
     width: 235px;
     height: 100px;
@@ -145,6 +143,12 @@
     position: fixed;
     top:0px;
     left: 0px;
-    display: none;
     z-index: 0;
+}
+
+.hidden{
+    display: none;
+}
+.visible_hidden{
+    visibility: hidden;
 }

@@ -1,12 +1,12 @@
-import { ALL_SELECTORS } from "../all/allQuery.js";
+import {NAV,COMMON} from"../all/allQuery.js"
 
-const clearDimmedNav = () => (ALL_SELECTORS.dimmed.style.display = "none");
-const dimmedNav = () => (ALL_SELECTORS.dimmed.style.display = "block");
+const clearDimmedNav = () =>COMMON.DIM.classList.add("hidden");
+const dimmedNav = () => COMMON.DIM.classList.remove("hidden");
 const dimmedNavEvent = () => {
-  ALL_SELECTORS.loginMenu.addEventListener("mouseout", clearDimmedNav);
-  ALL_SELECTORS.shippingMenu.addEventListener("mouseout", clearDimmedNav);
-  ALL_SELECTORS.loginMenu.addEventListener("mouseover", dimmedNav);
-  ALL_SELECTORS.shippingMenu.addEventListener("mouseover", dimmedNav);
+  NAV.LOGINMENU.addEventListener("mouseout", clearDimmedNav);
+  NAV.SHIPPINGMENU.addEventListener("mouseout", clearDimmedNav);
+  NAV.LOGINMENU.addEventListener("mouseover", dimmedNav);
+  NAV.SHIPPINGMENU.addEventListener("mouseover", dimmedNav);
 };
 
 dimmedNavEvent();
