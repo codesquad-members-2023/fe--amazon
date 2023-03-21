@@ -1,6 +1,6 @@
-import { makeSubSideBar } from "./subSideBar.js";
-import { SUB_SIDEBAR_DATA } from "./subSideBarData.js";
-import { findUpWard, findSiblingForward, getSubSideBar, isSubSideBarExist } from "./nodeFindFuncs.js";
+import { SIDEBAR_DATA } from "./sideBarData.js";
+import { makeSubSideBar } from "./sideBarSub.js";
+import { findUpWard, findSiblingForward, getSubSideBar, isSubSideBarExist } from "../nodeFindFuncs.js";
 
 export const sideBarEvtHandler = () => {
   const sideBarLayer = document.querySelector(".sidebar__layer");
@@ -21,8 +21,8 @@ const sideBarOpenBtnEvtHandler = (sideBarLayer, dimLayer) => {
 const addsideBarClickEvt = (sideBarLayer, dimLayer) => {
   sideBarLayer.addEventListener('click', ({ target, currentTarget }) => {
     if(findUpWard(target, '.sidebar__closeBtn--container')) closeSideBar(currentTarget, dimLayer, target);
-    if(findUpWard(target, '.sidebar__contents.btn.showall')) unfoldMenu(target);
-    if(findUpWard(target, '.sidebar__contents.btn.closeall')) foldMenu(target);
+    if(findUpWard(target, '.sidebar__contents__btn.showall')) unfoldMenu(target);
+    if(findUpWard(target, '.sidebar__contents__btn.closeall')) foldMenu(target);
     if(findUpWard(target, '.sidebar__contents')) openSubMenu(target);
     if(findUpWard(target, '.sidebar__contents__btn')) closeSubMenu(target);
   })
@@ -34,30 +34,31 @@ const closeSideBar = (currentTarget, dimLayer) => {
 }
 
 const unfoldMenu = (target) => {
-  const sidebarShoppingNode = findUpWard(target,'.sidebar__shopping');
-  findSiblingForward(sidebarShoppingNode, 'sidebar__shopping extra').style.height = '100%';
+  const categoryNode = findUpWard(target,'.sidebar__category');
+  console.log(categoryNode);
+  findSiblingForward(categoryNode, 'sidebar__category extra').style.height = '100%';
 }
 
-const foldMenu = (target) => findUpWard(target,'.sidebar__shopping.extra').style.height = '0';
+const foldMenu = (target) => findUpWard(target,'.sidebar__category.extra').style.height = '0';
 
 const openSubMenu = (target) => {
-  const subSideBarData = Object.entries(SUB_SIDEBAR_DATA);
-  const listId = target.closest('.sidebar__contents').dataset.indexNumber;
-  const newSubSideBar = makeSubSideBar(subSideBarData[listId], listId);
-  const sideBarMenuChilds = target.closest('.sidebar__container').lastElementChild.childNodes;
+  const categoryId = findUpWard(target, '.sidebar__category').dataset.categoryId;
+  const contentsId = findUpWard(target, '.sidebar__contents').dataset.contentsId;
+  const newSubSideBar = makeSubSideBar(SIDEBAR_DATA, categoryId, contentsId);
+  const sideBarMenuChilds = findUpWard(target, '.sidebar__container').lastElementChild.childNodes;
 
   // 해당 인덱스의 서브 사이드바가 이미 존재한다면
-  if(isSubSideBarExist(sideBarMenuChilds, listId)){
-    getSubSideBar(target, listId).style['animation-name'] = 'slideSubMenuLeftWard';
+  if(isSubSideBarExist(sideBarMenuChilds, contentsId)){
+    getSubSideBar(target, contentsId).style['animation-name'] = 'slideSubMenuLeftWard';
     findUpWard(target, '.sidebar__menu.main').style['animation-name'] = 'slideMenuLeftWard'
   } else {      // 해당 인덱스의 서브 사이드바가 존재하지 않으면
     findUpWard(target, '.sidebar__menu.main').insertAdjacentHTML('afterend', newSubSideBar);
-    getSubSideBar(target, listId).style['animation-name'] = 'slideSubMenuLeftWard';
+    getSubSideBar(target, contentsId).style['animation-name'] = 'slideSubMenuLeftWard';
     findUpWard(target, '.sidebar__menu.main').style['animation-name'] = 'slideMenuLeftWard';
   };
 }
 
 const closeSubMenu = (target) => {
-  findUpWard(target, '.sidebar__menu.right').style['animation-name'] = 'slideSubMenuRightWard';
+  findUpWard(target, '.sidebar__menu.sub').style['animation-name'] = 'slideSubMenuRightWard';
   findUpWard(target, '#sidebarmenu').firstElementChild.style['animation-name'] = 'slideMenuRightWard';
 }

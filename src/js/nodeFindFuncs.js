@@ -6,19 +6,13 @@ export const findSiblingForward = (node, targetNode) => {
       nextSibling = nextSibling.nextElementSibling;
     }
   };
-  export const getSubSideBar = (ontarget, listId) => {
-    return Array.from(findUpWard(ontarget, '#sidebarmenu').childNodes)
+  export const getSubSideBar = (target, contentsId) => {
+    return Array.from(findUpWard(target, '#sidebarmenu').childNodes)
             .filter(node => node.nodeName != '#text')
-            .find(node => {
-              const convertNodeArray = node.className.split(" ");
-              return convertNodeArray[convertNodeArray.length - 1] === listId;
-            })
+            .find(node => node.dataset.contentsId === contentsId)
   }
-  export const isSubSideBarExist = (childNodes, listId) => {
+  export const isSubSideBarExist = (childNodes, contentsId) => {
     return Array.from(childNodes)
             .filter(node => node.nodeName != '#text')
-            .some(node => {
-              const nodeInArray = node.className.split(" ");
-              return nodeInArray[nodeInArray.length - 1] === listId;
-            });
+            .some(node => node.dataset.contentsId === contentsId);
   }
