@@ -19,15 +19,11 @@
 
     display: inline-block;
 
-    &--1 {
-      background-image: url(/assets/images/carousel--1.jpg);
-    }
-    &--2 {
-      background-image: url(/assets/images/carousel--2.jpg);
-    }
-    &--3 {
-      background-image: url(/assets/images/carousel--3.jpg);
-    }
+    @include carousel-background-image(1);
+    @include carousel-background-image(2);
+    @include carousel-background-image(3);
+    @include carousel-background-image(4);
+    @include carousel-background-image(5);
   }
 }
 
