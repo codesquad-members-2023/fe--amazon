@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 export const SideBarComponentStyle = style({
-  display: 'none',
+  display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'center',
@@ -10,7 +10,8 @@ export const SideBarComponentStyle = style({
   backgroundColor: 'var(--color-white)',
   position: 'fixed',
   top: 0,
-  left: 0,
+  left: '-20rem',
   zIndex: 3,
   overflow: 'auto',
+  transition: 'left 1s ease-in',
 });

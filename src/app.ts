@@ -12,11 +12,11 @@ class App {
     const dimLayer = new DimLayerComponent();
     dimLayer.attachTo(document.querySelector('#app')! as HTMLElement);
     dimLayer.element.addEventListener('click', () => {
-      sideBar.element.style.display = 'none';
+      sideBar.element.style.left = '-20rem';
       dimLayer.off();
     });
     navBarSub.element.firstElementChild!.addEventListener('click', () => {
-      sideBar.element.style.display = 'flex';
+      sideBar.element.style.left = '0';
       dimLayer.on();
     });
     navBarMain.attachTo(appRoot);

@@ -12,9 +12,7 @@ export class NavBarSubComponent extends BaseComponent<HTMLElement> {
       'assets/nav-bar/menu.svg',
       '모두',
     );
-    sideBarHamburgerEl.element.addEventListener('click', () => {
-      console.log(11);
-    });
+
     const menuEls = [
       '오늘의 딜',
       '고객 서비스',
