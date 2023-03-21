@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 export const SideBarComponentStyle = style({
-  display: 'flex',
+  display: 'none',
   flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'center',
