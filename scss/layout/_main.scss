@@ -1,7 +1,5 @@
 main {
-  background-image: url(../../asset/main_image1.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
+  //   background-image: url(../../asset/main_image1.jpg);
 }
 
 .carousel_buttons {
@@ -19,4 +17,20 @@ main {
 
 .carousel_right {
   padding-right: 80px;
+}
+
+.carousel_window {
+  //   overflow: hidden;
+
+  .carousel_container {
+    display: flex;
+    flex-direction: row;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.carousel_img {
+  background-size: contain;
+  background-repeat: no-repeat;
 }
