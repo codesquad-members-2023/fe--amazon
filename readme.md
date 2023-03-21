@@ -285,10 +285,10 @@ div {
   - [x] Sass
   - [x] 애니메이션
   - [x] 웹 페이지 렌더링 과정
-  - [ ] 프론트엔드의 OOP 그리고 prototype
+  - [x] 프론트엔드의 OOP 그리고 prototype
   - [ ] 캐로셀 + 무한 슬라이드
 - [ ] 지난번 못다한 내용
-  - [ ] 사이드바 완성
+  - [x] 사이드바 완성
   - [ ] 애니메이션 처리
   - [ ] 구현 시각적인 부분 디테일 살리기
 - [ ] 캐로셀 구현
@@ -297,9 +297,97 @@ div {
 
 ## 🌳 Jayden's Record
 
-### CSS Preprocessor
+### CSS 전처리기(CSS Preprocessor)
 
-- 작성 예정
+- 전처리기만의 문법을 더한 CSS 머듈 정도로 생각하면 된다.
+- CSS가 갖는 불리한 점들을 보완하기 위함이며 대부분 CSS를 프로그래밍 언어처럼 사용할 수 있게 해준다.(변수, 함수, 조건문 등)
+- 결국 CSS에 대한 슈퍼셋(확장셋)이기 떄문에 CSS로 컴파일되어야만 한다.
+
+### Sass/Scss
+
+- Sass의 버전 3부터 CSS와 좀더 가까운 문법인 Scss가 등장
+
+### Scss 변수 선언 방법
+
+```scss
+$jayden-color: #111111;
+
+.button {
+	background-color: $jayden-color;
+}
+```
+
+```scss
+// CSS
+.container {
+  margin-top: 10px;
+}
+
+.container .item {
+  padding: 10px;
+}
+
+// Sass
+.container {
+  margin-top: 10px;
+
+  .item {
+    padding: 10px;
+  }
+}
+```
+
+### @mixin
+
+- css에서의 함수라고 생각하면 된다. 변수도 $로 만들어서 전달할 수 있다.
+
+```scss
+@mixin jayden-styles($flexDirection: row, $backgroundColor: #000000) {
+	display: flex;
+	flex-direction: $flexDirection;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $backgroundColor;
+} 
+
+.jayden-box {
+	@include jayden-styles(column, #ffffff);
+}
+```
+
+### @extend
+
+- 타입스크립트의 클래스 상속과 같은 기능. 그러나 css media-query 내에서 실행되지 않으며 Sass 가이드라인에서도 사용을 권장하지 않는다.
+
+```scss
+.a {
+	padding: 1rem;
+}
+
+.b {
+	@extend .a;
+	background-color: tomato;
+}
+```
+
+### @import
+
+- 외부에 모듈화해서 분리해 놓은 Sass 파일을 불러와 병합하여 사용가능하다.(js의 모듈처럼)
+
+> CSS @import는 사용할 때마다 매번 http 호출을 하기 때문에 속도 저하를 가져온다.
+> 그러나 Sass @import는 CSS로 컴파일하여 바로 처리하기 때문에 http 호출이 필요하지 않아 속도 저하 문제를 발생시키지 않는다.
+
+#### @import 사용 팁
+
+1. 보통 변수와 @mixin은 따로 Sass 모듈 파일로 만들고 @import하여 사용한다.
+- 이 때, 파일명 앞에 `_`를 붙이면 CSS로 컴파일 되지 않는다.
+- 예를 들어 `_mixin.scss`, `_header.scss` 파일명을 만들고, 주 파일에서 @import 하면 2개(`_mixin.scss`, `_header.scss`)의 파일 내용은 주 파일에 적용되지만 `_mixin.scss`, `_header.scss` 파일은 css로 컴파일 되지 않기 때문에 관리하기가 편리해진다.
+
+2. 하나의 @import로 여러 파일을 불러올 수 있다.
+- 이 때, 파일명으로만 @import해도 알아서 확장자는 .scss인 것을 알기 때문에 안붙여도 된다.(주의: css 파일은 @import 시 .css를 붙여줘야 한다.)
+```scss
+@import '_aaa', '_bbb';
+```
 
 ## 🪵 Reference
 
