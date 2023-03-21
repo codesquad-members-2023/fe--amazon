@@ -199,7 +199,7 @@ export default class SubMenuContainer {
     ];
   }
 
-  setSubMenuContainer() {
+  init() {
     const template = document.createElement("template");
 
     const domString = this.subMenuConfig.reduce((acc, cur, idx) => {
