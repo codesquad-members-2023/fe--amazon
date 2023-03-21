@@ -33,6 +33,7 @@ const hideExtraSidebarList = () => {
       item.classList.remove('show');
     }, (sidebar.extraListItem.length - index) * delayTime);
   });
+  sidebar.extraList.classList.remove('show');
 };
 
 const sidebarInactiveSubmenuHandler = () => {
