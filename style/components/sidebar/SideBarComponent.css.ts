@@ -13,5 +13,5 @@ export const SideBarComponentStyle = style({
   left: '-20rem',
   zIndex: 3,
   overflow: 'auto',
-  transition: 'left 1s ease-in',
+  transition: 'transform 1s ease-in',
 });
