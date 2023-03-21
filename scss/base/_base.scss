@@ -7,7 +7,7 @@ body {
 }
 
 main {
-  width: 1300px;
+  width: $main_width;
   height: 100%;
   position: fixed;
   top: 104px;

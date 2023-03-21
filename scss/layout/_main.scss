@@ -1,8 +1,14 @@
-main {
-  //   background-image: url(../../asset/main_image1.jpg);
+.carousel {
+  position: fixed;
+  width: $main_width;
+  height: 100%;
+  top: 104px;
 }
 
 .carousel_buttons {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
 }
@@ -20,17 +26,22 @@ main {
 }
 
 .carousel_window {
-  //   overflow: hidden;
-
-  .carousel_container {
-    display: flex;
-    flex-direction: row;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
+  position: relative;
+  width: $main_width;
+  overflow: hidden;
+  height: 600px;
 }
 
+.carousel_container {
+  width: $main_width * 5;
+  position: absolute;
+  left: -$main_width;
+  display: flex;
+  flex-direction: row;
+}
 .carousel_img {
   background-size: contain;
+  width: $main_width;
+  height: 600px;
   background-repeat: no-repeat;
 }
