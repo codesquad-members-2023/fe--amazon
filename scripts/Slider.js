@@ -7,6 +7,12 @@ export default class Slider {
     this.direction;
   }
 
+  flipSlidesWithInterval(interval) {
+    setInterval(() => {
+      this.buttonRight.dispatchEvent(new Event("click"));
+    }, interval);
+  }
+
   handleRigthBtnClick() {
     this.direction = -1;
     this.container.style.transitionDuration = "250ms";
@@ -34,6 +40,8 @@ export default class Slider {
   }
 
   onSlider() {
+    this.flipSlidesWithInterval(10000);
+
     this.buttonLeft.addEventListener("click", () => {
       this.handleLeftBtnClick();
     });
