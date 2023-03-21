@@ -490,16 +490,3 @@ li {
   position: absolute;
   animation: slide_left 250ms ease-in-out;
 }
-/* 
-.sidebar_main.slide {
-  position: absolute;
-  left: -320px;
-  opacity: 0;
-}
-
-.sidebar_main {
-  position: absolute;
-  left: 0;
-  opacity: 1;
-  transition: all 250ms ease-in-out;
-} */
