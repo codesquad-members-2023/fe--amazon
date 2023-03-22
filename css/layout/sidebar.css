@@ -46,16 +46,22 @@
 /* 사이드바 닫는 버튼 설정 */
 .sidebar__button-close {
   position: fixed;
-  top: 0.313rem;
-  left: 20rem;
+  top: 0.8rem;
+  left: 20.2rem;
   border: none;
   background-color: transparent;
-  color: var(--color-white);
-  font-size: var(--font-boldXL);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
 .button__close-show {
   opacity: 1;
+}
+
+/* 사이드바 모두 보기 */
+.sidebar__show-more {
+  display: flex;
+  padding: 1em;
+  gap: 1rem;
+  font-size: var(--font-boldMD);
 }
