@@ -11,75 +11,55 @@ export const navEvtHandler = () => {
 const addNavMouseOverEvt = (nav, dimLayer) => {
   nav.addEventListener('mouseover', ({ target }) => {
     if(target.tagName === 'A') target.classList.add('border');
-    const [_, element] = target.className.split(" ");
-
-    displayLocationModal(element, target, dimLayer);
-    maintainLocationModal(target, dimLayer);
-    displayAccountModal(element, target, dimLayer);
-    maintainAccountModal(target, dimLayer);
+    if(findUpWard(target, '.nav-top__elements.location')){
+      displayLocationModal(target);
+      onDim(dimLayer);
+    }
+    if(findUpWard(target, '.nav-top__elements.account-link')){
+      displayAccountModal(target);
+      onDim(dimLayer);
+    }
+    if(findUpWard(target, '.modal__login__detail')){
+      maintainAccountModal(target);
+      onDim(dimLayer);
+    }
   })
 }
 
 const addNavMouseOutEvt = (nav, dimLayer) => {
   nav.addEventListener('mouseout', ({ target }) => {
-    const [_, element] = target.className.split(" ");
-    if(target.tagName === 'A') {
-      target.classList.remove('border');
-      if(element != 'select-all') dimLayer.style.display = 'none';
-    };
-    removeLocationModal(element, target, dimLayer);
-    removeAccountModal(element, target, dimLayer);
+    if(target.tagName === 'A') target.classList.remove('border');
+    if(findUpWard(target, '.modal__location')){
+      removeLocationModal(target);
+      offDim(dimLayer);
+    }
+    if(findUpWard(target, '.modal__login__detail')){
+      removeAccountModal(target);
+      offDim(dimLayer);
+    }
   })
 }
 
-const displayLocationModal = (element, target, dimLayer) => {
-  if(element === 'location') {
-    target.lastElementChild.style.display = 'block';
-    dimLayer.style.display = 'block';
-  }
+const displayLocationModal = (target) => {
+  const locationNode = findUpWard(target, '.nav-top__elements.location');
+  findSiblingForward(locationNode.firstChild, 'modal__location').style.display = 'block';
 }
 
-const maintainLocationModal = (target, dimLayer) => {
-  if(findUpWard(target, '.modal__location')) {
-    findUpWard(target, '.modal__location').style.display = 'block';
-    dimLayer.style.display = 'block';
-  }
+const displayAccountModal = (target) => {
+  const loginModal = findUpWard(target, '.nav-top__elements.account-link');
+  findSiblingForward(loginModal, 'modal__login').style.display = 'none';
+  findSiblingForward(loginModal, 'modal__login__detail').style.display = 'block';
 }
 
-const displayAccountModal = (element, target, dimLayer) => {
-  if(element === 'account-link') {
-    findSiblingForward(target, 'modal__login1').style.display = 'none';
-    findSiblingForward(target, 'modal__login2').style.display = 'block';
-    dimLayer.style.display = 'block';
-  }
+const maintainAccountModal = target => findUpWard(target, '.modal__login__detail').style.display = 'block';
+
+const removeLocationModal = target => findUpWard(target, '.nav-top__elements.location').lastElementChild.style.display = 'none';
+const removeAccountModal = (target) => {
+  const navTop = findUpWard(target, '.nav-top__inner-wrap');
+  const navTopFirstNode = navTop.firstChild;
+  findSiblingForward(navTopFirstNode, 'modal__login').style.display = 'none';
+  findSiblingForward(navTopFirstNode, 'modal__login__detail').style.display = 'none';
 }
 
-const maintainAccountModal = (target, dimLayer) => {
-  if(findUpWard(target, '.modal__login2')) {
-    findUpWard(target, '.modal__login2').style.display = 'block';
-    dimLayer.style.display = 'block';
-  }
-}
-
-const removeLocationModal = (element, target, dimLayer) => {
-  if(element === 'location') {
-    target.lastElementChild.style.display = 'none';
-    dimLayer.style.display = 'none';
-  }
-  if(findUpWard(target, '.modal__location')){
-    findUpWard(target, '.modal__location').style.display = 'none';
-    dimLayer.style.display = 'none';
-  }
-}
-
-const removeAccountModal = (element, target, dimLayer) => {
-  if(element === 'account-link') {
-    findSiblingForward(target, 'modal__login1').style.display = 'none';
-    findSiblingForward(target, 'modal__login2').style.display = 'none';
-    dimLayer.style.display = 'none';
-  }
-  if(findUpWard(target, '.modal__login2')) {
-    findUpWard(target, '.modal__login2').style.display = 'none';
-    dimLayer.style.display = 'none';
-  }
-}
+const onDim = (dimLayer) => dimLayer.classList.add('dim__main');
+const offDim = (dimLayer) => dimLayer.classList.remove('dim__main');

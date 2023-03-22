@@ -113,29 +113,20 @@
   opacity: 1;
 }
 
-.sidebar__digital-content,
-.sidebar__shopping {
+.sidebar__category {
   display: flex;
   flex-flow: column;
 
   border-bottom: var(--border-bottom);
 }
 
-.sidebar__digital-content__title,
-.sidebar__shopping__title {
+.sidebar__category__title {
   font-weight: var(--weight-extra-bold);
   font-size: var(--font-lg);
   padding: 6% 6% 6% 10%;
 }
 
-.sidebar__digital-content__title-link,
-.sidebar__shopping__title-link {
-  font-weight: bold;
-  color: var(--color-black);
-}
-
-.sidebar__digital-content__menu,
-.sidebar__shopping__menu {
+.sidebar__category__menu {
   display: flex;
   flex-flow: column;
 
@@ -153,11 +144,12 @@
   cursor: pointer;
 }
 
-.sidebar__contents:hover {
+.sidebar__contents:hover,
+.sidebar__contents__btn:hover {
   background-color: var(--color-gray-200);
 }
 
-.sidebar__contents.btn {
+.sidebar__contents__btn {
   display: flex;
   justify-content: unset;
   padding: 4% 6% 4% 10%;
@@ -166,17 +158,13 @@
   gap: 3%;
 }
 
-.sidebar__contents__sub-menu {
+.sidebar__contents.sub {
   color: var(--color-black);
   padding: 4% 6% 4% 10%;
   font-size: var(--font-md);
 }
 
-.sidebar__contents__sub-menu:hover {
-  background-color: var(--color-gray-200);
-}
-
-.sidebar__shopping.extra {
+.sidebar__category.extra {
   height: 0;
   transition: height .5s ease-in-out;
   overflow: hidden;
@@ -195,25 +183,13 @@
   height: auto;
 }
 
-.sidebar__menu.right {
+.sidebar__menu.sub {
   display: block;
   position: absolute;
   height: 100vh;
   width: 100%;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-}
-
-.sidebar__contents-shopping__electron {
-  display: flex;
-  justify-content: space-between;
-  padding: 4% 6% 4% 10%;
-  font-weight: var(--weight-medium);
-  color: var(--color-black)
-}
-
-.sidebar__contents-shopping__electron:hover {
-  background-color: var(--color-gray-200);
 }
 
 @keyframes slideMenuLeftWard {
