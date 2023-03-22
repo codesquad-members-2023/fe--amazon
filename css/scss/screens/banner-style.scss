@@ -1,6 +1,10 @@
 $card-width: 1500px;
 $card-height: 600px;
 
+.banner {
+  display: flex;
+}
+
 .banner__img {
   width: $card-width;
   height: $card-height;

@@ -23,5 +23,7 @@ Banner.prototype.toBeElement = function () {
   bannerSection.appendChild(div);
 };
 
-const bannerOne = new Banner("bannerImg1");
-bannerOne.toBeElement();
+bannerImgArray.forEach((imgName) => {
+  const bannerElement = new Banner(`${imgName}`);
+  bannerElement.toBeElement();
+});

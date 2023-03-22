@@ -1,3 +1,7 @@
+.banner {
+  display: flex;
+}
+
 .banner__img {
   width: 1500px;
   height: 600px;
