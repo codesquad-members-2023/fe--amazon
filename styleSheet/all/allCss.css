@@ -7,14 +7,13 @@
 @import "../sub/sub.css";
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-body{
-    font-family: ‘Pretendard’;
-}
-
-a{
-    text-decoration-line: none;
-    color: inherit;
+body {
+  font-family: ‘Pretendard’;
 }
 
+a {
+  text-decoration-line: none;
+  color: inherit;
+}

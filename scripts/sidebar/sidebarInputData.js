@@ -4,7 +4,7 @@ import { TITLE_DETAIL } from "../model/data.js"
 const summarySidebar = () => {
   SIDEBAR.ALL.addEventListener("click", (e) => {
     if (e.target.className === "sidebar_menu_summary")
-      SIDEBAR.MENUDETAIL.style.display = "none";
+      SIDEBAR.MENUDETAIL.style.display="none";
   });
 };
 
