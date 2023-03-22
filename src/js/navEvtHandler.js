@@ -29,11 +29,11 @@ const addNavMouseOverEvt = (nav, dimLayer) => {
 const addNavMouseOutEvt = (nav, dimLayer) => {
   nav.addEventListener('mouseout', ({ target }) => {
     if(target.tagName === 'A') target.classList.remove('border');
-    if(findUpWard(target, '.nav-top__elements.location')){
+    if(findUpWard(target, '.modal__location')){
       removeLocationModal(target);
       offDim(dimLayer);
     }
-    if(findUpWard(target, '.nav-top__elements.account-link') || findUpWard(target, '.modal__login__detail')){
+    if(findUpWard(target, '.modal__login__detail')){
       removeAccountModal(target);
       offDim(dimLayer);
     }
