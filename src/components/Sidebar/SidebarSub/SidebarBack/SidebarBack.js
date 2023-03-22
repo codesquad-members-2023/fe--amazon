@@ -6,7 +6,9 @@ class SideBarBack extends HTMLElement {
 
     const shadow = this.attachShadow({ mode: 'open' });
     shadow.innerHTML = `<button><icon-element name="arrow-left" fill="var(--gray-600)"></icon-element>주메뉴</button>`;
-    this.shadowRoot.append(sidebarBackStyle.call(this));
+
+    const style = sidebarBackStyle.call(this);
+    this.shadowRoot.append(style);
   }
 }
 

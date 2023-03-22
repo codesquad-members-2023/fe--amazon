@@ -8,6 +8,7 @@ export default {
       '@constant': '/src/constant.js',
       '@data': '/src/data',
       '@assets': '/public/assets',
+      '@utils': '/src/utils.js',
     },
   },
 };

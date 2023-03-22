@@ -8,7 +8,9 @@ class SideBarTitle extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
 
     shadow.innerHTML = `<p>${text}</p>`;
-    this.shadowRoot.append(sidebarTitleStyle.call(this));
+
+    const style = sidebarTitleStyle.call(this);
+    this.shadowRoot.append(style);
   }
 }
 

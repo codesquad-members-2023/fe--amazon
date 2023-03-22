@@ -1,36 +1,22 @@
 import sliderStyle from './sliderStyle.js';
+import SliderImage from './SliderImage/SliderImage.js';
+import { SLIDER_IMAGES_LENGTH } from '@constant';
+import { half } from '@utils';
 
 class Slider extends HTMLElement {
   constructor() {
     super();
+    this.addHTML();
+    this.addStyle();
+    const images = this.getImages();
+    this.appendSlides(images);
+  }
 
-    const shadow = this.attachShadow({ mode: 'open' });
-    const images = [
-      'slide01.jpg',
-      'slide02.jpg',
-      'slide03.jpg',
-      'slide04.jpg',
-      'slide05.jpg',
-    ];
-
-    const middleNum = Math.ceil(images.length / 2);
-
-    const firstImages = images.slice(0, middleNum);
-    const secondImages = images.slice(middleNum, images.length);
-    const arrangedImages = [...secondImages, ...firstImages];
-
-    shadow.innerHTML = `
+  addHTML() {
+    this.shadow = this.attachShadow({ mode: 'open' });
+    this.shadow.innerHTML = `
       <div class="wrap">
         <ul class="slide-container">
-          ${arrangedImages.reduce(
-            (output, image) =>
-              output +
-              `
-              <li class="slide" style="background-image: url('public/assets/images/${image}')">
-              </li>
-            `,
-            ''
-          )}
         </ul>
         <div class="controller-container">
           <slider-controller-element position="left"></slider-controller-element>
@@ -38,17 +24,37 @@ class Slider extends HTMLElement {
         </div>
       </ul>
     `;
+  }
 
-    const isEven = images.length % 2 === 0;
-    const middleSlide =
-      this.shadowRoot.querySelectorAll('.slide')[
-        isEven ? middleNum : middleNum - 1
-      ];
-    middleSlide.classList.add('middle');
-    middleSlide.previousElementSibling.classList.add('left');
-    middleSlide.nextElementSibling.classList.add('right');
+  addStyle() {
+    const style = sliderStyle.call(this);
+    this.shadowRoot.append(style);
+  }
 
-    this.shadowRoot.append(sliderStyle.call(this));
+  getImages() {
+    const images = Array.from({ length: SLIDER_IMAGES_LENGTH }).map((_, i) => {
+      return `slide0${i + 1}.jpg`;
+    });
+    const rearrangedImages = this.reArrangeImagesOrder(images);
+    return rearrangedImages;
+  }
+
+  reArrangeImagesOrder(images) {
+    const halfNum = half(SLIDER_IMAGES_LENGTH);
+    const firstImages = images.slice(0, halfNum);
+    const secondImages = images.slice(halfNum, SLIDER_IMAGES_LENGTH);
+    const arrangedImages = [...secondImages, ...firstImages];
+    return arrangedImages;
+  }
+
+  appendSlides(arrangedImages) {
+    arrangedImages.forEach((image) => {
+      const sliderImage = SliderImage();
+      const slideContainer = this.shadow.querySelector('.slide-container');
+      const slideImageInstance = sliderImage.cloneNode(true);
+      slideImageInstance.style.backgroundImage = `url('public/assets/images/${image}')`;
+      slideContainer.append(slideImageInstance);
+    });
   }
 }
 

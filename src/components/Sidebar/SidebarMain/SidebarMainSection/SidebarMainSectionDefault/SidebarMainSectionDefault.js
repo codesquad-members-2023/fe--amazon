@@ -9,14 +9,16 @@ import {
 class SidebarMainSectionDefault extends SidebarMainSection {
   constructor() {
     super();
-    const section = document.createElement('section');
-    const data = JSON.parse(decodeURIComponent(this.getAttribute('data')));
-    const id = data.id;
-    section.id = id;
+    const hostElement = document.createElement('section');
+    const categoryData = JSON.parse(
+      decodeURIComponent(this.getAttribute('data-category'))
+    );
+    const id = categoryData.id;
+    hostElement.id = id;
 
-    section.innerHTML = `
-      <sidebar-title-element>${data.title}</sidebar-title-element>
-      ${data.categories
+    hostElement.innerHTML = `
+      <sidebar-title-element>${categoryData.title}</sidebar-title-element>
+      ${categoryData.categories
         .map((category) => {
           return `
             <sidebar-category-element id=${category.id}>${category.name}</sidebar-category-element>
@@ -24,13 +26,14 @@ class SidebarMainSectionDefault extends SidebarMainSection {
         })
         .join('')}`;
 
-    const categoryLength = data.categories.length;
+    const categoryLength = categoryData.categories.length;
     const foldingListHeight =
       SIDEBAR_CATEGORY_HEIGHT * (categoryLength - FOLD_THRESHOLD) +
       SIDEBAR_FOLDING_BTN_HEIGHT;
 
-    this.append(section);
-    this.append(sidebarMainSectionStyle.call(this, id, foldingListHeight));
+    this.append(hostElement);
+    const style = sidebarMainSectionStyle.call(this, id, foldingListHeight);
+    this.append(style);
   }
 }
 

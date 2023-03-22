@@ -1,15 +1,10 @@
-const SLIDE_INTERVAL_TIME = 3000;
+const SLIDE_INTERVAL_TIME = 10000;
 
 function clickSliderController() {
   const slider = document.querySelector('slider-element').shadowRoot;
   slider.addEventListener('click', (e) => {
-    const position = e.target.getAttribute('position');
-    if (position === 'right') {
-      slideLeft(slider);
-    }
-    if (position === 'left') {
-      slideRight(slider);
-    }
+    const direction = e.target.getAttribute('position');
+    handleSlide(slider, direction);
   });
 }
 
@@ -21,43 +16,41 @@ function autoSlide() {
   }, SLIDE_INTERVAL_TIME);
 }
 
+function handleSlide(slider, direction) {
+  if (direction === 'left') {
+    slideRight(slider);
+  } else if (direction === 'right') {
+    slideLeft(slider);
+  }
+}
+
 function slideLeft(slider) {
+  const slideContainer = slider.querySelector('.slide-container');
+  slideContainer.style.transform = `translateX(-100vw)`;
+  slideContainer.style.transition = `all 0.5s`;
+
   const firstSlide = slider.querySelector('.slide');
-  let lastSlide = firstSlide;
-  firstSlide.remove();
-  slider.querySelector('.slide-container').append(lastSlide);
-
-  const currentSlide = slider.querySelector('.middle');
-  const prevSlide = currentSlide.previousElementSibling;
-  const nextSlide = currentSlide.nextElementSibling;
-
-  prevSlide.classList.remove('left');
-  currentSlide.classList.remove('middle');
-  nextSlide.classList.remove('right');
-
-  currentSlide.classList.add('left');
-  nextSlide.classList.add('middle');
+  const lastSlide = firstSlide;
+  slideContainer.addEventListener('transitionend', () => {
+    slideContainer.removeAttribute('style');
+    firstSlide.remove();
+    slider.querySelector('.slide-container').append(lastSlide);
+  });
 }
 
 function slideRight(slider) {
+  const slideContainer = slider.querySelector('.slide-container');
+  slideContainer.style.transform = `translateX(100vw)`;
+  slideContainer.style.transition = `all 0.5s`;
+
   const lastSlide = slider.querySelector('.slide:last-child');
-  let firstSlide = lastSlide;
-  lastSlide.remove();
-  slider.querySelector('.slide-container').prepend(firstSlide);
-
-  const currentSlide = slider.querySelector('.middle');
-  const prevSlide = currentSlide.previousElementSibling;
-  const prevPrevSlide = prevSlide.previousElementSibling;
-  const nextSlide = currentSlide.nextElementSibling;
-
-  prevSlide.classList.remove('left');
-  currentSlide.classList.remove('middle');
-  nextSlide.classList.remove('right');
-
-  prevPrevSlide.classList.add('left');
-  prevSlide.classList.add('middle');
-  currentSlide.classList.add('right');
+  const firstSlide = lastSlide;
+  slideContainer.addEventListener('transitionend', () => {
+    slideContainer.removeAttribute('style');
+    lastSlide.remove();
+    slider.querySelector('.slide-container').prepend(firstSlide);
+  });
 }
 
 clickSliderController();
-autoSlide();
+// autoSlide();

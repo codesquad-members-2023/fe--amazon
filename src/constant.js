@@ -16,3 +16,5 @@ export const SIDEBAR_CATEGORY_HEIGHT = 40;
 export const SIDEBAR_FOLDING_BTN_HEIGHT = 40;
 
 export const FOLD_THRESHOLD = 4;
+
+export const SLIDER_IMAGES_LENGTH = 5;
