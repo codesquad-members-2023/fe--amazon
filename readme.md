@@ -41,5 +41,31 @@
   - [x] SidebarSub 를 열 때 스크롤 때문에 애니메이션이 어색해보이는 버그 해결
 
 - [ ] Sidebar 이미 꺼낸 것은 다시 렌더링하지 않도록 쌓아두기
-- [ ] 메인 콘텐츠 슬라이드 작업
+- [X] 메인 콘텐츠 슬라이드 작업
 - [ ] Search 작업
+
+# 3주차
+- [ ] 리팩토링
+  - [ ] Icon 생성자 줄이기
+  - [ ] Icon 로딩 영역 다른 방법 생각해보기
+  - [ ] this.append(sidebarMainSectionStyle.call(this, id, foldingListHeight)); 부분 변수로 변경
+  - [ ] SidebarMainSectionDefault.js - section/data 변수명 구체적으로 변경
+  - [ ] slider.js - light, right 처리 과정 중복 처리
+  - [ ] setInterval 문제점 찾아보기
+  - [ ] prototype 방식의 객체 표현 방식을 1개 이상 구현해보기
+- [ ] 공부 (https://velog.io/@realsnoopso/TIL-%EC%9B%B9-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-OOP-Prototype)
+  - [ ] 웹 애니메이션
+  - [ ] OOP in JS
+  - [ ] prototype 과 상속
+- [ ] 슬라이더 디버깅
+  - [ ] 슬라이더 구조 변경해서 이미지 어색해보이는 부분 해결
+  - [ ] 슬라이더 클릭 액션과 자동으로 넘기는 액션 중첩되는 부분 해결
+- [ ] 메인 콘텐츠 영역 추가하기
+- [ ] Footer 추가하기
+
+# 4주차
+- [ ] Search 작업
+- [ ] Sidebar 이미 꺼낸 것은 다시 렌더링하지 않도록 쌓아두기
+- [ ] Sidebar 경계선에 border 추가
+
+
