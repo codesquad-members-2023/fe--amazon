@@ -26,21 +26,21 @@
 
 .sidebar__header span {
   color: var(--color-white);
-  font-size: 1.125rem;
-  font-weight: 800;
+  font-size: var(--font-boldLG);
+  font-weight: var(--weight-extraBold);
 }
 
 /* 사이드바 목록 텍스트 설정 */
 .sidebar__category-border {
-  font-size: 1.125rem;
-  font-weight: 800;
+  font-size: var(--font-boldLG);
+  font-weight: var(--weight-extraBold);
 }
 
 .sidebar li {
   display: flex;
   justify-content: space-between;
   padding: 1em;
-  font-size: 0.813rem;
+  font-size: var(--font-boldMD);
 }
 
 /* 사이드바 닫는 버튼 설정 */
@@ -50,7 +50,7 @@
   left: 20rem;
   border: none;
   background-color: transparent;
-  font-size: 1.875rem;
+  font-size: var(--font-boldXL);
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }

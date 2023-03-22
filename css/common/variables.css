@@ -1,7 +1,21 @@
 :root {
-  /* font */
+  /* root font */
   font-size: 16px;
 
+  /* font size */
+  --font-boldXL: 1.75rem; /* 28px */
+  --font-boldLG: 1.125rem; /* 18px */
+  --font-boldMD: 0.813rem; /* 13px */
+  --font-boldXS: 0.75rem; /* 12px */
+  --font-boldSM: 0.688rem; /* 11px */
+
+  /* font weight */
+  --weight-extraBold: 800;
+  --weight-semiBold: 600;
+
+  /* line height */
+  --line-height-large: 160%;
+  
   /* color */
   --color-white: #ffffff;
   --color-gray100: #eff2f2;
@@ -23,4 +37,6 @@
   --color-secondaryPurple: #941387;
   --color-secondaryNavy: #074099;
   --color-secondaryGreen: #0c5e72;
+
+
 }

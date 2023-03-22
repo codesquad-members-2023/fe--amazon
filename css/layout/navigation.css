@@ -32,16 +32,15 @@
 
 /* 서브 네비게이션바 메뉴 상단, 하단 텍스트 설정 */
 .sub__menu-top {
-  font-size: 0.688rem;
-  line-height: 1rem;
-  font-weight: 600;
+  font-size: var(--font-boldSM);
+  line-height: var(--line-height-large);
+  font-weight: var(--weight-semiBold);
   color: var(--color-gray400);
-
 }
 
 .sub__menu-bottom {
-  font-size: 0.813rem;
-  font-weight: 800;
+  font-size: var(--font-boldMD);
+  font-weight: var(--weight-extraBold);
   color: var(--color-white);
 }
 
@@ -62,7 +61,7 @@
   height: 2.5rem;
   border: none;
   border-radius: 0rem 0.25rem 0.25rem 0rem;
-  background-color: var(--color-primaryOrange100)
+  background-color: var(--color-primaryOrange100);
 }
 
 /* 메인 네비게이션바 */
