@@ -3,10 +3,8 @@ import { TextComponent } from '../../basic/TextComponent';
 import { TwoRowTextComponentStyle } from '../../../../style/components/navbar/main/TwoRowTextComponent.css';
 
 export class TwoRowTextComponent extends BaseComponent<HTMLAnchorElement> {
-  constructor(firstText: string, secondText: string, link?: string) {
-    super(
-      `<a class='${TwoRowTextComponentStyle}' href='${link ? link : ''}'></a>`,
-    );
+  constructor(firstText: string, secondText: string) {
+    super(`<div class='${TwoRowTextComponentStyle}'></div>`);
 
     const firstRow = new TextComponent(
       firstText,

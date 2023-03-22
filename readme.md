@@ -179,10 +179,10 @@ div {
 - [x] sidebar
   - [x] 항목 접기/펼치기
   - [x] 하위 메뉴 영역 노출
-- [ ] `리팩토링`(변수명, 함수 분리 등)
+- [x] `리팩토링`(변수명, 함수 분리 등)
   - [x] css 파일 분리
-  - [ ] class component
-  - [ ] vanilla extract 사용해보기
+  - [x] class component
+  - [x] vanilla extract 사용해보기
 
 ## 🌳 Jayden's Record
 
@@ -249,3 +249,148 @@ div {
 - [stopPropagation vs preventDefault](https://ismydream.tistory.com/98)
 - [Git stash](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Stashing%EA%B3%BC-Cleaning)
 - [템플릿 엔진](https://velog.io/@hi_potato/Template-Engine-Template-Engine)
+
+# 🪴 Jayden's Week-03
+
+- `23.03.20(Mon) ~ 23.03.24(Fri)`
+
+## 🌵 Jayden's Keyword
+
+- 애니메이션 원리
+- 레이아웃, 페인트, 컴포지트
+- Sass
+- 캐로셀(무한 슬라이드)
+- OOP
+
+## 🌴 Jayden's Rule
+
+- CSS 전처리기가 무엇인지 확실히 공부하자
+- Sass, Scss에 대해서 깊이 있게 공부하고 무조건 쓰는 게 좋은건지 의문을 갖자
+- 브라우저가 html, css, js를 읽고 페이지를 그리기까지의 과정을 설명할 수 있을 정도로 깊게 알기
+- 프론트엔드에게 있어 OOP는 어떻게 사용하면 될지 고민해보기
+- 무한 슬라이드가 되는 캐로셀 구현하기
+
+## 🌾 Jayden's Learning Plan
+
+- Mon: 학습 계획 작성 및 개념 공부 정리, 저번주 못한 부분 최대한 마무리
+- Tue: 최대한 리펙토링할 수 있는 코드 리펙토링해보자
+- Wed: 캐로셀에 대해 공부하고 일단 유한한 캐로셀 구현하기
+- Thu: 무한 슬라이드로 캐로셀 구현해보기
+- Fri: 개념 복습 및 못다한 구현, 코드 정리
+
+## 🌲 Jayden's Check List
+
+- [x] readme 작성하기
+- [ ] 학습 내용 정리 및 개념 공부
+  - [x] Sass
+  - [x] 애니메이션
+  - [x] 웹 페이지 렌더링 과정
+  - [x] 프론트엔드의 OOP 그리고 prototype
+  - [ ] 캐로셀 + 무한 슬라이드
+- [ ] 지난번 못다한 내용
+  - [x] 사이드바 완성
+  - [ ] 애니메이션 처리
+  - [ ] 구현 시각적인 부분 디테일 살리기
+- [ ] 캐로셀 구현
+  - [ ] 유한 슬라이드
+  - [ ] 무한 슬라이드
+
+## 🌳 Jayden's Record
+
+### CSS 전처리기(CSS Preprocessor)
+
+- 전처리기만의 문법을 더한 CSS 머듈 정도로 생각하면 된다.
+- CSS가 갖는 불리한 점들을 보완하기 위함이며 대부분 CSS를 프로그래밍 언어처럼 사용할 수 있게 해준다.(변수, 함수, 조건문 등)
+- 결국 CSS에 대한 슈퍼셋(확장셋)이기 떄문에 CSS로 컴파일되어야만 한다.
+
+### Sass/Scss
+
+- Sass의 버전 3부터 CSS와 좀더 가까운 문법인 Scss가 등장
+
+### Scss 변수 선언 방법
+
+```scss
+$jayden-color: #111111;
+
+.button {
+	background-color: $jayden-color;
+}
+```
+
+```scss
+// CSS
+.container {
+  margin-top: 10px;
+}
+
+.container .item {
+  padding: 10px;
+}
+
+// Sass
+.container {
+  margin-top: 10px;
+
+  .item {
+    padding: 10px;
+  }
+}
+```
+
+### @mixin
+
+- css에서의 함수라고 생각하면 된다. 변수도 $로 만들어서 전달할 수 있다.
+
+```scss
+@mixin jayden-styles($flexDirection: row, $backgroundColor: #000000) {
+	display: flex;
+	flex-direction: $flexDirection;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $backgroundColor;
+} 
+
+.jayden-box {
+	@include jayden-styles(column, #ffffff);
+}
+```
+
+### @extend
+
+- 타입스크립트의 클래스 상속과 같은 기능. 그러나 css media-query 내에서 실행되지 않으며 Sass 가이드라인에서도 사용을 권장하지 않는다.
+
+```scss
+.a {
+	padding: 1rem;
+}
+
+.b {
+	@extend .a;
+	background-color: tomato;
+}
+```
+
+### @import
+
+- 외부에 모듈화해서 분리해 놓은 Sass 파일을 불러와 병합하여 사용가능하다.(js의 모듈처럼)
+
+> CSS @import는 사용할 때마다 매번 http 호출을 하기 때문에 속도 저하를 가져온다.
+> 그러나 Sass @import는 CSS로 컴파일하여 바로 처리하기 때문에 http 호출이 필요하지 않아 속도 저하 문제를 발생시키지 않는다.
+
+#### @import 사용 팁
+
+1. 보통 변수와 @mixin은 따로 Sass 모듈 파일로 만들고 @import하여 사용한다.
+- 이 때, 파일명 앞에 `_`를 붙이면 CSS로 컴파일 되지 않는다.
+- 예를 들어 `_mixin.scss`, `_header.scss` 파일명을 만들고, 주 파일에서 @import 하면 2개(`_mixin.scss`, `_header.scss`)의 파일 내용은 주 파일에 적용되지만 `_mixin.scss`, `_header.scss` 파일은 css로 컴파일 되지 않기 때문에 관리하기가 편리해진다.
+
+2. 하나의 @import로 여러 파일을 불러올 수 있다.
+- 이 때, 파일명으로만 @import해도 알아서 확장자는 .scss인 것을 알기 때문에 안붙여도 된다.(주의: css 파일은 @import 시 .css를 붙여줘야 한다.)
+```scss
+@import '_aaa', '_bbb';
+```
+
+## 🪵 Reference
+
+- [Sass, Scss](https://www.biew.co.kr/entry/Sass%E3%86%8DSCSS-%EC%86%94%EC%A7%81%ED%95%9C-%EC%9E%A5%E3%86%8D%EB%8B%A8%EC%A0%90-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95)
+- [브라우저에서 페이지를 렌더링하는 방식](https://ajdkfl6445.gitbook.io/study/web/browser-rendering)
+- [window.requestAnimationFrame()](https://developer.mozilla.org/ko/docs/Web/API/window/requestAnimationFrame)
