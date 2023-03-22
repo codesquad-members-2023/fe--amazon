@@ -9,123 +9,122 @@
   <link rel='stylesheet' href='/css/variable.css'>
   <link rel='stylesheet' href='/css/nav.css'>
   <link rel='stylesheet' href='/css/sidebar.css'>
+  <link rel='stylesheet' href='/css/carousel.css'>
   <link rel='icon' href='./asset/images/Amazon_icon.svg'>
   <title>Amazon</title>
 </head>
 
 <body>
   <header class="nav_bar">
-      <div class="nav_main nav_tab_box">
-        <div class="logo">
-          <img src='/asset/images/vectors/BI.svg' alt="아마존 로고">
+    <div class="nav_main nav_tab_box">
+      <div class="logo">
+        <img src='/asset/images/vectors/BI.svg' alt="아마존 로고">
+      </div>
+      <div class="address_container">
+        <div class="address">
+          <div class="nav_tab_top">
+            <img src='/asset/images/vectors/ShippingAddress.svg' alt="배송처">
+            <div>배송처</div>
+          </div>
+          <div>대한민국</div>
         </div>
-        <div class="address_container">
-          <div class="address">
-            <div class="nav_tab_top">
-              <img src='/asset/images/vectors/ShippingAddress.svg' alt="배송처">
-              <div>배송처</div>
-            </div>
-            <div>대한민국</div>
+        <div class="address_popup hidden modal_box">
+          <div>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</div>
+          <div class="btns">
+            <button id='continue_btn'>계속</button>
+            <button id='change_address_btn'>주소변경</button>
           </div>
-          <div class="address_popup hidden modal_box">
-            <div>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</div>
-            <div class="btns">
-              <button id='continue_btn'>계속</button>
-              <button id='change_address_btn'>주소변경</button>
-            </div>
-            <div class='triangle'></div>
-          </div>
+          <div class='triangle'></div>
+        </div>
+      </div>
+
+      <form class="search">
+        <input type='text' placeholder='검색 Amazon'>
+        <button id='search_btn'>
+          <img src='/asset/images/vectors/SearchBar.svg' alt="돋보기">
+        </button>
+      </form>
+
+      <div class="nation">🇰🇷 KO</div>
+
+      <div class="login_container">
+        <div class="login">
+          <div class="nav_tab_top">안녕하세요, 로그인</div>
+          <div>계정 및 목록</div>
         </div>
 
-        <form>
-          <div class="search">
-            <input type='text' placeholder='검색 Amazon'>
-            <button id='search_btn'>
-              <img src='/asset/images/vectors/SearchBar.svg' alt="돋보기">
-            </button>
+        <div class="login_popup modal_box fade_in">
+          <button class='login__btn'>로그인</button>
+          <div>
+            <span>기존 사용자가 아니십니까?</span>
+            <a class="login_page_move">여기에서 시작합니다.</a>
           </div>
-        </form>
+          <div class='triangle fade_in'></div>
+        </div>
 
-        <div class="nation">🇰🇷 KO</div>
-
-        <div class="login_container">
-          <div class="login">
-            <div class="nav_tab_top">안녕하세요, 로그인</div>
-            <div>계정 및 목록</div>
-          </div>
-
-          <div class="login_popup modal_box fade_in">
+        <div class="login_detail hidden modal_box">
+          <div class="login_popup">
             <button class='login__btn'>로그인</button>
             <div>
               <span>기존 사용자가 아니십니까?</span>
               <a class="login_page_move">여기에서 시작합니다.</a>
             </div>
-            <div class='triangle fade_in'></div>
           </div>
-
-          <div class="login_detail hidden modal_box">
-            <div class="login_popup">
-              <button class='login__btn'>로그인</button>
-              <div>
-                <span>기존 사용자가 아니십니까?</span>
-                <a class="login_page_move">여기에서 시작합니다.</a>
-              </div>
+          <div class="content">
+            <div class="mylist">
+              <h3>귀하의 목록</h3>
+              <ul>
+                <li>목록 생성</li>
+                <li>목록 또는 레지스트리 찾기</li>
+                <li>AmazonSmile 자선 품목 목록</li>
+              </ul>
             </div>
-            <div class="content">
-              <div class="mylist">
-                <h3>귀하의 목록</h3>
-                <ul>
-                  <li>목록 생성</li>
-                  <li>목록 또는 레지스트리 찾기</li>
-                  <li>AmazonSmile 자선 품목 목록</li>
-                </ul>
-              </div>
-              <div class="mypage">
-                <h3>계정</h3>
-                <ul>
-                  <li>계정</li>
-                  <li>주문</li>
-                  <li>권장 사항</li>
-                  <li>검색 기록</li>
-                  <li>위치리스트</li>
-                  <li>비디오 구매 및 대여</li>
-                  <li>Kindle 언리미티드</li>
-                  <li>콘텐츠 및 기기</li>
-                  <li>항목 구독 및 저장</li>
-                  <li>멤버쉽 및 구독</li>
-                  <li>음악 라이브러리</li>
-                </ul>
-              </div>
+            <div class="mypage">
+              <h3>계정</h3>
+              <ul>
+                <li>계정</li>
+                <li>주문</li>
+                <li>권장 사항</li>
+                <li>검색 기록</li>
+                <li>위치리스트</li>
+                <li>비디오 구매 및 대여</li>
+                <li>Kindle 언리미티드</li>
+                <li>콘텐츠 및 기기</li>
+                <li>항목 구독 및 저장</li>
+                <li>멤버쉽 및 구독</li>
+                <li>음악 라이브러리</li>
+              </ul>
             </div>
-            <div class='triangle'></div>
           </div>
-        </div>
-
-        <div class="order">
-          <div class="nav_tab_top">반품</div>
-          <div>&주문</div>
-        </div>
-
-        <div class="cart">
-          <img src='/asset/images/vectors/Cart.svg' alt="장바구니 카트">
-          <div>장바구니</div>
+          <div class='triangle'></div>
         </div>
       </div>
 
-      <div class="nav_sub nav_tab_box">
-        <div class="nav_sub_left nav_tab_box">
-          <div class="every">
-            <img src='/asset/images/vectors/SideBar.svg' alt="모두 탭">
-            <div>모두</div>
-          </div>
-          <div>오늘의 딜</div>
-          <div>고객 서비스</div>
-          <div>레지스트리</div>
-          <div>기프트 카드</div>
-          <div>판매</div>
-        </div>
-        <div class="nav_sub_right">지금 특가 상품 쇼핑하기</div>
+      <div class="order">
+        <div class="nav_tab_top">반품</div>
+        <div>&주문</div>
       </div>
+
+      <div class="cart">
+        <img src='/asset/images/vectors/Cart.svg' alt="장바구니 카트">
+        <div>장바구니</div>
+      </div>
+    </div>
+
+    <div class="nav_sub nav_tab_box">
+      <div class="nav_sub_left nav_tab_box">
+        <div class="every">
+          <img src='/asset/images/vectors/SideBar.svg' alt="모두 탭">
+          <div>모두</div>
+        </div>
+        <div>오늘의 딜</div>
+        <div>고객 서비스</div>
+        <div>레지스트리</div>
+        <div>기프트 카드</div>
+        <div>판매</div>
+      </div>
+      <div class="nav_sub_right">지금 특가 상품 쇼핑하기</div>
+    </div>
   </header>
 
   <div class="modal_background hidden"></div>
@@ -284,12 +283,18 @@
     </div>
   </aside>
 
-  <section>
-    <header></header>
+  <div class="page_content">
     <!-- 히어로영역 -->
+    <div class="carousel_container">
+      <div class="image_box">
+        <!-- <img src="/asset/images/carousel/1.jpg"> -->
+      </div>
+      <div class="carousel_banner">
+        <div class="carousel_left"><img src='/asset/images/vectors/LeftButton.svg'></div>
+        <div class="carousel_right"><img src='/asset/images/vectors/RightButton.svg'></div>
+      </div>
+    </div>
 
-    <article>
-    </article>
     <!-- board layout -->
     <div class='card_container'>
       <div class='card_column'>
@@ -302,14 +307,14 @@
           <h2>집에서 입어보기</h2>
           <a>더보기</a>
         </div>
-        </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <script src='/javascript/nav.js'></script>
   <script src='/javascript/sideBar.js'></script>
   <script src='/javascript/data/sidebarData.js'></script>
+  <script src='/javascript/carousel.js'></script>
 </body>
 
 </html>

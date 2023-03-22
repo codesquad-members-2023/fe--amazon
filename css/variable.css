@@ -1,5 +1,5 @@
 :root {
-  --font-family-pretendard : 'Pretendard';
+  --font-family-pretendard : 'Pretendard-Regular', Sans-Serif;
   --font-style-normal : normal;
   --line-height-160 : 160%;
   --line-height-200 : 200%;
@@ -20,7 +20,7 @@
   --color-white: #ffffff;
   --color-gray-100: #eff2f2;
   --color-gray-200: #e5e9e9;
-  --color-gray-300: #dce0e0;
+  --color-gray-300: #E3E6E6;
   --color-gray-400: #d5d5d5;
   --color-gray-500: #c1c1c1;
   --color-gray-600: #878787;
