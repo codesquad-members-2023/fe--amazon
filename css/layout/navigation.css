@@ -1,10 +1,11 @@
-@media (max-width: 1280px) {
+/* 화면 가로 사이즈 크기에 따른 검색크기 지정 */
+@media (max-width: 80rem) {
   body {
-    width: 1280px;
+    width: 80rem;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 80rem) {
   .nav__search {
     flex-grow: 1;
   }
@@ -13,6 +14,7 @@
   }
 }
 
+/* 서브 네비게이션바 */
 .nav__sub {
   display: flex;
   justify-content: space-between;
@@ -28,16 +30,19 @@
   height: 1.875rem;
 }
 
+/* 서브 네비게이션바 메뉴 상단, 하단 텍스트 설정 */
 .sub__menu-top {
-  color: var(--color-gray400);
   font-size: 0.688rem;
+  line-height: 1rem;
   font-weight: 600;
+  color: var(--color-gray400);
+
 }
 
 .sub__menu-bottom {
-  color: var(--color-white);
   font-size: 0.813rem;
   font-weight: 800;
+  color: var(--color-white);
 }
 
 .nav__search {
@@ -57,16 +62,17 @@
   height: 2.5rem;
   border: none;
   border-radius: 0rem 0.25rem 0.25rem 0rem;
-  background-color: var(--color-primaryOrange100);
+  background-color: var(--color-primaryOrange100)
 }
 
+/* 메인 네비게이션바 */
 .nav__main {
   display: flex;
   align-items: center;
   height: 2rem;
   padding: 0rem 1rem;
-  color: var(--color-white);
   background: var(--color-gray900);
+  color: var(--color-white);
 }
 
 .nav__shop {

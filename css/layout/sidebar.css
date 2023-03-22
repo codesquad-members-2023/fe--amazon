@@ -2,7 +2,7 @@
   position: fixed;
   /* z-index: 2; */
   top: 0;
-  left: -400px;
+  left: -25rem;
   overflow: scroll;
   width: 20rem;
   height: 100%;
@@ -11,9 +11,10 @@
 }
 
 .sidebar__active {
-  left: 0px;
+  left: 0;
 }
 
+/* 사이드바 헤더 */
 .sidebar__header {
   display: flex;
   justify-content: flex-start;
@@ -29,7 +30,8 @@
   font-weight: 800;
 }
 
-.sidebar__catogory-border {
+/* 사이드바 목록 텍스트 설정 */
+.sidebar__category-border {
   font-size: 1.125rem;
   font-weight: 800;
 }
@@ -41,12 +43,7 @@
   font-size: 0.813rem;
 }
 
-/* .sidebar-other-contents {
-  height: 0%;
-  overflow: hidden;
-  transition: 1s ease-in-out;
-} */
-
+/* 사이드바 닫는 버튼 설정 */
 .sidebar__button-close {
   position: fixed;
   top: 0.313rem;
@@ -54,10 +51,10 @@
   border: none;
   background-color: transparent;
   font-size: 1.875rem;
-  opacity: 0%;
+  opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
-.button__close-view {
-  opacity: 100%;
+.button__close-show {
+  opacity: 1;
 }

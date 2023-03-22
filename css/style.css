@@ -2,6 +2,6 @@
 @import url('./common/reset.css');
 @import url('./common/variables.css');
 /* components */
-@import url('./components/modal.css');
-@import url('./components/navigation.css');
-@import url('./components/sidebar.css');
+@import url('./layout/modal.css');
+@import url('./layout/navigation.css');
+@import url('./layout/sidebar.css');
