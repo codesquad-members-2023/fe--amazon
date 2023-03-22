@@ -15,7 +15,7 @@
 
   /* line height */
   --line-height-large: 160%;
-  
+
   /* color */
   --color-white: #ffffff;
   --color-gray100: #eff2f2;
@@ -38,5 +38,8 @@
   --color-secondaryNavy: #074099;
   --color-secondaryGreen: #0c5e72;
 
-
+  /* z-index */
+  --zIndex-header: 1000;
+  --zIndex-sidebar: 3000;
+  --zIndex-dimmed: 2000;
 }

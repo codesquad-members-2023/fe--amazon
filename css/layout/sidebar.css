@@ -1,13 +1,13 @@
 .sidebar {
   position: fixed;
-  /* z-index: 2; */
+  z-index: var(--zIndex-sidebar);
   top: 0;
   left: -25rem;
   overflow: scroll;
   width: 20rem;
   height: 100%;
   background-color: var(--color-white);
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .sidebar__active {
@@ -50,9 +50,10 @@
   left: 20rem;
   border: none;
   background-color: transparent;
+  color: var(--color-white);
   font-size: var(--font-boldXL);
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .button__close-show {
