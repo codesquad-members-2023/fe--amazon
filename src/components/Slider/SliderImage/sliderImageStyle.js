@@ -13,7 +13,7 @@ export default function sliderStyle() {
       top: 0;
       background-position: top;
       background-repeat: no-repeat;
-      transform: translateX(-${(halfNum - 1) * 100}vw);
+      
     }
   `;
   return style;
