@@ -12,6 +12,6 @@ export const SideBarComponentStyle = style({
   top: 0,
   left: '-20rem',
   zIndex: 3,
-  overflow: 'auto',
-  transition: 'transform 1s ease-in',
+  overflowY: 'scroll',
+  transition: 'transform 1s ease-out',
 });
