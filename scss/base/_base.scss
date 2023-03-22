@@ -1,0 +1,22 @@
+// 디폴트에 대한 사항들
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Pretendard';
+  position: relative;
+}
+
+main {
+  width: $main_width;
+  height: 100%;
+  position: fixed;
+  top: 104px;
+  z-index: -1;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  font: inherit;
+}

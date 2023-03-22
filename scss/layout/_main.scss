@@ -1,0 +1,47 @@
+.carousel {
+  position: fixed;
+  width: $main_width;
+  height: 100%;
+  top: 104px;
+}
+
+.carousel_buttons {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel_button {
+  padding-top: 86px;
+}
+
+.carousel_left {
+  padding-left: 80px;
+}
+
+.carousel_right {
+  padding-right: 80px;
+}
+
+.carousel_window {
+  position: relative;
+  width: $main_width;
+  overflow: hidden;
+  height: 600px;
+}
+
+.carousel_container {
+  width: $main_width * 5;
+  position: absolute;
+  left: -$main_width;
+  display: flex;
+  flex-direction: row;
+}
+.carousel_img {
+  background-size: contain;
+  width: $main_width;
+  height: 600px;
+  background-repeat: no-repeat;
+}

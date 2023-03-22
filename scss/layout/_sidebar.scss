@@ -15,20 +15,18 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-
   overflow-y: auto;
   position: fixed;
   width: 320px;
   height: 100%;
-
   left: 0px;
   top: 0px;
   bottom: 0px;
-
   opacity: 0.9;
 
   /* White */
   background: #ffffff;
+
   /* background: rgba(16, 20, 26, 0.6); */
 }
 
@@ -37,22 +35,23 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
   padding: 16px 16px 16px 32px;
   gap: 8px;
-
   width: 320px;
   height: 53px;
   color: #ffffff;
+
   /* Black */
   font-weight: 800;
   font-size: 18px;
   line-height: 21px;
   background: #1c232f;
+
   /* padding-left: 33.5px; */
-}
-.sidebar_header img {
-  margin-right: 9.5px;
+
+  img {
+    margin-right: 9.5px;
+  }
 }
 
 .sidebar_section_header {
@@ -62,10 +61,10 @@
   align-items: center;
   padding: 16px 16px 16px 32px;
   gap: 8px;
-
   width: 320px;
   height: 53px;
   color: black;
+
   /* White */
   font-weight: 800;
   font-size: 18px;
@@ -85,6 +84,7 @@
   padding: 8px 16px 8px 32px;
   gap: 8px;
 }
+
 #sidebarButton {
   border-bottom: solid 1px #eff2f2;
 }
@@ -97,49 +97,19 @@
   z-index: 101;
 }
 
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translateZ(0);
-  }
-}
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 1;
-    transform: translateZ(0);
-  }
-  to {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
 .sidebar_section_list li:hover,
 .sidebar_detail_back_button:hover,
 .sidebar_hidden_menus li:hover {
   background: #eff2f2;
+  .hover_img {
+    filter: brightness(0%);
+  }
 }
 
 .sidebar_detail_section {
   display: none;
   top: 53px;
   position: absolute;
-}
-
-@keyframes fadeInDetail {
-  0% {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translateZ(0);
-  }
 }
 
 .sidebar_detail_back_button {
@@ -150,27 +120,9 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 160%;
-}
 
-.sidebar_detail_back_button img {
-  margin-right: 8px;
-}
-
-@keyframes appearDetail {
-  from {
-    left: 330px;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@keyframes hideDetail {
-  from {
-    left: -330px;
-  }
-  to {
-    left: 0;
+  img {
+    margin-right: 8px;
   }
 }
 
@@ -178,33 +130,12 @@
   position: relative;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0.5;
-    height: 0;
-  }
-  to {
-    opacity: 1;
-    height: 100%;
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 1;
-    height: 100%;
-  }
-
-  100% {
-    opacity: 0.7;
-    height: 0%;
-  }
-}
 .sidebar_hidden_menus {
   position: relative;
+  height: 0;
   display: block;
   overflow: hidden;
-  height: 0;
+
   transition: height 0.5s ease;
 }
 

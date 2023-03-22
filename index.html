@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amazon Clone</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="icon" href="/asset/Amazon_icon.svg" />
     <link rel="apple-touch-icon" href="/asset/Amazon_icon.svg" />
   </head>
@@ -481,10 +481,24 @@
 
     <main>
       <!-- 메인 뷰 -->
-      <img src="asset/photo.png" />
-      <img src="asset/photo.png" />
-      <img src="asset/photo.png" />
-      <img src="asset/photo.png" />
+      <section class="carousel">
+        <section class="carousel_buttons">
+          <div class="carousel_button carousel_left">
+            <a href="#">
+              <img src="asset/LeftButton.svg" />
+            </a>
+          </div>
+          <div class="carousel_button carousel_right">
+            <a href="#">
+              <img src="asset/RightButton.svg" />
+            </a>
+          </div>
+        </section>
+
+        <section class="carousel_window">
+          <ul class="carousel_container"></ul>
+        </section>
+      </section>
     </main>
 
     <footer>
@@ -495,4 +509,5 @@
   <script src="js/sidebarEvent.js"></script>
   <script src="data/sidebarData.js" type="module"></script>
   <script src="js/sidebarMoveEvent.js" type="module"></script>
+  <script src="js/carousel.js"></script>
 </html>

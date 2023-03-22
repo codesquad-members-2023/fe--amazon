@@ -5,6 +5,7 @@ nav {
 #head_navigation_bar {
   position: fixed;
 }
+
 .dim_layer {
   display: none;
   position: fixed;
@@ -20,6 +21,7 @@ nav {
   width: 90px;
   height: 27.22;
 }
+
 .menu1 {
   display: flex;
   flex-direction: column;
@@ -33,11 +35,11 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
 
-#menu1_upside img {
-  height: 11px;
-  margin-right: 2px;
+  img {
+    height: 11px;
+    margin-right: 2px;
+  }
 }
 
 #menu1_downside {
@@ -51,6 +53,7 @@ nav {
   flex-direction: row;
   align-items: center;
 }
+
 .search_bar {
   width: 707px;
   height: 40px;
@@ -66,6 +69,7 @@ nav {
   border: 0px;
   font-family: 'Pretendard';
 }
+
 .search_button {
   background-color: #fcb057;
   width: 40px;
@@ -89,15 +93,16 @@ nav {
   letter-spacing: -0.06em;
   margin-right: 24px;
 }
+
 #country {
   margin-right: 4px;
 }
 
 .menu {
   padding-top: 5px;
-
   padding-right: 24px;
 }
+
 .menus_upside {
   font-size: 11px;
   color: #d5d5d5;
@@ -119,9 +124,10 @@ nav {
 .cart {
   display: flex;
   flex-direction: row;
-}
-.cart img {
-  margin-right: 6.33px;
+
+  img {
+    margin-right: 6.33px;
+  }
 }
 
 .nav_login {
@@ -134,7 +140,6 @@ nav {
   align-items: center;
   padding: 16px;
   gap: 8px;
-
   position: absolute;
   width: 235px;
   height: 65px;
@@ -163,6 +168,7 @@ nav {
   background: white;
   transform: rotate(45deg);
 }
+
 .up_nav {
   display: flex;
   align-items: center;
@@ -175,60 +181,51 @@ nav {
 .nav_login {
   display: flex;
   justify-content: space-between;
-}
-.nav_login button {
-  /* button */
 
-  box-sizing: border-box;
+  button {
+    /* button */
 
-  /* Auto layout */
+    box-sizing: border-box;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 10px;
+    /* Auto layout */
 
-  width: 160px;
-  height: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    width: 160px;
+    height: 32px;
+    background: linear-gradient(
+      174.6deg,
+      #ffffff 4.31%,
+      #fed15f 50.01%,
+      #febe30 95.71%
+    );
 
-  background: linear-gradient(
-    174.6deg,
-    #ffffff 4.31%,
-    #fed15f 50.01%,
-    #febe30 95.71%
-  );
-  /* PrimaryYellow300 */
+    /* PrimaryYellow300 */
 
-  border: 1px solid #de9408;
-  border-radius: 4px;
+    border: 1px solid #de9408;
+    border-radius: 4px;
 
-  /* Inside auto layout */
+    /* Inside auto layout */
 
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 
-.nav_login button div {
-  font-size: 13px;
-  font-weight: 700;
+    div {
+      font-size: 13px;
+      font-weight: 700;
+    }
+  }
 }
 
 #nav_login_text {
   font-size: 11px;
-}
 
-#nav_login_text a {
-  color: #074099;
-}
-
-@keyframes appearAnimation {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+  a {
+    color: #074099;
   }
 }
 
@@ -236,15 +233,16 @@ nav {
   opacity: 0;
   animation: appearAnimation 1s forwards;
   animation-delay: 1s;
+  z-index: 9;
 }
 
 .hover_login_modal {
   display: none;
-}
 
-.hover_login_modal .nav_login {
-  width: 335px;
-  height: 365px;
+  .nav_login {
+    width: 335px;
+    height: 365px;
+  }
 }
 
 .hover_login_list {
@@ -265,17 +263,14 @@ nav {
   flex-direction: column;
   align-items: flex-start;
   width: 162.5px;
+
+  ul :first-child {
+    font-size: 13px;
+    font-weight: 800;
+  }
 }
 
-.hover_login_list1 ul :first-child {
-  font-size: 13px;
-  font-weight: 800;
-}
-
-#nav_login_text span {
-  color: black;
-}
-
+#nav_login_text span,
 .hover_login_list {
   color: black;
 }
@@ -287,13 +282,13 @@ nav {
   align-items: flex-end;
   padding: 16px;
   gap: 26px;
-
   position: absolute;
   width: 320px;
   height: 126px;
   left: 131px;
   top: 69px;
   border: solid 1px #fcb057;
+
   /* White */
 
   color: black;
@@ -302,6 +297,7 @@ nav {
   font-weight: 500;
   font-size: 12.5px;
   line-height: 160%;
+
   /* or 18px */
 
   letter-spacing: -0.03em;
@@ -312,41 +308,39 @@ nav {
   flex-direction: row;
   justify-content: right;
   margin-top: 26px;
-}
 
-.region_modal_downside button {
-  /* Button */
+  button {
+    /* Button */
 
-  box-sizing: border-box;
+    box-sizing: border-box;
 
-  /* Auto layout */
+    /* Auto layout */
 
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    width: 45px;
+    height: 32px;
+    background: linear-gradient(
+      174.6deg,
+      #ffffff 4.31%,
+      #fed15f 50.01%,
+      #febe30 95.71%
+    );
 
-  width: 45px;
-  height: 32px;
+    /* PrimaryYellow300 */
 
-  background: linear-gradient(
-    174.6deg,
-    #ffffff 4.31%,
-    #fed15f 50.01%,
-    #febe30 95.71%
-  );
-  /* PrimaryYellow300 */
+    border: 1px solid #de9408;
+    border-radius: 4px;
+    margin-right: 7px;
+    font-size: 12.5px;
+  }
 
-  border: 1px solid #de9408;
-  border-radius: 4px;
-
-  margin-right: 7px;
-  font-size: 12.5px;
-}
-
-.region_modal_downside :nth-child(2) {
-  width: 70px;
+  :nth-child(2) {
+    width: 70px;
+  }
 }
 
 .login_section {
@@ -363,7 +357,6 @@ nav {
   /* White */
   border-top: solid 1px #fcb057;
   border-left: solid 1px #fcb057;
-
   background: #ffffff;
   transform: rotate(45deg);
 }
@@ -385,15 +378,17 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-.down_nav_left_list ul li {
-  margin-right: 16px;
-}
 
-.down_nav_left_list ul div {
-  display: flex;
-  align-items: center;
-}
-.down_nav_left_list ul div img {
-  height: 16px;
+  li {
+    margin-right: 16px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 16px;
+    }
+  }
 }

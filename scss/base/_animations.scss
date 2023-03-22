@@ -1,0 +1,90 @@
+// 애니메이션을 모아놓은 파일
+@keyframes appearAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeInDetail {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+@keyframes appearDetail {
+  from {
+    left: 330px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes hideDetail {
+  from {
+    left: -330px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0.5;
+    height: 0;
+  }
+
+  to {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 1;
+    height: 100%;
+  }
+
+  100% {
+    opacity: 0.7;
+    height: 0%;
+  }
+}
