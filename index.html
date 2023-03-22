@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" defer src="./js/app.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -24,7 +25,7 @@
               <span>대한민국</span>
             </div>
           </div>
-          <div class="shipping__modal-hover">
+          <div class="nav__modal shipping__modal">
             <div class="shipping__box">
               <div>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</div>
               <div>
@@ -32,7 +33,7 @@
                 <button class="modal__button">주소변경</button>
               </div>
             </div>
-            <div class="shipping__modal-pointer"></div>
+            <div class="modal__pointer shipping__pointer"></div>
           </div>
         </div>
 
@@ -54,26 +55,27 @@
             <div class="sub__menu-bottom">계정 및 목록</div>
           </div>
 
-          <div class="login__modal-fadeIn">
-            <div><button class="modal__login-button">로그인</button></div>
+          <div class="nav__modal login__modal">
+            <div><button class="modal__button login__button">로그인</button></div>
             <div class="login__modal-link">
               <span>기존 사용자가 아니십니까?</span>
               <a href="">여기에서 시작합니다.</a>
             </div>
-            <div class="login__modal-pointer"></div>
+            <div class="modal__pointer login__pointer"></div>
           </div>
 
-          <div class="login__modal-hover">
-            <div><button class="modal__login-button">로그인</button></div>
+          <div class="nav__modal login__modal login__hover">
+            <div><button class="modal__button login__button">로그인</button></div>
             <div class="login__modal-link">
               <span>기존 사용자가 아니십니까?</span>
               <a href="">여기에서 시작합니다.</a>
             </div>
-            <div class="login__modal-accountsList">
+            <hr class="line"/>
+            <div class="login__modal-accountList">
               <ul class="list__items"></ul>
-              <ul class="accounts__items"></ul>
+              <ul class="account__items"></ul>
             </div>
-            <div class="modal__pointer"></div>
+            <div class="modal__pointer login__pointer"></div>
           </div>
         </div>
 
@@ -89,8 +91,8 @@
       </div>
 
       <div class="nav__main">
-        <div class="nav__shop ">
-          <div class="sidebar__button-view">
+        <div class="nav__shop">
+          <div class="sidebar__button-open">
             <img src="./assets/sidebar_button.svg" />
             <span>모두</span>
           </div>
@@ -115,7 +117,7 @@
         </div>
         <section>
           <ul>
-            <li><div class="sidebar__catogory-border">디지털 콘텐츠 및 기기</div></li>
+            <li><div class="sidebar__category-border">디지털 콘텐츠 및 기기</div></li>
             <li>
               <div>Amazon Music</div>
               <img src="./assets/arrow.svg" />
@@ -133,7 +135,7 @@
         <section>
           <hr class="sidebar__line" />
           <ul>
-            <li><div class="sidebar__catogory-border">부서별 쇼핑</div></li>
+            <li><div class="sidebar__category-border">부서별 쇼핑</div></li>
             <li>
               <div>전자</div>
               <img src="./assets/arrow.svg" />
@@ -150,7 +152,7 @@
               <div>예술 및 공예</div>
               <img src="./assets/arrow.svg" />
             </li>
-            <div class="show__hidden-items">
+            <div class="sidebar__show-more">
               <li>
                 <div>모두 보기</div>
                 <img src="./assets/arrow_down.svg" />
@@ -159,13 +161,10 @@
           </ul>
         </section>
         <hr class="sidebar__line" />
-        <ul class="sidebar__hidden-items">
+        <ul class="sidebar__hidden-content">
           <div class="quick__view"></div>
         </ul>
       </div>
     </aside>
-    <script src="./js/navigation.js"></script>
-    <script src="./js/data.js"></script>
-    <script src="./js/sidebar.js"></script>
   </body>
 </html>

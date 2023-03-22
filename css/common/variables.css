@@ -14,7 +14,7 @@
   --color-gray800: #2a3648;
   --color-gray900: #1b232f;
   --color-black: #10141a;
-  /* --color-black40: #10141A, 투명도 40% */
+  --color-black40: rgba(16, 20, 26, 0.4);
   --color-primaryYellow100: #fed15f;
   --color-primaryYellow200: #febe30;
   --color-primaryYellow300: #de9408;

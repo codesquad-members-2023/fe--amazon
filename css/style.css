@@ -1,7 +1,8 @@
 /* common */
 @import url('./common/reset.css');
 @import url('./common/variables.css');
-/* components */
-@import url('./layout/modal.css');
+/* layout */
 @import url('./layout/navigation.css');
+@import url('./layout/modal.css');
+@import url('./layout/dimmed.css');
 @import url('./layout/sidebar.css');

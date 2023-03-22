@@ -64,6 +64,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
   width: 16rem;
   height: auto;
   gap: 1.125rem;
@@ -86,10 +87,6 @@
 }
 
 /* 로그인 모달 1초뒤 등장 */
-.hide {
-  opacity: 0;
-}
-
 .login__modal-show {
   opacity: 1;
   transition: opacity 1s ease-in-out;
