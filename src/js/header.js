@@ -29,9 +29,10 @@ const headerEventMainHandler = () => {
   setTimeout(() => {
     showLoginInitLayer();
   }, loadingTime);
-  header.loginContainer.addEventListener('mouseenter', showLoginExtendedLayer);
+
+  header.loginSection.addEventListener('mouseenter', showLoginExtendedLayer);
   header.loginSection.addEventListener('mouseleave', hideLayer);
-  header.shippingContainer.addEventListener('mouseenter', showShippingLayer);
+  header.shippingSection.addEventListener('mouseenter', showShippingLayer);
   header.shippingSection.addEventListener('mouseleave', hideLayer);
 };
 

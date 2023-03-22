@@ -23,9 +23,17 @@ li {
 .header_main {
   display: flex;
   justify-content: space-between;
+
   align-items: center;
-  padding: 8px 16px;
+  padding: 0 16px;
   gap: 24px;
+  height: 56px;
+}
+
+.header_main_section {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .shipping_image {
@@ -76,7 +84,7 @@ li {
   position: absolute;
   width: 320px;
   height: 126px;
-  top: 53px;
+  top: 56px;
   left: 70px;
   display: flex;
   flex-direction: column;
@@ -91,12 +99,20 @@ li {
 }
 
 .shipping_pop-up_triangle {
-  transform: translate(-380%, -35%);
+  transform: translate(-400%, -25%);
   top: 0;
   right: 100px;
 }
 
-.shipping_pop-up_contents_text {
+.shipping_pop-up_contents {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.shipping_pop-up_content_text {
   display: block;
   font-family: 'Pretendard', sans-serif;
   font-style: normal;
@@ -133,7 +149,7 @@ li {
 .login_pop-up {
   position: absolute;
 
-  top: 53px;
+  top: 56px;
   right: 200px;
   display: flex;
   flex-direction: column;
@@ -155,7 +171,7 @@ li {
 }
 
 .login_pop-up_triangle {
-  transform: translate(310%, -35%);
+  transform: translate(310%, -25%);
   top: 0;
   right: 100px;
 }
@@ -249,6 +265,12 @@ li {
   font-weight: 500;
   font-size: 11px;
   line-height: 160%;
+}
+
+.mypage_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hidden {
