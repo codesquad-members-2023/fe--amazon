@@ -1,0 +1,86 @@
+/* 화면 가로 사이즈 크기에 따른 검색크기 지정 */
+@media (max-width: 80rem) {
+  body {
+    width: 80rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .nav__search {
+    flex-grow: 1;
+  }
+  .nav__search-input {
+    flex-grow: 1;
+  }
+}
+
+/* 서브 네비게이션바 */
+.nav__sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5rem;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+  background-color: var(--color-black);
+}
+
+.nav__logo img {
+  width: 5.625rem;
+  height: 1.875rem;
+}
+
+/* 서브 네비게이션바 메뉴 상단, 하단 텍스트 설정 */
+.sub__menu-top {
+  font-size: var(--font-boldSM);
+  line-height: var(--line-height-large);
+  font-weight: var(--weight-semiBold);
+  color: var(--color-gray400);
+}
+
+.sub__menu-bottom {
+  font-size: var(--font-boldMD);
+  font-weight: var(--weight-extraBold);
+  color: var(--color-white);
+}
+
+.nav__search {
+  display: flex;
+}
+
+.nav__search-input {
+  width: 46.688rem;
+  height: 2.5rem;
+  padding-left: 0.75rem;
+  border: none;
+  border-radius: 0.25rem 0rem 0rem 0.25rem;
+}
+
+.nav__search-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 0rem 0.25rem 0.25rem 0rem;
+  background-color: var(--color-primaryOrange100);
+}
+
+/* 메인 네비게이션바 */
+.nav__main {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  padding: 0rem 1rem;
+  background: var(--color-gray900);
+  color: var(--color-white);
+}
+
+.nav__shop {
+  display: flex;
+  gap: 1rem;
+}
+
+.shop__deals {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1;
+}

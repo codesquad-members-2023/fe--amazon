@@ -1,0 +1,60 @@
+.sidebar {
+  position: fixed;
+  /* z-index: 2; */
+  top: 0;
+  left: -25rem;
+  overflow: scroll;
+  width: 20rem;
+  height: 100%;
+  background-color: var(--color-white);
+  transition: 1s ease-in-out;
+}
+
+.sidebar__active {
+  left: 0;
+}
+
+/* 사이드바 헤더 */
+.sidebar__header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  gap: 0.5rem;
+  background-color: var(--color-black);
+}
+
+.sidebar__header span {
+  color: var(--color-white);
+  font-size: var(--font-boldLG);
+  font-weight: var(--weight-extraBold);
+}
+
+/* 사이드바 목록 텍스트 설정 */
+.sidebar__category-border {
+  font-size: var(--font-boldLG);
+  font-weight: var(--weight-extraBold);
+}
+
+.sidebar li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  font-size: var(--font-boldMD);
+}
+
+/* 사이드바 닫는 버튼 설정 */
+.sidebar__button-close {
+  position: fixed;
+  top: 0.313rem;
+  left: 20rem;
+  border: none;
+  background-color: transparent;
+  font-size: var(--font-boldXL);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.button__close-show {
+  opacity: 1;
+}

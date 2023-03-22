@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" defer src="./js/app.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -12,24 +14,26 @@
         <div class="nav__logo">
           <img src="./assets/amazon_logo.svg" />
         </div>
-        
+
         <div class="nav__shipping">
           <div class="nav__shipping-address">
             <div class="shpping__address-top">
               <img src="./assets/shipping_adress.svg" />
-              <span>배송처</span>
+              <span class="sub__menu-top">배송처</span>
             </div>
-            <div class="shipping__address-bottom">
+            <div class="sub__menu-bottom">
               <span>대한민국</span>
             </div>
           </div>
-          <div class="shipping__modal-hover">
-            <div class="shipping-box">
-              <span>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</span>
-              <button class="modal__button">계속</button>
-              <button class="modal__button">주소변경</button>
+          <div class="nav__modal shipping__modal">
+            <div class="shipping__box">
+              <div>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</div>
+              <div>
+                <button class="modal__button">계속</button>
+                <button class="modal__button">주소변경</button>
+              </div>
             </div>
-            <div class="modal__pointer"></div>
+            <div class="modal__pointer shipping__pointer"></div>
           </div>
         </div>
 
@@ -37,60 +41,61 @@
           <input class="nav__search-input" type="search" placeholder="검색 Amazon" />
           <button class="nav__search-button">
             <img src="./assets/search_icon.svg" />
+          </button>
         </div>
 
         <div class="nav__language">
           <span>🇰🇷</span>
-          <span>KO</span>
+          <span class="sub__menu-bottom">KO</span>
         </div>
-        
+
         <div class="login">
           <div class="nav__login">
-            <span class="login">안녕하세요, 로그인</span>
-            <span class="AccountsList">계정및목록</span>
+            <div class="sub__menu-top">안녕하세요, 로그인</div>
+            <div class="sub__menu-bottom">계정 및 목록</div>
           </div>
-          
-          <div class="login__modal-fadeIn">
-            <div><button class="modal__button">로그인</button></div>
+
+          <div class="nav__modal login__modal">
+            <div><button class="modal__button login__button">로그인</button></div>
             <div class="login__modal-link">
               <span>기존 사용자가 아니십니까?</span>
               <a href="">여기에서 시작합니다.</a>
             </div>
-            <div class="modal__pointer"></div>
+            <div class="modal__pointer login__pointer"></div>
           </div>
-          
-          <div class="login__modal-hover">
-            <div><button class="modal__button">로그인</button></div>
+
+          <div class="nav__modal login__modal login__hover">
+            <div><button class="modal__button login__button">로그인</button></div>
             <div class="login__modal-link">
               <span>기존 사용자가 아니십니까?</span>
               <a href="">여기에서 시작합니다.</a>
             </div>
-            <div class="login__modal-accountsList">
-              <ul class="List__items"></ul>
-              <ul class="accounts__items"></ul>
+            <hr class="line"/>
+            <div class="login__modal-accountList">
+              <ul class="list__items"></ul>
+              <ul class="account__items"></ul>
             </div>
-            <div class="modal__pointer"></div>
+            <div class="modal__pointer login__pointer"></div>
           </div>
         </div>
-        
+
         <div class="nav__order">
-          <div class="return">반품</div>
-          <div class="order">&주문</div>
+          <div class="sub__menu-top">반품</div>
+          <div class="sub__menu-bottom">&주문</div>
         </div>
-        
+
         <div class="nav__cart">
           <img src="./assets/cart.svg" />
-          <span>장바구니</span>
+          <span class="sub__menu-bottom">장바구니</span>
         </div>
       </div>
 
-      <div class="nev__main">
+      <div class="nav__main">
         <div class="nav__shop">
-          <div class="nav__sidebar_button">
+          <div class="sidebar__button-open">
             <img src="./assets/sidebar_button.svg" />
             <span>모두</span>
           </div>
-          <div>모두</div>
           <div>오늘의 딜</div>
           <div>고객 서비스</div>
           <div>레지스트리</div>
@@ -105,14 +110,14 @@
 
     <aside>
       <div class="sidebar">
-        <button class="sidebar__close-button">X</button>
+        <button class="sidebar__button-close">X</button>
         <div class="sidebar__header">
           <img src="./assets/sidebar_header_icon.svg" />
           <span>안녕하세요, 로그인</span>
         </div>
         <section>
           <ul>
-            <li><div class="sidebar__catogory-border">디지털 콘텐츠 및 기기</div></li>
+            <li><div class="sidebar__category-border">디지털 콘텐츠 및 기기</div></li>
             <li>
               <div>Amazon Music</div>
               <img src="./assets/arrow.svg" />
@@ -130,7 +135,7 @@
         <section>
           <hr class="sidebar__line" />
           <ul>
-            <li><div class="sidebar__catogory-border">부서별 쇼핑</div></li>
+            <li><div class="sidebar__category-border">부서별 쇼핑</div></li>
             <li>
               <div>전자</div>
               <img src="./assets/arrow.svg" />
@@ -147,7 +152,7 @@
               <div>예술 및 공예</div>
               <img src="./assets/arrow.svg" />
             </li>
-            <div class="show__hidden-items">
+            <div class="sidebar__show-more">
               <li>
                 <div>모두 보기</div>
                 <img src="./assets/arrow_down.svg" />
@@ -156,7 +161,7 @@
           </ul>
         </section>
         <hr class="sidebar__line" />
-        <ul class="sidebar__hidden-items">
+        <ul class="sidebar__hidden-content">
           <div class="quick__view"></div>
         </ul>
       </div>
