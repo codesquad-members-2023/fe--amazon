@@ -1,4 +1,4 @@
-\*\*\*\*# 🎯 아마존
+# 🎯 아마존
 
 ## 학습정리
 
@@ -6,10 +6,11 @@
 
 - [ ] ES Classes
 - this
-  - [ ] call
-  - [ ] bind
+  - [x] call
+  - [x] bind
 - CSS
-  - [ ] transition
+  - [x] transiton vs animation
+  - [x] transition
   - [ ] transform
 - [ ] Carousel
 - [x] SASS
@@ -103,9 +104,14 @@
 
 - 히어로 영역
   - [ ] Carousel UX 구현 (무한 슬라이더)
-- [ ] SASS 사용
+- [x] SASS 사용
 - [ ] 객체지향 프로그래밍 적용
 - [ ] 랜더링 작업에서 template literal 활용
+
+- crong's review
+  - [ ] `openAllItems` 와 `clsoseAllItems` 을 하나의 함수로 통일
+  - [ ] `moveMain` 더 구체적인 이름으로 바꾸기
+  - [ ] `hideSideBar` 열고 닫는 함수처럼 보이니 이름 바꾸기
 
 ## 📒 reference
 

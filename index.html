@@ -6,16 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./SCSS/main.scss"/>
   <link rel="stylesheet" href="./css/main.css"/>
-  <link rel="stylesheet" href="./css/header.css">
   <title>Amazon</title>
 
-  <!-- <script defer src='src/App.js' type='module'></script> -->
-  <script defer src='src/pages/header/navbar-top/NavbarLeft.js' type='module'></script>
-
-  <script defer src="./js/navBar.js"></script>
-  <script defer src="./js/sideBar.js"></script>
-  <script defer src="./js/sideBarContents.js"></script>
-  <script defer src="./js/header.js"></script>
+  <script defer src="./js/navBar.js" type="module"></script>
+  <script defer src="./js/sideBar.js" type="module"></script>
+  <script defer src="./js/sideBarContents.js" type="module"></script>
   
 </head>
 <body>
@@ -32,8 +27,8 @@
         <div class="shipping-address text-box">
           <p class="label">배송처</p>
           <p>대한민국</p>
-          <div class="pointer"></div>
-          <div class="modal">
+          <div class="pointer hidden"></div>
+          <div class="modal hidden">
             <p class="modal__text">KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</p>
             <button>계속</button>
             <button>주소 변경</button>
@@ -52,13 +47,13 @@
         <div class="log-in text-box">
           <p class="label">안녕하세요, 로그인</p>
           <p>계정 및 목록</p>
-          <div class="pointer"></div>
-          <div class="modal">
+          <div class="modal ">
+            <div class="pointer"></div>
             <button>로그인</button>
             <p class="modal__text">기존 사용자가 아니십니까?</p>
             <a href="/"><p>여기에서 시작합니다.</p></a>
           </div>
-          <div class="modal__extension">
+          <div class="modal__extension hidden">
             <div class="modal__extension__top">
               <button>로그인</button>
               <span>기존 사용자가 아니십니까?</span>
