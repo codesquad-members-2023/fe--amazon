@@ -87,14 +87,17 @@
     - [ ] **로딩 인디케이터**를 활용하여 처음 메인 페이지 진입했을 때와 스크롤 내렸을 때 총 2번 사용될 수 있도록 함
 ### 학습 계획
 - [ ] 월
-  - [ ] Sass
-  - [ ] Transition 영상 2개
+  - [x] Sass
+  - [x] Transition 영상 2개
   - [ ] this (call, bind)
   - [ ] 자바스크립트 애니메이션 (setInterval, setTimeout, requestAnimationFrame, Animations API)
 - [ ] 화
   - [ ] 객체지향프로그래밍 (class, 캡슐화, 상속, 다형성, 추상화)
   - [ ] 하드웨어 가속 페이지 정리
-  - [ ] Carousel 구현 동작에 대해 학습
-- [ ] 수
+  - [x] Carousel 구현 동작에 대해 학습
+- [x] 수
+  - [x] 브라우저의 렌더링 과정
+  - [x] CSS absolute, relative, min-width
+  - [x] Carousel 구현 시도
 - [ ] 목
 - [ ] 금
