@@ -1,0 +1,49 @@
+$card-width: 1500px;
+$card-height: 600px;
+$button-width: 100px;
+$button-height: 300px;
+
+.banner {
+  position: relative;
+  width: $card-width;
+  overflow-x: hidden;
+  margin: 0 auto;
+  cursor: pointer;
+
+  button {
+    width: $button-width;
+    height: $button-height;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    border: 2px solid black;
+  }
+}
+
+.banner__track {
+  display: flex;
+  overflow: visible;
+  width: $card-width * 6;
+}
+
+.banner__img {
+  width: $card-width;
+  height: $card-height;
+}
+
+.banner__harf--down,
+.banner__harf--up {
+  position: absolute;
+  width: $card-width;
+  height: $button-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner__harf--down {
+  top: $button-height;
+}

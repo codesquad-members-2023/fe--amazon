@@ -10,12 +10,14 @@
 
 /* SCREENS */
 @import "screens/dimmed.css";
+@import "scss/screens/banner-style.css";
 
 body {
   font-family: "Kanit", sans-serif;
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e3e6e6;
 }
 
 a {
