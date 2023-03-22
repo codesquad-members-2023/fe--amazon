@@ -19,6 +19,11 @@ const TITLE_DETAIL = [
   "자동차 용품",
 ];
 
+const LOGIN_EXTEND ={
+  "login_extension-left":["귀하의 목록","목록 생성","목록 또는 레지스트리 찾기","자선 품목 목록"],
+  "login_extension-right":["계정","주문","권장 사항","검색 기록","위치리스트","비디오 구매 및 대여","Kindle 언리미티드","콘테츠 및 기기","항목 구독 및 저장","멤버십 및 구독","음악 라이브러리"]
+}
+
 const SIDEBAR_DETAIL = {
   "Amazon Music": [
     "음악 스트리밍",
@@ -405,4 +410,4 @@ const SIDEBAR_DETAIL = {
   ],
 };
 
-export { SIDEBAR_DETAIL, TITLE_DETAIL };
+export { SIDEBAR_DETAIL,LOGIN_EXTEND, TITLE_DETAIL };

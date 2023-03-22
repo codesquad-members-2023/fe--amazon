@@ -1,193 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/all-css.css">
-</head>
-<body>
-<header>
-    <div class="nav_container">
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>mainpage</title>
+    <link rel="stylesheet" href="/styleSheet/style.css" />
+    <script defer type="module" src="/scripts/all/allJs.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="nav_container">
         <div class="nav flex__row">
-            <div class="nav__logo" >
-                <a href="" class="nav_logo_img" target="_self">
-                    <img src="assets/logo.svg">
+          <div class="nav__logo">
+            <a href="" class="nav_logo_img" target="_self">
+              <img src="assets/logo.svg" />
+            </a>
+          </div>
+          <div class="nav__shipping">
+            <div class="nav__shipping_menu">
+              <div class="nav__shipping_img_text">
+                <img src="assets/location.svg" />
+                <span>배송처</span>
+              </div>
+              <div class="nav__shipping_text">
+                <a href="" target="_self">
+                  <div class="shipping_text font__size">대한민국</div>
                 </a>
+              </div>
             </div>
-            <div class="nav__shipping">
-                <div class="nav__shipping_menu">
-                    <div class="nav__shipping_img_text ">
-                        <img src="assets/location.svg">
-                        <span>배송처</span>
-                    </div>
-                    <div class="nav__shipping_text">
-                        <a href="" target="_self">
-                            <div class="shipping_text font__size">대한민국</div>
-                        </a>
-                    </div>
+            <div class="nav__shipping_popup hidden">
+              <div class="nav__shipping_popup-shape"></div>
+              <div class="nav__shipping_popup-box">
+                <div class="nav__login_popup-box_text">KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</div>
+                <div class="nav__shipping_popup-box_button">
+                  <button class="nav__login_popup-box_button-ing">계속</button>
+                  <button class="nav__login_popup-box_button-change">주소 변경</button>
                 </div>
-                <div class="nav__shipping_popup">
-                    <div class="nav__shipping_popup-shape">
-                    </div>
-                    <div class="nav__shipping_popup-box">
-                        <div class="nav__login_popup-box_text">
-                            KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.
-                        </div>
-                        <div class ="nav__shipping_popup-box_button">
-                            <button class="nav__login_popup-box_button-ing">
-                                계속
-                            </button>
-                            <button class="nav__login_popup-box_button-change">
-                                주소 변경
-                            </button>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav__search flex__row">
+            <input type="text" class="nav__search_text" placeholder="검색 Amazon" style="border: none" ; />
+            <a href="" class="nav__search_img flex__row" target="_self">
+              <img src="assets/search.svg" />
+            </a>
+          </div>
+          <div class="nav__language">
+            <a href="" target="_self" class="align__center">
+              <img src="assets/Nation.svg" />
+              <div class="language_txt font__size">KO</div>
+            </a>
+          </div>
+          <div class="nav__login">
+            <div class="nav__login_text align__center">
+              <a href="" target="_self">
+                <span>안녕하세요,로그인</span>
+                <div class="login_text font__size">계정 및 목록</div>
+              </a>
+            </div>
+            <div class="nav__login_popup">
+              <div class="nav__login_popup-shape"></div>
+              <div class="nav__login_popup-box">
+                <button class="nav__login_popup_button">로그인</button>
+                <div class="login_popup_text">
+                  <div>기존 사용자가 아니십니까?</div>
+                  <a href="#" class="login_popup_text_click"> <div>여기에서 시작합니다.</div></a>
                 </div>
+              </div>
             </div>
-            <div class="nav__search flex__row">
-                <input type="text" class="nav__search_text" placeholder="검색 Amazon" style="border:none";>
-                <a href="" class="nav__search_img flex__row" target="_self">
-                    <img src="assets/search.svg">
-                </a>
-            </div>
-            <div class="nav__language">
-                <a href="" target="_self" class="align__center">
-                    <img src="assets/Nation.svg">
-                    <div class="language_txt font__size">KO</div>
-                </a>
-            </div>
-            <div class="nav__login">
-                <div class="nav__login_text align__center">
-                    <a href="" target="_self">
-                        <span>안녕하세요,로그인</span>
-                        <div class="login_text font__size">계정 및 목록</div>
-                    </a>
+            //
+            <div class="nav__login_popup_extension visible_hidden">
+              <div class="nav__login_popup-shape"></div>
+              <div class="nav__login_popup-box_extension">
+                <button class="nav__login_popup_button">로그인</button>
+                <div class="login_popup_text">
+                  <div>기존 사용자가 아니십니까?</div>
+                  <a href="#" class="login_popup_text_click"> <div>여기에서 시작합니다.</div></a>
                 </div>
-                <div class="nav__login_popup">
-                    <div class="nav__login_popup-shape">
-                    </div>
-                    <div class="nav__login_popup-box">
-                        <button class="nav__login_popup_button">로그인</button>
-                        <div class="login_popup_text">
-                            <div>기존 사용자가 아니십니까?</div>
-                            <a href="#" class="login_popup_text_click">
-                                <div>여기에서 시작합니다.</div></a>
-                        </div>
-                        <div class="nav__login_popup_extension">
-                            <hr>
-                            <div class="login_popup_extension-left-box">
-                                <ul>
-                                    <li class="login_popup_extension-title">귀하의 목록</li>
-                                    <li class="login_popup_extension-list">목록 생성</li>
-                                    <li class="login_popup_extension-list">목록 또는 레지스트리 찾기</li>
-                                    <li class="login_popup_extension-list">AmazonSmile 자선 품목 목록</li>
-                                </ul>
-                            </div>
-                            <div class="login_popup_extension-right-box">
-                                <ul>
-                                    <li class="login_popup_extension-title">계정</li>
-                                    <li class="login_popup_extension-list">계정</li>
-                                    <li class="login_popup_extension-list">주문</li>
-                                    <li class="login_popup_extension-list">권장 사항</li>
-                                    <li class="login_popup_extension-list">검색 기록</li>
-                                    <li class="login_popup_extension-list">위치리스트</li>
-                                    <li class="login_popup_extension-list">비디오 구매 및 대여</li>
-                                    <li class="login_popup_extension-list">Kindle 언리미티드</li>
-                                    <li class="login_popup_extension-list">콘테츠 및 기기</li>
-                                    <li class="login_popup_extension-list">항목 구독 및 저장</li>
-                                    <li class="login_popup_extension-list">멤버십 및 구독</li>
-                                    <li class="login_popup_extension-list">음악 라이브러리</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="nav__login_popup_extension_list">
+                  <hr />
+                  <div class="login_extension-left">
+                    <ul></ul>
+                  </div>
+                  <div class="login_extension-right">
+                    <ul></ul>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="nav__order flex__row">
-                <a href="" target="_self" class="nav__order">
-                    <span>반품</span>
-                    <div class="order_text font__size">&주문</div>
-                </a>
-            </div>
-            <div class="nav__shopping">
-                <a href="" target="_self" class="align__center">
-                    <img src="assets/cart.svg">
-                    <div class="shopping_text font__size">장바구니</div>
-                </a>
-            </div>
+          </div>
+          <div class="nav__order flex__row">
+            <a href="" target="_self" class="nav__order">
+              <span>반품</span>
+              <div class="order_text font__size">&주문</div>
+            </a>
+          </div>
+          <div class="nav__shopping">
+            <a href="" target="_self" class="align__center">
+              <img src="assets/cart.svg" />
+              <div class="shopping_text font__size">장바구니</div>
+            </a>
+          </div>
         </div>
         <ul class="sub flex__row">
-            <li ><a href="#" class="sub__all-menu align__center sub__menu">
-                <img src="assets/menu.svg">
-                <div >모두</div>
-            </a></li>
-            <li class="sub__menu">오늘의 딜</li>
-            <li class="sub__menu">고객 서비스</li>
-            <li class="sub__menu">레지스트리</li>
-            <li class="sub__menu">기프트 카드</li>
-            <li class="sub__menu">판매</li>
-            <li class="sub__shopping">지금 특가 상품 쇼핑하기</li>
-        </ul>
-    </div>
-</header>
-<div class="dim-layer"></div>
-    <aside class="sidebar">
-        <div class="sidebar-box flex__column">
-            <div class="sidebar__login">
-                <img src="assets/user.svg">
-                <div>안녕하세요, 로그인</div>
+          <li>
+            <div class="sub__all-menu align__center">
+              <img src="assets/menu.svg" />
+              <div>모두</div>
             </div>
-            <section class="sidebar__menu">
-                <ul>
-                    <div class="sidebar__menu-title">디지털 콘텐츠 및 기기</div>
-                    <li>
-                        <div>Amazon Music</div>
-                        <img src="assets/chevron-right.svg">
-                    </li>
-                    <li>
-                        <div>Kindle E-Reader 및 도서</div>
-                        <img src="assets/chevron-right.svg">
-                    </li>
-                    <li class="sidebar__menu-list">
-                        <div>안드로이드 앱스토어</div>
-                        <img src="assets/chevron-right.svg">
-                    </li>
-                </ul>
-                <hr class="sidebar__line">
-            </section>
-            <section class="sidebar__menu">
-                <ul>
-                    <div class="sidebar__menu-title">부서별 쇼핑</div>
-                    <li>
-                        <div>전자</div>
-                        <img src="assets/chevron-right.svg">
-                    </li>
-                    <li>
-                        <div>컴퓨터</div>
-                        <img src="assets/chevron-right.svg">
-                    </li>
-                    <li>
-                        <div>Alexa 스마트 홈</div>
-                        <img src="assets/chevron-right.svg">
-                    </li>
-                    <li>
-                        <div>예술 및 공예</div>
-                        <img src="assets/chevron-right.svg">
-                    </li>
-                    <li class="sidebar__menu-all">
-                        <div>모두 보기<img src="assets/chevron-down.svg"></div>
-                    </li>
-                </ul>
-                <hr class="sidebar_line">
-            </section>
-            <section>
-                <ul class="sidebar__all-menu_extend"></ul>
-            </section>
+          </li>
+          <li>오늘의 딜</li>
+          <li>고객 서비스</li>
+          <li>레지스트리</li>
+          <li>기프트 카드</li>
+          <li>판매</li>
+          <li class="sub__shopping">지금 특가 상품 쇼핑하기</li>
+        </ul>
+      </div>
+    </header>
+    <div class="dim-layer hidden"></div>
+    <aside class="sidebar hidden">
+      <div class="sidebar-box flex__column">
+        <div class="sidebar__login">
+          <img src="assets/user.svg" />
+          <div>안녕하세요, 로그인</div>
         </div>
-        <img class="sidebar__btn_close" src="assets/close.svg">
+        <section class="sidebar__menu">
+          <ul>
+            <div class="sidebar__menu-title">디지털 콘텐츠 및 기기</div>
+            <li>
+              <div>Amazon Music</div>
+              <img src="assets/chevron-right.svg" />
+            </li>
+            <li>
+              <div>Kindle E-Reader 및 도서</div>
+              <img src="assets/chevron-right.svg" />
+            </li>
+            <li class="sidebar__menu-list">
+              <div>안드로이드 앱스토어</div>
+              <img src="assets/chevron-right.svg" />
+            </li>
+          </ul>
+          <hr class="sidebar__line" />
+        </section>
+        <section class="sidebar__menu">
+          <ul>
+            <div class="sidebar__menu-title">부서별 쇼핑</div>
+            <li>
+              <div>전자</div>
+              <img src="assets/chevron-right.svg" />
+            </li>
+            <li>
+              <div>컴퓨터</div>
+              <img src="assets/chevron-right.svg" />
+            </li>
+            <li>
+              <div>Alexa 스마트 홈</div>
+              <img src="assets/chevron-right.svg" />
+            </li>
+            <li>
+              <div>예술 및 공예</div>
+              <img src="assets/chevron-right.svg" />
+            </li>
+            <li class="sidebar__menu-all">
+              <div>모두 보기<img src="assets/chevron-down.svg" /></div>
+            </li>
+          </ul>
+          <hr class="sidebar_line" />
+        </section>
+        <section>
+          <ul class="sidebar__all-menu_extend"></ul>
+        </section>
+      </div>
+      <img class="sidebar__btn_close" src="assets/close.svg" />
     </aside>
-
-
-</body>
-<script defer type="module" src="js/all_js.js" ></script>
+  </body>
 </html>

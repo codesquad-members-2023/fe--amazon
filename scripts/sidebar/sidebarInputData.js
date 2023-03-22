@@ -1,28 +1,28 @@
-import { ALL_SELECTORS } from "../allQuery.js";
-import { TITLE_DETAIL } from "../../model/data.js";
+import { SIDEBAR} from "../all/allQuery.js";
+import { TITLE_DETAIL } from "../model/data.js"
 
 const summarySidebar = () => {
-  ALL_SELECTORS.sidebar.addEventListener("click", (e) => {
+  SIDEBAR.ALL.addEventListener("click", (e) => {
     if (e.target.className === "sidebar_menu_summary")
-      ALL_SELECTORS.menuAllDetail.style.display = "none";
+      SIDEBAR.MENUDETAIL.style.display="none";
   });
 };
 
 const detailSidebar = () => {
-  ALL_SELECTORS.menuAll.addEventListener("click", () => {
-    if (!ALL_SELECTORS.menuAllDetail.innerHTML) {
+  SIDEBAR.MENUALLBUTTON.addEventListener("click", () => {
+    if (!SIDEBAR.MENUDETAIL.innerHTML) {
       TITLE_DETAIL.forEach((data) => {
-        ALL_SELECTORS.menuAllDetail.insertAdjacentHTML(
+        SIDEBAR.MENUDETAIL.insertAdjacentHTML(
           "afterbegin",
           `<li><div>${data}</div><img src="assets/chevron-right.svg"></li>`
         );
       });
-      ALL_SELECTORS.menuAllDetail.insertAdjacentHTML(
+      SIDEBAR.MENUDETAIL.insertAdjacentHTML(
         "beforeend",
         `<li class="sidebar_menu_summary"><div>간단히 보기<img src="assets/chevron-top.svg"></div></li>`
       );
     } else {
-      ALL_SELECTORS.menuAllDetail.style.display = "";
+      SIDEBAR.MENUDETAIL.style.display = "";
     }
   });
 };
