@@ -1,0 +1,15 @@
+$bold-xl: 2.8rem 800 0 1;
+$bold-lg: 1.8rem 800 0 1;
+$bold-md: 1.3rem 800 -0.06em 1;
+$bold-sm: 1.1rem 600 -0.03em 1;
+$body-md: 1.3rem 500 -0.03em 1.6;
+$body-sm: 1.1rem 500 -0.03em 1.6;
+
+@mixin typography($type) {
+  font-size: nth($type, 1);
+  font-weight: nth($type, 2);
+  letter-spacing: nth($type, 3);
+  line-height: nth($type, 4);
+}
+
+// @include typography($bold-sm);

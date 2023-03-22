@@ -55,16 +55,16 @@ const moveMain = (...element) => {
   })
 }
 
-const getElement = Selector => document.querySelector(Selector)
+const $ = Selector => document.querySelector(Selector)
 
 const actSideBar = () => {
-  const sideMenu = getElement('.side-menu')
-  const openButton = getElement('.all-menu')
-  const sideMain = getElement('.side-menu__main')
-  const sideMenuDetail = getElement('.side-menu__detail')
-  const simpleItemsButton = getElement('.side-menu__hide-button')
-  const allItems = getElement('.side-menu__all-items')
-  const allItemsButton = getElement('.side-menu__show-button')
+  const sideMenu = $('.side-menu')
+  const openButton = $('.all-menu')
+  const sideMain = $('.side-menu__main')
+  const sideMenuDetail = $('.side-menu__detail')
+  const simpleItemsButton = $('.side-menu__hide-button')
+  const allItems = $('.side-menu__all-items')
+  const allItemsButton = $('.side-menu__show-button')
 
   openSideBar(sideMenu, openButton)
   hideSideBar(sideMenu, openButton)

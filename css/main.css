@@ -1,17 +1,9 @@
-/* COMMON */
-* {
-  margin: 0 auto;
-  padding: 0;
-  /* font-family: 'pretendard'; */
-}
+@import url(./style.css);
 
+/* COMMON */
 a {
   text-decoration: none;
   color: #074099;
-}
-
-img {
-  display: block;
 }
 
 button {
@@ -26,9 +18,13 @@ button {
   cursor: pointer;
 }
 
-.modal {
+.hidden {
   display: none;
-  background-color: #FFFFFF;
+  opacity: 0;
+}
+
+.modal {
+  background-color: #FFF;
   position: absolute;
   top: 56px;
   padding: 16px;
@@ -138,13 +134,12 @@ header {
 }
 
 .main-menu .shipping-address .pointer {
-  display: none;
   position: absolute;
   width: 20.15px;
   height: 20.15px;
   left: 156.89px;
   top: 48px;
-  background: #FFFFFF;
+  background: #FFF;
   transform: matrix(0.75, 0.66, -0.75, 0.66, 0, 0);
 }
 
@@ -182,7 +177,7 @@ header {
 }
 
 .main-menu .search-bar input:focus {
-  outline:none;
+  outline: none;
 }
 
 .main-menu .search-bar .btn-search {
@@ -212,27 +207,32 @@ header {
 }
 
 .main-menu .log-in .pointer {
-  display: none;
   position: absolute;
   width: 18.93px;
   height: 18.93px;
-  left: 67px;
-  top: 48px;
+  left: 205px;
+  top: -10px;
   background: #FFFFFF;
+  opacity: 0;
   transform: matrix(0.75, 0.66, -0.75, 0.66, 0, 0);
 }
 
 .main-menu .log-in .modal {
-  display: flex;
   width: 235px;
   right: 0;
-  flex-direction: column;
+  text-align: center;
   opacity: 0;
+}
+
+#modal__visibility {
+  opacity: 1;
+  transition: opacity 1s;
 }
 
 .main-menu .log-in .modal button {
   width: 160px;
   margin-bottom: 6px;
+  align-self: center;
 }
 
 .main-menu .log-in .modal p {
@@ -245,7 +245,6 @@ header {
 }
 
 .main-menu .log-in .modal__extension {
-  display: none;
   position: absolute;
   width: 335px;
   top: 55px;
