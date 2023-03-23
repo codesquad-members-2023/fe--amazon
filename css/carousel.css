@@ -1,36 +1,27 @@
 .page_content {
   min-width: 70rem;
-  z-index: -1;
-  position: relative;
 }
 
 .carousel_banner {
   position: absolute;
-  width: 100%;
+  width: 70rem;
   height: 250px;
   display: flex;
   justify-content: space-between;
 }
 
-.carousel_left {
+.carousel_btn {
+  padding: 0 15px;
   display: inline-block;
   line-height: 250px;
-  padding: 0 15px;
   cursor: pointer;
 }
 
-.carousel_right {
-  display: inline-block;
-  line-height: 250px;
-  padding: 0 15px;
-  cursor: pointer;
-}
-
-.image_box {
-  overflow: hidden;
+.slider {
   display: flex;
+  overflow: hidden;
 }
 
-.image_box > img {
+.slider > img {
   width: 100%;
 }
