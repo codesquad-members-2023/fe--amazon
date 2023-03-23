@@ -1,9 +1,29 @@
 .page_content {
   min-width: 70rem;
+  z-index: -1;
+  position: relative;
 }
 
-.carousel_container {
-  position: relative;
+.carousel_banner {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel_left {
+  display: inline-block;
+  line-height: 250px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.carousel_right {
+  display: inline-block;
+  line-height: 250px;
+  padding: 0 15px;
+  cursor: pointer;
 }
 
 .image_box {
@@ -13,31 +33,4 @@
 
 .image_box > img {
   width: 100%;
-}
-
-.carousel_banner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 250px;
-  cursor: pointer;
-}
-
-.carousel_left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 250px;
-  line-height: 250px;
-  padding-left: 30px;
-}
-
-.carousel_right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 250px;
-  line-height: 250px;
-  padding-right: 30px;
 }
