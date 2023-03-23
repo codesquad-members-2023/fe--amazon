@@ -1,8 +1,29 @@
-// 가운데 배너만 보여주기
-const bannersTree = document.querySelectorAll(".banner__column");
+const bannerTrack = document.querySelector(".banner__track");
+const bannerList = document.querySelectorAll(".banner__column");
+const leftBtn = document.querySelector(".banner__btn:first-child");
+const rightBtn = document.querySelector(".banner__btn:last-child");
 
-// bannersTree[0].classList.add("none");
-// bannersTree[1].classList.add("none");
-// bannersTree[2].classList.add("none");
-// bannersTree[3].classList.add("none");
-// bannersTree[4].classList.add("none");
+let currentBanner = 0;
+
+const moveBannerTrack = (direction) => {
+  console.log(direction);
+  if (direction === "left") {
+    currentBanner++;
+    if (currentBanner >= bannerList.length) {
+      currentBanner = 0;
+    }
+  } else if (direction === "right") {
+    currentBanner--;
+    if (currentBanner < 0) {
+      currentBanner = bannerList.length - 1;
+    }
+  }
+  bannerTrack.style.transform = `translateX(-${(currentBanner * 100) / 6}%)`;
+};
+
+leftBtn.addEventListener("click", () => {
+  moveBannerTrack("left");
+});
+rightBtn.addEventListener("click", () => {
+  moveBannerTrack("right");
+});

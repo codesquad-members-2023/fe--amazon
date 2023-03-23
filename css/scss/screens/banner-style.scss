@@ -25,8 +25,9 @@ $button-height: 300px;
 
 .banner__track {
   display: flex;
-  overflow: visible;
+  // overflow: visible;
   width: $card-width * 6;
+  transition: transform 1s ease-in-out;
 }
 
 .banner__img {
@@ -42,6 +43,7 @@ $button-height: 300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 }
 
 .banner__harf--down {
