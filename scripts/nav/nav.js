@@ -1,22 +1,30 @@
 import { NAV, COMMON } from "../all/allQuery.js";
 
-const clearDimmedNav = () => COMMON.DIM.classList.add("hidden");
+//dimm처리
+const clearDimmedNav = () => COMMON.DIM.classList.remove("show");
 const dimmedNav = () => {
-  COMMON.DIM.classList.remove("hidden");
+  COMMON.DIM.classList.add("show");
   COMMON.DIM.classList.add("nav_index");
 };
-const clearLoginExtend = () => NAV.LOGINEXTENSION.classList.add("visible_hidden");
-const clearShippingPopup = () => NAV.SHIPPINGPOPUP.classList.add("hidden");
-const showLoginExtend = () => NAV.LOGINEXTENSION.classList.remove("visible_hidden");
-const showShippingPopup = () => NAV.SHIPPINGPOPUP.classList.remove("hidden");
+
+// Login 확장레이어 표시 및 삭제
+const clearLoginExtend = () => NAV.LOGINEXTENSION.classList.remove("show");
+const showLoginExtend = () => NAV.LOGINEXTENSION.classList.add("show");
+//배송처 팝업 창 표시 및 삭제
+const clearShippingPopup = () => NAV.SHIPPINGPOPUP.classList.remove("show");
+const showShippingPopup = () => NAV.SHIPPINGPOPUP.classList.add("show");
+
 const navEventListener = () => {
   NAV.LOGINMENU.addEventListener("mouseout", clearDimmedNav);
-  NAV.SHIPPINGMENU.addEventListener("mouseout", clearDimmedNav);
-  NAV.LOGINMENU.addEventListener("mouseover", dimmedNav);
-  NAV.SHIPPINGMENU.addEventListener("mouseover", dimmedNav);
   NAV.LOGINMENU.addEventListener("mouseout", clearLoginExtend);
-  NAV.SHIPPINGMENU.addEventListener("mouseout", clearShippingPopup);
+
+  NAV.LOGINMENU.addEventListener("mouseover", dimmedNav);
   NAV.LOGINMENU.addEventListener("mouseover", showLoginExtend);
+
+  NAV.SHIPPINGMENU.addEventListener("mouseout", clearDimmedNav);
+  NAV.SHIPPINGMENU.addEventListener("mouseout", clearShippingPopup);
+
+  NAV.SHIPPINGMENU.addEventListener("mouseover", dimmedNav);
   NAV.SHIPPINGMENU.addEventListener("mouseover", showShippingPopup);
 };
 

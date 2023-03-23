@@ -1,5 +1,6 @@
 .nav__shipping_popup {
   height: 0px;
+  opacity: 0;
 }
 .nav__shipping_popup-shape {
   width: 30px;
@@ -78,6 +79,7 @@
   height: 100px;
   left: -170px;
   top: 44px;
+  opacity: 0;
 }
 
 .nav__login_popup-box_extension {
@@ -145,14 +147,16 @@
   position: fixed;
   top: 0px;
   left: 0px;
+  opacity: 0;
 }
 .nav_index {
   z-index: 0;
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
 }
-.visible_hidden {
-  visibility: hidden;
+
+.show {
+  opacity: 1;
 }

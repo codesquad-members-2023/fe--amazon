@@ -1,5 +1,6 @@
 const NAV = {
   LOGINMENU: document.querySelector(".nav__login"),
+  LOGIN_POPUP: document.querySelector(".nav__login_popup"),
   SHIPPINGMENU: document.querySelector(".nav__shipping"),
   SHIPPINGPOPUP: document.querySelector(".nav__shipping_popup"),
   LOGINEXTENSION: document.querySelector(".nav__login_popup_extension"),

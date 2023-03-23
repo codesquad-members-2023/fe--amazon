@@ -27,7 +27,7 @@
                 </a>
               </div>
             </div>
-            <div class="nav__shipping_popup hidden">
+            <div class="nav__shipping_popup">
               <div class="nav__shipping_popup-shape"></div>
               <div class="nav__shipping_popup-box">
                 <div class="nav__login_popup-box_text">KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</div>
@@ -68,7 +68,7 @@
               </div>
             </div>
             //
-            <div class="nav__login_popup_extension visible_hidden">
+            <div class="nav__login_popup_extension">
               <div class="nav__login_popup-shape"></div>
               <div class="nav__login_popup-box_extension">
                 <button class="nav__login_popup_button">로그인</button>
@@ -113,61 +113,65 @@
         </ul>
       </div>
     </header>
-    <div class="dim-layer hidden"></div>
-    <aside class="sidebar hidden">
-      <div class="sidebar-box flex__column">
-        <div class="sidebar__login">
-          <img src="assets/user.svg" />
-          <div>안녕하세요, 로그인</div>
+
+    <div class="dim-layer"></div>
+
+    <aside>
+      <div class="sidebar">
+        <div class="sidebar-box flex__column">
+          <div class="sidebar__login">
+            <img src="assets/user.svg" />
+            <div>안녕하세요, 로그인</div>
+          </div>
+          <section class="sidebar__menu">
+            <ul>
+              <div class="sidebar__menu-title">디지털 콘텐츠 및 기기</div>
+              <li>
+                <div>Amazon Music</div>
+                <img src="assets/chevron-right.svg" />
+              </li>
+              <li>
+                <div>Kindle E-Reader 및 도서</div>
+                <img src="assets/chevron-right.svg" />
+              </li>
+              <li class="sidebar__menu-list">
+                <div>안드로이드 앱스토어</div>
+                <img src="assets/chevron-right.svg" />
+              </li>
+            </ul>
+            <hr class="sidebar__line" />
+          </section>
+          <section class="sidebar__menu">
+            <ul>
+              <div class="sidebar__menu-title">부서별 쇼핑</div>
+              <li>
+                <div>전자</div>
+                <img src="assets/chevron-right.svg" />
+              </li>
+              <li>
+                <div>컴퓨터</div>
+                <img src="assets/chevron-right.svg" />
+              </li>
+              <li>
+                <div>Alexa 스마트 홈</div>
+                <img src="assets/chevron-right.svg" />
+              </li>
+              <li>
+                <div>예술 및 공예</div>
+                <img src="assets/chevron-right.svg" />
+              </li>
+              <li class="sidebar__menu-all">
+                <div>모두 보기<img src="assets/chevron-down.svg" /></div>
+              </li>
+            </ul>
+            <hr class="sidebar_line" />
+          </section>
+          <section>
+            <ul class="sidebar__all-menu_extend"></ul>
+          </section>
         </div>
-        <section class="sidebar__menu">
-          <ul>
-            <div class="sidebar__menu-title">디지털 콘텐츠 및 기기</div>
-            <li>
-              <div>Amazon Music</div>
-              <img src="assets/chevron-right.svg" />
-            </li>
-            <li>
-              <div>Kindle E-Reader 및 도서</div>
-              <img src="assets/chevron-right.svg" />
-            </li>
-            <li class="sidebar__menu-list">
-              <div>안드로이드 앱스토어</div>
-              <img src="assets/chevron-right.svg" />
-            </li>
-          </ul>
-          <hr class="sidebar__line" />
-        </section>
-        <section class="sidebar__menu">
-          <ul>
-            <div class="sidebar__menu-title">부서별 쇼핑</div>
-            <li>
-              <div>전자</div>
-              <img src="assets/chevron-right.svg" />
-            </li>
-            <li>
-              <div>컴퓨터</div>
-              <img src="assets/chevron-right.svg" />
-            </li>
-            <li>
-              <div>Alexa 스마트 홈</div>
-              <img src="assets/chevron-right.svg" />
-            </li>
-            <li>
-              <div>예술 및 공예</div>
-              <img src="assets/chevron-right.svg" />
-            </li>
-            <li class="sidebar__menu-all">
-              <div>모두 보기<img src="assets/chevron-down.svg" /></div>
-            </li>
-          </ul>
-          <hr class="sidebar_line" />
-        </section>
-        <section>
-          <ul class="sidebar__all-menu_extend"></ul>
-        </section>
+        <img class="sidebar__btn_close" src="assets/close.svg" />
       </div>
-      <img class="sidebar__btn_close" src="assets/close.svg" />
     </aside>
   </body>
 </html>
