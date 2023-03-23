@@ -127,7 +127,7 @@
   top: 53px;
   left: 0;
   width: 320px;
-  height: 100%;
+  height: calc(100% - 53px);
   overflow: hidden;
   overflow-y: auto;
   background-color: var(--color-white);
@@ -140,8 +140,4 @@
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-md);
   border-bottom: 1px solid var(--color-gray-100);
-}
-
-.tab_content {
-  padding-bottom: 53px;
 }
