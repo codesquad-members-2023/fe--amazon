@@ -1,12 +1,15 @@
-import { COMMON, SIDEBAR ,SUBMENU} from "../all/allQuery.js";
+import { COMMON, SIDEBAR, SUBMENU } from "../all/allQuery.js";
 
-const dimmedSidebar = () => COMMON.DIM.classList.remove("hidden")
+const dimmedSidebar = () => COMMON.DIM.classList.remove("hidden");
+const clearDimmedSidebar = () => COMMON.DIM.classList.add("hidden");
+const showSidebar = () => SIDEBAR.ALL.classList.remove("hidden");
+const closeSidebar = () => SIDEBAR.ALL.classList.add("hidden");
 
-const clearDimmedSidebar = () => COMMON.DIM.classList.add("hidden")
-
-const dimmedSidebarEvent = () => {
-    SUBMENU.ALLMENU.addEventListener("click", dimmedSidebar);
-    SIDEBAR.CLOSEBUTTON.addEventListener("click", clearDimmedSidebar);
+const sidebarEventListener = () => {
+  SUBMENU.ALLMENU.addEventListener("click", dimmedSidebar);
+  SIDEBAR.CLOSEBUTTON.addEventListener("click", clearDimmedSidebar);
+  SUBMENU.ALLMENU.addEventListener("click", showSidebar);
+  SIDEBAR.CLOSEBUTTON.addEventListener("click", closeSidebar);
 };
 
-dimmedSidebarEvent();
+sidebarEventListener();
