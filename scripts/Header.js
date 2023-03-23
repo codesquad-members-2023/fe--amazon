@@ -34,24 +34,24 @@ export default class Header {
     this.logInPopUp.classList.add("hidden");
   }
 
-  showExpandedLogInPopUp() {
+  handleMouseEnterLogInAnchor() {
     this.showLogInPopUp();
     this.dimmedMain.showDimmedMain();
     this.expandedLogInPopUp.classList.remove("hidden");
   }
 
-  hideExpandedLogInPopUp() {
+  handleMouseLeaveLogInContainer() {
     this.hideLogInPopUp();
     this.dimmedMain.hideDimmedMain();
     this.expandedLogInPopUp.classList.add("hidden");
   }
 
-  showShippingAddressPopUp() {
+  handleMouseEnterShippingAddressAnchor() {
     this.dimmedMain.showDimmedMain();
     this.shippingAddressPopUp.classList.remove("hidden");
   }
 
-  hideShippingAddressPopUp() {
+  handleMouseLeaveShippingAddressContainer() {
     this.dimmedMain.hideDimmedMain();
     this.shippingAddressPopUp.classList.add("hidden");
   }
@@ -60,16 +60,16 @@ export default class Header {
     this.showPopUpWithDelay(1000);
 
     this.logInAnchor.addEventListener("mouseenter", () => {
-      this.showExpandedLogInPopUp();
+      this.handleMouseEnterLogInAnchor();
     });
     this.loginContainer.addEventListener("mouseleave", () => {
-      this.hideExpandedLogInPopUp();
+      this.handleMouseLeaveLogInContainer();
     });
     this.shippingAddressAnchor.addEventListener("mouseenter", () => {
-      this.showShippingAddressPopUp();
+      this.handleMouseEnterShippingAddressAnchor();
     });
     this.shippingAddressContainer.addEventListener("mouseleave", () => {
-      this.hideShippingAddressPopUp();
+      this.handleMouseLeaveShippingAddressContainer();
     });
   }
 }

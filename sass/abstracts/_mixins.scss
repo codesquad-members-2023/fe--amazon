@@ -9,3 +9,9 @@
   letter-spacing: nth($type, 3);
   line-height: nth($type, 4);
 }
+
+@mixin carousel-background-image($index) {
+  &--#{$index} {
+    background-image: url(/assets/images/carousel--#{$index}.jpg);
+  }
+}
