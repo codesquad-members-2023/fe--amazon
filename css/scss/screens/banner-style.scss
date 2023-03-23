@@ -25,14 +25,17 @@ $button-height: 300px;
 
 .banner__track {
   display: flex;
-  // overflow: visible;
+  position: relative; // 자기 자신을 기준으로 배치 하기 위해서
   width: $card-width * 6;
-  transition: transform 1s ease-in-out;
+  // transition: transform 1s ease-in-out;
+  left: -1500px;
 }
 
 .banner__img {
   width: $card-width;
   height: $card-height;
+
+  // transform: translateX(-1500px);
 }
 
 .banner__harf--down,
@@ -44,6 +47,7 @@ $button-height: 300px;
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  max-width: 100vw;
 }
 
 .banner__harf--down {

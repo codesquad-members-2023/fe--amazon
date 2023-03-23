@@ -18,8 +18,9 @@
 
 .banner__track {
   display: flex;
+  position: relative;
   width: 9000px;
-  transition: transform 1s ease-in-out;
+  left: -1500px;
 }
 
 .banner__img {
@@ -36,6 +37,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  max-width: 100vw;
 }
 
 .banner__harf--down {
