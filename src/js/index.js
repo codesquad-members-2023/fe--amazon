@@ -3,7 +3,7 @@ import { SIDEBAR_DETAIL } from './constant/sideBarDetail.js';
 
 const main = () => {
   const $sideBar = $('.side-bar');
-  const $expandedCategory = $('.shopping-category__expanded-list', $sideBar);
+  const $expandedCategory = $('.expanded-category', $sideBar);
   const SIDEBAR_CATEGORY = Object.keys(SIDEBAR_DETAIL);
   const carIdx = SIDEBAR_CATEGORY.indexOf('자동차 용품');
   const EXPANDED_CATEGORY = SIDEBAR_CATEGORY.slice(carIdx);
@@ -56,8 +56,8 @@ const main = () => {
     $sideBarDimCover.classList.add('hidden');
   });
 
-  const $expandedCategoryBtn = $('.shopping-category__expanded-btn', $sideBar);
-  $expandedCategoryBtn.addEventListener('click', () => {
+  const $showAllBtn = $('#show-all-btn', $sideBar);
+  $showAllBtn.addEventListener('click', () => {
     if ($expandedCategory.maxHeight) {
       $expandedCategory.style.maxHeight = null;
       return;
@@ -65,8 +65,8 @@ const main = () => {
     $expandedCategory.style.maxHeight = `${$expandedCategory.scrollHeight}px`;
   });
 
-  const $expandedCategoryCloseBtn = $('.shopping-category__close-expanded-btn', $sideBar);
-  $expandedCategoryCloseBtn.addEventListener('click', () => {
+  const $showLessBtn = $('#show-less-btn', $sideBar);
+  $showLessBtn.addEventListener('click', () => {
     if (!$expandedCategory.maxHeight) {
       $expandedCategory.style.maxHeight = null;
       return;

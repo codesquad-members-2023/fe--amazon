@@ -33,7 +33,7 @@
   height: 53px;
   padding: 16px 16px 16px 32px;
 }
-.side-bar__main li {
+.side-bar li {
   height: 40px;
   padding: 8px 16px 8px 32px;
 
@@ -67,16 +67,16 @@
   background-image: url('../image/upArrow.svg');
 }
 
-.side-bar__main li:hover {
+.side-bar li:hover {
   background: #eff2f2;
 }
-.side-bar__main li:hover .right-arrow-icon {
+.side-bar li:hover .right-arrow-icon {
   background-image: url('../image/rightArrowBlack.svg');
 }
-.side-bar__main li:hover .bottom-arrow-icon {
+.side-bar li:hover .bottom-arrow-icon {
   background-image: url('../image/bottomArrowBlack.svg');
 }
-.side-bar__main li:hover .up-arrow-icon {
+.side-bar li:hover .up-arrow-icon {
   background-image: url('../image/upArrowBlack.svg');
 }
 
@@ -85,16 +85,16 @@
   color: #ffffff;
 }
 
-.shopping-category__list li:last-child,
-.shopping-category__expanded-list li:last-child {
+#show-all-btn,
+#show-less-btn {
   justify-content: start;
 }
-.shopping-category__list li:last-child img,
-.shopping-category__expanded-list li:last-child img {
+#show-all-btn img,
+#show-less-btn img {
   margin-left: 10px;
 }
 
-.shopping-category__expanded-list {
+.expanded-category {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.6s ease-out;

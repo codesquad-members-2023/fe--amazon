@@ -98,32 +98,25 @@
   </header>
   <aside class="side-bar">
     <img class="side-bar__close-btn cursor" src="./src/image/close.svg" alt="close side bar">
-    <div class="side-bar__main">
+    <ul class="side-bar__main">
       <header class="side-bar__login side-bar__main-header">
         <img src="./src/image/login.svg" alt="login icon">
         <span>안녕하세요,로그인</span>
       </header>
-      <div class="digital-category">
-        <header class="side-bar__main-header">디지털 콘텐츠 및 기기</header>
-        <ul class="digital-category__list">
-          <li>Amazon Music<span class="right-arrow-icon"></span></li>
-          <li>Kindle E-Reader 및 도서<span class="right-arrow-icon"></span></li>
-          <li>안드로이드 앱스토어<span class="right-arrow-icon"></span></li>
-        </ul>
-      </div>
-      <div class="shopping-category">
-        <header class="side-bar__main-header">부서별 쇼핑</header>
-        <ul class="shopping-category__list">
-          <li>전자<span class="right-arrow-icon"></span></li>
-          <li>컴퓨터<span class="right-arrow-icon"></span></li>
-          <li>Alexa 스마트 홈<span class="right-arrow-icon"></span></li>
-          <li>예술 및 공예<span class="right-arrow-icon"></span></li>
-          <li class="shopping-category__expanded-btn">모두 보기<span class="bottom-arrow-icon"></span></li>
-        </ul>
-        <ul class="shopping-category__expanded-list">
-          <li class="shopping-category__close-expanded-btn">간략히 보기<span class="up-arrow-icon"></span></li>
-        </ul>
-      </div>
+      <header class="side-bar__main-header">디지털 콘텐츠 및 기기</header>
+      <li>Amazon Music<span class="right-arrow-icon"></span></li>
+      <li>Kindle E-Reader 및 도서<span class="right-arrow-icon"></span></li>
+      <li>안드로이드 앱스토어<span class="right-arrow-icon"></span></li>
+      <header class="side-bar__main-header">부서별 쇼핑</header>
+      <li>전자<span class="right-arrow-icon"></span></li>
+      <li>컴퓨터<span class="right-arrow-icon"></span></li>
+      <li>Alexa 스마트 홈<span class="right-arrow-icon"></span></li>
+      <li>예술 및 공예<span class="right-arrow-icon"></span></li>
+      <li id="show-all-btn">모두 보기<span class="bottom-arrow-icon"></span></li>
+      <ul class="expanded-category">
+        <li id="show-less-btn">간략히 보기<span class="up-arrow-icon"></span></li>
+      </ul>
+    </ul>
     </div>
   </aside>
   <section id="main-content"></section>
