@@ -58,10 +58,29 @@
   opacity: 1;
 }
 
-/* 사이드바 모두 보기 */
-.sidebar__show-more {
+/* 사이드바 모두 보기, 간단히보기 */
+.toggle {
   display: flex;
   padding: 1em;
   gap: 1rem;
   font-size: var(--font-boldMD);
+}
+
+.sidebar__category-items {
+  height: 0;
+  overflow: hidden;
+  transition: height 1s ease-in-out;
+}
+
+.sidebar__category-items__show {
+  height: 670px;
+}
+
+.sidebar__category-close {
+  display: none;
+  padding-top: 25px;
+}
+
+.sidebar__category-open {
+  display: block;
 }
