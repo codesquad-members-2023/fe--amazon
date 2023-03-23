@@ -3,11 +3,12 @@ import { CarouselComponentStyle } from '../../../style/components/carousel/Carou
 import { CarouselContentComponent } from './CarouselContentComponent';
 import { CarouselButtonComponent } from './CarouselButtonComponent';
 import { FlexContainerComponent } from '../container/FlexContainerComponent';
+import { CarouselContainer } from './CarouselContainer';
 
 export class CarouselComponent extends BaseComponent<HTMLElement> {
   constructor() {
     super(`<section class='${CarouselComponentStyle}'></section>`);
-    const container = new FlexContainerComponent('row', '', '', '0');
+    const container = new CarouselContainer();
 
     const carouselFileNames = [
       'amazon-beauty',
@@ -17,19 +18,30 @@ export class CarouselComponent extends BaseComponent<HTMLElement> {
       'for-gamer',
       'toy-game-shopping',
     ];
-    carouselFileNames.forEach((fileName) => {
+    container.element.style.transition = `transform 1s`;
+    const carouselContentComponents = carouselFileNames.map((fileName) => {
       const carouselContent = new CarouselContentComponent(
         this.makePath(fileName),
       );
-      carouselContent.attachTo(container.element);
+      return carouselContent;
     });
-    container.element.style.transition = `transform 1s`;
+    carouselContentComponents.forEach((component) => {
+      component.attachTo(container.element, 'beforeend');
+    });
+    container.element.ontransitionend = (e) => {
+      console.log(e);
+      container.element.removeAttribute('style');
+      container.element.appendChild(container.element.firstElementChild!);
+    };
+    let temp = 1;
+    setInterval(() => {
+      container.element.style.transition = 'transform 1s';
+      container.element.style.transform = 'translateX(-100%)';
 
-    let count = 0;
-    const id = setInterval(() => {
-      count++;
-      container.element.style.transform = `translateX(-${count}00%)`;
-      console.log(id);
+      // console.log(id);
+      // if (count === 5) {
+      //   clearInterval(id);
+      // }
     }, 5000);
 
     container.attachTo(this.element);

@@ -5,7 +5,7 @@ export const CarouselComponentStyle = style({
   display: 'flex',
   flexDirection: 'row',
   fontWeight: 'var(--weight-regular)',
-  backgroundColor: 'tomato',
+  backgroundColor: 'transparent',
   width: '100%',
   height: 'auto',
 });
