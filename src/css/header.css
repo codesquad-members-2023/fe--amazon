@@ -15,115 +15,111 @@
 }
 
 /* * nav 상단 */
-#nav_main {
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
+#nav-main {
+  padding: 0 1rem;
 
-  width: 100%;
-  height: 56px;
+  height: 3.5rem;
 
   background-color: #10141a;
 }
-#nav_main > div,
-#nav_main #amazon_icon,
-#nav_main .nav_main_search_form {
-  margin: 0 10px;
-}
-#nav_main > div {
-  height: 100%;
-}
-
-/* nav 상단 글씨 색깔 */
-.nav_main_top_text {
-  color: #d5d5d5;
-}
-.nav_main_bottom_text {
-  color: #ffffff;
-}
 
 /* nav 상단 flex */
-.shipping_address,
-.shipping_address_section,
-.login,
-.my_page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.shipping_address_top,
-.nav_main_search_form,
-.searchFormBtn,
-.flag,
-.cart {
+#nav-main,
+.shipping-address__top,
+.nav-main__search-form,
+.search-form__btn,
+.nav-main__flag,
+.nav-main__cart {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+.nav-main__shipping-address,
+.shipping-address__section,
+.nav-main__login,
+.login__section,
+.nav-main__my-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#amazon-icon,
+.nav-main__item,
+.nav-main__search-form {
+  margin: 0 10px;
+}
+.nav-main__item {
+  height: 100%;
+}
+
+/* nav 상단 글씨 색깔 */
+.nav-main__top-text {
+  color: #d5d5d5;
+}
+.nav-main__bottom-text {
+  color: #ffffff;
+}
 
 /* * 개별 css 속성 */
-.flag,
-.cart {
+.nav-main__flag,
+.nav-main__cart {
   padding: 0px;
   gap: 4px;
 }
 
-.shipping_address {
+.nav-main__shipping-address {
   position: relative;
 }
-.shipping_address_top > img {
+.shipping-address__top > img {
   width: 12px;
   height: 12px;
 }
 
-.nav_main_search_form {
+.nav-main__search-form {
   padding-left: 12px;
   background: #ffffff;
   border-radius: 4px;
 
   flex-grow: 1;
 }
-.searchFormInput,
-.searchFormBtn {
+.search-form__input,
+.search-form__btn {
   border: none;
   outline: none;
 }
-.searchFormInput {
+.search-form__input {
   height: 21px;
 
   color: #878787;
 
   flex-grow: 1;
 }
-.searchFormBtn {
+.search-form__btn {
   width: 40px;
   height: 40px;
 
   background: #fcb057;
   border-radius: 0px 4px 4px 0px;
 }
-.searchFormBtn > img {
+.search-form__btn > img {
   width: 24px;
   height: 24px;
 }
 
-.login {
+.nav-main__login {
   position: relative;
 }
-.login_section {
-  display: flex;
-  flex-direction: column;
-}
 
-.cart > img {
+.nav-main__cart > img {
   width: 24px;
   height: 24px;
 }
 
 /* * nav 하단 */
-#nav_sub {
+#nav-sub {
   padding: 0px 16px;
 
   width: 100%;
@@ -133,37 +129,40 @@
 }
 
 /* nav 하단 글씨 */
-#nav_sub a,
-.side_bar_btn {
-  color: #ffffff;
-}
-.nav_sub_left_text {
+#nav-sub {
   /* 글씨체 type에 없는 속성값을 가지기 때문에 따로 지정 */
   font-weight: 600;
   font-size: 13px;
 }
+#nav-sub a,
+.side-bar-btn {
+  color: #ffffff;
+}
 
 /* nav 하단 flex */
-#nav_sub {
+#nav-sub,
+.side-bar-btn {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-}
-.nav_sub_left_btns,
-.side_bar_btn {
-  display: flex;
-  align-items: flex-start;
 }
 
 /* 개별 css 속성 */
-.nav_sub_left_btns .side_bar_btn,
-.nav_sub_left_btns > a {
+#nav-sub a,
+.side-bar-btn {
+  padding: 8px;
+}
+.nav-sub__left-btns .side-bar-btn,
+.nav-sub__left-btns > a {
   margin-right: 20px;
 }
 
-.side_bar_btn img {
+.side-bar-btn img {
   width: 16px;
   height: 16px;
 
   margin-right: 5px;
+}
+.nav-sub__right-btn {
+  margin-left: auto;
 }

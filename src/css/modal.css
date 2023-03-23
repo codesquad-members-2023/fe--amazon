@@ -7,7 +7,7 @@
   position: absolute;
 }
 
-.shipping_address_modal {
+.shipping-address__modal {
   position: absolute;
   top: 100%;
   left: -50%;
@@ -20,12 +20,12 @@
 
   color: #10141a;
 }
-.shipping_address_modal > span {
+.shipping-address__modal > span {
   position: absolute;
   margin-top: 20px;
   padding: 10px;
 }
-.shipping_address_modal_btns {
+.shipping-address__modal-btns {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -37,17 +37,17 @@
   display: flex;
   justify-content: flex-end;
 }
-.shipping_address_modal_btns > div:first-child {
+.shipping-address__modal-btns > div:first-child {
   width: 40px;
 }
-.shipping_address_modal_btns > div:last-child {
+.shipping-address__modal-btns > div:last-child {
   width: 60px;
   margin-left: 10px;
 }
-.shipping_address_modal_btn {
+.shipping-address__modal-btn {
   height: 32px;
 }
-.shipping_address_modal .triangle {
+.shipping-address__modal .triangle {
   top: -18px;
   left: 30px;
 }
@@ -60,7 +60,7 @@
     opacity: 1;
   }
 }
-.login_modal {
+.login__modal {
   position: absolute;
   top: 100%;
   left: -200%;
@@ -71,25 +71,25 @@
   border-radius: 5px;
   animation: fade_in 1s ease-in-out;
 }
-.login_modal .modal_btn {
+.login__modal .modal-btn {
   margin: 15px auto 0 auto;
   width: 60%;
   height: 30px;
 }
-.login_modal_bottom {
+.login__modal-bottom {
   margin: 3px auto 10px auto;
   text-align: center;
   color: #10141a;
 }
-.login_modal_bottom > span:last-child {
+.login__modal-bottom > span:last-child {
   color: #074099;
 }
 
 /* 초기 login modal에 호버할 경우 추가 login modal창이 뜸 */
-.login_modal:hover .login_modal_more {
+.login__modal:hover .login__expanded-modal {
   display: flex;
 }
-.login_modal_more {
+.login__expanded-modal {
   width: 90%;
   border-top: 1px #eff2f2 solid;
   padding-top: 10px;
@@ -99,7 +99,7 @@
   justify-content: space-between;
 }
 
-.login_modal .triangle {
+.login__modal .triangle {
   top: -18px;
   left: 170px;
 }

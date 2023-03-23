@@ -11,55 +11,55 @@
 
 <body>
   <header class="nav">
-    <div id="nav_main">
-      <img id="amazon_icon" src="./src/image/logo.svg" alt="amazon logo"></img>
-      <div class="shipping_address">
-        <div class="shipping_address_section cursor">
-          <div class="shipping_address_top">
+    <div id="nav-main">
+      <img id="amazon-icon" src="./src/image/logo.svg" alt="amazon logo"></img>
+      <div class="nav-main__shipping-address nav-main__item">
+        <div class="shipping-address__section cursor">
+          <div class="shipping-address__top">
             <img src="./src/image/location.svg" alt="location icon">
-            <span class="nav_main_top_text">배송처</span>
+            <span class="nav-main__top-text">배송처</span>
           </div>
-          <span class="nav_main_bottom_text">대한민국</span>
+          <span class="nav-main__bottom-text">대한민국</span>
         </div>
-        <section class="shipping_address_modal hidden">
+        <section class="shipping-address__modal hidden">
           <div class="triangle"></div>
           <span>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</span>
-          <div class="shipping_address_modal_btns">
-            <div class="shipping_address_modal_btn modal_btn">계속</div>
-            <div class="shipping_address_modal_btn modal_btn">주소 변경</div>
+          <div class="shipping-address__modal-btns">
+            <div class="shipping-address__modal-btn modal-btn">계속</div>
+            <div class="shipping-address__modal-btn modal-btn">주소 변경</div>
           </div>
         </section>
       </div>
-      <form class="nav_main_search_form">
-        <input type="text" class="searchFormInput" placeholder="검색 Amazon">
-        <button type="submit" class="searchFormBtn">
+      <form class="nav-main__search-form">
+        <input type="text" class="search-form__input" placeholder="검색 Amazon">
+        <button type="submit" class="search-form__btn">
           <img src="./src/image/search.svg" alt="search form submit button icon">
         </button>
       </form>
-      <div class="flag">
-        <img src="./src/image/flag.svg" alt="flag">
-        <span class="nav_main_bottom_text">KO</span>
+      <div class="nav-main__flag nav-main__item">
+        <img src="./src/image/flag.svg" alt="nav-main__flag">
+        <span class="nav-main__bottom-text">KO</span>
       </div>
-      <div class="login">
-        <div class="login_section cursor">
-          <span class="nav_main_top_text">안녕하세요, 로그인</span>
-          <span class="nav_main_bottom_text">계정 및 목록</span>
+      <div class="nav-main__login nav-main__item">
+        <div class="login__section cursor">
+          <span class="nav-main__top-text">안녕하세요, 로그인</span>
+          <span class="nav-main__bottom-text">계정 및 목록</span>
         </div>
-        <section class="login_modal">
+        <section class="login__modal">
           <div class="triangle"></div>
-          <div class="modal_btn">로그인</div>
-          <div class="login_modal_bottom">
+          <div class="modal-btn">로그인</div>
+          <div class="login__modal-bottom">
             <span>기존 사용자가 아니십니까?</span>
             <span>여기에서 시작합니다</span>
           </div>
-          <div class="login_modal_more">
-            <ul class="login_modal_more_item_list_of_user">
+          <div class="login__expanded-modal">
+            <ul class="login__expanded-modal-left">
               <p>귀하의 목록</p>
               <li>목록 생성</li>
               <li>목록 또는 레지스트리 찾기</li>
               <li>AmazonSmile 자선 품목 목록</li>
             </ul>
-            <ul class="login_modal_more_user_info">
+            <ul class="login__expanded-modal-right">
               <p>계정</p>
               <li>계정</li>
               <li>주문</li>
@@ -76,62 +76,53 @@
           </div>
         </section>
       </div>
-      <div class="my_page">
-        <span class="nav_main_top_text">반품</span>
-        <span class="nav_main_bottom_text">&주문</span>
+      <div class="nav-main__my-page nav-main__item">
+        <span class="nav-main__top-text">반품</span>
+        <span class="nav-main__bottom-text">&주문</span>
       </div>
-      <div class="cart">
+      <div class="nav-main__cart nav-main__item">
         <img src="./src/image/cart.svg" alt="cart icon">
-        <span class="nav_main_bottom_text">장바구니</span>
+        <span class="nav-main__bottom-text">장바구니</span>
       </div>
     </div>
-    <div id="nav_sub">
-      <div class="nav_sub_left_btns nav_sub_left_text">
-        <span class="side_bar_btn cursor">
-          <img src="./src/image/menu.svg" alt="menu icon">모두 </span>
-        <a href="">오늘의 딜</a>
-        <a href="">고객 서비스</a>
-        <a href="">레지스토리</a>
-        <a href="">기프트 카드</a>
-        <a href="">판매</a>
-      </div>
-      <a class="nav_sub_right_btn" href="">지금 특가 상품 쇼핑하기</a>
+    <div id="nav-sub">
+      <span class="side-bar-btn cursor">
+        <img src="./src/image/menu.svg" alt="menu icon">모두 </span>
+      <a href="">오늘의 딜</a>
+      <a href="">고객 서비스</a>
+      <a href="">레지스토리</a>
+      <a href="">기프트 카드</a>
+      <a href="">판매</a>
+      <a class="nav-sub__right-btn" href="">지금 특가 상품 쇼핑하기</a>
     </div>
   </header>
-  <aside class="side_bar">
-    <img class="close_side_bar_btn cursor" src="./src/image/close.svg" alt="close side bar">
-    <div class="side_bar_main">
-      <header class="side_bar_login side_bar_main_header">
+  <aside class="side-bar">
+    <img class="side-bar__close-btn cursor" src="./src/image/close.svg" alt="close side bar">
+    <ul class="side-bar__main">
+      <header class="side-bar__login side-bar__main-header">
         <img src="./src/image/login.svg" alt="login icon">
         <span>안녕하세요,로그인</span>
       </header>
-      <div class="digital_content_and_devices">
-        <header class="side_bar_main_header">디지털 콘텐츠 및 기기</header>
-        <ul class="digital_content_and_devices_list">
-          <li>Amazon Music<span class="right_arrow_icon"></span></li>
-          <li>Kindle E-Reader 및 도서<span class="right_arrow_icon"></span></li>
-          <li>안드로이드 앱스토어<span class="right_arrow_icon"></span></li>
-        </ul>
-      </div>
-      <div class="shopping_category">
-        <header class="side_bar_main_header">부서별 쇼핑</header>
-        <ul class="shopping_category_list">
-          <li>전자<span class="right_arrow_icon"></span></li>
-          <li>컴퓨터<span class="right_arrow_icon"></span></li>
-          <li>Alexa 스마트 홈<span class="right_arrow_icon"></span></li>
-          <li>예술 및 공예<span class="right_arrow_icon"></span></li>
-          <li class="expanded_shopping_category_btn">모두 보기<span class="bottom_arrow_icon"></span></li>
-        </ul>
-        <ul class="expanded_shopping_category_list">
-          <li class="close_expanded_shopping_category_btn">간략히 보기<span class="up_arrow_icon"></span></li>
-        </ul>
-      </div>
+      <header class="side-bar__main-header">디지털 콘텐츠 및 기기</header>
+      <li>Amazon Music<span class="right-arrow-icon"></span></li>
+      <li>Kindle E-Reader 및 도서<span class="right-arrow-icon"></span></li>
+      <li>안드로이드 앱스토어<span class="right-arrow-icon"></span></li>
+      <header class="side-bar__main-header">부서별 쇼핑</header>
+      <li>전자<span class="right-arrow-icon"></span></li>
+      <li>컴퓨터<span class="right-arrow-icon"></span></li>
+      <li>Alexa 스마트 홈<span class="right-arrow-icon"></span></li>
+      <li>예술 및 공예<span class="right-arrow-icon"></span></li>
+      <li id="show-all-btn">모두 보기<span class="bottom-arrow-icon"></span></li>
+      <ul class="expanded-category">
+        <li id="show-less-btn">간략히 보기<span class="up-arrow-icon"></span></li>
+      </ul>
+    </ul>
     </div>
   </aside>
-  <section id="main_content"></section>
+  <section id="main-content"></section>
   <footer id="footer"></footer>
-  <div class="dim_cover_in_header dim_cover hidden"></div>
-  <div class="dim_cover_in_sideBar dim_cover hidden"></div>
+  <div class="dim-cover__in-header dim-cover hidden"></div>
+  <div class="dim-cover__in-sideBar dim-cover hidden"></div>
   <script type="module" src="./src/js/index.js"></script>
 </body>
 
