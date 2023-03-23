@@ -355,3 +355,5 @@ const SIDEBAR_DETAIL = {
     '어린이 및 가족',
   ],
 };
+
+export { SIDEBAR_DETAIL };

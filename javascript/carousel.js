@@ -1,4 +1,4 @@
-const setImg = () => {
+const setCarouselImage = () => {
   const CAROUSELCOUNT = 6;
   const imageFiles = Array.from({ length : CAROUSELCOUNT }, (_, i) => i);
 
@@ -13,4 +13,4 @@ const setImg = () => {
   $carousel_container.insertAdjacentHTML('afterbegin', imgTemplate);
 }
 
-setImg();
+export { setCarouselImage };
