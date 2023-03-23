@@ -8,6 +8,7 @@ class App {
     const main = new Main();
     header.attachTo(appRoot, 'beforeend');
     main.attachTo(appRoot, 'beforeend');
+    appRoot.style.overflowX = 'hidden';
   }
 }
 

@@ -5,4 +5,5 @@ export const CarouselContentComponentStyle = style({
   backgroundColor: 'yellowgreen',
   width: '100%',
   height: '37.5rem',
+  transition: 'transform 1s',
 });
