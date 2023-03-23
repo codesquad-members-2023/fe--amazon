@@ -1,32 +1,35 @@
 const makeBanner = () => {
   const bannerTrack = document.querySelector(".banner__track");
-  const bannerImgArray = [
-    "bannerImg1",
-    "bannerImg2",
-    "bannerImg3",
-    "bannerImg4",
-    "bannerImg5",
-    "bannerImg6",
-  ];
 
-  function Banner(name) {
-    this.name = name; // name 초기화
+  function Banner() {
+    this.imgList = [
+      "bannerImg1",
+      "bannerImg2",
+      "bannerImg3",
+      "bannerImg4",
+      "bannerImg5",
+      "bannerImg6",
+    ];
   }
 
-  Banner.prototype.toBeElement = function () {
+  Banner.prototype.toBeElement = function (imgName) {
     const div = document.createElement("div");
     const img = document.createElement("img");
     div.classList.add("banner__column");
     img.classList.add("banner__img");
-    img.src = `photo/${this.name}.jpg`;
+    img.src = `photo/${imgName}.jpg`;
     div.appendChild(img);
     bannerTrack.appendChild(div);
   };
 
-  bannerImgArray.forEach((imgName) => {
-    const bannerElement = new Banner(`${imgName}`);
-    bannerElement.toBeElement();
-  });
+  Banner.prototype.setBanners = function () {
+    this.imgList.forEach((imgName) => {
+      this.toBeElement(imgName);
+    });
+  };
+
+  const banners = new Banner();
+  banners.setBanners();
 };
 
 makeBanner();
