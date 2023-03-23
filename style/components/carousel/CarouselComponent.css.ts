@@ -7,5 +7,5 @@ export const CarouselComponentStyle = style({
   fontWeight: 'var(--weight-regular)',
   backgroundColor: 'tomato',
   width: '100%',
-  height: '100%',
+  height: 'auto',
 });
