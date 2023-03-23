@@ -1,35 +1,22 @@
+.side-bar {
+  position: fixed;
+  width: 320px;
+  height: 100%;
+  transform: translateX(-100%);
+  z-index: 4;
+}
+
 .side-bar__close-btn {
   position: absolute;
   width: 24px;
   height: 24px;
   right: -30px;
   top: 8px;
+  visibility: hidden;
+  opacity: 0;
 }
 
-.side-bar {
-  width: 320px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: -374px;
-  z-index: 4;
-  transition: all 1s ease-in-out;
-}
-
-.open {
-  left: 0;
-}
-
-.side-bar__main {
-  width: 320px;
-  height: 100%;
-  background-color: #ffffff;
-  color: #10141a;
-
-  overflow-y: scroll;
-}
-
-.side-bar__main-header {
+.side-bar__header {
   height: 53px;
   padding: 16px 16px 16px 32px;
 }
@@ -42,6 +29,32 @@
   align-items: center;
 
   cursor: pointer;
+}
+
+.translateX-left,
+.translateX-right {
+  transition: transform 1s ease-in;
+}
+.translateX-left {
+  transform: translateX(-100%);
+}
+.translateX-right {
+  transform: translateX(0);
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 1s ease-in, opacity 1s ease-in;
+}
+
+.side-bar__main {
+  width: 320px;
+  height: calc(100% - 53px);
+  background-color: #ffffff;
+  color: #10141a;
+
+  overflow-y: scroll;
 }
 
 /* 사이드바 아이콘 */

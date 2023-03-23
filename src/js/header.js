@@ -14,20 +14,20 @@ export default class Header {
 
   addEvents() {
     this.$shippingAddress.addEventListener('mouseenter', () => {
-      this.$shippingAddressModal.classList.remove('hidden');
-      this.$headerDimCover.classList.remove('hidden');
+      this.$shippingAddressModal.classList.remove('d-none');
+      this.$headerDimCover.classList.remove('d-none');
     });
     this.$shippingAddress.addEventListener('mouseleave', () => {
-      this.$shippingAddressModal.classList.add('hidden');
-      this.$headerDimCover.classList.add('hidden');
+      this.$shippingAddressModal.classList.add('d-none');
+      this.$headerDimCover.classList.add('d-none');
     });
     this.$login.addEventListener('mouseenter', () => {
-      this.$loginModal.classList.remove('hidden');
-      this.$headerDimCover.classList.remove('hidden');
+      this.$loginModal.classList.remove('d-none');
+      this.$headerDimCover.classList.remove('d-none');
     });
     this.$login.addEventListener('mouseleave', () => {
-      this.$loginModal.classList.add('hidden');
-      this.$headerDimCover.classList.add('hidden');
+      this.$loginModal.classList.add('d-none');
+      this.$headerDimCover.classList.add('d-none');
     });
   }
 }
