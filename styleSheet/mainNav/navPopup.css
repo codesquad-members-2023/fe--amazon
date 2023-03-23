@@ -145,6 +145,8 @@
   position: fixed;
   top: 0px;
   left: 0px;
+}
+.nav_index {
   z-index: 0;
 }
 

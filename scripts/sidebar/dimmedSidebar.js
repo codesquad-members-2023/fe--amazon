@@ -1,6 +1,9 @@
 import { COMMON, SIDEBAR, SUBMENU } from "../all/allQuery.js";
 
-const dimmedSidebar = () => COMMON.DIM.classList.remove("hidden");
+const dimmedSidebar = () => {
+  COMMON.DIM.classList.remove("hidden");
+  COMMON.DIM.classList.add("sidebar_index");
+};
 const clearDimmedSidebar = () => COMMON.DIM.classList.add("hidden");
 const showSidebar = () => SIDEBAR.ALL.classList.remove("hidden");
 const closeSidebar = () => SIDEBAR.ALL.classList.add("hidden");

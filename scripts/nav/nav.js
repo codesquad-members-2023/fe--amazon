@@ -1,7 +1,10 @@
 import { NAV, COMMON } from "../all/allQuery.js";
 
 const clearDimmedNav = () => COMMON.DIM.classList.add("hidden");
-const dimmedNav = () => COMMON.DIM.classList.remove("hidden");
+const dimmedNav = () => {
+  COMMON.DIM.classList.remove("hidden");
+  COMMON.DIM.classList.add("nav_index");
+};
 const clearLoginExtend = () => NAV.LOGINEXTENSION.classList.add("visible_hidden");
 const clearShippingPopup = () => NAV.SHIPPINGPOPUP.classList.add("hidden");
 const showLoginExtend = () => NAV.LOGINEXTENSION.classList.remove("visible_hidden");
@@ -18,3 +21,5 @@ const navEventListener = () => {
 };
 
 navEventListener();
+
+//단순화시킬 필요성이 있음
