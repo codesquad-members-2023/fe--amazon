@@ -1,29 +1,26 @@
 export class sideBarExtraMenu {
   constructor(extraCategories){
     this.extraCategories = extraCategories;
+    this.emptyString = '';
   }
 
   makeLayer(){
-    let extraMenu = '';
-    this.extraCategories.forEach(categories => {
-      const categoryExtra = `
-        <div class="sidebar__category extra">
-          <div class="sidebar__category__menu">${this.makeDetail(categories)}</div>
-        </div>`;
-      extraMenu += categoryExtra;
-    })
-    return extraMenu;
+    return this.extraCategories.reduce((acc, categories) => 
+        acc + `<div class="sidebar__category extra">
+                 <div class="sidebar__category__menu">${this.makeDetail(categories)}</div>
+               </div>`
+    , this.emptyString);
   }
 
   makeDetail(categories){
-    return categories.map(({name, id}, index) => {
+    return categories.reduce((acc, { name, id }, index) => {
       if(index < categories.length - 1){
-        return `
+        acc += `
           <a class="sidebar__contents" href="#" data-category-id="${id}">
             ${name}<img src="asset/rightdir.svg" alt="" />
           </a>`
       } else {
-        return `
+        acc += `
           <a class="sidebar__contents" href="#" data-category-id="${id}">
             ${name}<img src="asset/rightdir.svg" alt="" />
           </a>
@@ -31,7 +28,8 @@ export class sideBarExtraMenu {
             간략히 보기<img src="asset/upperdir.svg" alt="">
           </a>`
       }
-    }).join('')
+      return acc;
+    }, this.emptyString);
   }
 }
 

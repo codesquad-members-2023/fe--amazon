@@ -1,9 +1,9 @@
 import { sideBarMainMenu } from "./sideBarMainMenu.js";
 import { sideBarExtraMenu } from "./sideBarExtraMenu.js";
 
-export class sideBar {
-  constructor(data, html){
-    this.data = data;
+export class SideBar {
+  constructor(responsedData, html){
+    this.reponsedData = responsedData;
     this.html = html;
   }
 
@@ -13,7 +13,7 @@ export class sideBar {
   }
 
   getMenuHtml(){
-    [this.mainMenu, this.extraCategories] = new sideBarMainMenu(this.data).makeLayer();
+    [this.mainMenu, this.extraCategories] = new sideBarMainMenu(this.reponsedData).makeLayer();
     this.extraMenu = new sideBarExtraMenu(this.extraCategories).makeLayer();
   }
 
@@ -22,7 +22,7 @@ export class sideBar {
     sidebarMenuMain.innerHTML = this.mainMenu;
 
     const ifExtraMenuNeed = [];
-    this.data.forEach(({id, categories}) => {
+    this.reponsedData.forEach(({id, categories}) => {
       if(categories.length >= 4) ifExtraMenuNeed.push(id);
     });
 
