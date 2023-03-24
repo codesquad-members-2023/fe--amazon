@@ -4,22 +4,28 @@
   position: relative;
   display: flex;
   justify-content: center;
+
   &-center {
     width: $viewprot-size;
     overflow: hidden;
-    // transform: translateX
   }
+  
   &-viewport {
+    transform: translateX(0);
+    transition: transform 1s;
     ol {
       display: flex;
     }
   }
+
   &-card {
     img {
       width: $viewprot-size;
       max-width : 100vw;
+
     }
   }
+
   &-directionArrows {
     display: flex;
     height: 100%;
@@ -29,6 +35,7 @@
     box-sizing: border-box;
     padding: 50px;
   }
+
   &-left, &-right {
     height: 100%;
     width: 100px;
@@ -37,4 +44,5 @@
     justify-content: center;
     cursor: pointer;
   }
+
 }

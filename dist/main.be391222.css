@@ -58,6 +58,10 @@ table {
   width: 1500px;
   overflow: hidden;
 }
+.carousel-viewport {
+  transform: translateX(0);
+  transition: transform 1s;
+}
 .carousel-viewport ol {
   display: flex;
 }
