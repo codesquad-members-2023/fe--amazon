@@ -310,6 +310,22 @@ const openSubMenu = (parent, element, target) => {
 > 나중에 시간되면 openSubMenu 를 어떻게 개선할지? 한번 고민해보세요.  
 > selector 가 복잡해보여서 로직이 좀 복잡해보이고요, 그렇다고 아주 긴 함수는 아는것 같고요.
 
+```js
+return Array.from(findUpWard(ontarget, '#sidebarmenu').childNodes)
+            .filter(node => node.nodeName != '#text')
+            .find(node => {
+```
+
+> 오 고차함수 체이닝 표현 좋군요. 잘했습니다. array.from 을 더 간단히 표현하는 방법도 찾아보세요.
+
+childeNodes로 얻은 NodeList 데이터구조를 Array 객체로 만들어서 Array 메소드를 사용할 의도였다. 근데 전개문법으로 더 간단하게 표현 가능했다니....!  
+
+```js
+return [...findUpWard(ontarget, '#sidebarmenu').childNodes]
+            .filter(node => node.nodeName != '#text')
+            .find(node => {
+```
+
 ### :round_pushpin: 3주차 Midpoint
 
 ```js
@@ -320,8 +336,6 @@ sideBarEvtHandler();
 
 > 그런데 sideBarEvtHandler 가 객체와 달리 따로 놀고 있자나요?  
 > (뭔가 이유가 있으시겠지만) 여기 코드만 보면 응집도가 떨어지는 코드라고 볼수도 있어요.
-
-
 
 ```js
 export class sideBar {
@@ -342,7 +356,23 @@ const addsideBarClickEvt = (sideBarLayer, dimLayer) => {
 
 ```js
 makeDetail(categories){
-  return categories.map(({name, id}, index) => {
+  return categories.map(({name, id}, total) => {
+    if(total < 4){
+      return `
+      <a class="sidebar__contents" href="#" data-contents-id="${id}">
+        ${name}<img src="asset/rightdir.svg" alt="" />
+      </a>`
+    } else {
+      this.extraCategories[0].push({name, id});
+      if(categories.length - 1 === total){
+        return `
+      <a class="sidebar__contents__btn showall" onclick="return false;">
+        모두 보기<img src="asset/downwarddir.svg" alt="">
+      </a>`
+      }
+    }
+  }).join('')
+}
 ```
 
 > map.join 좋고요. reduce도 활용가능하고요.

@@ -32,6 +32,5 @@ export class SubMenu {
   makeSubMenuContents(categories){
     return categories.reduce((acc, content) => acc + `<a href="" class="sidebar__contents sub">${content}</a>`, this.emptyString);
   }
-
 }
 
