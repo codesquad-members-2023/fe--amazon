@@ -27,13 +27,12 @@
 
 .carousel_window {
   position: relative;
-  width: $main_width;
+
   overflow: hidden;
   height: 600px;
 }
 
 .carousel_container {
-  width: $main_width * 5;
   position: absolute;
   left: -$main_width;
   display: flex;

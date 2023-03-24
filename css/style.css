@@ -60,7 +60,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Pretendard';
-  position: relative; }
+  position: relative;
+  background-color: #f5f5f5; }
 
 main {
   width: 1300px;
@@ -663,12 +664,10 @@ nav {
 
 .carousel_window {
   position: relative;
-  width: 1300px;
   overflow: hidden;
   height: 600px; }
 
 .carousel_container {
-  width: 6500px;
   position: absolute;
   left: -1300px;
   display: flex;
