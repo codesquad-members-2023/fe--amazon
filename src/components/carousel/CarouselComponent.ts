@@ -1,5 +1,5 @@
-import { BaseComponent } from '../Base';
 import { CarouselComponentStyle } from '../../../style/components/carousel/CarouselComponent.css';
+import { BaseComponent } from '../Base';
 import { CarouselContentComponent } from './CarouselContentComponent';
 import { CarouselButtonComponent } from './CarouselButtonComponent';
 import { FlexContainerComponent } from '../container/FlexContainerComponent';
@@ -28,27 +28,38 @@ export class CarouselComponent extends BaseComponent<HTMLElement> {
     carouselContentComponents.forEach((component) => {
       component.attachTo(container.element, 'beforeend');
     });
-    container.element.ontransitionend = (e) => {
-      console.log(e);
+    let direction: 'left' | 'right' = 'right';
+    container.element.addEventListener('transitionend', () => {
       container.element.removeAttribute('style');
-      container.element.appendChild(container.element.firstElementChild!);
-    };
-    let temp = 1;
+      if (direction === 'right') {
+        container.element.appendChild(container.element.firstElementChild!);
+      } else {
+        container.element.insertBefore(
+          container.element.lastElementChild!,
+          container.element.firstElementChild!,
+        );
+      }
+    });
+
     setInterval(() => {
       container.element.style.transition = 'transform 1s';
       container.element.style.transform = 'translateX(-100%)';
-
-      // console.log(id);
-      // if (count === 5) {
-      //   clearInterval(id);
-      // }
     }, 5000);
 
     container.attachTo(this.element);
 
     const carouselLeftBtn = new CarouselButtonComponent('left');
     const carouselRightBtn = new CarouselButtonComponent('right');
-
+    carouselLeftBtn.element.addEventListener('click', () => {
+      direction = 'left';
+      container.element.style.transition = 'transform 1s';
+      container.element.style.transform = 'translateX(100%)';
+    });
+    carouselRightBtn.element.addEventListener('click', () => {
+      direction = 'right';
+      container.element.style.transition = 'transform 1s';
+      container.element.style.transform = 'translateX(-100%)';
+    });
     carouselRightBtn.attachTo(this.element);
     carouselLeftBtn.attachTo(this.element);
   }

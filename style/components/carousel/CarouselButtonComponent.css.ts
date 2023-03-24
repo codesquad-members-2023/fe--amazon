@@ -8,4 +8,7 @@ export const CarouselButtonComponentStyle = style({
   height: '15.5rem',
   top: '5.5rem',
   zIndex: '10',
+  ':hover': {
+    border: '1px solid red',
+  },
 });

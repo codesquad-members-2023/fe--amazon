@@ -1,11 +1,10 @@
 import { BaseComponent } from '../Base';
 import { CarouselButtonComponentStyle } from '../../../style/components/carousel/CarouselButtonComponent.css';
-import { ButtonComponent } from '../basic/ButtonComponent';
 import { SymbolComponent } from '../basic/SymbolComponent';
 
 export class CarouselButtonComponent extends BaseComponent<HTMLElement> {
   constructor(direction: 'left' | 'right') {
-    super(`<div class='${CarouselButtonComponentStyle}'></div>`);
+    super(`<button class='${CarouselButtonComponentStyle}'></button>`);
     const buttonSymbol = new SymbolComponent(
       `/assets/main-carousel/${direction}-button.svg`,
       'transparent',

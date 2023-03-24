@@ -6,4 +6,5 @@ export const CarouselContentComponentStyle = style({
   width: '100%',
   height: '37.5rem',
   transition: 'transform 1s',
+  transform: 'translateX(-100%)',
 });
