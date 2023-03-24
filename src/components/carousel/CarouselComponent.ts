@@ -2,7 +2,6 @@ import { CarouselComponentStyle } from '../../../style/components/carousel/Carou
 import { BaseComponent } from '../Base';
 import { CarouselContentComponent } from './CarouselContentComponent';
 import { CarouselButtonComponent } from './CarouselButtonComponent';
-import { FlexContainerComponent } from '../container/FlexContainerComponent';
 import { CarouselContainer } from './CarouselContainer';
 
 export class CarouselComponent extends BaseComponent<HTMLElement> {
@@ -38,6 +37,7 @@ export class CarouselComponent extends BaseComponent<HTMLElement> {
           container.element.lastElementChild!,
           container.element.firstElementChild!,
         );
+        direction = 'right';
       }
     });
 
