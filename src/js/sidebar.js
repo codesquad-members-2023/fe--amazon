@@ -5,14 +5,14 @@ import { sidebarDetail } from './sidebarSubmenuDataset.js';
 
 const activeSidebarHandler = () => {
   sidebar.container.classList.add('active');
-  sidebar.InactivateButton.classList.add('active');
+  sidebar.inactivateButton.classList.add('active');
   header.loginPopup.classList.add('hidden');
   dimmed.MainIncludingHeader.classList.remove('hidden');
 };
 
 const inactiveSidebarHandler = () => {
   sidebar.container.classList.remove('active');
-  sidebar.InactivateButton.classList.remove('active');
+  sidebar.inactivateButton.classList.remove('active');
   dimmed.MainIncludingHeader.classList.add('hidden');
 };
 
@@ -39,7 +39,7 @@ const hideExtraSidebarList = () => {
 const sidebarInactiveSubmenuHandler = () => {
   const submenu = document.querySelector('.submenu');
   submenu.remove();
-  sidebar.Main.classList.remove('slide');
+  sidebar.main.classList.remove('slide');
 };
 
 const createSidebarSubmenuFragment = (title, submenu) => {
@@ -84,17 +84,17 @@ const sidebarActiveSubmenuHandler = ({ target: { className, id, innerText } }) =
     const submenuList = sidebarDetail[id];
     const submenu = createSidebarSubmenuFragment(submenuTitle, submenuList);
 
-    sidebar.Main.classList.add('slide');
-    sidebar.Main.insertAdjacentElement('beforebegin', submenu);
+    sidebar.main.classList.add('slide');
+    sidebar.main.insertAdjacentElement('beforebegin', submenu);
   }
 };
 
 const sidebarEventMainHandler = () => {
-  sidebar.ActivateButton.addEventListener('click', activeSidebarHandler);
-  sidebar.InactivateButton.addEventListener('click', inactiveSidebarHandler);
+  sidebar.activateButton.addEventListener('click', activeSidebarHandler);
+  sidebar.inactivateButton.addEventListener('click', inactiveSidebarHandler);
   sidebar.showExtraListButton.addEventListener('click', showExtraSidebarList);
   sidebar.hideExtraListButton.addEventListener('click', hideExtraSidebarList);
-  sidebar.Main.addEventListener('click', sidebarActiveSubmenuHandler);
+  sidebar.main.addEventListener('click', sidebarActiveSubmenuHandler);
 };
 
 export { sidebarEventMainHandler };
