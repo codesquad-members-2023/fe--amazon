@@ -48,13 +48,15 @@ class Slider extends HTMLElement {
   }
 
   appendSlides(arrangedImages) {
-    arrangedImages.forEach((image) => {
-      const sliderImage = SliderImage();
-      const slideContainer = this.shadow.querySelector('.slide-container');
-      const slideImageInstance = sliderImage.cloneNode(true);
-      slideImageInstance.style.backgroundImage = `url('public/assets/images/${image}')`;
-      slideContainer.append(slideImageInstance);
-    });
+    arrangedImages.forEach((image) => this.appendEachSlide.call(this, image));
+  }
+
+  appendEachSlide(image) {
+    const sliderImage = SliderImage();
+    const slideContainer = this.shadow.querySelector('.slide-container');
+    const slideImageInstance = sliderImage.cloneNode(true);
+    slideImageInstance.style.backgroundImage = `url('public/assets/images/${image}')`;
+    slideContainer.append(slideImageInstance);
   }
 }
 
