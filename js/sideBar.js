@@ -20,7 +20,6 @@ const hideSideBar = (...element) => {
   })
 
   body.addEventListener('click', (e) => {
-    console.log(e.target)
     if (!sideMenu.contains(e.target) && !openButton.contains(e.target)) {
       sideMenu.style.animation = 'slide-hide .5s forwards'
       dim.style.display = 'none'

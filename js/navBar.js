@@ -3,28 +3,24 @@ import $ from './$.js'
 const dim = $('.dim')
 const shippingAddress = $('.shipping-address')
 
-const removeHidden = (element) => {
-  element.classList.remove('hidden')
-}
+const removeHidden = (...elements) => 
+  elements.forEach(element => element.classList.remove('hidden'))
 
-const addHidden = (element) => {
-  element.classList.add('hidden')
-}
+const addHidden = (...elements) => 
+  elements.forEach(element => element.classList.add('hidden'))
 
 const loginModalHandler = () => {
   const DELAY_TIME = 1000
   const logInSection = $('.log-in')
   const logInPointer = $('.log-in .pointer')
   const logInModal = $('.log-in .modal')
+  
   window.addEventListener('load', setTimeout(() => {
-    
-    // logInPointer.setAttribute('id', 'modal__visibility')
     logInModal.setAttribute('id', 'modal__visibility')
   }, DELAY_TIME))
 
   logInSection.addEventListener('mouseover', () => {
-    addHidden(logInPointer)
-    addHidden(logInModal)
+    addHidden(logInPointer, logInModal)
   })
 
   // TODO: 확장 모달 띄우기
