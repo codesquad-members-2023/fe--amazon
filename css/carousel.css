@@ -2,42 +2,26 @@
   min-width: 70rem;
 }
 
-.carousel_container {
-  position: relative;
-}
-
-.image_box {
-  overflow: hidden;
-  display: flex;
-}
-
-.image_box > img {
-  width: 100%;
-}
-
 .carousel_banner {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 70rem;
   height: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel_btn {
+  padding: 0 15px;
+  display: inline-block;
+  line-height: 250px;
   cursor: pointer;
 }
 
-.carousel_left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 250px;
-  line-height: 250px;
-  padding-left: 30px;
+.slider {
+  display: flex;
+  overflow: hidden;
 }
 
-.carousel_right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 250px;
-  line-height: 250px;
-  padding-right: 30px;
+.slider > img {
+  width: 100%;
 }

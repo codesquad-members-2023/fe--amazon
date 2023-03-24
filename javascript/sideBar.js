@@ -1,3 +1,5 @@
+import { SIDEBAR_DETAIL } from './data/sidebarData.js';
+
 const sideBarEventHandler = () => {
   const $every = document.querySelector('.every');
   const $close = document.getElementById('side_bar_close');
@@ -31,12 +33,12 @@ const openSideBar = e => {
   $modalBackground.style.zIndex = '1';
 }
 
-// 사이드바 닫는 함수
+// 사이드바 닫는 함수 (메인메뉴로 돌아가게끔 재구현 필요함)
 const closeSideBar = e => {
   const $sideBar = document.querySelector('.side_bar');
   const $modalBackground = document.querySelector('.modal_background');
-
   $sideBar.classList.add('slideLeft');
+
   $sideBar.addEventListener('animationend', ({ animationName, target }) => {
     if(animationName === 'slideLeft' && target.className.includes('side_bar')) {
       $sideBar.classList.add('hidden');
@@ -105,4 +107,4 @@ const clickBackBtn = e => {
   });
 }
 
-sideBarEventHandler();
+export { sideBarEventHandler };

@@ -71,29 +71,20 @@
             </div>
           </div>
           <div class="content">
-            <div class="mylist">
-              <h3>귀하의 목록</h3>
-              <ul>
+            <div class="content_left">
+              <!-- <h3>귀하의 목록</h3> -->
+              <!-- <ul>
                 <li>목록 생성</li>
                 <li>목록 또는 레지스트리 찾기</li>
                 <li>AmazonSmile 자선 품목 목록</li>
-              </ul>
+              </ul> -->
             </div>
-            <div class="mypage">
-              <h3>계정</h3>
+            <div class="content_right">
+              <!-- <h3>계정</h3>
               <ul>
                 <li>계정</li>
                 <li>주문</li>
-                <li>권장 사항</li>
-                <li>검색 기록</li>
-                <li>위치리스트</li>
-                <li>비디오 구매 및 대여</li>
-                <li>Kindle 언리미티드</li>
-                <li>콘텐츠 및 기기</li>
-                <li>항목 구독 및 저장</li>
-                <li>멤버쉽 및 구독</li>
-                <li>음악 라이브러리</li>
-              </ul>
+              </ul> -->
             </div>
           </div>
           <div class='triangle'></div>
@@ -286,12 +277,12 @@
   <div class="page_content">
     <!-- 히어로영역 -->
     <div class="carousel_container">
-      <div class="image_box">
-        <!-- <img src="/asset/images/carousel/1.jpg"> -->
-      </div>
       <div class="carousel_banner">
-        <div class="carousel_left"><img src='/asset/images/vectors/LeftButton.svg'></div>
-        <div class="carousel_right"><img src='/asset/images/vectors/RightButton.svg'></div>
+        <span id="carousel_left" class="carousel_btn"><img src='/asset/images/vectors/LeftButton.svg'></span>
+        <span id="carousel_right" class="carousel_btn"><img src='/asset/images/vectors/RightButton.svg'></span>
+      </div>
+      <div class="slider">
+        <!-- <img class="slide" src="/asset/images/carousel/1.jpg"> -->
       </div>
     </div>
 
@@ -311,10 +302,7 @@
     </div>
   </div>
 
-  <script src='/javascript/nav.js'></script>
-  <script src='/javascript/sideBar.js'></script>
-  <script src='/javascript/data/sidebarData.js'></script>
-  <script src='/javascript/carousel.js'></script>
+  <script type="module" src='/javascript/main.js'></script>
 </body>
 
 </html>

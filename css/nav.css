@@ -156,8 +156,12 @@ body {
   }
 
   .page_content {
-    width: 93rem;
+    width: 70rem;
     margin: 0 auto;
+  }
+
+  .carousel_container {
+    width: 100%;
   }
 }
 
@@ -267,11 +271,11 @@ body {
   border-top: 1px solid var(--color-gray-100);
 }
 
-.mylist {
+.content_left {
   width: 150px;
 }
 
-.mypage {
+.content_right {
   width: 150px;
   padding-left: 10px;
   border-left: 1px solid var(--color-gray-100);

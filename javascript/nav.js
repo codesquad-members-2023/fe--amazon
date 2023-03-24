@@ -40,16 +40,16 @@ const hideLogin = () => {
   return hide($loginDetail, $modalBackground);
 }
 
-const popUp = (...querySelector) => {
-  return [...querySelector].forEach(selector => {
+const popUp = (...selectors) => {
+  return [...selectors].forEach(selector => {
     selector.classList.remove('hidden');
   });
 }
 
-const hide = (...querySelector) => {
-  return [...querySelector].forEach(selector => {
+const hide = (...selectors) => {
+  return [...selectors].forEach(selector => {
     selector.classList.add('hidden');
   });
 }
 
-navBarEventHandler();
+export { navBarEventHandler };

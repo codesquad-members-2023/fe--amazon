@@ -100,4 +100,9 @@
   - [x] CSS absolute, relative, min-width
   - [x] Carousel 구현 시도
 - [ ] 목
+  - [ ] 리뷰 리팩토링
+    - [ ] 1. login popup list JS 동적 구현하기
+    - [ ] 2. sideBar class list 제거 코드 수정하기
+  - [ ] Carousel 이미지 이동 구현하기
+  - [ ] Sass 으로 변경해보기
 - [ ] 금
