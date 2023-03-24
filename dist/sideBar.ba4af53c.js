@@ -144,7 +144,6 @@ var hideSideBar = function hideSideBar() {
     dim.style.display = 'none';
   });
   body.addEventListener('click', function (e) {
-    console.log(e.target);
     if (!sideMenu.contains(e.target) && !openButton.contains(e.target)) {
       sideMenu.style.animation = 'slide-hide .5s forwards';
       dim.style.display = 'none';

@@ -3,10 +3,11 @@ import $ from './$.js'
 const dim = $('.dim')
 const shippingAddress = $('.shipping-address')
 
-const removeHidden = (...elements) => element.classList.remove('hidden')
-const addHidden = (...elements) => {
+const removeHidden = (...elements) => 
+  elements.forEach(element => element.classList.remove('hidden'))
+
+const addHidden = (...elements) => 
   elements.forEach(element => element.classList.add('hidden'))
-}
 
 const loginModalHandler = () => {
   const DELAY_TIME = 1000
