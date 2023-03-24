@@ -1,7 +1,3 @@
-// const bannerList = document.querySelectorAll(".banner__column");
-// const leftBtn = document.querySelector(".banner__btn:first-child");
-// const rightBtn = document.querySelector(".banner__btn:last-child");
-
 function Track() {
   this.element = document.querySelector(".banner__track");
   this.leftBtn = document.querySelector(".banner__btn:first-child");
@@ -20,16 +16,21 @@ Track.prototype.moveTrack = function (direction) {
     (this.directionByNum * 100) / banners.imgList.length
   }%)`;
   this.element.ontransitionend = () => {
-    reorgannizeEl(direction);
+    this.reorgannizeEl(direction);
   };
 };
 
-function reorgannizeEl(direction) {
-  bannerTrack.removeAttribute("style");
+Track.prototype.reorgannizeEl = function (direction) {
+  this.element.removeAttribute("style");
   direction === "left"
-    ? bannerTrack.insertBefore(
-        bannerTrack.lastElementChild,
-        bannerTrack.firstElementChild
+    ? this.element.insertBefore(
+        this.element.lastElementChild,
+        this.element.firstElementChild
       )
-    : bannerTrack.appendChild(bannerTrack.firstElementChild);
-}
+    : this.element.appendChild(this.element.firstElementChild);
+};
+
+Track.prototype.addEvent = function () {
+  this.leftBtn.addEventListener("click", this.moveTrack.bind(this, "left"));
+  this.rightBtn.addEventListener("click", this.moveTrack.bind(this, "right"));
+};
