@@ -20,10 +20,10 @@ class Carousel {
 
   addBtnEvents() {
     this.leftButton.addEventListener('click', () => {
-      this.leftBtnClickEvent(0);
+      this.carouselSlideAnimation('left');
     });
     this.rightButton.addEventListener('click', () => {
-      this.rightBtnClickEvent(1);
+      this.carouselSlideAnimation('right');
     });
   }
 
@@ -45,36 +45,30 @@ class Carousel {
     return cellHTML;
   }
 
-  leftBtnClickEvent(direction) {
+  carouselSlideAnimation(direction) {
     this.container.style.transitionDuration = '500ms';
-    this.container.style.transform = `translateX(${100 / this.IMG_COUNT}%)`;
+    this.container.style.transform = this.decideTransformDirection(direction);
     this.container.ontransitionend = () => {
       this.controlChildNodes(direction);
     };
     this.resetTimer();
   }
 
-  rightBtnClickEvent(direction) {
-    this.container.style.transitionDuration = '500ms';
-    this.container.style.transform = `translateX(${
-      (100 / this.IMG_COUNT) * -1
-    }%)`;
-    this.container.ontransitionend = () => {
-      this.controlChildNodes(direction);
-    };
-
-    this.resetTimer();
+  decideTransformDirection(direction) {
+    return direction === 'left'
+      ? `translateX(${100 / this.IMG_COUNT}%)`
+      : `translateX(${(100 / this.IMG_COUNT) * -1}%)`;
   }
 
   controlChildNodes(direction) {
     this.container.removeAttribute('style');
     // style을 삭제해줌으로써 다음 슬라이드에 적용 가능하게끔!
-    direction === 1
-      ? this.container.appendChild(this.container.firstElementChild)
-      : this.container.insertBefore(
+    direction === 'left'
+      ? this.container.insertBefore(
           this.container.lastElementChild,
           this.container.firstElementChild,
-        );
+        )
+      : this.container.appendChild(this.container.firstElementChild);
   }
 
   rightAnimation(timestamp) {
@@ -83,18 +77,10 @@ class Carousel {
     const duration = now - this.startTime;
 
     if (duration >= 5000) {
-      this.container.style.transitionDuration = '500ms';
-      this.container.style.transform = `translateX(${
-        (100 / this.IMG_COUNT) * -1
-      }%)`;
-      this.container.ontransitionend = () => {
-        this.controlChildNodes(1);
-      };
+      this.carouselSlideAnimation('right');
       this.startTime = now;
     }
-
-    const rightAnimationWithBoundThis = this.rightAnimation.bind(this);
-    this.timer.playAnimation(rightAnimationWithBoundThis);
+    this.timer.playAnimation(this.rightAnimation.bind(this));
   }
 
   autoSlide() {
@@ -102,9 +88,10 @@ class Carousel {
       this.rightAnimation(timestamp);
     });
   }
+
   resetTimer() {
     this.startTime = null;
-    this.timer.resetAnimation(this.autoRightAnimation.bind(this));
+    this.timer.resetAnimation(this.rightAnimation.bind(this));
   }
 }
 
