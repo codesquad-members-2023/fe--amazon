@@ -21,7 +21,7 @@
           </div>
           <span class="nav-main__bottom-text">대한민국</span>
         </div>
-        <section class="shipping-address__modal hidden">
+        <section class="shipping-address__modal d-none">
           <div class="triangle"></div>
           <span>KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.</span>
           <div class="shipping-address__modal-btns">
@@ -98,20 +98,13 @@
   </header>
   <aside class="side-bar">
     <img class="side-bar__close-btn cursor" src="./src/image/close.svg" alt="close side bar">
+    <header class="side-bar__login side-bar__header">
+      <img src="./src/image/login.svg" alt="login icon">
+      <span>안녕하세요,로그인</span>
+    </header>
     <ul class="side-bar__main">
-      <header class="side-bar__login side-bar__main-header">
-        <img src="./src/image/login.svg" alt="login icon">
-        <span>안녕하세요,로그인</span>
-      </header>
-      <header class="side-bar__main-header">디지털 콘텐츠 및 기기</header>
-      <li>Amazon Music<span class="right-arrow-icon"></span></li>
-      <li>Kindle E-Reader 및 도서<span class="right-arrow-icon"></span></li>
-      <li>안드로이드 앱스토어<span class="right-arrow-icon"></span></li>
-      <header class="side-bar__main-header">부서별 쇼핑</header>
-      <li>전자<span class="right-arrow-icon"></span></li>
-      <li>컴퓨터<span class="right-arrow-icon"></span></li>
-      <li>Alexa 스마트 홈<span class="right-arrow-icon"></span></li>
-      <li>예술 및 공예<span class="right-arrow-icon"></span></li>
+      <header class="side-bar__header">디지털 콘텐츠 및 기기</header>
+      <header class="side-bar__header">부서별 쇼핑</header>
       <li id="show-all-btn">모두 보기<span class="bottom-arrow-icon"></span></li>
       <ul class="expanded-category">
         <li id="show-less-btn">간략히 보기<span class="up-arrow-icon"></span></li>
@@ -121,8 +114,8 @@
   </aside>
   <section id="main-content"></section>
   <footer id="footer"></footer>
-  <div class="dim-cover__in-header dim-cover hidden"></div>
-  <div class="dim-cover__in-sideBar dim-cover hidden"></div>
+  <div class="dim-cover__in-header dim-cover d-none"></div>
+  <div class="dim-cover__in-sideBar dim-cover d-none"></div>
   <script type="module" src="./src/js/index.js"></script>
 </body>
 
