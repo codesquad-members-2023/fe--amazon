@@ -1,4 +1,4 @@
-const LOGIN_DETAIL = {
+const LOGIN_DATA = {
   'content_left' : {
     'title' : '귀하의 목록',
     'content' : ['목록 생성', '목록 또는 레지스트리 찾기', 'AmazonSmile 자선 품목 목록'],
@@ -9,4 +9,4 @@ const LOGIN_DETAIL = {
   }
 }
 
-export { LOGIN_DETAIL };
+export { LOGIN_DATA };

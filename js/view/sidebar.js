@@ -1,6 +1,4 @@
-import { SIDEBAR_DETAIL } from './data/sidebarData.js';
-
-const sideBarEventHandler = () => {
+const onSideBar = (SIDEBAR_DATA) => {
   const $every = document.querySelector('.every');
   const $close = document.getElementById('side_bar_close');
   const $modalBackground = document.querySelector('.modal_background');
@@ -16,7 +14,7 @@ const sideBarEventHandler = () => {
   $viewAll.addEventListener('click', toggleFoldContent);
   $viewSimple.addEventListener('click', toggleFoldContent);
 
-  $sideContainer.addEventListener('click', insertDetailDataHandler);
+  $sideContainer.addEventListener('click', insertSidebarData.bind(this, SIDEBAR_DATA));
   $backBtn.addEventListener('click', clickBackBtn);
 }
 
@@ -63,24 +61,24 @@ const toggleFoldContent = ({ target }) => {
   }
 }
 
-const insertDetailDataHandler = ({ target }) => {
+const insertSidebarData = ({ target }, SIDEBAR_DATA) => {
   const isLI = target.closest('li');
   const isId = target.id !== 'view_all' && target.id !== 'view_simple';
 
   if(!isLI || !isId) return;
   if(isLI.tagName === 'LI') {
     const title = isLI.innerText;
-    const isTitle = SIDEBAR_DETAIL.hasOwnProperty(title);
+    const isTitle = SIDEBAR_DATA.hasOwnProperty(title);
     if(!isTitle) return;
-    insertDetailData(title);
+    insertDetailData(title, SIDEBAR_DATA);
   }
 }
 
-const insertDetailData = title => {
+const insertDetailData = (title, SIDEBAR_DATA) => {
   const $tab = document.querySelector('.tab_content');
   const $foldDetail = document.querySelector('.fold_detail');
 
-  const sideBarData = SIDEBAR_DETAIL[title];
+  const sideBarData = SIDEBAR_DATA[title];
   const dataLI = sideBarData.reduce((list, data) => {
     list += `<li>${data}</li>`;
     return list;
@@ -107,4 +105,4 @@ const clickBackBtn = e => {
   });
 }
 
-export { sideBarEventHandler };
+export { onSideBar };
