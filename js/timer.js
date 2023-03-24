@@ -1,15 +1,14 @@
-class Timer {
-  constructor(timeSlice) {
-    this.timeSlice = timeSlice;
-    this.requestId = null;
-  }
-  playAnimation(animation) {
-    this.requestId = window.requestAnimationFrame(animation);
-  }
-  resetAnimation(animation) {
-    window.cancelAnimationFrame(this.requestId);
-    this.requestId = window.requestAnimationFrame(animation);
-  }
+function Timer() {
+  this.requestId = null;
 }
+
+Timer.prototype.playAnimation = function (animation) {
+  this.requestId = window.requestAnimationFrame(animation);
+};
+
+Timer.prototype.resetAnimation = function (animation) {
+  window.cancelAnimationFrame(this.requestId);
+  this.playAnimation(animation);
+};
 
 export default Timer;

@@ -1,13 +1,13 @@
 import Timer from './timer.js';
 class Carousel {
-  constructor() {
+  constructor(obj) {
     this.leftButton = document.querySelector('.carousel_left');
     this.rightButton = document.querySelector('.carousel_right');
     this.carouselWindow = document.querySelector('.carousel_window');
     this.container = this.carouselWindow.querySelector('.carousel_container');
-    this.IMG_COUNT = 5; // 배경 이미지 개수만 변경하면 됨.
-    this.timer = new Timer(1000);
-    this.startTime = null;
+    this.IMG_COUNT = obj.imgCount; // 배경 이미지 개수만 변경하면 됨.
+    this.timer = new Timer();
+    this.startTime = obj.startTime;
   }
 
   init() {
@@ -45,7 +45,6 @@ class Carousel {
 
   leftBtnClickEvent(direction) {
     this.container.style.transitionDuration = '500ms';
-    // this.contatiner.style.transition = 'transform 1s forwards';
     this.container.style.transform = `translateX(${100 / this.IMG_COUNT}%)`;
     this.container.ontransitionend = () => {
       this.controlChildNodes(direction);
@@ -95,15 +94,21 @@ class Carousel {
       };
       this.startTime = now;
     }
+
     const rightAnimationWithBoundThis = this.rightAnimation.bind(this);
     this.timer.playAnimation(rightAnimationWithBoundThis);
   }
 
   autoSlide() {
-    const rightAnimationWithBoundThis = this.rightAnimation.bind(this);
-    this.timer.playAnimation(rightAnimationWithBoundThis);
+    this.timer.playAnimation((timestamp) => {
+      this.rightAnimation(timestamp);
+    });
   }
 }
 
-const carousel = new Carousel();
+const obj = {
+  imgCount: '5',
+  startTime: null,
+};
+const carousel = new Carousel(obj);
 carousel.init();
