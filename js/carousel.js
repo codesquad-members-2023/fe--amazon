@@ -51,9 +51,7 @@ class Carousel {
     this.container.ontransitionend = () => {
       this.controlChildNodes(direction);
     };
-    const rightAnimationWithBoundThis = this.rightAnimation.bind(this);
-    this.startTime = null;
-    this.timer.resetAnimation(rightAnimationWithBoundThis);
+    this.resetTimer();
   }
 
   rightBtnClickEvent(direction) {
@@ -65,9 +63,7 @@ class Carousel {
       this.controlChildNodes(direction);
     };
 
-    const rightAnimationWithBoundThis = this.rightAnimation.bind(this);
-    this.startTime = null;
-    this.timer.resetAnimation(rightAnimationWithBoundThis);
+    this.resetTimer();
   }
 
   controlChildNodes(direction) {
@@ -105,6 +101,10 @@ class Carousel {
     this.timer.playAnimation((timestamp) => {
       this.rightAnimation(timestamp);
     });
+  }
+  resetTimer() {
+    this.startTime = null;
+    this.timer.resetAnimation(this.autoRightAnimation.bind(this));
   }
 }
 
