@@ -10,10 +10,17 @@ function clickSliderController() {
 
 function autoSlide() {
   const slider = document.querySelector('slider-element').shadowRoot;
-
-  setInterval(() => {
-    slideLeft(slider);
-  }, SLIDE_INTERVAL_TIME);
+  let lastTime = performance.now();
+  function step() {
+    const now = performance.now();
+    const elapsed = now - lastTime;
+    if (elapsed >= SLIDE_INTERVAL_TIME) {
+      slideLeft(slider);
+      lastTime = now;
+    }
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
 }
 
 function handleSlide(slider, direction) {
@@ -53,4 +60,4 @@ function slideRight(slider) {
 }
 
 clickSliderController();
-// autoSlide();
+autoSlide();

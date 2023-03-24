@@ -23,10 +23,12 @@ class Icon extends HTMLElement {
   async getSvgString(name) {
     try {
       const response = await fetch(`public/assets/symbols/${name}.svg`);
+      if (!response) throw Error('icon fetch 실행 실패');
       const svgContent = await response.text();
+      if (!svgContent) throw Error('icon 내용 없음');
       return svgContent;
     } catch (error) {
-      console.error(error);
+      console.log(error.message)
     }
   }
 
@@ -37,13 +39,10 @@ class Icon extends HTMLElement {
     const height = this.getThisAttribute('height');
     const fill = this.getThisAttribute('fill');
 
-    let result = svgString;
-
-    result = result.replace(
+    let result = svgString.replace(
       /width=".*?"/g,
       `width="${width ?? size ?? defaultSize}"`
-    );
-    result = result.replace(
+    ).replace(
       /height=".*?"/g,
       `height="${height ?? size ?? defaultSize}"`
     );
