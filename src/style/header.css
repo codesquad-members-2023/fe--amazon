@@ -21,6 +21,7 @@ a {
   background-color: #000000;
   height: 88px;
   width: 100%;
+  min-width: 750px;
 
   z-index: 2;
 }

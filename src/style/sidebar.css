@@ -2,9 +2,10 @@
 
 .sidebar-elements {
   display: block;
-  position: relative;
+  position: fixed;
   z-index: 3;
   left: -35vh;
+  top: 0;
 }
 
 .sidebar__layer {

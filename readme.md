@@ -10,8 +10,9 @@
 - 주차별 마스터 피드백 및 회고
   - [Week1 - midpoint](#roundpushpin-1주차-midpoint)
   - [Week1 - final](#roundpushpin-1주차-final)
-  - [Week2 - midpint](#roundpushpin-2주차-midpoint)
+  - [Week2 - midpoint](#roundpushpin-2주차-midpoint)
   - [Week2 - final](#roundpushpin-2주차-final)
+  - [Week3 - midpoint](#roundpushpin-3주차-midpoint)
 
 ---
 

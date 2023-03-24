@@ -2,6 +2,7 @@ import { navEvtHandler } from "./navEvtHandler.js"
 import { sideBarEvtHandler } from "./sidebar/sideBarEvtHandler.js";
 import { SIDEBAR_DATA } from "./sidebar/sideBarData.js";
 import { SideBar } from "./sidebar/sideBar.js";
+import { Carousel } from "./carousel/carousel.js";
 
 function init(){
   (function (delay) {
@@ -13,6 +14,9 @@ function init(){
   sidebar.init();
   navEvtHandler();
   sideBarEvtHandler();
+
+  const carousel = new Carousel();
+  carousel.init();
 }
 
 init();

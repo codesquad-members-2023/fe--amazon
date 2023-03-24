@@ -1,6 +1,7 @@
 @import './header.css';
 @import './modal.css';
 @import './sidebar.css';
+@import './carousel.css';
 
 /* li 스타일 임시 사용 */
 li {
