@@ -6,13 +6,13 @@ export const findSiblingForward = (node, targetNode) => {
       nextSibling = nextSibling.nextElementSibling;
     }
   };
-  export const getSubSideBar = (target, contentsId) => {
-    return Array.from(findUpWard(target, '#sidebarmenu').childNodes)
-            .filter(node => node.nodeName != '#text')
-            .find(node => node.dataset.contentsId === contentsId)
-  }
-  export const isSubSideBarExist = (childNodes, contentsId) => {
-    return Array.from(childNodes)
-            .filter(node => node.nodeName != '#text')
-            .some(node => node.dataset.contentsId === contentsId);
-  }
+export const getSubSideBar = (target, contentsId) => {
+  return [...findUpWard(target, '#sidebarmenu').childNodes]
+          .filter(node => node.nodeName != '#text')
+          .find(node => node.dataset.contentsId === contentsId)
+}
+export const isSubSideBarExist = (childNodes, contentsId) => {
+  return [...childNodes]
+          .filter(node => node.nodeName != '#text')
+          .some(node => node.dataset.contentsId === contentsId);
+}

@@ -1,7 +1,8 @@
 import { navEvtHandler } from "./navEvtHandler.js"
 import { sideBarEvtHandler } from "./sidebar/sideBarEvtHandler.js";
 import { SIDEBAR_DATA } from "./sidebar/sideBarData.js";
-import { sideBar } from "./sidebar/sideBar.js";
+import { SideBar } from "./sidebar/sideBar.js";
+import { Carousel } from "./carousel/carousel.js";
 
 function init(){
   (function (delay) {
@@ -9,9 +10,13 @@ function init(){
     setTimeout(() => loginModal1.style.display = 'block', delay)
   })(1000);
 
-  new sideBar(SIDEBAR_DATA).init();
+  const sidebar = new SideBar(SIDEBAR_DATA);
+  sidebar.init();
   navEvtHandler();
   sideBarEvtHandler();
+
+  const carousel = new Carousel();
+  carousel.init();
 }
 
 init();

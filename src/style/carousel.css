@@ -1,0 +1,17 @@
+.carousel__container {
+  display: flex;
+  position: fixed;
+  overflow: hidden;
+  top: 88px;
+}
+
+.carousel__card {
+  width: 100vw;
+  min-width: 750px;
+  padding: 0;
+}
+
+.carousel__image {
+  height: 100%;
+  width: 100%;
+}

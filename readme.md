@@ -10,8 +10,9 @@
 - 주차별 마스터 피드백 및 회고
   - [Week1 - midpoint](#roundpushpin-1주차-midpoint)
   - [Week1 - final](#roundpushpin-1주차-final)
-  - [Week2 - midpint](#roundpushpin-2주차-midpoint)
+  - [Week2 - midpoint](#roundpushpin-2주차-midpoint)
   - [Week2 - final](#roundpushpin-2주차-final)
+  - [Week3 - midpoint](#roundpushpin-3주차-midpoint)
 
 ---
 
@@ -159,25 +160,27 @@
 
 #### :three: 수요일 학습계획
 
-- [ ] : 브라우저 레더링 과정 학습
-- [ ] : 하드웨어 가속 
-  - [ ] : will-change 속성
-  - [ ] : transform vs transition
+- [x] : 브라우저 레더링 과정 학습
+- [x] : 하드웨어 가속 
+  - [x] : will-change 속성
+  - [x] : transform vs transition
   - [ ] : 가속 관련 속성 전과 후 성능 크롬 관리자 탭에서 직접 확인해보기
 
 #### :four: 목요일 학습계획
 
-- [ ] : midpoint 리뷰 기반 리팩토링 진행
+- [x] : midpoint 리뷰 기반 리팩토링 진행
+  - [x] : map.join 로직 reduce를 사용해서 코드 수정
+  - [x] : 매직넘버 변수화
+  - [x] : if 조건문 filter로 대체
+  - [x] : 직관적이지 않은 변수명 변경 - data 등
 - [ ] : 루카스 웹 애니메이션 파트 개념 학습
-- [ ] : 랜더링 - templete literal 개념 학습
+- [x] : 랜더링 - templete literal 개념 학습
 - [ ] : 캐로셀 구현 원리 학습 및 적용
   - [ ] : 유한 슬라이더 혹은 무한 슬라이더 구현
 
 #### :five: 금요일 학습계획
 
-- [ ] : 랜더링 - templete literal 개념 코드에 적용해보기
 - [ ] : 슬라이더 이어서 구현
-
 
 ## 주차별 피드백 및 회고
 
@@ -277,12 +280,18 @@ const displayLocationModal = (element, target, dimLayer) => {
 > 체크를 이 함수안에서 해야하는게 좋을까? 이함수를 호출하는 쪽에서 하는게 좋을까?  
 > if(element !== 'locatin') 으로 체크하면 코드가 어떻게 변하는가?  
 
+if(element !== 'location')을 체크하지 않아도 되는 로직으로 변경 진행했다.
+
 ```js
 findSiblingForward(target, 'modal__login1').style.display = 'none';
 findSiblingForward(target, 'modal__login2').style.display = 'block';
 ```
 
 > login1,2 보다 의미있는 이름이면 더 좋을듯.
+
+'modal__login1'은 'modal__login'으로,
+'modal__login2'은 더 구체적인 정보를 보여주는 로그인 모달이라서 클래스명을 'modal__login__detail'으로 변경했다.  
+변수명 정할 때 이 클래스가 어떤 역할 혹은 기능을 하는 클래스인지 알 수 있는 클래스명으로 정하자.
 
 ```js
 unfoldMenu(name, target);
@@ -292,9 +301,90 @@ foldMenu(name, target);
 > 코드 읽을때 약간 이해는 안가요.  
 > unfold 그 다음 fold? 왜 이러지하고요.
 
+unfold와 fold 함수는 각각 이벤트 핸들링을 하는 함수인데 함수명만 가지고는 각 함수가 어떤 역할을 하는지 알 수 없었다. 그리고 왜 메뉴를 닫고 바로 열지? 라는 의문이 생길 수 있다는 점을 고려하지 못 하고 함수명을 지었다. 그래서 로직을 일부 변경해서 코드를 읽었을 때 코드에 대한 이해를 할 수 있도록 변경했다.
+
 ```js
 const openSubMenu = (parent, element, target) => {
 ```
 
 > 나중에 시간되면 openSubMenu 를 어떻게 개선할지? 한번 고민해보세요.  
 > selector 가 복잡해보여서 로직이 좀 복잡해보이고요, 그렇다고 아주 긴 함수는 아는것 같고요.
+
+```js
+return Array.from(findUpWard(ontarget, '#sidebarmenu').childNodes)
+            .filter(node => node.nodeName != '#text')
+            .find(node => {
+```
+
+> 오 고차함수 체이닝 표현 좋군요. 잘했습니다. array.from 을 더 간단히 표현하는 방법도 찾아보세요.
+
+childeNodes로 얻은 NodeList 데이터구조를 Array 객체로 만들어서 Array 메소드를 사용할 의도였다. 근데 전개문법으로 더 간단하게 표현 가능했다니....!  
+
+```js
+return [...findUpWard(ontarget, '#sidebarmenu').childNodes]
+            .filter(node => node.nodeName != '#text')
+            .find(node => {
+```
+
+### :round_pushpin: 3주차 Midpoint
+
+```js
+new sideBar(SIDEBAR_DATA).init();
+navEvtHandler();
+sideBarEvtHandler();
+```
+
+> 그런데 sideBarEvtHandler 가 객체와 달리 따로 놀고 있자나요?  
+> (뭔가 이유가 있으시겠지만) 여기 코드만 보면 응집도가 떨어지는 코드라고 볼수도 있어요.
+
+```js
+export class sideBar {
+  constructor(data, html){
+    this.data = data;
+```
+
+> data 보다 좀더 구체적인 이름으로~
+
+```js
+const addsideBarClickEvt = (sideBarLayer, dimLayer) => {
+  sideBarLayer.addEventListener('click', ({ target, currentTarget }) => {
+    if(findUpWard(target, '.sidebar__closeBtn--container')) closeSideBar(currentTarget, dimLayer, target);
+    if(findUpWard(target, '.sidebar__contents__btn.showall')) unfoldMenu(target);
+```
+
+> js안에서 보니 class이름이(.sidebar__contents__btn.showall) 좀길긴하네요. 음 더 줄이는 방법이 뭘까 고민이 됩니다.
+
+```js
+makeDetail(categories){
+  return categories.map(({name, id}, total) => {
+    if(total < 4){
+      return `
+      <a class="sidebar__contents" href="#" data-contents-id="${id}">
+        ${name}<img src="asset/rightdir.svg" alt="" />
+      </a>`
+    } else {
+      this.extraCategories[0].push({name, id});
+      if(categories.length - 1 === total){
+        return `
+      <a class="sidebar__contents__btn showall" onclick="return false;">
+        모두 보기<img src="asset/downwarddir.svg" alt="">
+      </a>`
+      }
+    }
+  }).join('')
+}
+```
+
+> map.join 좋고요. reduce도 활용가능하고요.
+
+reduce를 활용하면 배열을 한 번만 순회하여 map과 join을 사용한 로직을 구현할 수 있었다. reduce가 이렇게 좋다니.. 이로 인해 복잡도가 줄어들어 코드의 성능을 개선할 수 있었다. 앞으로도 reduce를 적극적으로 활용해서 가독성과 성능 모두를 고려한 코드 작성을 지향하자. 아래는 변경한 코드 예시 중 하나다.
+
+```js
+makeLayer(){
+  return this.extraCategories.reduce((acc, categories) => 
+      acc + `<div class="sidebar__category extra">
+                <div class="sidebar__category__menu">${this.makeDetail(categories)}</div>
+              </div>`
+  , this.emptyString);
+}
+```

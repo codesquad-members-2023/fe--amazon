@@ -1,5 +1,5 @@
 import { SIDEBAR_DATA } from "./sideBarData.js";
-import { makeSubSideBar } from "./sideBarSub.js";
+import { SubMenu } from "./sideBarSubMenu.js";
 import { findUpWard, findSiblingForward, getSubSideBar, isSubSideBarExist } from "../nodeFindFuncs.js";
 
 export const sideBarEvtHandler = () => {
@@ -24,7 +24,7 @@ const addsideBarClickEvt = (sideBarLayer, dimLayer) => {
     if(findUpWard(target, '.sidebar__contents__btn.showall')) unfoldMenu(target);
     if(findUpWard(target, '.sidebar__contents__btn.closeall')) foldMenu(target);
     if(findUpWard(target, '.sidebar__contents')) openSubMenu(target);
-    if(findUpWard(target, '.sidebar__contents__btn')) closeSubMenu(target);
+    if(findUpWard(target, '.sidebar__contents__btn.close-right-menu')) closeSubMenu(target);
   })
 }
 
@@ -35,7 +35,6 @@ const closeSideBar = (currentTarget, dimLayer) => {
 
 const unfoldMenu = (target) => {
   const categoryNode = findUpWard(target,'.sidebar__category');
-  console.log(categoryNode);
   findSiblingForward(categoryNode, 'sidebar__category extra').style.height = '100%';
 }
 
@@ -43,16 +42,16 @@ const foldMenu = (target) => findUpWard(target,'.sidebar__category.extra').style
 
 const openSubMenu = (target) => {
   const categoryId = findUpWard(target, '.sidebar__category').dataset.categoryId;
+  // contentsId 삭제하고, subMenu Title 가져오는 로직 구현 필요
   const contentsId = findUpWard(target, '.sidebar__contents').dataset.contentsId;
-  const newSubSideBar = makeSubSideBar(SIDEBAR_DATA, categoryId, contentsId);
+  const subMenu = new SubMenu(SIDEBAR_DATA, categoryId, contentsId).makeLayer();
   const sideBarMenuChilds = findUpWard(target, '.sidebar__container').lastElementChild.childNodes;
 
-  // 해당 인덱스의 서브 사이드바가 이미 존재한다면
   if(isSubSideBarExist(sideBarMenuChilds, contentsId)){
     getSubSideBar(target, contentsId).style['animation-name'] = 'slideSubMenuLeftWard';
     findUpWard(target, '.sidebar__menu.main').style['animation-name'] = 'slideMenuLeftWard'
-  } else {      // 해당 인덱스의 서브 사이드바가 존재하지 않으면
-    findUpWard(target, '.sidebar__menu.main').insertAdjacentHTML('afterend', newSubSideBar);
+  } else {
+    findUpWard(target, '.sidebar__menu.main').insertAdjacentHTML('afterend', subMenu);
     getSubSideBar(target, contentsId).style['animation-name'] = 'slideSubMenuLeftWard';
     findUpWard(target, '.sidebar__menu.main').style['animation-name'] = 'slideMenuLeftWard';
   };
