@@ -1,13 +1,13 @@
 .sidebar {
   position: fixed;
-  /* z-index: 2; */
+  z-index: var(--zIndex-sidebar);
   top: 0;
   left: -25rem;
   overflow: scroll;
   width: 20rem;
   height: 100%;
   background-color: var(--color-white);
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .sidebar__active {
@@ -34,27 +34,62 @@
 .sidebar__category-border {
   font-size: var(--font-boldLG);
   font-weight: var(--weight-extraBold);
+  padding: 16px;
 }
 
 .sidebar li {
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  padding: 16px;
   font-size: var(--font-boldMD);
 }
 
 /* 사이드바 닫는 버튼 설정 */
 .sidebar__button-close {
   position: fixed;
-  top: 0.313rem;
-  left: 20rem;
+  top: 0.8rem;
+  left: 20.2rem;
   border: none;
   background-color: transparent;
-  font-size: var(--font-boldXL);
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .button__close-show {
   opacity: 1;
+}
+
+/* 사이드바 모두 보기, 간단히보기 */
+.toggle {
+  display: flex;
+  padding: 16px;
+  gap: 1rem;
+  font-size: var(--font-boldMD);
+}
+
+.sidebar__category-items {
+  height: 0;
+  overflow: hidden;
+  transition: height 1s ease-in-out;
+}
+
+.sidebar__category-items__show {
+  height: 780px;
+}
+
+.sidebar__category-close {
+  display: none;
+  padding-top: 25px;
+}
+
+.sidebar__category-open {
+  display: block;
+}
+
+section li:hover {
+  background-color: var(--color-gray400);
+}
+
+.toggle:hover {
+  background-color: var(--color-gray400);
 }

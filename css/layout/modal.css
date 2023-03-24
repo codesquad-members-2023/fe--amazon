@@ -28,29 +28,29 @@
   position: relative;
 }
 
-.shipping__modal {
+.shipping__hover {
   top: 2.688rem;
   left: -1.25rem;
-  display: none;
+  opacity: 0;
   width: 20rem;
-  height: 7rem;
+  height: 8rem;
+}
+
+.shipping__hover-show {
+  opacity: 1;
 }
 
 .shipping__box {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 3.125rem;
+  gap: 4.7em;
 }
 
 .shipping__pointer {
   position: absolute;
   top: -0.688rem;
   left: 2.125rem;
-}
-
-.nav__shipping-address:hover + .shipping__modal {
-  display: block;
 }
 
 /* 로그인 */
@@ -67,7 +67,7 @@
   opacity: 0;
   width: 16rem;
   height: auto;
-  gap: 1.125rem;
+  gap: 1rem;
 }
 
 .login__button {
@@ -78,7 +78,7 @@
 .login__pointer {
   position: absolute;
   top: -0.75rem;
-  right: 2.063rem;
+  right: 2rem;
 }
 
 .login__modal-link a {
@@ -97,7 +97,7 @@
   opacity: 0;
 }
 
-.nav__login:hover ~ .login__hover {
+.login__hover-show {
   opacity: 1;
 }
 
@@ -111,7 +111,7 @@
 
 .list__items :first-child,
 .account__items :first-child {
-  font-size: var(--font-boldM);
+  font-size: var(--font-boldMD);
   font-weight: var(--weight-extraBold);
 }
 

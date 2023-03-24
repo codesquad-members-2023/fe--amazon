@@ -1,17 +1,12 @@
-// components
+import { Navigation } from "./layout/navigation.js";
 import { Sidebar } from "./layout/sidebar.js";
-import { Navigation } from "./layout/navigation.js"
 
 const main = () => {
+  const navigation = new Navigation();
+  navigation.runNavigation();
+
   const sidebar = new Sidebar();
-
-  sidebar.openSidebar();
-  sidebar.closeSidebar();
-
-  const showLogin = new Navigation();
-  showLogin.showLoginModal();
-  showLogin.addLoginHoverData();
-  showLogin.dimmed()
+  sidebar.runSidebar();
 };
 
 main();
