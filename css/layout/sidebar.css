@@ -34,12 +34,13 @@
 .sidebar__category-border {
   font-size: var(--font-boldLG);
   font-weight: var(--weight-extraBold);
+  padding: 16px;
 }
 
 .sidebar li {
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  padding: 16px;
   font-size: var(--font-boldMD);
 }
 
@@ -61,7 +62,7 @@
 /* 사이드바 모두 보기, 간단히보기 */
 .toggle {
   display: flex;
-  padding: 1em;
+  padding: 16px;
   gap: 1rem;
   font-size: var(--font-boldMD);
 }
@@ -73,7 +74,7 @@
 }
 
 .sidebar__category-items__show {
-  height: 670px;
+  height: 780px;
 }
 
 .sidebar__category-close {
@@ -83,4 +84,12 @@
 
 .sidebar__category-open {
   display: block;
+}
+
+section li:hover {
+  background-color: var(--color-gray400);
+}
+
+.toggle:hover {
+  background-color: var(--color-gray400);
 }
