@@ -1,5 +1,6 @@
 .page_content {
   min-width: 70rem;
+  overflow: hidden;
 }
 
 .carousel_banner {
@@ -8,6 +9,7 @@
   height: 250px;
   display: flex;
   justify-content: space-between;
+  z-index: 1;
 }
 
 .carousel_btn {
@@ -17,11 +19,14 @@
   cursor: pointer;
 }
 
-.slider {
-  display: flex;
-  overflow: hidden;
+.slider_container {
+  transform: translateX(-100%);
 }
 
-.slider > img {
+.slider {
+  display: flex;
+}
+
+.slide {
   width: 100%;
 }
