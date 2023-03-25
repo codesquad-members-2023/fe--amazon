@@ -1,5 +1,6 @@
 .nav__shipping_popup {
   height: 0px;
+  opacity: 0;
 }
 .nav__shipping_popup-shape {
   width: 30px;
@@ -78,6 +79,7 @@
   height: 100px;
   left: -170px;
   top: 44px;
+  opacity: 0;
 }
 
 .nav__login_popup-box_extension {
@@ -92,16 +94,20 @@
   height: 390px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.login_popup_extension-left-box {
-  float: left;
+.nav__login_popup_extension_list {
   font-weight: 500;
   font-size: 9px;
   line-height: 160%;
 }
-.login_popup_extension-right-box {
+.login_extension-left {
+  float: left;
+  padding-right: 10px;
+}
+.login_extension-right {
   float: right;
 }
-.login_popup_extension-title {
+.login_extension-right > li:first-child,
+.login_extension-left > li:first-child {
   font-weight: 800;
   font-size: 13px;
   line-height: 16px;
@@ -141,12 +147,16 @@
   position: fixed;
   top: 0px;
   left: 0px;
+  opacity: 0;
+}
+.nav_index {
   z-index: 0;
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
 }
-.visible_hidden {
-  visibility: hidden;
+
+.show {
+  opacity: 1;
 }

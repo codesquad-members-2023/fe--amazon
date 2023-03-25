@@ -1,21 +1,18 @@
 @keyframes slowshow {
-    from{
-        opacity: 0;
-        visibility: hidden;
-    }
-    to{
-        opacity: 1;
-        visibility: visible;
-    }
+  from {
+    display: none;
+  }
+  to {
+    display: block;
+  }
 }
 
-.nav__login_popup{
-    visibility: hidden;
-    position: absolute;
-    width: 235px;
-    height: 100px;
-    left: -170px;
-    top: 44px;
-    animation: slowshow 1s forwards;
-    animation-delay: 1s;
+.nav__login_popup {
+  visibility: hidden;
+  position: absolute;
+  width: 235px;
+  height: 100px;
+  left: -170px;
+  top: 44px;
+  animation-delay: 1s;
 }
