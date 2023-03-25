@@ -6,17 +6,25 @@ const closeSidebarDetail = () => {
     const thisElement = event.target.closest("ul");
     const liEventTarget = event.target.closest("li");
 
-    if (liEventTarget) {
+    if (!liEventTarget) return;
+
+    if (liEventTarget !== null) {
       const backButtons = document.querySelectorAll(".homeSidebar__mode--back");
-      const selected = [...backButtons].find((button) => {
+      const clickedButton = [...backButtons].find((button) => {
         return button.contains(event.target);
       });
 
-      if (selected && liEventTarget.className === selected.className) {
+      if (
+        clickedButton &&
+        liEventTarget.className === clickedButton.className
+      ) {
         sidebarlists.classList.add("hideSidebarDetailAnimation");
         sidebarlists.classList.remove("none");
-        thisElement.classList.remove("show", "showSidebarDetailAnimation");
-        thisElement.classList.remove("hideSidebarDetailAnimation");
+        thisElement.classList.remove(
+          "show",
+          "showSidebarDetailAnimation",
+          "hideSidebarDetailAnimation"
+        );
       }
     }
   };

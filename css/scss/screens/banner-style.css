@@ -18,8 +18,9 @@
 
 .banner__track {
   display: flex;
-  overflow: visible;
+  position: relative;
   width: 9000px;
+  left: -1500px;
 }
 
 .banner__img {
@@ -35,6 +36,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
+  max-width: 100vw;
 }
 
 .banner__harf--down {
