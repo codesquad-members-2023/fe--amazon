@@ -1,3 +1,10 @@
+import {
+  AUTO_SLIDE_MILLI,
+  SLIDE_TRANSITION_MILLI,
+  LEFT,
+  RIGHT,
+} from "./constants";
+
 export default class Slider {
   constructor() {
     this.allSliderItems = document.querySelectorAll(".slider__item");
@@ -14,16 +21,16 @@ export default class Slider {
   }
 
   handleRigthBtnClick() {
-    this.direction = -1;
-    this.container.style.transitionDuration = "250ms";
+    this.direction = RIGHT;
+    this.container.style.transitionDuration = `${SLIDE_TRANSITION_MILLI}ms`;
     this.container.style.transform = `translateX(${
       -100 / this.allSliderItems.length
     }%)`;
   }
 
   handleLeftBtnClick() {
-    this.direction = 1;
-    this.container.style.transitionDuration = "250ms";
+    this.direction = LEFT;
+    this.container.style.transitionDuration = `${SLIDE_TRANSITION_MILLI}ms`;
     this.container.style.transform = `translateX(${
       100 / this.allSliderItems.length
     }%)`;
@@ -31,7 +38,7 @@ export default class Slider {
 
   handleTransitionEnd() {
     this.container.removeAttribute("style");
-    this.direction === 1
+    this.direction === LEFT
       ? this.container.insertBefore(
           this.container.lastElementChild,
           this.container.firstElementChild
@@ -40,16 +47,14 @@ export default class Slider {
   }
 
   onSlider() {
-    this.flipSlidesWithInterval(10000);
+    this.flipSlidesWithInterval(AUTO_SLIDE_MILLI);
 
-    this.buttonLeft.addEventListener("click", () => {
-      this.handleLeftBtnClick();
-    });
-    this.buttonRight.addEventListener("click", () => {
-      this.handleRigthBtnClick();
-    });
-    this.container.addEventListener("transitionend", () => {
-      this.handleTransitionEnd();
-    });
+    this.buttonLeft.addEventListener("click", () => this.handleLeftBtnClick());
+    this.buttonRight.addEventListener("click", () =>
+      this.handleRigthBtnClick()
+    );
+    this.container.addEventListener("transitionend", () =>
+      this.handleTransitionEnd()
+    );
   }
 }

@@ -1,3 +1,4 @@
+import { POPUP_DELAY_MILLI } from "./constants";
 import { DimmedMain } from "./Dimmed";
 
 export default class Header {
@@ -57,19 +58,19 @@ export default class Header {
   }
 
   onHeader() {
-    this.showPopUpWithDelay(1000);
+    this.showPopUpWithDelay(POPUP_DELAY_MILLI);
 
-    this.logInAnchor.addEventListener("mouseenter", () => {
-      this.handleMouseEnterLogInAnchor();
-    });
-    this.loginContainer.addEventListener("mouseleave", () => {
-      this.handleMouseLeaveLogInContainer();
-    });
-    this.shippingAddressAnchor.addEventListener("mouseenter", () => {
-      this.handleMouseEnterShippingAddressAnchor();
-    });
-    this.shippingAddressContainer.addEventListener("mouseleave", () => {
-      this.handleMouseLeaveShippingAddressContainer();
-    });
+    this.logInAnchor.addEventListener("mouseenter", () =>
+      this.handleMouseEnterLogInAnchor()
+    );
+    this.loginContainer.addEventListener("mouseleave", () =>
+      this.handleMouseLeaveLogInContainer()
+    );
+    this.shippingAddressAnchor.addEventListener("mouseenter", () =>
+      this.handleMouseEnterShippingAddressAnchor()
+    );
+    this.shippingAddressContainer.addEventListener("mouseleave", () =>
+      this.handleMouseLeaveShippingAddressContainer()
+    );
   }
 }

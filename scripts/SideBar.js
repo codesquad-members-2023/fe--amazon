@@ -1,11 +1,8 @@
-import SubMenuContainer from "./SubMenuContainer";
+import SubMenuRenderer from "./SubMenuRenderer";
 import { DimmedBody } from "./Dimmed";
 
 export default class SideBar {
   constructor() {
-    this.subMenuContainer = new SubMenuContainer();
-    this.subMenuContainer.init();
-
     this.dimmedBody = new DimmedBody();
 
     this.showAllAnchor = document.querySelector(".nav__anchor--all");
@@ -29,6 +26,9 @@ export default class SideBar {
       el.setAttribute("data-id", `${idx + 1}`);
     });
 
+    this.subMenuContainer = document.querySelector(".submenu-container");
+    this.subMenuRenderer = new SubMenuRenderer(this.subMenuContainer);
+    this.subMenuRenderer.render();
     this.allSubMenus = document.querySelectorAll(".submenu");
     this.subMenuBack = document.querySelector(".submenu__back");
   }
@@ -70,31 +70,31 @@ export default class SideBar {
     );
 
     subMenu.classList.remove("hidden");
-    this.subMenuContainer.subMenuContainer.classList.add("show-sub-menu");
+    this.subMenuContainer.classList.add("show-sub-menu");
   }
 
   handleClickSubMenuBackButton() {
-    this.subMenuContainer.subMenuContainer.classList.remove("show-sub-menu");
+    this.subMenuContainer.classList.remove("show-sub-menu");
   }
 
   onSideBar() {
-    this.showAllAnchor.addEventListener("click", (e) => {
-      this.handleClickShowAllAnchor(e);
-    });
-    this.sideBarCloseButton.addEventListener("click", () => {
-      this.handleClickSideBarCloseButton();
-    });
-    this.showOthersButton.addEventListener("click", () => {
-      this.handleClickShowOthersButton();
-    });
-    this.closeOthersButton.addEventListener("click", () => {
-      this.handleClickHideOthersButton();
-    });
-    this.sideBarContent.addEventListener("click", (e) => {
-      this.handleClickParentButton(e);
-    });
-    this.subMenuBack.addEventListener("click", () => {
-      this.handleClickSubMenuBackButton();
-    });
+    this.showAllAnchor.addEventListener("click", (e) =>
+      this.handleClickShowAllAnchor(e)
+    );
+    this.sideBarCloseButton.addEventListener("click", () =>
+      this.handleClickSideBarCloseButton()
+    );
+    this.showOthersButton.addEventListener("click", () =>
+      this.handleClickShowOthersButton()
+    );
+    this.closeOthersButton.addEventListener("click", () =>
+      this.handleClickHideOthersButton()
+    );
+    this.sideBarContent.addEventListener("click", (e) =>
+      this.handleClickParentButton(e)
+    );
+    this.subMenuBack.addEventListener("click", () =>
+      this.handleClickSubMenuBackButton()
+    );
   }
 }
