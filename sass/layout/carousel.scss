@@ -1,0 +1,57 @@
+.carousel {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+
+  &_container {
+    width: calc(5 * 100vw);
+    padding: 0;
+    margin: 0;
+    // transform: translateX(-200px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_item {
+    width: 100vw;
+    height: 500px;
+    list-style: none;
+    background-size: cover;
+    background-position: top center;
+    &:nth-child(1) {
+      background-image: url(/src/assets/images/carousel1.jpg);
+    }
+
+    &:nth-child(2) {
+      background-image: url(/src/assets/images/carousel2.jpg);
+    }
+
+    &:nth-child(3) {
+      background-image: url(/src/assets/images/carousel3.jpg);
+    }
+
+    &:nth-child(4) {
+      background-image: url(/src/assets/images/carousel4.jpg);
+    }
+
+    &:nth-child(5) {
+      background-image: url(/src/assets/images/carousel5.jpg);
+    }
+  }
+  &_button {
+    position: absolute;
+    width: 24px;
+    height: 40px;
+
+    &.prev {
+      left: 110px;
+      top: 90px;
+    }
+
+    &.next {
+      right: 110px;
+      top: 90px;
+    }
+  }
+}
