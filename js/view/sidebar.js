@@ -14,7 +14,7 @@ const onSideBar = (SIDEBAR_DATA) => {
   $viewAll.addEventListener('click', toggleFoldContent);
   $viewSimple.addEventListener('click', toggleFoldContent);
 
-  $sideContainer.addEventListener('click', insertSidebarData.bind(this, SIDEBAR_DATA));
+  $sideContainer.addEventListener('click', e => insertSidebarData(e, SIDEBAR_DATA));
   $backBtn.addEventListener('click', clickBackBtn);
 }
 
@@ -28,7 +28,7 @@ const openSideBar = e => {
   $sideBar.classList.add('hidden');
   $sideBar.classList.remove('slideLeft');
   $modalBackground.classList.remove('hidden');
-  $modalBackground.style.zIndex = '1';
+  $modalBackground.style.zIndex = '10';
 }
 
 // 사이드바 닫는 함수 (메인메뉴로 돌아가게끔 재구현 필요함)
@@ -43,7 +43,7 @@ const closeSideBar = e => {
       $sideBar.classList.remove('flex');
       $sideBar.classList.remove('slideRight');
       $modalBackground.classList.add('hidden');
-      $modalBackground.style.zIndex = 'inherit';
+      $modalBackground.style.zIndex = '1';
     }
   });
 }

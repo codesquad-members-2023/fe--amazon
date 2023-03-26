@@ -1,5 +1,8 @@
 .page_content {
   min-width: 70rem;
+}
+
+.carousel_container {
   overflow: hidden;
 }
 
@@ -9,7 +12,7 @@
   height: 250px;
   display: flex;
   justify-content: space-between;
-  z-index: 1;
+  z-index: var(--z-index--carousel);
 }
 
 .carousel_btn {
@@ -17,6 +20,14 @@
   display: inline-block;
   line-height: 250px;
   cursor: pointer;
+}
+
+.carousel_btn > img {
+  height: 30px;
+}
+
+.carousel_btn:active {
+  box-shadow: 0  0 0 2px #FFF inset, 0 0 0 3px #008296 inset
 }
 
 .slider_container {

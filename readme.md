@@ -78,9 +78,9 @@
 
 ## NANII - FE3. Amazon Website
 ### 주요 개발 feature
-- [ ] 히어로 영역 Carousel UX 구현 (무한 슬라이더)
-  - [ ] 좌우 화살표
-    - [ ] 좌우 화살표를 통해 내용을 계속해서 변경가능
+- [x] 히어로 영역 Carousel UX 구현 (무한 슬라이더)
+  - [x] 좌우 화살표
+    - [x] 좌우 화살표를 통해 내용을 계속해서 변경가능
     - [ ] 화살표를 누르지 않는 경우, **자동으로 10초 마다** 다음 내용으로 넘어가도록 함
   - [ ] 콘텐츠 영역
     - [ ] 이미지의 사이즈에 따라 콘텐츠 높이 다르게 적용
@@ -89,20 +89,20 @@
 - [ ] 월
   - [x] Sass
   - [x] Transition 영상 2개
-  - [ ] this (call, bind)
+  - [x] this (call, bind)
   - [ ] 자바스크립트 애니메이션 (setInterval, setTimeout, requestAnimationFrame, Animations API)
 - [ ] 화
-  - [ ] 객체지향프로그래밍 (class, 캡슐화, 상속, 다형성, 추상화)
+  - [x] 객체지향프로그래밍 (class, 캡슐화, 상속, 다형성, 추상화)
   - [ ] 하드웨어 가속 페이지 정리
   - [x] Carousel 구현 동작에 대해 학습
 - [x] 수
   - [x] 브라우저의 렌더링 과정
   - [x] CSS absolute, relative, min-width
   - [x] Carousel 구현 시도
-- [ ] 목
-  - [ ] 리뷰 리팩토링
-    - [ ] 1. login popup list JS 동적 구현하기
+- [x] 목
+  - [x] 리뷰 리팩토링
+    - [x] 1. login popup list JS 동적 구현하기
     - [ ] 2. sideBar class list 제거 코드 수정하기
-  - [ ] Carousel 이미지 이동 구현하기
+- [x] 금
+  - [x] Carousel 이미지 이동 구현하기
   - [ ] Sass 으로 변경해보기
-- [ ] 금
