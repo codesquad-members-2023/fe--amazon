@@ -66,7 +66,7 @@ body {
 }
 /* body-md */
 .search-form__input,
-.side-bar__main li {
+.side-bar li {
   font-size: var(--body-md-size);
   font-weight: var(--body-md-weight);
   line-height: var(--body-md-line-height);

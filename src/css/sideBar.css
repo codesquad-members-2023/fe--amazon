@@ -1,9 +1,10 @@
 .side-bar {
   position: fixed;
-  width: 320px;
   height: 100%;
   transform: translateX(-100%);
   z-index: 4;
+  color: #10141a;
+  background-color: #ffffff;
 }
 
 .side-bar__close-btn {
@@ -13,7 +14,6 @@
   right: -30px;
   top: 8px;
   visibility: hidden;
-  opacity: 0;
 }
 
 .side-bar__header {
@@ -23,7 +23,6 @@
 .side-bar li {
   height: 40px;
   padding: 8px 16px 8px 32px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,28 +32,13 @@
 
 .translateX-left,
 .translateX-right {
-  transition: transform 1s ease-in;
+  transition: transform 0.4s ease-in;
 }
 .translateX-left {
   transform: translateX(-100%);
 }
 .translateX-right {
   transform: translateX(0);
-}
-
-.visible {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 1s ease-in, opacity 1s ease-in;
-}
-
-.side-bar__main {
-  width: 320px;
-  height: calc(100% - 53px);
-  background-color: #ffffff;
-  color: #10141a;
-
-  overflow-y: scroll;
 }
 
 /* 사이드바 아이콘 */
@@ -78,6 +62,14 @@
 }
 .up-arrow-icon {
   background-image: url('../image/upArrow.svg');
+}
+.left-arrow-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  background-size: cover;
+  background-image: url('../image/leftArrow.svg');
 }
 
 .side-bar li:hover {
@@ -107,8 +99,41 @@
   margin-left: 10px;
 }
 
+.side-bar__content {
+  position: relative;
+  width: 320px;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.side-bar__main {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 53px);
+  overflow-y: scroll;
+  background-color: #ffffff;
+  color: #10141a;
+  overflow-x: hidden;
+}
 .expanded-category {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.6s ease-out;
+}
+
+.detail-category {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: calc(100% - 53px);
+  visibility: hidden;
+  overflow-y: scroll;
+}
+#main-category-return-btn {
+  justify-content: flex-start;
+}
+
+.visible {
+  visibility: visible;
 }
