@@ -1,3 +1,5 @@
+import { _ } from './utility.js'
+
 const onSideBar = (SIDEBAR_DATA) => {
   const $every = document.querySelector('.every');
   const $close = document.getElementById('side_bar_close');
@@ -23,11 +25,9 @@ const openSideBar = e => {
   const $sideBar = document.querySelector('.side_bar');
   const $modalBackground = document.querySelector('.modal_background');
 
-  $sideBar.classList.add('slideRight');
-  $sideBar.classList.add('flex');
-  $sideBar.classList.add('hidden');
-  $sideBar.classList.remove('slideLeft');
-  $modalBackground.classList.remove('hidden');
+  _.addClasses($sideBar, 'slideRight', 'flex', 'hidden');
+  _.removeClasses($sideBar, 'slideLeft');
+  _.removeClasses($modalBackground, 'hidden');
   $modalBackground.style.zIndex = '10';
 }
 
@@ -39,10 +39,9 @@ const closeSideBar = e => {
 
   $sideBar.addEventListener('animationend', ({ animationName, target }) => {
     if(animationName === 'slideLeft' && target.className.includes('side_bar')) {
-      $sideBar.classList.add('hidden');
-      $sideBar.classList.remove('flex');
-      $sideBar.classList.remove('slideRight');
-      $modalBackground.classList.add('hidden');
+      _.addClasses($sideBar, 'hidden');
+      _.removeClasses($sideBar, 'flex', 'slideRight');
+      _.addClasses($modalBackground, 'hidden');
       $modalBackground.style.zIndex = '1';
     }
   });
@@ -85,9 +84,8 @@ const insertDetailData = (title, SIDEBAR_DATA) => {
   }, `<h3>${title}</h3><ul>`) + `</ul>`;
 
   $tab.insertAdjacentHTML('beforeend', dataLI);
-  $foldDetail.classList.remove('slideLeft');
-  $foldDetail.classList.remove('hidden');
-  $foldDetail.classList.add('slideRight');
+  _.removeClasses($foldDetail, 'slideLeft', 'hidden');
+  _.addClasses($foldDetail, 'slideRight');
 }
 
 const clickBackBtn = e => {
@@ -95,12 +93,12 @@ const clickBackBtn = e => {
   if ($tab.hasChildNodes()) $tab.replaceChildren();
 
   const $foldDetail = document.querySelector('.fold_detail');
-  $foldDetail.classList.remove('slideRight');
-  $foldDetail.classList.add('slideLeft');
+  _.removeClasses($foldDetail, 'slideRight');
+  _.addClasses($foldDetail, 'slideLeft');
   $foldDetail.addEventListener('animationend', ({ animationName, target }) => {
     if(animationName === 'slideLeft' &&
     target.className.includes('fold_detail')) {
-      $foldDetail.classList.add('hidden');
+      _.addClasses($foldDetail, 'hidden');
     }
   });
 }

@@ -1,9 +1,10 @@
-const onNavBar = LOGIN_DATA => {
-  insertLoginDetailData(LOGIN_DATA);
+const onNavBar = (LOGIN_DATA) => {
+  insertLoginData(LOGIN_DATA);
 
   const $header = document.querySelector('header');
   const $addressContainer = document.querySelector('.address_container');
   const $loginContainer = document.querySelector('.login_container');
+
   $header.addEventListener('mouseenter', hidePopup);
   $addressContainer.addEventListener('mouseenter', popUpAddress);
   $loginContainer.addEventListener('mouseenter', popUpLogin);
@@ -54,19 +55,24 @@ const hide = (...selectors) => {
   });
 }
 
-const insertLoginDetailData = LOGIN_DATA => {
+const insertLoginData = LOGIN_DATA => {
   const $content = document.querySelectorAll('.login_detail > .content div');
   $content.forEach(data => {
-    const loginData = LOGIN_DATA[data.className];
-    const title = `<h3>${loginData['title']}</h3>`;
-    const contents = loginData['content'];
-    const content = contents.reduce((list, data) => {
-      list += `<li>${data}</li>`;
-      return list;
-    }, `<ul>`) + `</ul>`;
-  const $contentDiv = document.querySelector(`.${data.className}`);
-  $contentDiv.insertAdjacentHTML('beforeend', title + content);
+    const [className, loginDataHTML] = getLoginData(data, LOGIN_DATA);
+    const $contentDiv = document.querySelector(`.${className}`);
+    $contentDiv.insertAdjacentHTML('beforeend', loginDataHTML);
   });
+}
+
+const getLoginData = (data, LOGIN_DATA) => {
+  const loginData = LOGIN_DATA[data.className];
+  const title = `<h3>${loginData['title']}</h3>`;
+  const contents = loginData['content'];
+  const loginList = contents.reduce((list, data) => {
+    list += `<li>${data}</li>`;
+    return list;
+  }, `<ul>`) + `</ul>`;
+  return [data.className, title + loginList];
 }
 
 export { onNavBar };
