@@ -1,73 +1,65 @@
-import { $ } from "../utils.js";
+import { $, modifyClassList } from "../utils.js";
 import { items } from "../data/loginHover.js";
 
 class Navigation {
   constructor() {
-    this.loginModal = $(".login__modal");
-
     this.listItems = $(".list__items");
     this.accountItems = $(".account__items");
-
+    this.loginModal = $(".login__modal");
     this.loginMenu = $(".nav__login");
     this.loginHover = $(".login__hover");
-
     this.shippingMenu = $(".nav__shipping-address");
     this.shippingHover = $(".shipping__hover");
-
     this.dimmedLayer = $(".dimmed-layer");
+    this.delayTime = 1000;
   }
 
-  showLoginModal() {
-    const showModalTime = 1000;
-    setTimeout(() => this.loginModal.classList.add("login__modal-show"), showModalTime);
+  init() {
+    this.showLoginModalAfterDelay(this.delayLoginModal(), this.delayTime);
+    this.addLoginHoverData(items.loginListItems, this.listItems);
+    this.addLoginHoverData(items.accountItems, this.accountItems);
+    this.navigationEventListener();
   }
 
-  addLoginHoverData() {
-    for (const element of items.loginListItems) {
-      this.listItems.insertAdjacentHTML("beforeend", `<li>${element}</li>`);
-    }
-    for (const element of items.accountItems) {
-      this.accountItems.insertAdjacentHTML("beforeend", `<li>${element}</li>`);
-    }
+  showLoginModalAfterDelay(eventFunction, time) {
+    setTimeout(() => eventFunction, time);
+  }
+
+  delayLoginModal() {
+    modifyClassList(this.loginModal, "login__modal-show", "add");
+  }
+
+  addLoginHoverData(item, selector) {
+    item.forEach((element) => selector.insertAdjacentHTML("beforeend", `<li>${element}</li>`));
+  }
+
+  navigationEventListener() {
+    this.loginMenu.addEventListener("mouseover", () => this.showLoginHover());
+    this.loginMenu.addEventListener("mouseout", () => this.hideLoginHover());
+    this.shippingMenu.addEventListener("mouseover", () => this.showShippingHover());
+    this.shippingMenu.addEventListener("mouseout", () => this.hideShippingHover());
   }
 
   showLoginHover() {
-    this.loginMenu.addEventListener("mouseover", () => {
-      this.loginHover.classList.add("login__hover-show");
-      this.dimmedLayer.classList.add("dimmed-layer__show");
-    });
+    modifyClassList(this.loginHover, "login__hover-show", "add");
+    modifyClassList(this.dimmedLayer, "dimmed-layer__show", "add");
   }
 
   hideLoginHover() {
-    this.loginMenu.addEventListener("mouseout", () => {
-      this.loginHover.classList.remove("login__hover-show");
-      this.loginModal.classList.remove("login__modal-show");
-      this.dimmedLayer.classList.remove("dimmed-layer__show");
-    });
+    modifyClassList(this.loginHover, "login__hover-show", "remove");
+    modifyClassList(this.loginModal, "login__modal-show", "remove");
+    modifyClassList(this.dimmedLayer, "dimmed-layer__show", "remove");
   }
 
   showShippingHover() {
-    this.shippingMenu.addEventListener("mouseover", () => {
-      this.shippingHover.classList.add("shipping__hover-show");
-      this.loginModal.classList.remove("login__modal-show");
-      this.dimmedLayer.classList.add("dimmed-layer__show");
-    });
+    modifyClassList(this.shippingHover, "shipping__hover-show", "add");
+    modifyClassList(this.dimmedLayer, "dimmed-layer__show", "add");
+    modifyClassList(this.loginModal, "login__modal-show", "remove");
   }
 
   hideShippingHover() {
-    this.shippingMenu.addEventListener("mouseout", () => {
-      this.shippingHover.classList.remove("shipping__hover-show");
-      this.dimmedLayer.classList.remove("dimmed-layer__show");
-    });
-  }
-
-  runNavigation() {
-    this.showLoginModal();
-    this.addLoginHoverData();
-    this.showLoginHover();
-    this.hideLoginHover();
-    this.showShippingHover();
-    this.hideShippingHover();
+    modifyClassList(this.shippingHover, "shipping__hover-show", "remove");
+    modifyClassList(this.dimmedLayer, "dimmed-layer__show", "remove");
   }
 }
 
