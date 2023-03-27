@@ -5,6 +5,9 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import axios from 'axios';
 
+// CONNECT_URL =
+//   'mongodb+srv://{id}:{password}@{clusterName}.{clusterId}.mongodb.net/{projectName}';
+
 dotenv.config();
 
 const connectUrl = process.env.CONNECT_URL;
@@ -20,15 +23,23 @@ const SearchModel = mongoose.model('search', {
   title: String,
 });
 
-app.get('/search', async (req, res) => {
+app.get('/search', (req, res) => {
   const query = req.query.q;
   const page = req.query.page;
-  const limit = 5;
+  const limit = req.query.limit;
   const skip = (page - 1) * limit;
-  const result = await SearchModel.find({ title: { $regex: `.*${query}.*` } })
+  SearchModel.find({ title: { $regex: `.*${query}.*` } })
     .skip(skip)
-    .limit(limit);
-  res.send(result);
+    .limit(limit)
+    .then((result) => {
+      if (!result) {
+        res.status(404).json({ message: 'Not found' });
+      }
+      res.send(result);
+    })
+    .catch((error) => {
+      res.status(500).json({ message: error.message });
+    });
 });
 
 // app.post('/data', (req, res) => {
