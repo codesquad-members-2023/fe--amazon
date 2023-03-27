@@ -1,7 +1,5 @@
-import { worker } from '../mocks/worker.js';
+import API from '../utils/server.js';
 
-worker.start();
-
-// fetch('/todos')
-//   .then((response) => response.json())
-//   .then((data) => console.log(data));
+fetch(API.GET_SEARCH_DATA)
+  .then((response) => response.json())
+  .then((data) => console.log(data));

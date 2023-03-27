@@ -2,11 +2,5 @@
   "type": "module",
   "scripts": {
     "scss": "node-sass scss/main.scss css/style.css -w"
-  },
-  "devDependencies": {
-    "msw": "^1.2.1"
-  },
-  "dependencies": {
-    "parcel-bundler": "^1.12.5"
   }
 }
