@@ -4,13 +4,12 @@ class Carousel {
     this.CAROUSEL_COUNT = count;
     this.directoryPath = '/asset/images/carousel';
     this.slider = document.querySelector('.slider');
-    this.slides = document.querySelectorAll('.slide');
     this.leftBtn = document.getElementById('carousel_left');
     this.rightBtn = document.getElementById('carousel_right');
   }
 
   init() {
-    this.setImages();
+    this.setImages()
     this.clickSlide();
     this.slideAuto();
   }
@@ -46,8 +45,23 @@ class Carousel {
   }
 
   slideAuto() {
-
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    let lastTime = 0;
+    const moveCarousel = currentTime => {
+      let deltaTime = currentTime - lastTime;
+      if (deltaTime > 10000) {
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+          currentSlide = 0;
+        }
+        this.slider.style.transitionDuration = '500ms';
+        this.slider.style.transform = 'translateX(-100%)';
+        lastTime = currentTime;
+      }
+      requestAnimationFrame(moveCarousel);
+    }
+    requestAnimationFrame(moveCarousel);
   }
 }
-
 export { Carousel };
