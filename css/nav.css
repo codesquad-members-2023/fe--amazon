@@ -276,7 +276,7 @@ body {
 
 .content_right {
   width: 150px;
-  padding-left: 10px;
+  padding-left: 15px;
   border-left: 1px solid var(--color-gray-100);
 }
 

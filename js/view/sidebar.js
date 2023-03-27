@@ -78,12 +78,12 @@ const insertDetailData = (title, SIDEBAR_DATA) => {
   const $foldDetail = document.querySelector('.fold_detail');
 
   const sideBarData = SIDEBAR_DATA[title];
-  const dataLI = sideBarData.reduce((list, data) => {
-    list += `<li>${data}</li>`;
-    return list;
+  const sideBarMenuTemplate = sideBarData.reduce((menu, data) => {
+    menu += `<li>${data}</li>`;
+    return menu;
   }, `<h3>${title}</h3><ul>`) + `</ul>`;
 
-  $tab.insertAdjacentHTML('beforeend', dataLI);
+  $tab.insertAdjacentHTML('beforeend', sideBarMenuTemplate);
   _.removeClasses($foldDetail, 'slideLeft', 'hidden');
   _.addClasses($foldDetail, 'slideRight');
 }

@@ -58,9 +58,9 @@ const hide = (...selectors) => {
 const insertLoginData = LOGIN_DATA => {
   const $content = document.querySelectorAll('.login_detail > .content div');
   $content.forEach(data => {
-    const [className, loginDataHTML] = getLoginData(data, LOGIN_DATA);
+    const [className, loginTemplate] = getLoginData(data, LOGIN_DATA);
     const $contentDiv = document.querySelector(`.${className}`);
-    $contentDiv.insertAdjacentHTML('beforeend', loginDataHTML);
+    $contentDiv.insertAdjacentHTML('beforeend', loginTemplate);
   });
 }
 
