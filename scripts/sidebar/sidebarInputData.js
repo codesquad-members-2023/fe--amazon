@@ -27,6 +27,11 @@ const detailSidebar = () => {
   });
 };
 
+const showMainMenuDetail = () =>{
+  SIDEBAR.MAIN_MENU_DETAIL.insertAdjacentHTML(
+    "beforeend",`<li>${detailData}</li>`
+  )
+}
 const sidebarEvent = () => {
   summarySidebar();
   detailSidebar();

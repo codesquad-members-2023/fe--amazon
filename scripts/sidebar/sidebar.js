@@ -1,19 +1,26 @@
 import { COMMON, SIDEBAR, SUBMENU } from "../all/allQuery.js";
 
 const dimmedSidebar = () => {
-  COMMON.DIM.classList.add("show");
-  COMMON.DIM.classList.add("sidebar_index");
+  COMMON.DIM.classList.add("show_opacity", "sidebar_index");
 };
-const clearDimmedSidebar = () => COMMON.DIM.classList.remove("show");
+const clearDimmedSidebar = () => {
+  COMMON.DIM.classList.remove("show_opacity", "sidebar_index");
+};
 
-const showSidebar = () => SIDEBAR.ALL.classList.add("show");
-const closeSidebar = () => SIDEBAR.ALL.classList.remove("show");
+const showSidebar = () => SIDEBAR.ALL.classList.add("show_display");
+const closeSidebar = () => SIDEBAR.ALL.classList.remove("show_display");
+
+
 
 const sidebarEventListener = () => {
-  SUBMENU.ALLMENU.addEventListener("click", dimmedSidebar);
-  SIDEBAR.CLOSEBUTTON.addEventListener("click", clearDimmedSidebar);
-  SUBMENU.ALLMENU.addEventListener("click", showSidebar);
-  SIDEBAR.CLOSEBUTTON.addEventListener("click", closeSidebar);
+  SUBMENU.ALLMENU.addEventListener("click", () => {
+    dimmedSidebar();
+    showSidebar();
+  });
+  SIDEBAR.CLOSEBUTTON.addEventListener("click", () => {
+    clearDimmedSidebar();
+    closeSidebar();
+  });
 };
 
 sidebarEventListener();
