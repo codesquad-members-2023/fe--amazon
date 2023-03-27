@@ -62,5 +62,27 @@ export default class Slide {
       this.$currentSlide = this.$slideItems[this.currentIdx];
       this.$currentSlide.classList.add('slide-active');
     });
+    this.$prevBtn.addEventListener('click', () => {
+      if (this.currentIdx >= 0) {
+        this.$slideList.style.transition = '300ms';
+        this.$slideList.style.transform = `translate3d(-${
+          this.#itemWidthUnit * this.currentIdx
+        }%, 0, 0)`;
+      }
+      if (this.currentIdx === 0) {
+        setTimeout(() => {
+          this.$slideList.style.transition = '0ms';
+          this.$slideList.style.transform = `translate3d(-${
+            this.#itemWidthUnit * this.#itemCount
+          }%, 0, 0)`;
+        }, 300);
+        this.currentIdx = this.#itemCount;
+      }
+
+      this.$currentSlide.classList.remove('slide-active');
+      this.currentIdx -= 1;
+      this.$currentSlide = this.$slideItems[this.currentIdx];
+      this.$currentSlide.classList.add('slide-active');
+    });
   }
 }
