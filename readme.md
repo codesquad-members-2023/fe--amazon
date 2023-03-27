@@ -2,6 +2,15 @@
 
 ## 학습정리
 
+### 4주차
+
+- [ ] Fetch API
+- [ ] Promise
+- [ ] mock server
+  - [ ] json-server
+  - [ ] MSW
+- [ ] stacking context
+
 ### 3주차
 
 - [ ] ES Classes
@@ -107,7 +116,7 @@
   - [x] 수동 슬라이더
   - [ ] 무한 슬라이더
   - [ ] 10초마다 다음 이미지
-  - [ ] 좌, 우 화살표로 내용 변경
+  - [x] 좌, 우 화살표로 내용 변경
 - [x] SASS 사용
 - [x] 객체지향 프로그래밍 적용
 - [ ] 프로토타입 사용해보기
@@ -117,6 +126,21 @@
   - [ ] `openAllItems` 와 `clsoseAllItems` 을 하나의 함수로 통일
   - [ ] `moveMain` 더 구체적인 이름으로 바꾸기
   - [ ] `hideSideBar` 열고 닫는 함수처럼 보이니 이름 바꾸기
+
+### 4주차
+
+- 검색창 서버 연동
+  - [ ] 추천 검색어
+  - [ ] 최근 검색어
+  - [ ] 키보드로 검색결과 선택
+  - [ ] 검색 자동완성 (json-server와 연동)
+  - [ ] query를 보내고 get
+- [ ] async/await 보다는 promise/then 사용
+- mock server 연동
+  - [ ] json-server or MSW or 기타
+- 서버 연동 데이터 가져오기
+  - [ ] 슬라이딩 UX
+  - [ ] 좌측 메뉴
 
 ## 📒 reference
 
