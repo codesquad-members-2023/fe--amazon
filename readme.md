@@ -82,6 +82,16 @@
 
 # 4주차
 
+- [ ] 공부
+  - [ ] try, catch
+  - [ ] Promise
+    - [ ] resolve, reject, then 메서드 등
+  - [ ] css - stacking context
 - [ ] Search 작업
+  - [ ] search GET api 작업
+  - [ ] Search UI 작업
+  - [ ] 검색 시 search api 호출
+    - [ ] api 호출 지연 시키기
+  - [ ] 아래로 내리면 무한 스크롤
 - [ ] Sidebar 이미 꺼낸 것은 다시 렌더링하지 않도록 쌓아두기
 - [ ] Sidebar 경계선에 border 추가
