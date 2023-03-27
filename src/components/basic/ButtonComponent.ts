@@ -7,8 +7,12 @@ export class ButtonComponent extends BaseComponent<HTMLButtonElement> {
       `<button class='${ButtonComponentStyle}' type='${type}'>${text}</button>`,
     );
 
-    if (this.element.getAttribute('type') === 'flexible') {
+    if (this.isFlexible()) {
       this.setStyles({ width: '4rem' });
     }
+  }
+
+  isFlexible() {
+    return this.element.getAttribute('type') === 'flexible';
   }
 }

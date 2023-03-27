@@ -7,26 +7,34 @@ import { AddressPopComponentStyle } from '../../../../style/components/navbar/ma
 export class AddressPopComponent extends BaseComponent<HTMLElement> {
   constructor() {
     super(`<section class='${AddressPopComponentStyle}'></section>`);
+    this.makeContent();
+  }
 
-    const addressText = new TextComponent(
+  makeContent() {
+    const addressTextComponent = new TextComponent(
       'UN으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을 보려면 배송 주소를 변경하십시오.',
       'var(--color-black)',
       'var(--font-sm)',
     );
 
-    const addressBtnContainer = new FlexContainerComponent(
+    const addressButtonContainerComponent = new FlexContainerComponent(
       'row',
       'flex-end',
       '',
       '1rem',
     );
 
-    const continueBtn = new ButtonComponent('계속', 'flexible');
-    const changeAddressBtn = new ButtonComponent('주소 변경', 'flexible');
-    changeAddressBtn.attachTo(addressBtnContainer.element);
-    continueBtn.attachTo(addressBtnContainer.element);
+    const continueButtonComponent = new ButtonComponent('계속', 'flexible');
+    const changeAddressButtonComponent = new ButtonComponent(
+      '주소 변경',
+      'flexible',
+    );
 
-    addressBtnContainer.attachTo(this.element);
-    addressText.attachTo(this.element);
+    changeAddressButtonComponent.attachTo(
+      addressButtonContainerComponent.element,
+    );
+    continueButtonComponent.attachTo(addressButtonContainerComponent.element);
+    addressButtonContainerComponent.attachTo(this.element);
+    addressTextComponent.attachTo(this.element);
   }
 }
