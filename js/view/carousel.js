@@ -1,7 +1,7 @@
 class Carousel {
   #directoryPath;
-  #DIRECTION_RIGHT = -1;
-  #DIRECTION_LEFT = 1;
+  #RIGHT = -1;
+  #LEFT = 1;
   constructor({numberOfImages, delayTime, path}) {
     this.CAROUSEL_COUNT = numberOfImages;
     this.DELAY_TIME = delayTime;
@@ -32,9 +32,8 @@ class Carousel {
     this.rightBtn.addEventListener('click', this.translateSlideHandler.bind(this));
   }
 
-  //예상과 타겟이 다르게 동작하는 이유 (undefined로 나옴)-> 비동기와 관련
   translateSlideHandler({ target }) {
-    const direction = target.closest('span').id === 'carousel_left' ? this.#DIRECTION_LEFT : this.#DIRECTION_RIGHT;
+    const direction = target.closest('span').id === 'carousel_left' ? this.#LEFT : this.#RIGHT;
     this.translateSlide(direction);
   }
 
@@ -60,7 +59,7 @@ class Carousel {
       if (deltaTime > this.DELAY_TIME) {
         currentSlide++;
         if (currentSlide >= slides.length) currentSlide = 0;
-        this.translateSlide(this.#DIRECTION_RIGHT);
+        this.translateSlide(this.#RIGHT);
         lastTime = currentTime;
       }
       requestAnimationFrame(moveCarousel);
