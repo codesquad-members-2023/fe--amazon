@@ -10,8 +10,8 @@ class Carousel {
 
   init() {
     this.setImages()
-    this.clickSlide();
     this.slideAuto();
+    this.clickSlide();
   }
 
   setImages() {
@@ -25,13 +25,17 @@ class Carousel {
   }
 
   clickSlide() {
-    this.leftBtn.addEventListener('click', this.translateSlide.bind(this));
-    this.rightBtn.addEventListener('click', this.translateSlide.bind(this));
+    this.leftBtn.addEventListener('click', this.translateSlideHandler.bind(this));
+    this.rightBtn.addEventListener('click', this.translateSlideHandler.bind(this));
   }
 
   //예상과 타겟이 다르게 동작하는 이유 (undefined로 나옴)-> 비동기와 관련
-  translateSlide({ target }) {
+  translateSlideHandler({ target }) {
     const direction = target.closest('span').id === 'carousel_left' ? 1 : -1;
+    this.translateSlide(direction);
+  }
+
+  translateSlide(direction) {
     this.slider.style.transitionDuration = '500ms';
     this.slider.style.transform = `translateX(${direction * 100}%)`;
     this.slider.ontransitionend = () => this.appendSlide(direction);
@@ -51,12 +55,10 @@ class Carousel {
     const moveCarousel = currentTime => {
       let deltaTime = currentTime - lastTime;
       if (deltaTime > 10000) {
+        console.log(1, currentSlide);
         currentSlide++;
-        if (currentSlide >= slides.length) {
-          currentSlide = 0;
-        }
-        this.slider.style.transitionDuration = '500ms';
-        this.slider.style.transform = 'translateX(-100%)';
+        if (currentSlide >= slides.length) currentSlide = 0;
+        this.translateSlide(-1);
         lastTime = currentTime;
       }
       requestAnimationFrame(moveCarousel);
