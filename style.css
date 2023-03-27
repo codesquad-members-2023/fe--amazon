@@ -120,6 +120,18 @@ body {
   .button--large {
     width: 16rem; }
 
+.dimmed {
+  background-color: rgba(16, 20, 26, 0.4);
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+  .dimmed--main {
+    position: absolute; }
+  .dimmed--body {
+    position: fixed; }
+
 .list {
   display: flex;
   flex-direction: column;
@@ -183,17 +195,56 @@ body {
     display: flex;
     justify-content: space-between; }
 
-.dimmed {
-  background-color: rgba(16, 20, 26, 0.4);
-  z-index: 10;
-  left: 0;
-  right: 0;
+.slider {
+  position: absolute;
   top: 0;
-  bottom: 0; }
-  .dimmed--main {
-    position: absolute; }
-  .dimmed--body {
-    position: fixed; }
+  width: 100%;
+  height: 51.2rem;
+  overflow: hidden;
+  z-index: -1; }
+  .slider__container {
+    position: absolute;
+    display: flex;
+    left: -100vw; }
+  .slider__item {
+    width: 100vw;
+    height: 51.2rem;
+    background-size: cover;
+    background-position: top center;
+    display: inline-block; }
+    .slider__item--1 {
+      background-image: url(/assets/images/carousel--1.jpg); }
+    .slider__item--2 {
+      background-image: url(/assets/images/carousel--2.jpg); }
+    .slider__item--3 {
+      background-image: url(/assets/images/carousel--3.jpg); }
+    .slider__item--4 {
+      background-image: url(/assets/images/carousel--4.jpg); }
+    .slider__item--5 {
+      background-image: url(/assets/images/carousel--5.jpg); }
+
+.slider-button-container {
+  width: 100%;
+  padding: 8.5rem 8rem;
+  display: flex;
+  justify-content: space-between; }
+
+.search-form {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  flex-grow: 1;
+  display: flex; }
+  .search-form__input {
+    flex-grow: 1;
+    border: none;
+    border-radius: 4px 0px 0px 4px;
+    padding: 12px 9.5px;
+    height: 4rem; }
+  .search-form__button {
+    width: 4rem;
+    height: 4rem;
+    background-color: #fcb057;
+    border-radius: 0px 4px 4px 0px; }
 
 .header {
   background-color: #10141a;
@@ -223,21 +274,6 @@ body {
     display: flex;
     align-items: center;
     gap: 4px; }
-  .header .search-form {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    flex-grow: 1;
-    display: flex; }
-    .header .search-form__input {
-      flex-grow: 1;
-      border: none;
-      border-radius: 4px 0px 0px 4px;
-      padding: 12px 9.5px; }
-    .header .search-form__button {
-      width: 4rem;
-      height: 4rem;
-      background-color: #fcb057;
-      border-radius: 0px 4px 4px 0px; }
   .header .container {
     position: relative;
     display: flex;
@@ -335,37 +371,3 @@ body {
     .side-bar .submenu__back-text {
       flex-grow: 1;
       text-align: left; }
-
-.slider {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 51.2rem;
-  overflow: hidden;
-  z-index: -1; }
-  .slider__container {
-    position: absolute;
-    display: flex;
-    left: -100vw; }
-  .slider__item {
-    width: 100vw;
-    height: 51.2rem;
-    background-size: cover;
-    background-position: top center;
-    display: inline-block; }
-    .slider__item--1 {
-      background-image: url(/assets/images/carousel--1.jpg); }
-    .slider__item--2 {
-      background-image: url(/assets/images/carousel--2.jpg); }
-    .slider__item--3 {
-      background-image: url(/assets/images/carousel--3.jpg); }
-    .slider__item--4 {
-      background-image: url(/assets/images/carousel--4.jpg); }
-    .slider__item--5 {
-      background-image: url(/assets/images/carousel--5.jpg); }
-
-.slider-button-container {
-  width: 100%;
-  padding: 8.5rem 8rem;
-  display: flex;
-  justify-content: space-between; }

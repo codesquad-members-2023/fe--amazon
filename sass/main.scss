@@ -6,12 +6,13 @@
 @import "base/utilities";
 
 @import "components/button";
+@import "components/dimmed";
 @import "components/list";
 @import "components/pop-up";
+@import "components/slider";
+@import "components/search-form";
 
-@import "layout/dimmed";
 @import "layout/header";
 @import "layout/main";
 @import "layout/nav";
 @import "layout/side-bar";
-@import "layout/slider";
