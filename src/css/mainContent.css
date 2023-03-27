@@ -1,0 +1,28 @@
+@media (max-width: 70rem) {
+  .main-content {
+    width: 70rem;
+  }
+}
+@media (min-width: 70rem) {
+  .main-content {
+    width: 100%;
+  }
+}
+
+.main-content {
+  color: #10141a;
+}
+
+.slide-box {
+  overflow-x: hidden;
+}
+.slide-list {
+  display: flex;
+}
+.slide-item {
+  display: inline-block;
+  width: 100%;
+}
+.slide-item img {
+  width: 100%;
+}
