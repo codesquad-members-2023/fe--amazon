@@ -1,15 +1,15 @@
 import Timer from './timer.js';
 class Carousel {
-  constructor(obj) {
-    this.leftButton = document.querySelector(obj.CAROUSEL_LEFT_CLASS);
-    this.rightButton = document.querySelector(obj.CAROUSEL_RIGHT_CLASS);
-    this.carouselWindow = document.querySelector(obj.CAROUSEL_WINDOW_CLASS);
+  constructor(options) {
+    this.leftButton = document.querySelector(options.CAROUSEL_LEFT_CLASS);
+    this.rightButton = document.querySelector(options.CAROUSEL_RIGHT_CLASS);
+    this.carouselWindow = document.querySelector(options.CAROUSEL_WINDOW_CLASS);
     this.container = this.carouselWindow.querySelector(
-      obj.CAROUSEL_CONTAINER_CLASS,
+      options.CAROUSEL_CONTAINER_CLASS,
     );
-    this.IMG_COUNT = obj.imgCount; // 배경 이미지 개수만 변경하면 됨.
+    this.IMG_COUNT = options.imgCount; // 배경 이미지 개수만 변경하면 됨.
     this.timer = new Timer();
-    this.startTime = obj.startTime;
+    this.startTime = options.startTime;
   }
 
   init() {
@@ -95,7 +95,7 @@ class Carousel {
   }
 }
 
-const obj = {
+const options = {
   imgCount: '5',
   startTime: null,
   CAROUSEL_LEFT_CLASS: '.carousel_left',
@@ -104,6 +104,6 @@ const obj = {
   CAROUSEL_CONTAINER_CLASS: '.carousel_container',
 };
 
-const carousel = new Carousel(obj);
+const carousel = new Carousel(options);
 
 carousel.init();
