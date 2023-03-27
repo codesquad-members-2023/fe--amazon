@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+
 export default {
   resolve: {
     alias: {
@@ -9,6 +11,9 @@ export default {
       '@data': '/src/data',
       '@assets': '/public/assets',
       '@utils': '/src/utils.js',
+      '@apis': '/src/apis',
     },
   },
 };
+
+dotenv.config();
