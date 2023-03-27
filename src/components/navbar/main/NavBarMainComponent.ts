@@ -21,7 +21,7 @@ export class NavBarMainComponent extends BaseComponent<HTMLElement> {
     dimLayer.attachTo(document.querySelector('#app')! as HTMLElement);
 
     const shippingAddress = new TwoRowTextComponent('배송처', '대한민국');
-    shippingAddress.element.style.position = 'relative';
+    shippingAddress.setStyles({ position: 'relative' });
 
     const addressPop = new AddressPopComponent();
     shippingAddress.element.addEventListener('mouseenter', () => {
@@ -37,7 +37,8 @@ export class NavBarMainComponent extends BaseComponent<HTMLElement> {
     const nation = new SymbolTextComponent('assets/nav-bar/flag-un.svg', 'UN');
 
     const login = new TwoRowTextComponent('안녕하세요, 로그인', '계정 및 목록');
-    login.element.style.position = 'relative';
+    login.setStyles({ position: 'relative' });
+
     const loginPop = new LoginPopComponent();
     // 먼저 loginPop을 login.element에 붙여서 페이지를 그리고 나서
     // load가 되고나서 opacity 1을 줘야 transition이 그 변경을 캐치하고 애니메이션 효과가 일어난다.

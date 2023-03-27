@@ -11,10 +11,13 @@ export class CategoryComponent extends BaseComponent<HTMLElement> {
   ) {
     super(`<li class='${CategoryComponentStyle}'></li>`);
     if (type === 'main') {
-      const chevronRight = new SymbolComponent(path);
-      chevronRight.attachTo(this.element);
+      const chevronRightComponent = new SymbolComponent(path);
+      chevronRightComponent.attachTo(this.element);
     }
-    const title = new TextComponent(categoryTitle, 'var(--color-black)');
-    title.attachTo(this.element);
+    const titleComponent = new TextComponent(
+      categoryTitle,
+      'var(--color-black)',
+    );
+    titleComponent.attachTo(this.element);
   }
 }

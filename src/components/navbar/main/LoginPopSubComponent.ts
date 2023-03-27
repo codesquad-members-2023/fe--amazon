@@ -14,7 +14,8 @@ export class LoginPopSubComponent extends BaseComponent<HTMLElement> {
       '',
       '.5rem',
     );
-    leftContainer.element.style.height = '100%';
+    leftContainer.setStyles({ height: '100%' });
+
     const leftTitle = new TextComponent(
       '귀하의 목록',
       'var(--color-black)',
@@ -43,7 +44,8 @@ export class LoginPopSubComponent extends BaseComponent<HTMLElement> {
       '',
       '.5rem',
     );
-    rightContainer.element.style.height = '100%';
+    rightContainer.setStyles({ height: '100%' });
+
     const rightTitle = new TextComponent(
       '계정',
       'var(--color-black)',
@@ -109,6 +111,7 @@ export class LoginPopSubComponent extends BaseComponent<HTMLElement> {
     [leftThird, leftSecond, leftFirst, leftTitle].forEach((el) =>
       el.attachTo(leftContainer.element),
     );
+
     [
       rightEleventh,
       rightTenth,

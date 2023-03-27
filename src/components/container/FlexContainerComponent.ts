@@ -9,9 +9,6 @@ export class FlexContainerComponent extends BaseComponent<HTMLElement> {
     gap: string = '',
   ) {
     super(`<div class='${FlexContainerComponentStyle}'></div>`);
-    this.element.style.flexDirection = flexDirection;
-    this.element.style.justifyContent = justifyContent;
-    this.element.style.alignItems = alignItems;
-    this.element.style.gap = gap;
+    this.setStyles({ flexDirection, justifyContent, alignItems, gap });
   }
 }

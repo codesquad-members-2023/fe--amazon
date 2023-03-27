@@ -1,3 +1,5 @@
+import { CSSProperties } from '@vanilla-extract/css';
+
 export interface Base {
   attachTo(parent: HTMLElement, position?: InsertPosition): void;
   removeFrom(parent: HTMLElement): void;
@@ -19,5 +21,11 @@ export class BaseComponent<T extends HTMLElement> implements Base {
       throw new Error('Parent mismatch!');
     }
     parent.removeChild(this.element);
+  }
+
+  setStyles(stylesObject: Record<string, string>) {
+    for (const [key, value] of Object.entries(stylesObject)) {
+      this.element.style[key as any] = value;
+    }
   }
 }

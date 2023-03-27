@@ -7,10 +7,10 @@ export class DimLayerComponent extends BaseComponent<HTMLElement> {
   }
 
   on() {
-    this.element.style.display = 'block';
+    this.setStyles({ display: 'block' });
   }
 
   off() {
-    this.element.style.display = 'none';
+    this.setStyles({ display: 'none' });
   }
 }

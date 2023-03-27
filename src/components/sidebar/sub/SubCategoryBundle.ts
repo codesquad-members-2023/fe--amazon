@@ -7,22 +7,22 @@ import { SymbolTextComponent } from '../../navbar/SymbolTextComponent';
 export class SubCategoryBundle extends BaseComponent<HTMLElement> {
   constructor(title: string, subMenu: string[]) {
     super(`<section class='${SubCategoryBundleStyle}'></section>`);
-    const backMainMenu = new SymbolTextComponent(
+    const backMainMenuComponent = new SymbolTextComponent(
       'assets/left-sidebar/arrow-left.svg',
       '주메뉴',
       'var(--color-black)',
     );
-    backMainMenu.element.addEventListener('click', () => {
-      this.element.style.display = 'none';
+    backMainMenuComponent.element.addEventListener('click', () => {
+      this.setStyles({ display: 'none' });
     });
-    const bundleTitle = new TextComponent(
+    const bundleTitleComponent = new TextComponent(
       title,
       'var(--color-black)',
       'var(--font-lg)',
       'var(--weight-bold)',
     );
-    backMainMenu.attachTo(this.element, 'beforeend');
-    bundleTitle.attachTo(this.element, 'beforeend');
+    backMainMenuComponent.attachTo(this.element, 'beforeend');
+    bundleTitleComponent.attachTo(this.element, 'beforeend');
     subMenu.forEach((menu) => {
       const subCategory = new CategoryComponent(menu, 'sub');
       subCategory.attachTo(this.element, 'beforeend');

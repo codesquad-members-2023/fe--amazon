@@ -8,7 +8,7 @@ export class ButtonComponent extends BaseComponent<HTMLButtonElement> {
     );
 
     if (this.element.getAttribute('type') === 'flexible') {
-      this.element.style.width = '4rem';
+      this.setStyles({ width: '4rem' });
     }
   }
 }

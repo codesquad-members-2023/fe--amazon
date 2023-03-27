@@ -8,21 +8,24 @@ export class Header extends BaseComponent<HTMLElement> {
   constructor() {
     super(`<header></header>`);
 
-    const navBarMain = new NavBarMainComponent();
-    const navBarSub = new NavBarSubComponent();
-    const sideBar = new SideBarComponent();
-    const dimLayer = new DimLayerComponent();
-    dimLayer.attachTo(document.querySelector('#app')! as HTMLElement);
-    dimLayer.element.addEventListener('click', () => {
-      sideBar.element.style.transform = 'translateX(-20rem)';
-      dimLayer.off();
+    const navBarMainComponent = new NavBarMainComponent();
+    const navBarSubComponent = new NavBarSubComponent();
+    const sideBarComponent = new SideBarComponent();
+    const dimLayerComponent = new DimLayerComponent();
+    dimLayerComponent.attachTo(document.querySelector('#app')! as HTMLElement);
+    dimLayerComponent.element.addEventListener('click', () => {
+      sideBarComponent.setStyles({ transform: 'translateX(-20rem)' });
+      dimLayerComponent.off();
     });
-    navBarSub.element.firstElementChild!.addEventListener('click', () => {
-      sideBar.element.style.transform = 'translateX(20rem)';
-      dimLayer.on();
-    });
-    navBarMain.attachTo(this.element);
-    navBarSub.attachTo(this.element, 'beforeend');
-    sideBar.attachTo(this.element, 'beforeend');
+    navBarSubComponent.element.firstElementChild!.addEventListener(
+      'click',
+      () => {
+        sideBarComponent.setStyles({ transform: 'translateX(20rem)' });
+        dimLayerComponent.on();
+      },
+    );
+    navBarMainComponent.attachTo(this.element);
+    navBarSubComponent.attachTo(this.element, 'beforeend');
+    sideBarComponent.attachTo(this.element, 'beforeend');
   }
 }
