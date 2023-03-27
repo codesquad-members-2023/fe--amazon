@@ -10,6 +10,14 @@ const main = () => {
   header.onHeader();
   sideBar.onSideBar();
   slider.onSlider();
+
+  fetch("http://localhost:3001/tests")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
 };
 
 main();
