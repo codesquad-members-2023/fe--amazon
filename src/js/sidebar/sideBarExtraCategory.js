@@ -1,4 +1,4 @@
-export class sideBarExtraCategory {
+export class SideBarExtraCategory {
   constructor(extraCategories){
     this.extraCategories = extraCategories;
     this.emptyString = '';

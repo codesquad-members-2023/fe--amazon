@@ -1,4 +1,4 @@
-export class sideBarMainCategory {
+export class SideBarMainCategory {
   constructor(responsedData){
     this.responsedData = responsedData;
     this.extraCategories = [[]];
