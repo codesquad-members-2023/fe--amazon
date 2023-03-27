@@ -81,7 +81,7 @@
 - [x] 히어로 영역 Carousel UX 구현 (무한 슬라이더)
   - [x] 좌우 화살표
     - [x] 좌우 화살표를 통해 내용을 계속해서 변경가능
-    - [ ] 화살표를 누르지 않는 경우, **자동으로 10초 마다** 다음 내용으로 넘어가도록 함
+    - [x] 화살표를 누르지 않는 경우, **자동으로 10초 마다** 다음 내용으로 넘어가도록 함
   - [ ] 콘텐츠 영역
     - [ ] 이미지의 사이즈에 따라 콘텐츠 높이 다르게 적용
     - [ ] **로딩 인디케이터**를 활용하여 처음 메인 페이지 진입했을 때와 스크롤 내렸을 때 총 2번 사용될 수 있도록 함
@@ -102,7 +102,7 @@
 - [x] 목
   - [x] 리뷰 리팩토링
     - [x] 1. login popup list JS 동적 구현하기
-    - [ ] 2. sideBar class list 제거 코드 수정하기
+    - [x] 2. sideBar class list 제거 코드 수정하기
 - [x] 금
   - [x] Carousel 이미지 이동 구현하기
   - [ ] Sass 으로 변경해보기
@@ -123,12 +123,16 @@
   - [ ] **초기데이터**와 **더보기데이터**를 구분해서 서버와 통신을 통해 가져오기
 
 ### 학습 계획
-- [ ] 월
-  - [ ] Carousel 자동으로 구현하기
-    - [ ] requestAnimationFrame API
-  - [ ] promise/then 방식의 사용법 학습하기 (async,await보다 promise)
-    - [ ] Promise 패턴의 동작 원리 (resolve, reject, then 메서드등)을 이해
+- [x] 월
+  - [x] Carousel 자동으로 구현하기
+    - [x] requestAnimationFrame API
+  - [x] promise/then 방식의 사용법 학습하기 (async,await보다 promise)
+    - [x] Promise 패턴의 동작 원리 (resolve, reject, then 메서드등)을 이해
   - [ ] fetch API 사용법 학습하기
 - [ ] 화
+  - [ ] **Promise PR** 날리기
   - [ ] sass 학습하고 적용하기
   - [ ] stacking context 개념 학습하기
+  - [ ] for문을 활용해서 reduce처럼 동작하는 함수를 만들어보기
+- [ ] 수
+  - [ ] 고민생각하기
