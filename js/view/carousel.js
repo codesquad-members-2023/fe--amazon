@@ -1,8 +1,11 @@
 class Carousel {
   #directoryPath;
-  constructor(count) {
-    this.CAROUSEL_COUNT = count;
-    this.directoryPath = '/asset/images/carousel';
+  #DIRECTION_RIGHT = -1;
+  #DIRECTION_LEFT = 1;
+  constructor({numberOfImages, delayTime, path}) {
+    this.CAROUSEL_COUNT = numberOfImages;
+    this.DELAY_TIME = delayTime;
+    this.#directoryPath = path;
     this.slider = document.querySelector('.slider');
     this.leftBtn = document.getElementById('carousel_left');
     this.rightBtn = document.getElementById('carousel_right');
@@ -17,7 +20,7 @@ class Carousel {
   setImages() {
     const imageFiles = Array.from({ length : this.CAROUSEL_COUNT }, (_, i) => i);
     const imageTemplate = imageFiles.reduce((template, number) => {
-      const img = `<img class="slide" src="${this.directoryPath}/${number}.jpg" alt="carousel 배경이미지${number}">`;
+      const img = `<img class="slide" src="${this.#directoryPath}/${number}.jpg" alt="carousel 배경이미지${number}">`;
       template += img;
       return template;
     }, '');
@@ -31,7 +34,7 @@ class Carousel {
 
   //예상과 타겟이 다르게 동작하는 이유 (undefined로 나옴)-> 비동기와 관련
   translateSlideHandler({ target }) {
-    const direction = target.closest('span').id === 'carousel_left' ? 1 : -1;
+    const direction = target.closest('span').id === 'carousel_left' ? this.#DIRECTION_LEFT : this.#DIRECTION_RIGHT;
     this.translateSlide(direction);
   }
 
@@ -54,11 +57,10 @@ class Carousel {
     let lastTime = 0;
     const moveCarousel = currentTime => {
       let deltaTime = currentTime - lastTime;
-      if (deltaTime > 10000) {
-        console.log(1, currentSlide);
+      if (deltaTime > this.DELAY_TIME) {
         currentSlide++;
         if (currentSlide >= slides.length) currentSlide = 0;
-        this.translateSlide(-1);
+        this.translateSlide(this.#DIRECTION_RIGHT);
         lastTime = currentTime;
       }
       requestAnimationFrame(moveCarousel);
