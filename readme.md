@@ -281,19 +281,19 @@ div {
 ## 🌲 Jayden's Check List
 
 - [x] readme 작성하기
-- [ ] 학습 내용 정리 및 개념 공부
+- [x] 학습 내용 정리 및 개념 공부
   - [x] Sass
   - [x] 애니메이션
   - [x] 웹 페이지 렌더링 과정
   - [x] 프론트엔드의 OOP 그리고 prototype
-  - [ ] 캐로셀 + 무한 슬라이드
+  - [x] 캐로셀 + 무한 슬라이드
 - [ ] 지난번 못다한 내용
   - [x] 사이드바 완성
-  - [ ] 애니메이션 처리
+  - [x] 애니메이션 처리
   - [ ] 구현 시각적인 부분 디테일 살리기
-- [ ] 캐로셀 구현
-  - [ ] 유한 슬라이드
-  - [ ] 무한 슬라이드
+- [x] 캐로셀 구현
+  - [x] 유한 슬라이드
+  - [x] 무한 슬라이드
 
 ## 🌳 Jayden's Record
 
@@ -394,3 +394,54 @@ $jayden-color: #111111;
 - [Sass, Scss](https://www.biew.co.kr/entry/Sass%E3%86%8DSCSS-%EC%86%94%EC%A7%81%ED%95%9C-%EC%9E%A5%E3%86%8D%EB%8B%A8%EC%A0%90-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95)
 - [브라우저에서 페이지를 렌더링하는 방식](https://ajdkfl6445.gitbook.io/study/web/browser-rendering)
 - [window.requestAnimationFrame()](https://developer.mozilla.org/ko/docs/Web/API/window/requestAnimationFrame)
+
+# 🪴 Jayden's Week-04
+
+- `23.03.27(Mon) ~ 23.04.01(Fri)`
+
+## 🌵 Jayden's Keyword
+
+- fetch
+- Promise
+- 비동기 통신 
+- 비동기 네트워크 API
+- 검색창(구현)
+
+## 🌴 Jayden's Rule
+
+- 비동기 통신에 대한 개념을 확실히 잡자
+- fetch api를 깊게 공부하고 활용해보자
+- Promise패턴이 어떻게 동작하는지 이해하기
+- mock server와의 연동
+- (더 나아가보기) nodejs express로 간단한 서버 만들어보기(고민)
+
+## 🌾 Jayden's Learning Plan
+
+- Mon: 학습 계획 작성 및 개념 공부 정리, 리팩토링
+- Tue: 개념 공부 및 검색창 구현 시작(설계)
+- Wed: Node.js(express) 서버 공부(변경 가능)
+- Thu: 간단한 서버 구현 및 검색창 구현(계속)
+- Fri: 개념 복습 및 못다한 구현, 코드 정리
+
+## 🌲 Jayden's Check List
+
+- [x] readme 작성하기
+- [ ] 학습 내용 정리 및 개념 공부
+  - [ ] 비동기 통신
+    - [ ] fetch api(+ axios도 공부만!)
+  - [ ] HTTP 공부 및 복습
+- [ ] 지난번 못다한 내용
+  - [ ] 리팩토링
+  - [ ] 시각적인 부분 디테일
+- [ ] 구현사항
+  - [ ] 검색창 구현
+    - 추천 검색어, 최근 검색어 노출
+    - 키보드를 통한 결과 도출 가능
+    - 실제 검색 결과 노출 view는 없어도 됨
+    - 검색창 자동완성 데이터를 서버와 연동해서 가져오는 방식 활용
+    - get 요청(request) query를 보내 응답(response)을 받는다.
+  - [ ] nodejs express로 간단한 서버 구현
+
+## 🌳 Jayden's Record
+
+## 🪵 Reference
