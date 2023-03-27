@@ -81,3 +81,19 @@
 - [x] OOP의 기본 개념들 학습
 - [x] Class에 대한 학습
 - [x] Prototype에 대한 학습
+
+# 4주차 체크리스트
+
+### 비동기 프로그래밍
+
+- [ ] 동기/비동기의 차이
+- [ ] 비동기가 있을때에 디버깅
+- [ ] Call Stack & Call Back Queue
+- [ ] 동기 & 비동기의 순서 이해해보기
+
+### 비동기 데이터 통신(Fetch API)
+
+- [ ] Fetch & Promise 패턴
+- [ ] JSON에 대한 이해
+- [ ] Fetch API
+- [ ] Promise에 대한 학습
