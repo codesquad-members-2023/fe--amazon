@@ -11,9 +11,10 @@ Track.prototype.moveTrack = function (direction) {
   } else if (direction === "right") {
     this.directionByNum = -1;
   }
+  const trackWidthPercent = 100 / banners.imgList.length;
   this.element.style.transition = "transform .5s ease-in-out";
   this.element.style.transform = `translateX(${
-    (this.directionByNum * 100) / banners.imgList.length
+    this.directionByNum * trackWidthPercent
   }%)`;
   this.element.ontransitionend = () => {
     this.reorgannizeEl(direction);
