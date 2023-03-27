@@ -1,40 +1,54 @@
-.carousel {
+.carousel_container {
   position: relative;
-  height: 500px;
+  height: 512px;
   overflow: hidden; }
-  .carousel_container {
+  .carousel_container .carousel {
     width: calc(5 * 100vw);
     padding: 0;
     margin: 0;
+    transform: translateX(-100vw);
     display: flex;
     justify-content: space-between;
     align-items: center; }
-  .carousel_item {
-    width: 100vw;
-    height: 500px;
-    list-style: none;
-    background-size: cover;
-    background-position: top center; }
-    .carousel_item:nth-child(1) {
-      background-image: url(/src/assets/images/carousel1.jpg); }
-    .carousel_item:nth-child(2) {
-      background-image: url(/src/assets/images/carousel2.jpg); }
-    .carousel_item:nth-child(3) {
-      background-image: url(/src/assets/images/carousel3.jpg); }
-    .carousel_item:nth-child(4) {
-      background-image: url(/src/assets/images/carousel4.jpg); }
-    .carousel_item:nth-child(5) {
-      background-image: url(/src/assets/images/carousel5.jpg); }
-  .carousel_button {
+    .carousel_container .carousel .carousel_item {
+      width: 100vw;
+      height: 512px;
+      list-style: none;
+      background-size: cover;
+      background-position: top center; }
+      .carousel_container .carousel .carousel_item:nth-child(1) {
+        background-image: url(/src/assets/images/carousel5.jpg); }
+      .carousel_container .carousel .carousel_item:nth-child(2) {
+        background-image: url(/src/assets/images/carousel1.jpg); }
+      .carousel_container .carousel .carousel_item:nth-child(3) {
+        background-image: url(/src/assets/images/carousel2.jpg); }
+      .carousel_container .carousel .carousel_item:nth-child(4) {
+        background-image: url(/src/assets/images/carousel3.jpg); }
+      .carousel_container .carousel .carousel_item:nth-child(5) {
+        background-image: url(/src/assets/images/carousel4.jpg); }
+  .carousel_container .carousel_button_container {
     position: absolute;
-    width: 24px;
-    height: 40px; }
-    .carousel_button.prev {
-      left: 110px;
-      top: 90px; }
-    .carousel_button.next {
-      right: 110px;
-      top: 90px; }
+    width: 100%;
+    height: 60%;
+    top: 0px; }
+    .carousel_container .carousel_button_container .carousel_button {
+      position: absolute;
+      width: 100px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+      cursor: pointer; }
+      .carousel_container .carousel_button_container .carousel_button:focus {
+        border-width: 2px;
+        border-style: outset;
+        border-color: gray;
+        border-radius: 4px; }
+    .carousel_container .carousel_button_container .prev {
+      left: 0px;
+      top: 0px; }
+    .carousel_container .carousel_button_container .next {
+      right: 0px;
+      top: 0px; }
 
 .sidebar_main {
   position: absolute;

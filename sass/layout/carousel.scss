@@ -1,57 +1,78 @@
-.carousel {
+.carousel_container {
   position: relative;
-  height: 500px;
+  height: 512px;
   overflow: hidden;
 
-  &_container {
+  .carousel {
     width: calc(5 * 100vw);
     padding: 0;
     margin: 0;
-    // transform: translateX(-200px);
+    transform: translateX(-100vw);
+    // translateX에 대한 기준 필요
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .carousel_item {
+      width: 100vw;
+      height: 512px;
+      list-style: none;
+      background-size: cover;
+      background-position: top center;
+
+      &:nth-child(1) {
+        background-image: url(/src/assets/images/carousel5.jpg);
+      }
+
+      &:nth-child(2) {
+        background-image: url(/src/assets/images/carousel1.jpg);
+      }
+
+      &:nth-child(3) {
+        background-image: url(/src/assets/images/carousel2.jpg);
+      }
+
+      &:nth-child(4) {
+        background-image: url(/src/assets/images/carousel3.jpg);
+      }
+
+      &:nth-child(5) {
+        background-image: url(/src/assets/images/carousel4.jpg);
+      }
+    }
   }
 
-  &_item {
-    width: 100vw;
-    height: 500px;
-    list-style: none;
-    background-size: cover;
-    background-position: top center;
-    &:nth-child(1) {
-      background-image: url(/src/assets/images/carousel1.jpg);
-    }
-
-    &:nth-child(2) {
-      background-image: url(/src/assets/images/carousel2.jpg);
-    }
-
-    &:nth-child(3) {
-      background-image: url(/src/assets/images/carousel3.jpg);
-    }
-
-    &:nth-child(4) {
-      background-image: url(/src/assets/images/carousel4.jpg);
-    }
-
-    &:nth-child(5) {
-      background-image: url(/src/assets/images/carousel5.jpg);
-    }
-  }
-  &_button {
+  .carousel_button_container {
     position: absolute;
-    width: 24px;
-    height: 40px;
+    width: 100%;
+    height: 60%;
+    top: 0px;
 
-    &.prev {
-      left: 110px;
-      top: 90px;
+    .carousel_button {
+      position: absolute;
+      width: 100px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+      cursor: pointer;
+
+      &:focus {
+        border-width: 2px;
+        border-style: outset;
+        border-color: gray;
+        border-radius: 4px;
+        // box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 4px #008296;
+        // 아마존 코드.... 공부 필요
+      }
+    }
+    .prev {
+      left: 0px;
+      top: 0px;
     }
 
-    &.next {
-      right: 110px;
-      top: 90px;
+    .next {
+      right: 0px;
+      top: 0px;
     }
   }
 }
