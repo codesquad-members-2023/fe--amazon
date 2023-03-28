@@ -426,12 +426,12 @@ $jayden-color: #111111;
 ## 🌲 Jayden's Check List
 
 - [x] readme 작성하기
-- [ ] 학습 내용 정리 및 개념 공부
-  - [ ] 비동기 통신
-    - [ ] fetch api(+ axios도 공부만!)
+- [x] 학습 내용 정리 및 개념 공부
+  - [x] 비동기 통신
+    - [x] fetch api(+ axios도 공부만!)
   - [ ] HTTP 공부 및 복습
 - [ ] 지난번 못다한 내용
-  - [ ] 리팩토링
+  - [x] 리팩토링(간단한 부분은 완료, 진행하면서 더 다듬기)
   - [ ] 시각적인 부분 디테일
 - [ ] 구현사항
   - [ ] 검색창 구현
@@ -444,8 +444,69 @@ $jayden-color: #111111;
 
 ## 🌳 Jayden's Record
 
+### 동기(synchronous)?
+
+- 동시에 일어난다는 의미로, 여기서 동시에 일어난다는 것은 `요청`과 `결과`가 동시에 일어난다는 의미
+- 앞의 코드가 아직 실행 중이라면 그 실행이 끝날 때까지 기다려야한다.(블로킹)
+- 설계가 매우 간단하고 직관직이다.
+
+### 비동기(asynchronous)?
+
+- 동시에 일어나지 않는다는 의미로, 여기서 동시에 일어나지 않는다는 것은 `요청`과 `결과`가 같은 자리에서 동시에 일어나지 않음을 의미
+- 동기보다 복잡하지만 결과가 주어지는데 시간이 걸리더라도 그 시간에 다른 작업을 할 수 있어, 시간적으로 좀더 효율적이다.
+
+### setTimeout의 동작원리?
+
+```js
+setTimeout(() => console.log('비동기입니다.'), 10000);
+```
+
+setTimeout은 브라우저의 V8 엔진 자체에 내장되어있는 함수가 아니다. 웹 브라우저가 제공하는 api인 WEB API 중 하나이다.
+실행되면 10000ms 즉, 10초 뒤에 cb(callback) 함수를 실행해달라는 이벤트가 등록되고 10초 뒤에 cb가 실행된다.
+
+### 아래의 말을 이해해보기
+
+`자바스크립트는 싱글 쓰레드 기반이며 논 블로킹 방식의 비동기적인 동시성 언어이며 콜 스택, 이벤트 루프와 콜백 큐 그리고 여러가지 다른 API들을 가지고 있다.`
+
+- 자바스크립트는 싱글 쓰레드이지만, 실행되는 환경(브라우저, nodejs 등)에서 제공하는 event loop, callback queue를 통해 비동기적으로 작동할 수 있다.
+
+### JSON(JavaScript Object Notation)
+
+- 이전에는 주로 XML 형식으로 서버에 데이터를 요청했다. 하지만 이후 비동기적으로 데이터를 요청해서 받을 수 있는 방법이 생겨나면서 JSON 형식의 데이터를 받아올 수 있게 되었다.
+- 사실상 XML은 이제 거의 잘 안쓰이고 있으며, JSON 형태를 거의 표준처럼 사용하고 있다. 클라이언트에서 데이터를 보낼 때나 받을 때 모두 JSON 형태를 사용할 수 있다.
+
+### fetch api
+
+- 기존에는 XMLHTTPRequest 객체를 통해 비동기 데이터 통신을 진행하였다.
+- 점점 비동기 요청이 더 복잡하고 증가되면서, 비동기통신 로직에 보기 좋은 패턴이 적용되고 있다.
+- fetch api는 프로미스 패턴을 사용하여 비동기 로직을 좀더 동기적으로 보이게끔 해준다.(가독성을 높여준다.)
+
+### Promise 패턴
+
+- Promise 객체를 사용하여 비동기 처리를 동기적인 것처럼 보여주는 패턴이다.
+
+### Promise: all vs allSettled
+
+- Promise.all(): 모든 Promise 객체가 fulfilled되면 resolve한 값들의 배열을 반환. 단, 하나라도 에러 발생 시 즉시 reject한 값 반환.
+- Promise.allSettled(): fulfilled와 rejected 상관없이 모든 Promise 객체가 settled가 되면 그 결과를 반환해준다.
+
+### Promise: race vs any
+
+- Promise.race(): fulfilled든 rejected든 그저 가장 먼저 settled된 값을 반환한다.
+- Promise.any(): 먼저 처리된 상태들 중에서 fulfilled인 상태만 반환한다.(만약 모든 Promise에서 fulfilled가 없다면 `AggregateError` 발생)
+
+### Promise의 then
+
+- Promise를 통해 resolve와 reject 함수를 실행시킬 수 있다.
+- 이 때, 어떤 값을 resolve하게 되면 그 때 우리는 그 값을 then의 내부 콜백함수의 파라미터로 받아서 로직을 처리할 수 있다.
+- 좀 단순하게 생각해보자면, `then(cb)`를 통해서 우리는 `resolve`가 발생했을 때(이벤트 개념), then으로 전달한 `cb`를 resolve로 전달한 값과 함께 `micro task queue`에 보내게 된다.
+
+
 ## 🐛 Jayden's Problem
 
 
-
 ## 🪵 Reference
+
+- [동기와 비동기](https://private.tistory.com/24)
+- [이벤트 루프란?](https://baeharam.netlify.app/posts/javascript/event-loop)
+- [이벤트루프란 무엇인가? - JSConf](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
