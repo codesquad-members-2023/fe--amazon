@@ -11,6 +11,7 @@ export default class CarouselMaker {
     this.getCarouselItem();
     this.setCarouselItem();
     this.setCarouselEvent();
+    this.setCarouselDelay();
   }
 
   setCarouselItem() {
@@ -37,7 +38,6 @@ export default class CarouselMaker {
   }
 
   resortCarousel(translateDirection) {
-    console.log(1);
     this.carousel.removeAttribute('style');
     translateDirection === 1
       ? this.carousel.insertBefore(this.carousel.lastElementChild, this.carousel.firstElementChild)
@@ -49,5 +49,11 @@ export default class CarouselMaker {
     this.carousel.style.transform = `translateX(${translateDirection * (100 / 5)}%)`;
     this.carousel.style.transitionDuration = '500ms';
     this.carousel.ontransitionend = () => this.resortCarousel(translateDirection);
+  }
+
+  setCarouselDelay() {
+    setInterval(() => {
+      this.translateCarousel({ target: { className: 'carousel_button next' } });
+    }, 3000);
   }
 }
