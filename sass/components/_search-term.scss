@@ -1,0 +1,25 @@
+.search-term {
+  position: absolute;
+  // top값 바꾸기
+  top: 4.9rem;
+  border-radius: 4px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+
+  &__auto-complted-items {
+    // 임시
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__auto-completed-item {
+    padding: 8px 12px;
+    color: cornflowerblue;
+  }
+
+  &__recent-history-item {
+    padding: 8px 12px;
+    color: red;
+  }
+}
