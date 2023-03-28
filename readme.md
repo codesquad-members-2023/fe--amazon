@@ -84,21 +84,22 @@ HTML, CSS, JavaScript를 사용하여 아마존 웹페이지를 만들어본다.
   - [x] : 콜스텍과 콜백큐
   - [x] : 비동기 함수 (콜백함수)
   - [x] : 콜백 헬
-- [ ] : Promise
-- [ ] : 비동기 네트워크 API
+- [x] : Promise
+- [x] : 비동기 네트워크 API
 - [ ] : fetch API
-  - [ ] : fetch API 예제
+  - [x] : fetch API 예제
   - [ ] : Promise 패턴
   - [ ] : Promise 메서드 활용
-- [ ] : mock server
-- [ ] : json-server
+- [x] : json-server
 - [ ] : MSW
+- [ ] : mock server
 
 ### 🗂️ 구현 학습 계획
 
-- [ ] : mock server 개발
-  - [ ] : json-server
+- [x] : json-server
+  - [x] : mock 데이타 받아오기
 - [ ] : 검색창(바) 개발
+  - [ ] : 검색바 하단 레이아웃 구성
   - [ ] : 추천 검색어, 최근 검색어 노출
   - [ ] : 키보드를 통한 검색결과 선택
   - [ ] : 검색 자동완전 기능 개발
