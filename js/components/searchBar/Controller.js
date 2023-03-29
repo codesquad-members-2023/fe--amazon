@@ -3,6 +3,7 @@ import LogicModel from './logicModel.js';
 import View from './View.js';
 
 class Controller {
+  // addEventListener를 여기서 등록해야할까?
   constructor() {
     this.dataModel = new DataModel();
     this.logicModel = new LogicModel();
@@ -11,8 +12,9 @@ class Controller {
 
   init() {
     // 초기 검색창 만들기.
-    this.view.searchBarAddEvent(this.logicModel.searchBarFocusEvent);
-    // this.view.searchBarBtnAddEvent(this.logicModel.searchBarBtnClickEvent);
+    this.view.searchBarAddFocusEvent(this.logicModel.searchBarFocusEvent);
+    this.view.searchBarBtnAddClickEvent(this.logicModel.searchBarBtnClickEvent);
+    this.view.searchBarAddInputEvent();
   }
 }
 
