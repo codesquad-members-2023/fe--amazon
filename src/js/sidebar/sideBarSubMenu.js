@@ -12,7 +12,7 @@ export class SubMenu {
       <div class="sidebar__category sub">
         <div class="sidebar__category__menu">
           <a href="" class="sidebar__contents__btn close-right-menu" onclick="return false;">
-            <img src="asset/leftdir.svg" alt="" class="sidebar__submenu btn close-right-menu">
+            <img src="asset/sidebar/leftdir.svg" alt="" class="sidebar__submenu btn close-right-menu">
             주메뉴
           </a>
           <div class="sidebar__category__title">${this.contentsId}</div>

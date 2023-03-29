@@ -1,17 +1,39 @@
-.carousel__container {
-  display: flex;
+.carousel-container {
   position: fixed;
   overflow: hidden;
   top: 88px;
+  min-width: 800px;
 }
 
-.carousel__card {
+.carousel-btn__container {
+  display: flex;
+  flex-flow: row;
+  position: fixed;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.carousel-btn {
+  padding: 8% 2%;
+  cursor: pointer;
+}
+
+.carousel-card__container {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  left: -100vw;
+}
+
+.carousel-card {
   width: 100vw;
   min-width: 750px;
   padding: 0;
 }
 
-.carousel__image {
+.carousel-image {
   height: 100%;
   width: 100%;
 }

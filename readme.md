@@ -13,6 +13,7 @@
   - [Week2 - midpoint](#roundpushpin-2주차-midpoint)
   - [Week2 - final](#roundpushpin-2주차-final)
   - [Week3 - midpoint](#roundpushpin-3주차-midpoint)
+  - [Week3 - final](#roundpushpin-3주차-final)
 
 ---
 
@@ -180,7 +181,45 @@
 
 #### :five: 금요일 학습계획
 
-- [ ] : 슬라이더 이어서 구현
+- [x] : 슬라이더 이어서 구현
+
+---
+
+### Week4 - 검색 바, 데이터 통신
+
+#### :one: 월요일 학습계획
+
+- [x] : 지난 주 미션 이어서 하기
+  - [ ] : 미션 carousel 구현 마무리
+  - [x] : 미션 관련 개념 정리 마무리
+
+#### :two: 화요일 학습계획
+
+- [ ] : 동기/비동기 개념 학습
+  - [ ] : 동기/비동기 순서 이해
+  - [ ] : async/await 원리 이해 
+    - [ ] : 직접 예시 코드 입력하면서 학습
+  - [ ] : promise 원리 및 기능들 이해
+    - [ ] : 직접 예시 코드 입력하면서 학습
+  - [ ] : 동기/비동기 디버깅 연습
+
+#### :three: 수요일 학습계획
+
+- [ ] : 비동기 데이터 통신 내용 학습
+- [ ] : json-server 학습
+- [ ] : 데이터 통신 미션 구현 시작
+
+#### :four: 목요일 학습계획
+
+- [ ] : midpoint 리뷰 피드백 반영
+- [ ] : 검색창 서버 연동 구현
+
+#### :five: 금요일 학습계획
+
+- [ ] : 슬라이딩 UX, 좌측메뉴 서버 연동 구현
+- [ ] : css stacking context 개념 학습
+
+---
 
 ## 주차별 피드백 및 회고
 
@@ -345,6 +384,8 @@ export class sideBar {
 
 > data 보다 좀더 구체적인 이름으로~
 
+앞으로도 이 데이터가 어떤 데이터인지 변수명에 구체적으로 명시하는 습관을 들이자.
+
 ```js
 const addsideBarClickEvt = (sideBarLayer, dimLayer) => {
   sideBarLayer.addEventListener('click', ({ target, currentTarget }) => {
@@ -388,3 +429,28 @@ makeLayer(){
   , this.emptyString);
 }
 ```
+
+### :round_pushpin: 3주차 Final
+
+```js
+new sideBar(SIDEBAR_DATA).init();
+  const sidebar = new SideBar(SIDEBAR_DATA);
+  sidebar.init();
+  navEvtHandler();
+  sideBarEvtHandler();
+```
+
+> 지난번 말했듯이(?) sidebar 와 sidebareventhandler 통합은 응집도 차원에서 해보는것도 좋습니다. 참고참고
+
+응집도를 고려해서 함수형으로 구현되어 있는 `sideBarEvtHandler()`를 클래스로 수정하고, `SideBar` 클래스 안으로 이동시켰다.
+
+```js
+      ${name}<img src="asset/sidebar/rightdir.svg" alt="" />
+    </a>`
+} else {
+  acc += `
+```
+
+> reduce가 길면 함수로 분리할 부분을 찾아보는것도 좋죠. 여기에서는 else 문안에 있는 template코드를 예를들어 이런식으로 만들어서 호출해도 되고요.
+
+항상 함수 혹은 클래스 구현시, 내부 코드의 길이가 너무 길어서 가독성을 해치는지 고려하자.

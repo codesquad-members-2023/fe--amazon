@@ -1,22 +1,22 @@
 import { navEvtHandler } from "./navEvtHandler.js"
-import { sideBarEvtHandler } from "./sidebar/sideBarEvtHandler.js";
 import { SIDEBAR_DATA } from "./sidebar/sideBarData.js";
 import { SideBar } from "./sidebar/sideBar.js";
 import { Carousel } from "./carousel/carousel.js";
+import { CAROUSEL_DATA } from "./carousel/carouselData.js";
 
 function init(){
   (function (delay) {
-    const loginModal1 = document.querySelector(".modal__login");
-    setTimeout(() => loginModal1.style.display = 'block', delay)
+    const loginModal = document.querySelector(".modal__login");
+    setTimeout(() => loginModal.style.display = 'block', delay)
   })(1000);
 
   const sidebar = new SideBar(SIDEBAR_DATA);
   sidebar.init();
-  navEvtHandler();
-  sideBarEvtHandler();
-
-  const carousel = new Carousel();
+  
+  const carousel = new Carousel(CAROUSEL_DATA);
   carousel.init();
+  
+  navEvtHandler();
 }
 
 init();
