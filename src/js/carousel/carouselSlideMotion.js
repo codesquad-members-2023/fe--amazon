@@ -5,7 +5,7 @@ export class CarouselSlideMotion {
     this.btnLayer = btnLayer;
     [this.leftBtn, this.rightBtn] = [...this.btnLayer.childNodes].filter(node => node.nodeName != '#text');
     this.cardLayer = findSiblingForward(this.btnLayer, 'carousel-card__container');
-    this.DURATION_TIME = 2;
+    this.TRANSITION_DURATION = 2;
     this.AUTO_SLIDE_DURATION = 5000;
   }
 
@@ -17,7 +17,7 @@ export class CarouselSlideMotion {
   startAutoSlide(){
     setInterval(() => {
       this.cardLayer.style.transitionTimingFunction = 'ease-in-out';
-      this.cardLayer.style.transitionDuration = `${this.DURATION_TIME}s`;
+      this.cardLayer.style.transitionDuration = `${this.TRANSITION_DURATION}s`;
       this.cardLayer.style.transform = `translateX(-100vw)`;
       this.cardLayer.ontransitionend = () => this.whenTransitionEnd();
     }, this.AUTO_SLIDE_DURATION);
@@ -26,7 +26,7 @@ export class CarouselSlideMotion {
   addClickEvt(){
     this.leftBtn.addEventListener('click', () => {
       this.cardLayer.style.transitionTimingFunction = 'ease-in-out';
-      this.cardLayer.style.transitionDuration = `${this.DURATION_TIME}s`;
+      this.cardLayer.style.transitionDuration = `${this.TRANSITION_DURATION}s`;
       this.cardLayer.style.transform = `translateX(-100vw)`;
       this.cardLayer.ontransitionend = () => this.whenTransitionEnd();
     })
@@ -34,7 +34,7 @@ export class CarouselSlideMotion {
     this.rightBtn.addEventListener('click', () => {
       const DIRECTION = 'Right'
       this.cardLayer.style.transitionTimingFunction = 'ease-in-out';
-      this.cardLayer.style.transitionDuration = `${this.DURATION_TIME}s`;
+      this.cardLayer.style.transitionDuration = `${this.TRANSITION_DURATION}s`;
       this.cardLayer.style.transform = `translateX(100vw)`;
       this.cardLayer.ontransitionend = () => this.whenTransitionEnd(DIRECTION);
     })
