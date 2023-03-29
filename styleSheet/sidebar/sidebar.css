@@ -111,7 +111,12 @@
 .show_display {
   display: block;
 }
-
+.close_display {
+  display: none;
+}
+.hidden {
+  visibility: hidden;
+}
 .back-to-main {
   display: flex;
   flex-direction: row;

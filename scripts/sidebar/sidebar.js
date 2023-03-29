@@ -1,27 +1,34 @@
-import { COMMON, SIDEBAR, SUBMENU } from "../all/allQuery.js";
-
-const dimmedSidebar = () => {
-  COMMON.DIM.classList.add("show_opacity", "sidebar_index");
-};
-const clearDimmedSidebar = () => {
-  COMMON.DIM.classList.remove("show_opacity", "sidebar_index");
-};
-
-const showSidebar = () => SIDEBAR.ALL.classList.add("show_display");
-const closeSidebar = () => SIDEBAR.ALL.classList.remove("show_display");
-
-const showSidebarDetail = () => SIDEBAR.SUB_DETAIL.classList.add("show_display");
-const closeSidebarDetail = () => SIDEBAR.SUB_DETAIL.classList.remove("show_display");
-
-const sidebarEventListener = () => {
-  SUBMENU.ALLMENU.addEventListener("click", () => {
-    dimmedSidebar();
-    showSidebar();
-  });
-  SIDEBAR.CLOSEBUTTON.addEventListener("click", () => {
-    clearDimmedSidebar();
-    closeSidebar();
-  });
-};
-
-sidebarEventListener();
+class Sidebar {
+  constructor() {
+    this.dim = document.querySelector(".dim-layer");
+    this.sidebar = document.querySelector(".sidebar");
+    this.subMenu = document.querySelector(".sub__all-menu");
+    this.closebtn = document.querySelector(".sidebar__btn_close");
+  }
+  init() {
+    this.eventListner();
+  }
+  dimmedSidebar() {
+    this.dim.classList.add("show_opacity", "sidebar_index");
+  }
+  clearDimmedSidebar() {
+    this.dim.classList.remove("show_opacity", "sidebar_index");
+  }
+  showSidebar() {
+    this.sidebar.classList.add("show_display");
+  }
+  closeSidebar() {
+    this.sidebar.classList.remove("show_display");
+  }
+  eventListner() {
+    this.subMenu.addEventListener("click", () => {
+      this.dimmedSidebar();
+      this.showSidebar();
+    });
+    this.closebtn.addEventListener("click", () => {
+      this.clearDimmedSidebar();
+      this.closeSidebar();
+    });
+  }
+}
+export { Sidebar };

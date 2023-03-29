@@ -1,56 +1,62 @@
-import { SIDEBAR } from "../all/allQuery.js";
 import { TITLE_DETAIL } from "../model/data.js";
 import { SIDEBAR_DETAIL } from "../model/sidebarDetailData.js";
 
-const summarySidebar = () => {
-  SIDEBAR.ALL.addEventListener("click", (e) => {
-    if (e.target.className === "sidebar_menu_summary") SIDEBAR.MENUDETAIL.style.display = "none";
-  });
-};
-
-const detailSidebar = () => {
-  SIDEBAR.MENUALLBUTTON.addEventListener("click", () => {
-    if (!SIDEBAR.MENUDETAIL.innerHTML) {
-      TITLE_DETAIL.forEach((data) => {
-        SIDEBAR.MENUDETAIL.insertAdjacentHTML("beforeend", `<li id=${data.id}><div>${data.title}</div><img src="assets/chevron-right.svg"></li>`);
-      });
-      SIDEBAR.MENUDETAIL.insertAdjacentHTML("beforeend", `<li class="sidebar_menu_summary"><div>간단히 보기<img src="assets/chevron-top.svg"></div></li>`);
-    } else {
-      SIDEBAR.MENUDETAIL.style.display = "";
-    }
-  });
-};
-//메뉴 클릭 시 디테일 메뉴 표시
-const showMainMenuDetail = ({ target: { id } }) => {
-  SIDEBAR_DETAIL.forEach((detailData) => {
-    if (id === detailData.textId && !SIDEBAR.MAIN_MENU_DETAIL.innerHTML) {
-      SIDEBAR.MAIN_MENU_DETAIL.insertAdjacentHTML("beforeEnd", `<div class="sidebar__menu-title">${detailData.title}</div>`);
-      detailData.content.forEach((listMenu) => SIDEBAR.MAIN_MENU_DETAIL.insertAdjacentHTML("beforeEnd", `<li>${listMenu}</li>`));
-    } else {
-      SIDEBAR.MAIN_MENU_DETAIL.style.display = "";
-    }
-  });
-};
-
-const showSidebarDetail = ({ target: { id } }) => {
-  if (id) {
-    SIDEBAR.SUB_DETAIL.classList.add("show_display");
+class SidebarInputData {
+  constructor() {
+    this.sidebar = document.querySelector(".sidebar");
+    this.menuExtend = document.querySelector(".sidebar__all-menu_extend");
+    this.menuAllBtn = document.querySelector(".sidebar__menu-all");
+    this.menuDetailList = document.querySelector(".sidebar__menu_detail");
+    this.menuDetailbox = document.querySelector(".sidebar_detail");
+    this.backMain = document.querySelector(".back-to-main");
   }
-};
+  init() {
+    this.eventList();
+  }
+  summarySidebar({ target: className }) {
+    console.log(className.className);
+    if (className.className === "sidebar_menu_summary") {
+      this.menuExtend.classList.add("close_display");
+    }
+  }
 
-const closeSidebarDetail = () => SIDEBAR.SUB_DETAIL.classList.remove("show_display");
-const deleteSidebarDetail = () => (SIDEBAR.MAIN_MENU_DETAIL.innerHTML = "");
-const showDetail = () => {
-  SIDEBAR.ALL.addEventListener("click", showSidebarDetail);
-  SIDEBAR.ALL.addEventListener("click", showMainMenuDetail);
-  SIDEBAR.BACK_MAIN.addEventListener("click", closeSidebarDetail);
-  SIDEBAR.BACK_MAIN.addEventListener("click", deleteSidebarDetail);
-};
+  saveMenuExtendData() {
+    if (!this.menuExtend.innerHTML) {
+      TITLE_DETAIL.forEach((data) => {
+        this.menuExtend.insertAdjacentHTML("beforeend", `<li id=${data.id}><div>${data.title}</div><img src="assets/chevron-right.svg"></li>`);
+      });
+      this.menuExtend.insertAdjacentHTML("beforeend", `<li class="sidebar_menu_summary"><div>간단히 보기<img src="assets/chevron-top.svg"></div></li>`);
+    } else {
+      this.menuExtend.style.display = "";
+    }
+  }
 
-const sidebarEvent = () => {
-  summarySidebar();
-  detailSidebar();
-  showDetail();
-};
+  showMainMenuDetail({ target: { id } }) {
+    if (id) {
+      this.menuDetailbox.classList.add("show_display");
+    }
+    SIDEBAR_DETAIL.forEach((detailData) => {
+      if (id === detailData.textId && !this.menuDetailList.innerHTML) {
+        this.menuDetailList.insertAdjacentHTML("beforeEnd", `<div class="sidebar__menu-title">${detailData.title}</div>`);
+        detailData.content.forEach((listMenu) => this.menuDetailList.insertAdjacentHTML("beforeEnd", `<li>${listMenu}</li>`));
+      } else {
+        this.menuDetailList.style.display = "";
+      }
+    });
+  }
+  closeSidebarDetail() {
+    this.menuDetailbox.classList.remove("show_display");
+    this.menuDetailList.innerHTML = "";
+  }
 
-sidebarEvent();
+  eventList() {
+    this.sidebar.addEventListener("click", (el) => {
+      this.showMainMenuDetail(el);
+      this.summarySidebar(el);
+    });
+    this.backMain.addEventListener("click", this.closeSidebarDetail.bind(this));
+    this.menuAllBtn.addEventListener("click", this.saveMenuExtendData.bind(this));
+  }
+}
+
+export { SidebarInputData };
