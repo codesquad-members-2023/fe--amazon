@@ -1,12 +1,2 @@
-.sidebar_main {
-  position: absolute;
-  left: 0;
-  opacity: 1;
-  transition: all 250ms ease-in-out;
-
-  &.slide {
-    position: absolute;
-    left: -320px;
-    opacity: 0;
-  }
-}
+@import 'layout/carousel';
+@import 'layout/sidebar';
