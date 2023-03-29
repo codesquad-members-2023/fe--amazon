@@ -117,6 +117,10 @@
   - [ ] 검색자동완성을 json-server와 연동해서 가져오는 방식으로 개발
   - [ ] get방식으로 query보내고 응답데이터를 받아옴
   - [ ] mock server (json-server) 이용
+  - [ ] **TEST CASE**
+    - [ ] 1. 검색바 클릭했을 경우, 10개의 레이어를 띄우고 배경은 딤처리가 되야한다.
+    - [ ] 2. 방향키를 통해 검색어 목록 이동이 가능해야하며 배경색이 포커싱되야한다.
+    - [ ] 3. 검색어 입력시, 실시간 자동 완성 데이터가 10개 표시되어야한다.
 - [ ] 슬라이딩 UX
   - [ ] 초기데이터를 json-server와 연동해서 가져오기
 - [ ] 좌측메뉴
@@ -128,11 +132,13 @@
     - [x] requestAnimationFrame API
   - [x] promise/then 방식의 사용법 학습하기 (async,await보다 promise)
     - [x] Promise 패턴의 동작 원리 (resolve, reject, then 메서드등)을 이해
-  - [ ] fetch API 사용법 학습하기
-- [ ] 화
-  - [ ] **Promise PR** 날리기
+- [x] 화
+  - [x] fetch API
+  - [x] Promise 패턴의 동작 원리
+- [x] 수
+  - [x] Promise PR 날리기
+  - [ ] 검색창 구현 설계하기
   - [ ] sass 학습하고 적용하기
   - [ ] stacking context 개념 학습하기
-  - [ ] for문을 활용해서 reduce처럼 동작하는 함수를 만들어보기
-- [ ] 수
-  - [ ] 고민생각하기
+- [ ] 목
+  - [ ] 
