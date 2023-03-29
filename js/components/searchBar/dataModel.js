@@ -1,6 +1,7 @@
-import API from '../../../utils/server.js';
+import API from '../../utils/server.js';
 
-class SearchStore {
+//SearchStore
+class DataModel {
   searchData;
   constructor() {
     this.getData(API.GET_SEARCH_DATA);
@@ -31,3 +32,5 @@ class SearchStore {
     if (searchLog !== '') this.recentSearchList.add(searchLog);
   }
 }
+
+export default DataModel;
