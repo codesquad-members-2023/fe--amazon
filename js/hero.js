@@ -1,30 +1,34 @@
-import $ from './$.js'
+import $ from './common/$.js'
 class Hero {
-  constructor() {
-
-  }
-
-  // allow button element 가져오기
+  #viewport
+  #imageSize
+  #viewportPosition
+  
   init () {
     const directionBtn = $('.carousel-directionArrows')
+    this.#viewport = directionBtn.previousElementSibling.firstElementChild
+    this.#imageSize = 1500
+    this.#viewportPosition = 0
+
     directionBtn.addEventListener('click', ({ target }) => {
-      const leftBtn = '.carousel-left'
-      const rightBtn = '.carousel-right'
-      const clickedBtn = target.closest('div').classList
+      const [leftButton, rightButton] = 
+        ['.carousel-left', '.carousel-right'].map(className => 
+          target.closest(className)
+        )
 
-      // contains, dataset
-      if (clickedBtn === leftBtn) {
-        
-        return
-      }
-      
-      if (clickedBtn === rightBtn) {
-
-        return
-      }
-      console.log(clickedBtn)
-      
+      if (leftButton) this.slidePrev()
+      if (rightButton) this.slideNext()
     })  
+  }
+  
+  slidePrev() {
+    this.#viewportPosition += this.#imageSize
+    this.#viewport.style.transform = `translateX(${this.#viewportPosition}px)`
+  }
+
+  slideNext() {
+    this.#viewportPosition -= this.#imageSize
+    this.#viewport.style.transform = `translateX(${this.#viewportPosition}px)`
   }
 }
 
