@@ -15,6 +15,9 @@
   color: black;
   background-color: white;
 }
+#header-flyout .header-flyout-search i {
+  margin-right: 10px;
+}
 #header-flyout .header-flyout-search:hover {
   background-color: #eaeded;
 }

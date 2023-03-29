@@ -1,8 +1,5 @@
 {
-  "success": true,
-  "status": 200,
-  "message": "요청이 완료되었습니다.",
-  "data": [
+  "goods": [
     {
       "titleID": 1,
       "keywords": "Sauce - Thousand Island"
