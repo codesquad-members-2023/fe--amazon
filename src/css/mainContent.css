@@ -1,0 +1,41 @@
+@media (max-width: 70rem) {
+  .main-content {
+    width: 70rem;
+  }
+}
+@media (min-width: 70rem) {
+  .main-content {
+    width: 100%;
+  }
+}
+
+.main-content {
+  color: #10141a;
+}
+
+.main-content__slide {
+  position: relative;
+}
+
+.slide-box {
+  overflow-x: hidden;
+}
+.slide-list {
+  display: flex;
+}
+.slide-item {
+  display: inline-block;
+  min-width: 100%;
+}
+.slide-item img {
+  width: 100%;
+}
+.slide-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}

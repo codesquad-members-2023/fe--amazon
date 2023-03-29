@@ -102,17 +102,35 @@
       <img src="./src/image/login.svg" alt="login icon">
       <span>안녕하세요,로그인</span>
     </header>
-    <ul class="side-bar__main">
-      <header class="side-bar__header">디지털 콘텐츠 및 기기</header>
-      <header class="side-bar__header">부서별 쇼핑</header>
-      <li id="show-all-btn">모두 보기<span class="bottom-arrow-icon"></span></li>
-      <ul class="expanded-category">
-        <li id="show-less-btn">간략히 보기<span class="up-arrow-icon"></span></li>
+    <div class="side-bar__content">
+      <ul class="side-bar__main">
+        <header class="side-bar__header">디지털 콘텐츠 및 기기</header>
+        <header class="side-bar__header">부서별 쇼핑</header>
+        <li id="show-all-btn">모두 보기<span class="bottom-arrow-icon"></span></li>
+        <ul class="expanded-category">
+          <li id="show-less-btn">간략히 보기<span class="up-arrow-icon"></span></li>
+        </ul>
       </ul>
-    </ul>
     </div>
   </aside>
-  <section id="main-content"></section>
+  <section class="main-content">
+    <div class="main-content__slide">
+      <div class="slide-box">
+        <div class="slide-list">
+          <a href="" class="slide-item"><img src="./src/image/slide_1.jpg" alt=""></a>
+          <a href="" class="slide-item"><img src="./src/image/slide_2.jpg" alt=""></a>
+          <a href="" class="slide-item"><img src="./src/image/slide_3.jpg" alt=""></a>
+          <a href="" class="slide-item"><img src="./src/image/slide_4.jpg" alt=""></a>
+          <a href="" class="slide-item"><img src="./src/image/slide_5.jpg" alt=""></a>
+          <a href="" class="slide-item"><img src="./src/image/slide_6.jpg" alt=""></a>
+        </div>
+      </div>
+      <div class="slide-btns">
+        <img class="slide-btn slide-prev-btn" src="./src/image/LeftButton.svg" alt="slide left button">
+        <img class="slide-btn slide-next-btn" src="./src/image/RightButton.svg" alt="slide right button">
+      </div>
+    </div>
+  </section>
   <footer id="footer"></footer>
   <div class="dim-cover__in-header dim-cover d-none"></div>
   <div class="dim-cover__in-sideBar dim-cover d-none"></div>

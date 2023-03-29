@@ -3,10 +3,7 @@
 @import './header.css';
 @import './modal.css';
 @import './sideBar.css';
-
-html {
-  overflow-y: scroll;
-}
+@import './mainContent.css';
 
 body {
   background-color: #fff;
@@ -19,6 +16,9 @@ body {
 }
 .d-none {
   display: none;
+}
+.d-block {
+  display: block;
 }
 
 .modal-btn {
