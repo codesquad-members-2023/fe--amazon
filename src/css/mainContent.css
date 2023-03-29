@@ -13,6 +13,10 @@
   color: #10141a;
 }
 
+.main-content__slide {
+  position: relative;
+}
+
 .slide-box {
   overflow-x: hidden;
 }
@@ -21,8 +25,17 @@
 }
 .slide-item {
   display: inline-block;
-  width: 100%;
+  min-width: 100%;
 }
 .slide-item img {
   width: 100%;
+}
+.slide-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  padding: 0 20px;
 }

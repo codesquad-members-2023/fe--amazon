@@ -1,13 +1,11 @@
 import { $, $$ } from './util/dom.js';
 
 export default class Slide {
-  #itemWidthUnit = null;
-
   #itemCount = null;
 
-  #startIdx = 0;
+  #startIdx = 1;
 
-  #slideSpeed = 300;
+  #slideSpeed = 700;
 
   #SELECTOR = {
     SLIDE: '.main-content__slide',
@@ -16,7 +14,11 @@ export default class Slide {
     ITEM: '.slide-item',
     PREV_BTN: '.slide-prev-btn',
     NEXT_BTN: '.slide-next-btn',
-    ACTIVE: '.slide-active',
+  };
+
+  #CLONED_ID = {
+    FIRST: 'cloned-first',
+    LAST: 'cloned-last',
   };
 
   constructor() {
@@ -26,7 +28,6 @@ export default class Slide {
     this.$slideItems = $$(this.#SELECTOR.ITEM, this.$slideList);
 
     this.currentIdx = this.#startIdx;
-    this.$currentSlide = this.$slideItems[this.currentIdx];
 
     this.#itemCount = this.$slideItems.length;
 
@@ -36,67 +37,66 @@ export default class Slide {
     this.renderCopyItems();
   }
 
+  setSlideItems() {
+    this.$slideItems = $$(this.#SELECTOR.ITEM, this.$slideList);
+  }
+
+  setItemCount() {
+    this.#itemCount = this.$slideItems.length;
+  }
+
+  moveSlide({ isTransition = false, idx }) {
+    this.$slideList.style.transform = `translate3d(-${100 * idx}%, 0, 0)`;
+    this.$slideList.style.transition = isTransition ? `${this.#slideSpeed}ms` : 'none';
+  }
+
   renderCopyItems() {
     const firstChild = this.$slideList.firstElementChild;
     const lastChild = this.$slideList.lastElementChild;
     const clonedFirst = firstChild.cloneNode(true);
     const clonedLast = lastChild.cloneNode(true);
 
+    clonedFirst.id = this.#CLONED_ID.FIRST;
+    clonedLast.id = this.#CLONED_ID.LAST;
+
     this.$slideList.insertAdjacentElement('afterbegin', clonedLast);
     this.$slideList.insertAdjacentElement('beforeend', clonedFirst);
 
-    const totalItemCount = this.#itemCount + 2;
+    this.setSlideItems();
+    this.setItemCount();
 
-    this.#itemWidthUnit = 100 / totalItemCount;
-
-    this.$slideList.style.width = `${100 * totalItemCount}%`;
-    this.$slideList.style.transform = `translate3d(-${this.#itemWidthUnit}%, 0, 0)`;
-    this.$currentSlide.classList.add(this.#SELECTOR.ACTIVE);
+    this.moveSlide({ idx: this.currentIdx });
   }
 
   moveLeftHandler() {
-    if (this.currentIdx >= 0) {
-      this.$slideList.style.transition = `${this.#slideSpeed}ms`;
-      this.$slideList.style.transform = `translate3d(-${
-        this.#itemWidthUnit * this.currentIdx
-      }%, 0, 0)`;
-    }
-    if (this.currentIdx === 0) {
-      setTimeout(() => {
-        this.$slideList.style.transition = '0ms';
-        this.$slideList.style.transform = `translate3d(-${
-          this.#itemWidthUnit * this.#itemCount
-        }%, 0, 0)`;
-      }, this.#slideSpeed);
-      this.currentIdx = this.#itemCount;
-    }
-    this.$currentSlide.classList.remove(this.#SELECTOR.ACTIVE);
+    if (this.currentIdx <= 0) return;
     this.currentIdx -= 1;
-    this.$currentSlide = this.$slideItems[this.currentIdx];
-    this.$currentSlide.classList.add(this.#SELECTOR.ACTIVE);
+    this.moveSlide({ isTransition: true, idx: this.currentIdx });
   }
 
   moveRightHandler() {
-    if (this.currentIdx <= this.#itemCount - 1) {
-      this.$slideList.style.transition = `${this.#slideSpeed}ms`;
-      this.$slideList.style.transform = `translate3d(-${
-        this.#itemWidthUnit * (this.currentIdx + 2)
-      }%, 0, 0)`;
-    }
-    if (this.currentIdx === this.#itemCount - 1) {
-      setTimeout(() => {
-        this.$slideList.style.transition = '0ms';
-        this.$slideList.style.transform = `translate3d(-${this.#itemWidthUnit}%, 0, 0)`;
-      }, this.#slideSpeed);
-      this.currentIdx = -1;
-    }
-    this.$currentSlide.classList.remove(this.#SELECTOR.ACTIVE);
+    if (this.currentIdx >= this.#itemCount - 1) return;
     this.currentIdx += 1;
-    this.$currentSlide = this.$slideItems[this.currentIdx];
-    this.$currentSlide.classList.add(this.#SELECTOR.ACTIVE);
+    this.moveSlide({ isTransition: true, idx: this.currentIdx });
+  }
+
+  transitionEndHandler() {
+    const currentSlide = this.$slideItems[this.currentIdx];
+    const clonedIds = Object.values(this.#CLONED_ID);
+
+    if (!clonedIds.includes(currentSlide.id)) return;
+
+    if (currentSlide.id === this.#CLONED_ID.LAST) {
+      this.currentIdx = this.#itemCount - 2;
+    }
+    if (currentSlide.id === this.#CLONED_ID.FIRST) {
+      this.currentIdx = this.#startIdx;
+    }
+    this.moveSlide({ isTransition: false, idx: this.currentIdx });
   }
 
   addEvents() {
+    this.$slideList.addEventListener('transitionend', this.transitionEndHandler.bind(this));
     this.$prevBtn.addEventListener('click', this.moveLeftHandler.bind(this));
     this.$nextBtn.addEventListener('click', this.moveRightHandler.bind(this));
   }
