@@ -26,7 +26,7 @@ export default function textinputStyle() {
       border: none;
       outline: none;
       background: transparent;
-      height: 40px;
+      height: var(--input-hegiht);
       box-sizing: border-box;
     }
 

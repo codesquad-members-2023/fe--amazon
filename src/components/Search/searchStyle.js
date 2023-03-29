@@ -6,17 +6,21 @@ export default function searchStyle(type) {
       display: block;
       position: absolute;
       background-color: white;
-      top: 52px;
-      left: calc(50% - 80px);
-      transform: translateX(-50%);
-      width: 800px;
+      top: calc(var(--input-hegiht) + 8px);
+      width: 100%;
       max-height: 600px;
       overflow-y: scroll;
       z-index: 2;
+      color: var(--gray-800);
+    }
+
+    div {
+      padding: 16px;
     }
 
     li {
       padding: 10px;
+      color: var(--gray-800);
     }
   `;
   return style;
