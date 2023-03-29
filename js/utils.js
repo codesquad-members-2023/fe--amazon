@@ -1,3 +1,5 @@
 const $ = (selector) => document.querySelector(selector);
 
-export { $ };
+const modifyClassList = (selector, className, action) => selector.classList[action](className);
+
+export { $, modifyClassList };

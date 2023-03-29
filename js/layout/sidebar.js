@@ -1,4 +1,4 @@
-import { $ } from "../utils.js";
+import { $, modifyClassList } from "../utils.js";
 import { sidebarCategoryItems } from "../data/sidebarCategory.js";
 
 class Sidebar {
@@ -12,22 +12,35 @@ class Sidebar {
     this.closeCategoryButton = $(".sidebar__category-close");
   }
 
-  openSidebar() {
-    this.openSidebarButton.addEventListener("click", () => {
-      this.sidebar.classList.add("sidebar__active");
-      this.closeSidebarButton.classList.add("button__close-show");
-      this.dimmedLayer.classList.add("dimmed-layer__show");
-      this.dimmedLayer.classList.add("dimmed-layer__zindex");
-    });
+  init() {
+    this.addSidebarCategoryData();
+    this.sidebarEventListener();
   }
 
-  closeSidebar() {
-    this.closeSidebarButton.addEventListener("click", () => {
-      this.sidebar.classList.remove("sidebar__active");
-      this.closeSidebarButton.classList.remove("button__close-show");
-      this.dimmedLayer.classList.remove("dimmed-layer__show");
-      this.dimmedLayer.classList.remove("dimmed-layer__zindex");
-    });
+  sidebarEventListener() {
+    this.openSidebarButton.addEventListener("click", () => this.toggleSidebar());
+    this.closeSidebarButton.addEventListener("click", () => this.toggleSidebar());
+    this.openCategoryButton.addEventListener("click", () => this.openSidebarCategory());
+    this.closeCategoryButton.addEventListener("click", () => this.closeSidebarCategory());
+  }
+
+  toggleSidebar() {
+    modifyClassList(this.sidebar, "sidebar__active", "toggle");
+    modifyClassList(this.closeSidebarButton, "button__close-show", "toggle");
+    modifyClassList(this.dimmedLayer, "dimmed-layer__show", "toggle");
+    modifyClassList(this.dimmedLayer, "dimmed-layer__zindex", "toggle");
+  }
+
+  openSidebarCategory() {
+    modifyClassList(this.sidebarCategory, "sidebar__category-items__show", "add");
+    this.closeCategoryButton.style.display = "block";
+    this.openCategoryButton.style.display = "none";
+  }
+
+  closeSidebarCategory() {
+    modifyClassList(this.sidebarCategory, "sidebar__category-items__show", "remove");
+    this.closeCategoryButton.style.display = "none";
+    this.openCategoryButton.style.display = "block";
   }
 
   addSidebarCategoryData() {
@@ -35,30 +48,6 @@ class Sidebar {
     for (const element of sidebarCategoryItems) {
       this.sidebarCategory.insertAdjacentHTML("beforeend", `<li>${element}<img src="./assets/arrow.svg" /></li>`);
     }
-  }
-
-  openSidebarCategory() {
-    this.openCategoryButton.addEventListener("click", () => {
-      this.sidebarCategory.classList.add("sidebar__category-items__show");
-      this.closeCategoryButton.style.display = "block";
-      this.openCategoryButton.style.display = "none";
-    });
-  }
-
-  closeSidebarCategory() {
-    this.closeCategoryButton.addEventListener("click", () => {
-      this.sidebarCategory.classList.remove("sidebar__category-items__show");
-      this.closeCategoryButton.style.display = "none";
-      this.openCategoryButton.style.display = "block";
-    });
-  }
-
-  runSidebar() {
-    this.openSidebar();
-    this.addSidebarCategoryData();
-    this.closeSidebar();
-    this.openSidebarCategory();
-    this.closeSidebarCategory();
   }
 }
 

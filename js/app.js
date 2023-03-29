@@ -3,10 +3,10 @@ import { Sidebar } from "./layout/sidebar.js";
 
 const main = () => {
   const navigation = new Navigation();
-  navigation.runNavigation();
+  navigation.init();
 
   const sidebar = new Sidebar();
-  sidebar.runSidebar();
+  sidebar.init();
 };
 
 main();
