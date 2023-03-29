@@ -7,6 +7,7 @@
 @import "components/menu-bar.css";
 @import "components/side-bar.css";
 @import "components/side-bar-detail.css";
+@import "scss/components/search-bar.css";
 
 /* SCREENS */
 @import "screens/dimmed.css";

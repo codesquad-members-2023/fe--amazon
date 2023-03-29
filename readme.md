@@ -99,7 +99,7 @@ HTML, CSS, JavaScript를 사용하여 아마존 웹페이지를 만들어본다.
 - [x] : json-server
   - [x] : mock 데이타 받아오기
 - [ ] : 검색창(바) 개발
-  - [ ] : 검색바 하단 레이아웃 구성
+  - [x] : 검색바 하단 레이아웃 구성
   - [ ] : 추천 검색어, 최근 검색어 노출
   - [ ] : 키보드를 통한 검색결과 선택
   - [ ] : 검색 자동완전 기능 개발
@@ -110,5 +110,5 @@ HTML, CSS, JavaScript를 사용하여 아마존 웹페이지를 만들어본다.
 
 [1주차 학습정리](https://stitch-dart-ccd.notion.site/FS-1-6662064ee3424e239fbdfc70219861fb)  
 [2주차 학습정리](https://stitch-dart-ccd.notion.site/FE-2-e7bb31fa82e94bbf9c4978b1641c8834)  
-[3주차 학습정리](https://stitch-dart-ccd.notion.site/FE-3-18051e6e810842afa0a746a2ef42a921)
+[3주차 학습정리](https://stitch-dart-ccd.notion.site/FE-3-18051e6e810842afa0a746a2ef42a921)  
 [4주차 학습정리](https://stitch-dart-ccd.notion.site/FE-4-4f9ac6f84af24f038454e61a8a532b57)
