@@ -1,4 +1,4 @@
-import $ from './$.js'
+import $ from './common/$.js'
 class Hero {
   #viewport
   #imageSize

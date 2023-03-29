@@ -139,7 +139,7 @@
 - mock server 연동
   - [ ] json-server or MSW or 기타
 - 서버 연동 데이터 가져오기
-  - [ ] 슬라이딩 UX
+  - [x] 슬라이딩 UX
   - [ ] 좌측 메뉴
 
 ## 📒 reference
