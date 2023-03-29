@@ -1,0 +1,37 @@
+.homeHeader-center {
+  position: relative;
+}
+
+#header-flyout {
+  position: absolute;
+  width: 100%;
+  padding: 0 15px;
+  top: 51px;
+  box-sizing: border-box;
+
+  transition: opacity 0.5s ease-in-out;
+
+  .header-flyout-search {
+    padding: 10px;
+    color: black;
+    background-color: white;
+
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  .header-flyout-search:hover {
+    background-color: #eaeded;
+  }
+}
+
+.hide-opacity {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show-opacity {
+  visibility: visible;
+  opacity: 1;
+}
