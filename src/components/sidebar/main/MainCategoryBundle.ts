@@ -10,36 +10,36 @@ export class MainCategoryBundle extends BaseComponent<HTMLElement> {
     super(`<section class='${MainCategoryBundleStyle}'></section>`);
     const addCategories = () => {
       const menu = menus[menuNumber]!;
-      const bundleTitle = new TextComponent(
+      const bundleTitleComponent = new TextComponent(
         menu.title,
         'var(--color-black)',
         'var(--font-lg)',
         'var(--weight-bold)',
       );
-      bundleTitle.attachTo(this.element);
+      bundleTitleComponent.attachTo(this.element);
 
       menu.categories.forEach((category, i) => {
         if (i > 3) return;
         const categoryComponent = new CategoryComponent(category.name);
-        const subBundle = new SubCategoryBundle(
+        const subBundleComponent = new SubCategoryBundle(
           category.name,
           category.subMenu[0]!.categories,
         );
-        subBundle.attachTo(categoryComponent.element);
+        subBundleComponent.attachTo(categoryComponent.element);
         categoryComponent.element.addEventListener('click', () => {
-          let display = subBundle.element.style.display;
-          subBundle.element.style.display = !display ? 'flex' : 'none';
+          let display = subBundleComponent.element.style.display;
+          subBundleComponent.setStyles({ display: !display ? 'flex' : 'none' });
         });
         categoryComponent.attachTo(this.element, 'beforeend');
       });
+
       if (allShow) {
         const allShow = new CategoryComponent(
           '모두 보기',
           'main',
           'assets/left-sidebar/chevron-down.svg',
         );
-        allShow.element.style.justifyContent = 'flex-start';
-        allShow.element.style.gap = '1rem';
+        allShow.setStyles({ justifyContent: 'flex-start', gap: '1rem' });
         allShow.element.addEventListener('click', () => {
           // 자식 노드 갯수가 메뉴 데이터의 카테고리 갯수를 넘어가면 아래 더 추가 안되게
           if (this.element.childElementCount > menu.categories.length) return;
@@ -50,20 +50,19 @@ export class MainCategoryBundle extends BaseComponent<HTMLElement> {
             categoryComponent.attachTo(this.element, 'beforeend');
           });
 
-          const simpleShowEl = new CategoryComponent(
+          const simpleShowComponent = new CategoryComponent(
             '간단히 보기',
             'main',
             'assets/left-sidebar/chevron-up.svg',
           );
-          simpleShowEl.element.style.justifyContent = 'flex-start';
-          simpleShowEl.element.style.gap = '1rem';
-          simpleShowEl.element.addEventListener('click', () => {
+          this.setStyles({ justifyContent: 'flex-start', gap: '1rem' });
+          simpleShowComponent.element.addEventListener('click', () => {
             // 일단 간단히 보기 누르면 현재 태그의 내부를 초기화하고 다시 함수를 재귀호출하는 것으로 구현
             // 이 부분은 추후에 고쳐야할듯...!
             this.element.innerHTML = '';
             addCategories();
           });
-          simpleShowEl.attachTo(this.element, 'beforeend');
+          simpleShowComponent.attachTo(this.element, 'beforeend');
         });
         allShow.attachTo(this.element, 'beforeend');
       }

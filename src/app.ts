@@ -4,11 +4,11 @@ import { Main } from './Main';
 
 class App {
   constructor(appRoot: HTMLElement) {
-    const header = new Header();
-    const main = new Main();
-    header.attachTo(appRoot, 'beforeend');
-    main.attachTo(appRoot, 'beforeend');
     appRoot.style.overflowX = 'hidden';
+    const headerComponent = new Header();
+    const mainComponent = new Main();
+    headerComponent.attachTo(appRoot, 'beforeend');
+    mainComponent.attachTo(appRoot, 'beforeend');
   }
 }
 

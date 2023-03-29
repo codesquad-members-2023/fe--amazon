@@ -4,6 +4,7 @@ export const SearchBarComponentStyle = style({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
+  position: 'relative',
 });
 
 export const SearchBarInputComponentStyle = style({

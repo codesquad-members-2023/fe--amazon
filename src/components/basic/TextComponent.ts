@@ -9,8 +9,6 @@ export class TextComponent extends BaseComponent<HTMLSpanElement> {
     fontWeight: string = '',
   ) {
     super(`<span class='${TextComponentStyle}'>${text}</span>`);
-    this.element.style.color = color;
-    this.element.style.fontSize = fontSize;
-    this.element.style.fontWeight = fontWeight;
+    this.setStyles({ color, fontSize, fontWeight });
   }
 }

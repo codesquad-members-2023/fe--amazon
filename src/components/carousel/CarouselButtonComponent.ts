@@ -5,20 +5,22 @@ import { SymbolComponent } from '../basic/SymbolComponent';
 export class CarouselButtonComponent extends BaseComponent<HTMLElement> {
   constructor(direction: 'left' | 'right') {
     super(`<button class='${CarouselButtonComponentStyle}'></button>`);
-    const buttonSymbol = new SymbolComponent(
+    const buttonSymbolComponent = new SymbolComponent(
       `/assets/main-carousel/${direction}-button.svg`,
       'transparent',
     );
-    buttonSymbol.element.style.display = 'block';
-    buttonSymbol.element.style.margin = 'auto';
-    buttonSymbol.element.style.width = '1.5rem';
-    buttonSymbol.element.style.height = '100%';
+    buttonSymbolComponent.setStyles({
+      display: 'block',
+      margin: 'auto',
+      width: '1.5rem',
+      height: '100%',
+    });
 
     if (direction === 'left') {
-      this.element.style.left = '0';
+      this.setStyles({ left: '0' });
     } else {
-      this.element.style.right = '0';
+      this.setStyles({ right: '0' });
     }
-    buttonSymbol.attachTo(this.element);
+    buttonSymbolComponent.attachTo(this.element);
   }
 }

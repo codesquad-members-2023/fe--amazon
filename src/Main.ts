@@ -5,7 +5,7 @@ export class Main extends BaseComponent<HTMLElement> {
   constructor() {
     super(`<main></main>`);
 
-    const carousel = new CarouselComponent();
-    carousel.attachTo(this.element);
+    const carouselComponent = new CarouselComponent();
+    carouselComponent.attachTo(this.element);
   }
 }
