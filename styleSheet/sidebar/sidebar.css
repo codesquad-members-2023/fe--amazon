@@ -63,6 +63,7 @@
   text-align: center;
   text-decoration: none;
 }
+.sidebar__menu_detail > li,
 .sidebar__menu > li {
   display: flex;
   flex-direction: row;
@@ -98,7 +99,7 @@
 }
 
 .sidebar_detail {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 3;
 }

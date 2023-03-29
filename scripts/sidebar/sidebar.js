@@ -10,7 +10,8 @@ const clearDimmedSidebar = () => {
 const showSidebar = () => SIDEBAR.ALL.classList.add("show_display");
 const closeSidebar = () => SIDEBAR.ALL.classList.remove("show_display");
 
-
+const showSidebarDetail = () => SIDEBAR.SUB_DETAIL.classList.add("show_display");
+const closeSidebarDetail = () => SIDEBAR.SUB_DETAIL.classList.remove("show_display");
 
 const sidebarEventListener = () => {
   SUBMENU.ALLMENU.addEventListener("click", () => {

@@ -139,7 +139,7 @@
       - [ ] 버블링, 캡쳐링 공부
       - [ ] Event delegation 공부
       - [ ] rem, em 공부
-
+ 
 - 화:
 
       - [ ] native 객체 prototype 활용 정리
