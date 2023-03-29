@@ -1,4 +1,3 @@
-import { getSearchDataAPI } from '@apis/search.js';
 import Search from '@components/Search/Search.js';
 
 const search = document
@@ -37,5 +36,5 @@ function runSearch() {
 }
 
 openSearchInput();
-// closeSearchInput();
+closeSearchInput();
 runSearch();

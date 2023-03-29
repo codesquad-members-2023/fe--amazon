@@ -19,9 +19,10 @@ class Search extends HTMLElement {
   }
 
   showDefaultSearch() {
-    this.clearChildren();
     const empty = document.createElement('div');
+    empty.classList.add('empty');
     empty.innerText = '검색어를 입력해주세요.';
+    this.clearChildren();
     this.div.appendChild(empty);
   }
 
@@ -30,10 +31,7 @@ class Search extends HTMLElement {
   }
 
   showEmpty() {
-    const div = this.shadowRoot.querySelector('div');
-    const empty = document.createElement('');
-    li.innerText = '검색 결과가 없습니다.';
-    ul.appendChild(li);
+    this.clearChildren();
   }
 
   showAction(eventTarget) {
@@ -44,22 +42,28 @@ class Search extends HTMLElement {
 
   closeAction() {
     this.remove();
-    this.backdrop.remove();
   }
 
   runSearch(s = '', page = 1) {
     getSearchDataAPI(s, page).then((datas) => {
+      console.log({ datas });
+      if (datas.length === 0) return this.showEmpty();
       this.clearChildren();
-      console.log({ s, datas });
-      this.renderSearchList(datas);
+      this.renderSearchList({ s, datas });
     });
   }
 
-  renderSearchList(datas) {
+  highlightText({ s, text }) {
+    const regex = new RegExp(s, 'gi');
+    return text.replace(regex, `<span class="highlight">${s}</span>`);
+  }
+
+  renderSearchList({ s, datas }) {
     const ul = document.createElement('ul');
     datas.forEach((data) => {
       const li = document.createElement('li');
-      li.innerText = data.title;
+      const text = data.title;
+      li.innerHTML = this.highlightText({ s, text });
       ul.appendChild(li);
     });
     this.div.append(ul);

@@ -14,13 +14,18 @@ export default function searchStyle(type) {
       color: var(--gray-800);
     }
 
-    div {
+    .empty {
       padding: 16px;
     }
 
     li {
       padding: 10px;
       color: var(--gray-800);
+    }
+
+    .highlight {
+      color: red;
+      font-weight: bold;
     }
   `;
   return style;
