@@ -12,6 +12,10 @@ const SIDEBAR = {
   CLOSEBUTTON: document.querySelector(".sidebar__btn_close"),
   MENUDETAIL: document.querySelector(".sidebar__all-menu_extend"),
   MENUALLBUTTON: document.querySelector(".sidebar__menu-all"),
+  MAIN_MENU_DETAIL: document.querySelector(".sidebar__menu_detail"),
+  SUB_DETAIL: document.querySelector(".sidebar_detail"),
+  MAIN_MENU: document.querySelector(".sidebar__menu"),
+  BACK_MAIN: document.querySelector(".back-to-main"),
 };
 
 const SUBMENU = {
