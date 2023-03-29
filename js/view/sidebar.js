@@ -1,6 +1,6 @@
-import { SIDEBAR_DETAIL } from './data/sidebarData.js';
+import { _ } from './utility.js'
 
-const sideBarEventHandler = () => {
+const onSideBar = (SIDEBAR_DATA) => {
   const $every = document.querySelector('.every');
   const $close = document.getElementById('side_bar_close');
   const $modalBackground = document.querySelector('.modal_background');
@@ -16,7 +16,7 @@ const sideBarEventHandler = () => {
   $viewAll.addEventListener('click', toggleFoldContent);
   $viewSimple.addEventListener('click', toggleFoldContent);
 
-  $sideContainer.addEventListener('click', insertDetailDataHandler);
+  $sideContainer.addEventListener('click', e => insertSidebarData(e, SIDEBAR_DATA));
   $backBtn.addEventListener('click', clickBackBtn);
 }
 
@@ -25,12 +25,10 @@ const openSideBar = e => {
   const $sideBar = document.querySelector('.side_bar');
   const $modalBackground = document.querySelector('.modal_background');
 
-  $sideBar.classList.add('slideRight');
-  $sideBar.classList.add('flex');
-  $sideBar.classList.add('hidden');
-  $sideBar.classList.remove('slideLeft');
-  $modalBackground.classList.remove('hidden');
-  $modalBackground.style.zIndex = '1';
+  _.addClasses($sideBar, 'slideRight', 'flex', 'hidden');
+  _.removeClasses($sideBar, 'slideLeft');
+  _.removeClasses($modalBackground, 'hidden');
+  $modalBackground.style.zIndex = '10';
 }
 
 // 사이드바 닫는 함수 (메인메뉴로 돌아가게끔 재구현 필요함)
@@ -41,11 +39,10 @@ const closeSideBar = e => {
 
   $sideBar.addEventListener('animationend', ({ animationName, target }) => {
     if(animationName === 'slideLeft' && target.className.includes('side_bar')) {
-      $sideBar.classList.add('hidden');
-      $sideBar.classList.remove('flex');
-      $sideBar.classList.remove('slideRight');
-      $modalBackground.classList.add('hidden');
-      $modalBackground.style.zIndex = 'inherit';
+      _.addClasses($sideBar, 'hidden');
+      _.removeClasses($sideBar, 'flex', 'slideRight');
+      _.addClasses($modalBackground, 'hidden');
+      $modalBackground.style.zIndex = '1';
     }
   });
 }
@@ -63,33 +60,32 @@ const toggleFoldContent = ({ target }) => {
   }
 }
 
-const insertDetailDataHandler = ({ target }) => {
+const insertSidebarData = ({ target }, SIDEBAR_DATA) => {
   const isLI = target.closest('li');
   const isId = target.id !== 'view_all' && target.id !== 'view_simple';
 
   if(!isLI || !isId) return;
   if(isLI.tagName === 'LI') {
     const title = isLI.innerText;
-    const isTitle = SIDEBAR_DETAIL.hasOwnProperty(title);
+    const isTitle = SIDEBAR_DATA.hasOwnProperty(title);
     if(!isTitle) return;
-    insertDetailData(title);
+    insertDetailData(title, SIDEBAR_DATA);
   }
 }
 
-const insertDetailData = title => {
+const insertDetailData = (title, SIDEBAR_DATA) => {
   const $tab = document.querySelector('.tab_content');
   const $foldDetail = document.querySelector('.fold_detail');
 
-  const sideBarData = SIDEBAR_DETAIL[title];
-  const dataLI = sideBarData.reduce((list, data) => {
-    list += `<li>${data}</li>`;
-    return list;
+  const sideBarData = SIDEBAR_DATA[title];
+  const sideBarMenuTemplate = sideBarData.reduce((menu, data) => {
+    menu += `<li>${data}</li>`;
+    return menu;
   }, `<h3>${title}</h3><ul>`) + `</ul>`;
 
-  $tab.insertAdjacentHTML('beforeend', dataLI);
-  $foldDetail.classList.remove('slideLeft');
-  $foldDetail.classList.remove('hidden');
-  $foldDetail.classList.add('slideRight');
+  $tab.insertAdjacentHTML('beforeend', sideBarMenuTemplate);
+  _.removeClasses($foldDetail, 'slideLeft', 'hidden');
+  _.addClasses($foldDetail, 'slideRight');
 }
 
 const clickBackBtn = e => {
@@ -97,14 +93,14 @@ const clickBackBtn = e => {
   if ($tab.hasChildNodes()) $tab.replaceChildren();
 
   const $foldDetail = document.querySelector('.fold_detail');
-  $foldDetail.classList.remove('slideRight');
-  $foldDetail.classList.add('slideLeft');
+  _.removeClasses($foldDetail, 'slideRight');
+  _.addClasses($foldDetail, 'slideLeft');
   $foldDetail.addEventListener('animationend', ({ animationName, target }) => {
     if(animationName === 'slideLeft' &&
     target.className.includes('fold_detail')) {
-      $foldDetail.classList.add('hidden');
+      _.addClasses($foldDetail, 'hidden');
     }
   });
 }
 
-export { sideBarEventHandler };
+export { onSideBar };

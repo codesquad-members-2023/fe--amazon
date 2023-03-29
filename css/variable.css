@@ -16,6 +16,12 @@
   --font-weight-semi-bold: 600;
   --font-weight-bold: 800;
 
+  /* z-index*/
+  --z-index--header: 10;
+  --z-index--deem: 1;
+  --z-index--side-bar: 100;
+  --z-index--carousel: 1;
+
   /* color */
   --color-white: #ffffff;
   --color-gray-100: #eff2f2;
@@ -27,7 +33,7 @@
   --color-gray-700: #535353;
   --color-gray-800: #2a3648;
   --color-gray-900: #1b232f;
-  --color-gray-30: rgba(179, 179, 179, 0.3);
+  --color-gray-30: rgba(179, 179, 179, 0.5);
   --color-black: #10141a;
   --color-black-40: rgba(0, 0, 0, 0.4);
   --color-yellow-100: #fed15f;

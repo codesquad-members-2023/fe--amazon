@@ -78,31 +78,67 @@
 
 ## NANII - FE3. Amazon Website
 ### 주요 개발 feature
-- [ ] 히어로 영역 Carousel UX 구현 (무한 슬라이더)
-  - [ ] 좌우 화살표
-    - [ ] 좌우 화살표를 통해 내용을 계속해서 변경가능
-    - [ ] 화살표를 누르지 않는 경우, **자동으로 10초 마다** 다음 내용으로 넘어가도록 함
+- [x] 히어로 영역 Carousel UX 구현 (무한 슬라이더)
+  - [x] 좌우 화살표
+    - [x] 좌우 화살표를 통해 내용을 계속해서 변경가능
+    - [x] 화살표를 누르지 않는 경우, **자동으로 10초 마다** 다음 내용으로 넘어가도록 함
   - [ ] 콘텐츠 영역
     - [ ] 이미지의 사이즈에 따라 콘텐츠 높이 다르게 적용
     - [ ] **로딩 인디케이터**를 활용하여 처음 메인 페이지 진입했을 때와 스크롤 내렸을 때 총 2번 사용될 수 있도록 함
 ### 학습 계획
-- [ ] 월
+- [x] 월
   - [x] Sass
   - [x] Transition 영상 2개
-  - [ ] this (call, bind)
-  - [ ] 자바스크립트 애니메이션 (setInterval, setTimeout, requestAnimationFrame, Animations API)
+  - [x] this (call, bind)
+  - [x] 자바스크립트 애니메이션 (setInterval, setTimeout, requestAnimationFrame, Animations API)
 - [ ] 화
-  - [ ] 객체지향프로그래밍 (class, 캡슐화, 상속, 다형성, 추상화)
+  - [x] 객체지향프로그래밍 (class, 캡슐화, 상속, 다형성, 추상화)
   - [ ] 하드웨어 가속 페이지 정리
   - [x] Carousel 구현 동작에 대해 학습
 - [x] 수
   - [x] 브라우저의 렌더링 과정
   - [x] CSS absolute, relative, min-width
   - [x] Carousel 구현 시도
-- [ ] 목
-  - [ ] 리뷰 리팩토링
-    - [ ] 1. login popup list JS 동적 구현하기
-    - [ ] 2. sideBar class list 제거 코드 수정하기
-  - [ ] Carousel 이미지 이동 구현하기
+- [x] 목
+  - [x] 리뷰 리팩토링
+    - [x] 1. login popup list JS 동적 구현하기
+    - [x] 2. sideBar class list 제거 코드 수정하기
+- [x] 금
+  - [x] Carousel 이미지 이동 구현하기
   - [ ] Sass 으로 변경해보기
-- [ ] 금
+
+## NANII - FE4. Amazon Website
+### 주요 개발 feature
+- [ ] **fetch API** 를 활용해 get/post 요청
+- [ ] 검색창
+  - [ ] 추천검색어, 최근검색어 노출
+  - [ ] 키보드를 통한 검색결과 선택
+  - [ ] 기타 UX 고려한 검색창 기능 설정하기
+  - [ ] 검색자동완성을 json-server와 연동해서 가져오는 방식으로 개발
+  - [ ] get방식으로 query보내고 응답데이터를 받아옴
+  - [ ] mock server (json-server) 이용
+  - [ ] **TEST CASE**
+    - [ ] 1. 검색바 클릭했을 경우, 10개의 레이어를 띄우고 배경은 딤처리가 되야한다.
+    - [ ] 2. 방향키를 통해 검색어 목록 이동이 가능해야하며 배경색이 포커싱되야한다.
+    - [ ] 3. 검색어 입력시, 실시간 자동 완성 데이터가 10개 표시되어야한다.
+- [ ] 슬라이딩 UX
+  - [ ] 초기데이터를 json-server와 연동해서 가져오기
+- [ ] 좌측메뉴
+  - [ ] **초기데이터**와 **더보기데이터**를 구분해서 서버와 통신을 통해 가져오기
+
+### 학습 계획
+- [x] 월
+  - [x] Carousel 자동으로 구현하기
+    - [x] requestAnimationFrame API
+  - [x] promise/then 방식의 사용법 학습하기 (async,await보다 promise)
+    - [x] Promise 패턴의 동작 원리 (resolve, reject, then 메서드등)을 이해
+- [x] 화
+  - [x] fetch API
+  - [x] Promise 패턴의 동작 원리
+- [x] 수
+  - [x] Promise PR 날리기
+  - [ ] 검색창 구현 설계하기
+  - [ ] sass 학습하고 적용하기
+  - [ ] stacking context 개념 학습하기
+- [ ] 목
+  - [ ] 

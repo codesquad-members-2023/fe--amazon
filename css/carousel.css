@@ -2,12 +2,17 @@
   min-width: 70rem;
 }
 
+.carousel_container {
+  overflow: hidden;
+}
+
 .carousel_banner {
   position: absolute;
   width: 70rem;
   height: 250px;
   display: flex;
   justify-content: space-between;
+  z-index: var(--z-index--carousel);
 }
 
 .carousel_btn {
@@ -17,11 +22,22 @@
   cursor: pointer;
 }
 
-.slider {
-  display: flex;
-  overflow: hidden;
+.carousel_btn > img {
+  height: 30px;
 }
 
-.slider > img {
+.carousel_btn:active {
+  box-shadow: 0  0 0 2px #FFF inset, 0 0 0 3px #008296 inset
+}
+
+.slider_container {
+  transform: translateX(-100%);
+}
+
+.slider {
+  display: flex;
+}
+
+.slide {
   width: 100%;
 }

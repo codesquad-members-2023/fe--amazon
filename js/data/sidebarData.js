@@ -1,4 +1,4 @@
-const SIDEBAR_DETAIL = {
+const SIDEBAR_DATA = {
   'Amazon Music': [
     'Amazon Music Unlimited',
     'Amazon Music HD',
@@ -356,4 +356,4 @@ const SIDEBAR_DETAIL = {
   ],
 };
 
-export { SIDEBAR_DETAIL };
+export { SIDEBAR_DATA };
