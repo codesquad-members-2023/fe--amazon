@@ -36,4 +36,8 @@ export class BaseComponent<T extends HTMLElement> implements Base {
   setEventListener(event: string, fn: () => void) {
     this._element.addEventListener(event, fn);
   }
+
+  addChildHtml(htmlString: string) {
+    this._element.innerHTML += htmlString;
+  }
 }

@@ -2,11 +2,12 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as mongoDb from 'mongodb';
 import * as dotenv from 'dotenv';
-
+import * as cors from 'cors';
 dotenv.config();
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 const MongoClient = mongoDb.MongoClient;
 const connection = MongoClient.connect(
@@ -21,7 +22,7 @@ connection
       console.log('listening on 1116');
     });
     app.get('/search', (req, res) => {
-      res.send('서치바 테스트');
+      res.json('테스트 문자열');
     });
   })
   .catch((err) => {

@@ -4,9 +4,11 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var mongoDb = require("mongodb");
 var dotenv = require("dotenv");
+var cors = require("cors");
 dotenv.config();
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 var MongoClient = mongoDb.MongoClient;
 var connection = MongoClient.connect("mongodb+srv://".concat(process.env.MONGO_USER_NAME, ":").concat(process.env.MONGO_PASSWORD, "@").concat(process.env.MONGO_CLUSTER_NAME, ".jy2zpck.mongodb.net/?retryWrites=true&w=majority"));
 var db;
@@ -17,7 +19,7 @@ connection
         console.log('listening on 1116');
     });
     app.get('/search', function (req, res) {
-        res.send('서치바 테스트');
+        res.json('테스트 문자열');
     });
 })["catch"](function (err) {
     console.log("\uC5D0\uB7EC \uBC1C\uC0DD: ".concat(err));
