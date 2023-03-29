@@ -101,3 +101,7 @@
 - [ ] Fetch & Promise 패턴
 - [ ] Fetch API
 - [ ] Promise에 대한 학습
+
+## 자동 검색 완성 바 설계해보기
+
+[설계 정리 노션](https://hoonding.notion.site/ad1b4e70a25d4b64bedffaca0d9aa2a3)
