@@ -25,6 +25,7 @@ import SidebarMainSectionDefault from './Sidebar/SidebarMain/SidebarMainSection/
 import SidebarMainSectionWithFoldingBtn from './Sidebar/SidebarMain/SidebarMainSection/SidebarMainSectionWithFoldingBtn/SidebarMainSectionWithFoldingBtn.js';
 import Slider from './Slider/Slider.js';
 import SliderController from './Slider/SliderController/SliderController.js';
+import Search from './Search/Search.js';
 
 customElements.define('btn-element', Button);
 customElements.define('footer-element', Footer);
@@ -59,3 +60,4 @@ customElements.define(
 );
 customElements.define('slider-element', Slider);
 customElements.define('slider-controller-element', SliderController);
+customElements.define('search-element', Search);
