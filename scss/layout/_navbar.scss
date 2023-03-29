@@ -48,41 +48,6 @@ nav {
   line-height: 16px;
 }
 
-.search {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.search_bar {
-  width: 707px;
-  height: 40px;
-  background-color: #ffffff;
-  border-radius: 4px 0px 0px 4px;
-  padding-left: 9px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  font-size: 13px;
-  line-height: 160%;
-  font-weight: 13px;
-  border-width: 0px;
-  border: 0px;
-  font-family: 'Pretendard';
-}
-
-.search_button {
-  background-color: #fcb057;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0px 4px 4px 0px;
-  padding: 0px 0px 0px 0px;
-  border: 0px;
-  margin-right: 24px;
-}
-
 .country_info {
   display: flex;
   align-items: center;
@@ -95,6 +60,7 @@ nav {
 }
 
 #country {
+  margin-left: 24px;
   margin-right: 4px;
 }
 

@@ -16,9 +16,7 @@ hiddenButton.addEventListener('click', () => {
   hiddenMenus.classList.remove('hidden_menus_appear');
 });
 
-sideBar.addEventListener('click', (e) => {
-  console.log(e.target);
-});
+sideBar.addEventListener('click', (e) => {});
 
 allLink.addEventListener('click', () => {
   // 모두 버튼을 누를 때 애니메이션

@@ -61,21 +61,47 @@
 
 # 3주차 체크리스트
 
+[3주차 학습 정리](https://hoonding.notion.site/3-38a99431d00f46aba4a915793e200be7)
+
 ### CSS 전처리기(Preprocessor) 활용
 
-- [ ] SASS란?
-- [ ] SASS 변수 사용
-- [ ] SASS 중첩 사용
-- [ ] SASS `@mixin` 지시어
+- [x] SASS란?
+- [x] SASS 변수 사용
+- [x] SASS 중첩 사용
+- [x] SASS `@mixin` 지시어
 
 ### 캐로셀(Carouseol) - 무한 슬라이더
 
-- [ ] 애니메이션이란?
-- [ ] VSync,
-- [ ] JS 애니메이션
+- [x] 애니메이션이란?
+- [x] JS 애니메이션
+- [x] requestAnimationFrame 함수에 대한 학습
 
 ### JS에서의 OOP
 
-- [ ] OOP의 기본 개념들 학습
-- [ ] Class에 대한 학습
-- [ ] Prototype에 대한 학습
+- [x] OOP의 기본 개념들 학습
+- [x] Class에 대한 학습
+- [x] Prototype에 대한 학습
+
+# 4주차 체크리스트
+
+### JSON 서버
+
+- [ ] MSW 서버란?
+- [ ] JSON에 대한 이해
+
+### 비동기 프로그래밍
+
+- [ ] 동기/비동기의 차이
+- [ ] 비동기가 있을때에 디버깅
+- [ ] Call Stack & Call Back Queue
+- [ ] 동기 & 비동기의 순서 이해해보기
+
+### 비동기 데이터 통신(Fetch API)
+
+- [ ] Fetch & Promise 패턴
+- [ ] Fetch API
+- [ ] Promise에 대한 학습
+
+## 자동 검색 완성 바 설계해보기
+
+[설계 정리 노션](https://hoonding.notion.site/ad1b4e70a25d4b64bedffaca0d9aa2a3)

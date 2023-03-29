@@ -1,4 +1,4 @@
-import SIDEBAR_DETAIL from '../data/sidebarData.js';
+import SIDEBAR_DETAIL from '../../data/sidebarData.js';
 
 let mainMenuArr = document.querySelectorAll('.sidebar_main_section');
 const sidebar = document.querySelector('.sidebar');
