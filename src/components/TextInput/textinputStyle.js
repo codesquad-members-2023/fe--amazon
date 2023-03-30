@@ -6,14 +6,14 @@ export default function textinputStyle() {
       position: relative;
     }
 
-    form {
+    div {
       display: flex;
       border-radius: 4px;
       background: var(--white);
       padding-right: 40px;
     }
 
-    form:focus-within {
+    div:focus-within {
 
     }
 

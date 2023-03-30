@@ -35,6 +35,8 @@ export default function searchStyle(type) {
       font-size: var(--bold-md-size);
       line-height: var(--bold-md-height);
       word-spacing: var(--bold-md-spacing);
+      display: flex;
+    justify-content: space-between;
     }
 
     li:hover, li:focus {
@@ -47,8 +49,8 @@ export default function searchStyle(type) {
       font-weight: bold;
     }
 
-    #recommend-list.hide {
-      display: none;
+    #history-list li {
+      color: var(--secondary-purple);
     }
   `;
   return style;

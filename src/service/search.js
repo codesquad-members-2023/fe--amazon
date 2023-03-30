@@ -17,6 +17,7 @@ function openSearchInput() {
     if (searchInstance) return;
     searchInstance = new Search();
     searchInstance.showAction(search);
+    deleteHistories();
   });
 }
 
@@ -39,6 +40,47 @@ function runSearch() {
   );
 }
 
+function handleEnterKeyEvent() {
+  searchInput?.addEventListener(
+    'keyup',
+    debounce((e) => {
+      if (e.key === 'Enter') {
+        const searchHistories = getSearchHistories() || [];
+        searchHistories.push({ title: searchInput.value });
+        setSearchHistories(searchHistories);
+      }
+    }, 300)
+  );
+}
+
+function deleteHistories() {
+  const historyList = document
+    .querySelector('navbar-element')
+    .shadowRoot.querySelector('text-input-element')
+    .shadowRoot.querySelector('search-element')
+    .shadowRoot.querySelector('#history-list');
+
+  historyList?.addEventListener('click', (e) => {
+    const li = e.target.parentElement;
+    if (e.target.nodeName !== 'ICON-ELEMENT') return;
+    const searchHistories = getSearchHistories();
+    const newSearchHistories = searchHistories.filter(
+      (history) => history.title !== e.target.previousElementSibling.innerText
+    );
+    setSearchHistories(newSearchHistories);
+    li.remove();
+  });
+}
+
+function getSearchHistories() {
+  return JSON.parse(localStorage.getItem('search-histories'));
+}
+
+function setSearchHistories(histories) {
+  localStorage.setItem('search-histories', JSON.stringify(histories));
+}
+
 openSearchInput();
 // closeSearchInput();
 runSearch();
+handleEnterKeyEvent();

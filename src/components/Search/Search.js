@@ -5,33 +5,12 @@ class Search extends HTMLElement {
   constructor() {
     super();
 
-    const text = this.innerText;
     const shadow = this.attachShadow({ mode: 'open' });
     this.searchList = this.getAttribute('data-search-list');
-    const style = this.getAttribute('style');
-    this.div = document.createElement('div');
+    this.div = document.createElement('ul');
     shadow.append(this.div);
     this.showDefaultSearch();
     this.shadowRoot.append(searchStyle.call(this));
-  }
-
-  showDefaultSearch() {
-    this.loadRecommendItems();
-  }
-
-  loadRecommendItems() {
-    getSearchRecommendItemsAPI(5).then((datas) => {
-      this.clearChildren();
-      this.renderSearchList({ s: '', datas, isRecommendList: true });
-    });
-  }
-
-  clearChildren() {
-    this.div.innerHTML = '';
-  }
-
-  showEmpty() {
-    this.clearChildren();
   }
 
   showAction(eventTarget) {
@@ -44,10 +23,61 @@ class Search extends HTMLElement {
     this.remove();
   }
 
+  removeChildren() {
+    this.div.innerHTML = '';
+  }
+
+  showDefaultSearch() {
+    this.removeChildren();
+    this.loadHistories();
+    this.loadRecommendItems();
+  }
+
+  loadRecommendItems() {
+    getSearchRecommendItemsAPI(5).then((datas) => {
+      this.renderSearchList({ s: '', datas, type: 'recommend' });
+    });
+  }
+
+  loadHistories() {
+    const histories = JSON.parse(
+      localStorage.getItem('search-histories')
+    ).reverse();
+    if (!histories) return;
+    this.renderSearchList({ s: '', datas: histories, type: 'history' });
+  }
+
+  renderSearchList({ s, datas, type = 'search-result' }) {
+    const ul = document.createElement('ul');
+    if (type === 'history') ul.id = 'history-list';
+    if (type === 'recommend') ul.id = 'recommend-list';
+    ul.innerHTML = `${datas.reduce((acc, cur) => {
+      return (
+        acc +
+        `<li>
+        <span>
+        ${
+          type === 'recommend'
+            ? `<icon-element name="arrow-top-right" size="16"></icon-element>`
+            : ''
+        }
+        ${this.highlightText({ s, text: cur.title })}</span>
+        ${
+          type === 'history'
+            ? `<icon-element name="close" size="16"></icon-element>`
+            : ''
+        }
+        </li>
+        `
+      );
+    }, '')}`;
+    this.div.append(ul);
+  }
+
   runSearch(s = '', page = 1) {
     getSearchDataAPI(s, page).then((datas) => {
-      if (datas.length === 0) return this.showEmpty();
-      this.clearChildren();
+      if (datas.length === 0) return this.removeChildren();
+      this.removeChildren();
       this.renderSearchList({ s, datas });
     });
   }
@@ -57,23 +87,6 @@ class Search extends HTMLElement {
       return text.replace(s, `<span class="highlight">${s}</span>`);
     }
     return text;
-  }
-
-  renderSearchList({ s, datas, isRecommendList = false }) {
-    const ul = document.createElement('ul');
-    if (isRecommendList) ul.id = 'recommend-list';
-    ul.innerHTML = `${datas.reduce((acc, cur) => {
-      return (
-        acc +
-        `<li>
-        ${
-          isRecommendList
-            ? `<icon-element name="arrow-top-right" size="16"></icon-element>`
-            : ''
-        }${this.highlightText({ s, text: cur.title })}</li>`
-      );
-    }, '')}`;
-    this.div.append(ul);
   }
 }
 
