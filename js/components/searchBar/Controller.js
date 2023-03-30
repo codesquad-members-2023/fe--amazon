@@ -12,10 +12,11 @@ class Controller {
 
   init() {
     // 초기 검색창 만들기.
-    this.view.searchBarAddFocusEvent();
+    this.view.searchBarAddFocusEvent(this.logicModel.suggestionData);
     this.view.searchBarBtnAddClickEvent();
     this.view.searchBarAddInputEvent(
       this.logicModel.findChunkSizeKeywords.bind(this.logicModel),
+      this.logicModel.suggestionData,
     );
   }
 }

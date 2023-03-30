@@ -708,3 +708,20 @@ nav {
 
 .input_text {
   color: #941387; }
+
+.suggestion_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  flex-direction: row; }
+
+.suggestion_list:hover {
+  background-color: #eff2f2; }
+
+.suggestion_icon {
+  width: 15px;
+  height: 13px;
+  margin-right: 8px; }

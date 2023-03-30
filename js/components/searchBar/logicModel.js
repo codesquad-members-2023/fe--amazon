@@ -3,6 +3,7 @@ class LogicModel {
   // 비지니스 로직.
   constructor() {
     this.CHUNK_SIZE = 10;
+    this.suggestionData = this.getSuggestionData();
   }
 
   async getMatchData(keyword) {
@@ -11,6 +12,16 @@ class LogicModel {
       .then((response) => response.json())
       .then((data) => (result = data))
       .catch((error) => console.error(`error: ${error.message}`));
+    return result;
+  }
+
+  async getSuggestionData() {
+    let result;
+    await fetch(`${API.GET_SUGGESTIONS_DATA}`)
+      .then((response) => response.json())
+      .then((data) => (result = this.getKeywordsFromMatchingData(data)))
+      .catch((error) => console.error(`error: ${error.message}`));
+
     return result;
   }
 

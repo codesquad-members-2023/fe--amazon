@@ -8,9 +8,14 @@ class View {
     this.index = -1;
   }
 
-  searchBarAddFocusEvent() {
-    this.searchBar.addEventListener('focusin', () => {
+  searchBarAddFocusEvent(suggestionData) {
+    this.searchBar.addEventListener('focusin', ({ target }) => {
       this.searchForm.classList.add('flex');
+      if (target.value === '') {
+        suggestionData.then((result) => {
+          this.searchForm.innerHTML = this.generateSuggestionLists(result);
+        });
+      }
     });
 
     this.searchBar.addEventListener('focusout', () => {
@@ -21,7 +26,7 @@ class View {
     });
   }
 
-  searchBarAddInputEvent(compareWithDB) {
+  searchBarAddInputEvent(compareWithDB, suggestionData) {
     this.searchBar.addEventListener('keyup', ({ target, key }) => {
       this.index = -1;
       // 만약 전과 똑같은 것을 요청하면 콜백함수 실행 안하게끔 바꾸기.
@@ -30,6 +35,10 @@ class View {
       if (target.value !== '') {
         compareWithDB(target.value).then((result) => {
           this.render(result, target.value);
+        });
+      } else {
+        suggestionData.then((result) => {
+          this.searchForm.innerHTML = this.generateSuggestionLists(result);
         });
       }
     });
@@ -64,19 +73,36 @@ class View {
   }
 
   render(data, inputText) {
-    this.searchForm.innerHTML = this.generateSuggestionLists(data, inputText);
+    this.searchForm.innerHTML = this.generateMatchingLists(data, inputText);
   }
 
-  generateSuggestionLists(data, inputText) {
+  generateMatchingLists(data, inputText) {
+    const regex = new RegExp(inputText, 'i');
     return data.reduce((acc, cur) => {
       // 이 로직은 Model로 빼기!!!
-      const regex = new RegExp(inputText, 'i');
+      // issue : 전체 단어를 다 받으면 중간에 띄어쓰기가 씹히는 오류.
       const matchResult = cur.match(regex);
       const replaceCur = cur.replace(
         regex,
         `<span class="input_text">${matchResult}</span>`,
       );
       return (acc += `<li class="search_list">${replaceCur}</li>`);
+    }, ``);
+  }
+
+  generateSuggestionLists(suggestionData) {
+    console.log(suggestionData);
+    return suggestionData.reduce((acc, cur) => {
+      const html = `
+      <div class="suggestion_list">
+      
+        <li class="search_list">
+        <image class="suggestion_icon" src="https://m.media-amazon.com/images/S/sash/16Ce0wZkrsCr$en.png"/>
+        ${cur}
+        </li>
+      </div>
+      `;
+      return (acc += html);
     }, ``);
   }
 }
