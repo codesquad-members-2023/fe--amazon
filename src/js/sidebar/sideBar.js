@@ -18,13 +18,13 @@ export class SideBar {
   }
 
   generateCategoryNode(){
-    [this.mainCategory, this.extraCategories] = new SideBarMainCategory(this.responsedData).makeLayer();
-    this.extraCategory = new SideBarExtraCategory(this.extraCategories).makeLayer();
+    [this.mainCategoryHTML, this.extraCategoriesData] = new SideBarMainCategory(this.responsedData).makeLayer();
+    this.extraCategoryHTML = new SideBarExtraCategory(this.extraCategoriesData).makeLayer();
   }
 
   attachMainCategory(){
     const sideBarMainCategory = document.querySelector('.sidebar__menu.main');
-    sideBarMainCategory.innerHTML = this.mainCategory;
+    sideBarMainCategory.innerHTML = this.mainCategoryHTML;
   }
    
   attachExtraCategory(){
@@ -34,9 +34,9 @@ export class SideBar {
       return targets;
     }, []);
 
-    idsToAttachExtraCategory.forEach(id => {
+    idsToAttachExtraCategory.forEach((id, index) => {
       const category = document.querySelector(`.sidebar__category.${id}`);
-      category.insertAdjacentHTML('afterend', this.extraCategory);
+      category.insertAdjacentHTML('afterend', this.extraCategoryHTML[index]);
     });
   }
 

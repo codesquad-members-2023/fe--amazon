@@ -34,7 +34,6 @@ export class SideBarLayer {
 
   openSubMenu(target){
     const categoryId = findUpWard(target, '.sidebar__category').dataset.categoryId;
-    // contentsId 삭제하고, subMenu Title 가져오는 로직 구현 필요
     const contentsId = findUpWard(target, '.sidebar__contents').dataset.contentsId;
     const subMenu = new SubMenu(this.responsedData, categoryId, contentsId).makeLayer();
     const sideBarMenuChilds = findUpWard(target, '.sidebar__container').lastElementChild.childNodes;

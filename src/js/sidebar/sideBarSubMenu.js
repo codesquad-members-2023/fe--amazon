@@ -1,12 +1,13 @@
 export class SubMenu {
-  constructor(responsedData, categoryId, contentsId){
+  constructor(responsedData, categoryId ,contentsId){
     this.responsedData = responsedData;
-    this.categoryId = categoryId;
+    this.categoryId = categoryId
     this.contentsId = contentsId;
     this.emptyString = '';
   }
 
   makeLayer(){
+    const [title, categories] = this.getDetailInfo();
     return `
     <div class="sidebar__menu sub" data-contents-id="${this.contentsId}">
       <div class="sidebar__category sub">
@@ -15,21 +16,21 @@ export class SubMenu {
             <img src="asset/sidebar/leftdir.svg" alt="" class="sidebar__submenu btn close-right-menu">
             주메뉴
           </a>
-          <div class="sidebar__category__title">${this.contentsId}</div>
-          ${this.makeDetail()}
+          <div class="sidebar__category__title">${title}</div>
+          ${this.makeContentNodes(categories)}
         </div>
       </div>
     </div>
     `;
   }
 
-  makeDetail(){
+  getDetailInfo(){
     const targetCategory = this.responsedData.find(({ id }) => id === this.categoryId).categories;
     const targetSubMenu = targetCategory.find(({ id }) => id === this.contentsId).subMenu;
-    return targetSubMenu.reduce((acc, { categories }) => acc + this.makeSubMenuContents(categories), this.emptyString);
+    return [targetSubMenu[0].title, targetSubMenu[0].categories];
   }
 
-  makeSubMenuContents(categories){
+  makeContentNodes(categories){
     return categories.reduce((acc, content) => acc + `<a href="" class="sidebar__contents sub">${content}</a>`, this.emptyString);
   }
 }

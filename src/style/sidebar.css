@@ -157,6 +157,7 @@
   font-weight: var(--weight-medium);
   color: var(--color-black);
   gap: 3%;
+  cursor: pointer;
 }
 
 .sidebar__contents.sub {

@@ -447,6 +447,114 @@ export const SIDEBAR_DATA = [
     ],
   },
   {
+    title: '여행 정보',
+    id: 'sidebar-sub-trip',
+    categories: [
+      {
+        name: '전자',
+        id: 'etc-digit',
+        subMenu: [
+          {
+            title: '전자',
+            categories: [
+              '액세서리 및 용품',
+              '카메라 및 사진',
+              '자동차 및 전자기기',
+              '휴대폰 및 액세서리',
+              'GPS 및 내비게이션',
+              '헤드폰',
+            ],
+          },
+        ],
+      },
+      {
+        name: '컴퓨터',
+        id: 'etc-computer',
+        subMenu: [
+          {
+            title: '컴퓨터',
+            categories: [
+              '컴퓨터 액세서리 및 주변기기',
+              '컴퓨터 구성품',
+              '컴퓨터 및 테블릿',
+              '웹 플레이어 열기',
+              '웹 플레이어 열기',
+              'Download the app',
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Alexa 스마트 홈',
+        id: 'etc-alexa',
+        subMenu: [
+          {
+            title: 'Alexa 스마트홈',
+            categories: [
+              'Amazon 스마토홈',
+              '스마트 홈 조명',
+              '스마트 잠금 및 입력',
+              '웹 플레이어 열기',
+              '웹 플레이어 열기',
+              'Download the app',
+            ],
+          },
+        ],
+      },
+      {
+        name: '예술 및 공예',
+        id: 'etc-art',
+        subMenu: [
+          {
+            title: '음악 스트리밍',
+            categories: [
+              'Amazon Music Unlimited',
+              'Amazon Music HD',
+              'Podcast',
+              '웹 플레이어 열기',
+              '웹 플레이어 열기',
+              'Download the app',
+            ],
+          },
+        ],
+      },
+      {
+        name: '자동차 용품',
+        id: 'etc-car',
+        subMenu: [
+          {
+            title: '음악 스트리밍',
+            categories: [
+              'Amazon Music Unlimited',
+              'Amazon Music HD',
+              'Podcast',
+              '웹 플레이어 열기',
+              '웹 플레이어 열기',
+              'Download the app',
+            ],
+          },
+        ],
+      },
+      {
+        name: '유아',
+        id: 'etc-baby',
+        subMenu: [
+          {
+            title: '음악 스트리밍',
+            categories: [
+              'Amazon Music Unlimited',
+              'Amazon Music HD',
+              'Podcast',
+              '웹 플레이어 열기',
+              '웹 플레이어 열기',
+              'Download the app',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
     title: '프로그램 및 기능',
     id: 'sidebar-sub-section-program-function',
     categories: [
