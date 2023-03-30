@@ -1,0 +1,15 @@
+.slide__box {
+  overflow: hidden;
+}
+
+.slide__list {
+  display: flex;
+}
+
+.content {
+  width: 100%;
+}
+
+.slide__button {
+  
+}
