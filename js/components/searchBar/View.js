@@ -69,9 +69,12 @@ class View {
 
   generateSuggestionLists(data, inputText) {
     return data.reduce((acc, cur) => {
+      // 이 로직은 Model로 빼기!!!
+      const regex = new RegExp(inputText, 'i');
+      const matchResult = cur.match(regex);
       const replaceCur = cur.replace(
-        inputText,
-        `<span class="input_text">${inputText}</span>`,
+        regex,
+        `<span class="input_text">${matchResult}</span>`,
       );
       return (acc += `<li class="search_list">${replaceCur}</li>`);
     }, ``);
