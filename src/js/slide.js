@@ -5,7 +5,9 @@ export default class Slide {
 
   #startIdx = 1;
 
-  #slideSpeed = 700;
+  #currentIdx = null;
+
+  #SLIDE_SPEED = 700;
 
   #SELECTOR = {
     SLIDE: '.main-content__slide',
@@ -21,13 +23,15 @@ export default class Slide {
     LAST: 'cloned-last',
   };
 
+  #INTERVAL_TIME = 10000;
+
   constructor() {
     this.$slide = $(this.#SELECTOR.SLIDE);
     this.$slideBox = $(this.#SELECTOR.BOX, this.$slide);
     this.$slideList = $(this.#SELECTOR.LIST, this.$slideBox);
     this.$slideItems = $$(this.#SELECTOR.ITEM, this.$slideList);
 
-    this.currentIdx = this.#startIdx;
+    this.#currentIdx = this.#startIdx;
 
     this.#itemCount = this.$slideItems.length;
 
@@ -35,6 +39,9 @@ export default class Slide {
     this.$nextBtn = $(this.#SELECTOR.NEXT_BTN, this.$slide);
 
     this.renderCopyItems();
+
+    this.startTime = null;
+    this.setAutoSlideMoving();
   }
 
   setSlideItems() {
@@ -45,9 +52,23 @@ export default class Slide {
     this.#itemCount = this.$slideItems.length;
   }
 
+  setAutoSlideMoving() {
+    const moveAuto = (timestamp) => {
+      if (!this.startTime) this.startTime = timestamp;
+      const progress = timestamp - this.startTime;
+      if (progress >= this.#INTERVAL_TIME) {
+        this.moveRightHandler();
+        this.startTime = null;
+      }
+      requestAnimationFrame(moveAuto);
+    };
+
+    requestAnimationFrame(moveAuto);
+  }
+
   moveSlide({ isTransition = false, idx }) {
     this.$slideList.style.transform = `translate3d(-${100 * idx}%, 0, 0)`;
-    this.$slideList.style.transition = isTransition ? `${this.#slideSpeed}ms` : 'none';
+    this.$slideList.style.transition = isTransition ? `${this.#SLIDE_SPEED}ms` : 'none';
   }
 
   renderCopyItems() {
@@ -65,34 +86,36 @@ export default class Slide {
     this.setSlideItems();
     this.setItemCount();
 
-    this.moveSlide({ idx: this.currentIdx });
+    this.moveSlide({ idx: this.#currentIdx });
   }
 
   moveLeftHandler() {
-    if (this.currentIdx <= 0) return;
-    this.currentIdx -= 1;
-    this.moveSlide({ isTransition: true, idx: this.currentIdx });
+    if (this.#currentIdx <= 0) return;
+    this.startTime = null;
+    this.#currentIdx -= 1;
+    this.moveSlide({ isTransition: true, idx: this.#currentIdx });
   }
 
   moveRightHandler() {
-    if (this.currentIdx >= this.#itemCount - 1) return;
-    this.currentIdx += 1;
-    this.moveSlide({ isTransition: true, idx: this.currentIdx });
+    if (this.#currentIdx >= this.#itemCount - 1) return;
+    this.startTime = null;
+    this.#currentIdx += 1;
+    this.moveSlide({ isTransition: true, idx: this.#currentIdx });
   }
 
   transitionEndHandler() {
-    const currentSlide = this.$slideItems[this.currentIdx];
+    const currentSlide = this.$slideItems[this.#currentIdx];
     const clonedIds = Object.values(this.#CLONED_ID);
 
     if (!clonedIds.includes(currentSlide.id)) return;
 
     if (currentSlide.id === this.#CLONED_ID.LAST) {
-      this.currentIdx = this.#itemCount - 2;
+      this.#currentIdx = this.#itemCount - 2;
     }
     if (currentSlide.id === this.#CLONED_ID.FIRST) {
-      this.currentIdx = this.#startIdx;
+      this.#currentIdx = this.#startIdx;
     }
-    this.moveSlide({ isTransition: false, idx: this.currentIdx });
+    this.moveSlide({ isTransition: false, idx: this.#currentIdx });
   }
 
   addEvents() {
