@@ -19,7 +19,7 @@ export default class CarouselMaker {
     this.carousel = document.querySelector('.carousel');
   }
 
-  getCarouselItem() {
+  makeCarouselItem() {
     const carouselList = Array.from({ length: this.carouselCount }, (_, i) => i);
     this.carouselListTemplate =
       carouselList.reduce(
