@@ -48,13 +48,11 @@ class Search extends HTMLElement {
   }
 
   renderSearchList({ s, datas, type = 'search-result' }) {
-    const ul = document.createElement('ul');
-    if (type === 'history') ul.id = 'history-list';
-    if (type === 'recommend') ul.id = 'recommend-list';
-    ul.innerHTML = `${datas.reduce((acc, cur) => {
-      return (
-        acc +
-        `<li>
+    datas.forEach((cur, i) => {
+      const list = document.createElement('li');
+      list.setAttribute('tabindex', i);
+      list.classList.add(type);
+      list.innerHTML = `
         <span>
         ${
           type === 'recommend'
@@ -66,12 +64,9 @@ class Search extends HTMLElement {
           type === 'history'
             ? `<icon-element name="close" size="16"></icon-element>`
             : ''
-        }
-        </li>
-        `
-      );
-    }, '')}`;
-    this.div.append(ul);
+        }`;
+      this.div.append(list);
+    });
   }
 
   runSearch(s = '', page = 1) {

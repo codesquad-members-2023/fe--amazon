@@ -18,17 +18,17 @@ function openSearchInput() {
     searchInstance = new Search();
     searchInstance.showAction(search);
     deleteHistories();
+    moveFocusedList()();
   });
 }
 
 function closeSearchInput() {
   searchInput?.addEventListener('blur', () => {
+    document.removeEventListener('keydown', handleKeyoardEventArrowUpAndDown);
     searchInstance.closeAction();
     searchInstance = null;
   });
 }
-
-let searchKeyword = '';
 
 function runSearch() {
   searchInput?.addEventListener(
@@ -78,6 +78,45 @@ function getSearchHistories() {
 
 function setSearchHistories(histories) {
   localStorage.setItem('search-histories', JSON.stringify(histories));
+}
+
+function moveFocusedList() {
+  let target = null;
+
+  return () => {
+    const searchResultList = document
+      .querySelector('navbar-element')
+      .shadowRoot.querySelector('text-input-element')
+      .shadowRoot.querySelector('search-element')
+      .shadowRoot.querySelector('li');
+
+    document.addEventListener(
+      'keydown',
+      handleKeyoardEventArrowUpAndDown(searchResultList, target)
+    );
+  };
+}
+
+function handleKeyoardEventArrowUpAndDown(searchResultList, target) {
+  return (event) => {
+    const isKeyArrowUp = event.key === 'ArrowUp';
+    const isKeyArrowDown = event.key === 'ArrowDown';
+    if (isKeyArrowUp || isKeyArrowDown) {
+      if (!target) {
+        target = searchResultList;
+        target.focus();
+        return;
+      }
+      if (isKeyArrowUp && target?.previousElementSibling) {
+        target = target.previousElementSibling;
+        target.focus();
+      }
+      if (isKeyArrowDown && target?.nextElementSibling) {
+        target = target.nextElementSibling;
+        target.focus();
+      }
+    }
+  };
 }
 
 openSearchInput();

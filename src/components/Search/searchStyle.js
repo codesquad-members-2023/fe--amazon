@@ -44,12 +44,16 @@ export default function searchStyle(type) {
       cursor: pointer;
     }
 
+    li:focus-visible {
+      outline: none;
+    }
+
     .highlight {
       color: var(--secondary-purple);
       font-weight: bold;
     }
 
-    #history-list li {
+    li.history-list {
       color: var(--secondary-purple);
     }
   `;
