@@ -67,6 +67,7 @@ class Search extends HTMLElement {
         }`;
       this.div.append(list);
     });
+    document.dispatchEvent(new CustomEvent('search-list-rendered'));
   }
 
   runSearch(s = '', page = 1) {

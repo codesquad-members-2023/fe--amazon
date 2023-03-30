@@ -12,6 +12,7 @@ export default {
       '@assets': '/public/assets',
       '@utils': '/src/utils.js',
       '@apis': '/src/apis',
+      '@service': '/src/service',
     },
   },
 };

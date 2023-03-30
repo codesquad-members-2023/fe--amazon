@@ -17,8 +17,8 @@ function openSearchInput() {
     if (searchInstance) return;
     searchInstance = new Search();
     searchInstance.showAction(search);
-    handleDeleteHistories();
-    handleFocus().run();
+    deleteHistories();
+    moveFocusedList()();
   });
 }
 
@@ -36,7 +36,6 @@ function runSearch() {
     debounce(() => {
       if (searchInput.value === '') return searchInstance.showDefaultSearch();
       searchInstance.runSearch(searchInput.value);
-      handleFocus().resetTarget();
     }, 300)
   );
 }
@@ -54,7 +53,7 @@ function handleEnterKeyEvent() {
   );
 }
 
-function handleDeleteHistories() {
+function deleteHistories() {
   const historyList = document
     .querySelector('navbar-element')
     .shadowRoot.querySelector('text-input-element')
@@ -81,33 +80,35 @@ function setSearchHistories(histories) {
   localStorage.setItem('search-histories', JSON.stringify(histories));
 }
 
-function handleFocus() {
+function moveFocusedList() {
   let target = null;
-  return {
-    run: () => {
-      document.addEventListener(
-        'keydown',
-        handleKeyoardEventArrowUpAndDown(target)
-      );
-    },
-    resetTarget: () => (target = null),
+
+  return () => {
+    document.addEventListener(
+      'keydown',
+      handleKeyoardEventArrowUpAndDown(target)
+    );
   };
 }
 
 function handleKeyoardEventArrowUpAndDown(target) {
-  return (e) => {
+  return (event) => {
+    document.addEventListener('search-list-rendered', () => {
+      target = null;
+    });
+
     const searchElement = document
       .querySelector('navbar-element')
       .shadowRoot.querySelector('text-input-element')
-      .shadowRoot.querySelector('search-element')
-      .shadowRoot.querySelector('li');
+      .shadowRoot.querySelector('search-element');
 
-    const isKeyArrowUp = e.key === 'ArrowUp';
-    const isKeyArrowDown = e.key === 'ArrowDown';
+    const isKeyArrowUp = event.key === 'ArrowUp';
+    const isKeyArrowDown = event.key === 'ArrowDown';
     if (isKeyArrowUp || isKeyArrowDown) {
-      e.preventDefault();
+      event.preventDefault();
+
       if (!target) {
-        target = searchElement;
+        target = searchElement.shadowRoot.querySelector('li');
         target.focus();
         return;
       }
