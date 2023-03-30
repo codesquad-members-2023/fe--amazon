@@ -11,9 +11,10 @@ class Hero {
     this.#viewport = this.#directionBtn.previousElementSibling.firstElementChild
     this.#imageSize = 1500
     this.#currentImage = 1
-    this.#viewportPosition = -1500
+    this.#viewportPosition = -(this.#imageSize * this.#currentImage)
 
     this.addEvents()
+    this.autoSlide()
   }
   
   addEvents() {
@@ -42,6 +43,13 @@ class Hero {
         this.#currentImage = 1
       }
     })
+  }
+
+  autoSlide() {
+    const DELAY_TIME = 10000
+    setInterval(() => {
+      this.slideNext()
+    }, DELAY_TIME)
   }
   
   slidePrev() {
