@@ -18,8 +18,7 @@ class View {
 
   searchBarAddInputEvent(compareWithDB) {
     this.searchBar.addEventListener('keyup', ({ target }) => {
-      // Todo: 현재 입력된 내용 model의 data와 비교하는 메서드 만들기.
-      compareWithDB(target.value);
+      if (target.value !== '') compareWithDB(target.value);
     });
   }
 

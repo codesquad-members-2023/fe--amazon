@@ -19,6 +19,7 @@ class LogicModel {
   }
 
   findChunkSizeKeywords(inputData) {
+    // TODO: 대소문자 구분하기 위해 item.includes 부분 정규식으로 바꾸기.
     const matchingData = this.keywords.filter((item) =>
       item.includes(inputData),
     );
@@ -36,9 +37,7 @@ class LogicModel {
 
   getKeywordsFromSearchData() {
     // keywords 중 겹치는 keyword 삭제후 배열로 리턴.
-    const keywords = new Set(
-      this.searchData['data'].map((item) => item['keywords']),
-    );
+    const keywords = new Set(this.searchData.map((item) => item['keywords']));
     return Array.from(keywords);
   }
 }
