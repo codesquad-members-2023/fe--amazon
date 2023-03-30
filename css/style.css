@@ -702,5 +702,6 @@ nav {
   font-size: 13px;
   line-height: 160%; }
 
-.search_list:hover {
-  background: #eff2f2; }
+.search_list:hover,
+.focus {
+  background-color: #eff2f2; }

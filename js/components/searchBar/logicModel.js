@@ -24,7 +24,6 @@ class LogicModel {
     let matchingData = await this.getMatchData(inputData);
     // console.log(this.sliceChunkSizeKeywords(matchingData, this.CHUNK_SIZE));
     matchingData = this.getKeywordsFromMatchingData(matchingData);
-    console.log(this.sliceChunkSizeKeywords(matchingData, this.CHUNK_SIZE));
     return this.sliceChunkSizeKeywords(matchingData, this.CHUNK_SIZE);
   }
 
