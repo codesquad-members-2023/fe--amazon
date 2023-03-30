@@ -1,17 +1,12 @@
-import { findSiblingForward } from "../nodeFindFuncs.js";
+import { findSiblingForward, findUpWard } from "../nodeFindFuncs.js";
 
-export class CarouselSlideMotion {
+export class CarouselAnimationManager {
   constructor(btnLayer){
     this.btnLayer = btnLayer;
     [this.leftBtn, this.rightBtn] = [...this.btnLayer.childNodes].filter(node => node.nodeName != '#text');
     this.cardLayer = findSiblingForward(this.btnLayer, 'carousel-card__container');
     this.TRANSITION_DURATION = 1000;
     this.AUTO_SLIDE_DURATION = 10000;
-  }
-
-  init(){
-    this.startAutoSlide();
-    this.addClickEvt();
   }
 
   startAutoSlide(){
@@ -26,9 +21,9 @@ export class CarouselSlideMotion {
       this.cardLayer.style.transitionTimingFunction = 'ease-in-out';
       this.cardLayer.style.transitionDuration = `${this.TRANSITION_DURATION}ms`;
       this.cardLayer.style.transform = `translateX(-100vw)`;
-      this.cardLayer.ontransitionend = () => this.whenTransitionEnd();
+      this.cardLayer.ontransitionend = () => this.manipulateChildNodes();
       cancelAnimationFrame(this.raf);
-      this.start = timestamp;1  
+      this.start = timestamp;
       requestAnimationFrame(this.slideRight.bind(this));
     }
     requestAnimationFrame(this.slideRight.bind(this));
@@ -39,7 +34,7 @@ export class CarouselSlideMotion {
       this.cardLayer.style.transitionTimingFunction = 'ease-in-out';
       this.cardLayer.style.transitionDuration = `${this.TRANSITION_DURATION}ms`;
       this.cardLayer.style.transform = `translateX(-100vw)`;
-      this.cardLayer.ontransitionend = () => this.whenTransitionEnd();
+      this.cardLayer.ontransitionend = () => this.manipulateChildNodes();
     })
 
     this.rightBtn.addEventListener('click', () => {
@@ -47,11 +42,24 @@ export class CarouselSlideMotion {
       this.cardLayer.style.transitionTimingFunction = 'ease-in-out';
       this.cardLayer.style.transitionDuration = `${this.TRANSITION_DURATION}ms`;
       this.cardLayer.style.transform = `translateX(100vw)`;
-      this.cardLayer.ontransitionend = () => this.whenTransitionEnd(DIRECTION);
+      this.cardLayer.ontransitionend = () => this.manipulateChildNodes(DIRECTION);
+    })
+
+    document.addEventListener('click', ({ target }) => {
+      if(this.leftBtn.contains(target)) {
+        this.leftBtn.classList.add('carousel-border');
+        this.rightBtn.classList.remove('carousel-border');
+      } else if(this.rightBtn.contains(target)){
+        this.rightBtn.classList.add('carousel-border');
+        this.leftBtn.classList.remove('carousel-border');
+      } else {
+        this.rightBtn.classList.remove('carousel-border');
+        this.leftBtn.classList.remove('carousel-border')
+      }
     })
   }
 
-  whenTransitionEnd(DIRECTION){
+  manipulateChildNodes(DIRECTION){
     this.cardLayer.removeAttribute('style');
     return DIRECTION === 'Right'
             ? this.cardLayer.insertBefore(this.cardLayer.lastElementChild, this.cardLayer.firstElementChild)
