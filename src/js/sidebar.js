@@ -53,7 +53,7 @@ const createSidebarSubmenuFragment = (title, submenu) => {
   const submenuLists = document.createElement('ul');
 
   submenuContainer.classList.add('submenu');
-  backButtonImg.src = 'assets/images/button=sidebarClose.svg';
+  backButtonImg.src = 'assets/images/sidebarSubmenuClose.svg';
   backButtonSection.classList.add('submenu_back-button');
   backButtonSectionTextSection.append(backButtonSectionText);
   backButtonSectionTextSection.classList.add('submenu_back-button_text');
