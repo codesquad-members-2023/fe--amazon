@@ -8,7 +8,7 @@ export function getSearchDataAPI(query, page, limit = 20) {
 }
 
 export function getSearchRecommendItemsAPI(limit) {
-  return fetch(`${URL}//search-recommend?limit=${limit}`)
+  return fetch(`${URL}/search-recommend?limit=${limit}`)
     .then((response) => {
       if (!response.ok) {
         throw Error(response);

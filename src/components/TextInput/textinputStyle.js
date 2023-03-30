@@ -14,7 +14,7 @@ export default function textinputStyle() {
     }
 
     form:focus-within {
-      outline: 2px solid var(--primary-orange-200);
+
     }
 
     input {

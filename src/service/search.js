@@ -36,5 +36,5 @@ function runSearch() {
 }
 
 openSearchInput();
-closeSearchInput();
+// closeSearchInput();
 runSearch();

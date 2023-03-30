@@ -9,12 +9,9 @@ class Search extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
     this.searchList = this.getAttribute('data-search-list');
     const style = this.getAttribute('style');
-
     this.div = document.createElement('div');
     shadow.append(this.div);
-
     this.showDefaultSearch();
-
     this.shadowRoot.append(searchStyle.call(this));
   }
 
@@ -46,7 +43,6 @@ class Search extends HTMLElement {
 
   runSearch(s = '', page = 1) {
     getSearchDataAPI(s, page).then((datas) => {
-      console.log({ datas });
       if (datas.length === 0) return this.showEmpty();
       this.clearChildren();
       this.renderSearchList({ s, datas });
