@@ -6,7 +6,8 @@ export default class CarouselMaker {
     this.carousel;
     this.carouselTotalWidth = 100;
     this.carouselTransitionDuration = 500;
-    this.carouselDelayTime = 3000;
+    this.carouseDelayDuration = 3000;
+    this.animationStartTime = null;
     this.init();
   }
 
@@ -14,7 +15,7 @@ export default class CarouselMaker {
     this.makeCarouselItem();
     this.setCarouselItem();
     this.setCarouselEvent();
-    this.setCarouselDelay();
+    this.setCarouselAnimation();
   }
 
   setCarouselItem() {
@@ -63,9 +64,19 @@ export default class CarouselMaker {
     this.carousel.style.transform = `translateX(${-this.carouselTotalWidth / this.carouselCount}%)`;
   }
 
-  setCarouselDelay() {
-    setInterval(() => {
-      this.translateCarousel({ target: { className: 'carousel_button next' } });
-    }, this.carouselDelayTime);
+  setCarouselAnimation() {
+    const animateCarousel = (timestamp) => {
+      if (!this.animationStartTime) this.animationStartTime = timestamp;
+      const elapsedTime = timestamp - this.animationStartTime;
+
+      if (elapsedTime >= this.carouseDelayDuration) {
+        this.translateCarousel({ target: { className: 'carousel_button next' } });
+        this.animationStartTime = null;
+      }
+
+      requestAnimationFrame(animateCarousel);
+    };
+
+    requestAnimationFrame(animateCarousel);
   }
 }
