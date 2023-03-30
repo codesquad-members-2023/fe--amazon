@@ -40,4 +40,8 @@ export class BaseComponent<T extends HTMLElement> implements Base {
   addChildHtml(htmlString: string) {
     this._element.innerHTML += htmlString;
   }
+
+  deleteAllChild() {
+    this._element.innerHTML = '';
+  }
 }

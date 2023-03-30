@@ -440,7 +440,7 @@ $jayden-color: #111111;
     - 실제 검색 결과 노출 view는 없어도 됨
     - 검색창 자동완성 데이터를 서버와 연동해서 가져오는 방식 활용
     - get 요청(request) query를 보내 응답(response)을 받는다.
-  - [ ] nodejs express로 간단한 서버 구현
+  - [x] nodejs express로 간단한 서버 구현
 
 ## 🌳 Jayden's Record
 
