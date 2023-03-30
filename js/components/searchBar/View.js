@@ -9,10 +9,10 @@ class View {
 
   searchBarAddFocusEvent() {
     this.searchBar.addEventListener('focusin', () => {
-      this.searchForm.classList.add('display_flex');
+      this.searchForm.classList.add('flex');
     });
     this.searchBar.addEventListener('focusout', () => {
-      this.searchForm.classList.remove('display_flex');
+      this.searchForm.classList.remove('flex');
     });
   }
 
@@ -25,6 +25,8 @@ class View {
         });
       }
     });
+
+    this.searchBar.addEventListener('keydown', ({ target }) => {});
   }
 
   searchBarBtnAddClickEvent(clickEvent) {
