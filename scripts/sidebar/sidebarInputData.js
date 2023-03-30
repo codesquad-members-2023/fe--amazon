@@ -22,7 +22,7 @@ class SidebarInputData {
     }
   }
 
-  inputDetailData({ target: { id } }) {
+  inputDetailData(id) {
     SIDEBAR_DETAIL.forEach((detailData) => {
       if (id === detailData.textId && !this.menuDetailList.innerHTML) {
         this.menuDetailList.insertAdjacentHTML("beforeEnd", `<div class="sidebar__menu-title">${detailData.title}</div>`);
@@ -32,7 +32,7 @@ class SidebarInputData {
   }
 
   eventListner() {
-    this.sidebar.addEventListener("click", (e) => this.inputDetailData(e));
+    this.sidebar.addEventListener("click", (e) => this.inputDetailData(e.target.id));
     this.menuAllBtn.addEventListener("click", this.inputExtendData.bind(this));
   }
 }

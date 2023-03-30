@@ -25,8 +25,8 @@ class Sidebar {
     this.sidebar.classList.remove("show_display");
   }
 
-  closeSidebarExtend({ target: className }) {
-    if (className.className === "sidebar_menu_summary") {
+  closeSidebarExtend(className) {
+    if (className === "sidebar_menu_summary") {
       this.menuExtend.classList.add("close_display");
     }
   }
@@ -36,7 +36,7 @@ class Sidebar {
     this.menuDetailList.innerHTML = "";
   }
 
-  showSidebarDetail({ target: { id } }) {
+  showSidebarDetail(id) {
     if (id) {
       this.menuDetailbox.classList.add("show_display");
     }
@@ -53,8 +53,8 @@ class Sidebar {
     });
     this.backMain.addEventListener("click", this.closeSidebarDetail.bind(this));
     this.sidebar.addEventListener("click", (e) => {
-      this.closeSidebarExtend(e);
-      this.showSidebarDetail(e);
+      this.closeSidebarExtend(e.target.className);
+      this.showSidebarDetail(e.target.id);
     });
   }
 }
