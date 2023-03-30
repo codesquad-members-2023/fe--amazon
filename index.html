@@ -38,11 +38,20 @@
         </div>
       </div>
 
-      <form class="search">
-        <input type='text' placeholder='검색 Amazon'>
-        <button id='search_btn'>
+      <form class="search_form">
+        <input class="search_input" type='text' placeholder='검색 Amazon'>
+        <button id='search_btn' type="submit">
           <img src='/asset/images/vectors/SearchBar.svg' alt="돋보기">
         </button>
+        <div class="search_container hidden">
+          <ul class="search_suggestion">
+            <!-- <li id="1">
+              <span class="recentInput">입력</span>
+              <img id="search_delete_btn" src="/asset/images/vectors/X.svg" alt="검색어 삭제 아이콘">
+            </li>
+            <li>검색리스트10</li> -->
+          </ul>
+        </div>
       </form>
 
       <div class="nation">🇰🇷 KO</div>
@@ -54,7 +63,7 @@
         </div>
 
         <div class="login_popup modal_box fade_in">
-          <button class='login__btn'>로그인</button>
+          <button class='login_btn'>로그인</button>
           <div>
             <span>기존 사용자가 아니십니까?</span>
             <a class="login_page_move">여기에서 시작합니다.</a>
@@ -64,7 +73,7 @@
 
         <div class="login_detail hidden modal_box">
           <div class="login_popup">
-            <button class='login__btn'>로그인</button>
+            <button class='login_btn'>로그인</button>
             <div>
               <span>기존 사용자가 아니십니까?</span>
               <a class="login_page_move">여기에서 시작합니다.</a>
@@ -138,7 +147,7 @@
     <div class='card_container'>
       <div class='card_column'>
         <div>
-          <button class='login__btn'>로그인</button>
+          <button class='login_btn'>로그인</button>
           <p>최상의 경험을 위해 로그인하세요</p>
         </div>
         <div>

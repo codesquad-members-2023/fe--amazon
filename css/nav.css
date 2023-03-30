@@ -21,7 +21,7 @@ body {
 
 .nav_bar {
   position: relative;
-  z-index: var(--z-index-medium);
+  z-index: var(--z-index-lg);
 
   min-width: 70rem;
   height: 90px;
@@ -183,13 +183,17 @@ body {
   background: var(--color-orange-100);
 }
 
+#search_btn > img {
+  width: 20px;
+}
+
 .search_input::placeholder {
   color: var(--color-gray-600);
   font-size: var(--font-size-md);
   letter-spacing: var(--letter-spacing-3em);
 }
 
-.search_layer {
+.search_container {
   position: absolute;
   top: 40px;
   display: flex;
@@ -201,11 +205,14 @@ body {
   background-color: var(--color-white);
 }
 
-.search_auto_complete {
+.search_suggestion {
   width: 100%;
 }
 
-.search_auto_complete > li {
+.search_suggestion > li {
+  display: flex;
+  justify-content: space-between;
+
   height: 37px;
   padding: 0 12px;
 
@@ -215,8 +222,18 @@ body {
   line-height: 37px;
 }
 
-.search_auto_complete > li:hover {
+#search_delete_btn {
+  width: 9px;
+  line-height: 37px;
+}
+
+.search_suggestion > li:hover {
   background-color: var(--color-gray-30);
+}
+
+.recentInput {
+  color: var(--color-purple);
+  font-weight: var(--font-weight-bold);
 }
 
 .login_container {
@@ -342,7 +359,7 @@ button {
 
 .modal_background {
   position: fixed;
-  z-index: var(--z-index-small);
+  z-index: var(--z-index-md);
   top: 0;
   left: 0;
   width: 100%;
@@ -368,7 +385,7 @@ button {
   width: 45px;
 }
 
-header img:not(.logo img) {
+header img:not(.logo img, #search_delete_btn, #search_btn > img) {
   width: 12px;
   height: 12px;
   margin-right: 5px;
