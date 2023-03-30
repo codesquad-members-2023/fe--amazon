@@ -10,12 +10,12 @@ class Carousel {
   }
 
   init() {
-    this.setImages();
-    this.slideAuto();
-    this.clickSlide();
+    this.renderInitialImage();
+    this.autoMoveCarousel();
+    this.clickCarouselBtn();
   }
 
-  setImages() {
+  renderInitialImage() {
     const imageFiles = Array.from({ length : this.CAROUSEL_COUNT }, (_, i) => i);
     const imageTemplate = imageFiles.reduce((template, number) => {
       template += `<img class="slide" src="${this.#directoryPath}/${number}.jpg" alt="carousel 배경이미지${number}">`;
@@ -24,7 +24,7 @@ class Carousel {
     this.slider.insertAdjacentHTML('afterbegin', imageTemplate);
   }
 
-  clickSlide() {
+  clickCarouselBtn() {
     const $leftBtn = document.getElementById('carousel_left');
     const $rightBtn = document.getElementById('carousel_right');
     $leftBtn.addEventListener('click', this.translateSlideHandler.bind(this));
@@ -49,7 +49,7 @@ class Carousel {
     } else this.slider.appendChild(this.slider.firstElementChild);
   }
 
-  slideAuto() {
+  autoMoveCarousel() {
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
     let lastTime = 0;
