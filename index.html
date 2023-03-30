@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="./css/main.css"/>
   <title>Amazon</title>
 
-  <!-- <script defer src="./js/navBar.js" type="module"></script>
+  <script defer src="./js/navBar.js" type="module"></script>
   <script defer src="./js/sideBar.js" type="module"></script>
-  <script defer src="./js/sideBarContents.js" type="module"></script> -->
+  <script defer src="./js/sideBarContents.js" type="module"></script>
   <script defer src="./js/hero.js" type="module"></script>
   <script defer src="./js/heroImages.js" type="module"></script>
+  <script defer src="./js/searchbar.js" type="module"></script>
   
 </head>
 <body>
@@ -37,7 +38,7 @@
           </div>
         </div>
         <form class="search-bar">
-          <input type="text" placeholder="검색 Amazon"/>
+          <input type="text" placeholder="검색 Amazon" class="search-input"/>
           <button class="btn-search" type="submit">
             <img src="./asset/search.svg" alt="search" />
           </button>
@@ -56,6 +57,7 @@
             <a href="/"><p>여기에서 시작합니다.</p></a>
           </div>
           <div class="modal__extension hidden">
+            <div class="pointer"></div>
             <div class="modal__extension__top">
               <button>로그인</button>
               <span>기존 사용자가 아니십니까?</span>
@@ -184,12 +186,12 @@
         </div>
       </div>
       <div class="side-menu__all-items">
-        <ul>
-          <li class="side-menu__item side-menu__hide-button">
+        <div>
+          <div class="side-menu__item side-menu__hide-button">
             <span>간단히 보기</span>
             <img src="./asset/dropDownClose.svg" alt="dropDownClose" />
-          </li>
-        </ul>
+          </div>
+        </ㅇ>
       </div>
     </div>
     <div class="side-menu__detail">
@@ -211,7 +213,7 @@
 
   <!-- SECTION -->
   <section>
-    <div class="dim"></div>
+    <div class="dim hidden"></div>
   </section>
 
 </body>

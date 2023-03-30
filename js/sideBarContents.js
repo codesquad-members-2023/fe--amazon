@@ -1,3 +1,5 @@
+import extendArrow from '../asset/extendArrow.svg'
+
 const SIDE_BAR_ITEMS = {
   '모두 보기': [
     '자동차 용품',
@@ -64,18 +66,18 @@ const createExtensionItems = () => {
   const parentNode = referenceNode.parentNode
 
   EXTENDED_ITEMS.forEach(item => {
-    const li = document.createElement('li')
+    const div = document.createElement('div')
     const span = document.createElement('span')
     const img = document.createElement('img')
     
     span.textContent = item
-    li.classList.add('side-menu__item')
-    img.setAttribute("src", "./asset/extendArrow.svg")
-    img.setAttribute("alt", "extendArrow")
+    div.classList.add('side-menu__item')
+    img.setAttribute('src', extendArrow)
+    img.setAttribute('alt', 'extendArrow')
     
-    parentNode.insertBefore(li, referenceNode)
-    li.appendChild(span)
-    li.appendChild(img)
+    parentNode.insertBefore(div, referenceNode)
+    div.appendChild(span)
+    div.appendChild(img)
   })
 }
 

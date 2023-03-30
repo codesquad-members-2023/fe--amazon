@@ -85,6 +85,10 @@ button {
   background: rgba(16, 20, 26, 0.4);
 }
 
+.dim-all {
+  top: -85px;
+}
+
 /* HEADER */
 header {
   position: relative;

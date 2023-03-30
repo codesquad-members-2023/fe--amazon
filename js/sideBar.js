@@ -1,28 +1,32 @@
+import $ from './common/$.js'
+
 const openSideBar = (...element) => {
-  const [sideMenu, openButton] = element
+  const [sideMenu, openButton, dim] = element
 
   openButton.addEventListener('click', () => {
     sideMenu.style.display = 'flex'
     sideMenu.style.animation = 'slide-to-right .5s'
-    dim.style.display = 'block'
-    dim.style.top = '-85px'
+    dim.classList.remove('hidden')
+    dim.classList.add('dim-all')
   })
 }
 
 const hideSideBar = (...element) => {
-  const [sideMenu, openButton] = element
+  const [sideMenu, openButton, dim] = element
   const closeButton = document.querySelector('.side-menu__close')
   const body = document.querySelector('body')
 
   closeButton.addEventListener('click', () => {
     sideMenu.style.animation = 'slide-hide .5s forwards'
-    dim.style.display = 'none'
+    dim.classList.add('hidden')
+    dim.classList.remove('dim-all')
   })
 
   body.addEventListener('click', (e) => {
     if (!sideMenu.contains(e.target) && !openButton.contains(e.target)) {
       sideMenu.style.animation = 'slide-hide .5s forwards'
-      dim.style.display = 'none'
+      dim.classList.add('hidden')
+      dim.classList.remove('dim-all')
     }
   })
 }
@@ -54,8 +58,6 @@ const moveMain = (...element) => {
   })
 }
 
-const $ = Selector => document.querySelector(Selector)
-
 const actSideBar = () => {
   const sideMenu = $('.side-menu')
   const openButton = $('.all-menu')
@@ -64,9 +66,10 @@ const actSideBar = () => {
   const simpleItemsButton = $('.side-menu__hide-button')
   const allItems = $('.side-menu__all-items')
   const allItemsButton = $('.side-menu__show-button')
+  const dim = $('.dim')
 
-  openSideBar(sideMenu, openButton)
-  hideSideBar(sideMenu, openButton)
+  openSideBar(sideMenu, openButton, dim)
+  hideSideBar(sideMenu, openButton, dim)
   openAllItems(allItems, allItemsButton)
   closeAllItems(simpleItemsButton, allItems)
   moveMain(sideMain, sideMenuDetail)
