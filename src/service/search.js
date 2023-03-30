@@ -1,4 +1,5 @@
 import Search from '@components/Search/Search.js';
+import { debounce } from '@src/utils.js';
 
 const search = document
   .querySelector('navbar-element')
@@ -29,10 +30,13 @@ function closeSearchInput() {
 let searchKeyword = '';
 
 function runSearch() {
-  searchInput?.addEventListener('keyup', (e) => {
-    if (searchInput.value === '') return searchInstance.showDefaultSearch();
-    searchInstance.runSearch(searchInput.value);
-  });
+  searchInput?.addEventListener(
+    'keyup',
+    debounce(() => {
+      if (searchInput.value === '') return searchInstance.showDefaultSearch();
+      searchInstance.runSearch(searchInput.value);
+    }, 300)
+  );
 }
 
 openSearchInput();

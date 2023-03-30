@@ -46,6 +46,10 @@ export default function searchStyle(type) {
       color: var(--secondary-purple);
       font-weight: bold;
     }
+
+    #recommend-list.hide {
+      display: none;
+    }
   `;
   return style;
 }

@@ -1,5 +1,5 @@
 import searchStyle from './searchStyle.js';
-import { getSearchDataAPI } from '@apis/search.js';
+import { getSearchDataAPI, getSearchRecommendItemsAPI } from '@apis/search.js';
 
 class Search extends HTMLElement {
   constructor() {
@@ -16,11 +16,14 @@ class Search extends HTMLElement {
   }
 
   showDefaultSearch() {
-    const empty = document.createElement('div');
-    empty.classList.add('empty');
-    empty.innerText = '검색어를 입력해주세요.';
-    this.clearChildren();
-    this.div.appendChild(empty);
+    this.loadRecommendItems();
+  }
+
+  loadRecommendItems() {
+    getSearchRecommendItemsAPI(5).then((datas) => {
+      this.clearChildren();
+      this.renderSearchList({ s: '', datas, isRecommendList: true });
+    });
   }
 
   clearChildren() {
@@ -54,14 +57,20 @@ class Search extends HTMLElement {
     return text.replace(regex, `<span class="highlight">${s}</span>`);
   }
 
-  renderSearchList({ s, datas }) {
+  renderSearchList({ s, datas, isRecommendList = false }) {
     const ul = document.createElement('ul');
-    datas.forEach((data) => {
-      const li = document.createElement('li');
-      const text = data.title;
-      li.innerHTML = this.highlightText({ s, text });
-      ul.appendChild(li);
-    });
+    if (isRecommendList) ul.id = 'recommend-list';
+    ul.innerHTML = `${datas.reduce((acc, cur) => {
+      return (
+        acc +
+        `<li>
+        ${
+          isRecommendList
+            ? `<icon-element name="arrow-top-right" size="16"></icon-element>`
+            : ''
+        }${this.highlightText({ s, text: cur.title })}</li>`
+      );
+    }, '')}`;
     this.div.append(ul);
   }
 }
