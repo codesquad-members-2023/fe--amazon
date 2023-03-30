@@ -45,10 +45,12 @@ class View {
           item.classList.remove('focus');
         });
 
-        if (event.key === 'ArrowDown' && this.index < items.length - 1) {
-          this.index++;
-        } else if (event.key === 'ArrowUp' && this.index > 0) {
-          this.index--;
+        if (event.key === 'ArrowDown' && this.index <= items.length - 1) {
+          if (this.index === items.length - 1) this.index = 0;
+          else this.index++;
+        } else if (event.key === 'ArrowUp' && this.index >= 0) {
+          if (this.index === 0) this.index = items.length - 1;
+          else this.index--;
         }
 
         items[this.index].classList.add('focus');
