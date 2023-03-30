@@ -19,7 +19,7 @@
 
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  overflow-y: scroll;
+  overflow-x: hidden;
 } 
 
 @keyframes slideRightWard {

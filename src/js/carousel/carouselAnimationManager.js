@@ -5,7 +5,7 @@ export class CarouselAnimationManager {
     this.btnLayer = btnLayer;
     [this.leftBtn, this.rightBtn] = [...this.btnLayer.childNodes].filter(node => node.nodeName != '#text');
     this.cardLayer = findSiblingForward(this.btnLayer, 'carousel-card__container');
-    this.TRANSITION_DURATION = 1000;
+    this.TRANSITION_DURATION = 500;
     this.AUTO_SLIDE_DURATION = 10000;
   }
 
@@ -17,7 +17,7 @@ export class CarouselAnimationManager {
   slideRight(timestamp){
     if(this.start === null) this.start = timestamp;
     const time = timestamp - this.start;
-    if(time > 5000){
+    if(time > this.AUTO_SLIDE_DURATION){
       this.cardLayer.style.transitionTimingFunction = 'ease-in-out';
       this.cardLayer.style.transitionDuration = `${this.TRANSITION_DURATION}ms`;
       this.cardLayer.style.transform = `translateX(-100vw)`;
