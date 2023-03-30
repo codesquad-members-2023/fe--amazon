@@ -31,13 +31,34 @@
     display: flex;
     justify-content: space-between;
 
-    i {
-      color: gray;
+    span {
+      font-weight: 800;
+      color: rgb(192, 52, 192);
+      display: flex;
+      align-items: center;
+
+      span {
+        font-weight: 600;
+        color: black;
+        opacity: 0.5;
+        margin-left: 5px;
+      }
     }
 
-    i:hover {
-      font-weight: 800;
-      color: black;
+    button {
+      padding: 0;
+      border: 0;
+      background: none;
+      cursor: pointer;
+
+      i {
+        color: gray;
+      }
+
+      i:hover {
+        font-weight: 800;
+        color: black;
+      }
     }
   }
 

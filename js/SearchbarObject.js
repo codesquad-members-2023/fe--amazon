@@ -20,22 +20,32 @@ class SearchbarFlyout {
   // 유저 검색 입력값 input
   inputUserKeywords(event) {
     event.preventDefault();
+    const id = Date.now();
     const userInput = this.inputForm.querySelector("input");
     const inputValue = userInput.value;
     userInput.value = "";
-    this.makeUserKeywordsEl(inputValue);
+    this.makeUserKeywordsEl(inputValue, id);
   }
 
   // 유저 검색 입력값 el 생성
-  makeUserKeywordsEl(inputValue) {
+  makeUserKeywordsEl(inputValue, id) {
     if (inputValue === "") return;
+
     const mySearchContainer = this.element.querySelector(
       ".search-flyout-mySearchContainer"
     );
     const div = `<div> 
-                  <span>${inputValue}</span>
-                  <i class="fa-solid fa-x"></i>`;
+                  <span>${inputValue} <span>  in All Departments</span></span>
+                  <button id="${id}"><i class="fa-solid fa-x"></i></button></div>`;
     mySearchContainer.innerHTML += div;
+    const deleteBtn = this.element.querySelector("button");
+    deleteBtn.addEventListener("click", this.deleteUserKeywordsEl.bind(this));
+  }
+
+  //  유저 검색 입력값 el 삭제
+  deleteUserKeywordsEl(event) {
+    const el = event.target.closest("div");
+    el.remove();
   }
 
   // 이벤트 등록 메서드
