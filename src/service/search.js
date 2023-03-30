@@ -58,11 +58,12 @@ function deleteHistories() {
     .querySelector('navbar-element')
     .shadowRoot.querySelector('text-input-element')
     .shadowRoot.querySelector('search-element')
-    .shadowRoot.querySelector('#history-list');
+    .shadowRoot.querySelector('ul');
 
   historyList?.addEventListener('click', (e) => {
+    if (e.target.nodeName !== 'ICON-ELEMENT' && e.target.name !== 'close')
+      return;
     const li = e.target.parentElement;
-    if (e.target.nodeName !== 'ICON-ELEMENT') return;
     const searchHistories = getSearchHistories();
     const newSearchHistories = searchHistories.filter(
       (history) => history.title !== e.target.previousElementSibling.innerText
