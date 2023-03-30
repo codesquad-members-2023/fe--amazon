@@ -20,7 +20,6 @@ button {
 
 .hidden {
   display: none;
-  opacity: 0;
 }
 
 .modal {
@@ -78,14 +77,9 @@ button {
   }
 }
 
-/* SECTION */
-section {
-  position: relative;
-}
-
 .dim {
   position: absolute;
-  display: none;
+  top: 88px;
   width: 100%;
   height: 1809px;
   background: rgba(16, 20, 26, 0.4);
@@ -239,9 +233,8 @@ header {
   text-align: center;
 }
 
-.main-menu .log-in:hover .modal__extension,
-.main-menu .log-in:hover .pointer {
-  display: block;
+.main-menu .log-in .modal__extension .pointer {
+  left: 303px;
 }
 
 .main-menu .log-in .modal__extension {
@@ -415,5 +408,3 @@ header {
   left: 330px;
   cursor: pointer;
 }
-
-
