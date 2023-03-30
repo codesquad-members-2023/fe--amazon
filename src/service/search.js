@@ -17,8 +17,8 @@ function openSearchInput() {
     if (searchInstance) return;
     searchInstance = new Search();
     searchInstance.showAction(search);
-    deleteHistories();
-    moveFocusedList()();
+    handleDeleteHistories();
+    handleFocus().run();
   });
 }
 
@@ -36,6 +36,7 @@ function runSearch() {
     debounce(() => {
       if (searchInput.value === '') return searchInstance.showDefaultSearch();
       searchInstance.runSearch(searchInput.value);
+      handleFocus().resetTarget();
     }, 300)
   );
 }
@@ -53,7 +54,7 @@ function handleEnterKeyEvent() {
   );
 }
 
-function deleteHistories() {
+function handleDeleteHistories() {
   const historyList = document
     .querySelector('navbar-element')
     .shadowRoot.querySelector('text-input-element')
@@ -80,30 +81,33 @@ function setSearchHistories(histories) {
   localStorage.setItem('search-histories', JSON.stringify(histories));
 }
 
-function moveFocusedList() {
+function handleFocus() {
   let target = null;
+  return {
+    run: () => {
+      document.addEventListener(
+        'keydown',
+        handleKeyoardEventArrowUpAndDown(target)
+      );
+    },
+    resetTarget: () => (target = null),
+  };
+}
 
-  return () => {
-    const searchResultList = document
+function handleKeyoardEventArrowUpAndDown(target) {
+  return (e) => {
+    const searchElement = document
       .querySelector('navbar-element')
       .shadowRoot.querySelector('text-input-element')
       .shadowRoot.querySelector('search-element')
       .shadowRoot.querySelector('li');
 
-    document.addEventListener(
-      'keydown',
-      handleKeyoardEventArrowUpAndDown(searchResultList, target)
-    );
-  };
-}
-
-function handleKeyoardEventArrowUpAndDown(searchResultList, target) {
-  return (event) => {
-    const isKeyArrowUp = event.key === 'ArrowUp';
-    const isKeyArrowDown = event.key === 'ArrowDown';
+    const isKeyArrowUp = e.key === 'ArrowUp';
+    const isKeyArrowDown = e.key === 'ArrowDown';
     if (isKeyArrowUp || isKeyArrowDown) {
+      e.preventDefault();
       if (!target) {
-        target = searchResultList;
+        target = searchElement;
         target.focus();
         return;
       }
