@@ -1,7 +1,8 @@
 export const state = {
   recommendedTerms: [],
   autoCompletedTerms: [],
-  searchHistory: [],
+  searchHistories: [],
+  query: "",
 };
 
 export const loadRecommendedTerms = async () => {
@@ -28,6 +29,8 @@ export const loadRecommendedTerms = async () => {
 
 export const loadAutoCompltedTerms = async (query) => {
   try {
+    state.query = query;
+
     const url = `http://localhost:3001/searched?searchedTerm_like=${query}`;
     const res = await fetch(url);
     const data = await res.json();
@@ -48,23 +51,37 @@ export const loadAutoCompltedTerms = async (query) => {
 };
 
 export const loadSearchHistory = () => {
-  const searchHistory = JSON.parse(
-    window.localStorage.getItem("searchHistory")
-  );
+  const searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
 
   if (!searchHistory) {
-    state.searchHistory = [];
+    state.searchHistories = [];
     return;
   }
 
-  state.searchHistory = searchHistory;
+  state.searchHistories = searchHistory;
 };
 
 export const saveSearchHistory = (searchTerm) => {
-  state.searchHistory.push(searchTerm);
+  const historyRecord = {
+    id: Date.now(),
+    term: searchTerm,
+  };
+
+  state.searchHistories.push(historyRecord);
 
   window.localStorage.setItem(
     "searchHistory",
-    JSON.stringify(state.searchHistory)
+    JSON.stringify(state.searchHistories)
+  );
+};
+
+export const deleteSearchHistory = (id) => {
+  state.searchHistories = state.searchHistories.filter(
+    (history) => history.id !== id
+  );
+
+  window.localStorage.setItem(
+    "searchHistory",
+    JSON.stringify(state.searchHistories)
   );
 };

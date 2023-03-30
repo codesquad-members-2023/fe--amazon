@@ -15,7 +15,18 @@ class InputSearchView {
   }
 
   addHandlerBlur(handler) {
-    this.#input.addEventListener("blur", handler);
+    document.addEventListener(
+      "click",
+      (e) => {
+        console.log(e.target);
+        const test = e.target.closest(".search-form");
+        console.log(test);
+        if (test) return;
+        handler();
+      },
+      //  event delegation 발표때 물어보기
+      true
+    );
   }
 
   addHandlerSubmit(handler) {
