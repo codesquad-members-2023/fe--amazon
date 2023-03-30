@@ -12,8 +12,8 @@ class Controller {
 
   init() {
     // 초기 검색창 만들기.
-    this.view.searchBarAddFocusEvent(this.logicModel.searchBarFocusEvent);
-    this.view.searchBarBtnAddClickEvent(this.logicModel.searchBarBtnClickEvent);
+    this.view.searchBarAddFocusEvent();
+    this.view.searchBarBtnAddClickEvent();
     this.view.searchBarAddInputEvent(
       this.logicModel.findChunkSizeKeywords.bind(this.logicModel),
     );

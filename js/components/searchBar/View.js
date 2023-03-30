@@ -18,12 +18,27 @@ class View {
 
   searchBarAddInputEvent(compareWithDB) {
     this.searchBar.addEventListener('keyup', ({ target }) => {
-      if (target.value !== '') compareWithDB(target.value);
+      // 만약 전과 똑같은 것을 요청하면 콜백함수 실행 안하게끔 바꾸기.
+      if (target.value !== '') {
+        compareWithDB(target.value).then((result) => {
+          this.render(result);
+        });
+      }
     });
   }
 
   searchBarBtnAddClickEvent(clickEvent) {
     this.searchBarButton.addEventListener('click', clickEvent);
+  }
+
+  render(data) {
+    this.searchForm.innerHTML = this.generateSuggestionLists(data);
+  }
+
+  generateSuggestionLists(data) {
+    return data.reduce((acc, cur) => {
+      return (acc += `<li class="search_list">${cur}</li>`);
+    }, ``);
   }
 }
 
