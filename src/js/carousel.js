@@ -54,6 +54,7 @@ export default class CarouselMaker {
 
     this.carousel.style.transitionDuration = `${this.carouselTransitionDuration}ms`;
     this.carousel.ontransitionend = () => this.resortCarousel(translateDirection);
+    this.animationStartTime = null;
   }
 
   translateLeft() {
