@@ -49,9 +49,7 @@ export default class CarouselMaker {
 
   translateCarousel({ target: { className } }) {
     const translateDirection = this.decideAddEventOrNot(className);
-    this.decideAddEventOrNot(className) === 'prev'
-      ? this.translateLeftNext()
-      : this.translateRightPrev();
+    this.decideAddEventOrNot(className) === 'prev' ? this.translateLeft() : this.translateRight();
 
     this.carousel.style.transitionDuration = `${this.carouselTransitionDuration}ms`;
     this.carousel.ontransitionend = () => this.resortCarousel(translateDirection);
