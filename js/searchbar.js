@@ -1,16 +1,28 @@
 import $ from './common/$.js'
 import dim from './common/dim.js'
 
-const input = $('.search-input')
-const searchList = $('.search-list')
+function getSearchListElements() {
+  const input = $('.search-input')
+  const searchList = $('.search-list')
+  const searchSection = $('.search-container')
 
-input.addEventListener('click', () => {
-  searchList.classList.remove('hidden')
-  dim.classList.remove('hidden')
-})
+  return {
+    input,
+    searchList,
+    searchSection
+  }
+}
+
+(function searchListHandler() {
+  const { input, searchList } = getSearchListElements()
+  input.addEventListener('click', () => {
+    searchList.classList.remove('hidden')
+    dim.classList.remove('hidden')
+  })
+})()
 
 export default function closeSearchList (target) {
-  const searchSection = $('.search-container')
+  const { searchList, searchSection } = getSearchListElements()
   
   if(!searchSection.contains(target)) {
     searchList.classList.add('hidden')

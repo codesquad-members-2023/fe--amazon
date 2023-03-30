@@ -1,3 +1,4 @@
+import $ from './common/$.js'
 import extendArrow from '../asset/extendArrow.svg'
 
 const SIDE_BAR_ITEMS = {
@@ -62,7 +63,7 @@ const EXTENDED_ITEMS = [
 ]
 
 const createExtensionItems = () => {
-  const referenceNode = document.querySelector('.side-menu__hide-button')
+  const referenceNode = $('.side-menu__hide-button')
   const parentNode = referenceNode.parentNode
 
   EXTENDED_ITEMS.forEach(item => {
@@ -84,7 +85,7 @@ const createExtensionItems = () => {
 createExtensionItems()
 
 const detailMenuItemsHandler = () => {
-  document.querySelector('aside').addEventListener('click', ({
+  $('aside').addEventListener('click', ({
     target: { textContent: menu }
   }) => {
     const detailMenuItems = SIDE_BAR_ITEMS[menu]
@@ -96,8 +97,8 @@ const detailMenuItemsHandler = () => {
 }
 
 const openDetailMenu = () => {
-  const sideMain = document.querySelector('.side-menu__main')
-  const sideMenuDetail = document.querySelector('.side-menu__detail')
+  const sideMain = $('.side-menu__main')
+  const sideMenuDetail = $('.side-menu__detail')
 
   sideMain.style.display = 'none'
   sideMenuDetail.style.display = 'block'
@@ -105,7 +106,7 @@ const openDetailMenu = () => {
 }
 
 const createDetailMenuItems = (menu) => {
-  const ul = document.querySelector('.side-menu__contents > ul')
+  const ul = $('.side-menu__contents > ul')
   ul.textContent = ''
 
   SIDE_BAR_ITEMS[menu].forEach(item => {
