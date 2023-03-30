@@ -9,6 +9,8 @@ class LogicModel {
   searchBarBtnClickEvent(event) {
     console.log(event);
   }
+
+  compareWithDataSearchBarVal(inputData) {}
 }
 
 export default LogicModel;

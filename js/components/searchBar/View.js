@@ -11,15 +11,15 @@ class View {
     this.searchBar.addEventListener('focusin', () => {
       this.searchForm.classList.add('display_flex');
     });
-    this.searchBar.addEventListener('focusout', ({ target }) => {
+    this.searchBar.addEventListener('focusout', () => {
       this.searchForm.classList.remove('display_flex');
     });
   }
 
-  searchBarAddInputEvent() {
+  searchBarAddInputEvent(compareWithDB) {
     this.searchBar.addEventListener('keyup', ({ target }) => {
-      console.log(target.value);
-      // Todo: 현재 입력된 내용 model의 data와 비교하는 놈 호출해서 넣어주기..
+      // Todo: 현재 입력된 내용 model의 data와 비교하는 메서드 만들기.
+      compareWithDB(target.value);
     });
   }
 
