@@ -23,6 +23,27 @@
   .search-flyout-recKeywords:hover {
     background-color: #eaeded;
   }
+
+  .search-flyout-mySearchContainer div {
+    padding: 10px;
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+
+    i {
+      color: gray;
+    }
+
+    i:hover {
+      font-weight: 800;
+      color: black;
+    }
+  }
+
+  .search-flyout-mySearchContainer div:hover {
+    background-color: #eaeded;
+  }
 }
 
 .hide-opacity {

@@ -6,8 +6,10 @@ function getSearchData() {
 
       const numberOfShowList = 10;
       for (let i = 0; i < numberOfShowList; i++) {
-        searchBarFlyout.makeRecomKeywords();
+        searchBarFlyout.makeRecomKeywordsEl();
       }
+
+      searchBarFlyout.addEvent();
     })
     .catch((error) => console.log(`fetch 에러! ${error}`));
 }
