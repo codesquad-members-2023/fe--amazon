@@ -53,8 +53,10 @@ class Search extends HTMLElement {
   }
 
   highlightText({ s, text }) {
-    const regex = new RegExp(s, 'gi');
-    return text.replace(regex, `<span class="highlight">${s}</span>`);
+    if (text.includes(s) && s !== '') {
+      return text.replace(s, `<span class="highlight">${s}</span>`);
+    }
+    return text;
   }
 
   renderSearchList({ s, datas, isRecommendList = false }) {
