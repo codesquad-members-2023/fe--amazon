@@ -12,6 +12,7 @@ class View {
     this.searchBar.addEventListener('focusin', () => {
       this.searchForm.classList.add('flex');
     });
+
     this.searchBar.addEventListener('focusout', () => {
       const focusItem = document.querySelector('.focus');
       if (focusItem) focusItem.classList.remove('focus');
@@ -28,7 +29,7 @@ class View {
 
       if (target.value !== '') {
         compareWithDB(target.value).then((result) => {
-          this.render(result);
+          this.render(result, target.value);
         });
       }
     });
@@ -62,13 +63,17 @@ class View {
     this.searchBarButton.addEventListener('click', clickEvent);
   }
 
-  render(data) {
-    this.searchForm.innerHTML = this.generateSuggestionLists(data);
+  render(data, inputText) {
+    this.searchForm.innerHTML = this.generateSuggestionLists(data, inputText);
   }
 
-  generateSuggestionLists(data) {
+  generateSuggestionLists(data, inputText) {
     return data.reduce((acc, cur) => {
-      return (acc += `<li class="search_list">${cur}</li>`);
+      const replaceCur = cur.replace(
+        inputText,
+        `<span class="input_text">${inputText}</span>`,
+      );
+      return (acc += `<li class="search_list">${replaceCur}</li>`);
     }, ``);
   }
 }

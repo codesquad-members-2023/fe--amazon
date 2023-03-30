@@ -705,3 +705,6 @@ nav {
 .search_list:hover,
 .focus {
   background-color: #eff2f2; }
+
+.input_text {
+  color: #941387; }
