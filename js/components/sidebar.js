@@ -1,4 +1,4 @@
-import { _ } from './utility.js'
+import { _ } from '../utils/utility.js'
 
 const onSideBar = (SIDEBAR_DATA) => {
   const $every = document.querySelector('.every');
