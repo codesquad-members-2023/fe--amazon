@@ -4,7 +4,6 @@ import { SearchListComponentStyle } from '../../../../style/components/navbar/ma
 export class SearchListComponent extends BaseComponent<HTMLElement> {
   constructor() {
     super(`<ul class='${SearchListComponentStyle}'>
-                      
                     </ul>`);
   }
 

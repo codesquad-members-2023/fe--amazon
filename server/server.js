@@ -44,20 +44,20 @@ var mongoDb = require("mongodb");
 dotenv.config();
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var app, MongoClient, client, db;
+        var MongoClient, client, db, app;
         var _this = this;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    app = express();
-                    app.use(bodyParser.urlencoded({ extended: true }));
-                    app.use(cors());
                     MongoClient = mongoDb.MongoClient;
                     client = new MongoClient("mongodb+srv://".concat(process.env.MONGO_USER_NAME, ":").concat(process.env.MONGO_PASSWORD, "@").concat(process.env.MONGO_CLUSTER_NAME, ".jy2zpck.mongodb.net/?retryWrites=true&w=majority"));
                     return [4 /*yield*/, client.connect()];
                 case 1:
                     _a.sent();
                     db = client.db('amazon');
+                    app = express();
+                    app.use(bodyParser.urlencoded({ extended: true }));
+                    app.use(cors());
                     app.listen(process.env.PORT, function () {
                         console.log('listening on 1116');
                     });
@@ -76,7 +76,12 @@ function main() {
                                             .toArray()];
                                 case 1:
                                     result = _a.sent();
-                                    res.json(result);
+                                    if (result.length === 0) {
+                                        res.json([{ keywords: '해당하는 상품이 없습니다.' }]);
+                                    }
+                                    else {
+                                        res.json(result);
+                                    }
                                     return [2 /*return*/];
                             }
                         });

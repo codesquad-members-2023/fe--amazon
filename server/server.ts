@@ -7,18 +7,16 @@ import * as mongoDb from 'mongodb';
 dotenv.config();
 
 async function main() {
-  const app = express();
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(cors());
-
   const MongoClient = mongoDb.MongoClient;
   const client = new MongoClient(
     `mongodb+srv://${process.env.MONGO_USER_NAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER_NAME}.jy2zpck.mongodb.net/?retryWrites=true&w=majority`,
   );
-
   await client.connect();
-
   const db = client.db('amazon');
+
+  const app = express();
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(cors());
 
   app.listen(process.env.PORT, () => {
     console.log('listening on 1116');
@@ -35,8 +33,11 @@ async function main() {
     const result = await collection
       .find({ keywords: { $regex: `${query}`, $options: 'i' } })
       .toArray();
-
-    res.json(result);
+    if (result.length === 0) {
+      res.json([{ keywords: '해당하는 상품이 없습니다.' }]);
+    } else {
+      res.json(result);
+    }
   });
 }
 

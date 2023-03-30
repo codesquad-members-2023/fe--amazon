@@ -26,3 +26,6 @@ public
 
 # dist files
 dist
+
+# server js file
+server/server.js
