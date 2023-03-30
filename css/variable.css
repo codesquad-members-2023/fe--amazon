@@ -17,10 +17,9 @@
   --font-weight-bold: 800;
 
   /* z-index*/
-  --z-index--header: 10;
-  --z-index--deem: 1;
-  --z-index--side-bar: 100;
-  --z-index--carousel: 1;
+  --z-index-small: 1;
+  --z-index-medium: 10;
+  --z-index-big: 100;
 
   /* color */
   --color-white: #ffffff;

@@ -1,5 +1,5 @@
 .side_bar {
-  z-index: var(--z-index--side-bar);
+  z-index: var(--z-index-big);
   position: fixed;
   top:0;
 
