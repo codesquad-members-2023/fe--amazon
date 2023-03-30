@@ -2,7 +2,7 @@ import { $, modifyClassList } from "../utils.js";
 import { items } from "../data/loginHover.js";
 
 class Navigation {
-  constructor() {
+  constructor({delayTime}) {
     this.listItems = $(".list__items");
     this.accountItems = $(".account__items");
     this.loginModal = $(".login__modal");
@@ -11,7 +11,7 @@ class Navigation {
     this.shippingMenu = $(".nav__shipping-address");
     this.shippingHover = $(".shipping__hover");
     this.dimmedLayer = $(".dimmed-layer");
-    this.delayTime = 1000;
+    this.delayTime = delayTime;
   }
 
   init() {
