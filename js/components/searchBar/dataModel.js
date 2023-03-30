@@ -3,22 +3,13 @@ import API from '../../utils/serverConstant.js';
 //SearchStore
 class DataModel {
   constructor() {
-    this.getData(`${API.GET_SEARCH_DATA}?keywords_like=dog`);
     this.recentSearchList = new Set();
   }
 
-  getData(url) {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        // TODO : 로컬 스토리지가 아니라 계속 요청줘야함.
-        this.saveToLocalStorage('searchData', data);
-        console.log('데이터가 성공적으로 localStorage에 저장됐습니다!');
-      })
-      .catch((error) => console.error(`error: ${error.message}`));
-  }
-
   saveToLocalStorage(key, value) {
+    // this.saveToLocalStorage('searchData', data);
+    // console.log('데이터가 성공적으로 localStorage에 저장됐습니다!');
+    // 위의 코드는 호출하는 놈!
     localStorage.setItem(key, JSON.stringify(value));
   }
 

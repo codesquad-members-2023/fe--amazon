@@ -1,28 +1,29 @@
+import API from '../../utils/serverConstant.js';
 class LogicModel {
   // 비지니스 로직.
   constructor() {
-    this.searchData = this.getSearchData();
-    this.keywords = this.getKeywordsFromSearchData();
     this.CHUNK_SIZE = 10;
   }
 
-  searchBarFocusEvent(event) {
-    console.log(event);
-  }
-
-  searchBarBtnClickEvent(event) {
-    console.log(event);
+  async getMatchData(keyword) {
+    let result;
+    await fetch(`${API.GET_SEARCH_DATA}?keywords_like=${keyword}`)
+      .then((response) => response.json())
+      .then((data) => (result = data))
+      .catch((error) => console.error(`error: ${error.message}`));
+    return result;
   }
 
   getSearchData() {
+    // TODO : 필요없음.
     return JSON.parse(localStorage.getItem('searchData'));
   }
 
-  findChunkSizeKeywords(inputData) {
+  async findChunkSizeKeywords(inputData) {
     // TODO: 대소문자 구분하기 위해 item.includes 부분 정규식으로 바꾸기.
-    const matchingData = this.keywords.filter((item) =>
-      item.includes(inputData),
-    );
+    let matchingData = await this.getMatchData(inputData);
+    // console.log(this.sliceChunkSizeKeywords(matchingData, this.CHUNK_SIZE));
+    matchingData = this.getKeywordsFromMatchingData(matchingData);
     console.log(this.sliceChunkSizeKeywords(matchingData, this.CHUNK_SIZE));
     return this.sliceChunkSizeKeywords(matchingData, this.CHUNK_SIZE);
   }
@@ -35,10 +36,10 @@ class LogicModel {
       : matchingData;
   }
 
-  getKeywordsFromSearchData() {
+  getKeywordsFromMatchingData(matchingData) {
     // keywords 중 겹치는 keyword 삭제후 배열로 리턴.
-    const keywords = new Set(this.searchData.map((item) => item['keywords']));
-    return Array.from(keywords);
+    const result = new Set(matchingData.map((item) => item.keywords));
+    return Array.from(result);
   }
 }
 
