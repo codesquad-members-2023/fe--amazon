@@ -1,4 +1,5 @@
 import $ from './common/$.js'
+import closeSearchList from './searchbar.js'
 
 const openSideBar = (...element) => {
   const [sideMenu, openButton, dim] = element
@@ -22,12 +23,14 @@ const hideSideBar = (...element) => {
     dim.classList.remove('dim-all')
   })
 
-  body.addEventListener('click', (e) => {
-    if (!sideMenu.contains(e.target) && !openButton.contains(e.target)) {
+  body.addEventListener('click', ({ target }) => {
+    if (!sideMenu.contains(target) && !openButton.contains(target)) {
       sideMenu.style.animation = 'slide-hide .5s forwards'
       dim.classList.add('hidden')
       dim.classList.remove('dim-all')
     }
+
+    closeSearchList(target)
   })
 }
 
