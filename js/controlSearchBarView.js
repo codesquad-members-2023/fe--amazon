@@ -1,17 +1,17 @@
 const showSearchBar = () => {
   const homeHeaderSearch = document.querySelector(".homeHeader__search");
-  const headerFlyout = document.querySelector("#header-flyout");
+  const searchFlyout = document.querySelector("#search-flyout");
   const dimmForHeader = document.querySelector(".dimm--header");
 
   const showHeaderFlyout = () => {
-    headerFlyout.classList.remove("hide-opacity");
-    headerFlyout.classList.add("show-opacity");
+    searchFlyout.classList.remove("hide-opacity");
+    searchFlyout.classList.add("show-opacity");
     dimmForHeader.classList.remove("hidden");
   };
 
   const hideHeaderFlyput = () => {
-    headerFlyout.classList.add("hide-opacity");
-    headerFlyout.classList.remove("show-opacity");
+    searchFlyout.classList.add("hide-opacity");
+    searchFlyout.classList.remove("show-opacity");
     dimmForHeader.classList.add("hidden");
   };
 
