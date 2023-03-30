@@ -4,12 +4,33 @@ import historyImage from "../../assets/images/history.svg";
 class AutoCompletedSearchView {
   #parentElement = document.querySelector(".search-term__auto-completed-items");
 
+  clear() {
+    this.#parentElement.innerHTML = "";
+  }
+
+  // 메서드명 바꾸기 렌더링은 아니고 단순 꾸미긴데..
+  renderSelectedItem(idx) {
+    const selectedItem = this.#parentElement.querySelector(
+      `.search-term__item:nth-of-type(${idx})`
+    );
+
+    if (!selectedItem) return;
+
+    [...this.#parentElement.children].forEach(
+      // classList remove로 바꾸기
+      (li) => (li.style.backgroundColor = "white")
+    );
+
+    // classList add로 바꾸기
+    selectedItem.style.backgroundColor = "grey";
+
+    return selectedItem.querySelector(".search-term__span").textContent;
+  }
+
   renderAutoCompleted(data, query) {
     const markup = this.#generateAutoCompletedMarkup(data, query);
     this.#parentElement.innerHTML = markup;
   }
-
-  renderHistories(searchHistories) {}
 
   renderRecommended(searchHistories, data) {
     const historyMarkup = this.#generateHistoryMarkup(searchHistories);
@@ -23,7 +44,7 @@ class AutoCompletedSearchView {
       .map(
         (searchHistory) =>
           `<li class="search-term__item">
-              <span class="search-term__history">${searchHistory.term}</span>
+              <span class="search-term__history search-term__span">${searchHistory.term}</span>
               <img
                 class="search-term__remove"
                 src="${historyImage}"
@@ -44,7 +65,7 @@ class AutoCompletedSearchView {
                 class="search-term__recommend-image"
                 src="${recommendImage}"
               />
-              <span class="search-term__recommend">${item.term}</span>
+              <span class="search-term__recommend search-term__span">${item.term}</span>
             </li>`;
       })
       .join("");
@@ -55,7 +76,7 @@ class AutoCompletedSearchView {
     const html = data
       .map((item) => {
         return `<li class="search-term__item">
-              <span class="search-term__auto-completed">${item.term.replace(
+              <span class="search-term__auto-completed search-term__span">${item.term.replace(
                 query,
                 `<span class="search-term__match">${query}</span>`
               )}</span>
@@ -66,8 +87,8 @@ class AutoCompletedSearchView {
     return html;
   }
 
-  clear() {
-    this.#parentElement.innerHTML = "";
+  getItemLength() {
+    return this.#parentElement.children.length;
   }
 
   addHandlerClick(handler) {

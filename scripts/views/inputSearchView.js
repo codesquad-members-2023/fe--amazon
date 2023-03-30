@@ -6,6 +6,10 @@ class InputSearchView {
     return this.#input.value;
   }
 
+  setValue(textContent) {
+    this.#input.value = textContent;
+  }
+
   addHandlerInput(handler) {
     this.#input.addEventListener("input", handler);
   }
@@ -18,10 +22,10 @@ class InputSearchView {
     document.addEventListener(
       "click",
       (e) => {
-        console.log(e.target);
-        const test = e.target.closest(".search-form");
-        console.log(test);
-        if (test) return;
+        const searchForm = e.target.closest(".search-form");
+
+        if (searchForm) return;
+
         handler();
       },
       //  event delegation 발표때 물어보기
@@ -31,6 +35,17 @@ class InputSearchView {
 
   addHandlerSubmit(handler) {
     this.#parentElement.addEventListener("submit", handler);
+  }
+
+  addHandlerKeyDown(handler) {
+    this.#input.addEventListener("keydown", (e) => {
+      if (e.code !== "ArrowDown" && e.code !== "ArrowUp") return;
+      e.preventDefault();
+
+      const direction = e.code === "ArrowUp" ? -1 : 1;
+
+      handler(direction);
+    });
   }
 }
 

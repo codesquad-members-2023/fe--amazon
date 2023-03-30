@@ -3,6 +3,7 @@ export const state = {
   autoCompletedTerms: [],
   searchHistories: [],
   query: "",
+  selectedIdx: 0,
 };
 
 export const loadRecommendedTerms = async () => {
@@ -80,8 +81,16 @@ export const deleteSearchHistory = (id) => {
     (history) => history.id !== id
   );
 
-  window.localStorage.setItem(
-    "searchHistory",
-    JSON.stringify(state.searchHistories)
-  );
+  localStorage.setItem("searchHistory", JSON.stringify(state.searchHistories));
+};
+
+export const setIdx = (direction, itemLength) => {
+  state.selectedIdx += direction;
+
+  if (state.selectedIdx < 1) state.selectedIdx = itemLength;
+  if (state.selectedIdx > itemLength) state.selectedIdx = 1;
+};
+
+export const clearIdx = () => {
+  state.selectedIdx = 0;
 };
