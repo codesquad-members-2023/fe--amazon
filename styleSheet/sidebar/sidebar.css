@@ -1,5 +1,5 @@
 .sidebar {
-  position: fixed;
+  position: relative;
   display: none;
   z-index: 2;
 }
@@ -91,7 +91,7 @@
   width: 20px;
   position: absolute;
   left: 335px;
-  top: 8px;
+  top: -80px;
 }
 
 .sidebar_menu_summary img {

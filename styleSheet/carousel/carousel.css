@@ -1,0 +1,9 @@
+.carousel {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+.carousel img {
+  width: 100%;
+}
