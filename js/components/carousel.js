@@ -25,10 +25,10 @@ class Carousel {
   }
 
   clickCarouselBtn() {
-    const $leftBtn = document.getElementById('carousel_left');
-    const $rightBtn = document.getElementById('carousel_right');
-    $leftBtn.addEventListener('click', this.translateSlideHandler.bind(this));
-    $rightBtn.addEventListener('click', this.translateSlideHandler.bind(this));
+    const leftBtn = document.getElementById('carousel_left');
+    const rightBtn = document.getElementById('carousel_right');
+    leftBtn.addEventListener('click', this.translateSlideHandler.bind(this));
+    rightBtn.addEventListener('click', this.translateSlideHandler.bind(this));
   }
 
   translateSlideHandler({ target }) {

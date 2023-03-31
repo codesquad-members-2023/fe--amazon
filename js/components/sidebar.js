@@ -28,7 +28,7 @@ const openSideBar = e => {
   _.addClasses($sideBar, 'slideRight', 'flex', 'hidden');
   _.removeClasses($sideBar, 'slideLeft');
   _.removeClasses($modalBackground, 'hidden');
-  $modalBackground.style.zIndex = '10';
+  $modalBackground.style.zIndex = '100';
 }
 
 // 사이드바 닫는 함수 (메인메뉴로 돌아가게끔 재구현 필요함)
@@ -42,7 +42,7 @@ const closeSideBar = e => {
       _.addClasses($sideBar, 'hidden');
       _.removeClasses($sideBar, 'flex', 'slideRight');
       _.addClasses($modalBackground, 'hidden');
-      $modalBackground.style.zIndex = '1';
+      $modalBackground.style.zIndex = '10';
     }
   });
 }
