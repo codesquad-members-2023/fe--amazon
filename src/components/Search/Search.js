@@ -36,13 +36,17 @@ class Search extends HTMLElement {
       list.setAttribute('tabindex', i);
       list.classList.add(type);
       list.innerHTML = `
-        <span>
-        ${
-          type === 'recommend'
-            ? `<icon-element name="arrow-top-right" size="16"></icon-element>`
-            : ''
-        }
-        ${this.highlightText({ s, text: cur.title })}</span>
+        <span class="list-content">
+          ${
+            type === 'recommend'
+              ? `<icon-element name="arrow-top-right" size="16"></icon-element>`
+              : ''
+          }
+          <span class="text">${this.highlightText({
+            s,
+            text: cur.title,
+          })}</span>
+        </span>
         ${
           type === 'history'
             ? `<icon-element name="close" size="16"></icon-element>`

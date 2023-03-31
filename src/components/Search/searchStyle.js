@@ -8,10 +8,7 @@ export default function searchStyle(type) {
       
       top: calc(var(--input-hegiht));
       width: 100%;
-      max-height: 370px;
-      border: 1px solid var(--black);
-      border-radius: 4px;
-      overflow-y: scroll;
+      
       z-index: 2;
     }
 
@@ -19,9 +16,13 @@ export default function searchStyle(type) {
       background-color: white;
       color: var(--gray-800);
       box-sizing: content-box;
+      max-height: 370px;
+      border: 1px solid var(--black);
+      border-radius: 4px;
+      overflow-y: scroll;
 
       opacity: 0;
-      transition: opacity .1s;
+      transition: opacity .1s ease-out;
     }
 
     .search-list-container.show {
@@ -56,6 +57,13 @@ export default function searchStyle(type) {
 
     li:focus-visible {
       outline: none;
+    }
+
+    span.list-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4px;
     }
 
     .highlight {
