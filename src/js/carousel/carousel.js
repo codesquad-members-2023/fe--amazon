@@ -8,11 +8,13 @@ export class Carousel {
     this.carouselContainer = document.querySelector('.carousel-container');
     this.btnContainer = this.carouselContainer.querySelector('.carousel-btn__container')
     this.cardContainer = findSiblingForward(this.btnContainer, 'carousel-card__container');
+    this.carouselAnimationManager = new CarouselAnimationManager(this.btnContainer);
   }
 
   init(){
     this.attachHTML();
-    this.triggerAnimation();
+    this.carouselAnimationManager.startAutoSlide();
+    this.carouselAnimationManager.addClickEvt();
   }
 
   attachHTML(){
@@ -30,11 +32,5 @@ export class Carousel {
         `
     , '');
     return cardNodes;
-  }
-
-  triggerAnimation(){
-    const carouselAnimationManager = new CarouselAnimationManager(this.btnContainer);
-    carouselAnimationManager.startAutoSlide();
-    carouselAnimationManager.addClickEvt();
   }
 }
