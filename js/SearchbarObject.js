@@ -35,11 +35,14 @@ class SearchbarFlyout {
       ".search-flyout-mySearchContainer"
     );
     const div = `<div> 
-                  <span>${inputValue} <span>  in All Departments</span></span>
+                  <span>${inputValue}<span>in All Departments</span></span>
                   <button id="${id}"><i class="fa-solid fa-x"></i></button></div>`;
+
     mySearchContainer.innerHTML += div;
-    const deleteBtn = this.element.querySelector("button");
-    deleteBtn.addEventListener("click", this.deleteUserKeywordsEl.bind(this));
+    const deleteBtns = this.element.querySelectorAll("button");
+    deleteBtns.forEach((deleteBtn) => {
+      deleteBtn.addEventListener("click", this.deleteUserKeywordsEl.bind(this));
+    });
   }
 
   //  유저 검색 입력값 el 삭제
