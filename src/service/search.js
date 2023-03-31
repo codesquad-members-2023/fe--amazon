@@ -47,7 +47,6 @@ function handleEnterKeyEvent() {
   searchInput?.addEventListener(
     'keyup',
     debounce((e) => {
-      e.stopPropagation();
       if (e.key === 'Enter') {
         const searchHistories = getSearchHistories() || [];
         searchHistories.push({ title: searchInput.value });

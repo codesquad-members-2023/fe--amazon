@@ -70,7 +70,7 @@ class Search extends HTMLElement {
   }
 
   removeChildren() {
-    if (this.div.hasChildNodes()) this.div.innerHTML = '';
+    this.div.innerHTML = '';
   }
 
   loadDefaultItems() {
