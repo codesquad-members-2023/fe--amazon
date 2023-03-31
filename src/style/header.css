@@ -88,6 +88,7 @@ a {
 /* nav-top 검색창 */
 
 .nav-top.search {
+  position: relative;
   flex-grow: 1;
 }
 
@@ -104,9 +105,7 @@ a {
   flex: 1;
   border: none;
   border-radius: 4px 0 0 4px;
-  font-weight: var(--weight-semi-bold);
-  font-size: var(--font-md);
-  line-height: var(--line-height);
+  font-size: var(--font-sm);
   padding: 9.5px 9.5px 12px 12px;
 }
 
@@ -129,6 +128,7 @@ a {
 }
 
 .nav-top__text,
+.nav-top__line2,
 .nav-top__account-line2,
 .nav-top__order-text,
 .nav-top__basket-text {
@@ -208,4 +208,23 @@ a {
 .border:hover::before {
   opacity: 1;
 }
+
+.nav-flyout__container {
+  display: none;
+  position: absolute;
+  width: calc(100% - 20px);
+  height: auto;
+  background-color: white;
+  border: 1px solid rgb(187, 187, 187);
+  z-index: 3;
+}
+
+.suggestion-container {
+  height: 35px;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 

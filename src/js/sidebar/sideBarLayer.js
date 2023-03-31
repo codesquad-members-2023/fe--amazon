@@ -1,5 +1,5 @@
 import { SubMenu } from "./sideBarSubMenu.js";
-import { findUpWard, findSiblingForward, getSubSideBar, isSubSideBarExist } from "../nodeFindFuncs.js";
+import { findUpWard, findSiblingForward, getSubSideBar, isSubSideBarExist } from "../utils.js";
 
 export class SideBarLayer {
   constructor(responsedData, sideBarLayer, dimLayer){

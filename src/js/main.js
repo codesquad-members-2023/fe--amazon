@@ -3,6 +3,7 @@ import { SIDEBAR_DATA } from "./sidebar/sideBarData.js";
 import { SideBar } from "./sidebar/sideBar.js";
 import { Carousel } from "./carousel/carousel.js";
 import { CAROUSEL_DATA } from "./carousel/carouselData.js";
+import { SearchBar } from "./searchbar/searchbar.js";
 
 function init(){
   (function (delay) {
@@ -11,11 +12,12 @@ function init(){
   })(1000);
 
   const sidebar = new SideBar(SIDEBAR_DATA);
-  sidebar.init();
-  
   const carousel = new Carousel(CAROUSEL_DATA);
-  carousel.init();
+  const searchBar = new SearchBar();
   
+  sidebar.init();
+  carousel.init();
+  searchBar.addEvent();
   navEvtHandler();
 }
 

@@ -1,5 +1,5 @@
 import { CarouselAnimationManager } from "./carouselAnimationManager.js";
-import { findSiblingForward } from "../nodeFindFuncs.js";
+import { findSiblingForward } from "../utils.js";
 
 
 export class Carousel {

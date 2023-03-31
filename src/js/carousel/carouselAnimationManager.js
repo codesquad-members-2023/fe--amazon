@@ -1,4 +1,4 @@
-import { findSiblingForward, findUpWard } from "../nodeFindFuncs.js";
+import { findSiblingForward } from "../utils.js";
 
 export class CarouselAnimationManager {
   constructor(btnLayer){
