@@ -1,4 +1,4 @@
-import { findUpWard, findSiblingForward } from "./nodeFindFuncs.js";
+import { findUpWard, findSiblingForward } from "./utils.js";
 
 export const navEvtHandler = () => {
   const nav = document.querySelector(".nav");

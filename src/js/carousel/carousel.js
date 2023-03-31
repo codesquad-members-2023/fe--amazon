@@ -1,19 +1,24 @@
-import { CarouselSlideMotion } from "./carouselSlideMotion.js";
+import { CarouselAnimationManager } from "./carouselAnimationManager.js";
+import { findSiblingForward } from "../utils.js";
+
 
 export class Carousel {
   constructor(cardData){
     this.cardData = cardData;
-    this.container = document.querySelector('.carousel-card__container');
-    this.btnLayer = this.container.previousElementSibling;
+    this.carouselContainer = document.querySelector('.carousel-container');
+    this.btnContainer = this.carouselContainer.querySelector('.carousel-btn__container')
+    this.cardContainer = findSiblingForward(this.btnContainer, 'carousel-card__container');
+    this.carouselAnimationManager = new CarouselAnimationManager(this.btnContainer);
   }
 
   init(){
     this.attachHTML();
-    this.addEvents();
+    this.carouselAnimationManager.startAutoSlide();
+    this.carouselAnimationManager.addClickEvt();
   }
 
   attachHTML(){
-    this.container.insertAdjacentHTML('beforeend', this.generateCardNodes());
+    this.cardContainer.insertAdjacentHTML('beforeend', this.generateCardNodes());
   }
 
   generateCardNodes(){
@@ -27,10 +32,5 @@ export class Carousel {
         `
     , '');
     return cardNodes;
-  }
-
-  addEvents(){
-    const carouselSlideMotion = new CarouselSlideMotion(this.btnLayer);
-    carouselSlideMotion.init();
   }
 }

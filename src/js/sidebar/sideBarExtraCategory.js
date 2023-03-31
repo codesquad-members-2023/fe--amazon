@@ -5,18 +5,20 @@ export class SideBarExtraCategory {
   }
 
   makeLayer(){
-    return this.extraCategories.reduce((acc, categories) => 
-        acc + `<div class="sidebar__category extra">
-                 <div class="sidebar__category__menu">${this.makeDetail(categories)}</div>
-               </div>`
-    , this.emptyString);
+    return Object.entries(this.extraCategories).map(([categoriesId, categories]) => this.makeContainer(categoriesId, categories));
   }
 
-  makeDetail(categories){
+  makeContainer(categorieId, category){
+    return `<div class="sidebar__category extra" data-category-id="${categorieId}"">
+              <div class="sidebar__category__menu">${this.makeChildNodes(category)}</div>
+            </div>`
+  }
+ 
+  makeChildNodes(categories){
     return categories.reduce((acc, { name, id }, index) => {
       if(index < categories.length - 1){
         acc += `
-          <a class="sidebar__contents" href="#" data-category-id="${id}">
+          <a class="sidebar__contents" href="#" data-contents-id="${id}">
             ${name}<img src="asset/sidebar/rightdir.svg" alt="" />
           </a>`
       } else acc += this.detailTailPartHtml(name, id);
@@ -26,7 +28,7 @@ export class SideBarExtraCategory {
 
   detailTailPartHtml(name, id){
     return `
-      <a class="sidebar__contents" href="#" data-category-id="${id}">
+      <a class="sidebar__contents" href="#" data-contents-id="${id}">
         ${name}<img src="asset/sidebar/rightdir.svg" alt="" />
       </a>
       <a href="" class="sidebar__contents__btn closeall" onclick="return false;">
