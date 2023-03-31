@@ -5,17 +5,28 @@ export default function searchStyle(type) {
     :host {
       display: block;
       position: absolute;
-      background-color: white;
+      
       top: calc(var(--input-hegiht));
       width: 100%;
       max-height: 370px;
 
       overflow-y: scroll;
       z-index: 2;
+    }
+
+    .search-list-container {
+      background-color: white;
       color: var(--gray-800);
       border: 1px solid var(--black);
       border-radius: 4px;
       box-sizing: content-box;
+
+      opacity: 0;
+      transition: opacity .1s;
+    }
+
+    .search-list-container.show {
+      opacity: 1;
     }
 
     .empty {
@@ -36,7 +47,7 @@ export default function searchStyle(type) {
       line-height: var(--bold-md-height);
       word-spacing: var(--bold-md-spacing);
       display: flex;
-    justify-content: space-between;
+      justify-content: space-between;
     }
 
     li:hover, li:focus {

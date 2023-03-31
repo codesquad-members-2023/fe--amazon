@@ -7,16 +7,18 @@ class Search extends HTMLElement {
 
     const shadow = this.attachShadow({ mode: 'open' });
     this.searchList = this.getAttribute('data-search-list');
-    this.div = document.createElement('ul');
+    this.div = document.createElement('div');
+    this.div.classList.add('search-list-container');
     shadow.append(this.div);
-    this.showDefaultSearch();
     this.shadowRoot.append(searchStyle.call(this));
   }
 
   showAction(eventTarget) {
-    eventTarget.shadowRoot.append(this);
+    this.showDefaultSearch();
+
     this.backdrop = document.createElement('backdrop-element');
     document.body.append(this.backdrop);
+    eventTarget.shadowRoot.append(this);
   }
 
   closeAction() {
@@ -29,8 +31,13 @@ class Search extends HTMLElement {
 
   showDefaultSearch() {
     this.removeChildren();
-    this.loadHistories();
     this.loadRecommendItems();
+    this.loadHistories();
+    document.addEventListener('search-recommend-list-rendered', () => {
+      this.shadowRoot
+        .querySelector('.search-list-container')
+        .classList.add('show');
+    });
   }
 
   loadRecommendItems() {
@@ -68,6 +75,8 @@ class Search extends HTMLElement {
       this.div.append(list);
     });
     document.dispatchEvent(new CustomEvent('search-list-rendered'));
+    if (type === 'recommend')
+      document.dispatchEvent(new CustomEvent('search-recommend-list-rendered'));
   }
 
   runSearch(s = '', page = 1) {

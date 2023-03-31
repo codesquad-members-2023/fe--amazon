@@ -16,6 +16,10 @@ function openSearchInput() {
   searchInput.addEventListener('focus', () => {
     if (searchInstance) return;
     searchInstance = new Search();
+    document.addEventListener('search-recommend-list-rendered', () => {
+      console.log('dd');
+    });
+
     searchInstance.showAction(search);
     deleteHistories();
     moveFocusedList()();
