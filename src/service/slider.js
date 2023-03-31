@@ -15,7 +15,7 @@ function autoSlide() {
     if (!lastTime) lastTime = timestamp;
     const now = timestamp;
     const elapsed = now - lastTime;
-    if (elapsed >= 3000) {
+    if (elapsed >= SLIDE_INTERVAL_TIME) {
       slideLeft(slider);
       lastTime = now;
     }
