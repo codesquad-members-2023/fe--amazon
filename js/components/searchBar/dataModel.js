@@ -1,18 +1,16 @@
-import API from '../../utils/server.js';
+import API from '../../utils/serverConstant.js';
 
 //SearchStore
 class DataModel {
-  searchData;
   constructor() {
-    this.getData(API.GET_SEARCH_DATA);
     this.recentSearchList = new Set();
   }
 
-  getData(url) {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => (this.searchData = data))
-      .catch((error) => console.error(`error: `, error.message));
+  saveToLocalStorage(key, value) {
+    // this.saveToLocalStorage('searchData', data);
+    // console.log('데이터가 성공적으로 localStorage에 저장됐습니다!');
+    // 위의 코드는 호출하는 놈!
+    localStorage.setItem(key, JSON.stringify(value));
   }
 
   /**

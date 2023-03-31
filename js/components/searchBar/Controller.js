@@ -4,19 +4,25 @@ import View from './View.js';
 
 class Controller {
   // addEventListener를 여기서 등록해야할까?
-  constructor() {
-    this.dataModel = new DataModel();
-    this.logicModel = new LogicModel();
-    this.view = new View();
+  constructor(dataModel, logicModel, view) {
+    this.dataModel = dataModel;
+    this.logicModel = logicModel;
+    this.view = view;
   }
 
   init() {
     // 초기 검색창 만들기.
-    this.view.searchBarAddFocusEvent(this.logicModel.searchBarFocusEvent);
-    this.view.searchBarBtnAddClickEvent(this.logicModel.searchBarBtnClickEvent);
-    this.view.searchBarAddInputEvent();
+    this.view.searchBarAddFocusEvent(this.logicModel.suggestionData);
+    this.view.searchBarBtnAddClickEvent();
+    this.view.searchBarAddInputEvent(
+      this.logicModel.findChunkSizeKeywords.bind(this.logicModel),
+      this.logicModel.suggestionData,
+    );
   }
 }
 
-const controller = new Controller();
+const dataModel = new DataModel();
+const logicModel = new LogicModel();
+const view = new View();
+const controller = new Controller(dataModel, logicModel, view);
 controller.init();
