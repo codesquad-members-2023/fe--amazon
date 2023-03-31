@@ -5,19 +5,14 @@ class Search extends HTMLElement {
   constructor() {
     super();
 
-    const shadow = this.attachShadow({ mode: 'open' });
+    this.shadow = this.attachShadow({ mode: 'open' });
     this.searchList = this.getAttribute('data-search-list');
-    this.div = document.createElement('div');
-    this.div.classList.add('search-list-container');
-    shadow.append(this.div);
     this.shadowRoot.append(searchStyle.call(this));
   }
 
   showAction(eventTarget) {
+    this.renderDefault(eventTarget);
     this.showDefaultSearch();
-    this.backdrop = document.createElement('backdrop-element');
-    document.body.append(this.backdrop);
-    eventTarget.shadowRoot.append(this);
   }
 
   closeAction() {
@@ -25,33 +20,14 @@ class Search extends HTMLElement {
     this.backdrop.remove();
   }
 
-  removeChildren() {
-    this.div.innerHTML = '';
-  }
+  renderDefault(eventTarget) {
+    this.div = document.createElement('div');
+    this.div.classList.add('search-list-container');
+    this.shadow.append(this.div);
+    eventTarget.shadowRoot.append(this);
 
-  showDefaultSearch() {
-    this.removeChildren();
-    this.loadRecommendItems();
-    this.loadHistories();
-    document.addEventListener('search-recommend-list-rendered', () => {
-      this.shadowRoot
-        .querySelector('.search-list-container')
-        .classList.add('show');
-    });
-  }
-
-  loadRecommendItems() {
-    getSearchRecommendItemsAPI(5).then((datas) => {
-      this.renderSearchList({ s: '', datas, type: 'recommend' });
-    });
-  }
-
-  loadHistories() {
-    const histories = JSON.parse(
-      localStorage.getItem('search-histories')
-    ).reverse();
-    if (!histories) return;
-    this.renderSearchList({ s: '', datas: histories, type: 'history' });
+    this.backdrop = document.createElement('backdrop-element');
+    document.body.append(this.backdrop);
   }
 
   renderSearchList({ s, datas, type = 'search-result' }) {
@@ -75,8 +51,33 @@ class Search extends HTMLElement {
       this.div.append(list);
     });
     document.dispatchEvent(new CustomEvent('search-list-rendered'));
-    if (type === 'recommend')
-      document.dispatchEvent(new CustomEvent('search-recommend-list-rendered'));
+  }
+
+  showDefaultSearch() {
+    this.removeChildren();
+    this.loadDefaultItems();
+  }
+
+  removeChildren() {
+    if (this.div.hasChildNodes()) this.div.innerHTML = '';
+  }
+
+  loadDefaultItems() {
+    getSearchRecommendItemsAPI(5).then((datas) => {
+      this.loadHistories();
+      this.renderSearchList({ s: '', datas, type: 'recommend' });
+      this.shadowRoot
+        .querySelector('.search-list-container')
+        .classList.add('show');
+    });
+  }
+
+  loadHistories() {
+    const histories = JSON.parse(
+      localStorage.getItem('search-histories')
+    ).reverse();
+    if (!histories) return;
+    this.renderSearchList({ s: '', datas: histories, type: 'history' });
   }
 
   runSearch(s = '', page = 1) {

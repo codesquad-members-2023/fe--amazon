@@ -15,9 +15,7 @@ let searchInstance = null;
 
 function openSearchInput() {
   searchInput.addEventListener('focus', () => {
-    if (loginActionElement) {
-      loginActionElement.closeAction();
-    }
+    if (loginActionElement) loginActionElement.closeAction();
     if (searchInstance) return;
     searchInstance = new Search();
     searchInstance.showAction(search);
@@ -61,12 +59,12 @@ function deleteHistories() {
   const historyList = document
     .querySelector('navbar-element')
     .shadowRoot.querySelector('text-input-element')
-    .shadowRoot.querySelector('search-element')
-    .shadowRoot.querySelector('ul');
+    .shadowRoot.querySelector('search-element').shadowRoot;
 
-  historyList?.addEventListener('click', (e) => {
+  historyList.addEventListener('click', (e) => {
     if (e.target.nodeName !== 'ICON-ELEMENT' && e.target.name !== 'close')
       return;
+
     const li = e.target.parentElement;
     const searchHistories = getSearchHistories();
     const newSearchHistories = searchHistories.filter(
