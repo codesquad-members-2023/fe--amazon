@@ -1,38 +1,46 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import * as mongoDb from 'mongodb';
 import * as dotenv from 'dotenv';
 import * as cors from 'cors';
+import * as mongoDb from 'mongodb';
+
 dotenv.config();
 
-const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+async function main() {
+  const MongoClient = mongoDb.MongoClient;
+  const client = new MongoClient(
+    `mongodb+srv://${process.env.MONGO_USER_NAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER_NAME}.jy2zpck.mongodb.net/?retryWrites=true&w=majority`,
+  );
+  await client.connect();
+  const db = client.db('amazon');
 
-const MongoClient = mongoDb.MongoClient;
-const connection = MongoClient.connect(
-  `mongodb+srv://${process.env.MONGO_USER_NAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER_NAME}.jy2zpck.mongodb.net/?retryWrites=true&w=majority`,
-);
+  const app = express();
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(cors());
 
-let db;
-connection
-  .then((client) => {
-    db = client.db('amazon');
-    app.listen(process.env.PORT, () => {
-      console.log('listening on 1116');
-    });
-    app.get('/search', (req, res) => {
-      res.json('테스트 문자열');
-    });
-  })
-  .catch((err) => {
-    console.log(`에러 발생: ${err}`);
+  app.listen(process.env.PORT, () => {
+    console.log('listening on 1116');
   });
 
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/server-index.html');
-// });
-//
-// app.get('/test', (req, res) => {
-//   res.send('이렇게 하면 dom구조 어뜨케 되지');
-// });
+  app.get('/recommend', async (req, res) => {
+    const collection = db.collection('recommend-product');
+    const result = await collection.find().toArray();
+    res.json(result);
+  });
+
+  app.get('/search', async (req, res) => {
+    const query = req.query.q;
+    // mongodb에서 관련 단어 찾기
+    const collection = db.collection('product');
+    const result = await collection
+      .find({ keywords: { $regex: `${query}`, $options: 'i' } })
+      .toArray();
+    if (result.length === 0) {
+      res.json([{ keywords: '해당하는 상품이 없습니다.' }]);
+    } else {
+      res.json(result);
+    }
+  });
+}
+
+main();

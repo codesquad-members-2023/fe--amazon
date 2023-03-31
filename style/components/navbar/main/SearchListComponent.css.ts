@@ -1,14 +1,15 @@
 import { style } from '@vanilla-extract/css';
 
 export const SearchListComponentStyle = style({
-  display: 'flex',
+  display: 'none',
   flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'flex-start',
-  position: 'absolute',
-  backgroundColor: 'tomato',
-  height: '10rem',
+  // position: 'absolute',
+  backgroundColor: 'whitesmoke',
+  height: 'auto',
   width: '100%',
-  top: '2rem',
-  overflowY: 'scroll',
+  overflowY: 'auto',
+  borderRadius: '5px',
+  zIndex: 100,
 });
