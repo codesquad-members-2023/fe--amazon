@@ -1,5 +1,6 @@
 import Search from '@components/Search/Search.js';
 import { debounce } from '@src/utils.js';
+import { loginActionElement } from './action.js';
 
 const search = document
   .querySelector('navbar-element')
@@ -14,12 +15,11 @@ let searchInstance = null;
 
 function openSearchInput() {
   searchInput.addEventListener('focus', () => {
+    if (loginActionElement) {
+      loginActionElement.closeAction();
+    }
     if (searchInstance) return;
     searchInstance = new Search();
-    document.addEventListener('search-recommend-list-rendered', () => {
-      console.log('dd');
-    });
-
     searchInstance.showAction(search);
     deleteHistories();
     moveFocusedList()();
@@ -130,6 +130,6 @@ function handleKeyoardEventArrowUpAndDown(target) {
 }
 
 openSearchInput();
-// closeSearchInput();
+closeSearchInput();
 runSearch();
 handleEnterKeyEvent();
