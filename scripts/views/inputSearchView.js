@@ -1,3 +1,5 @@
+import { DOWN, UP } from "../constants";
+
 class InputSearchView {
   #parentElement = document.querySelector(".search-form");
   #input = this.#parentElement.querySelector(".search-form__input");
@@ -42,7 +44,7 @@ class InputSearchView {
       if (e.code !== "ArrowDown" && e.code !== "ArrowUp") return;
       e.preventDefault();
 
-      const direction = e.code === "ArrowUp" ? -1 : 1;
+      const direction = e.code === "ArrowUp" ? UP : DOWN;
 
       handler(direction);
     });

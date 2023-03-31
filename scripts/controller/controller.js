@@ -1,3 +1,9 @@
+import {
+  FIRST_IDX,
+  MAX_AUTO_COMPLETE_RESULTS,
+  MAX_RECENT_SEARCH_HISTORY,
+} from "../constants";
+import { DimmedMain } from "../Dimmed";
 import * as model from "../models/model";
 import autoCompletedSearchView from "../views/autoCompletedSearchView";
 import inputSearchView from "../views/inputSearchView";
@@ -7,7 +13,7 @@ const controlRecommendedTerms = async () => {
   model.loadSearchHistory();
 
   autoCompletedSearchView.renderRecommended(
-    model.state.searchHistories.slice(-5).reverse(),
+    model.state.searchHistories.slice(-MAX_RECENT_SEARCH_HISTORY).reverse(),
     model.state.recommendedTerms
   );
 };
@@ -23,7 +29,7 @@ const controlAutoCompletedTerms = async () => {
   await model.loadAutoCompltedTerms(query);
 
   autoCompletedSearchView.renderAutoCompleted(
-    model.state.autoCompletedTerms.slice(0, 10),
+    model.state.autoCompletedTerms.slice(FIRST_IDX, MAX_AUTO_COMPLETE_RESULTS),
     query
   );
 
@@ -37,7 +43,7 @@ const controlBlurInput = () => {
 const controlDeleteHistory = (historyId) => {
   model.deleteSearchHistory(historyId);
   autoCompletedSearchView.renderRecommended(
-    model.state.searchHistories.slice(-5).reverse(),
+    model.state.searchHistories.slice(-MAX_RECENT_SEARCH_HISTORY).reverse(),
     model.state.recommendedTerms
   );
 };
@@ -45,7 +51,7 @@ const controlDeleteHistory = (historyId) => {
 const controlArrowKeyDown = (direction) => {
   const itemLength = autoCompletedSearchView.getItemLength();
   model.setIdx(direction, itemLength);
-  const textContent = autoCompletedSearchView.renderSelectedItem(
+  const textContent = autoCompletedSearchView.highlightSelectedItem(
     model.state.selectedIdx
   );
 

@@ -1,9 +1,11 @@
+import { FIRST_CHILD_IDX, INITIAL_IDX } from "../constants";
+
 export const state = {
   recommendedTerms: [],
   autoCompletedTerms: [],
   searchHistories: [],
   query: "",
-  selectedIdx: 0,
+  selectedIdx: INITIAL_IDX,
 };
 
 export const loadRecommendedTerms = async () => {
@@ -87,10 +89,10 @@ export const deleteSearchHistory = (id) => {
 export const setIdx = (direction, itemLength) => {
   state.selectedIdx += direction;
 
-  if (state.selectedIdx < 1) state.selectedIdx = itemLength;
-  if (state.selectedIdx > itemLength) state.selectedIdx = 1;
+  if (state.selectedIdx < FIRST_CHILD_IDX) state.selectedIdx = itemLength;
+  if (state.selectedIdx > itemLength) state.selectedIdx = FIRST_CHILD_IDX;
 };
 
 export const clearIdx = () => {
-  state.selectedIdx = 0;
+  state.selectedIdx = INITIAL_IDX;
 };

@@ -8,33 +8,30 @@ class AutoCompletedSearchView {
     this.#parentElement.innerHTML = "";
   }
 
-  // 메서드명 바꾸기 렌더링은 아니고 단순 꾸미긴데..
-  renderSelectedItem(idx) {
+  highlightSelectedItem(idx) {
     const selectedItem = this.#parentElement.querySelector(
       `.search-term__item:nth-of-type(${idx})`
     );
 
     if (!selectedItem) return;
 
-    [...this.#parentElement.children].forEach(
-      // classList remove로 바꾸기
-      (li) => (li.style.backgroundColor = "white")
+    [...this.#parentElement.children].forEach((li) =>
+      li.classList.remove("search-term__item--selected")
     );
 
-    // classList add로 바꾸기
-    selectedItem.style.backgroundColor = "grey";
+    selectedItem.classList.add("search-term__item--selected");
 
     return selectedItem.querySelector(".search-term__span").textContent;
   }
 
-  renderAutoCompleted(data, query) {
-    const markup = this.#generateAutoCompletedMarkup(data, query);
+  renderAutoCompleted(matchedTerms, searchQuery) {
+    const markup = this.#generateAutoCompletedMarkup(matchedTerms, searchQuery);
     this.#parentElement.innerHTML = markup;
   }
 
-  renderRecommended(searchHistories, data) {
+  renderRecommended(searchHistories, recommendedTerms) {
     const historyMarkup = this.#generateHistoryMarkup(searchHistories);
-    const recommendMarkup = this.#generateRecommendMarkup(data);
+    const recommendMarkup = this.#generateRecommendedMarkup(recommendedTerms);
 
     this.#parentElement.innerHTML = historyMarkup + recommendMarkup;
   }
@@ -57,28 +54,28 @@ class AutoCompletedSearchView {
     return html;
   }
 
-  #generateRecommendMarkup(data) {
-    const html = data
-      .map((item) => {
+  #generateRecommendedMarkup(recommendedTerms) {
+    const html = recommendedTerms
+      .map((recommendedTerm) => {
         return `<li class="search-term__item">
               <img
                 class="search-term__recommend-image"
                 src="${recommendImage}"
               />
-              <span class="search-term__recommend search-term__span">${item.term}</span>
+              <span class="search-term__recommend search-term__span">${recommendedTerm.term}</span>
             </li>`;
       })
       .join("");
     return html;
   }
 
-  #generateAutoCompletedMarkup(data, query) {
-    const html = data
-      .map((item) => {
+  #generateAutoCompletedMarkup(matchedTerms, searchQuery) {
+    const html = matchedTerms
+      .map((matchedTerm) => {
         return `<li class="search-term__item">
-              <span class="search-term__auto-completed search-term__span">${item.term.replace(
-                query,
-                `<span class="search-term__match">${query}</span>`
+              <span class="search-term__auto-completed search-term__span">${matchedTerm.term.replace(
+                searchQuery,
+                `<span class="search-term__match">${searchQuery}</span>`
               )}</span>
             </li>`;
       })
