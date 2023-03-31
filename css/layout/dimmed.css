@@ -11,13 +11,13 @@ header {
   width: 100%;
   height: 100%;
   background-color: var(--color-black40);
+  z-index: 100;
 }
 
 .dimmed-layer__show {
   visibility: visible;
 }
 
-/* sidebar dimmed : dimmed layer z-index값 주기 */
 .dimmed-layer__zindex {
   z-index: var(--zIndex-dimmed);
 }
