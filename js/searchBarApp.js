@@ -10,6 +10,7 @@ function getSearchData() {
       }
 
       searchBarFlyout.addEvent();
+      searchBarFlyout.getUserKeywords();
     })
     .catch((error) => console.log(`fetch 에러! ${error}`));
 }
