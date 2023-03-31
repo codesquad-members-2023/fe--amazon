@@ -1,15 +1,24 @@
-.slide__box {
+.slide {
+  position: relative;
+}
+
+.slide-banner {
   overflow: hidden;
 }
 
-.slide__list {
+.slide-list {
   display: flex;
 }
 
-.content {
+.slide-item {
   width: 100%;
 }
 
-.slide__button {
-  
+.slide-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  cursor: pointer;
 }
