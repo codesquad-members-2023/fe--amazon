@@ -1,9 +1,29 @@
-.carousel {
-  display: flex;
+.carousel_window {
+  position: relative;
   margin: 0 auto;
   max-width: 1500px;
+  overflow-x: hidden;
 }
 
-.carousel img {
+.carousel_container {
+  display: flex;
+  width: 9000px;
+  transition-duration: 500ms;
+}
+
+.carousel_container li {
+  width: 1500px;
+}
+
+.carousel_container li img {
   width: 100%;
+}
+.carousel_button {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
