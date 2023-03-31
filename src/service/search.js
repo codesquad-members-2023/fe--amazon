@@ -21,11 +21,12 @@ function openSearchInput() {
     searchInstance.showAction(search);
     deleteHistories();
     moveFocusedList()();
+    closeSearch();
   });
 }
 
-function closeSearchInput() {
-  searchInput?.addEventListener('blur', () => {
+function closeSearch() {
+  document.querySelector('backdrop-element').addEventListener('click', () => {
     document.removeEventListener('keydown', handleKeyoardEventArrowUpAndDown);
     searchInstance.closeAction();
     searchInstance = null;
@@ -128,6 +129,5 @@ function handleKeyoardEventArrowUpAndDown(target) {
 }
 
 openSearchInput();
-closeSearchInput();
 runSearch();
 handleEnterKeyEvent();

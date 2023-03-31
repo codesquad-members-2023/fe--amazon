@@ -9,7 +9,8 @@ export default function searchStyle(type) {
       top: calc(var(--input-hegiht));
       width: 100%;
       max-height: 370px;
-
+      border: 1px solid var(--black);
+      border-radius: 4px;
       overflow-y: scroll;
       z-index: 2;
     }
@@ -17,8 +18,6 @@ export default function searchStyle(type) {
     .search-list-container {
       background-color: white;
       color: var(--gray-800);
-      border: 1px solid var(--black);
-      border-radius: 4px;
       box-sizing: content-box;
 
       opacity: 0;
