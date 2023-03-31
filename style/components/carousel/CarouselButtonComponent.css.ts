@@ -9,6 +9,7 @@ export const CarouselButtonComponentStyle = style({
   top: '5.5rem',
   zIndex: '10',
   ':hover': {
-    border: '1px solid red',
+    border: '2px solid blue',
+    filter: 'drop-shadow(2px 2px 0px white)',
   },
 });

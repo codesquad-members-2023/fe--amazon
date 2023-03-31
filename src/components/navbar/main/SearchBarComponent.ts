@@ -15,11 +15,13 @@ import { FlexContainerComponent } from '../../container/FlexContainerComponent';
 export class SearchBarComponent extends BaseComponent<HTMLElement> {
   searchListComponent;
   recommendListComponent;
+  historyListComponent;
   constructor() {
     super(`<form class='${SearchBarComponentStyle}'>
                       <input type='search' class='${SearchBarInputComponentStyle}' placeholder='검색 Amazon'>
-                      <button class='${SearchBarButtonComponentStyle}' ></button>
+                      <button class='${SearchBarButtonComponentStyle}'></button>
                     </form>`);
+
     const symbol = new SymbolComponent(
       'assets/nav-bar/search.svg',
       'transparent',
@@ -46,7 +48,8 @@ export class SearchBarComponent extends BaseComponent<HTMLElement> {
       searchItemContainer.element,
       'beforeend',
     );
-
+    this.historyListComponent = new SearchListComponent();
+    this.historyListComponent.attachTo(searchItemContainer.element);
     this.element.querySelector('input')!.addEventListener(
       'input',
       debounce((e) => {
@@ -69,6 +72,7 @@ export class SearchBarComponent extends BaseComponent<HTMLElement> {
       dimLayer.off();
       this.searchListComponent.hide();
       this.recommendListComponent.hide();
+      this.historyListComponent.hide();
     });
 
     this.setEventListener(
@@ -78,6 +82,7 @@ export class SearchBarComponent extends BaseComponent<HTMLElement> {
         if (this.recommendListComponent.element.style.display !== 'flex') {
           this.searchListComponent.show();
           this.recommendListComponent.show();
+          this.historyListComponent.show();
           dimLayer.on();
         }
 
@@ -93,5 +98,31 @@ export class SearchBarComponent extends BaseComponent<HTMLElement> {
           );
       }, 300),
     );
+    let histories: string[] = [];
+    this.setEventListener('keydown', (e) => {
+      if ((e as KeyboardEvent).key === 'Enter') {
+        e.preventDefault();
+        histories.push((e.target as HTMLInputElement).value);
+        localStorage.setItem('search-history', JSON.stringify(histories));
+        this.historyListComponent.element.innerHTML = '';
+        const localHistories = JSON.parse(
+          localStorage.getItem('search-history')!,
+        );
+        if (localHistories.length < 10) {
+          localHistories.forEach((product: string) => {
+            const liEl = document.createElement('li');
+            liEl.style.color = 'rebeccapurple';
+            liEl.innerText = product;
+            this.historyListComponent.element.insertAdjacentElement(
+              'afterbegin',
+              liEl,
+            );
+          });
+        } else {
+          histories = [];
+          localStorage.setItem('search-history', JSON.stringify(histories));
+        }
+      }
+    });
   }
 }
