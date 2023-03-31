@@ -1,5 +1,5 @@
-import $ from './common/$.js'
-import dim from './common/dim.js'
+import $ from '../common/$'
+import dim from '../common/dim.js'
 
 function getSearchListElements() {
   const input = $('.search-input')
@@ -15,6 +15,7 @@ function getSearchListElements() {
 
 (function searchListHandler() {
   const { input, searchList } = getSearchListElements()
+
   input.addEventListener('click', () => {
     searchList.classList.remove('hidden')
     dim.classList.remove('hidden')

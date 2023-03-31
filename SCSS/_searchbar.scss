@@ -29,7 +29,7 @@
   }
 }
 
-.search-list {
+.search {
   position: absolute;
   width: 100%;
   height: 370px;
@@ -38,13 +38,17 @@
   border: 1px solid #10141A;
   border-radius: 4px;
   z-index: 2;
+  
+    .search-item {
+      height: 37px;
+      padding: 8px 12px;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 180%;
+      box-sizing: border-box;
+    }
 
-  .search-item {
-    height: 37px;
-    padding: 8px 12px;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 250%;
-    box-sizing: border-box;
+    .search-list {
+      overflow-y: hidden;
+    }
   }
-}

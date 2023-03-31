@@ -6,13 +6,15 @@ class Hero {
   #currentImage
   #viewportPosition
   
-  init() {
+  constructor() {
     this.#directionBtn = $('.carousel-directionArrows')
     this.#viewport = this.#directionBtn.previousElementSibling.firstElementChild
     this.#imageSize = 1500
     this.#currentImage = 1
     this.#viewportPosition = -(this.#imageSize * this.#currentImage)
+  }
 
+  init() {
     this.addEvents()
     this.autoSlide()
   }

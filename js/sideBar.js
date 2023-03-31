@@ -1,9 +1,7 @@
 import $ from './common/$.js'
 import dim from './common/dim.js'
-import closeSearchList from './searchbar.js'
 
 function getElements() {
-  const body = $('body')
   const closeButton = $('.side-menu__close')
   const sideMenu = $('.side-menu')
   const openButton = $('.all-menu')
@@ -15,7 +13,6 @@ function getElements() {
   const backMainButton = $('.back__main')
 
   return {
-    body,
     closeButton,
     sideMenu,
     openButton,
@@ -30,7 +27,6 @@ function getElements() {
 
 function addEvents() {
   const {
-    body,
     closeButton,
     sideMenu,
     openButton,

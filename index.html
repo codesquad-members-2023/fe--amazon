@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="./css/main.css"/>
   <title>Amazon</title>
 
+  <script defer src="./js/common/close.js" type="module"></script>
   <script defer src="./js/navBar.js" type="module"></script>
   <script defer src="./js/sideBar.js" type="module"></script>
   <script defer src="./js/sideBarContents.js" type="module"></script>
   <script defer src="./js/hero.js" type="module"></script>
   <script defer src="./js/heroImages.js" type="module"></script>
-  <script defer src="./js/searchbar.js" type="module"></script>
-  <script defer src="./js/autocomplete.js" type="module"></script>
+  <script defer src="./js/searchbar/searchbar.js" type="module"></script>
+  <script defer src="./js/searchbar/fetchSearchbarText.js" type="module"></script>
   
 </head>
 <body>
@@ -45,11 +46,11 @@
               <img src="./asset/search.svg" alt="search" />
             </button>
           </form>
-          <div class="search-list hidden">
-            <!-- <div class="search-item">apple</div>
-            <div class="search-item">banana</div>
-            <div class="search-item">cherry</div> -->
+          <div class="search search-list hidden">
+            <div class="search-history hidden"></div>
+            <div class="search-recomendation"></div>
           </div>
+          <div class="search search-autoComplete hidden"></div>
         </div>
         <div class="language-country text-box">
           <img src="./asset/flag.svg" alt="flag" />
