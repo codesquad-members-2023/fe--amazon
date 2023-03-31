@@ -6,6 +6,7 @@ export default function subMenuStyle() {
         display: flex;
         align-items: center;
         color: var(--white);
+        height: 100%;
       }
 
       button {
@@ -13,7 +14,7 @@ export default function subMenuStyle() {
         border: none;
 
         display: flex;
-        padding: 8px;
+        padding: 0 8px;
         gap: 4px;
         align-items: center;
 
@@ -26,6 +27,8 @@ export default function subMenuStyle() {
         letter-spacing: var(--bold-md-spacing);
 
         border-radius: 1px;
+
+        height: 100%;
       }
 
       button:hover {

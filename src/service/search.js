@@ -1,6 +1,7 @@
 import Search from '@components/Search/Search.js';
 import { debounce } from '@src/utils.js';
 import { loginActionElement } from './action.js';
+const DEBOUNCE_TIME = 300;
 
 const search = document
   .querySelector('navbar-element')
@@ -39,7 +40,7 @@ function runSearch() {
     debounce((e) => {
       if (searchInput.value === '') return searchInstance.showDefaultSearch();
       searchInstance.runSearch(searchInput.value);
-    }, 300)
+    }, DEBOUNCE_TIME)
   );
 }
 
@@ -52,7 +53,7 @@ function handleEnterKeyEvent() {
         searchHistories.push({ title: searchInput.value });
         setSearchHistories(searchHistories);
       }
-    }, 300)
+    }, DEBOUNCE_TIME)
   );
 }
 
