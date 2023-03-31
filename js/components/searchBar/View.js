@@ -11,6 +11,7 @@ class View {
   searchBarAddFocusEvent(suggestionData) {
     this.searchBar.addEventListener('focusin', ({ target }) => {
       this.searchForm.classList.add('flex');
+      this.index = -1;
       if (target.value === '') {
         suggestionData.then((result) => {
           this.searchForm.innerHTML = this.generateSuggestionLists(result);
@@ -57,10 +58,10 @@ class View {
 
         if (event.key === 'ArrowDown' && this.index <= items.length - 1) {
           if (this.index === items.length - 1) this.index = 0;
-          else this.index++;
+          else this.index += 1;
         } else if (event.key === 'ArrowUp' && this.index >= 0) {
           if (this.index === 0) this.index = items.length - 1;
-          else this.index--;
+          else this.index -= 1;
         }
 
         items[this.index].classList.add('focus');
@@ -91,11 +92,9 @@ class View {
   }
 
   generateSuggestionLists(suggestionData) {
-    console.log(suggestionData);
     return suggestionData.reduce((acc, cur) => {
       const html = `
       <div class="suggestion_list">
-      
         <li class="search_list">
         <image class="suggestion_icon" src="https://m.media-amazon.com/images/S/sash/16Ce0wZkrsCr$en.png"/>
         ${cur}

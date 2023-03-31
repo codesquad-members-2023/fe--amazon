@@ -4,10 +4,10 @@ import View from './View.js';
 
 class Controller {
   // addEventListener를 여기서 등록해야할까?
-  constructor() {
-    this.dataModel = new DataModel();
-    this.logicModel = new LogicModel();
-    this.view = new View();
+  constructor(dataModel, logicModel, view) {
+    this.dataModel = dataModel;
+    this.logicModel = logicModel;
+    this.view = view;
   }
 
   init() {
@@ -21,5 +21,8 @@ class Controller {
   }
 }
 
-const controller = new Controller();
+const dataModel = new DataModel();
+const logicModel = new LogicModel();
+const view = new View();
+const controller = new Controller(dataModel, logicModel, view);
 controller.init();
