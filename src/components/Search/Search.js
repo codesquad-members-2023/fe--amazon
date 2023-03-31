@@ -15,7 +15,6 @@ class Search extends HTMLElement {
 
   showAction(eventTarget) {
     this.showDefaultSearch();
-
     this.backdrop = document.createElement('backdrop-element');
     document.body.append(this.backdrop);
     eventTarget.shadowRoot.append(this);
@@ -23,6 +22,7 @@ class Search extends HTMLElement {
 
   closeAction() {
     this.remove();
+    this.backdrop.remove();
   }
 
   removeChildren() {
