@@ -7,8 +7,7 @@
 
 .carousel_container {
   display: flex;
-  width: 9000px;
-  transition-duration: 500ms;
+  width: 10500px;
 }
 
 .carousel_container li {
