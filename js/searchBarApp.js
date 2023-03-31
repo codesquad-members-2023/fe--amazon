@@ -9,8 +9,8 @@ function getSearchData() {
         searchBarFlyout.makeRecomKeywordsEl();
       }
 
-      searchBarFlyout.addEvent();
       searchBarFlyout.getUserKeywords();
+      searchBarFlyout.addEvent();
     })
     .catch((error) => console.log(`fetch 에러! ${error}`));
 }

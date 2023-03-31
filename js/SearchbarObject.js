@@ -27,8 +27,8 @@ class SearchbarFlyout {
     userInput.value = "";
     if (inputValue === "") return;
     this.userKeywordsList.push({ text: inputValue, id: id });
-    this.makeUserKeywordsEl(inputValue, id);
     this.saveUserKeywords();
+    this.makeUserKeywordsEl(inputValue, id);
   }
 
   // input값 로컬스토리지에 저장
@@ -68,23 +68,30 @@ class SearchbarFlyout {
     } else
       topUserKeywords.parentNode.insertBefore(newUserKeywords, topUserKeywords);
 
-    // deleteBtn에 이벤트 부여
-    const deleteBtns = this.element.querySelectorAll("button");
-    deleteBtns.forEach((deleteBtn) => {
-      deleteBtn.addEventListener("click", this.deleteUserKeywordsEl.bind(this));
-    });
+    this.addDeleteEvent(newUserKeywords);
   }
 
+  // deleteBtn에 이벤트 부여
+  addDeleteEvent = (newUserKeywords) => {
+    const deleteBtn = newUserKeywords.querySelector("button");
+    deleteBtn.addEventListener("click", () => {
+      this.deleteUserKeywordsEl(newUserKeywords);
+    });
+  };
+
   //  유저 검색 입력값 el 삭제
-  deleteUserKeywordsEl(event) {
-    const el = event.target.closest("div");
-    console.log(el.className);
+  deleteUserKeywordsEl(el) {
     el.remove();
 
-    this.userKeywordsList = this.userKeywordsList.filter(
-      (thisEl) => thisEl.id !== parseInt(el.className)
-    );
-    this.saveUserKeywords();
+    const id = parseInt(el.className);
+    const savedUserKeywords = localStorage.getItem("userKeywords");
+    if (savedUserKeywords !== null) {
+      const parsedUserKeywords = JSON.parse(savedUserKeywords);
+      const updatedUserKeywords = parsedUserKeywords.filter(
+        (userKeywords) => userKeywords.id !== id
+      );
+      localStorage.setItem("userKeywords", JSON.stringify(updatedUserKeywords));
+    }
   }
 
   // 이벤트 등록 메서드
