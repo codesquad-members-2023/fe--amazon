@@ -34,7 +34,6 @@ class Search extends HTMLElement {
     const searchListContainer = this.shadowRoot.querySelector(
       '.search-list-container'
     );
-    searchListContainer.style.transition = 'opacity .1s ease-out';
     datas.forEach((cur, i) => {
       const list = document.createElement('li');
       list.setAttribute('tabindex', i);
@@ -59,7 +58,8 @@ class Search extends HTMLElement {
       this.div.append(list);
     });
 
-    searchListContainer.removeAttribute('style');
+    searchListContainer.style.transition = 'opacity .1s ease-out';
+    searchListContainer.style.opacity = 1;
 
     document.dispatchEvent(new CustomEvent('search-list-rendered'));
   }
@@ -74,12 +74,14 @@ class Search extends HTMLElement {
   }
 
   loadDefaultItems() {
+    const searchListContainer = this.shadowRoot.querySelector(
+      '.search-list-container'
+    );
+    searchListContainer.style.opacity = 0;
+
     getSearchRecommendItemsAPI(5).then((datas) => {
       this.loadHistories();
       this.renderSearchList({ s: '', datas, type: 'recommend' });
-      this.shadowRoot
-        .querySelector('.search-list-container')
-        .classList.add('show');
     });
   }
 

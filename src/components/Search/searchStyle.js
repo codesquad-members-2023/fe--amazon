@@ -21,12 +21,8 @@ export default function searchStyle(type) {
       border-radius: 4px;
       overflow-y: scroll;
 
-      opacity: 0;
     }
 
-    .search-list-container.show {
-      opacity: 1;
-    }
 
     .empty {
       padding: 16px;
