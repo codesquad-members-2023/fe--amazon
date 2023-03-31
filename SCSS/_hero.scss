@@ -1,5 +1,6 @@
 .carousel {
   $viewprot-size: 1500px;
+  
 
   position: relative;
   display: flex;
@@ -11,8 +12,8 @@
   }
   
   &-viewport {
-    transform: translateX(0);
-    transition: transform 1s;
+    transform: translateX(-1500px);
+    transition: transform .5s;
     ol {
       display: flex;
     }

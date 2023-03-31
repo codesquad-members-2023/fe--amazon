@@ -1,62 +1,8 @@
-const openSideBar = (...element) => {
-  const [sideMenu, openButton] = element
+import $ from './common/$.js'
+import dim from './common/dim.js'
 
-  openButton.addEventListener('click', () => {
-    sideMenu.style.display = 'flex'
-    sideMenu.style.animation = 'slide-to-right .5s'
-    dim.style.display = 'block'
-    dim.style.top = '-85px'
-  })
-}
-
-const hideSideBar = (...element) => {
-  const [sideMenu, openButton] = element
-  const closeButton = document.querySelector('.side-menu__close')
-  const body = document.querySelector('body')
-
-  closeButton.addEventListener('click', () => {
-    sideMenu.style.animation = 'slide-hide .5s forwards'
-    dim.style.display = 'none'
-  })
-
-  body.addEventListener('click', (e) => {
-    if (!sideMenu.contains(e.target) && !openButton.contains(e.target)) {
-      sideMenu.style.animation = 'slide-hide .5s forwards'
-      dim.style.display = 'none'
-    }
-  })
-}
-
-const openAllItems = (...element) => {
-  const [allItems, allItemsButton] = element
-
-  allItemsButton.addEventListener('click', () => {
-    allItems.style.transform = 'scaleY(1)'
-  })
-}
-
-const closeAllItems = (...element) => {
-  const [simpleItemsButton, allItems] = element
-
-  simpleItemsButton.addEventListener('click', () => {
-    allItems.style.transform = 'scaleY(0)'
-  })
-}
-
-const moveMain = (...element) => {
-  const [sideMain, sideMenuDetail] = element
-  const backMainButton = document.querySelector('.back__main')
-  
-  backMainButton.addEventListener('click', () => {
-    sideMain.style.display = 'block'
-    sideMain.style.animation = 'slide-to-right .5s'
-    sideMenuDetail.style.display = 'none'
-  })
-}
-
-const $ = Selector => document.querySelector(Selector)
-
-const actSideBar = () => {
+function getElements() {
+  const closeButton = $('.side-menu__close')
   const sideMenu = $('.side-menu')
   const openButton = $('.all-menu')
   const sideMain = $('.side-menu__main')
@@ -64,12 +10,60 @@ const actSideBar = () => {
   const simpleItemsButton = $('.side-menu__hide-button')
   const allItems = $('.side-menu__all-items')
   const allItemsButton = $('.side-menu__show-button')
+  const backMainButton = $('.back__main')
 
-  openSideBar(sideMenu, openButton)
-  hideSideBar(sideMenu, openButton)
-  openAllItems(allItems, allItemsButton)
-  closeAllItems(simpleItemsButton, allItems)
-  moveMain(sideMain, sideMenuDetail)
+  return {
+    closeButton,
+    sideMenu,
+    openButton,
+    sideMain,
+    sideMenuDetail,
+    simpleItemsButton,
+    allItems,
+    allItemsButton,
+    backMainButton
+  }
 }
 
-actSideBar()
+function addEvents() {
+  const {
+    closeButton,
+    sideMenu,
+    openButton,
+    sideMain,
+    sideMenuDetail,
+    simpleItemsButton,
+    allItems,
+    allItemsButton,
+    backMainButton
+  } = getElements()
+  
+  openButton.addEventListener('click', () => {
+    dim.classList.remove('hidden')
+    dim.classList.add('dim-all')
+    sideMenu.style.display = 'flex'
+    sideMenu.style.animation = 'slide-to-right .5s'
+  })
+
+  closeButton.addEventListener('click', () => {
+    sideMenu.style.animation = 'slide-hide .5s forwards'
+    dim.classList.add('hidden')
+    dim.classList.remove('dim-all')
+  })
+
+  allItemsButton.addEventListener('click', () => {
+    allItems.style.transform = 'scaleY(1)'
+  })
+  
+  simpleItemsButton.addEventListener('click', () => {
+    allItems.style.transform = 'scaleY(0)'
+  })
+
+  backMainButton.addEventListener('click', () => {
+    sideMain.style.display = 'block'
+    sideMain.style.animation = 'slide-to-right .5s'
+    sideMenuDetail.style.display = 'none'
+  })
+}
+
+addEvents()

@@ -1,51 +1,43 @@
-import $ from './$.js'
+import $ from './common/$.js'
+import dim from './common/dim.js'
 
-const dim = $('.dim')
-const shippingAddress = $('.shipping-address')
-
-const removeHidden = (...elements) => 
-  elements.forEach(element => element.classList.remove('hidden'))
-
-const addHidden = (...elements) => 
-  elements.forEach(element => element.classList.add('hidden'))
-
-const loginModalHandler = () => {
+function navbarHandler() {
   const DELAY_TIME = 1000
-  const logInSection = $('.log-in')
-  const logInPointer = $('.log-in .pointer')
   const logInModal = $('.log-in .modal')
+  const logInPointer = $('.log-in .pointer')
   
-  window.addEventListener('load', setTimeout(() => {
-    logInModal.setAttribute('id', 'modal__visibility')
+  window.addEventListener('load', () => setTimeout(() => {
+    onLoginModal()
   }, DELAY_TIME))
-
+  
+  function onLoginModal () {
+    logInModal.setAttribute('id', 'modal__visibility')
+    logInPointer.setAttribute('id', 'modal__visibility')
+  }
+  
+  const logInSection = $('.log-in')
+  const extendeLoginModal = $('.modal__extension')
+  const extendeLoginModalPointer = $('.modal__extension .pointer')
+  
   logInSection.addEventListener('mouseover', () => {
-    addHidden(logInPointer, logInModal)
+    logInModal.classList.add('hidden')
+    dim.classList.remove('hidden')
+    extendeLoginModal.classList.remove('hidden')
+    extendeLoginModalPointer.style.opacity = '1'
   })
-
-  // TODO: 확장 모달 띄우기
-  // TODO: 로그인 모달에 애니메이션 주기
-}
-
-const showDim = (element) => {
-  element.addEventListener("mouseover", () => {
-    dim.style.display = 'block'
+  
+  logInSection.addEventListener('mouseout', () => {
+    dim.classList.add('hidden')
+    extendeLoginModal.classList.add('hidden')
+  })
+  
+  const shippingAddress = $('.shipping-address')
+  shippingAddress.addEventListener('mouseover', () => {
+    dim.classList.remove('hidden')
+  })
+  shippingAddress.addEventListener('mouseout', () => {
+    dim.classList.add('hidden')
   })
 }
 
-const hideDim = (element) => {
-  element.addEventListener("mouseout", () => {
-    dim.style.display = 'none'
-  })
-}
-
-const actNavBar = () => {
-  loginModalHandler()
-  // onExtendLoginModal()
-  showDim(shippingAddress)
-  showDim(logInSection)
-  hideDim(shippingAddress)
-  hideDim(logInSection)
-}
-
-actNavBar()
+navbarHandler()
