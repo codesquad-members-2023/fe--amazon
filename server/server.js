@@ -61,9 +61,20 @@ function main() {
                     app.listen(process.env.PORT, function () {
                         console.log('listening on 1116');
                     });
-                    app.get('/top10', function (req, res) {
-                        res.json('테스트 문자열');
-                    });
+                    app.get('/recommend', function (req, res) { return __awaiter(_this, void 0, void 0, function () {
+                        var collection, result;
+                        return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0:
+                                    collection = db.collection('recommend-product');
+                                    return [4 /*yield*/, collection.find().toArray()];
+                                case 1:
+                                    result = _a.sent();
+                                    res.json(result);
+                                    return [2 /*return*/];
+                            }
+                        });
+                    }); });
                     app.get('/search', function (req, res) { return __awaiter(_this, void 0, void 0, function () {
                         var query, collection, result;
                         return __generator(this, function (_a) {

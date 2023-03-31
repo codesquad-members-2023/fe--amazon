@@ -22,8 +22,10 @@ async function main() {
     console.log('listening on 1116');
   });
 
-  app.get('/top10', (req, res) => {
-    res.json('테스트 문자열');
+  app.get('/recommend', async (req, res) => {
+    const collection = db.collection('recommend-product');
+    const result = await collection.find().toArray();
+    res.json(result);
   });
 
   app.get('/search', async (req, res) => {

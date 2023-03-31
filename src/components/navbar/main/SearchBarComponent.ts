@@ -10,9 +10,11 @@ import { debounce } from '../../../utils/debounce';
 import { DimLayerComponent } from '../../layer/DimLayerComponent';
 
 import { ProductData } from '../../../type';
+import { FlexContainerComponent } from '../../container/FlexContainerComponent';
 
 export class SearchBarComponent extends BaseComponent<HTMLElement> {
   searchListComponent;
+  recommendListComponent;
   constructor() {
     super(`<form class='${SearchBarComponentStyle}'>
                       <input type='search' class='${SearchBarInputComponentStyle}' placeholder='검색 Amazon'>
@@ -24,15 +26,33 @@ export class SearchBarComponent extends BaseComponent<HTMLElement> {
     );
     symbol.attachTo(this.element.querySelector('button')! as HTMLElement);
 
+    const searchItemContainer = new FlexContainerComponent(
+      'column',
+      'flex-start',
+      'flex-start',
+      '0',
+    );
+    searchItemContainer.setStyles({
+      position: 'absolute',
+      display: 'relative',
+      top: '2rem',
+    });
+
+    searchItemContainer.attachTo(this.element);
     this.searchListComponent = new SearchListComponent();
-    this.searchListComponent.attachTo(this.element);
+    this.searchListComponent.attachTo(searchItemContainer.element, 'beforeend');
+    this.recommendListComponent = new SearchListComponent();
+    this.recommendListComponent.attachTo(
+      searchItemContainer.element,
+      'beforeend',
+    );
 
     this.element.querySelector('input')!.addEventListener(
-      'keyup',
+      'input',
       debounce((e) => {
         this.searchListComponent.deleteAllChild();
         const searchingWord = (e.target as HTMLInputElement).value;
-
+        if ((e.target as HTMLInputElement).value === '') return;
         fetch(`http://localhost:1116/search?q=${searchingWord}`)
           .then((res) => res.json())
           .then((data) => {
@@ -48,22 +68,27 @@ export class SearchBarComponent extends BaseComponent<HTMLElement> {
     dimLayer.setEventListener('click', () => {
       dimLayer.off();
       this.searchListComponent.hide();
+      this.recommendListComponent.hide();
     });
 
     this.setEventListener(
       'click',
       debounce(() => {
-        this.searchListComponent.deleteAllChild();
-        if (this.searchListComponent.element.style.display !== 'flex') {
+        this.recommendListComponent.deleteAllChild();
+        if (this.recommendListComponent.element.style.display !== 'flex') {
           this.searchListComponent.show();
+          this.recommendListComponent.show();
           dimLayer.on();
         }
 
-        fetch('http://localhost:1116/search?q=')
+        if (this.recommendListComponent.element.childNodes.length >= 10) return;
+        fetch('http://localhost:1116/recommend')
           .then((res) => res.json())
           .then((data) =>
             data.slice(0, 10).forEach((d: ProductData) => {
-              this.searchListComponent.addChildHtml(`<li>${d.keywords}</li>`);
+              this.recommendListComponent.addChildHtml(
+                `<li><img alt='' src='/assets/nav-bar/search-suggestion.svg' />${d.keywords}</li>`,
+              );
             }),
           );
       }, 300),
