@@ -22,7 +22,6 @@ export default function searchStyle(type) {
       overflow-y: scroll;
 
       opacity: 0;
-      transition: opacity .1s ease-out;
     }
 
     .search-list-container.show {
@@ -41,13 +40,15 @@ export default function searchStyle(type) {
     li {
       color: var(--gray-800);
       list-style: none;
-      padding: 8px 12px;
+      padding: 0 12px;
+      height: 37px;
       font-weight: 500;
       font-size: var(--bold-md-size);
       line-height: var(--bold-md-height);
       word-spacing: var(--bold-md-spacing);
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
 
     li:hover, li:focus {

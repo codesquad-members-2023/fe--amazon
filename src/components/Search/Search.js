@@ -31,6 +31,10 @@ class Search extends HTMLElement {
   }
 
   renderSearchList({ s, datas, type = 'search-result' }) {
+    const searchListContainer = this.shadowRoot.querySelector(
+      '.search-list-container'
+    );
+    searchListContainer.style.transition = 'opacity .1s ease-out';
     datas.forEach((cur, i) => {
       const list = document.createElement('li');
       list.setAttribute('tabindex', i);
@@ -54,6 +58,9 @@ class Search extends HTMLElement {
         }`;
       this.div.append(list);
     });
+
+    searchListContainer.removeAttribute('style');
+
     document.dispatchEvent(new CustomEvent('search-list-rendered'));
   }
 

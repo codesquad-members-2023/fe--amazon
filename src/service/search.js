@@ -36,7 +36,7 @@ function closeSearch() {
 function runSearch() {
   searchInput?.addEventListener(
     'keyup',
-    debounce(() => {
+    debounce((e) => {
       if (searchInput.value === '') return searchInstance.showDefaultSearch();
       searchInstance.runSearch(searchInput.value);
     }, 300)
@@ -47,6 +47,7 @@ function handleEnterKeyEvent() {
   searchInput?.addEventListener(
     'keyup',
     debounce((e) => {
+      e.stopPropagation();
       if (e.key === 'Enter') {
         const searchHistories = getSearchHistories() || [];
         searchHistories.push({ title: searchInput.value });
