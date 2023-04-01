@@ -4,7 +4,8 @@
     "parcel": "^2.8.3"
   },
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss style.css -w",
+    "start": "parcel index.html",
+    "sass": "node-sass sass/main.scss style.css -w",
     "server": "json-server -p 3001 --watch db.json"
   },
   "dependencies": {

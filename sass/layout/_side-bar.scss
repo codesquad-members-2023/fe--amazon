@@ -4,7 +4,7 @@
   // left: -100%;
   transform: translateX(-100%);
   height: 100%;
-  z-index: 100;
+  z-index: 500;
   // transition: left 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
 
@@ -88,7 +88,6 @@
     left: 32rem;
     height: 100%;
     background-color: $white;
-    z-index: 1000;
     transition: left 250ms ease-in-out;
 
     &.show-sub-menu {

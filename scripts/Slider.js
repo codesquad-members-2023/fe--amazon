@@ -16,7 +16,8 @@ export default class Slider {
 
   flipSlidesWithInterval(interval) {
     setInterval(() => {
-      this.buttonRight.dispatchEvent(new Event("click"));
+      // this.buttonRight.dispatchEvent(new Event("click"));
+      this.handleRigthBtnClick();
     }, interval);
   }
 

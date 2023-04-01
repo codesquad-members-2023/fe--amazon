@@ -85,3 +85,13 @@ body {
     @include typography($body-md);
   }
 }
+
+.search-term {
+  @include typography($body-md);
+  color: $black;
+
+  &__match,
+  &__history {
+    color: $secondary-purple;
+  }
+}

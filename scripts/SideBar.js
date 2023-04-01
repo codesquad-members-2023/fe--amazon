@@ -38,11 +38,13 @@ export default class SideBar {
 
     this.dimmedBody.showDimmedBody();
     this.sideBar.classList.add("show-side-bar");
+    this.sideBarCloseButton.classList.remove("hidden");
   }
 
   handleClickSideBarCloseButton() {
     this.dimmedBody.hideDimmedBody();
     this.sideBar.classList.remove("show-side-bar");
+    this.sideBarCloseButton.classList.add("hidden");
   }
 
   handleClickShowOthersButton() {

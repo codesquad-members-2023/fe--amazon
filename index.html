@@ -8,7 +8,7 @@
     <title>amazon</title>
 
     <script type="module" defer src="index.js"></script>
-    <script type="module" defer src="scripts/controller.js"></script>
+    <script type="module" defer src="scripts/controller/controller.js"></script>
   </head>
   <body>
     <!-- header -->
@@ -65,7 +65,25 @@
           />
         </button>
         <div class="search-term">
-          <ul class="search-term__auto-completed-items"></ul>
+          <ul class="search-term__auto-completed-items">
+            <!-- <li class="search-term__item">
+              <span class="search-term__history">최근 검색어</span>
+              <img
+                class="search-term__remove"
+                src="assets/images/history.svg"
+              />
+            </li>
+            <li class="search-term__item">
+              <img
+                class="search-term__recommend-image"
+                src="assets/images/recommend.svg"
+              />
+              <span class="search-term__recommend">추천 검색어</span>
+            </li>
+            <li class="search-term__item">
+              <span class="search-term__auto-completed">자동완성</span>
+            </li> -->
+          </ul>
         </div>
       </form>
 
@@ -186,7 +204,7 @@
 
     <!-- side bar -->
     <aside class="side-bar">
-      <button class="side-bar__close">
+      <button class="side-bar__close hidden">
         <img class="side-bar__close-image" src="assets/images/close.svg" />
       </button>
       <a class="side-bar__log-in" href="">
