@@ -8,9 +8,9 @@ class TextInput extends HTMLElement {
     const placeholder = this.getAttribute('placeholder');
 
     shadow.innerHTML = `
-      <form>
+      <div>
         <input type="text" placeholder="${placeholder}">
-      </form>
+      </div>
       <button><icon-element name="search"></icon-element></button>
     `;
 

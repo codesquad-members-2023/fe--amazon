@@ -10,9 +10,10 @@ function clickSliderController() {
 
 function autoSlide() {
   const slider = document.querySelector('slider-element').shadowRoot;
-  let lastTime = performance.now();
-  function step() {
-    const now = performance.now();
+  let lastTime = null;
+  function step(timestamp) {
+    if (!lastTime) lastTime = timestamp;
+    const now = timestamp;
     const elapsed = now - lastTime;
     if (elapsed >= SLIDE_INTERVAL_TIME) {
       slideLeft(slider);

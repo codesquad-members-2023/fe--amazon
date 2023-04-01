@@ -21,7 +21,8 @@ const SearchModel = mongoose.model('search', {
 
 app.get('/search-recommend', (req, res) => {
   const limit = req.query.limit;
-  SearchModel.limit(limit)
+  SearchModel.find()
+    .limit(limit)
     .then((result) => {
       if (!result) {
         res.status(404).json({ message: 'Not found' });

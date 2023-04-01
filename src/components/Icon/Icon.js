@@ -28,7 +28,7 @@ class Icon extends HTMLElement {
       if (!svgContent) throw Error('icon 내용 없음');
       return svgContent;
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
   }
 
@@ -39,13 +39,9 @@ class Icon extends HTMLElement {
     const height = this.getThisAttribute('height');
     const fill = this.getThisAttribute('fill');
 
-    let result = svgString.replace(
-      /width=".*?"/g,
-      `width="${width ?? size ?? defaultSize}"`
-    ).replace(
-      /height=".*?"/g,
-      `height="${height ?? size ?? defaultSize}"`
-    );
+    let result = svgString
+      .replace(/width=".*?"/g, `width="${width ?? size ?? defaultSize}"`)
+      .replace(/height=".*?"/g, `height="${height ?? size ?? defaultSize}"`);
 
     const hasFill = this.hasAttribute('fill');
     if (hasFill) result = result.replace(/fill=".*?"/g, `fill="${fill}"`);
