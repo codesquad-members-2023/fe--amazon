@@ -119,7 +119,7 @@ li {
   font-weight: 500;
   font-size: 11px;
   line-height: 160%;
-  border: 2px solid green;
+  margin: 0 0 15px 0;
 }
 
 .shipping_pop-up_buttons {
@@ -127,7 +127,8 @@ li {
   flex-direction: row;
   float: right;
   gap: 3px;
-  border: 2px solid blue;
+  height: 32px;
+  border-radius: 4px;
 }
 
 .shipping_pop-up_button {
@@ -137,9 +138,6 @@ li {
   justify-content: center;
   align-items: center;
   padding: 0px 10px;
-
-  width: 58px;
-  height: 32px;
 
   background: linear-gradient(174.6deg, #ffffff 4.31%, #fed15f 50.01%, #febe30 95.71%);
   border: 1px solid #de9408;

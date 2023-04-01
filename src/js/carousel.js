@@ -4,14 +4,18 @@ export default class CarouselMaker {
     this.carouselButtonContainer = document.querySelector('.carousel_button_container');
     this.carouselListTemplate;
     this.carousel;
+    this.carouselTotalWidth = 100;
+    this.carouselTransitionDuration = 500;
+    this.carouseDelayDuration = 3000;
+    this.animationStartTime = null;
     this.init();
   }
 
   init() {
-    this.getCarouselItem();
+    this.makeCarouselItem();
     this.setCarouselItem();
     this.setCarouselEvent();
-    this.setCarouselDelay();
+    this.setCarouselAnimation();
   }
 
   setCarouselItem() {
@@ -19,7 +23,7 @@ export default class CarouselMaker {
     this.carousel = document.querySelector('.carousel');
   }
 
-  getCarouselItem() {
+  makeCarouselItem() {
     const carouselList = Array.from({ length: this.carouselCount }, (_, i) => i);
     this.carouselListTemplate =
       carouselList.reduce(
@@ -33,27 +37,47 @@ export default class CarouselMaker {
   }
 
   decideAddEventOrNot(className) {
-    if (className.indexOf('prev') !== -1) return 1;
-    if (className.indexOf('next') !== -1) return -1;
+    if (className.indexOf('prev') !== -1) return 'prev';
+    if (className.indexOf('next') !== -1) return 'next';
   }
 
   resortCarousel(translateDirection) {
     this.carousel.removeAttribute('style');
-    translateDirection === 1
+    translateDirection === 'prev'
       ? this.carousel.insertBefore(this.carousel.lastElementChild, this.carousel.firstElementChild)
       : this.carousel.appendChild(this.carousel.firstElementChild);
   }
 
   translateCarousel({ target: { className } }) {
     const translateDirection = this.decideAddEventOrNot(className);
-    this.carousel.style.transform = `translateX(${translateDirection * (100 / 5)}%)`;
-    this.carousel.style.transitionDuration = '500ms';
+    this.decideAddEventOrNot(className) === 'prev' ? this.translateLeft() : this.translateRight();
+
+    this.carousel.style.transitionDuration = `${this.carouselTransitionDuration}ms`;
     this.carousel.ontransitionend = () => this.resortCarousel(translateDirection);
+    this.animationStartTime = null;
   }
 
-  setCarouselDelay() {
-    setInterval(() => {
-      this.translateCarousel({ target: { className: 'carousel_button next' } });
-    }, 3000);
+  translateLeft() {
+    this.carousel.style.transform = `translateX(${this.carouselTotalWidth / this.carouselCount}%)`;
+  }
+
+  translateRight() {
+    this.carousel.style.transform = `translateX(${-this.carouselTotalWidth / this.carouselCount}%)`;
+  }
+
+  setCarouselAnimation() {
+    const animateCarousel = (timestamp) => {
+      if (!this.animationStartTime) this.animationStartTime = timestamp;
+      const elapsedTime = timestamp - this.animationStartTime;
+
+      if (elapsedTime >= this.carouseDelayDuration) {
+        this.translateCarousel({ target: { className: 'carousel_button next' } });
+        this.animationStartTime = null;
+      }
+
+      requestAnimationFrame(animateCarousel);
+    };
+
+    requestAnimationFrame(animateCarousel);
   }
 }
