@@ -9,7 +9,7 @@ const sectionViewInit = () => {
 
   const loginUILazyTime = 1000;
 
-  const headerFlyout = document.querySelector("#header-flyout");
+  const searchFlyout = document.querySelector("#search-flyout");
 
   setTimeout(function () {
     loginSection.classList.add("visible");
@@ -24,8 +24,8 @@ const sectionViewInit = () => {
   const showLoginSectionDetail = () => {
     loginSectionDetail.style.display = "flex";
     dimmForHeader.classList.remove("hidden");
-    headerFlyout.classList.add("hide-opacity");
-    headerFlyout.classList.remove("show-opacity");
+    searchFlyout.classList.add("hide-opacity");
+    searchFlyout.classList.remove("show-opacity");
   };
 
   const hiddenLoginSectionDetail = () => {
@@ -44,8 +44,8 @@ const sectionViewInit = () => {
 
   const showLocationSectionDetail = () => {
     dimmForHeader.classList.remove("hidden");
-    headerFlyout.classList.add("hide-opacity");
-    headerFlyout.classList.remove("show-opacity");
+    searchFlyout.classList.add("hide-opacity");
+    searchFlyout.classList.remove("show-opacity");
   };
 
   const hiddenLocationSectionDetail = () => {

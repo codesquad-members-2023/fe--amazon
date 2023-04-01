@@ -2,16 +2,15 @@
   position: relative;
 }
 
-#header-flyout {
+#search-flyout {
   position: absolute;
   width: 100%;
   padding: 0 15px;
   top: 51px;
   box-sizing: border-box;
-
   transition: opacity 0.5s ease-in-out;
 
-  .header-flyout-search {
+  .search-flyout-recKeywords {
     padding: 10px;
     color: black;
     background-color: white;
@@ -21,7 +20,49 @@
     }
   }
 
-  .header-flyout-search:hover {
+  .search-flyout-recKeywords:hover {
+    background-color: #eaeded;
+  }
+
+  .search-flyout-mySearchContainer div {
+    padding: 10px;
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      font-weight: 800;
+      color: rgb(192, 52, 192);
+      display: flex;
+      align-items: center;
+
+      span {
+        font-weight: 600;
+        color: black;
+        opacity: 0.5;
+        margin-left: 5px;
+      }
+    }
+
+    button {
+      padding: 0;
+      border: 0;
+      background: none;
+      cursor: pointer;
+
+      i {
+        color: gray;
+      }
+
+      i:hover {
+        font-weight: 800;
+        color: black;
+      }
+    }
+  }
+
+  .search-flyout-mySearchContainer div:hover {
     background-color: #eaeded;
   }
 }
