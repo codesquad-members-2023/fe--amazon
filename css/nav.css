@@ -210,24 +210,29 @@ body {
 }
 
 .search_suggestion > li {
-  display: flex;
-  justify-content: space-between;
-
   height: 37px;
   padding: 0 12px;
-
+  display: flex;
   color: var(--color-black);
   font-weight: var(--font-weight-body);
   font-size: var(--font-size-md);
   line-height: 37px;
 }
 
-#search_delete_btn {
+.flex_between > li:not(.recommend) {
+  justify-content: space-between;
+}
+
+#search_delete_btn, #recommend_btn {
   width: 9px;
   line-height: 37px;
 }
 
-.search_suggestion > li:hover {
+.recommend > span{
+  padding-left: 7px;
+}
+
+.search_suggestion > li:hover, .pressed {
   background-color: var(--color-gray-30);
 }
 
@@ -385,7 +390,7 @@ button {
   width: 45px;
 }
 
-header img:not(.logo img, #search_delete_btn, #search_btn > img) {
+header img:not(.logo img, #search_delete_btn, #recommend_btn , #search_btn > img) {
   width: 12px;
   height: 12px;
   margin-right: 5px;

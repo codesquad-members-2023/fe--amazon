@@ -13,7 +13,10 @@ const app = () => {
     delayTime : 10000,
     carouselImagesPath : '/asset/images/carousel',
   }).init();
-  new SearchBar('http://localhost:3001/recommend').init();
+  new SearchBar({
+    recommendURL : 'http://localhost:3001/recommend',
+    maximumLength : 10,
+  }).init();
 }
 
 app();
