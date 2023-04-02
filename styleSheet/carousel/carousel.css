@@ -1,0 +1,28 @@
+.carousel_window {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1500px;
+  overflow-x: hidden;
+}
+
+.carousel_container {
+  display: flex;
+  width: 10500px;
+}
+
+.carousel_container li {
+  width: 1500px;
+}
+
+.carousel_container li img {
+  width: 100%;
+}
+.carousel_button {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}

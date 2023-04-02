@@ -4,6 +4,7 @@
 @import "/styleSheet/mainNav/nav.css";
 @import "/styleSheet/mainNav/navPopup.css";
 @import "/styleSheet/subNav/sub.css";
+@import "/styleSheet/carousel/carousel.css";
 
 * {
   box-sizing: border-box;
