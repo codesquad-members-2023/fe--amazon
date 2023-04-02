@@ -1,8 +1,9 @@
-import { onSideBar } from './view/sidebar.js';
-import { onNavBar } from './view/nav.js';
-import { Carousel } from './view/carousel.js';
-import { SIDEBAR_DATA } from './data/sidebarData.js';
-import { LOGIN_DATA } from './data/loginDetailData.js';
+import { onSideBar } from './components/sidebar.js';
+import { onNavBar } from './components/nav.js';
+import { Carousel } from './components/carousel.js';
+import { SearchBar } from './components/searchbar.js';
+import { SIDEBAR_DATA } from '../data/sidebarData.js';
+import { LOGIN_DATA } from '../data/loginDetailData.js';
 
 const app = () => {
   onSideBar(SIDEBAR_DATA);
@@ -10,7 +11,11 @@ const app = () => {
   new Carousel({
     numberOfImages : 6,
     delayTime : 10000,
-    path : '/asset/images/carousel',
+    carouselImagesPath : '/asset/images/carousel',
+  }).init();
+  new SearchBar({
+    recommendURL : 'http://localhost:3001/recommend',
+    maximumLength : 10,
   }).init();
 }
 

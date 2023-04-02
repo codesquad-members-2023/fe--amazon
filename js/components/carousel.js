@@ -2,34 +2,33 @@ class Carousel {
   #directoryPath;
   #RIGHT = -1;
   #LEFT = 1;
-  constructor({numberOfImages, delayTime, path}) {
+  constructor({ numberOfImages, delayTime, carouselImagesPath }) {
     this.CAROUSEL_COUNT = numberOfImages;
     this.DELAY_TIME = delayTime;
-    this.#directoryPath = path;
+    this.#directoryPath = carouselImagesPath;
     this.slider = document.querySelector('.slider');
-    this.leftBtn = document.getElementById('carousel_left');
-    this.rightBtn = document.getElementById('carousel_right');
   }
 
   init() {
-    this.setImages()
-    this.slideAuto();
-    this.clickSlide();
+    this.renderInitialImage();
+    this.autoMoveCarousel();
+    this.clickCarouselBtn();
   }
 
-  setImages() {
+  renderInitialImage() {
     const imageFiles = Array.from({ length : this.CAROUSEL_COUNT }, (_, i) => i);
     const imageTemplate = imageFiles.reduce((template, number) => {
-      const img = `<img class="slide" src="${this.#directoryPath}/${number}.jpg" alt="carousel 배경이미지${number}">`;
-      template += img;
+      template += `<img class="slide" src="${this.#directoryPath}/${number}.jpg" alt="carousel 배경이미지${number}">`;
       return template;
     }, '');
     this.slider.insertAdjacentHTML('afterbegin', imageTemplate);
   }
 
-  clickSlide() {
-    this.leftBtn.addEventListener('click', this.translateSlideHandler.bind(this));
-    this.rightBtn.addEventListener('click', this.translateSlideHandler.bind(this));
+  clickCarouselBtn() {
+    const leftBtn = document.getElementById('carousel_left');
+    const rightBtn = document.getElementById('carousel_right');
+    leftBtn.addEventListener('click', this.translateSlideHandler.bind(this));
+    rightBtn.addEventListener('click', this.translateSlideHandler.bind(this));
   }
 
   translateSlideHandler({ target }) {
@@ -50,7 +49,7 @@ class Carousel {
     } else this.slider.appendChild(this.slider.firstElementChild);
   }
 
-  slideAuto() {
+  autoMoveCarousel() {
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
     let lastTime = 0;
