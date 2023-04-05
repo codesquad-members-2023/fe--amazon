@@ -1,4 +1,4 @@
-import { $, modifyClassList } from "../utils.js";
+import { $, modifyClassList, _ } from "../utils.js";
 import { sidebarCategoryItems } from "../data/sidebarCategory.js";
 
 class Sidebar {
@@ -33,14 +33,14 @@ class Sidebar {
 
   openSidebarCategory() {
     modifyClassList(this.sidebarCategory, "sidebar__category-items__show", "add");
-    this.closeCategoryButton.style.display = "block";
-    this.openCategoryButton.style.display = "none";
+    _.show(this.closeCategoryButton);
+    _.hide(this.openCategoryButton);
   }
 
   closeSidebarCategory() {
     modifyClassList(this.sidebarCategory, "sidebar__category-items__show", "remove");
-    this.closeCategoryButton.style.display = "none";
-    this.openCategoryButton.style.display = "block";
+    _.show(this.openCategoryButton);
+    _.hide(this.closeCategoryButton);
   }
 
   addSidebarCategoryData() {

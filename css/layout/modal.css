@@ -31,13 +31,13 @@
 .shipping__hover {
   top: 2.688rem;
   left: -1.25rem;
-  opacity: 0;
+  visibility: hidden;
   width: 20rem;
   height: 8rem;
 }
 
 .shipping__hover-show {
-  opacity: 1;
+  visibility: visible;
 }
 
 .shipping__box {
